@@ -1,0 +1,2453 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Rangerfinders · PX4 User Guide</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-richquotes/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-language-picker/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-dronecode/theme_styles.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="sfxx_lidar.html" />
+    
+    
+    <link rel="prev" href="../telemetry/telemetry_wifi.html" />
+    
+
+    </head>
+    <body>
+        
+    
+    <!-- ##HW Add dronecode menu -->
+    <div id="common_dronecode_menu">
+      <div class="common_menu_logo large_version">
+        <a href="https://www.dronecode.org/">
+          <img src="../../gitbook/gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png" alt="Dronecode logo (large)" />
+        </a>
+      </div>
+      <div class="common_menu_logo small_version">
+        <a href="https://www.dronecode.org/">
+          <img src="../../gitbook/gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png" alt="Dronecode logo (small)" />
+        </a>
+      </div>
+      <div class="common_menu_options">
+        <div id="menu_dc" class="common_dronecode_menu_item"><a href="https://www.dronecode.org/">Dronecode</a></div>
+        <div class="common_dronecode_menu_item"><a href="http://px4.io/">PX4</a></div>
+        <div class="common_dronecode_menu_item large_version"><a href="http://qgroundcontrol.com/">QGroundControl</a></div>
+        <div class="common_dronecode_menu_item small_version"><a href="http://qgroundcontrol.com/">QGC</a></div>
+        <div class="common_dronecode_menu_item"><a href="http://dronecore.io/">DroneCore</a></div>
+        <!-- <div class="common_dronecode_menu_item small_versionn"><a href="http://dronecore.io/">&lt;D/C&gt;</a></div> -->
+        <div class="common_dronecode_menu_item"><a href="https://mavlink.io/en/">MAVLink</a></div>
+        <div class="common_dronecode_menu_item large_version"><a href="https://www.dronecode.org/documentation/">Documentation</a></div>
+        <div class="common_dronecode_menu_item small_version"><a href="https://www.dronecode.org/documentation/">Docs</a></div>
+        <div class="common_dronecode_menu_item large_version"><a href="http://discuss.px4.io/">Support</a></div>
+        <div class="common_dronecode_menu_item small_version"><a href="http://discuss.px4.io/">Help</a></div>
+      </div>
+    </div>
+    
+<!-- ##HW END Add dronecode menu -->
+    
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../getting_started/">
+            
+                <a href="../getting_started/">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../getting_started/px4_basic_concepts.html">
+            
+                <a href="../getting_started/px4_basic_concepts.html">
+            
+                    
+                    PX4 Basic Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../getting_started/frame_selection.html">
+            
+                <a href="../getting_started/frame_selection.html">
+            
+                    
+                    Vehicles/Frames
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../getting_started/flight_controller_selection.html">
+            
+                <a href="../getting_started/flight_controller_selection.html">
+            
+                    
+                    Flight Controllers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../getting_started/sensor_selection.html">
+            
+                <a href="../getting_started/sensor_selection.html">
+            
+                    
+                    Sensors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../getting_started/rc_transmitter_receiver.html">
+            
+                <a href="../getting_started/rc_transmitter_receiver.html">
+            
+                    
+                    RC Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../getting_started/flight_modes.html">
+            
+                <a href="../getting_started/flight_modes.html">
+            
+                    
+                    Flight Modes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../getting_started/flight_reporting.html">
+            
+                <a href="../getting_started/flight_reporting.html">
+            
+                    
+                    Flight Reporting
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../assembly/">
+            
+                <a href="../assembly/">
+            
+                    
+                    Basic Assembly
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../assembly/mount_and_orient_controller.html">
+            
+                <a href="../assembly/mount_and_orient_controller.html">
+            
+                    
+                    Mounting the Flight Controller
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../assembly/quick_start_pixhawk4.html">
+            
+                <a href="../assembly/quick_start_pixhawk4.html">
+            
+                    
+                    Pixhawk 4 Wiring Quickstart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../assembly/quick_start_cube.html">
+            
+                <a href="../assembly/quick_start_cube.html">
+            
+                    
+                    Cube Wiring Quickstart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../assembly/quick_start_pixhawk_mini.html">
+            
+                <a href="../assembly/quick_start_pixhawk_mini.html">
+            
+                    
+                    Pixhawk Mini Wiring Quickstart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../assembly/quick_start_pixracer.html">
+            
+                <a href="../assembly/quick_start_pixracer.html">
+            
+                    
+                    Pixracer Wiring Quickstart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../assembly/quick_start_pixhawk.html">
+            
+                <a href="../assembly/quick_start_pixhawk.html">
+            
+                    
+                    Pixhawk Wiring Quickstart
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../config/">
+            
+                <a href="../config/">
+            
+                    
+                    Basic Configuration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../config/firmware.html">
+            
+                <a href="../config/firmware.html">
+            
+                    
+                    Firmware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../config/airframe.html">
+            
+                <a href="../config/airframe.html">
+            
+                    
+                    Airframe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../config/flight_controller_orientation.html">
+            
+                <a href="../config/flight_controller_orientation.html">
+            
+                    
+                    Sensor Orientation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../config/compass.html">
+            
+                <a href="../config/compass.html">
+            
+                    
+                    Compass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../config/accelerometer.html">
+            
+                <a href="../config/accelerometer.html">
+            
+                    
+                    Accelerometer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../config/airspeed.html">
+            
+                <a href="../config/airspeed.html">
+            
+                    
+                    Airspeed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../config/level_horizon_calibration.html">
+            
+                <a href="../config/level_horizon_calibration.html">
+            
+                    
+                    Level Horizon Calibration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../config/radio.html">
+            
+                <a href="../config/radio.html">
+            
+                    
+                    Radio Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../config/flight_mode.html">
+            
+                <a href="../config/flight_mode.html">
+            
+                    
+                    Flight Modes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../config/battery.html">
+            
+                <a href="../config/battery.html">
+            
+                    
+                    Battery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../config/safety.html">
+            
+                <a href="../config/safety.html">
+            
+                    
+                    Safety
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../airframes/">
+            
+                <a href="../airframes/">
+            
+                    
+                    Airframe Builds
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../airframes/airframe_reference.html">
+            
+                <a href="../airframes/airframe_reference.html">
+            
+                    
+                    Airframes Reference
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../frames_multicopter/">
+            
+                <a href="../frames_multicopter/">
+            
+                    
+                    Multicopters
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../frames_multicopter/dji_flamewheel_450.html">
+            
+                <a href="../frames_multicopter/dji_flamewheel_450.html">
+            
+                    
+                    FlameWheel450 + RTK (Pixhawk 3 Pro)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../frames_multicopter/lumenier_qav250_pixhawk_mini.html">
+            
+                <a href="../frames_multicopter/lumenier_qav250_pixhawk_mini.html">
+            
+                    
+                    QAV250 (Pixhawk Mini)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3" data-path="../frames_multicopter/lumenier_qav250_pixhawk_auav_x2.html">
+            
+                <a href="../frames_multicopter/lumenier_qav250_pixhawk_auav_x2.html">
+            
+                    
+                    QAV250 (Pixhawk/AUAV_X2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.4" data-path="../frames_multicopter/spedix_s250_pixracer.html">
+            
+                <a href="../frames_multicopter/spedix_s250_pixracer.html">
+            
+                    
+                    Spedix 250 (Pixracer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.5" data-path="../frames_multicopter/robocat_270_pixracer.html">
+            
+                <a href="../frames_multicopter/robocat_270_pixracer.html">
+            
+                    
+                    Robocat 270 (Pixracer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.6" data-path="../frames_multicopter/matrice100.html">
+            
+                <a href="../frames_multicopter/matrice100.html">
+            
+                    
+                    Matrice 100 (Pixhawk 1)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.7" data-path="../frames_multicopter/qav_r_5_kiss_esc_racer.html">
+            
+                <a href="../frames_multicopter/qav_r_5_kiss_esc_racer.html">
+            
+                    
+                    QAV-R 5" Racer (Pixracer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../frames_plane/">
+            
+                <a href="../frames_plane/">
+            
+                    
+                    Planes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../frames_plane/wing_wing_z84.html">
+            
+                <a href="../frames_plane/wing_wing_z84.html">
+            
+                    
+                    Wing Wing Z84 (Pixracer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../frames_vtol/">
+            
+                <a href="../frames_vtol/">
+            
+                    
+                    VTOL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../frames_vtol/vtol_quadplane_falcon_vertigo_hybrid_rtf_dropix.html">
+            
+                <a href="../frames_vtol/vtol_quadplane_falcon_vertigo_hybrid_rtf_dropix.html">
+            
+                    
+                    Falcon Vertigo QuadPlane (Dropix)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="../frames_vtol/vtol_quadplane_fun_cub_vtol_pixhawk.html">
+            
+                <a href="../frames_vtol/vtol_quadplane_fun_cub_vtol_pixhawk.html">
+            
+                    
+                    FunCub QuadPlane (Pixhawk)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="../frames_vtol/vtol_quadplane_volantex_ranger_ex_pixhawk.html">
+            
+                <a href="../frames_vtol/vtol_quadplane_volantex_ranger_ex_pixhawk.html">
+            
+                    
+                    Ranger QuadPlane (Pixhawk)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.4" data-path="../frames_vtol/vtol_tiltrotor_eflite_convergence_pixfalcon.html">
+            
+                <a href="../frames_vtol/vtol_tiltrotor_eflite_convergence_pixfalcon.html">
+            
+                    
+                    Convergence Tiltrotor (Pixfalcon)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.5" data-path="../frames_vtol/vtol_tailsitter_caipiroshka_pixracer.html">
+            
+                <a href="../frames_vtol/vtol_tailsitter_caipiroshka_pixracer.html">
+            
+                    
+                    TBS Caipiroshka (Pixracer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.6" data-path="../frames_vtol/vtol_tiltrotor_birdseyeview_firefly_y6_pixfalcon.html">
+            
+                <a href="../frames_vtol/vtol_tiltrotor_birdseyeview_firefly_y6_pixfalcon.html">
+            
+                    
+                    Archived:FireFly Y6 Tiltrotor (Pixfalcon)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../frames_rover/">
+            
+                <a href="../frames_rover/">
+            
+                    
+                    Rovers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.1" data-path="../frames_rover/traxxas_stampede.html">
+            
+                <a href="../frames_rover/traxxas_stampede.html">
+            
+                    
+                    Traxxas Stampede
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../flying/">
+            
+                <a href="../flying/">
+            
+                    
+                    Flying
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../flying/first_flight_guidelines.html">
+            
+                <a href="../flying/first_flight_guidelines.html">
+            
+                    
+                    First Flight Guidelines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../flying/led_meanings.html">
+            
+                <a href="../flying/led_meanings.html">
+            
+                    
+                    LED Meanings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../flying/pre_flight_checks.html">
+            
+                <a href="../flying/pre_flight_checks.html">
+            
+                    
+                    Preflight Checks (Internal)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../flying/basic_flying.html">
+            
+                <a href="../flying/basic_flying.html">
+            
+                    
+                    Flying 101
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.4.1" data-path="../flying/fixed_wing_landing.html">
+            
+                <a href="../flying/fixed_wing_landing.html">
+            
+                    
+                    Landing (Fixed Wing)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../flying/missions.html">
+            
+                <a href="../flying/missions.html">
+            
+                    
+                    Missions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../flight_modes/">
+            
+                <a href="../flight_modes/">
+            
+                    
+                    Flight Modes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.6.1" data-path="../flight_modes/position_mc.html">
+            
+                <a href="../flight_modes/position_mc.html">
+            
+                    
+                    Position (MC)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.2" data-path="../flight_modes/altitude_mc.html">
+            
+                <a href="../flight_modes/altitude_mc.html">
+            
+                    
+                    Altitude (MC)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.3" data-path="../flight_modes/manual_stabilized_mc.html">
+            
+                <a href="../flight_modes/manual_stabilized_mc.html">
+            
+                    
+                    Manual/Stabilized (MC)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.4" data-path="../flight_modes/rattitude_mc.html">
+            
+                <a href="../flight_modes/rattitude_mc.html">
+            
+                    
+                    Rattitude (MC)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.5" data-path="../flight_modes/acro_mc.html">
+            
+                <a href="../flight_modes/acro_mc.html">
+            
+                    
+                    Acro (MC)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.6" data-path="../flight_modes/position_fw.html">
+            
+                <a href="../flight_modes/position_fw.html">
+            
+                    
+                    Position (FW)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.7" data-path="../flight_modes/altitude_fw.html">
+            
+                <a href="../flight_modes/altitude_fw.html">
+            
+                    
+                    Altitude (FW)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.8" data-path="../flight_modes/stabilized_fw.html">
+            
+                <a href="../flight_modes/stabilized_fw.html">
+            
+                    
+                    Stabilized (FW)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.9" data-path="../flight_modes/acro_fw.html">
+            
+                <a href="../flight_modes/acro_fw.html">
+            
+                    
+                    Acro (FW)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.10" data-path="../flight_modes/manual_fw.html">
+            
+                <a href="../flight_modes/manual_fw.html">
+            
+                    
+                    Manual (FW)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.11" data-path="../flight_modes/takeoff.html">
+            
+                <a href="../flight_modes/takeoff.html">
+            
+                    
+                    Takeoff
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.12" data-path="../flight_modes/land.html">
+            
+                <a href="../flight_modes/land.html">
+            
+                    
+                    Land
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.13" data-path="../flight_modes/return.html">
+            
+                <a href="../flight_modes/return.html">
+            
+                    
+                    Return
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.14" data-path="../flight_modes/hold.html">
+            
+                <a href="../flight_modes/hold.html">
+            
+                    
+                    Hold
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.15" data-path="../flight_modes/mission.html">
+            
+                <a href="../flight_modes/mission.html">
+            
+                    
+                    Mission
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.16" data-path="../flight_modes/follow_me.html">
+            
+                <a href="../flight_modes/follow_me.html">
+            
+                    
+                    Follow Me
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.17" data-path="../flight_modes/offboard.html">
+            
+                <a href="../flight_modes/offboard.html">
+            
+                    
+                    Offboard
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../advanced_features/">
+            
+                <a href="../advanced_features/">
+            
+                    
+                    Advanced Features
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../advanced_features/rtk-gps.html">
+            
+                <a href="../advanced_features/rtk-gps.html">
+            
+                    
+                    RTK GPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../advanced_features/precland.html">
+            
+                <a href="../advanced_features/precland.html">
+            
+                    
+                    Precision Landing
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../advanced_config/">
+            
+                <a href="../advanced_config/">
+            
+                    
+                    Advanced Configuration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../advanced_config/parameters.html">
+            
+                <a href="../advanced_config/parameters.html">
+            
+                    
+                    Parameters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../advanced_config/pid_tuning_guide_multicopter.html">
+            
+                <a href="../advanced_config/pid_tuning_guide_multicopter.html">
+            
+                    
+                    Multicopter PID Tuning Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../advanced_config/advanced_mc_position_tuning.html">
+            
+                <a href="../advanced_config/advanced_mc_position_tuning.html">
+            
+                    
+                    Multicopter Advanced Tuning Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../advanced_config/pid_tuning_guide_fixedwing.html">
+            
+                <a href="../advanced_config/pid_tuning_guide_fixedwing.html">
+            
+                    
+                    Fixedwing PID Tuning Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../config_vtol/">
+            
+                <a href="../config_vtol/">
+            
+                    
+                    VTOL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.5.1" data-path="../config_vtol/vtol_quad_configuration.html">
+            
+                <a href="../config_vtol/vtol_quad_configuration.html">
+            
+                    
+                    QuadPlane Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5.2" data-path="../config_vtol/vtol_back_transition_tuning.html">
+            
+                <a href="../config_vtol/vtol_back_transition_tuning.html">
+            
+                    
+                    Back-transition Tuning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5.3" data-path="../config_vtol/vtol_without_airspeed_sensor.html">
+            
+                <a href="../config_vtol/vtol_without_airspeed_sensor.html">
+            
+                    
+                    VTOL w/o Airspeed Sensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../advanced_config/esc_calibration.html">
+            
+                <a href="../advanced_config/esc_calibration.html">
+            
+                    
+                    ESC Calibration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../advanced_config/sensor_thermal_calibration.html">
+            
+                <a href="../advanced_config/sensor_thermal_calibration.html">
+            
+                    
+                    Sensor Thermal Compensation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../advanced_config/advanced_flight_controller_orientation_leveling.html">
+            
+                <a href="../advanced_config/advanced_flight_controller_orientation_leveling.html">
+            
+                    
+                    Advanced Controller Orientation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../advanced_config/parameter_reference.html">
+            
+                <a href="../advanced_config/parameter_reference.html">
+            
+                    
+                    Full Parameter Reference
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../peripherals/">
+            
+                <a href="../peripherals/">
+            
+                    
+                    Peripheral Hardware
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../peripherals/mavlink_peripherals.html">
+            
+                <a href="../peripherals/mavlink_peripherals.html">
+            
+                    
+                    MAVLink (OSD / Telemetry)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../peripherals/frsky_telemetry.html">
+            
+                <a href="../peripherals/frsky_telemetry.html">
+            
+                    
+                    FrSky Telemetry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../peripherals/rtk_gps_hex_hereplus.html">
+            
+                <a href="../peripherals/rtk_gps_hex_hereplus.html">
+            
+                    
+                    RTK GPS - Here+
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../peripherals/rtk_gps_drotek_xl.html">
+            
+                <a href="../peripherals/rtk_gps_drotek_xl.html">
+            
+                    
+                    RTK GPS - Drotek XL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../peripherals/rtk_gps_cuav_c-rtk.html">
+            
+                <a href="../peripherals/rtk_gps_cuav_c-rtk.html">
+            
+                    
+                    RTK GPS - CUAV C-RTK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../telemetry/">
+            
+                <a href="../telemetry/">
+            
+                    
+                    Telemetry Radios
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.6.1" data-path="../telemetry/sik_radio.html">
+            
+                <a href="../telemetry/sik_radio.html">
+            
+                    
+                    SiK Radio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6.2" data-path="../telemetry/telemetry_wifi.html">
+            
+                <a href="../telemetry/telemetry_wifi.html">
+            
+                    
+                    Telemetry Wifi
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9.7" data-path="rangefinders.html">
+            
+                <a href="rangefinders.html">
+            
+                    
+                    Rangerfinders
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.7.1" data-path="sfxx_lidar.html">
+            
+                <a href="sfxx_lidar.html">
+            
+                    
+                    Lightware SFxx Lidar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7.2" data-path="ulanding_radar.html">
+            
+                <a href="ulanding_radar.html">
+            
+                    
+                    uLanding Radar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7.3" data-path="leddar_one.html">
+            
+                <a href="leddar_one.html">
+            
+                    
+                    LeddarOne Lidar
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../flight_controller/">
+            
+                <a href="../flight_controller/">
+            
+                    
+                    Autopilot Hardware
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../flight_controller/pixhawk_series.html">
+            
+                <a href="../flight_controller/pixhawk_series.html">
+            
+                    
+                    Pixhawk Series
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1.1" data-path="../flight_controller/pixhawk.html">
+            
+                <a href="../flight_controller/pixhawk.html">
+            
+                    
+                    Pixhawk 1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.2" data-path="../flight_controller/mro_pixhawk.html">
+            
+                <a href="../flight_controller/mro_pixhawk.html">
+            
+                    
+                    mRo Pixhawk
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.3" data-path="../flight_controller/mro_x2.1.html">
+            
+                <a href="../flight_controller/mro_x2.1.html">
+            
+                    
+                    mRobotics-X2.1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.4" data-path="../flight_controller/HKPilot32.html">
+            
+                <a href="../flight_controller/HKPilot32.html">
+            
+                    
+                    HKPilot32
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.5" data-path="../flight_controller/pixfalcon.html">
+            
+                <a href="../flight_controller/pixfalcon.html">
+            
+                    
+                    Pixfalcon
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.6" data-path="../flight_controller/dropix.html">
+            
+                <a href="../flight_controller/dropix.html">
+            
+                    
+                    Dropix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.7" data-path="../flight_controller/pixracer.html">
+            
+                <a href="../flight_controller/pixracer.html">
+            
+                    
+                    Pixracer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.8" data-path="../flight_controller/mindpx.html">
+            
+                <a href="../flight_controller/mindpx.html">
+            
+                    
+                    MindPX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.9" data-path="../flight_controller/mindracer.html">
+            
+                <a href="../flight_controller/mindracer.html">
+            
+                    
+                    MindRacer
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1.9.1" data-path="../flight_controller/mindracer_BNF_RTF.html">
+            
+                <a href="../flight_controller/mindracer_BNF_RTF.html">
+            
+                    
+                    MindRacer BNF & RTF
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1.9.1.1" data-path="../flight_controller/mindracer210.html">
+            
+                <a href="../flight_controller/mindracer210.html">
+            
+                    
+                    MindRacer 210
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.9.1.2" data-path="../flight_controller/nanomind110.html">
+            
+                <a href="../flight_controller/nanomind110.html">
+            
+                    
+                    NanoMind 110
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.10" data-path="../flight_controller/pixhawk-2.html">
+            
+                <a href="../flight_controller/pixhawk-2.html">
+            
+                    
+                    Cube (Pixhawk 2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.11" data-path="../flight_controller/pixhawk_mini.html">
+            
+                <a href="../flight_controller/pixhawk_mini.html">
+            
+                    
+                    Pixhawk Mini
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.12" data-path="../flight_controller/pixhawk3_pro.html">
+            
+                <a href="../flight_controller/pixhawk3_pro.html">
+            
+                    
+                    Pixhawk 3 Pro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.13" data-path="../flight_controller/pixhack_v3.html">
+            
+                <a href="../flight_controller/pixhack_v3.html">
+            
+                    
+                    Pixhack v3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.14" data-path="../flight_controller/pixhawk4.html">
+            
+                <a href="../flight_controller/pixhawk4.html">
+            
+                    
+                    Pixhawk 4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.15" data-path="../flight_controller/pixhack_v5.html">
+            
+                <a href="../flight_controller/pixhack_v5.html">
+            
+                    
+                    Pixhack v5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.16" data-path="../flight_controller/auav_x2.html">
+            
+                <a href="../flight_controller/auav_x2.html">
+            
+                    
+                    AUAV-X2 (Discontinued)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../flight_controller/snapdragon_flight.html">
+            
+                <a href="../flight_controller/snapdragon_flight.html">
+            
+                    
+                    Snapdragon Flight
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.2.1" data-path="../flight_controller/snapdragon_flight_hardware_example_setup.html">
+            
+                <a href="../flight_controller/snapdragon_flight_hardware_example_setup.html">
+            
+                    
+                    Hardware Setup Example
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.2" data-path="../flight_controller/snapdragon_flight_dev_environment_installation.html">
+            
+                <a href="../flight_controller/snapdragon_flight_dev_environment_installation.html">
+            
+                    
+                    Developer Environment Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.3" data-path="../flight_controller/snapdragon_flight_software_installation.html">
+            
+                <a href="../flight_controller/snapdragon_flight_software_installation.html">
+            
+                    
+                    Snapdragon Software Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.4" data-path="../flight_controller/snapdragon_flight_configuration.html">
+            
+                <a href="../flight_controller/snapdragon_flight_configuration.html">
+            
+                    
+                    Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.5" data-path="../flight_controller/snapdragon_flight_advanced.html">
+            
+                <a href="../flight_controller/snapdragon_flight_advanced.html">
+            
+                    
+                    Snapdragon Advanced
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../flight_controller/intel_aero.html">
+            
+                <a href="../flight_controller/intel_aero.html">
+            
+                    
+                    Intel® Aero Ready to Fly Drone
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../flight_controller/raspberry_pi_navio2.html">
+            
+                <a href="../flight_controller/raspberry_pi_navio2.html">
+            
+                    
+                    Raspberry Pi 2/3 Navio2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../flight_controller/ocpoc_zynq.html">
+            
+                <a href="../flight_controller/ocpoc_zynq.html">
+            
+                    
+                    OcPoC-Zynq Mini
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../flight_controller/crazyflie2.html">
+            
+                <a href="../flight_controller/crazyflie2.html">
+            
+                    
+                    Crazyflie 2.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="../flight_controller/bebop.html">
+            
+                <a href="../flight_controller/bebop.html">
+            
+                    
+                    Parrot Bebop
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../development/development.html">
+            
+                <a href="../development/development.html">
+            
+                    
+                    Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Dronecode Shortcuts</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <a target="_blank" href="https://dev.px4.io/en/">
+            
+                    
+                    PX4 Developer Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <a target="_blank" href="https://docs.qgroundcontrol.com/en/">
+            
+                    
+                    QGroundControl User Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" >
+            
+                <a target="_blank" href="https://dev.qgroundcontrol.com/en/">
+            
+                    
+                    QGroundControl Developer Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" >
+            
+                <a target="_blank" href="https://docs.dronecore.io/en/">
+            
+                    
+                    DroneCore Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" >
+            
+                <a target="_blank" href="https://mavlink.io/en/">
+            
+                    
+                    MAVLink Developer Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Rangerfinders</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="rangefindersdistance-sensors">Rangefinders/Distance Sensors</h1>
+<p>Rangefinders provide distance measurement that can be used for terrain following, precision hovering (e.g. for photography), warning of regulatory height limits, collision avoidance etc.</p>
+<p>The sensors can usually be connected to either a serial (PWM) or I2C port (depending on driver support for the particular rangefinder), and the rangefinder is enabled on a port by setting a particular parameter.</p>
+<p>This section lists the rangefinders supported by PX4 and the generic configuration information. More detailed documentation is linked for some rangefinders.</p>
+<blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
+<p> The drivers for less common rangefinders may not be present by default in all firmware. In this case you may need to add the driver into your <em>cmake</em> configuration file and build the firmware yourself. For more information see the <a href="https://dev.px4.io/en/setup/building_px4.html" target="_blank">PX4 Development Guide</a>.</p>
+</blockquote>
+<p><img src="../../assets/hardware/sensors/lidar_lite_v3.jpg" alt="Lidar Lite V3" width="200px"><img src="../../assets/hardware/sensors/sf11c_120_m.jpg" alt="LightWare SF11/C Lidar" width="200px"><img src="../../assets/hardware/sensors/uLanding_lite_1.jpg" alt="Aerotenna uLanding" width="200px"></p>
+<h2 id="supported-rangefinders">Supported Rangefinders</h2>
+<h3 id="lidar-lite">Lidar-Lite</h3>
+<p>The <em>Lidar Lite</em> can be used with either PWM or I2C. The rangefinder/port is enabled using <a href="../advanced_config/parameter_reference.html#SENS_EN_LL40LS">SENS_EN_LL40LS</a>:</p>
+<ul>
+<li><a href="https://buy.garmin.com/en-AU/AU/p/557294" target="_blank">LIDAR-Lite v3</a> (5cm - 40m)</li>
+</ul>
+<p>Pixhawk wiring information and Lidar-lite specific test instructions can be found here: <a href="https://pixhawk.org/peripherals/rangefinder#lidar-lite" target="_blank">Lidar lite</a> (pixhawk.org).
+<!-- This is specific to the ll40ls (usually Lidar Lite) connected via PWM. When running ll40ls test pwm, there will be an output. You can also use it for testing if you connect it via I2C. https://github.com/PX4/Firmware/blob/master/src/drivers/ll40ls/ll40ls.cpp#L336-L345 Just replace pwm with i2c --></p>
+<p>The driver for this rangefinder is usually present in firmware (driver added as: <code>drivers/ll40ls</code>).</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> PWM is recommended if using an older model (some older models do not behave reliably on I2C).</p>
+</blockquote>
+<p><span></span></p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-info"></strong>
+<p> The <em>Lidar-Lite v3</em> may be used in the <a href="../flight_controller/intel_aero.html#lidar_lite">The Intel&#xAE; Aero Ready to Fly Drone</a> (but is not recommended).</p>
+</blockquote>
+<h3 id="maxbotix-i2cxl-maxsonar-ez">MaxBotix I2CXL-MaxSonar-EZ</h3>
+<p>The MaxBotix <a href="https://www.maxbotix.com/product-category/i2cxl-maxsonar-ez-products" target="_blank">I2CXL-MaxSonar-EZ</a> range has a number of relatively short-ranged sonar based rangefinders that are suitable for assisted takeoff/landing and collision avoidance. These can be connected using an I2C port.</p>
+<p>The rangefinders are enabled using the parameter <a href="../advanced_config/parameter_reference.html#SENS_EN_MB12XX">SENS_EN_MB12XX</a>.</p>
+<h3 id="lightware-lidars">Lightware LIDARs</h3>
+<p><a href="http://lightware.co.za/shop2017/" target="_blank">Lightware</a> provide a range of lightweight &quot;laser altimeters&quot; that are suitable for many drone applications:</p>
+<ul>
+<li><a href="http://lightware.co.za/shop2017/proximity-sensors/1-sf02f.html" target="_blank">SF02</a></li>
+<li><a href="http://lightware.co.za/shop2017/drone-altimeters/26-sf10a-25-m.html" target="_blank">SF10/A</a> (25 m)</li>
+<li><a href="http://lightware.co.za/shop2017/drone-altimeters/25-sf10b-50-m.html" target="_blank">SF10/B</a> (50 m)</li>
+<li>SF10/C (100m) (Discontinued)</li>
+<li><a href="http://lightware.co.za/shop2017/drone-altimeters/44-sf11c-120-m.html" target="_blank">SF11/C</a> (120 m)</li>
+<li><a href="http://lightware.co.za/shop2017/drone-altimeters/51-lw20-100-m.html" target="_blank">SF/LW20</a> (100 m) - Waterproofed (IP67) with servo for sense-and-avoid applications</li>
+</ul>
+<p>Drivers exist for both I2C and serial ports, which can be configured using the parameters <a href="../advanced_config/parameter_reference.html#SENS_EN_SF0X">SENS_EN_SF0X</a> and <a href="../advanced_config/parameter_reference.html#SENS_EN_SF1XX">SENS_EN_SF1XX</a> (respectively).</p>
+<p>Wiring and other information for the I2C variants can be found in the topic <a href="sfxx_lidar.html">Lightware SFxx Lidar</a>.</p>
+<blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
+<p> Not all devices are supported for both serial and I2C; check the parameters for more information and supported models.</p>
+</blockquote>
+<h3 id="teraranger-rangefinders">TeraRanger Rangefinders</h3>
+<p>TeraRanger provide a number of lightweight distance measurement sensor based on infrared Time-of-Flight (ToF) technology. They are typically faster and have greater range than sonar, and smaller and lighter than laser-based systems. PX4 supports:</p>
+<ul>
+<li><a href="http://www.teraranger.com/products/teraranger-one/" target="_blank">TeraRanger One</a> (0.2 - 14 m) (Requires an <a href="http://www.teraranger.com/product/teraranger-i2c-adapter/" target="_blank">I2C adapter</a>)</li>
+<li><a href="https://www.terabee.com/portfolio-item/teraranger-evo-infrared-distance-sensor/" target="_blank">TeraRanger Evo 60m</a> (0.5 &#x2013; 60 m)</li>
+<li>TeraRanger Evo 600Hz (0.75 - 8 m)</li>
+</ul>
+<p>All TeraRanger sensors must be connected via the I2C bus. While TeraRanger One requires an <a href="http://www.teraranger.com/product/teraranger-i2c-adapter/" target="_blank">I2C adapter</a> any sensor from TeraRanger Evo series can be connected directly to the autopilot. </p>
+<p>The sensors are enabled using the parameter <a href="../advanced_config/parameter_reference.html#SENS_EN_TRANGER">SENS_EN_TRANGER</a> (you can set the type of sensor or that PX4 should auto-detect the type).</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> If using auto-detect for Evo sensors the minimum and maximum values for the range are set to the lowest and highest possible readings across the Evo family (currently 0.5 - 60 m). In order to use the correct max/min values the appropriate model of the Evo sensor should be set in the parameter (instead of using autodetect).</p>
+</blockquote>
+<p><span></span></p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-info"></strong>
+<p> The <em>Terranger One</em> is used in the <a href="../flight_controller/snapdragon_flight.html">Qualcomm Snapdragon Flight</a>.</p>
+</blockquote>
+<h3 id="ulanding-radar">uLanding Radar</h3>
+<p>The <em>Aerotenna</em> <a href="https://aerotenna.com/sensors/#ulanding" target="_blank">uLanding</a> altimeter is compact microwave rangefinder that has been optimised for use on UAVs. It has a sensing range of 45m. A particular advantages of this product are that it can operate effectively in all weather conditions and over all terrain types (including water).</p>
+<p>The uLanding Radar is not present in &quot;most&quot; firmware by default and must be started by updating a configuration file (rather than by a parameter). More information can be found here: <a href="ulanding_radar.html">uLanding Radar</a>.</p>
+<h3 id="leddarone">LeddarOne</h3>
+<p><a href="https://leddartech.com/modules/leddarone/" target="_blank">LeddarOne</a> is small-size Lidar module with a narrow, yet diffuse beam that offers excellent overall detection range and performance, in a robust, reliable, cost-effective package. It has a sensing range from 1cm to 40m and needs to be connected to a UART/serial bus.</p>
+<p>For setup/usage information see: <a href="leddar_one.html">LeddarOne</a>.</p>
+<h3 id="tfmini">TFmini</h3>
+<p>The <a href="http://www.benewake.com/en/tfmini.html" target="_blank">Benewake TFmini LiDAR</a> is a tiny, low cost, and low power LIDAR with 12m range.</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> This lidar is currently in master, and should appear in releases from PX4 v1.8.</p>
+</blockquote>
+<p>In general the <em>TFmini</em> can be used by setting the parameter <a href="../advanced_config/parameter_reference.html#SENS_EN_TFMINI">SENS_EN_TFMINI</a> &gt; 0 and connecting the sensor to the correct (board-specific) port:</p>
+<table>
+<thead>
+<tr>
+<th>Board</th>
+<th>Port</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../flight_controller/intel_aero.html">Intel Aero</a></td>
+<td>TELEMETRY</td>
+</tr>
+<tr>
+<td>Pixhawk <a href="../flight_controller/pixhawk_series.html#fmu-versions">PX4FMU_V3</a></td>
+<td>SERIAL 4/5</td>
+</tr>
+<tr>
+<td>Other Pixhawk based boards</td>
+<td>TELEM2. The <a href="../advanced_config/parameter_reference.html#SYS_COMPANION">SYS_COMPANION</a> must be set to 0.</td>
+</tr>
+</tbody>
+</table>
+<p>To use the TFmini on other ports/boards, the driver can be started by using the following line in a <a href="https://dev.px4.io/en/debug/system_console.html#mavlink-shell" target="_blank">shell</a> or the <a href="https://dev.px4.io/en/advanced/system_startup.html" target="_blank">extras.txt</a> (startup) file located on your SD card (where <code>&lt;serial port&gt;</code> is the port id):</p>
+<pre><code>tfmini start -d &lt;serial port&gt;
+</code></pre><blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
+<p> Most boards will already include the driver in firmware. If not, add the following line to the <em>cmake</em> <a href="https://github.com/PX4/Firmware/tree/master/cmake/configs" target="_blank">config file</a> that corresponds to the target board:</p>
+<pre><code>   drivers/tfmini
+</code></pre></blockquote>
+<h3 id="other">Other</h3>
+<p>PX4 also supports the Bebop rangefinder.</p>
+<h2 id="rangefinder-configuration">Rangefinder Configuration</h2>
+<h3 id="setup">Setup</h3>
+<p>The rangefinder is configured using <a href="../advanced_config/parameter_reference.html#EKF2_RNG_POS_X">EKF2_RNG_*</a> parameters. These configure information about the offset of the rangefinder from the centre of the vehicle body, the approximate delay of data reaching the estimator from the sensor, etc.</p>
+<h3 id="enableuse">Enable/Use</h3>
+<p>The rangefinder can be enabled in two ways:</p>
+<ol>
+<li>Set <a href="../advanced_config/parameter_reference.html#EKF2_HGT_MODE">EKF2_HGT_MODE</a> to <em>Range finder</em> (<code>2</code>). This makes the rangefinder the primary source of height estimation (the default altitude sensor is the barometer).</li>
+<li>Set <a href="../advanced_config/parameter_reference.html#EKF2_RNG_AID">EKF2_RNG_AID</a> to <code>1</code>. This makes the vehicle use the rangefinder as the primary source when it is safe to use, but will otherwise use the sensor specified in <code>EKF2_HGT_MODE</code>.<ul>
+<li>Specifically, the rangefinder is enabled when:<ul>
+<li>velocity &lt; <a href="../advanced_config/parameter_reference.html#EKF2_RNG_A_VMAX">EKF2_RNG_A_VMAX</a></li>
+<li>distance to ground &lt; <a href="../advanced_config/parameter_reference.html#EKF2_RNG_A_HMAX">EKF2_RNG_A_HMAX</a></li>
+</ul>
+</li>
+<li>Other parameters affecting &quot;Range aid&quot; are prefixed with <code>EKF2\_RNG\_A\_</code>.</li>
+</ul>
+</li>
+</ol>
+<h2 id="testing">Testing</h2>
+<p>The easiest way to test the rangefinder is to vary the range and compare to the values detected by PX4. The sections below show some approaches to getting the measured range.</p>
+<h3 id="qgroundcontrol-analyze-tool">QGroundControl Analyze Tool</h3>
+<p>The <em>QGroundControl Analyze Tool</em> tool and <em>QGroundControl MAVLink Inspector</em> let you view messages sent from the vehicle, including <code>DISTANCE_SENSOR</code> information from the rangefinder. The main difference between the tools is that the <em>Analyze</em> tool can plot values in a graph.</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> The messages that are sent depend on the vehicle configuration. You will only get <code>DISTANCE_SENSOR</code> messages if the connected vehicle has a rangefinder installed and is publishing sensor values.</p>
+</blockquote>
+<p>To view the rangefinder output:</p>
+<ol>
+<li><p>Open the menu <strong>Widgets &gt; Analyze</strong>:</p>
+<p><img src="../../assets/qgc/menu_analyze_tool.png" alt="Menu for QGC Analyze Tool"></p>
+</li>
+<li>Select the message <code>DISTANCE_SENSOR.current_value</code>. The tool will then plot the result:
+<img src="../../assets/qgc/qgc_analyze_tool_distance_sensor.png" alt="QGC Analyze DISTANCE_SENSOR value"></li>
+</ol>
+<h3 id="qgroundcontrol-mavlink-console">QGroundControl MAVLink Console</h3>
+<p>You can also use the <em>QGroundControl MAVLink Console</em> to observe the <code>distance_sensor</code> uORB topic:</p>
+<pre><code class="lang-sh">listener distance_sensor 5
+</code></pre>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> The <em>QGroundControl MAVLink Console</em> works when connected to Pixhawk or other NuttX targets, but not the Simulator. On the Simulator you can run the commands directly in the terminal.</p>
+</blockquote>
+<p>For more information see: <a href="https://dev.px4.io/en/debug/sensor_uorb_topic_debugging.html" target="_blank">Sensor/Topic Debugging using the Listener Command</a> (PX4 Development Guide).</p>
+<h2 id="simulation">Simulation</h2>
+<p>Lidar and sonar rangefinders can be used in the <a href="https://dev.px4.io/en/simulation/gazebo.html" target="_blank">Gazebo Simulator</a> (PX4 Development Guide).
+To do this you must start the simulator using a vehicle model that includes the rangefinder.</p>
+<p>The iris optical flow model includes a Lidar rangefinder:</p>
+<pre><code class="lang-sh">make posix_sitl_default gazebo_iris_opt_flow
+</code></pre>
+<p>The typhoon_h480 includes a sonar rangefinder:</p>
+<pre><code class="lang-sh">make posix_sitl_default gazebo_typhoon_h480
+</code></pre>
+<p>If you need to use a different vehicle you can include the model in its configuration file. You can see how in the respective Iris and Typhoon configuration files:</p>
+<ul>
+<li><a href="https://github.com/PX4/sitl_gazebo/blob/master/models/iris_opt_flow/iris_opt_flow.sdf" target="_blank">iris_opt_flow.sdf</a><pre><code class="lang-xml">  <span class="hljs-tag">&lt;<span class="hljs-name">include</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">uri</span>&gt;</span>model://sonar<span class="hljs-tag">&lt;/<span class="hljs-name">uri</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">joint</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;sonar_joint&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;revolute&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">child</span>&gt;</span>sonar_model::link<span class="hljs-tag">&lt;/<span class="hljs-name">child</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">parent</span>&gt;</span>typhoon_h480::base_link<span class="hljs-tag">&lt;/<span class="hljs-name">parent</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">axis</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xyz</span>&gt;</span>0 0 1<span class="hljs-tag">&lt;/<span class="hljs-name">xyz</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">limit</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">upper</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">upper</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">lower</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">lower</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">limit</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">axis</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">joint</span>&gt;</span>
+</code></pre>
+</li>
+<li><a href="https://github.com/PX4/sitl_gazebo/blob/master/models/typhoon_h480/typhoon_h480.sdf#L1144" target="_blank">typhoon_h480.sdf</a><pre><code class="lang-xml">  <span class="hljs-tag">&lt;<span class="hljs-name">include</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">uri</span>&gt;</span>model://lidar<span class="hljs-tag">&lt;/<span class="hljs-name">uri</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">pose</span>&gt;</span>-0.12 0 0 0 3.1415 0<span class="hljs-tag">&lt;/<span class="hljs-name">pose</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">joint</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;lidar_joint&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;revolute&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">child</span>&gt;</span>lidar::link<span class="hljs-tag">&lt;/<span class="hljs-name">child</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">parent</span>&gt;</span>iris::base_link<span class="hljs-tag">&lt;/<span class="hljs-name">parent</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">axis</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">xyz</span>&gt;</span>0 0 1<span class="hljs-tag">&lt;/<span class="hljs-name">xyz</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">limit</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">upper</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">upper</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">lower</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">lower</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">limit</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">axis</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">joint</span>&gt;</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="further-information">Further Information</h2>
+<ul>
+<li><a href="https://pixhawk.org/peripherals/rangefinder" target="_blank">Rangefinder</a> (Pixhawk.org) - Rangefinders supported by Pixhawk</li>
+</ul>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-06-14 01:58:55 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../telemetry/telemetry_wifi.html" class="navigation navigation-prev " aria-label="Previous page: Telemetry Wifi">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="sfxx_lidar.html" class="navigation navigation-next " aria-label="Next page: Lightware SFxx Lidar">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Rangerfinders","level":"1.9.7","depth":2,"next":{"title":"Lightware SFxx Lidar","level":"1.9.7.1","depth":3,"path":"sensor/sfxx_lidar.md","ref":"sensor/sfxx_lidar.md","articles":[]},"previous":{"title":"Telemetry Wifi","level":"1.9.6.2","depth":3,"path":"telemetry/telemetry_wifi.md","ref":"telemetry/telemetry_wifi.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"sensor/rangefinders.md","mtime":"2018-06-14T01:58:55.127Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-14T06:00:33.871Z"},"basePath":"..","book":{"language":"en"}});
+        });
+    </script>
+</div>
+
+    
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
