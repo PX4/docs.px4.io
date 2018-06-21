@@ -2183,8 +2183,9 @@
                                 
                                 <h1 id="multicopter-pid-tuning-guide">Multicopter PID Tuning Guide</h1>
 <p>This tutorial explains how to tune the PID loops on PX4 for all <a href="../airframes/airframe_reference.html#copter">multicopter setups</a> (Quads, Hexa, Octo etc).</p>
-<p>Tuning is required when creating a new airframe type or modifying an existing supported frame. Generally if you&apos;re using a <a href="../airframes/airframe_reference.html#copter">supported specific configuration</a> (e.g. using an airframe in <a href="../config/airframe.html">QGroundControl &gt; Airframe</a>), where all components are fixed, the default tuning should work.
-To get the best performance it is usually good to tune a new vehicle, as for example using other ESCs or motors will require different tuning gains.</p>
+<p>Generally if you&apos;re using a <a href="../airframes/airframe_reference.html#copter">supported specific configuration</a> (e.g. using an airframe in <a href="../config/airframe.html">QGroundControl &gt; Airframe</a>) the default tuning should be sufficient to fly the vehicle safely.
+To get the very best performance it is usually good to tune a new vehicle. 
+For example, different ESCs or motors require different tuning gains for optimal flight.</p>
 <blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
 <p> This guide is for advanced users. Un- or partially- tuned vehicles are likely to be unstable, and easy to crash.
 Make sure to have a Kill-switch assigned.</p>
@@ -2193,8 +2194,8 @@ Make sure to have a Kill-switch assigned.</p>
 <p>PX4 uses <strong>P</strong>roportional, <strong>I</strong>ntegral, <strong>D</strong>erivative (PID) controllers, which are the most widespread control technique. </p>
 <p>The controllers are layered, which means a higher-level controller passes its
 results to a lower-level controller. The lowest-level controller is the the <strong>rate
-controller</strong>, then there is the <strong>attitude contoller</strong>, and then the <strong>position
-controller</strong>.
+controller</strong>, then there is the <strong>attitude contoller</strong>, and then the <strong>velocity
+&amp; position controller</strong>.
 The PID tuning needs to be done in the same order, starting with the rate
 controller, as it will affect all other controllers.</p>
 <h2 id="preconditions">Preconditions</h2>
@@ -2233,8 +2234,9 @@ Typically increase gains by 20-30% per iteration, reducing to 5-10% for final fi
 <li>Pitch rate control (<a href="parameter_reference.html#MC_PITCHRATE_P">MC_PITCHRATE_P</a>, <a href="parameter_reference.html#MC_PITCHRATE_I">MC_PITCHRATE_I</a>, <a href="parameter_reference.html#MC_PITCHRATE_D">MC_PITCHRATE_D</a>)</li>
 <li>Yaw rate control (<a href="parameter_reference.html#MC_YAWRATE_P">MC_YAWRATE_P</a>, <a href="parameter_reference.html#MC_YAWRATE_I">MC_YAWRATE_I</a>, <a href="parameter_reference.html#MC_YAWRATE_D">MC_YAWRATE_D</a>)</li>
 </ul>
-<p>A well-tuned rate controller is very important as it affects all flight modes.
-The difference between a badly and a well tuned rate controller is, for example, easily noticeable in <a href="../flight_modes/position_mc.html">Position mode</a>.</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> A well-tuned rate controller is very important as it affects <em>all</em> flight modes. A badly tuned rate controller will be visible in <a href="../flight_modes/position_mc.html">Position mode</a>, for example, as &quot;twitches&quot; (the vehicle will not hold perfectly still in the air).</p>
+</blockquote>
 <p>The rate controller can be tuned in <a href="../flight_modes/acro_mc.html">Acro mode</a> or <a href="../flight_modes/manual_stabilized_mc.html">Manual/Stabilized mode</a>:</p>
 <ul>
 <li><em>Acro mode</em> is preferred, but is harder to fly. If you choose this mode, disable all stick expo:<ul>
@@ -2362,7 +2364,7 @@ Look at `ATTITUDE.yaw` in *QGroundControl*. Yaw overshoot should be not more
 than 2-5% (which is less than the overshoot for roll and pitch angles).
 -->
 <!-- TODO
-### Position Control
+### Velocity & Position Controller
 The PID-Gains should be chosen such that tracking is as tight as possible. Before doing any position/velocity control related tuning,
 turn off all [higher-level position controller tuning gains](advanced_mc_position_tuning.md).
 
@@ -2375,13 +2377,13 @@ turn off all [higher-level position controller tuning gains](advanced_mc_positio
 - [MPC_JERK_MIN](parameter_reference.md#MPC_JERK_MIN) : 1
  -->
 <h3 id="airmode">Airmode &amp; Mixer Saturation </h3>
-<p>The rate controller outputs roll, pitch, yaw and thrust commands, which need to be converted into individual motor thrust commands. 
+<p>The rate controller outputs torque commands for all three axis (roll, pitch and yaw) and a scalar thrust value, which need to be converted into individual motor thrust commands. 
 This step is called mixing.</p>
 <p>It can happen that one of the motor commands becomes negative, for example for a low thrust and large roll command (and similarly it can go above 100%). 
 This is a mixer saturation. 
 It is physically impossible for the vehicle to execute these commands (except for reversible motors). PX4 has two modes to resolve this:</p>
 <ul>
-<li>Either by reducing the commanded roll such that none of the motor commands is
+<li>Either by reducing the commanded torque for roll such that none of the motor commands is
 below zero (Airmode disabled). In the extreme case where the commanded thrust
 is zero, it means that no attitude correction is possible anymore, which is
 why a minimum thrust is always required for this mode.</li>
@@ -2396,8 +2398,8 @@ it can happen when the vehicle strongly oscillates due to too high P tuning
 gains.</p>
 </li>
 </ul>
-<p>Both modes are shown below with a 2D illustration for two motors and a roll
-command <span style="color:#9673A6">r</span>. On the left motor
+<p>Both modes are shown below with a 2D illustration for two motors and a torque
+command for roll <span style="color:#9673A6">r</span>. On the left motor
 <span style="color:#9673A6">r</span> is added to the commanded thrust, while on
 the right motor it is substracted from it.
 The motor thrusts are in <span style="color:#6A9153">green</span>.
@@ -2408,9 +2410,9 @@ With Airmode enabled, the commanded thrust is increased by
 <!-- The drawing is on draw.io: https://drive.google.com/file/d/1N0qjbiJX6JuEk2I1-xFvigLEPKJRIjBP/view?usp=sharing
      On the first Tab
 --></p>
-<p>If mixing becomes saturated towards the upper bound, the Airmode logic is always used (the commanded thrust is reduced).</p>
+<p>If mixing becomes saturated towards the upper bound the commanded thrust is reduced to ensure that no motor is commanded to deliver more than 100% thrust. This behaviour is similar to the Airmode logic, and is applied whether Airmode is enabled or disabled.</p>
 <p>Once your vehicle flies well you can enable Airmode via the <a href="parameter_reference.html#MC_AIRMODE">MC_AIRMODE</a> parameter.</p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-06-19 06:38:53 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-06-21 05:50:16 </span> </footer>
                                 
                                 </section>
                             
@@ -2453,7 +2455,7 @@ With Airmode enabled, the commanded thrust is increased by
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Multicopter PID Tuning Guide","level":"1.8.3","depth":2,"next":{"title":"Multicopter Advanced Tuning Guide","level":"1.8.4","depth":2,"path":"advanced_config/advanced_mc_position_tuning.md","ref":"advanced_config/advanced_mc_position_tuning.md","articles":[]},"previous":{"title":"ESC Calibration","level":"1.8.2","depth":2,"path":"advanced_config/esc_calibration.md","ref":"advanced_config/esc_calibration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"advanced_config/pid_tuning_guide_multicopter.md","mtime":"2018-06-19T06:38:53.561Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-19T06:40:28.331Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Multicopter PID Tuning Guide","level":"1.8.3","depth":2,"next":{"title":"Multicopter Advanced Tuning Guide","level":"1.8.4","depth":2,"path":"advanced_config/advanced_mc_position_tuning.md","ref":"advanced_config/advanced_mc_position_tuning.md","articles":[]},"previous":{"title":"ESC Calibration","level":"1.8.2","depth":2,"path":"advanced_config/esc_calibration.md","ref":"advanced_config/esc_calibration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"advanced_config/pid_tuning_guide_multicopter.md","mtime":"2018-06-21T05:50:16.988Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-21T05:52:17.988Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
