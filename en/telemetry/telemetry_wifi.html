@@ -77,7 +77,7 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../sensor/rangefinders.html" />
+    <link rel="next" href="3dr_telemetry_wifi.html" />
     
     
     <link rel="prev" href="sik_radio.html" />
@@ -314,20 +314,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="../assembly/quick_start_pixhawk_mini.html">
-            
-                <a href="../assembly/quick_start_pixhawk_mini.html">
-            
-                    
-                    Pixhawk Mini Wiring Quickstart
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.5" data-path="../assembly/quick_start_pixracer.html">
+        <li class="chapter " data-level="1.3.4" data-path="../assembly/quick_start_pixracer.html">
             
                 <a href="../assembly/quick_start_pixracer.html">
             
@@ -340,7 +327,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.6" data-path="../assembly/quick_start_pixhawk.html">
+        <li class="chapter " data-level="1.3.5" data-path="../assembly/quick_start_pixhawk.html">
             
                 <a href="../assembly/quick_start_pixhawk.html">
             
@@ -1534,6 +1521,25 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.2.2.1" data-path="3dr_telemetry_wifi.html">
+            
+                <a href="3dr_telemetry_wifi.html">
+            
+                    
+                    3DR Telemetry Wifi (Discontinued)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
 
@@ -1865,20 +1871,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.1.11" data-path="../flight_controller/pixhawk_mini.html">
-            
-                <a href="../flight_controller/pixhawk_mini.html">
-            
-                    
-                    Pixhawk Mini
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.10.1.12" data-path="../flight_controller/pixhawk3_pro.html">
+        <li class="chapter " data-level="1.10.1.11" data-path="../flight_controller/pixhawk3_pro.html">
             
                 <a href="../flight_controller/pixhawk3_pro.html">
             
@@ -1891,7 +1884,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.1.13" data-path="../flight_controller/pixhack_v3.html">
+        <li class="chapter " data-level="1.10.1.12" data-path="../flight_controller/pixhack_v3.html">
             
                 <a href="../flight_controller/pixhack_v3.html">
             
@@ -1904,7 +1897,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.1.14" data-path="../flight_controller/pixhawk4.html">
+        <li class="chapter " data-level="1.10.1.13" data-path="../flight_controller/pixhawk4.html">
             
                 <a href="../flight_controller/pixhawk4.html">
             
@@ -1917,12 +1910,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.1.15" data-path="../flight_controller/pixhack_v5.html">
+        <li class="chapter " data-level="1.10.1.14" data-path="../flight_controller/pixhack_v5.html">
             
                 <a href="../flight_controller/pixhack_v5.html">
             
                     
                     Pixhack v5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.15" data-path="../flight_controller/pixhawk_mini.html">
+            
+                <a href="../flight_controller/pixhawk_mini.html">
+            
+                    
+                    Pixhawk Mini (Discontinued)
             
                 </a>
             
@@ -2246,17 +2252,14 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="wifi-telemetry-radio">WiFi Telemetry Radio</h1>
-<p>WiFi telemetry enables MAVLink communication between a WiFi radio on a vehicle and a GCS.  WiFi typically offers shorter range than a normal telemetry radio, but supports higher data rates, and makes it easier to support FPV/video feeds. Usually only a single radio unit for the vehicle is needed (assuming the ground station already has WiFi).</p>
+<p>WiFi telemetry enables MAVLink communication between a WiFi radio on a vehicle and a GCS.<br>WiFi typically offers shorter range than a normal telemetry radio, but supports higher data rates, and makes it easier to support FPV/video feeds. 
+Usually only a single radio unit for the vehicle is needed (assuming the ground station already has WiFi).</p>
 <p>PX4 supports telemetry via UDP and Wifi. It broadcasts a heartbeat to port 14550 on 255.255.255.255 until it receives the first heartbeat from a ground control station, at which point it will only send data to this ground control station.</p>
-<h2 id="3dr-wifi-telemetry">3DR WiFi Telemetry</h2>
-<p>The <a href="https://store.3dr.com/products/wifi-telemetry-radio" target="_blank">3DR WiFi Telemetry Radio</a> is supported by PX4. Simply connect it to the flight controller&apos;s <code>TELEM1</code> port to create a WiFi &quot;hotspot&quot; for the vehicle with the details below:</p>
-<pre><code class="lang-sh">essid: APM_PIX
-password: 12345678
-</code></pre>
-<p>Connect your ground control station to the above WiFi SSID. After connecting the vehicle should automatically be detected and connect to <em>QGroundControl</em>.</p>
-<p><img src="../../assets/hardware/telemetry/3dr_telemetry_wifi_1.jpg" alt="3DR Wifi Telemetry Radio 1">
-<img src="../../assets/hardware/telemetry/3dr_telemetry_wifi_2.png" alt="3DR Wifi Telemetry Radio 2"></p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-06-25 07:54:59 </span> </footer>
+<p>Available Wifi Telemetry modules include:</p>
+<ul>
+<li><a href="3dr_telemetry_wifi.html">3DR Telemetry Wifi</a> (Discontinued)</li>
+</ul>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-06-25 11:00:12 </span> </footer>
                                 
                                 </section>
                             
@@ -2288,7 +2291,7 @@ password: 12345678
                 </a>
                 
                 
-                <a href="../sensor/rangefinders.html" class="navigation navigation-next " aria-label="Next page: Distance Sensors (Rangerfinders)">
+                <a href="3dr_telemetry_wifi.html" class="navigation navigation-next " aria-label="Next page: 3DR Telemetry Wifi (Discontinued)">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -2299,7 +2302,7 @@ password: 12345678
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Telemetry Wifi","level":"1.9.2.2","depth":3,"next":{"title":"Distance Sensors (Rangerfinders)","level":"1.9.3","depth":2,"path":"sensor/rangefinders.md","ref":"sensor/rangefinders.md","articles":[{"title":"Lightware SFxx Lidar","level":"1.9.3.1","depth":3,"path":"sensor/sfxx_lidar.md","ref":"sensor/sfxx_lidar.md","articles":[]},{"title":"uLanding Radar","level":"1.9.3.2","depth":3,"path":"sensor/ulanding_radar.md","ref":"sensor/ulanding_radar.md","articles":[]},{"title":"LeddarOne Lidar","level":"1.9.3.3","depth":3,"path":"sensor/leddar_one.md","ref":"sensor/leddar_one.md","articles":[]}]},"previous":{"title":"SiK Radio","level":"1.9.2.1","depth":3,"path":"telemetry/sik_radio.md","ref":"telemetry/sik_radio.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"telemetry/telemetry_wifi.md","mtime":"2018-06-25T07:54:59.208Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-25T07:56:10.735Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Telemetry Wifi","level":"1.9.2.2","depth":3,"next":{"title":"3DR Telemetry Wifi (Discontinued)","level":"1.9.2.2.1","depth":4,"path":"telemetry/3dr_telemetry_wifi.md","ref":"telemetry/3dr_telemetry_wifi.md","articles":[]},"previous":{"title":"SiK Radio","level":"1.9.2.1","depth":3,"path":"telemetry/sik_radio.md","ref":"telemetry/sik_radio.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"telemetry/telemetry_wifi.md","mtime":"2018-06-25T11:00:12.833Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-25T11:01:34.593Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
