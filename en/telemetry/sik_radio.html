@@ -77,7 +77,7 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="telemetry_wifi.html" />
+    <link rel="next" href="rfd900_telemetry.html" />
     
     
     <link rel="prev" href="./" />
@@ -1508,6 +1508,51 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.2.1.1" data-path="rfd900_telemetry.html">
+            
+                <a href="rfd900_telemetry.html">
+            
+                    
+                    RFD900 (SiK) Telemetry Radio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2.1.2" data-path="hkpilot_sik_radio.html">
+            
+                <a href="hkpilot_sik_radio.html">
+            
+                    
+                    HKPilot (SIK) Telemetry Radio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2.1.3" data-path="holybro_sik_radio.html">
+            
+                <a href="holybro_sik_radio.html">
+            
+                    
+                    HolyBro (SIK) Telemetry Radio
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="1.9.2.2" data-path="telemetry_wifi.html">
@@ -1524,7 +1569,20 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.9.2.2.1" data-path="3dr_telemetry_wifi.html">
+        <li class="chapter " data-level="1.9.2.2.1" data-path="esp8266_wifi_module.html">
+            
+                <a href="esp8266_wifi_module.html">
+            
+                    
+                    ESP8266 WiFi Module
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2.2.2" data-path="3dr_telemetry_wifi.html">
             
                 <a href="3dr_telemetry_wifi.html">
             
@@ -1593,6 +1651,19 @@
             
                     
                     LeddarOne Lidar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3.4" data-path="../sensor/lidar_lite.html">
+            
+                <a href="../sensor/lidar_lite.html">
+            
+                    
+                    Lidar-Lite
             
                 </a>
             
@@ -2253,17 +2324,19 @@
                                 
                                 <h1 id="sik-radio">SiK Radio</h1>
 <p><a href="https://github.com/LorenzMeier/SiK" target="_blank">SiK radio</a> is a collection of firmware and tools for telemetry radios.</p>
-<p>Hardware for the SiK radio can be obtained from various manufacturers/stores in variants that support different range and form factors. Typically you will need a pair of devices - one for the vehicle and one for the ground station. </p>
-<h2 id="vendors">Purchase </h2>
+<p>PX4 is protocol-compatible with radios that use <em>SiK</em>.
+SiK Radios often come with appropriate connectors/cables allowing them to be directly connected to <a href="../flight_controller/pixhawk_series.html">Pixhawk Series</a> controllers
+(in some cases you may need to obtain an appropriate cable/connector).
+Typically you will need a pair of devices - one for the vehicle and one for the ground station.</p>
+<p>Hardware for the SiK radio can be obtained from various manufacturers/stores in variants that support different range and form factors.</p>
+<p><img src="../../assets/hardware/telemetry/holybro_sik_radio.jpg" alt="SiK Radio"></p>
+<h2 id="vendors">Vendors </h2>
 <ul>
-<li><a href="http://www.hobbyking.com/hobbyking/store/uh_viewitem.asp?idproduct=55559" target="_blank">HK Radio</a> (small)</li>
-<li><a href="http://rfdesign.com.au/products/rfd900u-modem/" target="_blank">RFD900u</a> (small)</li>
-<li><a href="http://rfdesign.com.au/products/rfd900-modem/" target="_blank">RFD900</a> (long range)</li>
+<li><a href="rfd900_telemetry.html">RFD900 Telemetry Radio</a></li>
+<li><a href="hkpilot_sik_radio.html">HKPilot Telemetry Radio</a></li>
+<li><a href="holybro_sik_radio.html">Holybro Telemetry Radio</a></li>
+<li><del><em>3DR Telemetry Radio</em></del> (Discontinued)</li>
 </ul>
-<p><img src="../../assets/hardware/telemetry/sik_radio.jpg" alt="SiK Radio"></p>
-<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
-<p> The <em>3DR Telemetry Radio</em> has been discontinued.</p>
-</blockquote>
 <h2 id="setupconfiguration">Setup/Configuration</h2>
 <p>The ground station-based radio is connected via USB (essentially plug-n-play). </p>
 <p>The vehicle-based radio is connected to the flight-controller&apos;s <code>TELEM1</code> port, and typically requires no further configuration.</p>
@@ -2272,7 +2345,7 @@
 <p>You can update the radio firmware using <em>QGroundControl</em>: <a href="https://docs.qgroundcontrol.com/en/SetupView/Firmware.html" target="_blank">QGroundControl User Guide &gt; Loading Firmware</a>.</p>
 <h2 id="advanced-setupconfiguration">Advanced Setup/Configuration</h2>
 <p>The PX4 Developer Guide has <a href="https://dev.px4.io/en/data_links/sik_radio.html" target="_blank">additional information</a> about building firmware and AT-command based configuration. This should not be required by non-developers.</p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-06-28 00:51:33 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-06-28 09:42:38 </span> </footer>
                                 
                                 </section>
                             
@@ -2304,7 +2377,7 @@
                 </a>
                 
                 
-                <a href="telemetry_wifi.html" class="navigation navigation-next " aria-label="Next page: Telemetry Wifi">
+                <a href="rfd900_telemetry.html" class="navigation navigation-next " aria-label="Next page: RFD900 (SiK) Telemetry Radio">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -2315,7 +2388,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"SiK Radio","level":"1.9.2.1","depth":3,"next":{"title":"Telemetry Wifi","level":"1.9.2.2","depth":3,"path":"telemetry/telemetry_wifi.md","ref":"telemetry/telemetry_wifi.md","articles":[{"title":"3DR Telemetry Wifi (Discontinued)","level":"1.9.2.2.1","depth":4,"path":"telemetry/3dr_telemetry_wifi.md","ref":"telemetry/3dr_telemetry_wifi.md","articles":[]}]},"previous":{"title":"Telemetry Radios","level":"1.9.2","depth":2,"path":"telemetry/README.md","ref":"telemetry/README.md","articles":[{"title":"SiK Radio","level":"1.9.2.1","depth":3,"path":"telemetry/sik_radio.md","ref":"telemetry/sik_radio.md","articles":[]},{"title":"Telemetry Wifi","level":"1.9.2.2","depth":3,"path":"telemetry/telemetry_wifi.md","ref":"telemetry/telemetry_wifi.md","articles":[{"title":"3DR Telemetry Wifi (Discontinued)","level":"1.9.2.2.1","depth":4,"path":"telemetry/3dr_telemetry_wifi.md","ref":"telemetry/3dr_telemetry_wifi.md","articles":[]}]}]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"telemetry/sik_radio.md","mtime":"2018-06-28T00:51:33.814Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-28T00:52:32.985Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"SiK Radio","level":"1.9.2.1","depth":3,"next":{"title":"RFD900 (SiK) Telemetry Radio","level":"1.9.2.1.1","depth":4,"path":"telemetry/rfd900_telemetry.md","ref":"telemetry/rfd900_telemetry.md","articles":[]},"previous":{"title":"Telemetry Radios","level":"1.9.2","depth":2,"path":"telemetry/README.md","ref":"telemetry/README.md","articles":[{"title":"SiK Radio","level":"1.9.2.1","depth":3,"path":"telemetry/sik_radio.md","ref":"telemetry/sik_radio.md","articles":[{"title":"RFD900 (SiK) Telemetry Radio","level":"1.9.2.1.1","depth":4,"path":"telemetry/rfd900_telemetry.md","ref":"telemetry/rfd900_telemetry.md","articles":[]},{"title":"HKPilot (SIK) Telemetry Radio","level":"1.9.2.1.2","depth":4,"path":"telemetry/hkpilot_sik_radio.md","ref":"telemetry/hkpilot_sik_radio.md","articles":[]},{"title":"HolyBro (SIK) Telemetry Radio","level":"1.9.2.1.3","depth":4,"path":"telemetry/holybro_sik_radio.md","ref":"telemetry/holybro_sik_radio.md","articles":[]}]},{"title":"Telemetry Wifi","level":"1.9.2.2","depth":3,"path":"telemetry/telemetry_wifi.md","ref":"telemetry/telemetry_wifi.md","articles":[{"title":"ESP8266 WiFi Module","level":"1.9.2.2.1","depth":4,"path":"telemetry/esp8266_wifi_module.md","ref":"telemetry/esp8266_wifi_module.md","articles":[]},{"title":"3DR Telemetry Wifi (Discontinued)","level":"1.9.2.2.2","depth":4,"path":"telemetry/3dr_telemetry_wifi.md","ref":"telemetry/3dr_telemetry_wifi.md","articles":[]}]}]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"telemetry/sik_radio.md","mtime":"2018-06-28T09:42:38.133Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-28T09:43:47.160Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
