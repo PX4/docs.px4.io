@@ -2336,7 +2336,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="crazyflie-20">Crazyflie 2.0</h1>
-<p>The Crazyflie line of micro quads was created by Bitcraze AB. An overview of the Crazyflie 2 (CF2) can be <a href="https://www.bitcraze.io/crazyflie-2/" target="_blank">found here</a>.</p>
+<p>The Crazyflie line of micro quads was created by Bitcraze AB. An overview of the Crazyflie 2.0 can be <a href="https://www.bitcraze.io/crazyflie-2/" target="_blank">found here</a>.</p>
 <p><img src="../../assets/hardware/hardware-crazyflie2.png" alt="Crazyflie2 Image"></p>
 <h2 id="quick-summary">Quick Summary</h2>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
@@ -2354,130 +2354,129 @@
 </ul>
 <h2 id="where-to-buy">Where to Buy</h2>
 <ul>
-<li><a href="https://store.bitcraze.io/collections/kits/products/crazyflie-2-0" target="_blank">Crazyflie 2.0</a></li>
-<li><a href="https://store.bitcraze.io/collections/kits/products/crazyradio-pa" target="_blank">Crazyradio PA 2.4 GHz USB dongle</a>: used for wireless communication between <em>QGroundControl</em> (QGC) and CF2.</li>
+<li><a href="https://store.bitcraze.io/collections/kits/products/crazyflie-2-0" target="_blank">Crazyflie 2.0</a>.</li>
+<li><a href="https://store.bitcraze.io/collections/kits/products/crazyradio-pa" target="_blank">Crazyradio PA 2.4 GHz USB dongle</a>: used for wireless communication between <em>QGroundControl</em> and Crazyflie 2.0.</li>
 <li><a href="https://store.bitcraze.io/collections/decks/products/breakout-deck" target="_blank">Breakout deck</a>: breakout expansion board for connecting new peripherals. </li>
 <li><a href="https://store.bitcraze.io/collections/decks/products/flow-deck" target="_blank">Flow deck</a>: contains an optical flow sensor to measure movements of the ground and a distance sensor to measure the distance to the ground. This will be useful for precise altitude and position control.</li>
 <li><a href="https://store.bitcraze.io/collections/decks/products/z-ranger-deck" target="_blank">Z-ranger deck</a> has the same distance sensor as the Flow deck to measure the distance to the ground. This will be useful for precise altitude control.</li>
 <li><a href="https://store.bitcraze.io/collections/decks/products/sd-card-deck" target="_blank">SD-card deck</a>: used for high speed onboard logging to a micro SD card.</li>
-<li><a href="https://www.logitechg.com/en-ch/product/f310-gamepad" target="_blank">Logitech Joystick</a></li>
+<li><a href="https://www.logitechg.com/en-ch/product/f310-gamepad" target="_blank">Logitech Joystick</a>.</li>
 </ul>
 <h2 id="flashing-px4">Flashing PX4</h2>
-<p>After setting up the PX4 development environment, follow these steps to put the PX4 software on the CF2:</p>
+<p>After setting up the PX4 development environment, follow these steps to install the PX4 Autopilot on the Crazyflie 2.0:</p>
 <ol>
-<li>Grab source code of the PX4 <a href="https://github.com/PX4/Bootloader" target="_blank">Bootloader</a></li>
-<li>Compile it using:<pre><code>make crazyflie_bl
+<li>Download the source code of the PX4 Bootloader:<pre><code>git clone https://github.com/PX4/Bootloader.git
 </code></pre></li>
-<li>Put the CF2 into DFU mode by following these steps:<ul>
+<li>Navigate into the top directory of the source code and compile it using:<pre><code>make crazyflie_bl
+</code></pre></li>
+<li><p>Put the Crazyflie 2.0 into DFU mode by following these steps:</p>
+<ul>
 <li>Ensure it is initially unpowered.</li>
-<li>Hold down button.</li>
+<li>Hold down the reset button (see figure below...).</li>
 <li>Plug into computer&apos;s USB port.</li>
 <li>After a second, the blue LED should start blinking and after 5 seconds should start blinking faster.</li>
 <li>Release button.</li>
 </ul>
 </li>
-<li>Flash bootloader using <em>dfu-util</em> and unplug CF2 when done: <pre><code>sudo dfu-util -d 0483:df11 -a 0 -s 0x08000000 -D ./build/crazyflie_bl/crazyflie_bl.bin
-</code></pre>If successful, then the yellow LED should blink when plugging in again</li>
-<li>Grab the <a href="https://github.com/PX4/Firmware" target="_blank">Firmware</a></li>
-<li>Compile it using:<pre><code>make crazyflie_default upload
+<li><p>Install <em>dfu-util</em>:</p>
+<pre><code>sudo apt-get update
+sudo apt-get install dfu-util
 </code></pre></li>
-<li>When prompted to plug in device, plug in CF2. 
+<li><p>Flash bootloader using <em>dfu-util</em> and unplug Crazyflie 2.0 when done: </p>
+<pre><code>sudo dfu-util -d 0483:df11 -a 0 -s 0x08000000 -D ./build/crazyflie_bl/crazyflie_bl.bin
+</code></pre><p>When powering on the Crazyflie 2.0 the yellow LED should blink.</p>
+</li>
+<li><p>Download the source code of the PX4 autopilot:</p>
+<pre><code>git clone https://github.com/PX4/Firmware.git
+</code></pre></li>
+<li>Navigate into the top directory of the source code and compile it using:<pre><code>make crazyflie_default upload
+</code></pre></li>
+<li>When prompted to plug in device, plug in Crazyflie 2.0. 
 The yellow LED should start blinking indicating bootloader mode. 
 Then the red LED should turn on indicating that the flashing process has started.</li>
 <li>Wait for completion.</li>
-<li>Done! Calibrate via QGC.</li>
+<li>Done! Calibrate the sensors using <a href="https://docs.qgroundcontrol.com/en/SetupView/Sensors.html" target="_blank">QGroundControl</a>.</li>
 </ol>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
-<p> If QGC does not connect with the vehicle, ensure that in <a href="https://github.com/PX4/Firmware/blob/master/platforms/nuttx/nuttx-configs/crazyflie/nsh/defconfig#L934" target="_blank">nuttx-config</a> for crazyflie <code># CONFIG_DEV_LOWCONSOLE is not set</code> is replaced by <code>CONFIG_DEV_LOWCONSOLE=y</code></p>
+<p> If QGroundControl does not connect with the vehicle, ensure that in <a href="https://github.com/PX4/Firmware/blob/master/platforms/nuttx/nuttx-configs/crazyflie/nsh/defconfig#L934" target="_blank">nuttx-config</a> for crazyflie <code># CONFIG_DEV_LOWCONSOLE is not set</code> is replaced by <code>CONFIG_DEV_LOWCONSOLE=y</code></p>
 </blockquote>
 <h2 id="wireless-setup-instructions">Wireless Setup Instructions</h2>
 <p>The onboard nRF module allows connecting to the board via Bluetooth or through the proprietary 2.4GHz Nordic ESB protocol.</p>
 <ul>
 <li>A <a href="https://www.bitcraze.io/crazyradio-pa/" target="_blank">Crazyradio PA</a> is recommended.</li>
-<li>To fly the CF2 right away, the Crazyflie phone app is supported via Bluetooth</li>
+<li>To fly the Crazyflie 2.0 right away, the Crazyflie phone app is supported via Bluetooth.</li>
 </ul>
 <p>Using the official Bitcraze <strong>Crazyflie phone app</strong>:</p>
 <ul>
-<li>Connect via Bluetooth</li>
-<li>Change mode in settings to 1 or 2</li>
-<li>Calibrate via QGC</li>
+<li>Connect via Bluetooth.</li>
+<li>Change mode in settings to 1 or 2.</li>
+<li>Calibrate via QGroundControl.</li>
 </ul>
 <p>Connecting via <strong>MAVLink</strong>:</p>
 <ul>
-<li>Use a Crazyradio PA alongside a compatible GCS</li>
-<li>Clone the <a href="https://github.com/bitcraze/crazyflie-lib-python" target="_blank">crazyflie-lib-python</a></li>
+<li><p>Use a Crazyradio PA alongside a compatible GCS.</p>
+</li>
+<li><p>Download the <em>crazyflie-lib-python</em> source code:</p>
+<pre><code> git clone https://github.com/bitcraze/crazyflie-lib-python.git
+</code></pre></li>
 </ul>
-<p>We will use <a href="https://github.com/bitcraze/crazyflie-lib-python/blob/master/examples/cfbridge.py" target="_blank">cfbridge.py</a> to setup a wireless MAVlink communication link between CF2 (flashed with PX4) and QGC. <em>Cfbridge</em> enables QGC to communicate with the crazyradio PA. </p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
-<p> The <a href="https://github.com/dennisss/cfbridge" target="_blank">C based cfbridge</a> is currently experiencing data loss issues, which is why we have 
+<p> 
+We will use <a href="https://github.com/bitcraze/crazyflie-lib-python/blob/master/examples/cfbridge.py" target="_blank">cfbridge.py</a> to setup a wireless MAVlink communication link between Crazyflie 2.0 (flashed with PX4) and QGroundControl. <em>Cfbridge</em> enables QGroundControl to communicate with the crazyradio PA. 
+The <a href="https://github.com/dennisss/cfbridge" target="_blank">C based cfbridge</a> is currently experiencing data loss issues, which is why we have 
 chosen to use <strong>cfbridge.py</strong>.</p>
 </blockquote>
 <ul>
 <li>Make sure you have set the udev permissions to use the USB Radio. To do this, follow the steps listed <a href="https://github.com/bitcraze/crazyflie-lib-python#setting-udev-permissions" target="_blank">here</a> and <strong>restart</strong> your computer.</li>
 <li>Connect a Crazyradio PA via USB.</li>
-<li>Build a <a href="https://virtualenv.pypa.io/en/latest/" target="_blank">virtualenv (local python environment)</a> with package dependencies using one of the following methods:</li>
-</ul>
-<p><strong>Method 1:</strong> 
-For systems that support <a href="https://www.gnu.org/software/make/manual/html_node/Simple-Makefile.html" target="_blank">make</a>, follow this alternative:</p>
-<ul>
-<li><code>pip install tox</code></li>
-<li>Navigate to the crazyflie-lib-python folder.</li>
-<li><code>make venv</code></li>
-<li>Activate the virtual environment: <code>source venv-cflib/bin/activate</code></li>
-</ul>
-<p><strong>Method 2:</strong></p>
-<ul>
-<li>Enter the following:<pre><code>pip install virtualenv
-pip install tox
+<li>Build a <a href="https://virtualenv.pypa.io/en/latest/" target="_blank">virtual environment (local python environment)</a> with package dependencies using the following method:<pre><code>  pip install tox
 </code></pre></li>
-<li>Navigate to the crazyflie-lib-python folder.</li>
-<li><code>pip install -e .</code></li>
-<li>Create the virtual environment<ul>
-<li>Linux: <code>virtualenv venv</code></li>
-<li>MacOS: <code>python -m virtualenv venv</code></li>
-</ul>
-</li>
-<li>Activate the virtual environment: <pre><code>source venv/bin/activate
+<li>Navigate to the crazyflie-lib-python folder and type: <pre><code>  make venv
 </code></pre></li>
-<li>Install required dependencies:<pre><code>pip install -r requirements.txt
+<li>Activate the virtual environment: <pre><code>  source venv-cflib/bin/activate
+</code></pre></li>
+<li>Install required dependencies:<pre><code>  pip install -r requirements.txt
 </code></pre></li>
 </ul>
-<p>To connect crazyflie with crazyradio, <strong>launch cfbridge</strong> by following these steps:</p>
+<p>To connect Crazyflie 2.0 with crazyradio, <strong>launch cfbridge</strong> by following these steps:</p>
 <ul>
-<li>Switch on CF2 (which is already flashed with PX4 firmware) by pressing its ON button and wait for it to boot up.</li>
-<li>Connect a Crazyradio PA via USB.</li>
+<li>Power off and power on Crazyflie 2.0 and wait for it to boot up.</li>
+<li>Connect a Crazyflie radio device via USB.</li>
 <li>Navigate to the crazyflie-lib-python folder.</li>
-<li>Activate the environment: <code>source venv-cflib/bin/activate</code> or <code>source venv/bin/activate</code> depending on the name of the venv folder you have.</li>
-<li><code>cd examples</code></li>
-<li>Launch cfbridge: <code>python cfbridge.py</code><blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<li>Activate the environment: <pre><code>  source venv-cflib/bin/activate
+</code></pre></li>
+<li>Navigate to the examples folder:<pre><code>  cd examples
+</code></pre></li>
+<li>Launch cfbridge: <pre><code>  python cfbridge.py
+</code></pre><blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> <em>Cfbridge</em> by default tries to initiate the radio link communication on channel 80 and with crazyflie address 0xE7E7E7E7E7. 
 If you are using <a href="https://github.com/dennisss/cfbridge/blob/master/README.md#advanced- 
-swarming" target="_blank">multiple crazyflies and/or crazyradios</a> in the same room and want to use a different channel and/or address for each, first connect the crazyflie with QGC via a USB
-cable and change the syslink parameters (channel, address) in QGC. Next, launch the cfbridge by giving the same channel and address as   the first and second arguments respectively, e.g: <code>python cfbridge.py 90 0x0202020202</code></p>
+swarming" target="_blank">multiple crazyflies and/or crazyradios</a> in the same room and want to use a different channel and/or address for each, first connect the crazyflie with QGroundControl via a USB
+cable and change the syslink parameters (channel, address) in QGroundControl. Next, launch the cfbridge by giving the same channel and address as   the first and second arguments respectively, e.g: <code>python cfbridge.py 90 0x0202020202</code></p>
 </blockquote>
 </li>
-<li>Open QGC.</li>
+<li>Open QGroundControl.</li>
 <li>After using <em>cfbridge</em>, you can deactivate the virtualenv if you activated it by pressing <code>CTRL+z</code>. Most of the time, launching <em>cfbridge</em> again from the same terminal doesn&apos;t connect to crazyflie, this can be solved by closing the terminal and relaunching <em>cfbridge</em> in a new terminal. </li>
 </ul>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> If you change any driver in <a href="https://github.com/bitcraze/crazyflie-lib-python" target="_blank">crazyflie-lib-python</a> 
 or if launching <em>cfbridge</em> in a new terminal does not find crazyflie, you can try navigating to the crazyflie-lib-python folder and 
-run <code>make venv</code> to rebuild cflib.</p>
-</blockquote>
+run the script below to rebuild cflib.</p>
+<pre><code>   make venv
+</code></pre></blockquote>
 <p><span></span></p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
-<p> To use Joystick, set COM_RC_IN_MODE in QGC to &quot;Joystick/No RC Checks&quot;. Calibrate the Joystick and set the Joystick 
-message frequency in QGC to any value between 5 to 14 Hz (10 Hz is recommended). This is the rate at which Joystick commands are 
-sent from QGC to CF2. (To do this, you will need to follow the instructions <a href="https://github.com/mavlink/qgroundcontrol" target="_blank">here</a> to 
-obtain the latest QGC source code (master) and build it.)</p>
+<p> To use Joystick, set COM_RC_IN_MODE in QGroundControl to &quot;Joystick/No RC Checks&quot;. Calibrate the Joystick and set the Joystick 
+message frequency in QGroundControl to any value between 5 to 14 Hz (10 Hz is recommended). To be able to set the frequency, the advanced option should be enabled. This is the rate at which Joystick commands are sent from QGroundControl to Crazyflie 2.0. (To do this, you will need to follow the instructions <a href="https://github.com/mavlink/qgroundcontrol" target="_blank">here</a> to 
+obtain the latest QGroundControl source code (master) and build it.)</p>
 </blockquote>
 <p><img src="../../assets/hardware/joystick-message-frequency.png" alt=""></p>
 <h2 id="hardware-setup">Hardware Setup</h2>
-<p>Crazyflie is able to fly with precise control in <a href="../flight_modes/manual_stabilized_mc.html">Stabilized mode</a>, <a href="../flight_modes/altitude_mc.html">Altitude mode</a> and <a href="../flight_modes/position_mc.html">Position mode</a>. </p>
+<p>Crazyflie 2.0 is able to fly with precise control in <a href="../flight_modes/manual_stabilized_mc.html">Stabilized mode</a>, <a href="../flight_modes/altitude_mc.html">Altitude mode</a> and <a href="../flight_modes/position_mc.html">Position mode</a>. </p>
 <ul>
 <li>You will need the <a href="https://store.bitcraze.io/collections/decks/products/z-ranger-deck" target="_blank">Z-ranger deck</a> to fly in <em>Altitude</em> mode. 
 If you also want to fly in the <em>Position</em> mode, it is recommended you buy the <a href="https://store.bitcraze.io/collections/decks/products/flow-deck" target="_blank">Flow deck</a> which also has the integrated Z-ranger sensor.</li>
-<li>The onboard barometer is highly susceptible to any external wind disturbances including those created by CF2&apos;s own propellers. Hence, we isolated the barometer with a piece of foam, and then mounted the distance sensor on top of it as shown below:</li>
+<li>The onboard barometer is highly susceptible to any external wind disturbances including those created by Crazyflie&apos;s own propellers. Hence, we isolated the barometer with a piece of foam, and then mounted the distance sensor on top of it as shown below:</li>
 </ul>
 <p><img src="../../assets/hardware/hardware-crazyflie-barometer.jpg" alt="Crazyflie barometer"></p>
 <p><img src="../../assets/hardware/hardware-crazyflie-baro-foam.jpg" alt="Crazyflie barometer foam"></p>
@@ -2486,125 +2485,18 @@ If you also want to fly in the <em>Position</em> mode, it is recommended you buy
 <p><img src="../../assets/hardware/hardware-crazyflie-sdcard.jpg" alt=""></p>
 <p>Then, you need to stick the battery on top of the SD card deck using a double sided tape:</p>
 <p><img src="../../assets/hardware/hardware-crazyflie-battery-setup.jpg" alt="Crazyflie battery setup"></p>
-<h2 id="adjust-parameters">Adjust Parameters</h2>
-<table>
-<thead>
-<tr>
-<th>Parameter Name</th>
-<th>Recommended Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>EKF2_HGT_MODE</td>
-<td>2   Range Sensor</td>
-</tr>
-<tr>
-<td>EKF2_AID_MASK</td>
-<td>3</td>
-</tr>
-<tr>
-<td>EKF2_OF_DELAY</td>
-<td>10</td>
-</tr>
-<tr>
-<td>MPC_THR_HOVER</td>
-<td>70 %</td>
-</tr>
-<tr>
-<td>MPC_MANTHR_MAX</td>
-<td>100 %</td>
-</tr>
-<tr>
-<td>MPC_THR_MAX</td>
-<td>100 %</td>
-</tr>
-<tr>
-<td>MPC_Z_P</td>
-<td>1.5</td>
-</tr>
-<tr>
-<td>MPC_Z_VEL_I</td>
-<td>0.3</td>
-</tr>
-<tr>
-<td>MPC_Z_VEL_P</td>
-<td>0.4</td>
-</tr>
-<tr>
-<td>MPC_HOLD_MAX_XY</td>
-<td>0.1</td>
-</tr>
-<tr>
-<td>MPC_MAX_FLOW_HGT</td>
-<td>3</td>
-</tr>
-<tr>
-<td>MC_PITCHRATE_P</td>
-<td>0.07</td>
-</tr>
-<tr>
-<td>MC_PITCHRATE_I</td>
-<td>0.2</td>
-</tr>
-<tr>
-<td>MC_PITCHRATE_D</td>
-<td>0.002</td>
-</tr>
-<tr>
-<td>MC_ROLLRATE_P</td>
-<td>0.07</td>
-</tr>
-<tr>
-<td>MC_ROLLRATE_I</td>
-<td>0.2</td>
-</tr>
-<tr>
-<td>MC_ROLLRATE_D</td>
-<td>0.002</td>
-</tr>
-<tr>
-<td>MC_YAW_P</td>
-<td>3.0</td>
-</tr>
-<tr>
-<td>IMU_GYRO_CUTOFF</td>
-<td>100</td>
-</tr>
-<tr>
-<td>IMU_ACCEL_CUTOFF</td>
-<td>30</td>
-</tr>
-<tr>
-<td>IMU_DTERM_CUTOFF</td>
-<td>70</td>
-</tr>
-<tr>
-<td>SYS_FMU_TASK</td>
-<td>Enabled</td>
-</tr>
-<tr>
-<td>SDLOG_PROFILE</td>
-<td>1</td>
-</tr>
-<tr>
-<td>EKF2_ABL_LIM</td>
-<td>2.0</td>
-</tr>
-</tbody>
-</table>
 <h2 id="altitude-control">Altitude Control</h2>
 <p>Crazyflie is able to fly in <em>Altitude</em> mode if you use a <a href="https://store.bitcraze.io/collections/decks/products/z-ranger-deck" target="_blank">Z-ranger deck</a>. 
 According to the datasheet, the maximum height (above ground) the range finder can sense is 2 m. However, when tested on dark surfaces this value decreases to 0.5 m. On a light floor, it goes up to max 1.3 m. This means you cannot hold altitudes above this value in <em>Altitude</em> or <em>Position</em> flight modes.</p>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
-<p> If the CF2 height drifts at mid-throttle command in <em>Altitude mode</em> or <em>Position mode</em>, first try rebooting the vehicle. If this does not fix the problem, recalibrate the accel and mag (compass).  </p>
+<p> If the Crazyflie 2.0 height drifts at mid-throttle command in <em>Altitude mode</em> or <em>Position mode</em>, first try rebooting the vehicle. If this does not fix the problem, recalibrate the accel and mag (compass).  </p>
 </blockquote>
 <p><span></span></p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
-<p> Since the onboard barometer is highly susceptible to wind disturbances created by the CF2&apos;s own propellers, you cannot rely on it to hold altitude. </p>
+<p> Since the onboard barometer is highly susceptible to wind disturbances created by the Crazyflie&apos;s own propellers, you cannot rely on it to hold altitude. </p>
 </blockquote>
 <h2 id="position-control">Position Control</h2>
-<p>With <a href="https://store.bitcraze.io/collections/decks/products/flow-deck" target="_blank">Flow deck</a>, you can fly CF2 in <em>Position mode</em>. 
+<p>With <a href="https://store.bitcraze.io/collections/decks/products/flow-deck" target="_blank">Flow deck</a>, you can fly Crazyflie 2.0 in <em>Position mode</em>. 
 Unlike PX4flow, the flow deck does not house a gyro, hence the onboard gyro is used for flow fusion to find the local position estimates. 
 Moreover, the flow deck shares the same SPI bus as the SD card deck, therefore logging at high rate on SD card is not recommended when flying in <em>Position mode</em>. </p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
@@ -2625,32 +2517,32 @@ Moreover, the flow deck shares the same SPI bus as the SD card deck, therefore l
 </ul>
 <p>To use Taranis switches to arm/disarm and switch to different flight modes:</p>
 <ul>
-<li><p>In Taranis UI <em>MIXER</em> menu page, you can assign the switches to any channel in the range channel 9-16 which map to the buttons 0-7 in the QGC Joystick setup. For example, Taranis &#x201C;SD&#x201D; switch can be set to channel 9 in Taranis UI:</p>
+<li><p>In Taranis UI <em>MIXER</em> menu page, you can assign the switches to any channel in the range channel 9-16 which map to the buttons 0-7 in the QGroundControl Joystick setup. For example, Taranis &#x201C;SD&#x201D; switch can be set to channel 9 in Taranis UI:</p>
 <p><img src="../../assets/hardware/transmitters/hardware-crazyflie-taranis-switchSetup.jpg" alt="Taranis switch setup"></p>
 </li>
-<li><p>Connect Taranis to PC with a USB cable and Open QGC. </p>
+<li><p>Connect Taranis to PC with a USB cable and Open QGroundControl. </p>
 </li>
-<li><p>In QGC Joystick Setup, you can see the buttons turning yellow when you switch them on. For example, channel 9 in Taranis maps to button 0 in QGC Joystick setup. You can assign any mode to this button e.g. <em>Altitude</em> mode. Now when you lower the switch &quot;SD&quot;, flight mode will change to <em>Altitude</em>.</p>
+<li><p>In QGroundControl Joystick Setup, you can see the buttons turning yellow when you switch them on. For example, channel 9 in Taranis maps to button 0 in QGroundControl Joystick setup. You can assign any mode to this button e.g. <em>Altitude</em> mode. Now when you lower the switch &quot;SD&quot;, flight mode will change to <em>Altitude</em>.</p>
 <p><img src="../../assets/hardware/hardware-crazyflie-QGCjoystick-setup.png" alt="Joystick setup"></p>
 </li>
 </ul>
 <h3 id="ros">ROS</h3>
-<p>To connect to CF2 via MAVROS:</p>
+<p>To connect to Crazyflie 2.0 via MAVROS:</p>
 <ul>
 <li>Start up <em>cfbridge</em> using the above instructions.</li>
-<li>Change the UDP port QGC listens to:<ul>
-<li>In QGC, navigate to <strong>Application Settings &gt; General</strong> and uncheck all the boxes under <em>Autoconnect to the following devices</em>.</li>
+<li>Change the UDP port QGroundControl listens to:<ul>
+<li>In QGroundControl, navigate to <strong>Application Settings &gt; General</strong> and uncheck all the boxes under <em>Autoconnect to the following devices</em>.</li>
 <li>Add in <strong>Comm Links</strong> a link of type <em>UDP</em>, check the <em>Automatically Connect on Start</em> option, change the <em>Listening Port</em> to 14557, add Target Hosts: 127.0.0.1 and then press <strong>OK</strong>.</li>
 </ul>
 </li>
 <li>Make sure you have <a href="https://github.com/mavlink/mavros/tree/master/mavros#installation" target="_blank">MAVROS</a> installed.</li>
 <li>Start MAVROS with command:<pre><code>roslaunch mavros px4.launch fcu_url:=&quot;udp://:14550@127.0.0.1:14551&quot; gcs_url:=&quot;udp://@127.0.0.1:14557&quot;
 </code></pre></li>
-<li>Restart QGC if it doesn&apos;t connect.</li>
+<li>Restart QGroundControl if it doesn&apos;t connect.</li>
 </ul>
 <h2 id="flying">Flying</h2>
 <p><div style="position: relative;padding-bottom: 56.25%;padding-top: 25px;height: 0;"><iframe frameborder="0" allowfullscreen style="border: none;position: absolute;top: 0;left: 0;width: 100%;height: 100%;" src="//www.youtube.com/embed/2Bcy3k1h5uc"></iframe></div></p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-07-02 00:53:08 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-07-02 07:20:47 </span> </footer>
                                 
                                 </section>
                             
@@ -2693,7 +2585,7 @@ Moreover, the flow deck shares the same SPI bus as the SD card deck, therefore l
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Crazyflie 2.0","level":"1.10.6","depth":2,"next":{"title":"Parrot Bebop","level":"1.10.7","depth":2,"path":"flight_controller/bebop.md","ref":"flight_controller/bebop.md","articles":[]},"previous":{"title":"OcPoC-Zynq Mini","level":"1.10.5","depth":2,"path":"flight_controller/ocpoc_zynq.md","ref":"flight_controller/ocpoc_zynq.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"flight_controller/crazyflie2.md","mtime":"2018-07-02T00:53:08.919Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-02T00:54:27.312Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Crazyflie 2.0","level":"1.10.6","depth":2,"next":{"title":"Parrot Bebop","level":"1.10.7","depth":2,"path":"flight_controller/bebop.md","ref":"flight_controller/bebop.md","articles":[]},"previous":{"title":"OcPoC-Zynq Mini","level":"1.10.5","depth":2,"path":"flight_controller/ocpoc_zynq.md","ref":"flight_controller/ocpoc_zynq.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"flight_controller/crazyflie2.md","mtime":"2018-07-02T07:20:47.752Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-02T07:22:03.320Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
