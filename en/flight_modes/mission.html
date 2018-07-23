@@ -2363,7 +2363,8 @@
                                 
                                 <h1 id="mission-mode">Mission Mode</h1>
 <p><a href="../getting_started/flight_modes.html#key_position_fixed"><img src="../../assets/site/position_fixed.svg" title="Position fix required (e.g. GPS)" width="30px"></a></p>
-<p><em>Mission mode</em> causes the vehicle to execute a predefined autonomous <a href="../flying/missions.html">mission</a> (flight plan) that has been uploaded to the flight controller. The mission is typically created and uploaded with a Ground Control Station (GCS) application like <a href="https://docs.qgroundcontrol.com/en/" target="_blank">QGroundControl</a> (QGC).</p>
+<p><em>Mission mode</em> causes the vehicle to execute a predefined autonomous <a href="../flying/missions.html">mission</a> (flight plan) that has been uploaded to the flight controller. 
+The mission is typically created and uploaded with a Ground Control Station (GCS) application like <a href="https://docs.qgroundcontrol.com/en/" target="_blank">QGroundControl</a> (QGC).</p>
 <p><span></span></p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> </p>
@@ -2374,7 +2375,10 @@
 </ul>
 </blockquote>
 <h2 id="description">Description</h2>
-<p>Missions are usually created in a ground control station (e.g. <a href="https://docs.qgroundcontrol.com/en/PlanView/PlanView.html" target="_blank">QGroundControl</a>) and uploaded prior to launch. They may also be created by a developer API, and/or uploaded in flight. Individual mission commands are handled in a way that is appropriate for each vehicle&apos;s flight characteristics (for example loiter is implemented as <em>hover</em> for copter and <em>circle</em> for fixed-wing). VTOL vehicles follow the behavior and parameters of fixed-wing when in FW mode, and of copter when in MC mode.</p>
+<p>Missions are usually created in a ground control station (e.g. <a href="https://docs.qgroundcontrol.com/en/PlanView/PlanView.html" target="_blank">QGroundControl</a>) and uploaded prior to launch. 
+They may also be created by a developer API, and/or uploaded in flight. </p>
+<p>Individual <a href="#mission_commands">mission commands</a> are handled in a way that is appropriate for each vehicle&apos;s flight characteristics (for example loiter is implemented as <em>hover</em> for copter and <em>circle</em> for fixed-wing).
+VTOL vehicles follow the behavior and parameters of fixed-wing when in FW mode, and of copter when in MC mode.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> Missions are uploaded onto a SD card that needs to be inserted <strong>before</strong> booting up the autopilot.</p>
 </blockquote>
@@ -2416,9 +2420,73 @@
 <li><a href="https://docs.qgroundcontrol.com/en/releases/stable_v3.2_long.html#resume-mission" target="_blank">Resume mission after Return mode</a></li>
 </ul>
 <h2 id="mission-parameters">Mission Parameters</h2>
-<p>Mission behaviour is affected by a number of parameters. These cover, for example, how the vehicle will behave if it looses connection to its remote control during a mission (<a href="../advanced_config/parameter_reference.html#NAV_RCL_ACT">NAV_RCL_ACT</a>), the fixed-wing loiter radius (<a href="../advanced_config/parameter_reference.html#NAV_LOITER_RAD">NAV_LOITER_RAD</a>), acceptance radius for reaching a waypoint etc.</p>
+<p>Mission behaviour is affected by a number of parameters. 
+These cover, for example, how the vehicle will behave if it looses connection to its remote control during a mission (<a href="../advanced_config/parameter_reference.html#NAV_RCL_ACT">NAV_RCL_ACT</a>), 
+the fixed-wing loiter radius (<a href="../advanced_config/parameter_reference.html#NAV_LOITER_RAD">NAV_LOITER_RAD</a>), 
+acceptance radius for reaching a waypoint etc.</p>
 <p>These are documented here: <a href="../advanced_config/parameter_reference.html#mission">Parameter Reference &gt; Mission</a></p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-07-23 00:51:39 </span> </footer>
+<h2 id="mission_commands">Supported Mission Commands </h2>
+<p>PX4 &quot;accepts&quot; the following MAVLink mission commands in Mission mode (note: caveats below list).
+Unless otherwise noted, the implementation is as defined in the MAVLink speification.</p>
+<ul>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_WAYPOINT" target="_blank">MAV_CMD_NAV_WAYPOINT</a><ul>
+<li><em>Param3</em> (flythrough) is ignored. Flythrough is always enabled if <em>param 1</em> (time_inside) &gt; 0.</li>
+</ul>
+</li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_LOITER_UNLIM" target="_blank">MAV_CMD_NAV_LOITER_UNLIM</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_LOITER_TIME" target="_blank">MAV_CMD_NAV_LOITER_TIME</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_LAND" target="_blank">MAV_CMD_NAV_LAND</a> </li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_TAKEOFF" target="_blank">MAV_CMD_NAV_TAKEOFF</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_LOITER_TO_ALT" target="_blank">MAV_CMD_NAV_LOITER_TO_ALT</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_ROI" target="_blank">MAV_CMD_NAV_ROI</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_DO_SET_ROI" target="_blank">MAV_CMD_DO_SET_ROI</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_DO_SET_ROI_LOCATION" target="_blank">MAV_CMD_DO_SET_ROI_LOCATION</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_VTOL_TAKEOFF" target="_blank">MAV_CMD_NAV_VTOL_TAKEOFF</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_VTOL_LAND" target="_blank">MAV_CMD_NAV_VTOL_LAND</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_FENCE_RETURN_POINT" target="_blank">MAV_CMD_NAV_FENCE_RETURN_POINT</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_FENCE_POLYGON_VERTEX_INCLUSION" target="_blank">MAV_CMD_NAV_FENCE_POLYGON_VERTEX_INCLUSION</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_FENCE_POLYGON_VERTEX_EXCLUSION" target="_blank">MAV_CMD_NAV_FENCE_POLYGON_VERTEX_EXCLUSION</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_FENCE_CIRCLE_INCLUSION" target="_blank">MAV_CMD_NAV_FENCE_CIRCLE_INCLUSION</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_FENCE_CIRCLE_EXCLUSION" target="_blank">MAV_CMD_NAV_FENCE_CIRCLE_EXCLUSION</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_RALLY_POINT" target="_blank">MAV_CMD_NAV_RALLY_POINT</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_DO_JUMP" target="_blank">MAV_CMD_DO_JUMP</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_ROI" target="_blank">MAV_CMD_NAV_ROI</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_DO_SET_ROI" target="_blank">MAV_CMD_DO_SET_ROI</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_DO_CHANGE_SPEED" target="_blank">MAV_CMD_DO_CHANGE_SPEED</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_DO_SET_HOME" target="_blank">MAV_CMD_DO_SET_HOME</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_DO_SET_SERVO" target="_blank">MAV_CMD_DO_SET_SERVO</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_DO_LAND_START" target="_blank">MAV_CMD_DO_LAND_START</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_DO_TRIGGER_CONTROL" target="_blank">MAV_CMD_DO_TRIGGER_CONTROL</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_DO_DIGICAM_CONTROL" target="_blank">MAV_CMD_DO_DIGICAM_CONTROL</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_DO_MOUNT_CONFIGURE" target="_blank">MAV_CMD_DO_MOUNT_CONFIGURE</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_DO_MOUNT_CONTROL" target="_blank">MAV_CMD_DO_MOUNT_CONTROL</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_IMAGE_START_CAPTURE" target="_blank">MAV_CMD_IMAGE_START_CAPTURE</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_IMAGE_STOP_CAPTURE" target="_blank">MAV_CMD_IMAGE_STOP_CAPTURE</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_VIDEO_START_CAPTURE" target="_blank">MAV_CMD_VIDEO_START_CAPTURE</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_VIDEO_STOP_CAPTURE" target="_blank">MAV_CMD_VIDEO_STOP_CAPTURE</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_DO_SET_CAM_TRIGG_DIST" target="_blank">MAV_CMD_DO_SET_CAM_TRIGG_DIST</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_DO_SET_CAM_TRIGG_INTERVAL" target="_blank">MAV_CMD_DO_SET_CAM_TRIGG_INTERVAL</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_SET_CAMERA_MODE" target="_blank">MAV_CMD_SET_CAMERA_MODE</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_DO_VTOL_TRANSITION" target="_blank">MAV_CMD_DO_VTOL_TRANSITION</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_DELAY" target="_blank">MAV_CMD_NAV_DELAY</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_RETURN_TO_LAUNCH" target="_blank">MAV_CMD_NAV_RETURN_TO_LAUNCH</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_DO_SET_ROI_WPNEXT_OFFSET" target="_blank">MAV_CMD_DO_SET_ROI_WPNEXT_OFFSET</a></li>
+<li><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_DO_SET_ROI_NONE" target="_blank">MAV_CMD_DO_SET_ROI_NONE</a></li>
+</ul>
+<p>Note:</p>
+<ul>
+<li>PX4 parses the above messages, but they are not necessary <em>acted</em> on. For example, some messages are vehicle-type specific.</li>
+<li>PX4 generally does not support local frames for mission commands (e.g. <a href="https://mavlink.io/en/messages/common.html#MAV_FRAME_LOCAL_NED" target="_blank">MAV_FRAME_LOCAL_NED</a>).</li>
+<li>Not all messages/commands are exposed via <em>QGroundControl</em>.</li>
+<li><p>The list may be <a href="#out_of_date">out of date</a> as messages are added. You can check the current set by inspecting the code.
+Support is <code>MavlinkMissionManager::parse_mavlink_mission_item</code> in <a href="https://github.com/PX4/Firmware/blob/master/src/modules/mavlink/mavlink_mission.cpp" target="_blank">/src/modules/mavlink/mavlink_mission.cpp</a> 
+(list generated in <a href="https://github.com/PX4/Firmware/commit/ca1f7a4a194c23303c23ca79b5905ff8bfb94c22" target="_blank">this git changelist</a>).</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> Please add an bug fix or PR if you find a missing/incorrect message.</p>
+</blockquote>
+</li>
+</ul>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-07-23 01:21:57 </span> </footer>
                                 
                                 </section>
                             
@@ -2461,7 +2529,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Mission","level":"1.6.6.15","depth":3,"next":{"title":"Follow Me","level":"1.6.6.16","depth":3,"path":"flight_modes/follow_me.md","ref":"flight_modes/follow_me.md","articles":[]},"previous":{"title":"Hold","level":"1.6.6.14","depth":3,"path":"flight_modes/hold.md","ref":"flight_modes/hold.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"flight_modes/mission.md","mtime":"2018-07-23T00:51:39.995Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-23T00:53:23.721Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Mission","level":"1.6.6.15","depth":3,"next":{"title":"Follow Me","level":"1.6.6.16","depth":3,"path":"flight_modes/follow_me.md","ref":"flight_modes/follow_me.md","articles":[]},"previous":{"title":"Hold","level":"1.6.6.14","depth":3,"path":"flight_modes/hold.md","ref":"flight_modes/hold.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"flight_modes/mission.md","mtime":"2018-07-23T01:21:57.982Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-23T01:22:55.898Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
