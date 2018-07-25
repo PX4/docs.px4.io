@@ -2363,61 +2363,129 @@
                                 
                                 <h1 id="lidar-lite">Lidar-Lite</h1>
 <p>LIDAR-Lite is a compact, high-performance optical distant measurement sensor solution for drone, robot or unmanned vehicle applications. It can be connected to either I2C or PWM.</p>
-<p> <img src="../../assets/hardware/sensors/lidar_lite_v3.jpg" alt="LidarLite v3"></p>
+<p> <img src="../../assets/hardware/sensors/lidar_lite/lidar_lite_v3.jpg" alt="LidarLite v3"></p>
 <h2 id="where-to-buy">Where to Buy</h2>
 <ul>
 <li><a href="https://buy.garmin.com/en-AU/AU/p/557294" target="_blank">LIDAR-Lite v3</a> (5cm - 40m)</li>
 </ul>
-<h2 id="wiring">Wiring</h2>
-<p>The <em>Lidar-Lite v3</em> can be used with either PWM or I2C. PWM is recommended if using an older model.</p>
-<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
-<p> The I2C interface of non-blue-label Lidar-Lite (v1) devices has stability limitations and all silver-label generations of Lidar-Lite sensors are therefore excluded from the I2C interface. The use of the PWM interface (as detailed below) is advised for these sensors. The blue label (v2) devices can exhibit a constant offset if powered on with less than 5V under some conditions. This is currently (Q4/2015) under investigation by the manufacturer and potentially can be resolved by adhering to specific operational conditions. The recommended robust setup is a v1 device interfaced via PWM.</p>
-</blockquote>
-<p>The servo must be separately powered via some ESC/BEC (whether connected via PWM or I2C).</p>
-<h3 id="pwm-interface-wiring">PWM Interface Wiring</h3>
-<p><img src="../../assets/hardware/sensors/lidar_lite_2_interface_wiring.jpg" alt="Lidar Lite 2 Interface wiring"></p>
+<h2 id="pinouts">Pinouts</h2>
+<p>The Lidar-Lite (v2, v3) pinout is shown below.</p>
 <table>
 <thead>
 <tr>
-<th>Pixhawk AUX servo pin</th>
-<th>Lidar-Lite pin</th>
+<th>Pin</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>POWER_IN</td>
+<td>Power supply. 4.75-5.5V DC Nominal, Maximum 6V DC.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>POWER_EN</td>
+<td>Active high, enables operation of the 3.3V micro-controller regulator. Low puts board to sleep, draws &lt;40 &#x3BC;A. (Internal 100K pull-up)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Mode Select Control</td>
+<td>Provides trigger (high-low edge) PWM out (high)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>SCL</td>
+<td>I2C Clock</td>
+</tr>
+<tr>
+<td>5</td>
+<td>SDA</td>
+<td>I2C Data</td>
+</tr>
+<tr>
+<td>6</td>
+<td>GND</td>
+<td>Signal/power ground.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="wiring">Wiring</h2>
+<p>The <em>Lidar-Lite v3</em> can be used with either PWM or I2C. 
+PWM is recommended if using an older model.
+The rangefinder must be separately powered via some ESC/BEC (whether connected via PWM or I2C).</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> The I2C interface of non-blue-label Lidar-Lite (v1) devices has stability limitations and all silver-label generations of Lidar-Lite sensors are therefore excluded from the I2C interface. The use of the PWM interface (as detailed below) is advised for these sensors. The blue label (v2) devices can exhibit a constant offset if powered on with less than 5V under some conditions. This is currently (Q4/2015) under investigation by the manufacturer and potentially can be resolved by adhering to specific operational conditions. The recommended robust setup is a v1 device interfaced via PWM.</p>
+</blockquote>
+<p>The standard wiring instructions for Lidar-Lite 3 (from the <a href="http://static.garmin.com/pumac/LIDAR_Lite_v3_Operation_Manual_and_Technical_Specifications.pdf" target="_blank">Operation Manual</a>) are shown below.</p>
+<p><img src="../../assets/hardware/sensors/lidar_lite/lidar_lite2_standard_wiring_spec.jpg" alt="LidarLite v3 - Standard Wiring from Garming Specification"></p>
+<h3 id="pwm-interface-wiring">PWM Interface Wiring</h3>
+<p>The wiring for connecting LidarLite to the <em>Pixhawk 1</em> AUX ports (PWM interface) is shown below. 
+This applies to both LidarLite v2 and v3.</p>
+<p><img src="../../assets/hardware/sensors/lidar_lite/lidar_lite_2_interface_wiring.jpg" alt="Lidar Lite 2 Interface wiring"></p>
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>Lidar-Lite (v2, v3)</th>
+<th>Pixhawk AUX Servo</th>
 <th>Comment</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>AUX row 5 (bottom)</td>
-<td>3 / PWM</td>
-<td>PWM input of the Lidar Lite. <strong>Needs a 470 Ohm pull-down (to GND)</strong></td>
+<td>1</td>
+<td>VCC</td>
+<td>AUX 6 (center)</td>
+<td>Power supply. 4.75-5.5V DC Nominal, Maximum 6V DC.</td>
 </tr>
 <tr>
-<td>AUX row 6 (center)</td>
-<td>1 / +5V</td>
-<td>Power supply</td>
-</tr>
-<tr>
-<td>AUX row 6 (top)</td>
-<td>6 / GND</td>
-<td>Ground</td>
-</tr>
-<tr>
-<td>AUX row 6 (bottom)</td>
-<td>2 / RESET</td>
+<td>2</td>
+<td>RESET</td>
+<td>AUX 6 (bottom)</td>
 <td>Reset line of the sensor</td>
-<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>PWM</td>
+<td>AUX 5 (bottom)</td>
+<td>PWM input of the Lidar Lite. <strong>Needs a 1 KOhm pull-down (to GND)</strong></td>
+</tr>
+<tr>
+<td>4</td>
+<td>SCL</td>
+<td>-</td>
+<td>Not connected</td>
+</tr>
+<tr>
+<td>5</td>
+<td>SDA</td>
+<td>-</td>
+<td>Not connected</td>
+</tr>
+<tr>
+<td>6</td>
+<td>GND</td>
+<td>AUX 6 (top)</td>
+<td>Ground</td>
 </tr>
 </tbody>
 </table>
-<p><img src="../../assets/hardware/sensors/lidarlite_wiring_scheme_pixhawk.jpg" alt="Lidar Lite 2 Interface wiring"></p>
-<p><img src="../../assets/hardware/sensors/lidarlite_wiring_pins_cables.jpg" alt="Lidar Lite 2 pins/cabling"></p>
+<p><img src="../../assets/hardware/sensors/lidar_lite/lidarlite_wiring_scheme_pixhawk.jpg" alt="Lidar Lite 2 Interface wiring"></p>
+<p><img src="../../assets/hardware/sensors/lidar_lite/lidarlite_wiring_pins_cables.jpg" alt="Lidar Lite 2 pins/cabling"></p>
 <h3 id="i2c-interface-wiring">I2C Interface Wiring</h3>
 <p>TBD</p>
 <h2 id="software-configuration">Software Configuration</h2>
 <p>The rangefinder/port is enabled using <a href="../advanced_config/parameter_reference.html#SENS_EN_LL40LS">SENS_EN_LL40LS</a> - set to <code>1</code> for PWM, or <code>2</code> for I2C.</p>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
-<p> The driver for this rangefinder is usually present in firmware. If missing, you would also need to add the driver (<code>drivers/ll40ls</code>) to the board configuration..</p>
+<p> The driver for this rangefinder is usually present in firmware. If missing, you would also need to add the driver (<code>drivers/ll40ls</code>) to the board configuration.</p>
 </blockquote>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-07-24 22:56:51 </span> </footer>
+<h2 id="further-information">Further Information</h2>
+<ul>
+<li><a href="http://static.garmin.com/pumac/LIDAR_Lite_v3_Operation_Manual_and_Technical_Specifications.pdf" target="_blank">LIDAR_Lite_v3_Operation_Manual_and_Technical_Specifications.pdf</a> (Garmin)</li>
+</ul>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-07-25 00:02:21 </span> </footer>
                                 
                                 </section>
                             
@@ -2460,7 +2528,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Lidar-Lite","level":"1.9.3.4","depth":3,"next":{"title":"Airspeed Sensors","level":"1.9.4","depth":2,"path":"sensor/airspeed.md","ref":"sensor/airspeed.md","articles":[]},"previous":{"title":"LeddarOne Lidar","level":"1.9.3.3","depth":3,"path":"sensor/leddar_one.md","ref":"sensor/leddar_one.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"sensor/lidar_lite.md","mtime":"2018-07-24T22:56:51.725Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-24T22:57:53.800Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Lidar-Lite","level":"1.9.3.4","depth":3,"next":{"title":"Airspeed Sensors","level":"1.9.4","depth":2,"path":"sensor/airspeed.md","ref":"sensor/airspeed.md","articles":[]},"previous":{"title":"LeddarOne Lidar","level":"1.9.3.3","depth":3,"path":"sensor/leddar_one.md","ref":"sensor/leddar_one.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"sensor/lidar_lite.md","mtime":"2018-07-25T00:02:21.491Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-25T00:03:44.780Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
