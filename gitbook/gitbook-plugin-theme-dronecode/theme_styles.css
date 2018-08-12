@@ -21,11 +21,6 @@ body .common_menu_options a{color:WhiteSmoke;}
 
 
 /* Make text small as screen compresses */
-
-@media only screen and (max-width:1001px){
-    #menu_dc {display:none;}
-}
-
 @media only screen and (min-width:800px){
     .common_dronecode_menu_item.large_version {display:inline;} 
     .common_dronecode_menu_item.small_version {display:none;}
