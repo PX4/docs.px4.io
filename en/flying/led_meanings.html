@@ -2674,7 +2674,16 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="led-meanings-pixhawk-series">LED Meanings (Pixhawk Series)</h1>
-<p><a href="../flight_controller/pixhawk_series.html">Pixhawk-series flight controllers</a> have an RGB LED to indicate the current status of the vehicle. The image below shows the relationship between LED and vehicle status.</p>
+<p><a href="../flight_controller/pixhawk_series.html">Pixhawk-series flight controllers</a> use LEDs to indicate the current status of the vehicle.</p>
+<ul>
+<li>The <a href="#ui_led">UI LED</a> provides user-facing status information related to <em>readiness for flight</em>.</li>
+<li>The <a href="#status_led">Status LEDs</a> provide status for the PX4IO and FMU SoC.
+They indicate power, bootloader mode and activity, and errors.</li>
+</ul>
+<h2 id="ui_led">UI LED </h2>
+<p>The RGB <em>UI LED</em> indicates the current <em>readiness for flight</em> status of the vehicle. 
+This is typically a superbright I2C peripheral, which may or may not be mounted on the flight controller board (i.e. FMUv4 does not have one on board, and typically uses an LED mounted on the GPS).</p>
+<p>The image below shows the relationship between LED and vehicle status.</p>
 <blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
 <p> It is possible to have a GPS lock (Green LED) and still not be able to arm the vehicle because PX4 has not yet <a href="pre_flight_checks.html">passed preflight checks</a>. <strong>A valid global position estimate is required to takeoff!</strong></p>
 </blockquote>
@@ -2716,7 +2725,95 @@ Attach your autopilot to a Ground Control Station to verify what the problem is.
 If you have completed the setup process and autopilot still appears as red and flashing, there may be another error.</p>
 </li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-11-27 04:40:12 </span> </footer>
+<h2 id="status_led">Status LED </h2>
+<p>Three <em>Status LEDs</em> provide status for the FMU SoC, and three more provide status for the PX4IO (if present). 
+They indicate power, bootloader mode and activity, and errors.</p>
+<p><img src="../../assets/flight_controller/pixhawk4/pixhawk4_status_leds.jpg" alt="Pixhawk 4"></p>
+<p>From power on, the FMU and PX4IO CPUs first run the bootloader (BL) and then the application (APP).
+The table below shows how the Bootloader and then APP use the LEDs to indicate condition.</p>
+<table>
+<thead>
+<tr>
+<th>Color</th>
+<th>Label</th>
+<th>Bootloader usage</th>
+<th>APP usage </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blue</td>
+<td>ACT (Activity)</td>
+<td>Flutters when the bootloader is receiving data</td>
+<td>Indication of ARM state</td>
+</tr>
+<tr>
+<td>Red/Amber</td>
+<td>B/E (In Bootloader / Error)</td>
+<td>Flutters when in the bootloader</td>
+<td>Indication of an ERROR</td>
+</tr>
+<tr>
+<td>Green</td>
+<td>PWR (Power)</td>
+<td>Not used by bootloader</td>
+<td>Indication of ARM state</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> The LED labels shown above are commonly used, but might differ on some boards.</p>
+</blockquote>
+<p>More detailed information for how to interpret the LEDs is given below (where &quot;x&quot; means &quot;any state&quot;)</p>
+<table>
+<thead>
+<tr>
+<th>Red/Amber</th>
+<th>Blue</th>
+<th>Green</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10Hz</td>
+<td>x</td>
+<td>x</td>
+<td>Overload CPU load &gt; 80%, or RAM usage &gt; 98%</td>
+</tr>
+<tr>
+<td>OFF</td>
+<td>x</td>
+<td>x</td>
+<td>Overload CPU load &lt;= 80%, or RAM usage &lt;= 98%</td>
+</tr>
+<tr>
+<td>NA</td>
+<td>OFF</td>
+<td>4 Hz</td>
+<td>actuator_armed-&gt;armed &amp;&amp; failsafe </td>
+</tr>
+<tr>
+<td>NA</td>
+<td>ON</td>
+<td>4 Hz</td>
+<td>actuator_armed-&gt;armed &amp;&amp; !failsafe</td>
+</tr>
+<tr>
+<td>NA</td>
+<td>OFF</td>
+<td>1 Hz</td>
+<td>!actuator_armed-&gt; armed &amp;&amp; actuator_armed-&gt;ready_to_arm</td>
+</tr>
+<tr>
+<td>NA</td>
+<td>OFF</td>
+<td>10 Hz</td>
+<td>!actuator_armed-&gt;armed  &amp;&amp; !actuator_armed-&gt;ready_to_arm </td>
+</tr>
+</tbody>
+</table>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-11-27 04:52:34 </span> </footer>
                                 
                                 </section>
                             
@@ -2759,7 +2856,7 @@ If you have completed the setup process and autopilot still appears as red and f
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"LED Meanings","level":"1.6.2","depth":2,"next":{"title":"Preflight Checks (Internal)","level":"1.6.3","depth":2,"path":"flying/pre_flight_checks.md","ref":"flying/pre_flight_checks.md","articles":[]},"previous":{"title":"First Flight Guidelines","level":"1.6.1","depth":2,"path":"flying/first_flight_guidelines.md","ref":"flying/first_flight_guidelines.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"flying/led_meanings.md","mtime":"2018-11-27T04:40:12.213Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-27T04:41:11.927Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"LED Meanings","level":"1.6.2","depth":2,"next":{"title":"Preflight Checks (Internal)","level":"1.6.3","depth":2,"path":"flying/pre_flight_checks.md","ref":"flying/pre_flight_checks.md","articles":[]},"previous":{"title":"First Flight Guidelines","level":"1.6.1","depth":2,"path":"flying/first_flight_guidelines.md","ref":"flying/first_flight_guidelines.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"flying/led_meanings.md","mtime":"2018-11-27T04:52:34.867Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-27T04:53:55.012Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
