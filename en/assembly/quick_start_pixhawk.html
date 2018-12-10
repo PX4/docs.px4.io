@@ -25,6 +25,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
@@ -2677,19 +2681,19 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="pixhawk-wiring-quick-start">Pixhawk Wiring Quick Start</h1>
+                                <h1 id="pixhawk-wiring-quick-start"><a name="pixhawk-wiring-quick-start" class="plugin-anchor" href="#pixhawk-wiring-quick-start"><i class="fa fa-link" aria-hidden="true"></i></a>Pixhawk Wiring Quick Start</h1>
 <p>This quick start guide shows how to power the <em>3DR Pixhawk</em> flight controller and connect its most important peripherals.</p>
 <p><img src="../../images/pixhawk_logo_view.jpg" alt="Pixhawk Image"> </p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> The <a href="https://dev.px4.io/hardware-pixhawk.html" target="_blank">3DR Pixhawk</a> is no longer available from 3DR. Other flight controllers based on the <a href="../flight_controller/pixhawk_series.html">Pixhawk FMUv2 architecture</a> are available from other companies (these share the same connections, outputs, functions, etc. and are wired in a similar way).</p>
 </blockquote>
-<h2 id="wiring-chart-overview">Wiring Chart Overview</h2>
+<h2 id="wiring-chart-overview"><a name="wiring-chart-overview" class="plugin-anchor" href="#wiring-chart-overview"><i class="fa fa-link" aria-hidden="true"></i></a>Wiring Chart Overview</h2>
 <p>The image below shows standard Pixhawk connections (excepting the motor and servo outputs). We&apos;ll go through each main part in the following sections.</p>
 <p><img src="../../images/pixhawk_wiring_overview.jpg" alt="Pixhawk Wiring Overview"></p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> More detailed wiring information is <a href="#detailed-wiring-infographic-copter">shown below</a>.</p>
 </blockquote>
-<h2 id="mount-and-orient-controller">Mount and Orient Controller</h2>
+<h2 id="mount-and-orient-controller"><a name="mount-and-orient-controller" class="plugin-anchor" href="#mount-and-orient-controller"><i class="fa fa-link" aria-hidden="true"></i></a>Mount and Orient Controller</h2>
 <p>The <em>Pixhawk</em> should be mounted on the frame using vibration-damping foam pads (included in the kit). It should be
 positioned as close to your vehicle&#x2019;s center of gravity as possible, oriented top-side up 
 with the arrow points towards the front of the vehicle.</p>
@@ -2700,16 +2704,16 @@ with the arrow points towards the front of the vehicle.</p>
   need to configure the autopilot software with the orientation that you
   actually used: <a href="../config/flight_controller_orientation.html">Flight Controller Orientation</a>.</p>
 </blockquote>
-<h2 id="buzzer-and-safety-switch">Buzzer and Safety Switch</h2>
+<h2 id="buzzer-and-safety-switch"><a name="buzzer-and-safety-switch" class="plugin-anchor" href="#buzzer-and-safety-switch"><i class="fa fa-link" aria-hidden="true"></i></a>Buzzer and Safety Switch</h2>
 <p>Connect the included buzzer and safety switch as shown below (these are mandatory).</p>
 <p><img src="../../images/pixhawk_3dr_buzzer_and_safety_switch.jpg" alt="Pixhawk mounting and orientation"></p>
-<h2 id="gps--compass">GPS + Compass</h2>
+<h2 id="gps--compass"><a name="gps--compass" class="plugin-anchor" href="#gps--compass"><i class="fa fa-link" aria-hidden="true"></i></a>GPS + Compass</h2>
 <p>Attach a GPS (required) to the GPS port using the 6-wire cable supplied in the kit. Optionally attach a compass to the I2C port using a 4-wire cable (the Pixhawk has an internal compass, which can be used if necessary).</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> The diagram shows a combined GPS and Compass.  The GPS/Compass should be mounted on the frame as far away from other electronics as possible, with the direction marker towards the front of the vehicle (separating the compass from other electronics will reduce interference).</p>
 </blockquote>
 <p><img src="../../images/pixhawk_3dr_compass_gps.jpg" alt="Connect compass/GPS to Pixhawk"></p>
-<h2 id="power">Power</h2>
+<h2 id="power"><a name="power" class="plugin-anchor" href="#power"><i class="fa fa-link" aria-hidden="true"></i></a>Power</h2>
 <p>Connect the output of a <em>Power module</em> (PM) to the <strong>POWER</strong> port using a 6-wire cable as shown. The PM input will be connected to your LiPo battery, while the main output will supply vehicle ESCs/motors (possibly via a power distribution board).</p>
 <p>The power module supplies the flight controller with power from the battery and also sends information about the analog current and voltage supplied via the module (including both power to the flight controller and to motors etc). </p>
 <p><img src="../../images/pixhawk_3dr_power_module.jpg" alt="Pixhawk - Power Module"></p>
@@ -2718,7 +2722,7 @@ with the arrow points towards the front of the vehicle.</p>
 </blockquote>
 <p>For planes and VTOL the output rail will need to be separately powered in order to drive servos for rudders, elevons etc. Often the main pusher/puller motor uses an ESC with an integrated <a href="https://en.wikipedia.org/wiki/Battery_eliminator_circuit" target="_blank">BEC</a> that can be connected to the Pixhawk output rail. If not, you will need to setup a 5V BEC to connect to one of the free Pixhawk ports (without power, the servos will not work).</p>
 <!-- It would be good to have real example of this powering --> 
-<h2 id="radio-control">Radio Control</h2>
+<h2 id="radio-control"><a name="radio-control" class="plugin-anchor" href="#radio-control"><i class="fa fa-link" aria-hidden="true"></i></a>Radio Control</h2>
 <p>A remote control (RC) radio system is required if you want to <em>manually</em> control your vehicle (PX4 does not require a radio system for autonomous flight modes). </p>
 <p>You will need to <a href="../getting_started/rc_transmitter_receiver.html">select a compatible transmitter/receiver</a> and then <em>bind</em> them so that they communicate (read the instructions that come with your specific transmitter/receiver). </p>
 <p>The instructions below show how to connect the different types of receivers to Pixhawk:</p>
@@ -2733,11 +2737,11 @@ with the arrow points towards the front of the vehicle.</p>
 </li>
 </ul>
 <p>For more information about selecting a radio system, receiver compatibility, and binding your transmitter/receiver pair, see: <a href="../getting_started/rc_transmitter_receiver.html">Remote Control Transmitters &amp; Receivers</a>.</p>
-<h2 id="telemetry-radios-optional">Telemetry Radios (Optional)</h2>
+<h2 id="telemetry-radios-optional"><a name="telemetry-radios-optional" class="plugin-anchor" href="#telemetry-radios-optional"><i class="fa fa-link" aria-hidden="true"></i></a>Telemetry Radios (Optional)</h2>
 <p>Telemetry radios may be used to communicate and control a vehicle in flight from a ground station (for example, you can direct the UAV to a particular position, or upload a new mission). One radio must be connected to your vehicle as shown below. The other is connected to your ground station computer or mobile device (usually by USB).</p>
 <p><img src="../../images/pixhawk_3dr_telemetry_radio.jpg" alt="Pixhawk/Telemetry Radio"></p>
 <!-- what configuration is required once you've set up a radio) -->
-<h2 id="motors">Motors</h2>
+<h2 id="motors"><a name="motors" class="plugin-anchor" href="#motors"><i class="fa fa-link" aria-hidden="true"></i></a>Motors</h2>
 <p>The mappings between MAIN/AUX output ports and motor/servos for all supported air and ground frames are listed in the <a href="../airframes/airframe_reference.html">Airframe Reference</a>.</p>
 <blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
 <p> The mapping is not consistent across frames (e.g. you can&apos;t rely on the throttle being on the same output for all plane frames). Make sure to use the correct mapping for your vehicle.</p>
@@ -2751,20 +2755,20 @@ with the arrow points towards the front of the vehicle.</p>
 <p> The output rail must be separately powered, as discussed in the <a href="#power">Power</a> section above.</p>
 </blockquote>
 <!-- INSERT image of the motor AUX/MAIN ports? -->
-<h2 id="other-peripherals">Other Peripherals</h2>
+<h2 id="other-peripherals"><a name="other-peripherals" class="plugin-anchor" href="#other-peripherals"><i class="fa fa-link" aria-hidden="true"></i></a>Other Peripherals</h2>
 <p>The wiring and configuration of other components is covered within the topics for individual <a href="../peripherals/">peripherals</a>.</p>
-<h2 id="configuration">Configuration</h2>
+<h2 id="configuration"><a name="configuration" class="plugin-anchor" href="#configuration"><i class="fa fa-link" aria-hidden="true"></i></a>Configuration</h2>
 <p>General configuration information is covered in: <a href="../config/">Autopilot Configuration</a>.</p>
 <p>QuadPlane specific configuration is covered here: <a href="../config_vtol/vtol_quad_configuration.html">QuadPlane VTOL Configuration</a></p>
 <!-- what about config of other vtol types and plane. Do the instructions in these ones above apply for tailsitters etc? -->
-<h2 id="detailed-wiring-infographic-copter">Detailed Wiring Infographic (Copter)</h2>
+<h2 id="detailed-wiring-infographic-copter"><a name="detailed-wiring-infographic-copter" class="plugin-anchor" href="#detailed-wiring-infographic-copter"><i class="fa fa-link" aria-hidden="true"></i></a>Detailed Wiring Infographic (Copter)</h2>
 <p><img src="../../images/pixhawk_infographic2.jpg" alt="QuadCopter Pixhawk Wiring Infographic"></p>
-<h2 id="further-information">Further information</h2>
+<h2 id="further-information"><a name="further-information" class="plugin-anchor" href="#further-information"><i class="fa fa-link" aria-hidden="true"></i></a>Further information</h2>
 <ul>
 <li><a href="../flight_controller/pixhawk_series.html">Pixhawk Series</a></li>
 <li><a href="../flight_controller/pixhawk.html">3DR Pixhawk</a> </li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 02:02:48 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 06:15:07 </span> </footer>
                                 
                                 </section>
                             
@@ -2807,7 +2811,7 @@ with the arrow points towards the front of the vehicle.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Pixhawk Wiring Quickstart","level":"1.3.6","depth":2,"next":{"title":"Basic Configuration","level":"1.4","depth":1,"path":"config/README.md","ref":"config/README.md","articles":[{"title":"Firmware","level":"1.4.1","depth":2,"path":"config/firmware.md","ref":"config/firmware.md","articles":[]},{"title":"Airframe","level":"1.4.2","depth":2,"path":"config/airframe.md","ref":"config/airframe.md","articles":[]},{"title":"Sensor Orientation","level":"1.4.3","depth":2,"path":"config/flight_controller_orientation.md","ref":"config/flight_controller_orientation.md","articles":[]},{"title":"Compass","level":"1.4.4","depth":2,"path":"config/compass.md","ref":"config/compass.md","articles":[]},{"title":"Accelerometer","level":"1.4.5","depth":2,"path":"config/accelerometer.md","ref":"config/accelerometer.md","articles":[]},{"title":"Airspeed","level":"1.4.6","depth":2,"path":"config/airspeed.md","ref":"config/airspeed.md","articles":[]},{"title":"Level Horizon Calibration","level":"1.4.7","depth":2,"path":"config/level_horizon_calibration.md","ref":"config/level_horizon_calibration.md","articles":[]},{"title":"Radio Setup","level":"1.4.8","depth":2,"path":"config/radio.md","ref":"config/radio.md","articles":[]},{"title":"Flight Modes","level":"1.4.9","depth":2,"path":"config/flight_mode.md","ref":"config/flight_mode.md","articles":[]},{"title":"Battery","level":"1.4.10","depth":2,"path":"config/battery.md","ref":"config/battery.md","articles":[]},{"title":"Safety","level":"1.4.11","depth":2,"path":"config/safety.md","ref":"config/safety.md","articles":[]}]},"previous":{"title":"Pixracer Wiring Quickstart","level":"1.3.5","depth":2,"path":"assembly/quick_start_pixracer.md","ref":"assembly/quick_start_pixracer.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"assembly/quick_start_pixhawk.md","mtime":"2018-12-10T02:02:48.205Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T02:04:29.857Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Pixhawk Wiring Quickstart","level":"1.3.6","depth":2,"next":{"title":"Basic Configuration","level":"1.4","depth":1,"path":"config/README.md","ref":"config/README.md","articles":[{"title":"Firmware","level":"1.4.1","depth":2,"path":"config/firmware.md","ref":"config/firmware.md","articles":[]},{"title":"Airframe","level":"1.4.2","depth":2,"path":"config/airframe.md","ref":"config/airframe.md","articles":[]},{"title":"Sensor Orientation","level":"1.4.3","depth":2,"path":"config/flight_controller_orientation.md","ref":"config/flight_controller_orientation.md","articles":[]},{"title":"Compass","level":"1.4.4","depth":2,"path":"config/compass.md","ref":"config/compass.md","articles":[]},{"title":"Accelerometer","level":"1.4.5","depth":2,"path":"config/accelerometer.md","ref":"config/accelerometer.md","articles":[]},{"title":"Airspeed","level":"1.4.6","depth":2,"path":"config/airspeed.md","ref":"config/airspeed.md","articles":[]},{"title":"Level Horizon Calibration","level":"1.4.7","depth":2,"path":"config/level_horizon_calibration.md","ref":"config/level_horizon_calibration.md","articles":[]},{"title":"Radio Setup","level":"1.4.8","depth":2,"path":"config/radio.md","ref":"config/radio.md","articles":[]},{"title":"Flight Modes","level":"1.4.9","depth":2,"path":"config/flight_mode.md","ref":"config/flight_mode.md","articles":[]},{"title":"Battery","level":"1.4.10","depth":2,"path":"config/battery.md","ref":"config/battery.md","articles":[]},{"title":"Safety","level":"1.4.11","depth":2,"path":"config/safety.md","ref":"config/safety.md","articles":[]}]},"previous":{"title":"Pixracer Wiring Quickstart","level":"1.3.5","depth":2,"path":"assembly/quick_start_pixracer.md","ref":"assembly/quick_start_pixracer.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"assembly/quick_start_pixhawk.md","mtime":"2018-12-10T06:15:07.166Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T06:16:44.946Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -2819,10 +2823,6 @@ with the arrow points towards the front of the vehicle.</p>
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
-    
-        
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
         
     
@@ -2832,6 +2832,10 @@ with the arrow points towards the front of the vehicle.</p>
     
         
         <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         

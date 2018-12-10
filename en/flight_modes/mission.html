@@ -25,6 +25,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
@@ -2677,7 +2681,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="mission-mode">Mission Mode</h1>
+                                <h1 id="mission-mode"><a name="mission-mode" class="plugin-anchor" href="#mission-mode"><i class="fa fa-link" aria-hidden="true"></i></a>Mission Mode</h1>
 <p><a href="../getting_started/flight_modes.html#key_position_fixed"><img src="../../assets/site/position_fixed.svg" title="Position fix required (e.g. GPS)" width="30px"></a></p>
 <p><em>Mission mode</em> causes the vehicle to execute a predefined autonomous <a href="../flying/missions.html">mission</a> (flight plan) that has been uploaded to the flight controller. 
 The mission is typically created and uploaded with a Ground Control Station (GCS) application like <a href="https://docs.qgroundcontrol.com/en/" target="_blank">QGroundControl</a> (QGC).</p>
@@ -2690,7 +2694,7 @@ The mission is typically created and uploaded with a Ground Control Station (GCS
 <li>The vehicle must be armed before this mode can be engaged.</li>
 </ul>
 </blockquote>
-<h2 id="description">Description</h2>
+<h2 id="description"><a name="description" class="plugin-anchor" href="#description"><i class="fa fa-link" aria-hidden="true"></i></a>Description</h2>
 <p>Missions are usually created in a ground control station (e.g. <a href="https://docs.qgroundcontrol.com/en/PlanView/PlanView.html" target="_blank">QGroundControl</a>) and uploaded prior to launch. 
 They may also be created by a developer API, and/or uploaded in flight. </p>
 <p>Individual <a href="#mission_commands">mission commands</a> are handled in a way that is appropriate for each vehicle&apos;s flight characteristics (for example loiter is implemented as <em>hover</em> for copter and <em>circle</em> for fixed-wing).
@@ -2729,19 +2733,19 @@ VTOL vehicles follow the behavior and parameters of fixed-wing when in FW mode, 
 <li><a href="../flying/missions.html">Mission Planning</a></li>
 <li><a href="https://docs.qgroundcontrol.com/en/PlanView/PlanView.html" target="_blank">Plan View</a> (<em>QGroundControl</em> User Guide)</li>
 </ul>
-<h2 id="qgroundcontrol-support">QGroundControl Support</h2>
+<h2 id="qgroundcontrol-support"><a name="qgroundcontrol-support" class="plugin-anchor" href="#qgroundcontrol-support"><i class="fa fa-link" aria-hidden="true"></i></a>QGroundControl Support</h2>
 <p><em>QGroundControl</em> provides additional GCS-level mission handling support (in addition to that provided by the flight controller). For more information see:</p>
 <ul>
 <li><a href="https://docs.qgroundcontrol.com/en/releases/stable_v3.2_long.html#remove-mission-after-vehicle-lands" target="_blank">Remove mission after vehicle lands</a> </li>
 <li><a href="https://docs.qgroundcontrol.com/en/releases/stable_v3.2_long.html#resume-mission" target="_blank">Resume mission after Return mode</a></li>
 </ul>
-<h2 id="mission-parameters">Mission Parameters</h2>
+<h2 id="mission-parameters"><a name="mission-parameters" class="plugin-anchor" href="#mission-parameters"><i class="fa fa-link" aria-hidden="true"></i></a>Mission Parameters</h2>
 <p>Mission behaviour is affected by a number of parameters. 
 These cover, for example, how the vehicle will behave if it looses connection to its remote control during a mission (<a href="../advanced_config/parameter_reference.html#NAV_RCL_ACT">NAV_RCL_ACT</a>), 
 the fixed-wing loiter radius (<a href="../advanced_config/parameter_reference.html#NAV_LOITER_RAD">NAV_LOITER_RAD</a>), 
 acceptance radius for reaching a waypoint etc.</p>
 <p>These are documented here: <a href="../advanced_config/parameter_reference.html#mission">Parameter Reference &gt; Mission</a></p>
-<h2 id="mission_commands">Supported Mission Commands </h2>
+<h2 id="mission_commands"><a name="mission_commands" class="plugin-anchor" href="#mission_commands"><i class="fa fa-link" aria-hidden="true"></i></a>Supported Mission Commands </h2>
 <p>PX4 &quot;accepts&quot; the following MAVLink mission commands in Mission mode (note: caveats below list).
 Unless otherwise noted, the implementation is as defined in the MAVLink speification.</p>
 <ul>
@@ -2802,7 +2806,7 @@ Support is <code>MavlinkMissionManager::parse_mavlink_mission_item</code> in <a 
 </blockquote>
 </li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 02:02:48 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 06:15:07 </span> </footer>
                                 
                                 </section>
                             
@@ -2845,7 +2849,7 @@ Support is <code>MavlinkMissionManager::parse_mavlink_mission_item</code> in <a 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Mission","level":"1.6.6.15","depth":3,"next":{"title":"Follow Me","level":"1.6.6.16","depth":3,"path":"flight_modes/follow_me.md","ref":"flight_modes/follow_me.md","articles":[]},"previous":{"title":"Hold","level":"1.6.6.14","depth":3,"path":"flight_modes/hold.md","ref":"flight_modes/hold.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"flight_modes/mission.md","mtime":"2018-12-10T02:02:48.213Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T02:04:29.857Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Mission","level":"1.6.6.15","depth":3,"next":{"title":"Follow Me","level":"1.6.6.16","depth":3,"path":"flight_modes/follow_me.md","ref":"flight_modes/follow_me.md","articles":[]},"previous":{"title":"Hold","level":"1.6.6.14","depth":3,"path":"flight_modes/hold.md","ref":"flight_modes/hold.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"flight_modes/mission.md","mtime":"2018-12-10T06:15:07.170Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T06:16:44.946Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -2857,10 +2861,6 @@ Support is <code>MavlinkMissionManager::parse_mavlink_mission_item</code> in <a 
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
-    
-        
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
         
     
@@ -2870,6 +2870,10 @@ Support is <code>MavlinkMissionManager::parse_mavlink_mission_item</code> in <a 
     
         
         <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         

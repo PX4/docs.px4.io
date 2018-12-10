@@ -25,6 +25,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
@@ -2677,14 +2681,14 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="lidar-lite">Lidar-Lite</h1>
+                                <h1 id="lidar-lite"><a name="lidar-lite" class="plugin-anchor" href="#lidar-lite"><i class="fa fa-link" aria-hidden="true"></i></a>Lidar-Lite</h1>
 <p>LIDAR-Lite is a compact, high-performance optical distant measurement sensor solution for drone, robot or unmanned vehicle applications. It can be connected to either I2C or PWM.</p>
 <p> <img src="../../assets/hardware/sensors/lidar_lite/lidar_lite_v3.jpg" alt="LidarLite v3"></p>
-<h2 id="where-to-buy">Where to Buy</h2>
+<h2 id="where-to-buy"><a name="where-to-buy" class="plugin-anchor" href="#where-to-buy"><i class="fa fa-link" aria-hidden="true"></i></a>Where to Buy</h2>
 <ul>
 <li><a href="https://buy.garmin.com/en-AU/AU/p/557294" target="_blank">LIDAR-Lite v3</a> (5cm - 40m)</li>
 </ul>
-<h2 id="pinouts">Pinouts</h2>
+<h2 id="pinouts"><a name="pinouts" class="plugin-anchor" href="#pinouts"><i class="fa fa-link" aria-hidden="true"></i></a>Pinouts</h2>
 <p>The Lidar-Lite (v2, v3) pinout is shown below.</p>
 <table>
 <thead>
@@ -2727,7 +2731,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="wiring">Wiring</h2>
+<h2 id="wiring"><a name="wiring" class="plugin-anchor" href="#wiring"><i class="fa fa-link" aria-hidden="true"></i></a>Wiring</h2>
 <p>The <em>Lidar-Lite v3</em> can be used with either PWM or I2C. 
 PWM is recommended if using an older model.
 The rangefinder must be separately powered via some ESC/BEC (whether connected via PWM or I2C).</p>
@@ -2737,7 +2741,7 @@ The rangefinder must be separately powered via some ESC/BEC (whether connected v
 <p>The standard wiring instructions for Lidar-Lite 3 (from the <a href="http://static.garmin.com/pumac/LIDAR_Lite_v3_Operation_Manual_and_Technical_Specifications.pdf" target="_blank">Operation Manual</a>) are shown below.
 Lidar-Lite v2 and v3 are the same, except that the order of pins in the connector is reversed (i.e. it is as though the connector was turned over).</p>
 <p><img src="../../assets/hardware/sensors/lidar_lite/lidar_lite2_standard_wiring_spec.jpg" alt="LidarLite v3 - Standard Wiring from Garmin Specification"></p>
-<h3 id="pwm-interface-wiring">PWM Interface Wiring</h3>
+<h3 id="pwm-interface-wiring"><a name="pwm-interface-wiring" class="plugin-anchor" href="#pwm-interface-wiring"><i class="fa fa-link" aria-hidden="true"></i></a>PWM Interface Wiring</h3>
 <p>The pin connections for wiring LidarLite to the <em>Pixhawk 1</em> AUX ports (PWM interface) are shown below. </p>
 <table>
 <thead>
@@ -2791,18 +2795,18 @@ Lidar-Lite v2 and v3 are the same, except that the order of pins in the connecto
 <p><img src="../../assets/hardware/sensors/lidar_lite/lidar_lite_2_interface_wiring.jpg" alt="Lidar Lite 2 Interface wiring"></p>
 <p><img src="../../assets/hardware/sensors/lidar_lite/lidarlite_wiring_scheme_pixhawk.jpg" alt="Lidar Lite 2 Interface wiring"></p>
 <p><img src="../../assets/hardware/sensors/lidar_lite/lidarlite_wiring_pins_cables.jpg" alt="Lidar Lite 2 pins/cabling"></p>
-<h3 id="i2c-interface-wiring">I2C Interface Wiring</h3>
+<h3 id="i2c-interface-wiring"><a name="i2c-interface-wiring" class="plugin-anchor" href="#i2c-interface-wiring"><i class="fa fa-link" aria-hidden="true"></i></a>I2C Interface Wiring</h3>
 <p>TBD</p>
-<h2 id="software-configuration">Software Configuration</h2>
+<h2 id="software-configuration"><a name="software-configuration" class="plugin-anchor" href="#software-configuration"><i class="fa fa-link" aria-hidden="true"></i></a>Software Configuration</h2>
 <p>The rangefinder/port is enabled using <a href="../advanced_config/parameter_reference.html#SENS_EN_LL40LS">SENS_EN_LL40LS</a> - set to <code>1</code> for PWM, or <code>2</code> for I2C.</p>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> The driver for this rangefinder is usually present in firmware. If missing, you would also need to add the driver (<code>drivers/ll40ls</code>) to the board configuration.</p>
 </blockquote>
-<h2 id="further-information">Further Information</h2>
+<h2 id="further-information"><a name="further-information" class="plugin-anchor" href="#further-information"><i class="fa fa-link" aria-hidden="true"></i></a>Further Information</h2>
 <ul>
 <li><a href="http://static.garmin.com/pumac/LIDAR_Lite_v3_Operation_Manual_and_Technical_Specifications.pdf" target="_blank">LIDAR_Lite_v3_Operation_Manual_and_Technical_Specifications.pdf</a> (Garmin)</li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 02:02:48 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 06:15:07 </span> </footer>
                                 
                                 </section>
                             
@@ -2845,7 +2849,7 @@ Lidar-Lite v2 and v3 are the same, except that the order of pins in the connecto
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Lidar-Lite","level":"1.10.6.5","depth":3,"next":{"title":"Airspeed Sensors","level":"1.10.7","depth":2,"path":"sensor/airspeed.md","ref":"sensor/airspeed.md","articles":[]},"previous":{"title":"Benewake TFmini Lidar","level":"1.10.6.4","depth":3,"path":"sensor/tfmini.md","ref":"sensor/tfmini.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"sensor/lidar_lite.md","mtime":"2018-12-10T02:02:48.217Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T02:04:29.857Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Lidar-Lite","level":"1.10.6.5","depth":3,"next":{"title":"Airspeed Sensors","level":"1.10.7","depth":2,"path":"sensor/airspeed.md","ref":"sensor/airspeed.md","articles":[]},"previous":{"title":"Benewake TFmini Lidar","level":"1.10.6.4","depth":3,"path":"sensor/tfmini.md","ref":"sensor/tfmini.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"sensor/lidar_lite.md","mtime":"2018-12-10T06:15:07.178Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T06:16:44.946Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -2857,10 +2861,6 @@ Lidar-Lite v2 and v3 are the same, except that the order of pins in the connecto
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
-    
-        
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
         
     
@@ -2870,6 +2870,10 @@ Lidar-Lite v2 and v3 are the same, except that the order of pins in the connecto
     
         
         <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         

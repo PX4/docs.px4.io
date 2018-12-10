@@ -25,6 +25,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
@@ -2677,7 +2681,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="omnibus-f4-sd">Omnibus F4 SD</h1>
+                                <h1 id="omnibus-f4-sd"><a name="omnibus-f4-sd" class="plugin-anchor" href="#omnibus-f4-sd"><i class="fa fa-link" aria-hidden="true"></i></a>Omnibus F4 SD</h1>
 <p>The <em>Omnibus F4 SD</em> is a controller board designed for racers. 
 In contrast to a typical racer board it has some additional features, such as an SD card and a faster CPU.</p>
 <p>These are the main differences compared to a <a href="pixracer.html">Pixracer</a>:</p>
@@ -2697,7 +2701,7 @@ In contrast to a typical racer board it has some additional features, such as an
 <p> All the usual PX4 features can still be used for your racer!</p>
 </blockquote>
 <p><img src="../../assets/flight_controller/omnibus_f4_sd/board.jpg" width="400px" title="Omnibus F4 SD"></p>
-<h2 id="key-features">Key Features</h2>
+<h2 id="key-features"><a name="key-features" class="plugin-anchor" href="#key-features"><i class="fa fa-link" aria-hidden="true"></i></a>Key Features</h2>
 <ul>
 <li>Main System-on-Chip: <a href="https://www.st.com/en/microcontrollers/stm32f405rg.html" target="_blank">STM32F405RGT6</a><ul>
 <li>CPU: 168 MHz ARM Cortex M4 with single-precision FPU</li>
@@ -2714,7 +2718,7 @@ In contrast to a typical racer board it has some additional features, such as an
 <li>built-in current sensor</li>
 <li>built-in OSD chip (AB7456 via SPI, not supported yet)</li>
 </ul>
-<h2 id="where-to-buy">Where to Buy</h2>
+<h2 id="where-to-buy"><a name="where-to-buy" class="plugin-anchor" href="#where-to-buy"><i class="fa fa-link" aria-hidden="true"></i></a>Where to Buy</h2>
 <p>The board is produced by different vendors, with some variations (e.g. with or without a barometer).</p>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> PX4 is compatible with boards that support the Betaflight OMNIBUSF4SD target (if <em>OMNIBUSF4SD</em> is present on the product page the board should work with PX4).</p>
@@ -2747,18 +2751,18 @@ In contrast to a typical racer board it has some additional features, such as an
 <li><a href="../telemetry/esp8266_wifi_module.html">ESP8266 WiFi Module</a> for MAVLink telemetry.
 You need to connect these pins: GND, RX, TX, VCC and CH-PD (CH-PD to 3.3V). The baud rate is 921600.</li>
 </ul>
-<h2 id="connectors">Connectors</h2>
+<h2 id="connectors"><a name="connectors" class="plugin-anchor" href="#connectors"><i class="fa fa-link" aria-hidden="true"></i></a>Connectors</h2>
 <p>Boards from different vendors (based on this design) can have significantly different layout.
 Layouts/Silkscreens for various versions are shown below.</p>
-<h3 id="airbot-omnibus-f4-sd">Airbot Omnibus F4 SD</h3>
+<h3 id="airbot-omnibus-f4-sd"><a name="airbot-omnibus-f4-sd" class="plugin-anchor" href="#airbot-omnibus-f4-sd"><i class="fa fa-link" aria-hidden="true"></i></a>Airbot Omnibus F4 SD</h3>
 <p>Below are silkscreens for the Airbot Omnibus F4 SD (V1), showing both top and bottom.</p>
 <p><img src="../../assets/flight_controller/omnibus_f4_sd/silk-top.jpg" alt="Omnibus F4 SD v1 Silkscreen Top">
 <img src="../../assets/flight_controller/omnibus_f4_sd/silk-bottom.jpg" alt="Omnibus F4 SD v1 Silkscreen Bottom"></p>
-<h3 id="hobbywing-xrotor-flight-controller-f4">Hobbywing XRotor Flight Controller F4</h3>
+<h3 id="hobbywing-xrotor-flight-controller-f4"><a name="hobbywing-xrotor-flight-controller-f4" class="plugin-anchor" href="#hobbywing-xrotor-flight-controller-f4"><i class="fa fa-link" aria-hidden="true"></i></a>Hobbywing XRotor Flight Controller F4</h3>
 <p>Below are silkscreens for the Hobbywing XRotor Flight Controller F4.</p>
 <p><img src="../../assets/flight_controller/omnibus_f4_sd/hobbywing_xrotor_silk.png" alt="Hobbywing XRotor Flight Controller F4 Silkscreen"></p>
-<h2 id="pinouts">Pinouts</h2>
-<h3 id="radio-control">Radio Control</h3>
+<h2 id="pinouts"><a name="pinouts" class="plugin-anchor" href="#pinouts"><i class="fa fa-link" aria-hidden="true"></i></a>Pinouts</h2>
+<h3 id="radio-control"><a name="radio-control" class="plugin-anchor" href="#radio-control"><i class="fa fa-link" aria-hidden="true"></i></a>Radio Control</h3>
 <p>RC is connected to one of the following ports:</p>
 <ul>
 <li>UART1</li>
@@ -2767,7 +2771,7 @@ Layouts/Silkscreens for various versions are shown below.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> Some Omnibus F4 boards have a jumper connecting either or both the MCU SBUS and PPM to a single pin header. Set your jumper or solder bridge to the appropriate MCU pin before use.</p>
 </blockquote>
-<h3 id="uarts">UARTs</h3>
+<h3 id="uarts"><a name="uarts" class="plugin-anchor" href="#uarts"><i class="fa fa-link" aria-hidden="true"></i></a>UARTs</h3>
 <ul>
 <li><p>UART6: GPS port</p>
 <ul>
@@ -2795,7 +2799,7 @@ Layouts/Silkscreens for various versions are shown below.</p>
 <p><img src="../../assets/flight_controller/omnibus_f4_sd/uart4-top.jpg" alt="Omnibus F4 SD UART4 Top"></p>
 </li>
 </ul>
-<h3 id="i2c">I2C</h3>
+<h3 id="i2c"><a name="i2c" class="plugin-anchor" href="#i2c"><i class="fa fa-link" aria-hidden="true"></i></a>I2C</h3>
 <p>There is one I2C port available via:</p>
 <ul>
 <li>SCL: MCU pin PB10 (might be labeled as TX3)</li>
@@ -2812,9 +2816,9 @@ You can use 2.2k pullups for example to attach an external mag.</p>
 <p>Here is an example implementation. I used a Spektrum plug to get 3.3v from the DSM port, connecting only 3.3v + to each line via 2.2k resistor.</p>
 <p><img src="../../assets/flight_controller/omnibus_f4_sd/pullup-schematic.jpg" alt="Omnibus F4 SD Pullup"></p>
 <p><img src="../../assets/flight_controller/omnibus_f4_sd/pullup.jpg" alt="Omnibus F4 SD Pullup Implementation"></p>
-<h2 id="rc-telemetry">RC Telemetry</h2>
+<h2 id="rc-telemetry"><a name="rc-telemetry" class="plugin-anchor" href="#rc-telemetry"><i class="fa fa-link" aria-hidden="true"></i></a>RC Telemetry</h2>
 <p>The Omnibus supports telemetry to the RC Transmitter using <a href="../peripherals/frsky_telemetry.html">FrSky Telemetry</a> or <a href="#crsf_telemetry">CRSF Crossfire Telemetry</a>.</p>
-<h3 id="crsf_telemetry">CRSF Crossfire Telemetry </h3>
+<h3 id="crsf_telemetry"><a name="crsf_telemetry" class="plugin-anchor" href="#crsf_telemetry"><i class="fa fa-link" aria-hidden="true"></i></a>CRSF Crossfire Telemetry </h3>
 <p>TBS CRSF Crossfire telemetry is used to send telemetry data from the flight controller (the vehicle&apos;s attitude, battery, flight mode and GPS data) to the RC transmitter (Taranis).</p>
 <p>Benefits over FrSky telemetry include:</p>
 <ul>
@@ -2829,7 +2833,7 @@ This can be plugged into the back of the RC controller.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> The referenced links above contains the documentation for the TX/RX modules.</p>
 </blockquote>
-<h4 id="setup">Setup</h4>
+<h4 id="setup"><a name="setup" class="plugin-anchor" href="#setup"><i class="fa fa-link" aria-hidden="true"></i></a>Setup</h4>
 <p>Connect the Nano RX and Omnibus pins as shown:</p>
 <table>
 <thead>
@@ -2852,38 +2856,38 @@ This can be plugged into the back of the RC controller.</p>
 <p>Nothing else needs to be configured on PX4 flight controller side - the RC protocol is auto-detected.</p>
 <p>Next update the TX/RX modules to use the CRSF protocol and set up telemetry. 
 Instructions for this are provided in the <a href="https://www.team-blacksheep.com/tbs-crossfire-manual.pdf" target="_blank">TBS Crossfire Manual</a> (search for &apos;Setting up radio for CRSF&apos;).</p>
-<h2 id="schematics">Schematics</h2>
+<h2 id="schematics"><a name="schematics" class="plugin-anchor" href="#schematics"><i class="fa fa-link" aria-hidden="true"></i></a>Schematics</h2>
 <p>The schematics are provided by <a href="https://myairbot.com/" target="_blank">Airbot</a>: <a href="http://bit.ly/obf4pro" target="_blank">OmnibusF4-Pro-Sch.pdf</a>.</p>
-<h2 id="build--upload-instructions">Build &amp; Upload Instructions</h2>
+<h2 id="build--upload-instructions"><a name="build--upload-instructions" class="plugin-anchor" href="#build--upload-instructions"><i class="fa fa-link" aria-hidden="true"></i></a>Build &amp; Upload Instructions</h2>
 <p>The board comes pre-installed with <a href="https://github.com/betaflight/betaflight/wiki" target="_blank">Betaflight</a>. 
 Before PX4 firmware can be installed, the PX4 bootloader needs to be built and uploaded.</p>
-<h3 id="download">Download</h3>
+<h3 id="download"><a name="download" class="plugin-anchor" href="#download"><i class="fa fa-link" aria-hidden="true"></i></a>Download</h3>
 <p>Download and build the <a href="https://github.com/PX4/Bootloader" target="_blank">Bootloader</a> via:</p>
 <pre><code>git clone --recursive  https://github.com/PX4/Bootloader.git
 cd Bootloader
 make omnibusf4sd_bl
-</code></pre><h3 id="flash">Flash</h3>
+</code></pre><h3 id="flash"><a name="flash" class="plugin-anchor" href="#flash"><i class="fa fa-link" aria-hidden="true"></i></a>Flash</h3>
 <p>You can flash the PX4 bootloader via the <a href="http://dfu-util.sourceforge.net/" target="_blank">dfu-util</a> or the graphical <a href="https://www.st.com/en/development-tools/stsw-stm32080.html" target="_blank">dfuse</a> tool on windows.</p>
 <p>Don&apos;t be afraid to try flashing using any of the below methods. The STM32 MCU cannot be bricked. DFU cannot be overwritten by flashing and will always allow you to install a new firmware, even if flashing fails.</p>
-<h4 id="enter-dfu-mode">Enter DFU mode</h4>
+<h4 id="enter-dfu-mode"><a name="enter-dfu-mode" class="plugin-anchor" href="#enter-dfu-mode"><i class="fa fa-link" aria-hidden="true"></i></a>Enter DFU mode</h4>
 <p>Both methods require the board to be in DFU mode. To enter DFU mode, hold the boot button down while connecting the USB cable to your computer. The button can be released after the board is powered up.</p>
-<h4 id="dfu-util">dfu-util</h4>
+<h4 id="dfu-util"><a name="dfu-util" class="plugin-anchor" href="#dfu-util"><i class="fa fa-link" aria-hidden="true"></i></a>dfu-util</h4>
 <pre><code>dfu-util -a 0 --dfuse-address 0x08000000 -D  build/omnibusf4sd_bl/omnibusf4sd_bl.bin
 </code></pre><p>Reboot the flight controller and it let it boot without holding the boot button.</p>
-<h4 id="dfuse">dfuse</h4>
+<h4 id="dfuse"><a name="dfuse" class="plugin-anchor" href="#dfuse"><i class="fa fa-link" aria-hidden="true"></i></a>dfuse</h4>
 <p>See the dfuse manual is here: <a href="https://www.st.com/resource/en/user_manual/cd00155676.pdf" target="_blank">https://www.st.com/resource/en/user_manual/cd00155676.pdf</a></p>
 <p>Flash the <code>omnibusf4sd_bl.bin</code> file.</p>
-<h2 id="building-firmware">Building Firmware</h2>
+<h2 id="building-firmware"><a name="building-firmware" class="plugin-anchor" href="#building-firmware"><i class="fa fa-link" aria-hidden="true"></i></a>Building Firmware</h2>
 <p>To <a href="https://dev.px4.io/en/setup/building_px4.html" target="_blank">build PX4</a> for this target:</p>
 <pre><code>make omnibus_f4sd_default
-</code></pre><h3 id="installing-other-firmwares">Installing other firmwares</h3>
+</code></pre><h3 id="installing-other-firmwares"><a name="installing-other-firmwares" class="plugin-anchor" href="#installing-other-firmwares"><i class="fa fa-link" aria-hidden="true"></i></a>Installing other firmwares</h3>
 <p>If you later on want to switch back to <em>Betaflight</em>, you can easily do that:</p>
 <ul>
 <li>Backup the parameters by copying the <strong>params</strong> file on the SD card (or use another SD card)</li>
 <li>Keep the <strong>bootloader</strong> button pressed while attaching the USB cable</li>
 <li>Then flash <em>Betaflight</em> as usual with the <em>Betaflight-configurator</em></li>
 </ul>
-<h2 id="configuration">Configuration</h2>
+<h2 id="configuration"><a name="configuration" class="plugin-anchor" href="#configuration"><i class="fa fa-link" aria-hidden="true"></i></a>Configuration</h2>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> Make sure to insert an SD card as the parameters are stored there.</p>
 </blockquote>
@@ -2910,10 +2914,10 @@ make omnibusf4sd_bl
 </tr>
 </tbody>
 </table>
-<h2 id="further-info">Further Info</h2>
+<h2 id="further-info"><a name="further-info" class="plugin-anchor" href="#further-info"><i class="fa fa-link" aria-hidden="true"></i></a>Further Info</h2>
 <p>A review with further information of the board can be found <a href="https://nathan.vertile.com/blog/2016/10/12/omnibusf4/" target="_blank">here</a>.</p>
 <p><a href="https://blog.dronetrest.com/omnibus-f4-flight-controller-guide/" target="_blank">This page</a> also provides a nice overview with pinouts and setup instructions.</p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 02:02:48 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 06:15:07 </span> </footer>
                                 
                                 </section>
                             
@@ -2956,7 +2960,7 @@ make omnibusf4sd_bl
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Omnibus F4 SD","level":"1.11.3","depth":2,"next":{"title":"Snapdragon Flight","level":"1.11.4","depth":2,"path":"flight_controller/snapdragon_flight.md","ref":"flight_controller/snapdragon_flight.md","articles":[{"title":"Hardware Setup Example","level":"1.11.4.1","depth":3,"path":"flight_controller/snapdragon_flight_hardware_example_setup.md","ref":"flight_controller/snapdragon_flight_hardware_example_setup.md","articles":[]},{"title":"Developer Environment Installation","level":"1.11.4.2","depth":3,"path":"flight_controller/snapdragon_flight_dev_environment_installation.md","ref":"flight_controller/snapdragon_flight_dev_environment_installation.md","articles":[]},{"title":"Snapdragon Software Installation","level":"1.11.4.3","depth":3,"path":"flight_controller/snapdragon_flight_software_installation.md","ref":"flight_controller/snapdragon_flight_software_installation.md","articles":[]},{"title":"Configuration","level":"1.11.4.4","depth":3,"path":"flight_controller/snapdragon_flight_configuration.md","ref":"flight_controller/snapdragon_flight_configuration.md","articles":[]},{"title":"Snapdragon Advanced","level":"1.11.4.5","depth":3,"path":"flight_controller/snapdragon_flight_advanced.md","ref":"flight_controller/snapdragon_flight_advanced.md","articles":[]}]},"previous":{"title":"NanoMind 110","level":"1.11.2.2.1.2","depth":5,"path":"flight_controller/nanomind110.md","ref":"flight_controller/nanomind110.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"flight_controller/omnibus_f4_sd.md","mtime":"2018-12-10T02:02:48.209Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T02:04:29.857Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Omnibus F4 SD","level":"1.11.3","depth":2,"next":{"title":"Snapdragon Flight","level":"1.11.4","depth":2,"path":"flight_controller/snapdragon_flight.md","ref":"flight_controller/snapdragon_flight.md","articles":[{"title":"Hardware Setup Example","level":"1.11.4.1","depth":3,"path":"flight_controller/snapdragon_flight_hardware_example_setup.md","ref":"flight_controller/snapdragon_flight_hardware_example_setup.md","articles":[]},{"title":"Developer Environment Installation","level":"1.11.4.2","depth":3,"path":"flight_controller/snapdragon_flight_dev_environment_installation.md","ref":"flight_controller/snapdragon_flight_dev_environment_installation.md","articles":[]},{"title":"Snapdragon Software Installation","level":"1.11.4.3","depth":3,"path":"flight_controller/snapdragon_flight_software_installation.md","ref":"flight_controller/snapdragon_flight_software_installation.md","articles":[]},{"title":"Configuration","level":"1.11.4.4","depth":3,"path":"flight_controller/snapdragon_flight_configuration.md","ref":"flight_controller/snapdragon_flight_configuration.md","articles":[]},{"title":"Snapdragon Advanced","level":"1.11.4.5","depth":3,"path":"flight_controller/snapdragon_flight_advanced.md","ref":"flight_controller/snapdragon_flight_advanced.md","articles":[]}]},"previous":{"title":"NanoMind 110","level":"1.11.2.2.1.2","depth":5,"path":"flight_controller/nanomind110.md","ref":"flight_controller/nanomind110.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"flight_controller/omnibus_f4_sd.md","mtime":"2018-12-10T06:15:07.170Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T06:16:44.946Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -2968,10 +2972,6 @@ make omnibusf4sd_bl
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
-    
-        
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
         
     
@@ -2981,6 +2981,10 @@ make omnibusf4sd_bl
     
         
         <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         

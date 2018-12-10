@@ -25,6 +25,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
@@ -2677,9 +2681,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="pwm-servos-and-escs-motor-controllers">PWM Servos and ESCs (Motor Controllers)</h1>
+                                <h1 id="pwm-servos-and-escs-motor-controllers"><a name="pwm-servos-and-escs-motor-controllers" class="plugin-anchor" href="#pwm-servos-and-escs-motor-controllers"><i class="fa fa-link" aria-hidden="true"></i></a>PWM Servos and ESCs (Motor Controllers)</h1>
 <p>This section describes how to connect and power PWM-based brushless motor controllers and servos.</p>
-<h2 id="esc-connection-overview">ESC Connection Overview</h2>
+<h2 id="esc-connection-overview"><a name="esc-connection-overview" class="plugin-anchor" href="#esc-connection-overview"><i class="fa fa-link" aria-hidden="true"></i></a>ESC Connection Overview</h2>
 <p>Each PWM Electronic Speed Controller (ESC) minimally has the following wires:</p>
 <ul>
 <li>Power VBAT (usually thick and red)</li>
@@ -2698,13 +2702,13 @@ The purpose of this wire and how it is connected depends on particular ESC and v
   Isolate it with electrical isolation tape and tape it to the servo cable. 
   This allows you to easily undo the wire later if needed.</p>
 </blockquote>
-<h2 id="power-connections">Power Connections</h2>
+<h2 id="power-connections"><a name="power-connections" class="plugin-anchor" href="#power-connections"><i class="fa fa-link" aria-hidden="true"></i></a>Power Connections</h2>
 <p>Always connect Power VBAT and GND to the battery, and the PWM signal and GND from the servo plug to the motor.</p>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> There is <strong>no setup</strong> that does not require signal ground to be connected!</p>
 </blockquote>
 <p>The connection to the +5V wire (if present) depends on the ESC/Vehicle.</p>
-<h3 id="fixed-wing--vtol">Fixed Wing / VTOL</h3>
+<h3 id="fixed-wing--vtol"><a name="fixed-wing--vtol" class="plugin-anchor" href="#fixed-wing--vtol"><i class="fa fa-link" aria-hidden="true"></i></a>Fixed Wing / VTOL</h3>
 <p>On a fixed wing (or VTOL) ESC, the +5V line usually provides the output of a Battery Elimination Circuit (BEC). </p>
 <ul>
 <li>This can be connected to the Pixhawk servo rail and used to power servos for flaps, ailerons etc.<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
@@ -2716,22 +2720,22 @@ The purpose of this wire and how it is connected depends on particular ESC and v
 <li>As a rule of thumb you should only connect the <em>output of only one BEC</em> to the Pixhawk servo rail. 
 (while it may be possible to connect multiple +5V outputs to the rail, this depends on the ESC model).</li>
 </ul>
-<h3 id="multicopter">Multicopter</h3>
+<h3 id="multicopter"><a name="multicopter" class="plugin-anchor" href="#multicopter"><i class="fa fa-link" aria-hidden="true"></i></a>Multicopter</h3>
 <p>On a multicopter, the +5V line might not be present or (if present) may not be connected.</p>
 <ul>
 <li>Multicopters often do not need servos, and hence do not need to power the Pixhawk servo rail (motors are usually separately powered from a power distribution board).</li>
 <li>There is no harm (or benefit) in connecting the wire to the servo rail.</li>
 <li>DJI ESCs typically include this wire, but it is not connected.</li>
 </ul>
-<h3 id="opto-isolated-esc">Opto-isolated ESC</h3>
+<h3 id="opto-isolated-esc"><a name="opto-isolated-esc" class="plugin-anchor" href="#opto-isolated-esc"><i class="fa fa-link" aria-hidden="true"></i></a>Opto-isolated ESC</h3>
 <p>On an opto-isolated ESC <strong>without</strong> BEC, the +5V line might need to be connected and powered (in order to provide power to the ESC microcontroller). 
 In this case the wire will normally be connected to the flight controller servo rail, and the servo rail must be powered from an additional BEC. </p>
-<h2 id="pwm-configuration">PWM Configuration</h2>
+<h2 id="pwm-configuration"><a name="pwm-configuration" class="plugin-anchor" href="#pwm-configuration"><i class="fa fa-link" aria-hidden="true"></i></a>PWM Configuration</h2>
 <p>The PX4 PWM configuration parameters can be found here: <a href="../advanced_config/parameter_reference.html#pwm-outputs">PWM Outputs</a>.</p>
-<h2 id="troubleshooting">Troubleshooting</h2>
+<h2 id="troubleshooting"><a name="troubleshooting" class="plugin-anchor" href="#troubleshooting"><i class="fa fa-link" aria-hidden="true"></i></a>Troubleshooting</h2>
 <p>Pixhawk is compatible with all <em>PWM ESCs</em> on the market.
 If a particular ESC is not operational, it is incorrectly wired up or configured.</p>
-<h3 id="ground-connection">Ground Connection</h3>
+<h3 id="ground-connection"><a name="ground-connection" class="plugin-anchor" href="#ground-connection"><i class="fa fa-link" aria-hidden="true"></i></a>Ground Connection</h3>
 <p>Check that the ground (black wire) of the ESC servo connector is connected to Pixhawk (there is no valid wiring setup that does not have a ground reference).</p>
 <blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
 <p> It is unsafe to fly without ground connected.
@@ -2739,18 +2743,18 @@ If a particular ESC is not operational, it is incorrectly wired up or configured
 </blockquote>
 <p>  The image below shows how noisy the signal becomes if GND is not connected.</p>
 <p>  <img src="../../assets/hardware/pwm_esc/pwm_without_gnd.png" alt="PWM without ground"></p>
-<h3 id="power-connection--opto-isolated-escs">Power Connection / Opto-isolated ESCs</h3>
+<h3 id="power-connection--opto-isolated-escs"><a name="power-connection--opto-isolated-escs" class="plugin-anchor" href="#power-connection--opto-isolated-escs"><i class="fa fa-link" aria-hidden="true"></i></a>Power Connection / Opto-isolated ESCs</h3>
 <p>If using an opto-isolated ESC that does not provide a BEC / power output, please ensure that the ESC does not need its +5V line powered for the opto-isolator.</p>
 <p>See the first section of this page explains for other power connection considerations.</p>
-<h3 id="invalid-minimum-value">Invalid Minimum Value</h3>
+<h3 id="invalid-minimum-value"><a name="invalid-minimum-value" class="plugin-anchor" href="#invalid-minimum-value"><i class="fa fa-link" aria-hidden="true"></i></a>Invalid Minimum Value</h3>
 <p>Some ESCs need to see a special low value pulse before switching on (to protect users who have the throttle stick in the middle position on power-up).</p>
 <p>PX4 sends a value of <a href="../advanced_config/parameter_reference.html#PWM_DISARMED">PWM_DISARMED</a> pulse when the vehicle is disarmed, which silences the ESCs when they are disarmed and ensures that ESCs initialise correctly. </p>
 <p>This value should be set correctly for the ESC (correct values vary between roughly 1200 and 900 us). </p>
-<h3 id="timeout">Timeout</h3>
+<h3 id="timeout"><a name="timeout" class="plugin-anchor" href="#timeout"><i class="fa fa-link" aria-hidden="true"></i></a>Timeout</h3>
 <p>Some ESCs may time out (preventing motor activation) if they have not received a valid low pulse within a few seconds of power on. </p>
 <p>PX4 flight stack sends the <a href="../advanced_config/parameter_reference.html#PWM_DISARMED">PWM_DISARMED</a> pulse idle/disarmed pulse right after power on.
 Provided this is configured correctly, ESCs will not time out.</p>
-<h3 id="valid-pulse-shape-voltage-and-update-rate">Valid Pulse Shape, Voltage and Update Rate</h3>
+<h3 id="valid-pulse-shape-voltage-and-update-rate"><a name="valid-pulse-shape-voltage-and-update-rate" class="plugin-anchor" href="#valid-pulse-shape-voltage-and-update-rate"><i class="fa fa-link" aria-hidden="true"></i></a>Valid Pulse Shape, Voltage and Update Rate</h3>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> This should not be a problem, but is included for completeness</p>
 </blockquote>
@@ -2763,7 +2767,7 @@ CMOS logic is defined with similar voltage levels.
 <p> Futaba, FrSky and Spektrum receivers output 3.3V or 3.0V voltage levels, as they are well above 2.4V. 
   Pixhawk has adopted this common industry pattern and outputs 3.3V levels on recent boards.</p>
 </blockquote>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 02:02:48 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 06:15:07 </span> </footer>
                                 
                                 </section>
                             
@@ -2806,7 +2810,7 @@ CMOS logic is defined with similar voltage levels.
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"PWM ESCs and Servos","level":"1.10.9.1","depth":3,"next":{"title":"Camera","level":"1.10.10","depth":2,"path":"peripherals/camera.md","ref":"peripherals/camera.md","articles":[]},"previous":{"title":"ESCs & Motors","level":"1.10.9","depth":2,"path":"peripherals/esc_motors.md","ref":"peripherals/esc_motors.md","articles":[{"title":"PWM ESCs and Servos","level":"1.10.9.1","depth":3,"path":"peripherals/pwm_escs_and_servo.md","ref":"peripherals/pwm_escs_and_servo.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"peripherals/pwm_escs_and_servo.md","mtime":"2018-12-10T02:02:48.217Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T02:04:29.857Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"PWM ESCs and Servos","level":"1.10.9.1","depth":3,"next":{"title":"Camera","level":"1.10.10","depth":2,"path":"peripherals/camera.md","ref":"peripherals/camera.md","articles":[]},"previous":{"title":"ESCs & Motors","level":"1.10.9","depth":2,"path":"peripherals/esc_motors.md","ref":"peripherals/esc_motors.md","articles":[{"title":"PWM ESCs and Servos","level":"1.10.9.1","depth":3,"path":"peripherals/pwm_escs_and_servo.md","ref":"peripherals/pwm_escs_and_servo.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"peripherals/pwm_escs_and_servo.md","mtime":"2018-12-10T06:15:07.174Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T06:16:44.946Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -2818,10 +2822,6 @@ CMOS logic is defined with similar voltage levels.
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
-    
-        
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
         
     
@@ -2831,6 +2831,10 @@ CMOS logic is defined with similar voltage levels.
     
         
         <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         

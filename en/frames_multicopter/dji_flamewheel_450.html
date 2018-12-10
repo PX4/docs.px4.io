@@ -25,6 +25,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
@@ -2677,7 +2681,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="dji-flame-wheel-450-with-distance-sensor-and-rtk-gps-pixhawk-3-pro">DJI Flame Wheel 450 with Distance Sensor and RTK GPS (Pixhawk 3 Pro)</h1>
+                                <h1 id="dji-flame-wheel-450-with-distance-sensor-and-rtk-gps-pixhawk-3-pro"><a name="dji-flame-wheel-450-with-distance-sensor-and-rtk-gps-pixhawk-3-pro" class="plugin-anchor" href="#dji-flame-wheel-450-with-distance-sensor-and-rtk-gps-pixhawk-3-pro"><i class="fa fa-link" aria-hidden="true"></i></a>DJI Flame Wheel 450 with Distance Sensor and RTK GPS (Pixhawk 3 Pro)</h1>
 <p>The <em>DJI<sup>&#xAE;</sup> Flame Wheel F450</em> Quadcopter is designed for amateur aerial photography, first person view applications, and general flying entertainment. This topic provides full build and configuration instructions for using the frame with the Pixhawk 3 Pro flight controller. Additionally this build includes an RTK GPS and a distance sensor for precision positioning.</p>
 <p>Key information:</p>
 <ul>
@@ -2687,7 +2691,7 @@
 </ul>
 <p><img src="../../assets/airframes/multicopter/Flamewheel_450/f450_setup_full.JPG" alt=""></p>
 <p><img src="../../assets/airframes/multicopter/Flamewheel_450/f450_setup_back.JPG" alt=""></p>
-<h2 id="parts-list">Parts List</h2>
+<h2 id="parts-list"><a name="parts-list" class="plugin-anchor" href="#parts-list"><i class="fa fa-link" aria-hidden="true"></i></a>Parts List</h2>
 <ul>
 <li>Autopilot:        <a href="../flight_controller/pixhawk3_pro.html">Pixhawk 3 Pro</a></li>
 <li>Frame:            <a href="http://www.dji.com/flame-wheel-arf" target="_blank">DJI Flamewheel 450</a></li>
@@ -2706,9 +2710,9 @@
 the SD card. But if you rotate the base plate by 180 degrees instead, the flight
 controller board can be mounted facing forward. Either way works, just make sure
 to set the board rotation correctly in <em>QGroundControl</em> afterwards.</p>
-<h2 id="wiring-and-connections">Wiring and Connections</h2>
+<h2 id="wiring-and-connections"><a name="wiring-and-connections" class="plugin-anchor" href="#wiring-and-connections"><i class="fa fa-link" aria-hidden="true"></i></a>Wiring and Connections</h2>
 <p>General pinout for the Pixhawk 3 Pro can be found <a href="https://pixhawk.drotek.com/en/inputs-outputs.html" target="_blank">here</a>.</p>
-<h3 id="3dr-telemetry">3DR Telemetry</h3>
+<h3 id="3dr-telemetry"><a name="3dr-telemetry" class="plugin-anchor" href="#3dr-telemetry"><i class="fa fa-link" aria-hidden="true"></i></a>3DR Telemetry</h3>
 <p>The 3DR Telemetry does not come with a JST GH connector which the <em>Pixhawk 3 Pro</em> uses. The pinout remains the same and just the plug needs to be changed. Use the Telem 1 port on the <em>Pixhawk 3 Pro</em>.</p>
 <table>
 <thead>
@@ -2751,7 +2755,7 @@ to set the board rotation correctly in <em>QGroundControl</em> afterwards.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="lidar-lite-v3">Lidar-Lite V3</h3>
+<h3 id="lidar-lite-v3"><a name="lidar-lite-v3" class="plugin-anchor" href="#lidar-lite-v3"><i class="fa fa-link" aria-hidden="true"></i></a>Lidar-Lite V3</h3>
 <p>The pinout for the <em>Lidar Lite V3</em> and the <em>Pixhawk 3 Pro</em> I2C 1 port is as follows.</p>
 <table>
 <thead>
@@ -2794,7 +2798,7 @@ to set the board rotation correctly in <em>QGroundControl</em> afterwards.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="here-rtk-gps">Here+ RTK GPS</h3>
+<h3 id="here-rtk-gps"><a name="here-rtk-gps" class="plugin-anchor" href="#here-rtk-gps"><i class="fa fa-link" aria-hidden="true"></i></a>Here+ RTK GPS</h3>
 <p>The Here+ GPS comes with an 8 pin connector suited for the Pixhawk 2. In order to
 use it with the <em>Pixhawk 3 Pro</em> (or a Pixracer), a 6 pin connector has to be used
 and pin 6 and 7 are not needed (see below). The additional pins are for the
@@ -2862,21 +2866,21 @@ page 17.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="configuration">Configuration</h2>
+<h2 id="configuration"><a name="configuration" class="plugin-anchor" href="#configuration"><i class="fa fa-link" aria-hidden="true"></i></a>Configuration</h2>
 <p>General documentation on how to setup your quad in <em>QGroundControl</em> can be found in <a href="../config/">Basic Configuration</a>. Specific setup instructions are provided below.</p>
-<h3 id="airframe">Airframe</h3>
+<h3 id="airframe"><a name="airframe" class="plugin-anchor" href="#airframe"><i class="fa fa-link" aria-hidden="true"></i></a>Airframe</h3>
 <p>Select the airframe <strong>DJI Flame Wheel 450</strong> in <strong>QGC &gt; Airframe &gt; Quadrotor x</strong>.</p>
 <p><img src="../../assets/airframes/multicopter/Flamewheel_450/f450_setup_airframe.png" alt=""></p>
-<h3 id="rtk-gps">RTK GPS</h3>
+<h3 id="rtk-gps"><a name="rtk-gps" class="plugin-anchor" href="#rtk-gps"><i class="fa fa-link" aria-hidden="true"></i></a>RTK GPS</h3>
 <p>RTK GPS is plug and play. For more instructions see <a href="../advanced_features/rtk-gps.html">here</a>.</p>
-<h3 id="lidar-lite">Lidar-Lite</h3>
+<h3 id="lidar-lite"><a name="lidar-lite" class="plugin-anchor" href="#lidar-lite"><i class="fa fa-link" aria-hidden="true"></i></a>Lidar-Lite</h3>
 <p>To enable the <em>Lidar-Lite V3</em> (connected via I2C), the parameter <a href="../advanced_config/parameter_reference.html#SENS_EN_LL40LS">SENS_EN_LL40LS</a> has to be set to <code>I2C</code>.</p>
 <p>This can be done in <em>QGroundControl</em> <a href="https://docs.qgroundcontrol.com/en/SetupView/Parameters.html" target="_blank">Parameters</a> as shown below:</p>
 <p><img src="../../assets/airframes/multicopter/Flamewheel_450/f450_qgc_setup_i2c.png" alt="Set SENS_EN_LL40LS parameter in QGC"></p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> After setting the <code>SENS_EN_LL40LS</code> you will need to restart the flight controller.</p>
 </blockquote>
-<h3 id="others">Others</h3>
+<h3 id="others"><a name="others" class="plugin-anchor" href="#others"><i class="fa fa-link" aria-hidden="true"></i></a>Others</h3>
 <p>Set the following parameters as well:</p>
 <ul>
 <li><code>EKF2_HGT_MODE=2</code>: this makes sure the Lidar-Lite is used as height source</li>
@@ -2884,9 +2888,9 @@ page 17.</p>
 <li><code>CBRK_IO_SAFETY=22027</code>: disable the safety button</li>
 <li><code>EKF2_GPS_POS_X</code>, <code>EKF2_GPS_POS_Y</code>, <code>EKF2_GPS_POS_Z</code>: set the GPS device offset with respect to the board (NED coordinates).</li>
 </ul>
-<h2 id="video">Video</h2>
+<h2 id="video"><a name="video" class="plugin-anchor" href="#video"><i class="fa fa-link" aria-hidden="true"></i></a>Video</h2>
 <p><div style="position: relative;padding-bottom: 56.25%;padding-top: 25px;height: 0;"><iframe frameborder="0" allowfullscreen style="border: none;position: absolute;top: 0;left: 0;width: 100%;height: 100%;" src="//www.youtube.com/embed/JovSwzoTepU"></iframe></div></p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 02:02:48 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 06:15:07 </span> </footer>
                                 
                                 </section>
                             
@@ -2929,7 +2933,7 @@ page 17.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"FlameWheel450 + RTK (Pixhawk 3 Pro)","level":"1.5.2.1","depth":3,"next":{"title":"QAV250 (Pixhawk Mini)","level":"1.5.2.2","depth":3,"path":"frames_multicopter/lumenier_qav250_pixhawk_mini.md","ref":"frames_multicopter/lumenier_qav250_pixhawk_mini.md","articles":[]},"previous":{"title":"Multicopters","level":"1.5.2","depth":2,"path":"frames_multicopter/README.md","ref":"frames_multicopter/README.md","articles":[{"title":"FlameWheel450 + RTK (Pixhawk 3 Pro)","level":"1.5.2.1","depth":3,"path":"frames_multicopter/dji_flamewheel_450.md","ref":"frames_multicopter/dji_flamewheel_450.md","articles":[]},{"title":"QAV250 (Pixhawk Mini)","level":"1.5.2.2","depth":3,"path":"frames_multicopter/lumenier_qav250_pixhawk_mini.md","ref":"frames_multicopter/lumenier_qav250_pixhawk_mini.md","articles":[]},{"title":"QAV250 (Pixhawk/AUAV_X2)","level":"1.5.2.3","depth":3,"path":"frames_multicopter/lumenier_qav250_pixhawk_auav_x2.md","ref":"frames_multicopter/lumenier_qav250_pixhawk_auav_x2.md","articles":[]},{"title":"Spedix 250 (Pixracer)","level":"1.5.2.4","depth":3,"path":"frames_multicopter/spedix_s250_pixracer.md","ref":"frames_multicopter/spedix_s250_pixracer.md","articles":[]},{"title":"Robocat 270 (Pixracer)","level":"1.5.2.5","depth":3,"path":"frames_multicopter/robocat_270_pixracer.md","ref":"frames_multicopter/robocat_270_pixracer.md","articles":[]},{"title":"Matrice 100 (Pixhawk 1)","level":"1.5.2.6","depth":3,"path":"frames_multicopter/matrice100.md","ref":"frames_multicopter/matrice100.md","articles":[]},{"title":"QAV-R 5\" Racer (Pixracer)","level":"1.5.2.7","depth":3,"path":"frames_multicopter/qav_r_5_kiss_esc_racer.md","ref":"frames_multicopter/qav_r_5_kiss_esc_racer.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"frames_multicopter/dji_flamewheel_450.md","mtime":"2018-12-10T02:02:48.213Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T02:04:29.857Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"FlameWheel450 + RTK (Pixhawk 3 Pro)","level":"1.5.2.1","depth":3,"next":{"title":"QAV250 (Pixhawk Mini)","level":"1.5.2.2","depth":3,"path":"frames_multicopter/lumenier_qav250_pixhawk_mini.md","ref":"frames_multicopter/lumenier_qav250_pixhawk_mini.md","articles":[]},"previous":{"title":"Multicopters","level":"1.5.2","depth":2,"path":"frames_multicopter/README.md","ref":"frames_multicopter/README.md","articles":[{"title":"FlameWheel450 + RTK (Pixhawk 3 Pro)","level":"1.5.2.1","depth":3,"path":"frames_multicopter/dji_flamewheel_450.md","ref":"frames_multicopter/dji_flamewheel_450.md","articles":[]},{"title":"QAV250 (Pixhawk Mini)","level":"1.5.2.2","depth":3,"path":"frames_multicopter/lumenier_qav250_pixhawk_mini.md","ref":"frames_multicopter/lumenier_qav250_pixhawk_mini.md","articles":[]},{"title":"QAV250 (Pixhawk/AUAV_X2)","level":"1.5.2.3","depth":3,"path":"frames_multicopter/lumenier_qav250_pixhawk_auav_x2.md","ref":"frames_multicopter/lumenier_qav250_pixhawk_auav_x2.md","articles":[]},{"title":"Spedix 250 (Pixracer)","level":"1.5.2.4","depth":3,"path":"frames_multicopter/spedix_s250_pixracer.md","ref":"frames_multicopter/spedix_s250_pixracer.md","articles":[]},{"title":"Robocat 270 (Pixracer)","level":"1.5.2.5","depth":3,"path":"frames_multicopter/robocat_270_pixracer.md","ref":"frames_multicopter/robocat_270_pixracer.md","articles":[]},{"title":"Matrice 100 (Pixhawk 1)","level":"1.5.2.6","depth":3,"path":"frames_multicopter/matrice100.md","ref":"frames_multicopter/matrice100.md","articles":[]},{"title":"QAV-R 5\" Racer (Pixracer)","level":"1.5.2.7","depth":3,"path":"frames_multicopter/qav_r_5_kiss_esc_racer.md","ref":"frames_multicopter/qav_r_5_kiss_esc_racer.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"frames_multicopter/dji_flamewheel_450.md","mtime":"2018-12-10T06:15:07.174Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T06:16:44.946Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -2941,10 +2945,6 @@ page 17.</p>
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
-    
-        
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
         
     
@@ -2954,6 +2954,10 @@ page 17.</p>
     
         
         <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         

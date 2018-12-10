@@ -25,6 +25,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
@@ -2677,10 +2681,10 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="mro-x21-autopilot">mRo-X2.1 Autopilot</h1>
+                                <h1 id="mro-x21-autopilot"><a name="mro-x21-autopilot" class="plugin-anchor" href="#mro-x21-autopilot"><i class="fa fa-link" aria-hidden="true"></i></a>mRo-X2.1 Autopilot</h1>
 <p>The <a href="http://www.mRobotics.io/" target="_blank">mRo-X2.1 autopilot</a> is based on the <a href="https://pixhawk.org/" target="_blank">Pixhawk<sup>&#xAE;</sup>-project</a> <strong>FMUv2</strong> open hardware design. It runs PX4 on the <a href="http://nuttx.org" target="_blank">NuttX</a> OS.</p>
 <p><img src="../../assets/flight_controller/mro/mro_x2.1.jpg" alt="mRo X2.1"></p>
-<h2 id="quick-summary">Quick Summary</h2>
+<h2 id="quick-summary"><a name="quick-summary" class="plugin-anchor" href="#quick-summary"><i class="fa fa-link" aria-hidden="true"></i></a>Quick Summary</h2>
 <ul>
 <li>Main System-on-Chip: <a href="http://www.st.com/web/en/catalog/mmc/FM141/SC1169/SS1577/LN1789" target="_blank">STM32F427</a><ul>
 <li>CPU: STM32F427VIT6 ARM<sup>&#xAE;</sup> microcontroller - Revision 3</li>
@@ -2704,7 +2708,7 @@
 <p>The diagram below provides a side-by-side comparison with a Pixhawk 1. The mRo features almost identical hardware and connectivity but
 has a much smaller footprint. Major differences are updated sensors and Rev 3 FMU.</p>
 <p><img src="../../assets/flight_controller/mro/px1_x21.jpg" alt="Mro Pixhawk 1 vs X2.1 comparison"></p>
-<h2 id="connectivity">Connectivity</h2>
+<h2 id="connectivity"><a name="connectivity" class="plugin-anchor" href="#connectivity"><i class="fa fa-link" aria-hidden="true"></i></a>Connectivity</h2>
 <ul>
 <li>2.54mm headers:</li>
 <li>GPS (USART4) with I2C</li>
@@ -2728,7 +2732,7 @@ has a much smaller footprint. Major differences are updated sensors and Rev 3 FM
 <li>USART7 (Console)</li>
 <li>USART8 (OSD)</li>
 </ul>
-<h2 id="px4-bootloader-issue">PX4 BootLoader Issue</h2>
+<h2 id="px4-bootloader-issue"><a name="px4-bootloader-issue" class="plugin-anchor" href="#px4-bootloader-issue"><i class="fa fa-link" aria-hidden="true"></i></a>PX4 BootLoader Issue</h2>
 <p>By default a mRo X2.1 might come preconfigured for ArduPilot<sup>&#xAE;</sup> rather than PX4. This 
 can be seen during firmware update when the board is recognized as FMUv2 instead of X2.1.</p>
 <p>In this case you must update the BootLoader using <a href="https://github.com/PX4/px4_user_guide/raw/master/assets/hardware/BL_Update_X21.zip" target="_blank">BL_Update_X21.zip</a>.
@@ -2741,20 +2745,20 @@ secondary IMU will not be detected. </p>
 <li>Copy these files to your micro SD card&apos;s root directory and insert it into the mRO x2.1</li>
 <li>Power on the mRO x2.1 Wait for it to boot and then reboot 1 time.</li>
 </ol>
-<h2 id="availability">Availability</h2>
+<h2 id="availability"><a name="availability" class="plugin-anchor" href="#availability"><i class="fa fa-link" aria-hidden="true"></i></a>Availability</h2>
 <p>This product can be ordered at the <a href="https://store.mrobotics.io/mRo-X2-1-Rev-2-p/mro-x2.1rv2-mr.htm" target="_blank">mRobotics<sup>&#xAE;</sup> Store</a>.</p>
-<h2 id="wiring-guide">Wiring Guide</h2>
+<h2 id="wiring-guide"><a name="wiring-guide" class="plugin-anchor" href="#wiring-guide"><i class="fa fa-link" aria-hidden="true"></i></a>Wiring Guide</h2>
 <p><img src="../../assets/flight_controller/mro/mro_x21_wiring.png" alt="mRo_X2.1_Wiring"></p>
-<h2 id="building-firmware">Building Firmware</h2>
+<h2 id="building-firmware"><a name="building-firmware" class="plugin-anchor" href="#building-firmware"><i class="fa fa-link" aria-hidden="true"></i></a>Building Firmware</h2>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> Most users will not need to build this firmware!
   It is pre-built and automatically installed by <em>QGroundControl</em> when appropriate hardware is connected.</p>
 </blockquote>
 <p>To <a href="https://dev.px4.io/en/setup/building_px4.html" target="_blank">build PX4</a> for this target:</p>
 <pre><code>make auav_x21_default
-</code></pre><h2 id="schematics">Schematics</h2>
+</code></pre><h2 id="schematics"><a name="schematics" class="plugin-anchor" href="#schematics"><i class="fa fa-link" aria-hidden="true"></i></a>Schematics</h2>
 <p>The board is documented on the mRo hardware repo: <a href="https://github.com/mRoboticsIO/Hardware/blob/master/X2.1/Docs/x21_V2_schematic.pdf" target="_blank">x21_V2_schematic.pdf</a>.</p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 02:02:48 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 06:15:07 </span> </footer>
                                 
                                 </section>
                             
@@ -2797,7 +2801,7 @@ secondary IMU will not be detected. </p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"mRobotics-X2.1","level":"1.11.1.3","depth":3,"next":{"title":"HKPilot32","level":"1.11.1.4","depth":3,"path":"flight_controller/HKPilot32.md","ref":"flight_controller/HKPilot32.md","articles":[]},"previous":{"title":"mRo Pixhawk","level":"1.11.1.2","depth":3,"path":"flight_controller/mro_pixhawk.md","ref":"flight_controller/mro_pixhawk.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"flight_controller/mro_x2.1.md","mtime":"2018-12-10T02:02:48.209Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T02:04:29.857Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"mRobotics-X2.1","level":"1.11.1.3","depth":3,"next":{"title":"HKPilot32","level":"1.11.1.4","depth":3,"path":"flight_controller/HKPilot32.md","ref":"flight_controller/HKPilot32.md","articles":[]},"previous":{"title":"mRo Pixhawk","level":"1.11.1.2","depth":3,"path":"flight_controller/mro_pixhawk.md","ref":"flight_controller/mro_pixhawk.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"flight_controller/mro_x2.1.md","mtime":"2018-12-10T06:15:07.170Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T06:16:44.946Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -2809,10 +2813,6 @@ secondary IMU will not be detected. </p>
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
-    
-        
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
         
     
@@ -2822,6 +2822,10 @@ secondary IMU will not be detected. </p>
     
         
         <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         

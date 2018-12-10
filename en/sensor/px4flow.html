@@ -25,6 +25,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
@@ -2677,7 +2681,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="px4flow-smart-camera">PX4FLOW Smart Camera</h1>
+                                <h1 id="px4flow-smart-camera"><a name="px4flow-smart-camera" class="plugin-anchor" href="#px4flow-smart-camera"><i class="fa fa-link" aria-hidden="true"></i></a>PX4FLOW Smart Camera</h1>
 <p>PX4FLOW is an <a href="optical_flow.html">optical flow</a> smart camera. 
 It has a native resolution of 752x480 pixels and calculates optical flow on a 4x binned and cropped area at 400 Hz, giving it a very high light sensitivity. </p>
 <p><img src="../../assets/hardware/sensors/px4flow/px4flow_v1.0_top_generated.png" alt="PX4Flow v1.0"></p>
@@ -2691,7 +2695,7 @@ It can be freely reprogrammed to perform any other basic, efficient low-level co
 <li>Power consumption 115mA / 5V</li>
 </ul>
 <p><div style="position: relative;padding-bottom: 56.25%;padding-top: 25px;height: 0;"><iframe frameborder="0" allowfullscreen style="border: none;position: absolute;top: 0;left: 0;width: 100%;height: 100%;" src="//www.youtube.com/embed/0Jpq6DU_HVg"></iframe></div></p>
-<h2 id="where-to-buy">Where to Buy</h2>
+<h2 id="where-to-buy"><a name="where-to-buy" class="plugin-anchor" href="#where-to-buy"><i class="fa fa-link" aria-hidden="true"></i></a>Where to Buy</h2>
 <p>Order this module from:</p>
 <ul>
 <li><a href="http://www.unmannedtechshop.co.uk/px4flow-smart-camera-optical-flow-sensor/" target="_blank">Unmanned Tech</a> (UK)</li>
@@ -2702,7 +2706,7 @@ It can be freely reprogrammed to perform any other basic, efficient low-level co
 <ul>
 <li><a href="http://www.hobbyking.com/hobbyking/store/__66308__HK_Pilot32_Optical_Flow_Kit_With_Sonar.html" target="_blank">PX4FLOW with Molex connectors</a></li>
 </ul>
-<h2 id="specifications">Specifications</h2>
+<h2 id="specifications"><a name="specifications" class="plugin-anchor" href="#specifications"><i class="fa fa-link" aria-hidden="true"></i></a>Specifications</h2>
 <ul>
 <li>MT9V034 machine vision CMOS sensor with global shutter</li>
 <li>Optical flow processing at 4x4 binned image at <strong>400 Hz</strong></li>
@@ -2715,7 +2719,7 @@ It can be freely reprogrammed to perform any other basic, efficient low-level co
 <li><strong>Does fit the MatrixVision Bluefox MV mounting holes (camera center off-centered)</strong></li>
 </ul>
 <p><img src="../../assets/hardware/sensors/px4flow/px4flow_top.jpg" alt="PX4Flow Top"> <img src="../../assets/hardware/sensors/px4flow/px4flow_bottom.jpg" alt="px4flow-bottom"> </p>
-<h2 id="pixhawk-setup">Pixhawk Setup</h2>
+<h2 id="pixhawk-setup"><a name="pixhawk-setup" class="plugin-anchor" href="#pixhawk-setup"><i class="fa fa-link" aria-hidden="true"></i></a>Pixhawk Setup</h2>
 <p>In order to use the PX4Flow board, just connect it with I2C. </p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> Applies to all PX4 FMU versions, including all versions of Pixhawk.</p>
@@ -2727,7 +2731,7 @@ It can be freely reprogrammed to perform any other basic, efficient low-level co
 <p>The module will be detected on boot.
 Flow data should be coming through at 10Hz if the autopilot is connected via <strong>USB</strong>. 
 Flow data is transmitted via wireless at a lower rate.</p>
-<h3 id="mountingorientation">Mounting/Orientation</h3>
+<h3 id="mountingorientation"><a name="mountingorientation" class="plugin-anchor" href="#mountingorientation"><i class="fa fa-link" aria-hidden="true"></i></a>Mounting/Orientation</h3>
 <p>The recommended mounting orientation (meaning: zero rotation) is defined as Y on flow board pointing towards <strong>front of vehicle</strong>, as shown in the following picture.</p>
 <p><img src="../../assets/hardware/sensors/px4flow/px4flowalignwithpixhawk.jpg" alt="PX4Flow align with Pixhawk"></p>
 <p>On <strong>PX4</strong>, the orientation should be set using the parameter <a href="../advanced_config/parameter_reference.html#SENS_FLOW_ROT">SENS_FLOW_ROT</a>. 
@@ -2737,11 +2741,11 @@ The above orientation maps to <code>SENS_FLOW_ROT</code>=270 degrees (the defaul
 <p> PX4Flow emits a significant amount of electromagnetic radiation, and should be placed as far away from other electronics (in particular GPS modules) as possible.
   (see <a href="https://github.com/PX4/Hardware/issues/8" target="_blank">Hardware/issues/8</a> for more information).</p>
 </blockquote>
-<h3 id="connecting">Connecting</h3>
+<h3 id="connecting"><a name="connecting" class="plugin-anchor" href="#connecting"><i class="fa fa-link" aria-hidden="true"></i></a>Connecting</h3>
 <p>The PX4flow is connected to the I2C bus. 
 If you are connecting multiple devices to the same bus you will need to set each with a unique address. 
 The next section explains how.</p>
-<h3 id="px4flow-i2c-device-address">PX4FLOW I2C Device address</h3>
+<h3 id="px4flow-i2c-device-address"><a name="px4flow-i2c-device-address" class="plugin-anchor" href="#px4flow-i2c-device-address"><i class="fa fa-link" aria-hidden="true"></i></a>PX4FLOW I2C Device address</h3>
 <p>The default I2C address of the PX4Flow is 0x42, but it can be incremented using the three solder jumpers labeled &quot;I2C BUS ADDR&quot;. 
 This is useful if another device has the same address.</p>
 <p>The address increment is equal to the 3-bit value encoded by the jumpers. 
@@ -2792,7 +2796,7 @@ If all jumpers are unsoldered, the camera will be automatically discovered by th
 <pre><code>px4flow start                  # address=0x42 (default)
 px4flow stop
 px4flow start -a 0x45          # address=0x45
-</code></pre><h2 id="focusing-the-lens">Focusing the Lens</h2>
+</code></pre><h2 id="focusing-the-lens"><a name="focusing-the-lens" class="plugin-anchor" href="#focusing-the-lens"><i class="fa fa-link" aria-hidden="true"></i></a>Focusing the Lens</h2>
 <p>In order to ensure good optical flow quality, it is important to focus the camera on the PX4Flow to the desired height of flight. 
 To focus the camera, put an object with text on (e. g. a book) and plug in the PX4Flow into USB and run <em>QGroundControl</em>. 
 Under the settings menu, select the PX4Flow and you should see a camera image. 
@@ -2805,32 +2809,32 @@ Focus the lens by unscrewing the set screw and loosening and tightening the lens
 Above 3 meters the camera should be focused at infinity and work for all higher altitudes.</em></p>
 <p><img src="../../assets/hardware/sensors/px4flow/flow_focusing.png" alt="Flow Focusing"></p>
 <p><em>Figure: The QGroundControl px4flow interface that can be used for focusing the camera</em></p>
-<h2 id="accuracy">Accuracy</h2>
+<h2 id="accuracy"><a name="accuracy" class="plugin-anchor" href="#accuracy"><i class="fa fa-link" aria-hidden="true"></i></a>Accuracy</h2>
 <p>The ortho photo below shows that a flight on the park roads is accurately measured. 
 This was done with a PX4FMU on a 7&quot; quad flying at about 1.6 m altitude in manual flight. No GPS, only PX4FLOW integration of position.</p>
 <p><img src="../../assets/hardware/sensors/px4flow/px4flow_trajectory.jpg" alt="PX4FLOW trajectory"></p>
-<h2 id="downloads">Downloads</h2>
-<h3 id="manual-and-schematics">Manual and Schematics</h3>
+<h2 id="downloads"><a name="downloads" class="plugin-anchor" href="#downloads"><i class="fa fa-link" aria-hidden="true"></i></a>Downloads</h2>
+<h3 id="manual-and-schematics"><a name="manual-and-schematics" class="plugin-anchor" href="#manual-and-schematics"><i class="fa fa-link" aria-hidden="true"></i></a>Manual and Schematics</h3>
 <ul>
 <li><a href="https://github.com/PX4/px4_user_guide/raw/master/assets/hardware/sensors/px4flow/px4flow_manual_v1.3.pdf" target="_blank">PX4FLOW v1.3 User Manual</a></li>
 <li><a href="https://github.com/PX4/px4_user_guide/raw/master/assets/hardware/sensors/px4flow/px4flow_schematic_v1.3.pdf" target="_blank">PX4FLOW v1.3 Schematic and Layout</a> </li>
 <li>Documentation in hardware repo: <a href="https://github.com/PX4/Hardware/tree/master/FLOWv1" target="_blank">PX4/Hardware/FLOWv1</a></li>
 </ul>
-<h3 id="usb-driver">USB Driver</h3>
+<h3 id="usb-driver"><a name="usb-driver" class="plugin-anchor" href="#usb-driver"><i class="fa fa-link" aria-hidden="true"></i></a>USB Driver</h3>
 <p>Linux and MacOS come with the required drivers. Windows drivers can be downloaded from: <a href="https://github.com/PX4/px4_user_guide/raw/master/assets/hardware/sensors/px4flow/px4flow_win_drivers.zip" target="_blank">px4flow_win_drivers.zip</a></p>
-<h3 id="papers">Papers</h3>
+<h3 id="papers"><a name="papers" class="plugin-anchor" href="#papers"><i class="fa fa-link" aria-hidden="true"></i></a>Papers</h3>
 <p>The flow module as been accepted as paper to the International Conference on Robotics and Automation (ICRA 2013) in Karlsruhe, Germany. </p>
 <ul>
 <li>Dominik Honegger, Lorenz Meier, Petri Tanskanen and Marc Pollefeys: <a href="https://github.com/PX4/px4_user_guide/raw/master/assets/hardware/sensors/px4flow/px4flow_paper.pdf" target="_blank">An Open Source and Open Hardware Embedded Metric Optical Flow CMOS Camera for Indoor and Outdoor Applications</a></li>
 </ul>
-<h3 id="libraries">Libraries</h3>
+<h3 id="libraries"><a name="libraries" class="plugin-anchor" href="#libraries"><i class="fa fa-link" aria-hidden="true"></i></a>Libraries</h3>
 <p>The following are third party libraries that can be used to integrate the flow module in your projects.</p>
 <ul>
 <li><a href="https://github.com/vooon/mavros" target="_blank">mavros</a>: A general MAVLink ROS interface, maintained by Vladimir Ermakov</li>
 <li><a href="https://github.com/cvg/px-ros-pkg" target="_blank">px-ros-pkg]</a>: A PX4FLOW ROS (Robot Operating System) interface, maintained by Lionel Heng (hengli@inf.ethz.ch).</li>
 <li><a href="https://github.com/eschnou/arduino-px4flow-i2c" target="_blank">arduino-px4flow-i2c</a>: An Arduino library wrapping the I2C interface, maintained by Laurent Eschenauer (laurent@eschenauer.be).</li>
 </ul>
-<h2 id="connectors">Connectors</h2>
+<h2 id="connectors"><a name="connectors" class="plugin-anchor" href="#connectors"><i class="fa fa-link" aria-hidden="true"></i></a>Connectors</h2>
 <ul>
 <li><strong>USART2 (J2)</strong>: Hirose DF13 6 pos (<a href="http://search.digikey.com/scripts/DkSearch/dksus.dll?WT.z_header=search_go&amp;lang=en&amp;site=us&amp;keywords=DF13A-6P-1.25H%2820%29&amp;x=0&amp;y=0" target="_blank">Digi-Key Link: DF13A-6P-1.25H(20)</a>)<ul>
 <li>Mates: Hirose DF13 6 pos housing (<a href="http://search.digikey.com/us/en/products/DF13-6S-1.25C/H2182-ND/241752" target="_blank">Digi-Key Link: Hirose DF13-6S-1.25C</a>)</li>
@@ -2857,7 +2861,7 @@ This was done with a PX4FMU on a 7&quot; quad flying at about 1.6 m altitude in 
 </ul>
 </li>
 </ul>
-<h3 id="optics">Optics</h3>
+<h3 id="optics"><a name="optics" class="plugin-anchor" href="#optics"><i class="fa fa-link" aria-hidden="true"></i></a>Optics</h3>
 <p>The correct optics are delivered by 3D Robotics already mounted and focused.</p>
 <ul>
 <li><a href="http://www.lensation.de/de/shop/detail/27-accessories/flypage/418-s-mount-lens-holder-13mm-sh02m13.html?sef=hcfp" target="_blank">Lens mount</a></li>
@@ -2905,7 +2909,7 @@ This was done with a PX4FMU on a 7&quot; quad flying at about 1.6 m altitude in 
 </tbody>
 </table>
 <pre><code>max_vel = 4/(1/400)*grounddistance/(focallength/0.000024)
-</code></pre><h2 id="configuration-image-quality-and-output">Configuration: Image Quality and Output</h2>
+</code></pre><h2 id="configuration-image-quality-and-output"><a name="configuration-image-quality-and-output" class="plugin-anchor" href="#configuration-image-quality-and-output"><i class="fa fa-link" aria-hidden="true"></i></a>Configuration: Image Quality and Output</h2>
 <p>PX4FLOW is not designed as a camera, but does all processing on-chip. You can configure the image quality and output (the image output is only intended for focusing the lens).</p>
 <p><img src="../../assets/hardware/sensors/px4flow/qgc_video_downlink_px4flow.jpg" alt="Video Downlink"></p>
 <ul>
@@ -2917,7 +2921,7 @@ This was done with a PX4FMU on a 7&quot; quad flying at about 1.6 m altitude in 
 <li>Enjoy the live view and <strong>focus the camera by loosening the locking screw and turning the lens at an object at 3m distance</strong>.</li>
 <li>If you want to get higher res to focus the sensor, go to <strong>Config &gt; Advanced Config</strong> and set the <a href="#VIDEO_ONLY">VIDEO_ONLY</a> parameter to 1.</li>
 </ul>
-<h2 id="general-troubleshooting">General Troubleshooting</h2>
+<h2 id="general-troubleshooting"><a name="general-troubleshooting" class="plugin-anchor" href="#general-troubleshooting"><i class="fa fa-link" aria-hidden="true"></i></a>General Troubleshooting</h2>
 <ul>
 <li>Unplug the flow sensor if plugged</li>
 <li>Start <em>QGroundControl</em>, select the PX4 startup mode go to <strong>Config &gt; Firmware Upgrade</strong>.<ul>
@@ -2940,8 +2944,8 @@ This was done with a PX4FMU on a 7&quot; quad flying at about 1.6 m altitude in 
 </blockquote>
 </li>
 </ul>
-<h1 id="developer_guide">PX4FLOW Developer Guide </h1>
-<h2 id="hardware-setup">Hardware Setup</h2>
+<h1 id="developer_guide"><a name="developer_guide" class="plugin-anchor" href="#developer_guide"><i class="fa fa-link" aria-hidden="true"></i></a>PX4FLOW Developer Guide </h1>
+<h2 id="hardware-setup"><a name="hardware-setup" class="plugin-anchor" href="#hardware-setup"><i class="fa fa-link" aria-hidden="true"></i></a>Hardware Setup</h2>
 <ul>
 <li>PX4FLOW Board v1.3</li>
 <li>HRLV-MaxSonar-EZ (MB1043)</li>
@@ -2949,7 +2953,7 @@ This was done with a PX4FMU on a 7&quot; quad flying at about 1.6 m altitude in 
 <li>Micro USB cable</li>
 </ul>
 <p><img src="../../assets/hardware/sensors/px4flow/px4flow_testing.jpg" alt="PX4FLOW Testing"></p>
-<h2 id="software--build-source">Software / Build Source</h2>
+<h2 id="software--build-source"><a name="software--build-source" class="plugin-anchor" href="#software--build-source"><i class="fa fa-link" aria-hidden="true"></i></a>Software / Build Source</h2>
 <ul>
 <li>PC with <em>QGroundControl</em> installed</li>
 <li>PX4FLOW Firmware (Firmware source code on Github: <a href="https://github.com/PX4/Flow" target="_blank">PX4/Flow</a>)</li>
@@ -2957,7 +2961,7 @@ This was done with a PX4FMU on a 7&quot; quad flying at about 1.6 m altitude in 
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> PX4 <em>driver</em> code can be found here: <a href="https://github.com/PX4/Firmware/tree/master/src/drivers/px4flow" target="_blank">PX4/Firmware/src/drivers/px4flow</a></p>
 </blockquote>
-<h2 id="build">Build</h2>
+<h2 id="build"><a name="build" class="plugin-anchor" href="#build"><i class="fa fa-link" aria-hidden="true"></i></a>Build</h2>
 <p>Install the <a href="https://dev.px4.io/en/setup/dev_env.html" target="_blank">PX4 toolchain</a> (PX4 Developer Guide). 
 Then and clone the sources from <a href="https://github.com/PX4/Flow" target="_blank">https://github.com/PX4/Flow</a> using <em>git</em>.</p>
 <pre><code class="lang-bash"><span class="hljs-built_in">cd</span> flow
@@ -2971,14 +2975,14 @@ program...
 verify...
 <span class="hljs-keyword">done</span>, rebooting.
 </code></pre>
-<h2 id="troubleshooting">Troubleshooting</h2>
+<h2 id="troubleshooting"><a name="troubleshooting" class="plugin-anchor" href="#troubleshooting"><i class="fa fa-link" aria-hidden="true"></i></a>Troubleshooting</h2>
 <p>In case one doesn&apos;t see the aforementioned steps, the modem-manager should be removed by:</p>
 <pre><code class="lang-bash">sudo apt-get remove modemmanager
 </code></pre>
 <p>User also needs to be in the plugdev group:</p>
 <pre><code class="lang-bash">sudo usermod <span class="hljs-_">-a</span> -G plugdev <span class="hljs-variable">$USER</span>
 </code></pre>
-<h2 id="focus-image">Focus Image</h2>
+<h2 id="focus-image"><a name="focus-image" class="plugin-anchor" href="#focus-image"><i class="fa fa-link" aria-hidden="true"></i></a>Focus Image</h2>
 <p>Connect PX4FLOW to QGroundcontrol:</p>
 <ul>
 <li>Connect PX4FLOW sensor over USB to PC</li>
@@ -2995,23 +2999,23 @@ verify...
 <p>Now a new Unmanned System should appear and Onboard Parameters are loaded (click on &quot;Get&quot; if not)</p>
 <p>Change Parameter <code>VIDEO_ONLY</code> to 1 and press Set.</p>
 <p>The Widget Video Downlink shows now the Image in full resolution. Focus the lens on 1.5m. Fix the lens position and switch <code>VIDEO_ONLY</code> Mode off.</p>
-<h2 id="data-output">Data Output</h2>
+<h2 id="data-output"><a name="data-output" class="plugin-anchor" href="#data-output"><i class="fa fa-link" aria-hidden="true"></i></a>Data Output</h2>
 <p>The PX4FLOW module outputs <a href="https://mavlink.io/en/" target="_blank">MAVLink</a> packets on USB and serial port. Use <a href="http://qgroundcontrol.com/" target="_blank">QGroundControl</a> to read data from the module. An I2C interface for sensor data reading is offered as well. Third party <a href="#libraries">libraries</a> are available to connect and integrate PX4FLOW data in your projects.</p>
 <ul>
 <li>USART3: MAVLink at 115200, 8N1 baud: <a href="https://mavlink.io/en/messages/common.html#OPTICAL_FLOW" target="_blank">OPTICAL_FLOW</a> message, <a href="https://mavlink.io/en/messages/common.html#OPTICAL_FLOW_RAD" target="_blank">OPTICAL_FLOW_RAD</a>, <a href="https://mavlink.io/en/messages/common.html#HEARTBEAT" target="_blank">HEARTBEAT</a> message</li>
 <li>USB: Baud rate is not relevant (USB ignores it): <code>OPTICAL_FLOW</code> message, <code>OPTICAL_FLOW_RAD</code>, <code>HEARTBEAT</code> message, image.</li>
 <li>I2C1: latest Flow value (i2c_frame) and accumulated Flow (i2c_integral_frame) values since last I2C readout available for readout.</li>
 </ul>
-<h2 id="px4flow-parameters">PX4FLOW Parameters</h2>
+<h2 id="px4flow-parameters"><a name="px4flow-parameters" class="plugin-anchor" href="#px4flow-parameters"><i class="fa fa-link" aria-hidden="true"></i></a>PX4FLOW Parameters</h2>
 <p>The following list gives a short explanation of the current available parameters in the PX4FLOW firmware.</p>
 <blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
 <p> Parameters are currently not written to ROM (reset at power loss).</p>
 </blockquote>
-<h3 id="bflowfthrd">BFLOW_F_THRD</h3>
+<h3 id="bflowfthrd"><a name="bflowfthrd" class="plugin-anchor" href="#bflowfthrd"><i class="fa fa-link" aria-hidden="true"></i></a>BFLOW_F_THRD</h3>
 <p>This parameter is a feature threshold and limits the quality of patterns that are used to calculate the bottom flow. For low values (e.g. 10) almost every pattern is taken, for higher values (e.g. 100) only significant patters are taken.</p>
-<h3 id="bflowvthrd">BFLOW_V_THRD</h3>
+<h3 id="bflowvthrd"><a name="bflowvthrd" class="plugin-anchor" href="#bflowvthrd"><i class="fa fa-link" aria-hidden="true"></i></a>BFLOW_V_THRD</h3>
 <p>This is a pattern correlation threshold for filtering bad matches. Lower means only strong correlations are accepted.</p>
-<h3 id="others">Others</h3>
+<h3 id="others"><a name="others" class="plugin-anchor" href="#others"><i class="fa fa-link" aria-hidden="true"></i></a>Others</h3>
 <table>
 <thead>
 <tr>
@@ -3235,15 +3239,15 @@ verify...
 </tr>
 </tbody>
 </table>
-<h2 id="modes">Modes</h2>
-<h3 id="VIDEO_ONLY">VIDEO ONLY Mode </h3>
+<h2 id="modes"><a name="modes" class="plugin-anchor" href="#modes"><i class="fa fa-link" aria-hidden="true"></i></a>Modes</h2>
+<h3 id="VIDEO_ONLY"><a name="VIDEO_ONLY" class="plugin-anchor" href="#VIDEO_ONLY"><i class="fa fa-link" aria-hidden="true"></i></a>VIDEO ONLY Mode </h3>
 <p>Set <code>VIDEO_ONLY</code> to 1 for high resolution mode. In this mode the camera image is transmitted at a higher resolution to ease the lens focus process. No flow values are calculated in this mode.</p>
-<h3 id="low-light-mode">Low Light Mode</h3>
+<h3 id="low-light-mode"><a name="low-light-mode" class="plugin-anchor" href="#low-light-mode"><i class="fa fa-link" aria-hidden="true"></i></a>Low Light Mode</h3>
 <p>If <code>IMAGE_L_LIGHT</code> is set to 1, the sensor operates in low light mode.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> This mode is under construction, and results are more noisy</p>
 </blockquote>
-<h3 id="test-pattern-mode">Test Pattern Mode</h3>
+<h3 id="test-pattern-mode"><a name="test-pattern-mode" class="plugin-anchor" href="#test-pattern-mode"><i class="fa fa-link" aria-hidden="true"></i></a>Test Pattern Mode</h3>
 <p>If the parameter IMAGE_TEST_PAT is set to 1, the sensor inserts a vertical gray-shaded test pattern in the signal chain. </p>
 <ul>
 <li>Test Pattern 64x64 (VIDEO ONLY Mode is OFF)
@@ -3251,7 +3255,7 @@ verify...
 <li>Test Pattern 376x240 (VIDEO ONLY Mode is ON)
 <img src="../../assets/hardware/sensors/px4flow/test_pattern_376x240.png" alt="test_pattern_376x240"></li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 02:02:48 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 06:15:07 </span> </footer>
                                 
                                 </section>
                             
@@ -3294,7 +3298,7 @@ verify...
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"PX4FLOW","level":"1.10.8.1","depth":3,"next":{"title":"ESCs & Motors","level":"1.10.9","depth":2,"path":"peripherals/esc_motors.md","ref":"peripherals/esc_motors.md","articles":[{"title":"PWM ESCs and Servos","level":"1.10.9.1","depth":3,"path":"peripherals/pwm_escs_and_servo.md","ref":"peripherals/pwm_escs_and_servo.md","articles":[]}]},"previous":{"title":"Optical Flow","level":"1.10.8","depth":2,"path":"sensor/optical_flow.md","ref":"sensor/optical_flow.md","articles":[{"title":"PX4FLOW","level":"1.10.8.1","depth":3,"path":"sensor/px4flow.md","ref":"sensor/px4flow.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"sensor/px4flow.md","mtime":"2018-12-10T02:02:48.217Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T02:04:29.857Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"PX4FLOW","level":"1.10.8.1","depth":3,"next":{"title":"ESCs & Motors","level":"1.10.9","depth":2,"path":"peripherals/esc_motors.md","ref":"peripherals/esc_motors.md","articles":[{"title":"PWM ESCs and Servos","level":"1.10.9.1","depth":3,"path":"peripherals/pwm_escs_and_servo.md","ref":"peripherals/pwm_escs_and_servo.md","articles":[]}]},"previous":{"title":"Optical Flow","level":"1.10.8","depth":2,"path":"sensor/optical_flow.md","ref":"sensor/optical_flow.md","articles":[{"title":"PX4FLOW","level":"1.10.8.1","depth":3,"path":"sensor/px4flow.md","ref":"sensor/px4flow.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"sensor/px4flow.md","mtime":"2018-12-10T06:15:07.178Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T06:16:44.946Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -3306,10 +3310,6 @@ verify...
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
-    
-        
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
         
     
@@ -3319,6 +3319,10 @@ verify...
     
         
         <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         

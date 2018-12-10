@@ -25,6 +25,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
@@ -2677,24 +2681,24 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="precision-landing">Precision Landing</h1>
+                                <h1 id="precision-landing"><a name="precision-landing" class="plugin-anchor" href="#precision-landing"><i class="fa fa-link" aria-hidden="true"></i></a>Precision Landing</h1>
 <p>PX4 supports precision landing for <em>multicopters</em> (from PX4 v1.7.4) using the <a href="https://irlock.com/products/ir-lock-sensor-precision-landing-kit" target="_blank">IR-LOCK Sensor</a>, an IR beacon (e.g. <a href="https://irlock.com/collections/markone" target="_blank">IR-LOCK MarkOne</a>), and a downward facing range sensor.
 This enables landing with a precision of roughly 10 cm (GPS precision, by contrast, may be as large as several meters).</p>
 <p>A precision landing can be initiated by entering the <em>Precision Land</em> flight mode, or as part of a <a href="#mission">mission</a>.</p>
-<h2 id="setup">Setup</h2>
-<h3 id="hardware-setup">Hardware Setup</h3>
+<h2 id="setup"><a name="setup" class="plugin-anchor" href="#setup"><i class="fa fa-link" aria-hidden="true"></i></a>Setup</h2>
+<h3 id="hardware-setup"><a name="hardware-setup" class="plugin-anchor" href="#hardware-setup"><i class="fa fa-link" aria-hidden="true"></i></a>Hardware Setup</h3>
 <p>Install the IR-LOCK sensor by following the <a href="https://irlock.readme.io/v2.0/docs" target="_blank">official guide</a>. Ensure that the sensor&apos;s x axis is aligned with the vehicle&apos;s y axis and the sensor&apos;s y axis aligned with the vehicle&apos;s -x direction (this is the case if the camera is pitched down 90 degrees from facing forward).</p>
 <p>Install a <a href="../getting_started/sensor_selection.html#distance">range/distance sensor</a> (the <em>LidarLite v3</em> has been found to work well).</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> Many infrared based range sensors do not perform well in the presence of the IR-LOCK beacon. Refer to the IR-LOCK guide for other compatible sensors.</p>
 </blockquote>
-<h3 id="firmware-configuration">Firmware Configuration</h3>
+<h3 id="firmware-configuration"><a name="firmware-configuration" class="plugin-anchor" href="#firmware-configuration"><i class="fa fa-link" aria-hidden="true"></i></a>Firmware Configuration</h3>
 <p>Precision landing requires the modules <code>irlock</code> and <code>landing_target_estimator</code>, which are not included in the PX4 firmware by default.
 They can be included by adding (or uncommenting) the following lines in the relevant <a href="https://github.com/PX4/Firmware/tree/master/cmake/configs" target="_blank">config</a> for your flight controller:</p>
 <pre><code>drivers/irlock
 modules/landing_target_estimator
 </code></pre><p>The two modules should also be started on system boot. For instructions see: <a href="https://dev.px4.io/en/advanced/system_startup.html#starting-additional-applications" target="_blank">customizing the system startup</a>.</p>
-<h2 id="software-configuration-parameters">Software Configuration (Parameters)</h2>
+<h2 id="software-configuration-parameters"><a name="software-configuration-parameters" class="plugin-anchor" href="#software-configuration-parameters"><i class="fa fa-link" aria-hidden="true"></i></a>Software Configuration (Parameters)</h2>
 <p>Precision landing is configured with the <code>landing_target_estimator</code> and <code>navigator</code> parameters, 
 which are found in the &quot;Landing target estimator&quot; and &quot;Precision land&quot; groups, respectively.
 The most important parameters are discussed below.</p>
@@ -2707,35 +2711,35 @@ Note that <code>LTEST_SCALE_X</code> and <code>LTEST_SCALE_Y</code> are consider
 <p>To calibrate these scale parameters, set <code>LTEST_MODE</code> to moving, fly your multicopter above the beacon and perform forward-backward and left-right motions with the vehicle, while <a href="https://dev.px4.io/en/log/logging.html#configuration" target="_blank">logging</a> <code>landing_target_pose</code> and <code>vehicle_local_position</code>.
 Then, compare <code>landing_target_pose.vx_rel</code> and <code>landing_target_pose.vy_rel</code> to <code>vehicle_local_position.vx</code> and <code>vehicle_local_position.vy</code>, respectively (both measurements are in NED frame). If the estimated beacon velocities are consistently smaller or larger than the vehicle velocities, adjust the scale parameters to compensate.</p>
 <p>If you observe slow sideways oscillations of the vehicle while doing a precision landing with <code>LTEST_MODE</code> set to stationary, the beacon measurements are likely scaled too high and you should reduce the scale parameter in the relevant direction.</p>
-<h2 id="precision-land-modes">Precision Land Modes</h2>
+<h2 id="precision-land-modes"><a name="precision-land-modes" class="plugin-anchor" href="#precision-land-modes"><i class="fa fa-link" aria-hidden="true"></i></a>Precision Land Modes</h2>
 <p>A precision landing can be configured to either be &quot;required&quot; or &quot;opportunistic&quot;. The choice of mode affects how a precision landing is performed.</p>
-<h3 id="required-mode">Required Mode</h3>
+<h3 id="required-mode"><a name="required-mode" class="plugin-anchor" href="#required-mode"><i class="fa fa-link" aria-hidden="true"></i></a>Required Mode</h3>
 <p>In <em>Required Mode</em> the vehicle will search for a beacon if none is visible when landing is initiated. The vehicle will perform a precision landing if a beacon is located.</p>
 <p>The search procedure consists of climbing to the search altitude (<a href="../advanced_config/parameter_reference.html#PLD_SRCH_ALT">PLD_SRCH_ALT</a>). If the beacon is still not visible at the search altitude and after a search timeout (<a href="../advanced_config/parameter_reference.html#PLD_SRCH_TOUT">PLD_SRCH_TOUT</a>), a normal landing is initiated at the current position.</p>
-<h3 id="opportunistic-mode">Opportunistic Mode</h3>
+<h3 id="opportunistic-mode"><a name="opportunistic-mode" class="plugin-anchor" href="#opportunistic-mode"><i class="fa fa-link" aria-hidden="true"></i></a>Opportunistic Mode</h3>
 <p>In <em>Opportunistic Mode</em> the vehicle will use precision landing <em>if</em> (and only if) the beacon is visible when landing is initiated. If it is not visible the vehicle immediately performs a <em>normal</em> landing at the current position.</p>
-<h2 id="performing-a-precision-landing">Performing a Precision Landing</h2>
+<h2 id="performing-a-precision-landing"><a name="performing-a-precision-landing" class="plugin-anchor" href="#performing-a-precision-landing"><i class="fa fa-link" aria-hidden="true"></i></a>Performing a Precision Landing</h2>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> Due to a limitation in the current implementation of the position controller, precision landing is only possible with a valid global position.</p>
 </blockquote>
-<h3 id="via-command">Via Command</h3>
+<h3 id="via-command"><a name="via-command" class="plugin-anchor" href="#via-command"><i class="fa fa-link" aria-hidden="true"></i></a>Via Command</h3>
 <p>Precision landing can be initiated through the command line interface with</p>
 <pre><code>commander mode auto:precland
 </code></pre><p>In this case, the precision landing is always considered &quot;required&quot;.</p>
-<h3 id="mission">In a Mission </h3>
+<h3 id="mission"><a name="mission" class="plugin-anchor" href="#mission"><i class="fa fa-link" aria-hidden="true"></i></a>In a Mission </h3>
 <p>Precision landing can be initiated as part of a <a href="../flying/missions.html">mission</a> using <a href="../advanced_config/parameter_reference.html#MAV_CMD_NAV_LAND">MAV_CMD_NAV_LAND</a> with <code>param2</code> set appropriately:</p>
 <ul>
 <li><code>param2</code> = 0: Normal landing without using the beacon.</li>
 <li><code>param2</code> = 1: <em>Opportunistic</em> precision landing.</li>
 <li><code>param2</code> = 2: <em>Required</em> precision landing.</li>
 </ul>
-<h2 id="simulation">Simulation</h2>
+<h2 id="simulation"><a name="simulation" class="plugin-anchor" href="#simulation"><i class="fa fa-link" aria-hidden="true"></i></a>Simulation</h2>
 <p>Precision landing with the IR-LOCK sensor and beacon can be simulated in <a href="https://dev.px4.io/en/simulation/gazebo.html" target="_blank">SITL Gazebo</a>.</p>
 <p>To start the simulation with the world that contains a IR-LOCK beacon and a vehicle with a range sensor and IR-LOCK camera, run:</p>
 <pre><code>make px4_sitl gazebo_iris_irlock
 </code></pre><p>You can change the location of the beacon either by moving it in the Gazebo GUI or by changing its location in the <a href="https://github.com/PX4/sitl_gazebo/blob/master/worlds/iris_irlock.world#L42" target="_blank">Gazebo world</a>.</p>
-<h2 id="operating-principles">Operating Principles</h2>
-<h3 id="landing-target-estimator">Landing Target Estimator</h3>
+<h2 id="operating-principles"><a name="operating-principles" class="plugin-anchor" href="#operating-principles"><i class="fa fa-link" aria-hidden="true"></i></a>Operating Principles</h2>
+<h3 id="landing-target-estimator"><a name="landing-target-estimator" class="plugin-anchor" href="#landing-target-estimator"><i class="fa fa-link" aria-hidden="true"></i></a>Landing Target Estimator</h3>
 <p>The <code>landing_target_estimator</code> takes measurements from the <code>irlock</code> driver as well as the estimated terrain height to estimate the beacon&apos;s position relative to the vehicle.</p>
 <p>The measurements in <code>irlock_report</code> contain the tangent of the angles from the image center to the beacon. In other words, the measurements are the x and y components of the vector pointing towards the beacon, where the z component has length &quot;1&quot;.
 This means that scaling the measurement by the distance from the camera to the beacon results in the vector from the camera to the beacon.
@@ -2743,10 +2747,10 @@ This relative position is then rotated into the north-aligned, level body frame 
 Both x and y components of the relative position measurement are filtered in separate Kalman Filters, which act as simple low-pass filters that also produce a velocity estimate and allow for outlier rejection.</p>
 <p>The <code>landing_target_estimator</code> publishes the estimated relative position and velocity whenever a new <code>irlock_report</code> is fused into the estimate. Nothing is published if the beacon is not seen or beacon measurements are rejected.
 The landing target estimate is published in the <code>landing_target_pose</code> uORB message.</p>
-<h3 id="enhanced-vehicle-position-estimation">Enhanced Vehicle Position Estimation</h3>
+<h3 id="enhanced-vehicle-position-estimation"><a name="enhanced-vehicle-position-estimation" class="plugin-anchor" href="#enhanced-vehicle-position-estimation"><i class="fa fa-link" aria-hidden="true"></i></a>Enhanced Vehicle Position Estimation</h3>
 <p>If the beacon is specified to be stationary using the parameter <code>LTEST_MODE</code>, the vehicle&apos;s position/velocity estimate can be improved with the help of the beacon measurements.
 This is done by fusing the beacon&apos;s velocity as a measurement of the negative velocity of the vehicle.</p>
-<h3 id="precision-land-procedure">Precision Land Procedure</h3>
+<h3 id="precision-land-procedure"><a name="precision-land-procedure" class="plugin-anchor" href="#precision-land-procedure"><i class="fa fa-link" aria-hidden="true"></i></a>Precision Land Procedure</h3>
 <p>The precision land procedure consists of three phases:</p>
 <ol>
 <li><p><strong>Horizontal approach:</strong> The vehicle approaches the beacon horizontally while keeping its current altitude. Once the position of the beacon relative to the vehicle is below a threshold (<a href="../advanced_config/parameter_reference.html#PLD_HACC_RAD">PLD_HACC_RAD</a>), the next phase is entered. If the beacon is lost during this phase (not visible for longer than <a href="../advanced_config/parameter_reference.html#PLD_BTOUT">PLD_BTOUT</a>), a search procedure is initiated (during a required precision landing) or the vehicle does a normal landing (during an opportunistic precision landing).</p>
@@ -2758,7 +2762,7 @@ This is done by fusing the beacon&apos;s velocity as a measurement of the negati
 </ol>
 <p>Search procedures are initiated in 1. and 2. a maximum of <a href="../advanced_config/parameter_reference.html#PLD_MAX_SRCH">PLD_MAX_SRCH</a> times.</p>
 <p><img src="../../assets/precision_land/precland-flow-diagram.png" alt="Precision Landing Flow Diagram"></p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 02:02:48 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 06:15:07 </span> </footer>
                                 
                                 </section>
                             
@@ -2801,7 +2805,7 @@ This is done by fusing the beacon&apos;s velocity as a measurement of the negati
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Precision Landing","level":"1.8.2","depth":2,"next":{"title":"RockBlock SatCom System","level":"1.8.3","depth":2,"path":"advanced_features/satcom_roadblock.md","ref":"advanced_features/satcom_roadblock.md","articles":[]},"previous":{"title":"RTK GPS","level":"1.8.1","depth":2,"path":"advanced_features/rtk-gps.md","ref":"advanced_features/rtk-gps.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"advanced_features/precland.md","mtime":"2018-12-10T02:02:48.205Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T02:04:29.857Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Precision Landing","level":"1.8.2","depth":2,"next":{"title":"RockBlock SatCom System","level":"1.8.3","depth":2,"path":"advanced_features/satcom_roadblock.md","ref":"advanced_features/satcom_roadblock.md","articles":[]},"previous":{"title":"RTK GPS","level":"1.8.1","depth":2,"path":"advanced_features/rtk-gps.md","ref":"advanced_features/rtk-gps.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"advanced_features/precland.md","mtime":"2018-12-10T06:15:07.166Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T06:16:44.946Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -2813,10 +2817,6 @@ This is done by fusing the beacon&apos;s velocity as a measurement of the negati
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
-    
-        
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
         
     
@@ -2826,6 +2826,10 @@ This is done by fusing the beacon&apos;s velocity as a measurement of the negati
     
         
         <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         

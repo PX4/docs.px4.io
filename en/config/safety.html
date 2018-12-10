@@ -25,6 +25,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
@@ -2677,14 +2681,14 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="safety-configuration-failsafes">Safety Configuration (Failsafes)</h1>
+                                <h1 id="safety-configuration-failsafes"><a name="safety-configuration-failsafes" class="plugin-anchor" href="#safety-configuration-failsafes"><i class="fa fa-link" aria-hidden="true"></i></a>Safety Configuration (Failsafes)</h1>
 <p>PX4 has a number of safety features to protect and recover your vehicle if something goes wrong:</p>
 <ul>
 <li><em>Failsafes</em> allow you to specify areas and conditions under which you can safely fly, and the <a href="#failsafe_actions">action</a> that will be performed if a failsafe is triggered (for example, landing, holding position, or returning to a specified point).
 The most important failsafe settings are configured in the <em>QGroundControl</em> <a href="#qgc_safety_setup">Safety Setup</a> page. Others must be configured via <a href="#failsafe_other">parameters</a>.</li>
 <li><a href="#safety_switch">Safety switches</a> on the remote control can be used to immediately stop motors or return the vehicle in the event of a problem. </li>
 </ul>
-<h2 id="failsafe_actions">Failsafe Actions </h2>
+<h2 id="failsafe_actions"><a name="failsafe_actions" class="plugin-anchor" href="#failsafe_actions"><i class="fa fa-link" aria-hidden="true"></i></a>Failsafe Actions </h2>
 <p>Each failsafe defines its own set of actions. Some of the more common failsafe actions are:</p>
 <table>
 <thead>
@@ -2735,10 +2739,10 @@ The most important failsafe settings are configured in the <em>QGroundControl</e
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> If a failsafe occurs while the vehicle is responding to another failsafe (e.g. Low battery while in Return mode due to RC Loss), the specified failsafe action for the second trigger is ignored. Instead the action is determined by separate system level and vehicle specific code. This might result in the vehicle being changed to a manual mode so the user can directly manage recovery.</p>
 </blockquote>
-<h2 id="qgc_safety_setup">QGroundControl Safety Setup </h2>
+<h2 id="qgc_safety_setup"><a name="qgc_safety_setup" class="plugin-anchor" href="#qgc_safety_setup"><i class="fa fa-link" aria-hidden="true"></i></a>QGroundControl Safety Setup </h2>
 <p>The <em>QGroundControl</em> Safety Setup page is accessed by clicking the <em>QGroundControl</em> <strong>Gear</strong> icon (Vehicle Setup - top toolbar) and then <strong>Safety</strong> in the sidebar). This includes the most important failsafe settings (battery, RC loss etc.) and the settings for the return actions <em>Return</em> and <em>Land</em>.</p>
 <p><img src="../../images/qgc/setup/safety_setup.png" alt="Safety Setup (QGC)"></p>
-<h3 id="low-battery-failsafe">Low Battery Failsafe</h3>
+<h3 id="low-battery-failsafe"><a name="low-battery-failsafe" class="plugin-anchor" href="#low-battery-failsafe"><i class="fa fa-link" aria-hidden="true"></i></a>Low Battery Failsafe</h3>
 <p>The low battery failsafe is triggered when the battery capacity drops below one (or more warning) level values. </p>
 <p><img src="../../images/qgc/setup/safety_battery.png" alt="Safety - Battery (QGC)"></p>
 <p>The most common configuration is to set the values and action as above (with <code>Warn &gt; Failsafe &gt; Emergency</code>).
@@ -2776,7 +2780,7 @@ With this configuration the failsafe will trigger warning, then return, and fina
 </tr>
 </tbody>
 </table>
-<h3 id="rc-loss-failsafe">RC Loss Failsafe</h3>
+<h3 id="rc-loss-failsafe"><a name="rc-loss-failsafe" class="plugin-anchor" href="#rc-loss-failsafe"><i class="fa fa-link" aria-hidden="true"></i></a>RC Loss Failsafe</h3>
 <p>The RC Loss failsafe is triggered if the RC transmitter link is lost.</p>
 <p><img src="../../images/qgc/setup/safety_rc_loss.png" alt="Safety - RC Loss (QGC)"></p>
 <p>The settings and underlying parameters are shown below.</p>
@@ -2806,7 +2810,7 @@ With this configuration the failsafe will trigger warning, then return, and fina
 </tr>
 </tbody>
 </table>
-<h3 id="data-link-loss-failsafe">Data Link Loss Failsafe</h3>
+<h3 id="data-link-loss-failsafe"><a name="data-link-loss-failsafe" class="plugin-anchor" href="#data-link-loss-failsafe"><i class="fa fa-link" aria-hidden="true"></i></a>Data Link Loss Failsafe</h3>
 <p>The Data Link loss failsafe is triggered if a telemetry link (connection to ground station) is lost.</p>
 <p><img src="../../images/qgc/setup/safety_data_link_loss.png" alt="Safety - Data Link Loss (QGC)"></p>
 <p>The settings and underlying parameters are shown below.</p>
@@ -2831,7 +2835,7 @@ With this configuration the failsafe will trigger warning, then return, and fina
 </tr>
 </tbody>
 </table>
-<h3 id="geofence-failsafe">Geofence Failsafe</h3>
+<h3 id="geofence-failsafe"><a name="geofence-failsafe" class="plugin-anchor" href="#geofence-failsafe"><i class="fa fa-link" aria-hidden="true"></i></a>Geofence Failsafe</h3>
 <p>The Geofence is defined as a &quot;virtual&quot; cylinder around the home position.
 If the vehicle moves outside the radius or above the altitude the specified <em>Failsafe Action</em> will trigger.</p>
 <p><img src="../../images/qgc/setup/safety_geofence.png" alt="Safety - Geofence (QGC)"></p>
@@ -2897,7 +2901,7 @@ If the vehicle moves outside the radius or above the altitude the specified <em>
 </tr>
 </tbody>
 </table>
-<h3 id="return_settings">Return Home Settings </h3>
+<h3 id="return_settings"><a name="return_settings" class="plugin-anchor" href="#return_settings"><i class="fa fa-link" aria-hidden="true"></i></a>Return Home Settings </h3>
 <p><em>Return</em> is a common <a href="#failsafe_actions">failsafe action</a> that engages <a href="../flight_modes/return.html">Return mode</a> to return the vehicle to the home position. 
 This section shows how to set the land/loiter behaviour after returning.</p>
 <p><img src="../../images/qgc/setup/safety_return_home.png" alt="Safety - Return Home Settings (QGC)"></p>
@@ -2936,7 +2940,7 @@ This section shows how to set the land/loiter behaviour after returning.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> The return behavour is defined by <a href="../advanced_config/parameter_reference.html#RTL_LAND_DELAY">RTL_LAND_DELAY</a>. If negative the vehicle will land immediately. Additional information can be found in <a href="../flight_modes/return.html">Return mode</a>.</p>
 </blockquote>
-<h3 id="land-mode-settings">Land Mode Settings</h3>
+<h3 id="land-mode-settings"><a name="land-mode-settings" class="plugin-anchor" href="#land-mode-settings"><i class="fa fa-link" aria-hidden="true"></i></a>Land Mode Settings</h3>
 <p><em>Land at the current position</em> is a common <a href="#failsafe_actions">failsafe action</a> that engages <a href="../flight_modes/land.html">Land Mode</a>. 
 This section shows how to set whether the vehicle will automatically disarm after landing. For Multicopters (only) you can additionally set the descent rate.</p>
 <p><img src="../../images/qgc/setup/safety_land_mode.png" alt="Safety - Land Mode Settings (QGC)"></p>
@@ -2962,9 +2966,9 @@ This section shows how to set whether the vehicle will automatically disarm afte
 </tr>
 </tbody>
 </table>
-<h2 id="failsafe_other">Other Failsafe Settings </h2>
+<h2 id="failsafe_other"><a name="failsafe_other" class="plugin-anchor" href="#failsafe_other"><i class="fa fa-link" aria-hidden="true"></i></a>Other Failsafe Settings </h2>
 <p>This section contains information about failsafe settings that cannot be configured through the <em>QGroundControl</em> <a href="#qgc_safety_setup">Safety Setup</a> page.</p>
-<h3 id="position-gps-loss-failsafe">Position (GPS) Loss Failsafe</h3>
+<h3 id="position-gps-loss-failsafe"><a name="position-gps-loss-failsafe" class="plugin-anchor" href="#position-gps-loss-failsafe"><i class="fa fa-link" aria-hidden="true"></i></a>Position (GPS) Loss Failsafe</h3>
 <p>The <em>Position Loss Failsafe</em> is triggered if the quality of the PX4 position estimate falls below acceptable levels (this might be caused by GPS loss) while in a mode that requires an acceptable position estimate.</p>
 <p>The failure action is controlled by <a href="../advanced_config/parameter_reference.html#COM_POSCTL_NAVL">COM_POSCTL_NAVL</a>, based on whether RC control is assumed to be available (and altitude information):</p>
 <ul>
@@ -3026,7 +3030,7 @@ This section shows how to set whether the vehicle will automatically disarm afte
 </tr>
 </tbody>
 </table>
-<h3 id="offboard-loss-failsafe">Offboard Loss Failsafe</h3>
+<h3 id="offboard-loss-failsafe"><a name="offboard-loss-failsafe" class="plugin-anchor" href="#offboard-loss-failsafe"><i class="fa fa-link" aria-hidden="true"></i></a>Offboard Loss Failsafe</h3>
 <p>The <em>Offboard Loss Failsafe</em> is triggered if the offboard link is lost while under Offboard control. 
 Different failsafe behaviour can be specified based on whether or not there is also an RC connection available.</p>
 <p>The relevant parameters are shown below:</p>
@@ -3052,7 +3056,7 @@ Different failsafe behaviour can be specified based on whether or not there is a
 </tr>
 </tbody>
 </table>
-<h3 id="mission-failsafe">Mission Failsafe</h3>
+<h3 id="mission-failsafe"><a name="mission-failsafe" class="plugin-anchor" href="#mission-failsafe"><i class="fa fa-link" aria-hidden="true"></i></a>Mission Failsafe</h3>
 <p>The Mission Failsafe checks prevent a previous mission being started at a new takeoff location or if it is too big (distance between waypoints is too great).
 The failsafe action is that the mission will not be run.</p>
 <p>The relevant parameters are shown below:</p>
@@ -3074,7 +3078,7 @@ The failsafe action is that the mission will not be run.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="traffic-avoidance-failsafe">Traffic Avoidance Failsafe</h3>
+<h3 id="traffic-avoidance-failsafe"><a name="traffic-avoidance-failsafe" class="plugin-anchor" href="#traffic-avoidance-failsafe"><i class="fa fa-link" aria-hidden="true"></i></a>Traffic Avoidance Failsafe</h3>
 <p>The Traffic Avoidance Failsafe allows PX4 to respond to transponder data (e.g. from ADSB transponders).</p>
 <p>The relevant parameters are shown below:</p>
 <table>
@@ -3091,7 +3095,7 @@ The failsafe action is that the mission will not be run.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="adaptive-quadchute-failsafe">Adaptive QuadChute Failsafe</h3>
+<h3 id="adaptive-quadchute-failsafe"><a name="adaptive-quadchute-failsafe" class="plugin-anchor" href="#adaptive-quadchute-failsafe"><i class="fa fa-link" aria-hidden="true"></i></a>Adaptive QuadChute Failsafe</h3>
 <p>Failsafe for when a pusher motor fails (or airspeed sensor) and a VTOL vehicle can no longer achieve a desired altitude setpoint in fixed-wing mode. 
 If triggered, the vehicle will transition to multicopter mode and enter failsafe Return mode.</p>
 <p>The relevant parameters are shown below:</p>
@@ -3109,15 +3113,15 @@ If triggered, the vehicle will transition to multicopter mode and enter failsafe
 </tr>
 </tbody>
 </table>
-<h2 id="safety_switch">Safety Switches </h2>
+<h2 id="safety_switch"><a name="safety_switch" class="plugin-anchor" href="#safety_switch"><i class="fa fa-link" aria-hidden="true"></i></a>Safety Switches </h2>
 <p>A safety switch allows you to immediately stop all motors or return the vehicle from the remote control transmitter
 (if you lose control of the vehicle, this may be better than allowing it to continue flying).</p>
 <p>The safety switches may be enabled as part of <em>QGroundControl</em> <a href="flight_mode.html#safety_switch">Flight Mode Setup</a>.</p>
 <p>This section lists the available safety switches.</p>
-<h3 id="kill_switch">Kill Switch </h3>
+<h3 id="kill_switch"><a name="kill_switch" class="plugin-anchor" href="#kill_switch"><i class="fa fa-link" aria-hidden="true"></i></a>Kill Switch </h3>
 <p>A kill switch immediately stops all motor outputs (if flying the vehicle will start to fall).
 The vehicle is not disarmed, and the motors will restart if the switch is reverted.</p>
-<h3 id="arming_switch">Arm/Disarm Switch </h3>
+<h3 id="arming_switch"><a name="arming_switch" class="plugin-anchor" href="#arming_switch"><i class="fa fa-link" aria-hidden="true"></i></a>Arm/Disarm Switch </h3>
 <p>The arm/disarm switch is a replacement for the default stick arming/disarming mechanism (and serves the same purpose: making sure there is an intentional step involved before the motors start/stop). It might be used in preference to the default mechanism because:</p>
 <ul>
 <li>Of a preference of a switch over a stick motion (e.g. if using a stick on another autopilot).</li>
@@ -3136,13 +3140,13 @@ The vehicle is not disarmed, and the motors will restart if the switch is revert
 > **Note** This can also be done by [manually setting](../advanced_config/parameters.md) the [RC_MAP_ARM_SW](../advanced_config/parameter_reference.md#RC_MAP_ARM_SW) parameter to the corresponding switch RC channel. 
   If the switch positions are reversed, change the sign of the parameter [RC_ARMSWITCH_TH](../advanced_config/parameter_reference.md#RC_ARMSWITCH_TH) (or also change its value to alter the threshold value). 
   -->
-<h3 id="return_switch">Return Switch </h3>
+<h3 id="return_switch"><a name="return_switch" class="plugin-anchor" href="#return_switch"><i class="fa fa-link" aria-hidden="true"></i></a>Return Switch </h3>
 <p>A return switch can be used to immediately engage <a href="../flight_modes/return.html">Return mode</a>.</p>
-<h2 id="further-information">Further Information</h2>
+<h2 id="further-information"><a name="further-information" class="plugin-anchor" href="#further-information"><i class="fa fa-link" aria-hidden="true"></i></a>Further Information</h2>
 <ul>
 <li><a href="https://docs.qgroundcontrol.com/en/SetupView/Safety.html" target="_blank">QGroundControl User Guide &gt; Safety Setup</a></li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 02:02:48 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 06:15:07 </span> </footer>
                                 
                                 </section>
                             
@@ -3185,7 +3189,7 @@ The vehicle is not disarmed, and the motors will restart if the switch is revert
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Safety","level":"1.4.11","depth":2,"next":{"title":"Airframe Builds","level":"1.5","depth":1,"path":"airframes/README.md","ref":"airframes/README.md","articles":[{"title":"Airframes Reference","level":"1.5.1","depth":2,"path":"airframes/airframe_reference.md","ref":"airframes/airframe_reference.md","articles":[]},{"title":"Multicopters","level":"1.5.2","depth":2,"path":"frames_multicopter/README.md","ref":"frames_multicopter/README.md","articles":[{"title":"FlameWheel450 + RTK (Pixhawk 3 Pro)","level":"1.5.2.1","depth":3,"path":"frames_multicopter/dji_flamewheel_450.md","ref":"frames_multicopter/dji_flamewheel_450.md","articles":[]},{"title":"QAV250 (Pixhawk Mini)","level":"1.5.2.2","depth":3,"path":"frames_multicopter/lumenier_qav250_pixhawk_mini.md","ref":"frames_multicopter/lumenier_qav250_pixhawk_mini.md","articles":[]},{"title":"QAV250 (Pixhawk/AUAV_X2)","level":"1.5.2.3","depth":3,"path":"frames_multicopter/lumenier_qav250_pixhawk_auav_x2.md","ref":"frames_multicopter/lumenier_qav250_pixhawk_auav_x2.md","articles":[]},{"title":"Spedix 250 (Pixracer)","level":"1.5.2.4","depth":3,"path":"frames_multicopter/spedix_s250_pixracer.md","ref":"frames_multicopter/spedix_s250_pixracer.md","articles":[]},{"title":"Robocat 270 (Pixracer)","level":"1.5.2.5","depth":3,"path":"frames_multicopter/robocat_270_pixracer.md","ref":"frames_multicopter/robocat_270_pixracer.md","articles":[]},{"title":"Matrice 100 (Pixhawk 1)","level":"1.5.2.6","depth":3,"path":"frames_multicopter/matrice100.md","ref":"frames_multicopter/matrice100.md","articles":[]},{"title":"QAV-R 5\" Racer (Pixracer)","level":"1.5.2.7","depth":3,"path":"frames_multicopter/qav_r_5_kiss_esc_racer.md","ref":"frames_multicopter/qav_r_5_kiss_esc_racer.md","articles":[]}]},{"title":"Planes","level":"1.5.3","depth":2,"path":"frames_plane/README.md","ref":"frames_plane/README.md","articles":[{"title":"Wing Wing Z84 (Pixracer)","level":"1.5.3.1","depth":3,"path":"frames_plane/wing_wing_z84.md","ref":"frames_plane/wing_wing_z84.md","articles":[]}]},{"title":"VTOL","level":"1.5.4","depth":2,"path":"frames_vtol/README.md","ref":"frames_vtol/README.md","articles":[{"title":"FunCub QuadPlane (Pixhawk)","level":"1.5.4.1","depth":3,"path":"frames_vtol/vtol_quadplane_fun_cub_vtol_pixhawk.md","ref":"frames_vtol/vtol_quadplane_fun_cub_vtol_pixhawk.md","articles":[]},{"title":"Ranger QuadPlane (Pixhawk)","level":"1.5.4.2","depth":3,"path":"frames_vtol/vtol_quadplane_volantex_ranger_ex_pixhawk.md","ref":"frames_vtol/vtol_quadplane_volantex_ranger_ex_pixhawk.md","articles":[]},{"title":"Convergence Tiltrotor (Pixfalcon)","level":"1.5.4.3","depth":3,"path":"frames_vtol/vtol_tiltrotor_eflite_convergence_pixfalcon.md","ref":"frames_vtol/vtol_tiltrotor_eflite_convergence_pixfalcon.md","articles":[]},{"title":"TBS Caipiroshka (Pixracer)","level":"1.5.4.4","depth":3,"path":"frames_vtol/vtol_tailsitter_caipiroshka_pixracer.md","ref":"frames_vtol/vtol_tailsitter_caipiroshka_pixracer.md","articles":[]},{"title":"Falcon Vertigo QuadPlane (Dropix)","level":"1.5.4.5","depth":3,"path":"frames_vtol/vtol_quadplane_falcon_vertigo_hybrid_rtf_dropix.md","ref":"frames_vtol/vtol_quadplane_falcon_vertigo_hybrid_rtf_dropix.md","articles":[]},{"title":"Archived:FireFly Y6 Tiltrotor (Pixfalcon)","level":"1.5.4.6","depth":3,"path":"frames_vtol/vtol_tiltrotor_birdseyeview_firefly_y6_pixfalcon.md","ref":"frames_vtol/vtol_tiltrotor_birdseyeview_firefly_y6_pixfalcon.md","articles":[]}]},{"title":"Rovers","level":"1.5.5","depth":2,"path":"frames_rover/README.md","ref":"frames_rover/README.md","articles":[{"title":"Traxxas Stampede","level":"1.5.5.1","depth":3,"path":"frames_rover/traxxas_stampede.md","ref":"frames_rover/traxxas_stampede.md","articles":[]}]}]},"previous":{"title":"Battery","level":"1.4.10","depth":2,"path":"config/battery.md","ref":"config/battery.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"config/safety.md","mtime":"2018-12-10T02:02:48.209Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T02:04:29.857Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Safety","level":"1.4.11","depth":2,"next":{"title":"Airframe Builds","level":"1.5","depth":1,"path":"airframes/README.md","ref":"airframes/README.md","articles":[{"title":"Airframes Reference","level":"1.5.1","depth":2,"path":"airframes/airframe_reference.md","ref":"airframes/airframe_reference.md","articles":[]},{"title":"Multicopters","level":"1.5.2","depth":2,"path":"frames_multicopter/README.md","ref":"frames_multicopter/README.md","articles":[{"title":"FlameWheel450 + RTK (Pixhawk 3 Pro)","level":"1.5.2.1","depth":3,"path":"frames_multicopter/dji_flamewheel_450.md","ref":"frames_multicopter/dji_flamewheel_450.md","articles":[]},{"title":"QAV250 (Pixhawk Mini)","level":"1.5.2.2","depth":3,"path":"frames_multicopter/lumenier_qav250_pixhawk_mini.md","ref":"frames_multicopter/lumenier_qav250_pixhawk_mini.md","articles":[]},{"title":"QAV250 (Pixhawk/AUAV_X2)","level":"1.5.2.3","depth":3,"path":"frames_multicopter/lumenier_qav250_pixhawk_auav_x2.md","ref":"frames_multicopter/lumenier_qav250_pixhawk_auav_x2.md","articles":[]},{"title":"Spedix 250 (Pixracer)","level":"1.5.2.4","depth":3,"path":"frames_multicopter/spedix_s250_pixracer.md","ref":"frames_multicopter/spedix_s250_pixracer.md","articles":[]},{"title":"Robocat 270 (Pixracer)","level":"1.5.2.5","depth":3,"path":"frames_multicopter/robocat_270_pixracer.md","ref":"frames_multicopter/robocat_270_pixracer.md","articles":[]},{"title":"Matrice 100 (Pixhawk 1)","level":"1.5.2.6","depth":3,"path":"frames_multicopter/matrice100.md","ref":"frames_multicopter/matrice100.md","articles":[]},{"title":"QAV-R 5\" Racer (Pixracer)","level":"1.5.2.7","depth":3,"path":"frames_multicopter/qav_r_5_kiss_esc_racer.md","ref":"frames_multicopter/qav_r_5_kiss_esc_racer.md","articles":[]}]},{"title":"Planes","level":"1.5.3","depth":2,"path":"frames_plane/README.md","ref":"frames_plane/README.md","articles":[{"title":"Wing Wing Z84 (Pixracer)","level":"1.5.3.1","depth":3,"path":"frames_plane/wing_wing_z84.md","ref":"frames_plane/wing_wing_z84.md","articles":[]}]},{"title":"VTOL","level":"1.5.4","depth":2,"path":"frames_vtol/README.md","ref":"frames_vtol/README.md","articles":[{"title":"FunCub QuadPlane (Pixhawk)","level":"1.5.4.1","depth":3,"path":"frames_vtol/vtol_quadplane_fun_cub_vtol_pixhawk.md","ref":"frames_vtol/vtol_quadplane_fun_cub_vtol_pixhawk.md","articles":[]},{"title":"Ranger QuadPlane (Pixhawk)","level":"1.5.4.2","depth":3,"path":"frames_vtol/vtol_quadplane_volantex_ranger_ex_pixhawk.md","ref":"frames_vtol/vtol_quadplane_volantex_ranger_ex_pixhawk.md","articles":[]},{"title":"Convergence Tiltrotor (Pixfalcon)","level":"1.5.4.3","depth":3,"path":"frames_vtol/vtol_tiltrotor_eflite_convergence_pixfalcon.md","ref":"frames_vtol/vtol_tiltrotor_eflite_convergence_pixfalcon.md","articles":[]},{"title":"TBS Caipiroshka (Pixracer)","level":"1.5.4.4","depth":3,"path":"frames_vtol/vtol_tailsitter_caipiroshka_pixracer.md","ref":"frames_vtol/vtol_tailsitter_caipiroshka_pixracer.md","articles":[]},{"title":"Falcon Vertigo QuadPlane (Dropix)","level":"1.5.4.5","depth":3,"path":"frames_vtol/vtol_quadplane_falcon_vertigo_hybrid_rtf_dropix.md","ref":"frames_vtol/vtol_quadplane_falcon_vertigo_hybrid_rtf_dropix.md","articles":[]},{"title":"Archived:FireFly Y6 Tiltrotor (Pixfalcon)","level":"1.5.4.6","depth":3,"path":"frames_vtol/vtol_tiltrotor_birdseyeview_firefly_y6_pixfalcon.md","ref":"frames_vtol/vtol_tiltrotor_birdseyeview_firefly_y6_pixfalcon.md","articles":[]}]},{"title":"Rovers","level":"1.5.5","depth":2,"path":"frames_rover/README.md","ref":"frames_rover/README.md","articles":[{"title":"Traxxas Stampede","level":"1.5.5.1","depth":3,"path":"frames_rover/traxxas_stampede.md","ref":"frames_rover/traxxas_stampede.md","articles":[]}]}]},"previous":{"title":"Battery","level":"1.4.10","depth":2,"path":"config/battery.md","ref":"config/battery.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"config/safety.md","mtime":"2018-12-10T06:15:07.166Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T06:16:44.946Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -3197,10 +3201,6 @@ The vehicle is not disarmed, and the motors will restart if the switch is revert
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
-    
-        
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
         
     
@@ -3210,6 +3210,10 @@ The vehicle is not disarmed, and the motors will restart if the switch is revert
     
         
         <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         

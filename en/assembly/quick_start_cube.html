@@ -25,6 +25,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
@@ -2677,14 +2681,14 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="cube-wiring-quick-start">Cube Wiring Quick Start</h1>
+                                <h1 id="cube-wiring-quick-start"><a name="cube-wiring-quick-start" class="plugin-anchor" href="#cube-wiring-quick-start"><i class="fa fa-link" aria-hidden="true"></i></a>Cube Wiring Quick Start</h1>
 <p>This quick start guide shows how to power the <a href="../flight_controller/pixhawk-2.html">Cube</a><sup>&#xAE;</sup> flight controller and connect its most important peripherals.</p>
 <p><img src="../../assets/flight_controller/cube/pixhawk2_cube_hero.png" width="400px"></p>
-<h2 id="accessories">Accessories</h2>
+<h2 id="accessories"><a name="accessories" class="plugin-anchor" href="#accessories"><i class="fa fa-link" aria-hidden="true"></i></a>Accessories</h2>
 <p>Cube comes with most (or all) of the accessories you will need when <a href="../flight_controller/pixhawk-2.html#stores">purchased</a>. </p>
 <p><img src="../../assets/flight_controller/cube/cube_accessories.jpg" alt="Cube Accessories"></p>
 <p>The exception is that some kits do not include a GPS, which will have to be purchased separately (<a href="#gps">see below</a>).</p>
-<h2 id="wiring-overview">Wiring Overview</h2>
+<h2 id="wiring-overview"><a name="wiring-overview" class="plugin-anchor" href="#wiring-overview"><i class="fa fa-link" aria-hidden="true"></i></a>Wiring Overview</h2>
 <p>The image below shows how to connect the most important sensors and peripherals. We&apos;ll go through each of these in detail in the following sections.</p>
 <p><img src="../../assets/flight_controller/cube/cube_wiring_overview.jpg" alt="Cube - Wiring Overview"></p>
 <ol>
@@ -2699,7 +2703,7 @@
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> More information about available ports can be found here: <a href="../flight_controller/pixhawk-2.html#ports">Cube &gt; Ports</a>.</p>
 </blockquote>
-<h2 id="mount-and-orient-controller">Mount and Orient Controller</h2>
+<h2 id="mount-and-orient-controller"><a name="mount-and-orient-controller" class="plugin-anchor" href="#mount-and-orient-controller"><i class="fa fa-link" aria-hidden="true"></i></a>Mount and Orient Controller</h2>
 <p>Mount the Cube as close as possible to your vehicle&#x2019;s center of gravity, 
 ideally oriented top-side up and with the arrow pointing towards the front of the vehicle (note the <em>subtle</em> arrow marker on top of the cube)</p>
 <p><img src="../../assets/flight_controller/cube/cube_mount_front.jpg" alt="Cube Mount - Direction of Front"></p>
@@ -2711,7 +2715,7 @@ ideally oriented top-side up and with the arrow pointing towards the front of th
 The mounting screws in the Cube accessories are designed for a 1.8mm thick frameboard. 
 Customized screws are supposed to be M2.5 with thread length inside Cube in range 6mm~7.55mm.</p>
 <p><img src="../../assets/flight_controller/cube/cube_mount_plate_screws.jpg" alt="Cube Mount - Mounting Plate"></p>
-<h2 id="gps">GPS + Compass + Safety Switch + LED </h2>
+<h2 id="gps"><a name="gps" class="plugin-anchor" href="#gps"><i class="fa fa-link" aria-hidden="true"></i></a>GPS + Compass + Safety Switch + LED </h2>
 <p>The recommended GPS modules are the <em>Here</em> and <a href="../gps_compass/rtk_gps_hex_hereplus.html">Here+</a>, both of which incorporate a GPS module, Compass, Safety Switch and <a href="../flying/led_meanings.html">LEDs</a>.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> The difference between the modules is that <em>Here+</em> supports centimeter level positioning via <a href="../advanced_features/rtk-gps.html">RTK</a>. Otherwise they are used/connected in the same way.</p>
@@ -2726,44 +2730,44 @@ Customized screws are supposed to be M2.5 with thread length inside Cube in rang
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> If you want to use an old-style 6-pin GPS module, the kit comes with a cable that you can use to connect both the GPS and <a href="#safety_switch">Safety Switch</a>.</p>
 </blockquote>
-<h2 id="safety_switch">Safety Switch </h2>
+<h2 id="safety_switch"><a name="safety_switch" class="plugin-anchor" href="#safety_switch"><i class="fa fa-link" aria-hidden="true"></i></a>Safety Switch </h2>
 <p>The <em>dedicated</em> safety switch that comes with the Cube is only required if you are not using the recommended <a href="#gps">GPS</a> (which has an inbuilt safety switch).</p>
 <p>If you are flying without the GPS you must attach the switch directly to the <code>GPS1</code> port in order to be able to arm the vehicle and fly (or via a supplied cable if using an old-style 6-pin GPS).</p>
-<h2 id="buzzer">Buzzer</h2>
+<h2 id="buzzer"><a name="buzzer" class="plugin-anchor" href="#buzzer"><i class="fa fa-link" aria-hidden="true"></i></a>Buzzer</h2>
 <p>The buzzer provides audio signals to that indicate UAV status. 
 This should be connected to the USB port as shown (no further configuration is required).</p>
 <p><img src="../../assets/flight_controller/cube/cube_buzzer.jpg" alt="Cube Buzzer"></p>
-<h2 id="rc_control">Radio Control </h2>
+<h2 id="rc_control"><a name="rc_control" class="plugin-anchor" href="#rc_control"><i class="fa fa-link" aria-hidden="true"></i></a>Radio Control </h2>
 <p>A <a href="../getting_started/rc_transmitter_receiver.html">remote control (RC) radio system</a> is required if you want to <em>manually</em> control your vehicle (PX4 does not require a radio system for autonomous flight modes). </p>
 <p>You will need to <a href="../getting_started/rc_transmitter_receiver.html">select a compatible transmitter/receiver</a> and then <em>bind</em> them so that they communicate (read the instructions that come with your specific transmitter/receiver). </p>
 <p>The instructions below show how to connect the different types of receivers.</p>
-<h3 id="ppm-sum--futaba-sbus-receivers">PPM-SUM / Futaba S.Bus receivers</h3>
+<h3 id="ppm-sum--futaba-sbus-receivers"><a name="ppm-sum--futaba-sbus-receivers" class="plugin-anchor" href="#ppm-sum--futaba-sbus-receivers"><i class="fa fa-link" aria-hidden="true"></i></a>PPM-SUM / Futaba S.Bus receivers</h3>
 <p>Connect the ground(-),power(+),and signal(S) wires to the RC pins using the provided 3-wire servo cable.</p>
 <p><img src="../../assets/flight_controller/cube/cube_rc_in.jpg" alt="Cube - RCIN"></p>
-<h3 id="spektrum-satellite-receivers">Spektrum Satellite Receivers</h3>
+<h3 id="spektrum-satellite-receivers"><a name="spektrum-satellite-receivers" class="plugin-anchor" href="#spektrum-satellite-receivers"><i class="fa fa-link" aria-hidden="true"></i></a>Spektrum Satellite Receivers</h3>
 <p>Spektrum DSM, DSM2, and DSM-X Satellite RC receivers connect to the <strong>SPKT/DSM</strong> port.</p>
 <p><img src="../../assets/flight_controller/cube/cube_rc_spektrum.jpg" alt="Cube - Spektrum"></p>
-<h3 id="pwm-receivers">PWM Receivers</h3>
+<h3 id="pwm-receivers"><a name="pwm-receivers" class="plugin-anchor" href="#pwm-receivers"><i class="fa fa-link" aria-hidden="true"></i></a>PWM Receivers</h3>
 <p>The Cube cannot directly connect to PPM or PWM receivers that have an <em>individual wire for each channel</em>. 
 PWM receivers must therefore connect to the <strong>RCIN</strong> port <em>via</em> a PPM encoder module, 
 which may be purchased from hex.aero or proficnc.com.</p>
-<h2 id="power">Power </h2>
+<h2 id="power"><a name="power" class="plugin-anchor" href="#power"><i class="fa fa-link" aria-hidden="true"></i></a>Power </h2>
 <p>Cube is typically powered from a Lithium Ion Polymer (LiPo) Battery via a Power Module (supplied with the kit) that is connected to the <strong>POWER1</strong> port.
 The power module provides reliable supply and voltage/current indication to the board and may separately supply power to ESCs that are used to drive motors on a multicopter vehicle. </p>
 <p>A typical power setup for a Multicopter vehicle is shown below.</p>
 <p><img src="../../assets/flight_controller/cube/cube_wiring_power_mc.jpg" alt="Power Setup - MC"></p>
 <!-- HOw is the power rail powered for servos - power rail? Plane/Vtol would be cool to show here too -->
-<h2 id="telemetry">Telemetry System (Optional) </h2>
+<h2 id="telemetry"><a name="telemetry" class="plugin-anchor" href="#telemetry"><i class="fa fa-link" aria-hidden="true"></i></a>Telemetry System (Optional) </h2>
 <p>A telemetry system allows you to communicate with, monitor, and control a vehicle in flight from a ground station (for example, you can direct the UAV to a particular position, or upload a new mission).</p>
 <p>The communication channel is via <a href="../telemetry/">Telemetry Radios</a>. The vehicle-based radio should be connected to the <strong>TELEM1</strong> port (if connected to this port, no further configuration is required). The other radio is connected to your ground station computer or mobile device (usually via USB).</p>
 <p><img src="../../assets/flight_controller/cube/cube_schematic_telemetry.jpg" alt="Telemetry Radio"></p>
-<h2 id="sd-card-optional">SD Card (Optional)</h2>
+<h2 id="sd-card-optional"><a name="sd-card-optional" class="plugin-anchor" href="#sd-card-optional"><i class="fa fa-link" aria-hidden="true"></i></a>SD Card (Optional)</h2>
 <p>SD cards are most commonly used to <a href="../getting_started/flight_reporting.html">log and analyse flight details</a>. Insert the Micro-SD card into Cube as shown (if not already present).</p>
 <p><img src="../../assets/flight_controller/cube/cube_sdcard.jpg" alt="Cube - Mount SDCard"></p>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> The SanDisk Extreme U3 32GB is <a href="https://dev.px4.io/en/log/logging.html#sd-cards" target="_blank">highly recommended</a> (Developer Guide).</p>
 </blockquote>
-<h2 id="motors">Motors</h2>
+<h2 id="motors"><a name="motors" class="plugin-anchor" href="#motors"><i class="fa fa-link" aria-hidden="true"></i></a>Motors</h2>
 <p>Motors/servos are connected to the <strong>MAIN</strong> and <strong>AUX</strong> ports in the order specified for your vehicle in the <a href="../airframes/airframe_reference.html">Airframe Reference</a>. </p>
 <p><img src="../../assets/flight_controller/cube/cube_main_aux_outputs.jpg" alt="Cube - Motor Connections"></p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
@@ -2773,22 +2777,22 @@ The power module provides reliable supply and voltage/current indication to the 
 <blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
 <p> The mapping is not consistent across frames (e.g. you can&apos;t rely on the throttle being on the same output for all plane frames). Make sure to use the correct mapping for your vehicle.</p>
 </blockquote>
-<h2 id="other-peripherals">Other Peripherals</h2>
+<h2 id="other-peripherals"><a name="other-peripherals" class="plugin-anchor" href="#other-peripherals"><i class="fa fa-link" aria-hidden="true"></i></a>Other Peripherals</h2>
 <p>The wiring and configuration of optional/less common components is covered within the topics for individual <a href="../peripherals/">peripherals</a>.</p>
-<h2 id="configuration">Configuration</h2>
+<h2 id="configuration"><a name="configuration" class="plugin-anchor" href="#configuration"><i class="fa fa-link" aria-hidden="true"></i></a>Configuration</h2>
 <p>Configuration is performed using <a href="http://qgroundcontrol.com/" target="_blank">QGroundContro</a>. </p>
 <p>After downloading, installing and running <em>QGroundControl</em>, connect the board to your computer as shown.</p>
 <p><img src="../../assets/flight_controller/cube/cube_usb_connection.jpg" alt="Cube - USB Connection to Computer"></p>
 <p>Basic/common configuration information is covered in: <a href="../config/">Autopilot Configuration</a>.</p>
 <p>QuadPlane specific configuration is covered here: <a href="../config_vtol/vtol_quad_configuration.html">QuadPlane VTOL Configuration</a></p>
 <!-- what about config of other vtol types and plane. Do the instructions in these ones above apply for tailsitters etc? --> 
-<h2 id="further-information">Further information</h2>
+<h2 id="further-information"><a name="further-information" class="plugin-anchor" href="#further-information"><i class="fa fa-link" aria-hidden="true"></i></a>Further information</h2>
 <ul>
 <li><a href="../flight_controller/pixhawk-2.html">Cube</a><!-- - [pixhawk2 user manual copy]()  // fold out insert shipped with doc /assets/flight_controller/cube/cube_mount_front/pixhawk2 user manual copy.pdf --> 
 <!-- - [Cube Quickstart]() (HEX) --> 
 </li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 02:02:48 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 06:15:07 </span> </footer>
                                 
                                 </section>
                             
@@ -2831,7 +2835,7 @@ The power module provides reliable supply and voltage/current indication to the 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Cube Wiring Quickstart","level":"1.3.4","depth":2,"next":{"title":"Pixracer Wiring Quickstart","level":"1.3.5","depth":2,"path":"assembly/quick_start_pixracer.md","ref":"assembly/quick_start_pixracer.md","articles":[]},"previous":{"title":"Pixhawk 4 Mini Wiring Quickstart","level":"1.3.3","depth":2,"path":"assembly/quick_start_pixhawk4_mini.md","ref":"assembly/quick_start_pixhawk4_mini.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"assembly/quick_start_cube.md","mtime":"2018-12-10T02:02:48.205Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T02:04:29.857Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Cube Wiring Quickstart","level":"1.3.4","depth":2,"next":{"title":"Pixracer Wiring Quickstart","level":"1.3.5","depth":2,"path":"assembly/quick_start_pixracer.md","ref":"assembly/quick_start_pixracer.md","articles":[]},"previous":{"title":"Pixhawk 4 Mini Wiring Quickstart","level":"1.3.3","depth":2,"path":"assembly/quick_start_pixhawk4_mini.md","ref":"assembly/quick_start_pixhawk4_mini.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"assembly/quick_start_cube.md","mtime":"2018-12-10T06:15:07.166Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T06:16:44.946Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -2843,10 +2847,6 @@ The power module provides reliable supply and voltage/current indication to the 
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
-    
-        
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
         
     
@@ -2856,6 +2856,10 @@ The power module provides reliable supply and voltage/current indication to the 
     
         
         <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         

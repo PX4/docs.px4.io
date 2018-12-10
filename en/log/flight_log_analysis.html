@@ -25,6 +25,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
@@ -2677,11 +2681,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="flight-log-analysis">Flight Log Analysis</h1>
+                                <h1 id="flight-log-analysis"><a name="flight-log-analysis" class="plugin-anchor" href="#flight-log-analysis"><i class="fa fa-link" aria-hidden="true"></i></a>Flight Log Analysis</h1>
 <p>This topic outlines approaches and software packages that can be used to analyze PX4 flight logs.</p>
-<h2 id="reporting-flights">Reporting Flights</h2>
+<h2 id="reporting-flights"><a name="reporting-flights" class="plugin-anchor" href="#reporting-flights"><i class="fa fa-link" aria-hidden="true"></i></a>Reporting Flights</h2>
 <p><a href="../getting_started/flight_reporting.html">Flight Reporting</a> explains how to download a log and report/discuss issues about a flight with the development team.</p>
-<h2 id="structured-analysis">Structured Analysis</h2>
+<h2 id="structured-analysis"><a name="structured-analysis" class="plugin-anchor" href="#structured-analysis"><i class="fa fa-link" aria-hidden="true"></i></a>Structured Analysis</h2>
 <p>Before analyzing a flight log it is important to establish its context:</p>
 <ul>
 <li>If the analysis is done after a malfunction, did the log capture the crash or did it stop mid-air?</li>
@@ -2689,12 +2693,12 @@
 <li>Does the sensor data look valid? Was there very strong vibration (a reasonable threshold for strong vibration is anything with a peak-to-peak of more than 2-3 m/s/s).</li>
 <li>If the root cause is not specific to the vehicle make sure to report it with a link to the log file (and video if one exists) on the <a href="https://github.com/px4/firmware/issues/new" target="_blank">PX4 issue tracker</a>.</li>
 </ul>
-<h2 id="ruling-out-power-failures">Ruling Out Power Failures</h2>
+<h2 id="ruling-out-power-failures"><a name="ruling-out-power-failures" class="plugin-anchor" href="#ruling-out-power-failures"><i class="fa fa-link" aria-hidden="true"></i></a>Ruling Out Power Failures</h2>
 <p>If a log file ends mid-air, two main causes are possible: a power failure <em>or</em> a hard fault of the operating system. </p>
 <p>On autopilots based on the <a href="http://www.st.com/en/microcontrollers/stm32-32-bit-arm-cortex-mcus.html?querycriteria=productId=SC1169" target="_blank">STM32 series</a>, hard faults of the operating system are logged to the SD card. 
 These are located on the top level of the SD card and named <em>fault_date.log</em>, e.g. <strong>fault_2017_04_03_00_26_05.log</strong>. Please always check for the presence of this file if a flight log ends abruptly.</p>
-<h2 id="analysis-tools">Analysis Tools</h2>
-<h3 id="flight-review-online-tool">Flight Review (Online Tool)</h3>
+<h2 id="analysis-tools"><a name="analysis-tools" class="plugin-anchor" href="#analysis-tools"><i class="fa fa-link" aria-hidden="true"></i></a>Analysis Tools</h2>
+<h3 id="flight-review-online-tool"><a name="flight-review-online-tool" class="plugin-anchor" href="#flight-review-online-tool"><i class="fa fa-link" aria-hidden="true"></i></a>Flight Review (Online Tool)</h3>
 <p><a href="http://logs.px4.io" target="_blank">Flight Review</a> is the successor of <em>Log Muncher</em>. 
 It is used in combination with the new <a href="http://dev.px4.io/en/log/ulog_file_format.html" target="_blank">ULog</a> logging format.</p>
 <p>Key features:</p>
@@ -2705,7 +2709,7 @@ It is used in combination with the new <a href="http://dev.px4.io/en/log/ulog_fi
 </ul>
 <p><img src="../../assets/flight_log_analysis/flight_review/flight-review-example.png" alt="Flight Review Charts"></p>
 <p>See <a href="flight_review.html">Log Analysis using Flight Review</a> for an introduction.</p>
-<h3 id="pyulog">pyulog</h3>
+<h3 id="pyulog"><a name="pyulog" class="plugin-anchor" href="#pyulog"><i class="fa fa-link" aria-hidden="true"></i></a>pyulog</h3>
 <p><a href="https://github.com/PX4/pyulog" target="_blank">pyulog</a> is a python package to parse ULog files, along with a set of command-line scripts to extract/display ULog information and convert them to other file formats. </p>
 <p>Key features:</p>
 <ul>
@@ -2760,7 +2764,7 @@ Name (multi id, message size in bytes)    number of data points, total bytes
  vehicle_local_position (0, 123)              678      83394
  vehicle_rates_setpoint (0, 24)              6448     154752
  vehicle_status (0, 45)                       294      13230
-</code></pre><h3 id="pyflightanalysis">pyFlightAnalysis</h3>
+</code></pre><h3 id="pyflightanalysis"><a name="pyflightanalysis" class="plugin-anchor" href="#pyflightanalysis"><i class="fa fa-link" aria-hidden="true"></i></a>pyFlightAnalysis</h3>
 <p><a href="https://github.com/Marxlp/pyFlightAnalysis" target="_blank">pyFlightAnalysis</a> is a cross-platform PX4 flight log (ULog) visual analysis tool, inspired by <a href="https://github.com/DrTon/FlightPlot" target="_blank">FlightPlot</a>.</p>
 <p>Key features:</p>
 <ul>
@@ -2770,7 +2774,7 @@ Name (multi id, message size in bytes)    number of data points, total bytes
 <li>Python based, cross-platform.</li>
 </ul>
 <p><img src="../../assets/flight_log_analysis/pyflightanalysis.png" alt="pyFlightAnalysis 1.0.1b1"></p>
-<h3 id="flightplot-desktop">FlightPlot (Desktop)</h3>
+<h3 id="flightplot-desktop"><a name="flightplot-desktop" class="plugin-anchor" href="#flightplot-desktop"><i class="fa fa-link" aria-hidden="true"></i></a>FlightPlot (Desktop)</h3>
 <p><a href="https://github.com/PX4/FlightPlot" target="_blank">FlightPlot</a> is a desktop based tool for log analysis. It can be downloaded from <a href="https://github.com/PX4/FlightPlot/releases" target="_blank">FlightPlot Downloads</a> (Linux, MacOS, Windows).</p>
 <p>Key features:</p>
 <ul>
@@ -2780,7 +2784,7 @@ Name (multi id, message size in bytes)    number of data points, total bytes
 <li>Allows saving plots as images.</li>
 </ul>
 <p><img src="../../assets/flight_log_analysis/flightplot_0.2.16.png" alt="FlightPlot Charts"></p>
-<h3 id="px4tools">PX4Tools</h3>
+<h3 id="px4tools"><a name="px4tools" class="plugin-anchor" href="#px4tools"><i class="fa fa-link" aria-hidden="true"></i></a>PX4Tools</h3>
 <p><a href="https://github.com/dronecrew/px4tools" target="_blank">PX4Tools</a> is a log analysis toolbox for the PX4 autopilot written in Python. 
 The recommended installation procedure is to use <a href="https://conda.io/docs/index.html" target="_blank">anaconda3</a>. See <a href="https://github.com/dronecrew/px4tools" target="_blank">px4tools github page</a> for details.</p>
 <p>Key features:</p>
@@ -2791,7 +2795,7 @@ The recommended installation procedure is to use <a href="https://conda.io/docs/
 <li>Advanced plotting capabilities to allow detailed analysis</li>
 </ul>
 <p><img src="../../assets/flight_log_analysis/px4tools.png" alt="PX4Tools-based analysis"></p>
-<h3 id="mavgcl">MAVGCL</h3>
+<h3 id="mavgcl"><a name="mavgcl" class="plugin-anchor" href="#mavgcl"><i class="fa fa-link" aria-hidden="true"></i></a>MAVGCL</h3>
 <p><a href="https://github.com/ecmnet/MAVGCL" target="_blank">MAVGCL</a> is an in-flight log analyzer for PX4.
 It can also be used in offline mode with downloaded uLog files. </p>
 <p>Key features:</p>
@@ -2806,7 +2810,7 @@ It can also be used in offline mode with downloaded uLog files. </p>
 <li>And many more ...</li>
 </ul>
 <p><img src="../../assets/flight_log_analysis/mavgcl/time_series.png" alt="MAVGCL"></p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 02:02:48 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 06:15:07 </span> </footer>
                                 
                                 </section>
                             
@@ -2849,7 +2853,7 @@ It can also be used in offline mode with downloaded uLog files. </p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Flight Log Analysis","level":"1.7","depth":1,"next":{"title":"Log Analysis using Flight Review","level":"1.7.1","depth":2,"path":"log/flight_review.md","ref":"log/flight_review.md","articles":[]},"previous":{"title":"Offboard","level":"1.6.6.17","depth":3,"path":"flight_modes/offboard.md","ref":"flight_modes/offboard.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"log/flight_log_analysis.md","mtime":"2018-12-10T02:02:48.217Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T02:04:29.857Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Flight Log Analysis","level":"1.7","depth":1,"next":{"title":"Log Analysis using Flight Review","level":"1.7.1","depth":2,"path":"log/flight_review.md","ref":"log/flight_review.md","articles":[]},"previous":{"title":"Offboard","level":"1.6.6.17","depth":3,"path":"flight_modes/offboard.md","ref":"flight_modes/offboard.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"log/flight_log_analysis.md","mtime":"2018-12-10T06:15:07.174Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T06:16:44.946Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -2861,10 +2865,6 @@ It can also be used in offline mode with downloaded uLog files. </p>
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
-    
-        
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
         
     
@@ -2874,6 +2874,10 @@ It can also be used in offline mode with downloaded uLog files. </p>
     
         
         <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         

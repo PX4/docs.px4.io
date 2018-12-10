@@ -25,6 +25,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
@@ -2677,7 +2681,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="cube-flight-controller">Cube Flight Controller</h1>
+                                <h1 id="cube-flight-controller"><a name="cube-flight-controller" class="plugin-anchor" href="#cube-flight-controller"><i class="fa fa-link" aria-hidden="true"></i></a>Cube Flight Controller</h1>
 <p>The <a href="http://www.proficnc.com/61-system-kits2" target="_blank">Cube</a> flight controller (previously known as Pixhawk 2.1) is a flexible autopilot intended primarily for manufacturers of commercial systems. 
 It is based on the <a href="https://pixhawk.org/" target="_blank">Pixhawk-project</a> <strong>FMUv3</strong> open hardware design and runs PX4 on the <a href="http://nuttx.org" target="_blank">NuttX</a> OS.</p>
 <p><img src="../../assets/flight_controller/cube/pixhawk2_cube_hero.png" width="400px"></p>
@@ -2685,7 +2689,7 @@ It is based on the <a href="https://pixhawk.org/" target="_blank">Pixhawk-projec
 For example, a carrier board for a commercial inspection vehicle might include connections for a companion computer, 
 while a carrier board for a racer could includes ESCs form the frame of the vehicle.</p>
 <p>Cube includes vibration isolation on two of the IMU&apos;s, with a third fixed IMU as a reference / Backup.</p>
-<h2 id="key-features">Key Features</h2>
+<h2 id="key-features"><a name="key-features" class="plugin-anchor" href="#key-features"><i class="fa fa-link" aria-hidden="true"></i></a>Key Features</h2>
 <ul>
 <li>32bit STM32F427 <a href="http://en.wikipedia.org/wiki/ARM_Cortex-M#Cortex-M4" target="_blank">Cortex-M4F</a><sup>&#xAE;</sup> core with FPU</li>
 <li>168 MHz / 252 MIPS </li>
@@ -2702,16 +2706,16 @@ while a carrier board for a racer could includes ESCs form the frame of the vehi
 <li>High-power, multi-tone piezo audio indicator</li>
 <li>microSD card for high-rate logging over extended periods of time</li>
 </ul>
-<h2 id="stores">Where to Buy </h2>
+<h2 id="stores"><a name="stores" class="plugin-anchor" href="#stores"><i class="fa fa-link" aria-hidden="true"></i></a>Where to Buy </h2>
 <ul>
 <li><a href="http://www.proficnc.com/61-system-kits" target="_blank">The Cube</a> (ProfiCNC)</li>
 </ul>
-<h2 id="assembly">Assembly</h2>
+<h2 id="assembly"><a name="assembly" class="plugin-anchor" href="#assembly"><i class="fa fa-link" aria-hidden="true"></i></a>Assembly</h2>
 <ul>
 <li><a href="../assembly/quick_start_cube.html">Cube Wiring Quickstart</a></li>
 </ul>
-<h2 id="specifications">Specifications</h2>
-<h3 id="processor">Processor</h3>
+<h2 id="specifications"><a name="specifications" class="plugin-anchor" href="#specifications"><i class="fa fa-link" aria-hidden="true"></i></a>Specifications</h2>
+<h3 id="processor"><a name="processor" class="plugin-anchor" href="#processor"><i class="fa fa-link" aria-hidden="true"></i></a>Processor</h3>
 <ul>
 <li>32bit STM32F427 <a href="http://en.wikipedia.org/wiki/ARM_Cortex-M#Cortex-M4" target="_blank">Cortex M4</a> core with FPU</li>
 <li>168 MHz / 252 MIPS </li>
@@ -2719,11 +2723,11 @@ while a carrier board for a racer could includes ESCs form the frame of the vehi
 <li>2 MB Flash (fully accessible)</li>
 <li>32 bit STM32F103 failsafe co-processor</li>
 </ul>
-<h3 id="sensors">Sensors</h3>
+<h3 id="sensors"><a name="sensors" class="plugin-anchor" href="#sensors"><i class="fa fa-link" aria-hidden="true"></i></a>Sensors</h3>
 <ul>
 <li>TBA</li>
 </ul>
-<h3 id="interfaces">Interfaces</h3>
+<h3 id="interfaces"><a name="interfaces" class="plugin-anchor" href="#interfaces"><i class="fa fa-link" aria-hidden="true"></i></a>Interfaces</h3>
 <ul>
 <li>5x UART (serial ports), one high-power capable, 2x with HW flow control</li>
 <li>2x CAN (one with internal 3.3V transceiver, one on expansion connector)</li>
@@ -2736,48 +2740,48 @@ while a carrier board for a racer could includes ESCs form the frame of the vehi
 <li>3.3 and 6.6V ADC inputs</li>
 <li>Internal microUSB port and external microUSB port extension</li>
 </ul>
-<h3 id="power-system-and-protection">Power System and Protection</h3>
+<h3 id="power-system-and-protection"><a name="power-system-and-protection" class="plugin-anchor" href="#power-system-and-protection"><i class="fa fa-link" aria-hidden="true"></i></a>Power System and Protection</h3>
 <ul>
 <li>Ideal diode controller with automatic failover</li>
 <li>Servo rail high-power (max. 10V) and high-current (10A+) ready</li>
 <li>All peripheral outputs over-current protected, all inputs ESD protected</li>
 </ul>
-<h3 id="voltage-ratings">Voltage Ratings</h3>
+<h3 id="voltage-ratings"><a name="voltage-ratings" class="plugin-anchor" href="#voltage-ratings"><i class="fa fa-link" aria-hidden="true"></i></a>Voltage Ratings</h3>
 <p>Pixhawk can be triple-redundant on the power supply if three power sources are supplied. The three rails are: Power module input, servo rail input, USB input.</p>
-<h4 id="normal-operation-maximum-ratings">Normal Operation Maximum Ratings</h4>
+<h4 id="normal-operation-maximum-ratings"><a name="normal-operation-maximum-ratings" class="plugin-anchor" href="#normal-operation-maximum-ratings"><i class="fa fa-link" aria-hidden="true"></i></a>Normal Operation Maximum Ratings</h4>
 <p>Under these conditions all power sources will be used in this order to power the system</p>
 <ul>
 <li>Power module input (4.8V to 5.4V)</li>
 <li>Servo rail input (4.8V to 5.4V) <strong>UP TO 10V FOR MANUAL OVERRIDE, BUT AUTOPILOT PART WILL BE UNPOWERED ABOVE 5.7V IF POWER MODULE INPUT IS NOT PRESENT</strong></li>
 <li>USB power input (4.8V to 5.4V)</li>
 </ul>
-<h4 id="absolute-maximum-ratings">Absolute Maximum Ratings</h4>
+<h4 id="absolute-maximum-ratings"><a name="absolute-maximum-ratings" class="plugin-anchor" href="#absolute-maximum-ratings"><i class="fa fa-link" aria-hidden="true"></i></a>Absolute Maximum Ratings</h4>
 <p>Under these conditions the system will not draw any power (will not be operational), but will remain intact.</p>
 <ul>
 <li>Power module input (4.1V to 5.7V, 0V to 20V undamaged)</li>
 <li>Servo rail input (4.1V to 5.7V, 0V to 20V)</li>
 <li>USB power input (4.1V to 5.7V, 0V to 6V)</li>
 </ul>
-<h2 id="pinouts-and-schematics">Pinouts and Schematics</h2>
+<h2 id="pinouts-and-schematics"><a name="pinouts-and-schematics" class="plugin-anchor" href="#pinouts-and-schematics"><i class="fa fa-link" aria-hidden="true"></i></a>Pinouts and Schematics</h2>
 <p>Board schematics and other documentation can be found here: <a href="https://github.com/proficnc/The-Cube" target="_blank">The Cube Project</a>.</p>
 <p>The datasheet from Hex manufacturing can be found <a href="http://www.hex.aero/wp-content/uploads/2016/07/DRS_Pixhawk-2-17th-march-2016.pdf" target="_blank">here</a>.</p>
-<h2 id="ports">Ports</h2>
-<h3 id="top-side-gps-telem-etc">Top-Side (GPS, TELEM etc)</h3>
+<h2 id="ports"><a name="ports" class="plugin-anchor" href="#ports"><i class="fa fa-link" aria-hidden="true"></i></a>Ports</h2>
+<h3 id="top-side-gps-telem-etc"><a name="top-side-gps-telem-etc" class="plugin-anchor" href="#top-side-gps-telem-etc"><i class="fa fa-link" aria-hidden="true"></i></a>Top-Side (GPS, TELEM etc)</h3>
 <p><img src="../../assets/flight_controller/cube/cube_ports_top_main.jpg" alt="Cube Ports - Top (GPS, TELEM etc) and Main/AUX"></p>
-<h3 id="debug-ports">Debug Ports</h3>
+<h3 id="debug-ports"><a name="debug-ports" class="plugin-anchor" href="#debug-ports"><i class="fa fa-link" aria-hidden="true"></i></a>Debug Ports</h3>
 <p><img src="../../assets/flight_controller/cube/cube_ports_debug.jpg" alt="Cube Debug Ports"></p>
-<h3 id="usbsdcard-ports">USB/SDCard Ports</h3>
+<h3 id="usbsdcard-ports"><a name="usbsdcard-ports" class="plugin-anchor" href="#usbsdcard-ports"><i class="fa fa-link" aria-hidden="true"></i></a>USB/SDCard Ports</h3>
 <p><img src="../../assets/flight_controller/cube/cube_ports_usb_sdcard.jpg" alt="Cube USB/SDCard Ports"></p>
-<h2 id="building-firmware">Building Firmware</h2>
+<h2 id="building-firmware"><a name="building-firmware" class="plugin-anchor" href="#building-firmware"><i class="fa fa-link" aria-hidden="true"></i></a>Building Firmware</h2>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> Most users will not need to build this firmware!
   It is pre-built and automatically installed by <em>QGroundControl</em> when appropriate hardware is connected.</p>
 </blockquote>
 <p>To <a href="https://dev.px4.io/en/setup/building_px4.html" target="_blank">build PX4</a> for this target:</p>
 <pre><code>make px4_fmu-v3_default
-</code></pre><h2 id="issues">Issues</h2>
+</code></pre><h2 id="issues"><a name="issues" class="plugin-anchor" href="#issues"><i class="fa fa-link" aria-hidden="true"></i></a>Issues</h2>
 <p>CAN1 and CAN2 silk screen on the Pixhawk 2.1 are flipped (CAN1 is CAN2 and vice versa). </p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 02:02:48 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 06:15:07 </span> </footer>
                                 
                                 </section>
                             
@@ -2820,7 +2824,7 @@ while a carrier board for a racer could includes ESCs form the frame of the vehi
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Cube (Pixhawk 2)","level":"1.11.1.8","depth":3,"next":{"title":"Pixhawk 3 Pro","level":"1.11.1.9","depth":3,"path":"flight_controller/pixhawk3_pro.md","ref":"flight_controller/pixhawk3_pro.md","articles":[]},"previous":{"title":"Pixracer","level":"1.11.1.7","depth":3,"path":"flight_controller/pixracer.md","ref":"flight_controller/pixracer.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"flight_controller/pixhawk-2.md","mtime":"2018-12-10T02:02:48.209Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T02:04:29.857Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Cube (Pixhawk 2)","level":"1.11.1.8","depth":3,"next":{"title":"Pixhawk 3 Pro","level":"1.11.1.9","depth":3,"path":"flight_controller/pixhawk3_pro.md","ref":"flight_controller/pixhawk3_pro.md","articles":[]},"previous":{"title":"Pixracer","level":"1.11.1.7","depth":3,"path":"flight_controller/pixracer.md","ref":"flight_controller/pixracer.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"flight_controller/pixhawk-2.md","mtime":"2018-12-10T06:15:07.170Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T06:16:44.946Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -2832,10 +2836,6 @@ while a carrier board for a racer could includes ESCs form the frame of the vehi
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
-    
-        
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
         
     
@@ -2845,6 +2845,10 @@ while a carrier board for a racer could includes ESCs form the frame of the vehi
     
         
         <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         

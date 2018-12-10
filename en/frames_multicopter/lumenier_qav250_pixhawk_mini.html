@@ -25,6 +25,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
@@ -2677,7 +2681,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="lumenier-qav250-pixhawk-mini-build">Lumenier QAV250 Pixhawk Mini Build</h1>
+                                <h1 id="lumenier-qav250-pixhawk-mini-build"><a name="lumenier-qav250-pixhawk-mini-build" class="plugin-anchor" href="#lumenier-qav250-pixhawk-mini-build"><i class="fa fa-link" aria-hidden="true"></i></a>Lumenier QAV250 Pixhawk Mini Build</h1>
 <p>The <a href="http://www.lumenier.com/products/multirotors/qav250" target="_blank">Lumenier QAV250 Mini FPV
 Quadcopter</a> is a
 small but fully functional FPV multicopter frame. This topic provides
@@ -2692,7 +2696,7 @@ configure the PX4 autopilot using <em>QGroundControl</em>.</p>
 </ul>
 <p><img src="../../images/qav250_complete_build_with_pixhawk_mini.jpg" alt="QAV250 - Complete build with pixhawk
 mini"></p>
-<h2 id="bill-of-materials">Bill of materials</h2>
+<h2 id="bill-of-materials"><a name="bill-of-materials" class="plugin-anchor" href="#bill-of-materials"><i class="fa fa-link" aria-hidden="true"></i></a>Bill of materials</h2>
 <p>The components used in this build are listed below (along with links to
 where they can be purchased). In general we used hardware recommended by
 the manufacturers for the flight controller and frame.</p>
@@ -2712,9 +2716,9 @@ the manufacturers for the flight controller and frame.</p>
 Assembly is the same with either power module.</li>
 <li>We also recommend these ESC: Lumenier 12 amp ESC w/ SimonK AutoShot (2-4s N-FET) (<a href="http://www.getfpv.com/lumenier-12a-esc-w-simonk-autoshot-2-4s-n-fet.html" target="_blank">getfpv.com</a>).</li>
 </ul>
-<h2 id="hardware">Hardware</h2>
+<h2 id="hardware"><a name="hardware" class="plugin-anchor" href="#hardware"><i class="fa fa-link" aria-hidden="true"></i></a>Hardware</h2>
 <p>This section lists all hardware for the frame and the autopilot installation.</p>
-<h3 id="frame-qav250">Frame QAV250</h3>
+<h3 id="frame-qav250"><a name="frame-qav250" class="plugin-anchor" href="#frame-qav250"><i class="fa fa-link" aria-hidden="true"></i></a>Frame QAV250</h3>
 <table>
 <thead>
 <tr>
@@ -2778,7 +2782,7 @@ Assembly is the same with either power module.</li>
 </tbody>
 </table>
 <p><img src="../../images/qav250_framehardware_displayall.jpg" alt="Hardware for QAV250 frame"></p>
-<h3 id="electronics">Electronics</h3>
+<h3 id="electronics"><a name="electronics" class="plugin-anchor" href="#electronics"><i class="fa fa-link" aria-hidden="true"></i></a>Electronics</h3>
 <table>
 <thead>
 <tr>
@@ -2830,7 +2834,7 @@ Assembly is the same with either power module.</li>
 </tbody>
 </table>
 <p><img src="../../images/qav250_pixhawk_mini_electronics_unassembled.jpg" alt="QAV250/PixhawkMini Electronics before assembly"></p>
-<h3 id="telemetry-radio-optional">Telemetry radio (optional)</h3>
+<h3 id="telemetry-radio-optional"><a name="telemetry-radio-optional" class="plugin-anchor" href="#telemetry-radio-optional"><i class="fa fa-link" aria-hidden="true"></i></a>Telemetry radio (optional)</h3>
 <p>A telemetry radio is an optional component that can be used to
 wirelessly connect a ground control station (GCS) computer with the
 autopilot. This allows you to view in-flight data, change missions on
@@ -2849,7 +2853,7 @@ in this build is the (highly recommended) <em>3DR Telemetry Radio (915MHz)</em> 
 <li>Double-sided tape</li>
 </ul>
 <p><img src="../../images/3dr_telemetry_radio_kit.jpg" alt="3DR Telemetry Radio Kit - unboxed"></p>
-<h2 id="assembly-tools">Assembly tools</h2>
+<h2 id="assembly-tools"><a name="assembly-tools" class="plugin-anchor" href="#assembly-tools"><i class="fa fa-link" aria-hidden="true"></i></a>Assembly tools</h2>
 <p>The following tools are used in this assembly:</p>
 <ul>
 <li>2.0mm Hex screwdriver</li>
@@ -2859,11 +2863,11 @@ in this build is the (highly recommended) <em>3DR Telemetry Radio (915MHz)</em> 
 <li>Precision tweezers</li>
 </ul>
 <p><img src="../../images/qav250_pixhawk_mini_assembly_tools_needed.jpg" alt="Tools required for assembling QAV250"></p>
-<h2 id="off-frame-assembly">Off-frame assembly</h2>
+<h2 id="off-frame-assembly"><a name="off-frame-assembly" class="plugin-anchor" href="#off-frame-assembly"><i class="fa fa-link" aria-hidden="true"></i></a>Off-frame assembly</h2>
 <p>This section shows how the electronics are wired (off frame) and how the
 frame is assembled without the electronics. This information can be used
 for reference if the on-the-frame screenshots are not sufficiently clear.</p>
-<h3 id="electronics-wiringconnections-off-frame">Electronics Wiring/Connections (off frame)</h3>
+<h3 id="electronics-wiringconnections-off-frame"><a name="electronics-wiringconnections-off-frame" class="plugin-anchor" href="#electronics-wiringconnections-off-frame"><i class="fa fa-link" aria-hidden="true"></i></a>Electronics Wiring/Connections (off frame)</h3>
 <p>The image below shows the <em>standard</em> multicopter wiring for <em>Pixhawk
 Mini</em>. It uses the <em>Quad Power Distribution Board</em> to power the ESCs,
 Pixhawk and Pixhawk power rail (the board includes an integrated power
@@ -2874,7 +2878,7 @@ module that supports batteries up to 4S).</p>
   optional external switch. The wiring is otherwise similar!</p>
 </blockquote>
 <p><img src="../../images/qav250_wiring_image_pixhawk_mini.jpg" alt="Pixhawk Mini Electronics Wiring for QAV250 (off frame)"></p>
-<h3 id="frame-only-assembly">Frame-only assembly</h3>
+<h3 id="frame-only-assembly"><a name="frame-only-assembly" class="plugin-anchor" href="#frame-only-assembly"><i class="fa fa-link" aria-hidden="true"></i></a>Frame-only assembly</h3>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> This section shows how the frame is assembled
   without the complication of the electronics. It is references in the
@@ -2899,7 +2903,7 @@ shown in the picture.</p>
 <p><img src="../../images/qav250_frame_assembly_add_flight_controller_cover_plate.jpg" alt="Attach flight controller cover plate"></p>
 <p>Additional/manufacturer assembly can be found here: 
 <a href="http://www.lumenier.com/products/multirotors/qav250/build-manual-carbon-fiber" target="_blank">Lumenier QAV250 Carbon Fiber Build Manual</a>.</p>
-<h2 id="full-assembly-with-electronics">FULL Assembly with electronics</h2>
+<h2 id="full-assembly-with-electronics"><a name="full-assembly-with-electronics" class="plugin-anchor" href="#full-assembly-with-electronics"><i class="fa fa-link" aria-hidden="true"></i></a>FULL Assembly with electronics</h2>
 <p>This section describes the full assembly of the QAV250 along with the
 <em>Pixhawk Mini</em>, motors and other electronics.</p>
 <p><strong>Step 1:</strong> Install motors</p>
@@ -2994,7 +2998,7 @@ as shown below).</p>
 <p>The frame build is now complete! In the next step we can install and
 configure the PX4 autopilot.</p>
 <p><img src="../../images/qav250_complete_build_with_pixhawk_mini.jpg" alt="QAV250 - Complete build with pixhawk mini"></p>
-<h2 id="px4-installation-and-configuration">PX4 installation and configuration</h2>
+<h2 id="px4-installation-and-configuration"><a name="px4-installation-and-configuration" class="plugin-anchor" href="#px4-installation-and-configuration"><i class="fa fa-link" aria-hidden="true"></i></a>PX4 installation and configuration</h2>
 <p>This section explains how you can use
 <a href="http://qgroundcontrol.com/" target="_blank">QGroundControl</a> to install the PX4
 autopilot and configure/tune it for the QAV250 frame.</p>
@@ -3005,7 +3009,7 @@ autopilot and configure/tune it for the QAV250 frame.</p>
 </blockquote>
 <p><a href="http://qgroundcontrol.com/downloads/" target="_blank">Download and install</a> 
 <em>QGroundControl</em> for your platform.</p>
-<h3 id="firmware-update">Firmware update</h3>
+<h3 id="firmware-update"><a name="firmware-update" class="plugin-anchor" href="#firmware-update"><i class="fa fa-link" aria-hidden="true"></i></a>Firmware update</h3>
 <p>Update the <em>Pixhawk Mini</em> with the PX4 firmware, configured for the
 Lumenier QAV250.</p>
 <p><strong>Step 1:</strong> Start <em>QGroundControl</em> and select <strong>Firmware</strong> from the
@@ -3022,7 +3026,7 @@ sidebar. Connect your vehicle to the USB port</p>
 (QGroundControl)</li>
 </ul>
 </blockquote>
-<h3 id="vehicle-calibrationsetup">Vehicle calibration/setup</h3>
+<h3 id="vehicle-calibrationsetup"><a name="vehicle-calibrationsetup" class="plugin-anchor" href="#vehicle-calibrationsetup"><i class="fa fa-link" aria-hidden="true"></i></a>Vehicle calibration/setup</h3>
 <p>Vehicle calibration/setup is typically similar for all vehicles. You can
 follow the instructions below, or see 
 <a href="../config/">Autopilot Configuration</a>.</p>
@@ -3081,7 +3085,7 @@ and unplug battery).</p>
 <p><img src="../../images/qgc_esc_calibration_power.png" alt="QGroundControl - Calibrate ESCs"></p>
 </li>
 </ol>
-<h3 id="tuning">Tuning</h3>
+<h3 id="tuning"><a name="tuning" class="plugin-anchor" href="#tuning"><i class="fa fa-link" aria-hidden="true"></i></a>Tuning</h3>
 <p>Firmware installation sets <em>default</em> autopilot parameters that have been
 configured for the selected frame (in this case for the <em>Lumenier
 QAV250</em>). As builds may use different components and place them
@@ -3092,14 +3096,14 @@ parameters are the ones that have changed). These were generated by
 flight testing.</p>
 <p><img src="../../images/qav250_recommended_parameters.jpg" alt="Recommended parameters for QAV250"></p>
 <p>For general information on tuning see: <a href="../config_mc/pid_tuning_guide_multicopter.html">Multicopter PID Tuning Guide</a>.</p>
-<h2 id="video">Video</h2>
+<h2 id="video"><a name="video" class="plugin-anchor" href="#video"><i class="fa fa-link" aria-hidden="true"></i></a>Video</h2>
 <p>The video below shows this QAV250 on a test flight.</p>
 <p><div style="position: relative;padding-bottom: 56.25%;padding-top: 25px;height: 0;"><iframe frameborder="0" allowfullscreen style="border: none;position: absolute;top: 0;left: 0;width: 100%;height: 100%;" src="//www.youtube.com/embed/MZzo4DMNkug"></iframe></div></p>
-<h2 id="acknowledgements">Acknowledgements</h2>
+<h2 id="acknowledgements"><a name="acknowledgements" class="plugin-anchor" href="#acknowledgements"><i class="fa fa-link" aria-hidden="true"></i></a>Acknowledgements</h2>
 <p>This build log was provided by: <em>Abimael Suarez, 3DRobotics</em>. Video was
 provided by <em>Santiago Escala</em>, <em>3DRobotics</em>.</p>
 <!-- Open Questions/ACTIONS - Need to update with cross links to other PX4 docs. At moment many of these do not exist: Pixhawk wiring overviews, receivers, gps etc, flight modes. -Tidy up some of the diagrams do remove unnecessary complication (e.g. remove OS footer from QGroundControl screens) -->
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 02:02:48 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 06:15:07 </span> </footer>
                                 
                                 </section>
                             
@@ -3142,7 +3146,7 @@ provided by <em>Santiago Escala</em>, <em>3DRobotics</em>.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"QAV250 (Pixhawk Mini)","level":"1.5.2.2","depth":3,"next":{"title":"QAV250 (Pixhawk/AUAV_X2)","level":"1.5.2.3","depth":3,"path":"frames_multicopter/lumenier_qav250_pixhawk_auav_x2.md","ref":"frames_multicopter/lumenier_qav250_pixhawk_auav_x2.md","articles":[]},"previous":{"title":"FlameWheel450 + RTK (Pixhawk 3 Pro)","level":"1.5.2.1","depth":3,"path":"frames_multicopter/dji_flamewheel_450.md","ref":"frames_multicopter/dji_flamewheel_450.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"frames_multicopter/lumenier_qav250_pixhawk_mini.md","mtime":"2018-12-10T02:02:48.213Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T02:04:29.857Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"QAV250 (Pixhawk Mini)","level":"1.5.2.2","depth":3,"next":{"title":"QAV250 (Pixhawk/AUAV_X2)","level":"1.5.2.3","depth":3,"path":"frames_multicopter/lumenier_qav250_pixhawk_auav_x2.md","ref":"frames_multicopter/lumenier_qav250_pixhawk_auav_x2.md","articles":[]},"previous":{"title":"FlameWheel450 + RTK (Pixhawk 3 Pro)","level":"1.5.2.1","depth":3,"path":"frames_multicopter/dji_flamewheel_450.md","ref":"frames_multicopter/dji_flamewheel_450.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"frames_multicopter/lumenier_qav250_pixhawk_mini.md","mtime":"2018-12-10T06:15:07.174Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T06:16:44.946Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -3154,10 +3158,6 @@ provided by <em>Santiago Escala</em>, <em>3DRobotics</em>.</p>
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
-    
-        
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
         
     
@@ -3167,6 +3167,10 @@ provided by <em>Santiago Escala</em>, <em>3DRobotics</em>.</p>
     
         
         <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         

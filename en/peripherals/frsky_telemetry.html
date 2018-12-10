@@ -25,6 +25,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
@@ -2677,11 +2681,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="frsky-telemetry">FrSky Telemetry</h1>
+                                <h1 id="frsky-telemetry"><a name="frsky-telemetry" class="plugin-anchor" href="#frsky-telemetry"><i class="fa fa-link" aria-hidden="true"></i></a>FrSky Telemetry</h1>
 <p>FrSky telemetry allows you to access vehicle <a href="#messages">telemetry/status</a> information on a compatible RC transmitter.</p>
 <p>Available <a href="#messages">telemetry is listed here</a>, and includes: flight mode, battery level, RC signal strength, speed, altitude etc. Some transmitters can additionally provide audible and vibration feedback, which is particularly useful for low battery and other failsafe warnings.</p>
 <p>PX4 supports both <a href="#s_port">S.Port</a> (new) and D (old) FrSky telemetry ports. </p>
-<h2 id="hardware-setup">Hardware Setup</h2>
+<h2 id="hardware-setup"><a name="hardware-setup" class="plugin-anchor" href="#hardware-setup"><i class="fa fa-link" aria-hidden="true"></i></a>Hardware Setup</h2>
 <p>A typical hardware setup is shown below. </p>
 <p><img src="../../assets/hardware/telemetry/frsky_telemetry_overview.jpg" alt="FrSky-Taranis-Telemetry"></p>
 <p>It includes:</p>
@@ -2694,14 +2698,14 @@
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> Usually it is cheaper and easier to buy a <a href="#ready_made_cable">ready made cable</a> that contains this adapter and has the appropriate connectors for the autopilot and receiver. Creating a <a href="#diy_cables">DIY cable</a> requires electronics assembly expertise.</p>
 </blockquote>
-<h3 id="ready_made_cable">Ready-Made Cables </h3>
+<h3 id="ready_made_cable"><a name="ready_made_cable" class="plugin-anchor" href="#ready_made_cable"><i class="fa fa-link" aria-hidden="true"></i></a>Ready-Made Cables </h3>
 <p>Ready-made cables (which include the required adapters) are available from:</p>
 <ul>
 <li><p><a href="http://www.craftandtheoryllc.com/telemetry-cable" target="_blank">Craft and Theory</a>. Versions are available with DF-13 compatible <em>PicoBlade connectors</em> (for FMUv2/3DR Pixhawk, FMUv2/HKPilot32) and <em>JST-GH connectors</em> (for FMUv3/Pixhawk 2 &quot;The Cube&quot; and FMUv4/PixRacer v1).</p>
 <p><a href="http://www.craftandtheoryllc.com/telemetry-cable" target="_blank"><img src="../../assets/hardware/telemetry/craft_and_theory_frsky_telemetry_cables.jpg" alt="Purchase cable here from Craft and Theory"></a></p>
 </li>
 </ul>
-<h2 id="px4-configuration">PX4 Configuration</h2>
+<h2 id="px4-configuration"><a name="px4-configuration" class="plugin-anchor" href="#px4-configuration"><i class="fa fa-link" aria-hidden="true"></i></a>PX4 Configuration</h2>
 <p><a href="serial_configuration.html">Configure the serial port</a> on which FrSky will run using <a href="../advanced_config/parameter_reference.html#TEL_FRSKY_CONFIG">TEL_FRSKY_CONFIG</a>. 
 There is no need to set the baud rate for the port, as this is configured by the driver.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
@@ -2713,7 +2717,7 @@ There is no need to set the baud rate for the port, as this is configured by the
 <pre><code>  drivers/telemetry/frsky_telemetry
 </code></pre></blockquote>
 <p>No further configuration is required; FrSky telemetry auto-starts when connected and detects D or S mode.</p>
-<h2 id="transmitters">Compatible RC Transmitters </h2>
+<h2 id="transmitters"><a name="transmitters" class="plugin-anchor" href="#transmitters"><i class="fa fa-link" aria-hidden="true"></i></a>Compatible RC Transmitters </h2>
 <p>You will need an RC transmitter that can receive the telemetry stream (and that is bound to the FrSky receiver). </p>
 <p>Popular alternatives include:</p>
 <ul>
@@ -2724,7 +2728,7 @@ There is no need to set the baud rate for the port, as this is configured by the
 <li>Turnigy 9XR Pro</li>
 </ul>
 <p>The above transmitters can display telemetry data without any further configuration. The following section(s) explain how you can customise telemetry display (for example, to create a better UI/UX).</p>
-<h3 id="taranis---luapilot-setup">Taranis - LuaPilot Setup</h3>
+<h3 id="taranis---luapilot-setup"><a name="taranis---luapilot-setup" class="plugin-anchor" href="#taranis---luapilot-setup"><i class="fa fa-link" aria-hidden="true"></i></a>Taranis - LuaPilot Setup</h3>
 <p>Compatible Taranis receivers (e.g. X9D Plus) running OpenTX 2.1.6 or newer can use the LuaPilot script to modify the displayed telemetry (as shown in the screenshot below).</p>
 <p><img src="../../images/taranis_telemetry.jpg" alt="Telemetry Screen on the Taranis"></p>
 <p>Instructions for installing the script can be found here: <a href="http://ilihack.github.io/LuaPilot_Taranis_Telemetry/" target="_blank">LuaPilot Taranis Telemetry script &gt; Taranis Setup OpenTX 2.1.6 or newer</a></p>
@@ -2733,9 +2737,9 @@ There is no need to set the baud rate for the port, as this is configured by the
 <li><code>local BattLevelmAh = -1</code> - Use the battery level calculation from the vehicle</li>
 <li><code>local SayFlightMode = 0</code> - There are no WAV files for the PX4 flight modes</li>
 </ul>
-<h2 id="messages">Telemetry Messages </h2>
+<h2 id="messages"><a name="messages" class="plugin-anchor" href="#messages"><i class="fa fa-link" aria-hidden="true"></i></a>Telemetry Messages </h2>
 <p>FrySky Telemetry can transmit most of the more useful status information from PX4. S-Port and D-Port receivers transmit different sets of messages, as listed in the following sections.</p>
-<h3 id="s_port">S-Port </h3>
+<h3 id="s_port"><a name="s_port" class="plugin-anchor" href="#s_port"><i class="fa fa-link" aria-hidden="true"></i></a>S-Port </h3>
 <p>S-Port receivers transmit the following messages from PX4 (from <a href="https://github.com/iNavFlight/inav/blob/master/docs/Telemetry.md#available-smartport-sport-sensors" target="_blank">here</a>):</p>
 <ul>
 <li><strong>AccX, AccY, AccZ:</strong> Accelerometer values.</li>
@@ -2762,7 +2766,7 @@ Values of FRSKY_ID_TEMP1 and FRSKY_ID_TEMP1 set:
 Lua map of flight modes:
 - https://github.com/ilihack/LuaPilot_Taranis_Telemetry/blob/master/SCRIPTS/TELEMETRY/LuaPil.lua#L790
 -->
-<h3 id="d-port">D-port</h3>
+<h3 id="d-port"><a name="d-port" class="plugin-anchor" href="#d-port"><i class="fa fa-link" aria-hidden="true"></i></a>D-port</h3>
 <p>D-Port receivers transmit the following messages (from <a href="http://shipow.github.io/cleanflight-web/docs/telemetry.html" target="_blank">here</a>):</p>
 <ul>
 <li><strong>AccX, AccY, AccZ:</strong> Accelerometer values.</li>
@@ -2781,7 +2785,7 @@ Lua map of flight modes:
 <li><strong>VFAS:</strong> Actual battery voltage value (Voltage FrSky Ampere Sensor).</li>
 <li><strong>Vspd:</strong> Vertical speed (cm/s).</li>
 </ul>
-<h2 id="receivers">FrSky Telemetry Receivers </h2>
+<h2 id="receivers"><a name="receivers" class="plugin-anchor" href="#receivers"><i class="fa fa-link" aria-hidden="true"></i></a>FrSky Telemetry Receivers </h2>
 <p>Pixhawk/PX4 supports D (old) and S (new) FrSky telemetry. The table belows all FrSky receivers that support telemetry via a D/S.PORT (in theory all of these should work). </p>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> Note that the X series receivers listed below are recommended (e.g. XSR, X8R). The R and G series have not been tested/validated by the test team, but should work.</p>
@@ -2915,7 +2919,7 @@ Lua map of flight modes:
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> The above table originates from <a href="http://www.redsilico.com/frsky-receiver-chart" target="_blank">http://www.redsilico.com/frsky-receiver-chart</a> and FrSky <a href="https://www.frsky-rc.com/product-category/receivers/" target="_blank">product documentation</a>.</p>
 </blockquote>
-<h2 id="diy_cables">DIY Cables </h2>
+<h2 id="diy_cables"><a name="diy_cables" class="plugin-anchor" href="#diy_cables"><i class="fa fa-link" aria-hidden="true"></i></a>DIY Cables </h2>
 <p>It is possible to create your own cables. You will need connectors that are appropriate for your autopilot (e.g. <em>JST-GH connectors</em> for FMUv3/Pixhawk 2 &quot;The Cube&quot; and FMUv4/PixRacer v1, and DF-13 compatible <em>PicoBlade connectors</em> for older autopilots).</p>
 <p>The Pixracer includes electronics for converting between S.PORT and UART signals, 
 but for other boards you will need a UART to S.PORT adapter. 
@@ -2925,31 +2929,31 @@ These can be sourced from:</p>
 <li>SPC: <a href="http://www.getfpv.com/frsky-smart-port-converter-cable.html" target="_blank">getfpv.com</a>, <a href="https://www.unmannedtechshop.co.uk/frsky-smart-port-converter-spc/" target="_blank">unmannedtechshop.co.uk</a> </li>
 </ul>
 <p>More information about the connections for different boards is given below.</p>
-<h3 id="pixracer-to-s-port-receivers">Pixracer to S-port Receivers</h3>
+<h3 id="pixracer-to-s-port-receivers"><a name="pixracer-to-s-port-receivers" class="plugin-anchor" href="#pixracer-to-s-port-receivers"><i class="fa fa-link" aria-hidden="true"></i></a>Pixracer to S-port Receivers</h3>
 <p>Connect the Pixracer FrSky TX and RX lines together (solder the wires together) to the X series receiver&apos;s S.port pin. GND need not be attached as this will have been done when attaching to S.Bus (normal RC connection).</p>
 <p>The S-port connection is shown below (using the provided I/O Connector).</p>
 <p><img src="../../assets/flight_controller/pixracer/grau_b_pixracer_frskys.port_connection.jpg" alt="Grau b Pixracer FrSkyS.Port Connection"></p>
 <p><img src="../../assets/flight_controller/pixracer/pixracer_FrSkyTelemetry.png" alt="Pixracer FrSkyS.Port Connection"></p>
-<h3 id="pixracer-to-d-port-receivers">Pixracer to D-port Receivers</h3>
+<h3 id="pixracer-to-d-port-receivers"><a name="pixracer-to-d-port-receivers" class="plugin-anchor" href="#pixracer-to-d-port-receivers"><i class="fa fa-link" aria-hidden="true"></i></a>Pixracer to D-port Receivers</h3>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> The vast majority of users now prefer to use S.PORT.</p>
 </blockquote>
 <p>Connect the Pixracer FrSky TX line (FS out) to the receiver&apos;s RX line. Connect the Pixracer FrSky RX line (FS in) to the receivers TX line. GND need not be connected as this will have been done when attaching to RC/SBus (for normal RC). </p>
 <!-- Image would be nice -->
-<h3 id="pixhawk-pro">Pixhawk Pro</h3>
+<h3 id="pixhawk-pro"><a name="pixhawk-pro" class="plugin-anchor" href="#pixhawk-pro"><i class="fa fa-link" aria-hidden="true"></i></a>Pixhawk Pro</h3>
 <p><a href="../flight_controller/pixhawk3_pro.html">Pixhawk 3 Pro</a> can be connected to TELEM4 (no additional software configuration is needed). You will need to connect via a UART to S.PORT adapter board, or a <a href="#ready_made_cable">ready-made cable</a>.</p>
-<h3 id="pixhawk_v2">Other Boards </h3>
+<h3 id="pixhawk_v2"><a name="pixhawk_v2" class="plugin-anchor" href="#pixhawk_v2"><i class="fa fa-link" aria-hidden="true"></i></a>Other Boards </h3>
 <p>Most other boards connect to the receiver for FrSky telemetry via the TELEM2 UART. This includes, for example: <a href="../flight_controller/pixhawk.html">Pixhawk 1</a>, <a href="../flight_controller/mro_pixhawk.html">mRo Pixhawk</a>, Pixhawk2. </p>
 <p>You will need to connect via a UART to S.PORT adapter board, or a <a href="#ready_made_cable">ready-made cable</a>.</p>
 <!-- ideally add diagram here -->
-<h2 id="additional-information">Additional Information</h2>
+<h2 id="additional-information"><a name="additional-information" class="plugin-anchor" href="#additional-information"><i class="fa fa-link" aria-hidden="true"></i></a>Additional Information</h2>
 <p>For additional information, see the following links:</p>
 <ul>
 <li><a href="https://github.com/Clooney82/MavLink_FrSkySPort/wiki/1.2.-FrSky-Taranis-Telemetry" target="_blank">FrSky Taranis Telemetry</a></li>
 <li><a href="https://www.youtube.com/watch?v=x14DyvOU0Vc" target="_blank">Taranis X9D: Setting Up Telemetry</a> (Video Tutorial)</li>
 <li><a href="http://discuss.px4.io/t/px4-frsky-telemetry-setup-with-pixhawk2-and-x8r-receiver/6362" target="_blank">Px4 FrSky Telemetry Setup with Pixhawk2 and X8R Receiver</a> (DIY Cables)</li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 02:02:48 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 06:15:07 </span> </footer>
                                 
                                 </section>
                             
@@ -2992,7 +2996,7 @@ These can be sourced from:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"FrSky Telemetry","level":"1.10.5","depth":2,"next":{"title":"Distance Sensors (Rangefinders)","level":"1.10.6","depth":2,"path":"sensor/rangefinders.md","ref":"sensor/rangefinders.md","articles":[{"title":"Lightware SFxx Lidar","level":"1.10.6.1","depth":3,"path":"sensor/sfxx_lidar.md","ref":"sensor/sfxx_lidar.md","articles":[]},{"title":"uLanding Radar","level":"1.10.6.2","depth":3,"path":"sensor/ulanding_radar.md","ref":"sensor/ulanding_radar.md","articles":[]},{"title":"LeddarOne Lidar","level":"1.10.6.3","depth":3,"path":"sensor/leddar_one.md","ref":"sensor/leddar_one.md","articles":[]},{"title":"Benewake TFmini Lidar","level":"1.10.6.4","depth":3,"path":"sensor/tfmini.md","ref":"sensor/tfmini.md","articles":[]},{"title":"Lidar-Lite","level":"1.10.6.5","depth":3,"path":"sensor/lidar_lite.md","ref":"sensor/lidar_lite.md","articles":[]}]},"previous":{"title":"MAVLink Telemetry (OSD/GCS)","level":"1.10.4","depth":2,"path":"peripherals/mavlink_peripherals.md","ref":"peripherals/mavlink_peripherals.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"peripherals/frsky_telemetry.md","mtime":"2018-12-10T02:02:48.217Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T02:04:29.857Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"FrSky Telemetry","level":"1.10.5","depth":2,"next":{"title":"Distance Sensors (Rangefinders)","level":"1.10.6","depth":2,"path":"sensor/rangefinders.md","ref":"sensor/rangefinders.md","articles":[{"title":"Lightware SFxx Lidar","level":"1.10.6.1","depth":3,"path":"sensor/sfxx_lidar.md","ref":"sensor/sfxx_lidar.md","articles":[]},{"title":"uLanding Radar","level":"1.10.6.2","depth":3,"path":"sensor/ulanding_radar.md","ref":"sensor/ulanding_radar.md","articles":[]},{"title":"LeddarOne Lidar","level":"1.10.6.3","depth":3,"path":"sensor/leddar_one.md","ref":"sensor/leddar_one.md","articles":[]},{"title":"Benewake TFmini Lidar","level":"1.10.6.4","depth":3,"path":"sensor/tfmini.md","ref":"sensor/tfmini.md","articles":[]},{"title":"Lidar-Lite","level":"1.10.6.5","depth":3,"path":"sensor/lidar_lite.md","ref":"sensor/lidar_lite.md","articles":[]}]},"previous":{"title":"MAVLink Telemetry (OSD/GCS)","level":"1.10.4","depth":2,"path":"peripherals/mavlink_peripherals.md","ref":"peripherals/mavlink_peripherals.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"peripherals/frsky_telemetry.md","mtime":"2018-12-10T06:15:07.174Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T06:16:44.946Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -3004,10 +3008,6 @@ These can be sourced from:</p>
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
-    
-        
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
         
     
@@ -3017,6 +3017,10 @@ These can be sourced from:</p>
     
         
         <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         

@@ -25,6 +25,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
@@ -2677,12 +2681,12 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="radio-control-systems">Radio Control Systems</h1>
+                                <h1 id="radio-control-systems"><a name="radio-control-systems" class="plugin-anchor" href="#radio-control-systems"><i class="fa fa-link" aria-hidden="true"></i></a>Radio Control Systems</h1>
 <p>A radio control (RC) system is required if you want to <em>manually</em> control your vehicle from a handheld transmitter. This topic explains a little about how RC works, how to choose an appropriate radio system for your vehicle, and how to connect it to your flight controller. </p>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> PX4 does not require a remote control system for autonomous flight modes. You can disable RC checks by <a href="../advanced_config/parameters.html">setting parameter</a>: <a href="../advanced_config/parameter_reference.html#COM_RC_IN_MODE">COM_RC_IN_MODE</a> to 1.</p>
 </blockquote>
-<h2 id="how-do-rc-systems-work">How do RC Systems Work?</h2>
+<h2 id="how-do-rc-systems-work"><a name="how-do-rc-systems-work" class="plugin-anchor" href="#how-do-rc-systems-work"><i class="fa fa-link" aria-hidden="true"></i></a>How do RC Systems Work?</h2>
 <p>An <em>RC system</em> has a ground-based <em>remote control unit</em> that is used by the operator to command the vehicle. The remote has physical controls that can be used to specify vehicle movement (e.g. speed, direction, throttle, yaw, pitch, roll, etc.) and to enable autopilot <a href="../flight_modes/">flight modes</a> (e.g. takeoff, land, return to land, mission etc.).
 On <em>telemetry-enabled</em> RC systems, the remote control unit can also receive and display information from the vehicle (e.g. battery level, flight mode).</p>
 <p><img src="../../assets/hardware/transmitters/frsky_taranis_x9d_transmitter.jpg" alt="Taranis X9D Transmitter"></p>
@@ -2693,8 +2697,8 @@ On <em>telemetry-enabled</em> RC systems, the remote control unit can also recei
 </blockquote>
 <p>An important quality of an RC system is how many &quot;channels&quot; it supports. The number of channels defines how many different physical controls on the remote control can be used to send commands to the vehicle (e.g. how many switches, dials, control sticks can actually be used). </p>
 <p>An aircraft must use a system that supports at least 4 channels (for roll, pitch, yaw, thrust). Ground vehicles need at least two channels (steering + throttle). An 8 or 16 channel transmitter provides additional channels that can be used to control other mechanisms or activate different <a href="../flight_modes/">flight modes</a> provided by the autopilot. </p>
-<h2 id="types-of-remote-controls">Types of Remote Controls</h2>
-<h3 id="transmitter_modes">Remote Control Units for Aircraft </h3>
+<h2 id="types-of-remote-controls"><a name="types-of-remote-controls" class="plugin-anchor" href="#types-of-remote-controls"><i class="fa fa-link" aria-hidden="true"></i></a>Types of Remote Controls</h2>
+<h3 id="transmitter_modes"><a name="transmitter_modes" class="plugin-anchor" href="#transmitter_modes"><i class="fa fa-link" aria-hidden="true"></i></a>Remote Control Units for Aircraft </h3>
 <p>The most popular <em>form</em> of remote control unit for UAVs is shown below. It has separate control sticks for controlling roll/pitch and for throttle/yaw as shown (i.e. aircraft need at least 4 channels). </p>
 <p><img src="../../images/rc_basic_commands.png" alt="RC Basic Commands"></p>
 <p>There are numerous possible layouts for the control sticks, switches, etc. The more common layouts have been given specific &quot;Mode&quot; numbers. <em>Mode 1</em> and <em>Mode 2</em> (shown below) differ only in the placement of the throttle. </p>
@@ -2702,13 +2706,13 @@ On <em>telemetry-enabled</em> RC systems, the remote control unit can also recei
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> The choice of mode is largely one of taste (<em>Mode 2</em> is more popular).</p>
 </blockquote>
-<h2 id="remote-control-units-for-ground-vehicles">Remote Control Units for Ground Vehicles</h2>
+<h2 id="remote-control-units-for-ground-vehicles"><a name="remote-control-units-for-ground-vehicles" class="plugin-anchor" href="#remote-control-units-for-ground-vehicles"><i class="fa fa-link" aria-hidden="true"></i></a>Remote Control Units for Ground Vehicles</h2>
 <p>An Unmanned Ground Vehicle (UGV)/car minimally requires a 2 channel transmitter in order to send the values for steering and speed. Commonly transmitters set these values using a wheel and trigger, two single-axis control sticks, or a single dual-axis control stick.</p>
 <p>There is nothing to stop you using more channels/control mechanisms, and these can be very useful for engaging additional actuators and autopilot modes.</p>
-<h2 id="choosing-rc-system-components">Choosing RC System Components</h2>
+<h2 id="choosing-rc-system-components"><a name="choosing-rc-system-components" class="plugin-anchor" href="#choosing-rc-system-components"><i class="fa fa-link" aria-hidden="true"></i></a>Choosing RC System Components</h2>
 <p>You will need to select a transmitter/receiver pair that are compatible with each other. In addition, receivers have to be be <a href="#compatible_receivers">compatible with PX4</a> and the flight controller hardware.</p>
 <p>Compatible radio systems are often sold together. For example, <a href="https://hobbyking.com/en_us/frsky-2-4ghz-accst-taranis-x9d-plus-and-x8r-combo-digital-telemetry-radio-system-mode-2.html?___store=en_us" target="_blank">FrSky Taranis X9D and FrSky X8R</a> are a popular combination.</p>
-<h3 id="transmitterreceiver-pairs">Transmitter/Receiver Pairs</h3>
+<h3 id="transmitterreceiver-pairs"><a name="transmitterreceiver-pairs" class="plugin-anchor" href="#transmitterreceiver-pairs"><i class="fa fa-link" aria-hidden="true"></i></a>Transmitter/Receiver Pairs</h3>
 <p>One of the most popular RC units is the <em>FrSky Taranis X9D</em>. It has an internal transmitter module can be used with the recommended <em>FrSky X4R-SB</em> (S-BUS, low delay) or <em>X4R</em> (PPM-Sum, legacy) receivers out of the box. It also has a custom radio transmitter module slot and customizable open source OpenTX Firmware. </p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> This remote control unit can display vehicle telemetry when used with <a href="../peripherals/frsky_telemetry.html">FrSky</a> radio modules. </p>
@@ -2720,7 +2724,7 @@ On <em>telemetry-enabled</em> RC systems, the remote control unit can also recei
 <li>Long range ~900MHz, low latency: &quot;Team Black Sheep Crossfire&quot; or &quot;Crossfire Micro&quot; set with a compatible remote (e.g. Taranis)</li>
 <li>Long Range ~433MHz: ImmersionRC EzUHF set with a compatible remote (e.g. Taranis)</li>
 </ul>
-<h3 id="compatible_receivers">PX4-Compatible Receivers </h3>
+<h3 id="compatible_receivers"><a name="compatible_receivers" class="plugin-anchor" href="#compatible_receivers"><i class="fa fa-link" aria-hidden="true"></i></a>PX4-Compatible Receivers </h3>
 <p>In addition to the transmitter/receiver pairs being compatible, the receiver must also be compatible with PX4 and the flight controller hardware.</p>
 <p><em>PX4</em> and <em>Pixhawk</em> have been validated with:</p>
 <ul>
@@ -2730,7 +2734,7 @@ On <em>telemetry-enabled</em> RC systems, the remote control unit can also recei
 <li>Graupner HoTT</li>
 <li>All PPM models from other manufacturers</li>
 </ul>
-<h2 id="connecting-receivers">Connecting Receivers</h2>
+<h2 id="connecting-receivers"><a name="connecting-receivers" class="plugin-anchor" href="#connecting-receivers"><i class="fa fa-link" aria-hidden="true"></i></a>Connecting Receivers</h2>
 <p>As general guidance, receivers connect to the flight controller using the port appropriate to their supported protocol:</p>
 <ul>
 <li>Spektrum and DSM receivers must connect to a <strong>SPKT/DSM</strong> input.</li>
@@ -2746,16 +2750,16 @@ On <em>telemetry-enabled</em> RC systems, the remote control unit can also recei
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> See the manufacturer&apos;s flight controller setup guide for additional information. </p>
 </blockquote>
-<h2 id="binding">Binding Transmitter/Receiver </h2>
+<h2 id="binding"><a name="binding" class="plugin-anchor" href="#binding"><i class="fa fa-link" aria-hidden="true"></i></a>Binding Transmitter/Receiver </h2>
 <p>Before you can calibrate/use a radio system you must <em>bind</em> the receiver and transmitter so that they communicate only with each other. The process for binding a transmitter and receiver pair is hardware specific (see your manual for instructions).</p>
 <p>If you are using a <em>Spektrum</em> receiver, you can put it into bind mode using <em>QGroundControl</em>: <a href="../config/radio.html#spektrum_bind">Radio Setup &gt; Spectrum Bind</a>.</p>
-<h2 id="related-topics">Related Topics</h2>
+<h2 id="related-topics"><a name="related-topics" class="plugin-anchor" href="#related-topics"><i class="fa fa-link" aria-hidden="true"></i></a>Related Topics</h2>
 <ul>
 <li><a href="rc_transmitter_receiver.html">RC System Selection</a> - Choose a compatible RC system.</li>
 <li><a href="../config/radio.html">Radio Control Setup</a> - Configuring your radio with PX4.</li>
 <li><a href="../flying/basic_flying.html">Flying 101</a> - Learn how to fly with a remote control. </li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 02:02:48 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 06:15:07 </span> </footer>
                                 
                                 </section>
                             
@@ -2798,7 +2802,7 @@ On <em>telemetry-enabled</em> RC systems, the remote control unit can also recei
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Radio Systems","level":"1.2.5","depth":2,"next":{"title":"Flight Modes","level":"1.2.6","depth":2,"path":"getting_started/flight_modes.md","ref":"getting_started/flight_modes.md","articles":[]},"previous":{"title":"Sensors","level":"1.2.4","depth":2,"path":"getting_started/sensor_selection.md","ref":"getting_started/sensor_selection.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"getting_started/rc_transmitter_receiver.md","mtime":"2018-12-10T02:02:48.217Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T02:04:29.857Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Radio Systems","level":"1.2.5","depth":2,"next":{"title":"Flight Modes","level":"1.2.6","depth":2,"path":"getting_started/flight_modes.md","ref":"getting_started/flight_modes.md","articles":[]},"previous":{"title":"Sensors","level":"1.2.4","depth":2,"path":"getting_started/sensor_selection.md","ref":"getting_started/sensor_selection.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"getting_started/rc_transmitter_receiver.md","mtime":"2018-12-10T06:15:07.174Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T06:16:44.946Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -2810,10 +2814,6 @@ On <em>telemetry-enabled</em> RC systems, the remote control unit can also recei
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
-    
-        
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
         
     
@@ -2823,6 +2823,10 @@ On <em>telemetry-enabled</em> RC systems, the remote control unit can also recei
     
         
         <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         

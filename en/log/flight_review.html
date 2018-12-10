@@ -25,6 +25,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
@@ -2677,11 +2681,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="log-analysis-using-flight-review">Log Analysis using Flight Review</h1>
+                                <h1 id="log-analysis-using-flight-review"><a name="log-analysis-using-flight-review" class="plugin-anchor" href="#log-analysis-using-flight-review"><i class="fa fa-link" aria-hidden="true"></i></a>Log Analysis using Flight Review</h1>
 <p>The <a href="http://logs.px4.io" target="_blank">Flight Review</a> plots for a flight can be used to analyze general vehicle condition.</p>
 <p>The plots are meant to be self-explanatory, but it takes some experience to know what ranges are acceptable and what a plot should look like.
 This page explains how to interpret the plots and identify common problems.</p>
-<h2 id="general-usage">General Usage</h2>
+<h2 id="general-usage"><a name="general-usage" class="plugin-anchor" href="#general-usage"><i class="fa fa-link" aria-hidden="true"></i></a>General Usage</h2>
 <p>Features that are common to many plots:</p>
 <ul>
 <li>Plot background color is used to indicate flight mode during recording (where graphs depend on mode):
@@ -2694,7 +2698,7 @@ Hovering with the mouse over a plot shows the flight mode labels.</li>
 <li>Mouse scrolling on a particular plot axis zooms that axis (horizontally or vertically).</li>
 <li>Mouse scrolling inside the plot zooms both axes.</li>
 </ul>
-<h2 id="tracking">PID Tracking Performance </h2>
+<h2 id="tracking"><a name="tracking" class="plugin-anchor" href="#tracking"><i class="fa fa-link" aria-hidden="true"></i></a>PID Tracking Performance </h2>
 <p>Depending on the flight mode, the vehicle controllers may attempt to track position, velocity, altitude or rate setpoints (the tracked setpoints depend on the mode, e.g.: in Stabilized mode there is no velocity setpoint).</p>
 <p>The <strong>Estimated</strong> line (red) should closely match with the <strong>Setpoint</strong> (green).
 If they do not, in most cases the PID gains of that controller need to be tuned.</p>
@@ -2702,7 +2706,7 @@ If they do not, in most cases the PID gains of that controller need to be tuned.
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> For the rate controller in particular, it is useful to enable the high-rate logging profile (<a href="../advanced_config/parameter_reference.html#SDLOG_PROFILE">SDLOG_PROFILE</a>) to get more details when zooming in.</p>
 </blockquote>
-<h2 id="vibration">Vibration</h2>
+<h2 id="vibration"><a name="vibration" class="plugin-anchor" href="#vibration"><i class="fa fa-link" aria-hidden="true"></i></a>Vibration</h2>
 <p>Vibration is one of the most common problems for multirotor vehicles.
 High vibration levels can lead to:</p>
 <ul>
@@ -2721,7 +2725,7 @@ This range depends on a number of factors, including vehicle size - as larger ve
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> It is worth looking at multiple charts when analyzing vibration (different charts can better highlight some issues).</p>
 </blockquote>
-<h3 id="actuator-controls-fft">Actuator Controls FFT</h3>
+<h3 id="actuator-controls-fft"><a name="actuator-controls-fft" class="plugin-anchor" href="#actuator-controls-fft"><i class="fa fa-link" aria-hidden="true"></i></a>Actuator Controls FFT</h3>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> You need to enable the high-rate logging profile (<a href="../advanced_config/parameter_reference.html#SDLOG_PROFILE">SDLOG_PROFILE</a>) to see this plot.</p>
 </blockquote>
@@ -2729,7 +2733,7 @@ This range depends on a number of factors, including vehicle size - as larger ve
 It helps to identify frequency peaks and configuring the software filters.
 There should only be a single peak at the lowest end (below around 20 Hz), the rest should be low and flat.</p>
 <p>Note that the y-axis scaling is different for different vehicles, but logs from the same vehicle can be directly compared to each other.</p>
-<h4 id="examples-good-vibration">Examples: Good Vibration</h4>
+<h4 id="examples-good-vibration"><a name="examples-good-vibration" class="plugin-anchor" href="#examples-good-vibration"><i class="fa fa-link" aria-hidden="true"></i></a>Examples: Good Vibration</h4>
 <p><a href="../frames_multicopter/qav_r_5_kiss_esc_racer.html">QAV-R 5&quot; Racer</a> frame (excellent vibration).</p>
 <p><img src="../../assets/flight_log_analysis/flight_review/vibrations_good_actuator_controls_fft.png" alt="Low vibration QAV-R 5 Racer - FFT plot"></p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
@@ -2743,14 +2747,14 @@ There should only be a single peak at the lowest end (below around 20 Hz), the r
 <p> While the plot above looks good, the <a href="#raw_acc_s500">Raw Acceleration graph for the same flight</a> shows that the vibration levels are a bit high for x and y.
   This is a good example of why it is worth checking several graphs!</p>
 </blockquote>
-<h4 id="examples-bad-vibration">Examples: Bad Vibration</h4>
+<h4 id="examples-bad-vibration"><a name="examples-bad-vibration" class="plugin-anchor" href="#examples-bad-vibration"><i class="fa fa-link" aria-hidden="true"></i></a>Examples: Bad Vibration</h4>
 <p>This example shows a peak in frequency close to 50 Hz (in this case due to &quot;loose&quot; landing gear).</p>
 <p><img src="../../assets/flight_log_analysis/flight_review/vibrations_landing_gear_actuator_controls_fft.png" alt="Vibrations in landing gear - FFT plot"></p>
-<h3 id="acceleration-power-spectral-density">Acceleration Power Spectral Density</h3>
+<h3 id="acceleration-power-spectral-density"><a name="acceleration-power-spectral-density" class="plugin-anchor" href="#acceleration-power-spectral-density"><i class="fa fa-link" aria-hidden="true"></i></a>Acceleration Power Spectral Density</h3>
 <p>This is a 2D frequency plot showing the frequency response of the raw accelerometer data over time (it displays the sum for the x, y and z axis).
 The more yellow an area is, the higher the frequency response at that time and frequency.</p>
 <p>Ideally only the lowest part up to a few Hz is yellow, and the rest is mostly green or blue.</p>
-<h4 id="examples-good-vibration">Examples: Good Vibration</h4>
+<h4 id="examples-good-vibration"><a name="examples-good-vibration" class="plugin-anchor" href="#examples-good-vibration"><i class="fa fa-link" aria-hidden="true"></i></a>Examples: Good Vibration</h4>
 <p><a href="../frames_multicopter/qav_r_5_kiss_esc_racer.html">QAV-R 5&quot; Racer</a> frame (excellent vibration).</p>
 <p><img src="../../assets/flight_log_analysis/flight_review/vibrations_good_spectral.png" alt="Low vibration QAV-R 5 Racer - spectral density plot">
 <!-- https://logs.px4.io/plot_app?log=cd88b091-ec89-457c-85f6-e63e4fa0f51d --></p>
@@ -2761,7 +2765,7 @@ The more yellow an area is, the higher the frequency response at that time and f
 </blockquote>
 <p>S500 frame:
 <img src="../../assets/flight_log_analysis/flight_review/vibrations_s500_spectral.png" alt="Vibration S500 - spectral density plot"></p>
-<h4 id="examples-bad-vibration">Examples: Bad Vibration</h4>
+<h4 id="examples-bad-vibration"><a name="examples-bad-vibration" class="plugin-anchor" href="#examples-bad-vibration"><i class="fa fa-link" aria-hidden="true"></i></a>Examples: Bad Vibration</h4>
 <p>The strong yellow lines at around 100Hz indicate a potential issue that requires further investigation (starting with a review of the other charts).</p>
 <p><img src="../../assets/flight_log_analysis/flight_review/vibrations_too_high_spectral.png" alt="High vibration in spectral density plot"></p>
 <p>This plot below shows a peak in frequency close to 50 Hz (in this case due to &quot;loose&quot; landing gear).</p>
@@ -2775,20 +2779,20 @@ The more yellow an area is, the higher the frequency response at that time and f
 <p> You should not fly with such high vibration levels.</p>
 </blockquote>
 <p><img src="../../assets/flight_log_analysis/flight_review/vibrations_exceedingly_high_spectral.png" alt="Exceedingly high vibration in spectral density plot"></p>
-<h3 id="raw-acceleration">Raw Acceleration</h3>
+<h3 id="raw-acceleration"><a name="raw-acceleration" class="plugin-anchor" href="#raw-acceleration"><i class="fa fa-link" aria-hidden="true"></i></a>Raw Acceleration</h3>
 <p>This graph shows the raw accelerometer measurements for the x, y and z axis. 
 Ideally each line is thin and clearly shows the vehicle&apos;s accelerations.</p>
 <p>As a rule of thumb if the z-axis graph is touching the x/y-axis graph during hover or slow flight, the vibration levels are too high. </p>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> The best way to use this graph is to zoom in a bit to a part where the vehicle is hovering.</p>
 </blockquote>
-<h4 id="examples-good-vibration">Examples: Good Vibration</h4>
+<h4 id="examples-good-vibration"><a name="examples-good-vibration" class="plugin-anchor" href="#examples-good-vibration"><i class="fa fa-link" aria-hidden="true"></i></a>Examples: Good Vibration</h4>
 <p><a href="../frames_multicopter/qav_r_5_kiss_esc_racer.html">QAV-R 5&quot; Racer</a> frame (excellent vibration).</p>
 <p><img src="../../assets/flight_log_analysis/flight_review/vibrations_good_accel.png" alt="Low vibration QAV-R 5 Racer - raw accel. plot"></p>
 <p>DJI F450 frame (good vibration).
 <img src="../../assets/flight_log_analysis/flight_review/vibrations_f450_accel.png" alt="Low vibration DJI F450 - raw accel. plot"></p>
 <!-- https://logs.px4.io/plot_app?log=cd88b091-ec89-457c-85f6-e63e4fa0f51d -->
-<h4 id="examples-bad-vibration">Examples: Bad Vibration</h4>
+<h4 id="examples-bad-vibration"><a name="examples-bad-vibration" class="plugin-anchor" href="#examples-bad-vibration"><i class="fa fa-link" aria-hidden="true"></i></a>Examples: Bad Vibration</h4>
 <p><span id="raw_acc_s500"></span>
 S500 frame. Borderline vibration levels - a bit high for x and y (which is typical for an S500 airframe).
 This is at the limit where it starts to negatively affect flight performance.</p>
@@ -2802,7 +2806,7 @@ This is at the limit where it starts to negatively affect flight performance.</p
 <p> You should not fly with such high vibration levels.</p>
 </blockquote>
 <p><img src="../../assets/flight_log_analysis/flight_review/vibrations_exceedingly_high_accel.png" alt="Exceedingly high vibration in raw accel. plot"></p>
-<h3 id="solutions">Solutions</h3>
+<h3 id="solutions"><a name="solutions" class="plugin-anchor" href="#solutions"><i class="fa fa-link" aria-hidden="true"></i></a>Solutions</h3>
 <p>Often a source of vibration cannot be identified from a log alone and the vehicle needs to be inspected.
 There can be a combination of multiple sources.</p>
 <p>Solutions and steps to reduce vibrations include:</p>
@@ -2816,7 +2820,7 @@ Each of these components can make a big difference.</li>
 It is better to reduce the source of vibrations, rather than filtering them out in software.</li>
 </ul>
 <!-- TODO: write a separate vibration setup page in more depth, move some of this there and link to it from here -->
-<h2 id="actuator-outputs">Actuator Outputs</h2>
+<h2 id="actuator-outputs"><a name="actuator-outputs" class="plugin-anchor" href="#actuator-outputs"><i class="fa fa-link" aria-hidden="true"></i></a>Actuator Outputs</h2>
 <p>The <em>Actuator Outputs</em> graph shows the signals that are sent to the individual actuators (motors/servos).
 Generally it is in the range between the minimum and maximum configured PWM values (e.g. from 1000 to 2000).</p>
 <p>This is an example for a quadrotor where everything is OK (all of the signals are within the range, approximately overlap each other, and are not too noisy):
@@ -2841,7 +2845,7 @@ The cause is likely that one or more motors are tilted.</p>
 This is an extreme example:
 <img src="../../assets/flight_log_analysis/flight_review/actuator_outputs_noisy.png" alt="Noisy actuator outputs - extreme case"></li>
 </ul>
-<h2 id="gps-uncertainty">GPS Uncertainty</h2>
+<h2 id="gps-uncertainty"><a name="gps-uncertainty" class="plugin-anchor" href="#gps-uncertainty"><i class="fa fa-link" aria-hidden="true"></i></a>GPS Uncertainty</h2>
 <p>The <em>GPS Uncertainty</em> plot shows information from the GPS device:</p>
 <ul>
 <li>Number of used satellites (should be around 12 or higher)</li>
@@ -2849,7 +2853,7 @@ This is an extreme example:
 <li>Vertical position accuracy (should be below 2 meters)</li>
 <li>GPS fix: this is 3 for a 3D GPS fix, 5 for RTK float and 6 for RTK fixed type</li>
 </ul>
-<h2 id="gps-noise--jamming">GPS Noise &amp; Jamming</h2>
+<h2 id="gps-noise--jamming"><a name="gps-noise--jamming" class="plugin-anchor" href="#gps-noise--jamming"><i class="fa fa-link" aria-hidden="true"></i></a>GPS Noise &amp; Jamming</h2>
 <p>The GPS Noise &amp; Jamming plot is useful to check for GPS signal interferences and jamming.
 The GPS signal is very weak and thus it can easily be disturbed/jammed by components transmitting (via cable) or radiating in a frequency used by the GPS.</p>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
@@ -2860,7 +2864,7 @@ Values around 80 or higher are too high and the setup must be inspected.
 Signal interference is also noticeable as reduced accuracy and lower number of satellites up to the point where no GPS fix is possible.</p>
 <p>This is an example without any interference:</p>
 <p><img src="../../assets/flight_log_analysis/flight_review/gps_jamming_good.png" alt="GPS jamming - good plot"></p>
-<h2 id="thrust-and-magnetic-field">Thrust and Magnetic Field</h2>
+<h2 id="thrust-and-magnetic-field"><a name="thrust-and-magnetic-field" class="plugin-anchor" href="#thrust-and-magnetic-field"><i class="fa fa-link" aria-hidden="true"></i></a>Thrust and Magnetic Field</h2>
 <p>The <em>Thrust and Magnetic Field</em> plot shows the thrust and the norm of the magnetic sensor measurement vector.</p>
 <p>The norm should be constant over the whole flight and uncorrelated with the thrust.
 This is a good example where the norm is very close to constant:
@@ -2878,7 +2882,7 @@ The following plot shows a strong correlation between the thrust and the norm of
 However it could also be due to external disturbances (for example when flying close to metal constructs).</p>
 <p>This example shows that the norm is non-constant, but it does not correlate with the thrust:
 <img src="../../assets/flight_log_analysis/flight_review/thrust_and_mag_uncorrelated_problem.png" alt="Uncorrelated thrust and mag"></p>
-<h2 id="estimator-watchdog">Estimator Watchdog</h2>
+<h2 id="estimator-watchdog"><a name="estimator-watchdog" class="plugin-anchor" href="#estimator-watchdog"><i class="fa fa-link" aria-hidden="true"></i></a>Estimator Watchdog</h2>
 <p>The <em>Estimator Watchdog</em> plot shows the health report of the estimator.
 It should be constant zero.</p>
 <p>This is what it should look like if there are no problems:
@@ -2889,7 +2893,7 @@ It usually helps to look at the plots of the corresponding sensor.
 <!-- TODO: separate page for estimator issues? --></p>
 <p>Here is an example with magnetometer problems:
 <img src="../../assets/flight_log_analysis/flight_review/estimator_watchdog_mag_problem.png" alt="Estimator watchdog with magnetometer problems"></p>
-<h2 id="sampling-regularity-of-sensor-data">Sampling Regularity of Sensor Data</h2>
+<h2 id="sampling-regularity-of-sensor-data"><a name="sampling-regularity-of-sensor-data" class="plugin-anchor" href="#sampling-regularity-of-sensor-data"><i class="fa fa-link" aria-hidden="true"></i></a>Sampling Regularity of Sensor Data</h2>
 <p>The sampling regularity plot provides insights into problems with the logging system and scheduling.</p>
 <p>The amount of <strong>logging dropouts</strong> start to increase if the log buffer is too small, the logging rate is too high or a low-quality SD card is used.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
@@ -2908,17 +2912,17 @@ It should stay at zero, but it can increase slightly for in-flight parameter cha
 <p>The following example contains too many dropouts, the quality of the used SD card was too low in that case
 (see <a href="http://dev.px4.io/en/log/logging.html#sd-cards" target="_blank">here</a> for good SD cards):</p>
 <p><img src="../../assets/flight_log_analysis/flight_review/sampling_regularity_many_drops.png" alt="Many Dropouts"></p>
-<h2 id="logged-messages">Logged Messages</h2>
+<h2 id="logged-messages"><a name="logged-messages" class="plugin-anchor" href="#logged-messages"><i class="fa fa-link" aria-hidden="true"></i></a>Logged Messages</h2>
 <p>This is a table with system error and warning messages. 
 For example they show when a task becomes low on stack size.</p>
 <p>The messages need to be examined individually, and not all of them indicate a problem.
 For example the following shows a kill-switch test:
 <img src="../../assets/flight_log_analysis/flight_review/logged_messages.png" alt="Logged Messages"></p>
-<h2 id="flightframe-log-review-examples">Flight/Frame Log Review Examples</h2>
+<h2 id="flightframe-log-review-examples"><a name="flightframe-log-review-examples" class="plugin-anchor" href="#flightframe-log-review-examples"><i class="fa fa-link" aria-hidden="true"></i></a>Flight/Frame Log Review Examples</h2>
 <p>It is often worth looking at multiple charts for a particular flight when analyzing vehicle condition (different charts can better highlight some issues).
 This is particularly important when reviewing for possible vibration problems.</p>
 <p>The section below groups a few (previously presented) charts by flight/vehicle.</p>
-<h3 id="qav-r-5-racer">QAV-R 5&quot; Racer</h3>
+<h3 id="qav-r-5-racer"><a name="qav-r-5-racer" class="plugin-anchor" href="#qav-r-5-racer"><i class="fa fa-link" aria-hidden="true"></i></a>QAV-R 5&quot; Racer</h3>
 <p>These charts are all from the same flight of a <a href="../frames_multicopter/qav_r_5_kiss_esc_racer.html">QAV-R 5&quot; Racer</a>.
 <!-- https://logs.px4.io/plot_app?log=cd88b091-ec89-457c-85f6-e63e4fa0f51d --></p>
 <p>They show a vehicle that has very low vibration:</p>
@@ -2930,7 +2934,7 @@ This is particularly important when reviewing for possible vibration problems.</
 <p><img src="../../assets/flight_log_analysis/flight_review/vibrations_good_actuator_controls_fft.png" alt="Low vibration QAV-R 5 Racer - FFT plot"></p>
 <p><img src="../../assets/flight_log_analysis/flight_review/vibrations_good_spectral.png" alt="Low vibration QAV-R 5 Racer - spectral density plot"></p>
 <p><img src="../../assets/flight_log_analysis/flight_review/vibrations_good_accel.png" alt="Low vibration QAV-R 5 Racer - raw accel. plot"></p>
-<h3 id="dji-f450">DJI F450</h3>
+<h3 id="dji-f450"><a name="dji-f450" class="plugin-anchor" href="#dji-f450"><i class="fa fa-link" aria-hidden="true"></i></a>DJI F450</h3>
 <p>These charts are all from the same flight of a <em>DJI F450</em>.
 <!-- https://logs.px4.io/plot_app?log=cd88b091-ec89-457c-85f6-e63e4fa0f51d --></p>
 <p>They show a vehicle that has low vibration (but not as low as the QAV-R above!):</p>
@@ -2943,7 +2947,7 @@ Most of the rest is flat, except for a bump at around 100Hz (this is the blade p
 <p><img src="../../assets/flight_log_analysis/flight_review/vibrations_f450_actuator_controls_fft.png" alt="Low vibration DJI F450 - FFT plot"></p>
 <p><img src="../../assets/flight_log_analysis/flight_review/vibrations_f450_spectral.png" alt="Low vibration DJI F450 - spectral density plot"></p>
 <p><img src="../../assets/flight_log_analysis/flight_review/vibrations_f450_accel.png" alt="Low vibration DJI F450 - raw accel. plot"></p>
-<h3 id="s500">S500</h3>
+<h3 id="s500"><a name="s500" class="plugin-anchor" href="#s500"><i class="fa fa-link" aria-hidden="true"></i></a>S500</h3>
 <p>These charts are all from the same flight of an S500.</p>
 <p>They show a vehicle that has borderline-acceptable vibration:</p>
 <ul>
@@ -2956,7 +2960,7 @@ This is at the limit where it starts to negatively affect flight performance.</l
 <p><img src="../../assets/flight_log_analysis/flight_review/vibrations_s500_actuator_controls_fft.png" alt="Low vibration S500 actuator controls - FFT plot"></p>
 <p><img src="../../assets/flight_log_analysis/flight_review/vibrations_s500_spectral.png" alt="Vibration S500 - spectral density plot"></p>
 <p><img src="../../assets/flight_log_analysis/flight_review/vibrations_s500_accel.png" alt="Borderline vibration S500 x, y - raw accel. plot"></p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 02:02:48 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2018-12-10 06:15:07 </span> </footer>
                                 
                                 </section>
                             
@@ -2999,7 +3003,7 @@ This is at the limit where it starts to negatively affect flight performance.</l
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Log Analysis using Flight Review","level":"1.7.1","depth":2,"next":{"title":"Advanced Features","level":"1.8","depth":1,"path":"advanced_features/README.md","ref":"advanced_features/README.md","articles":[{"title":"RTK GPS","level":"1.8.1","depth":2,"path":"advanced_features/rtk-gps.md","ref":"advanced_features/rtk-gps.md","articles":[]},{"title":"Precision Landing","level":"1.8.2","depth":2,"path":"advanced_features/precland.md","ref":"advanced_features/precland.md","articles":[]},{"title":"RockBlock SatCom System","level":"1.8.3","depth":2,"path":"advanced_features/satcom_roadblock.md","ref":"advanced_features/satcom_roadblock.md","articles":[]},{"title":"Obstacle Avoidance","level":"1.8.4","depth":2,"path":"computer_vision/obstacle_avoidance.md","ref":"computer_vision/obstacle_avoidance.md","articles":[]},{"title":"Collision Prevention","level":"1.8.5","depth":2,"path":"computer_vision/collision_prevention.md","ref":"computer_vision/collision_prevention.md","articles":[]}]},"previous":{"title":"Flight Log Analysis","level":"1.7","depth":1,"path":"log/flight_log_analysis.md","ref":"log/flight_log_analysis.md","articles":[{"title":"Log Analysis using Flight Review","level":"1.7.1","depth":2,"path":"log/flight_review.md","ref":"log/flight_review.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"log/flight_review.md","mtime":"2018-12-10T02:02:48.217Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T02:04:29.857Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Log Analysis using Flight Review","level":"1.7.1","depth":2,"next":{"title":"Advanced Features","level":"1.8","depth":1,"path":"advanced_features/README.md","ref":"advanced_features/README.md","articles":[{"title":"RTK GPS","level":"1.8.1","depth":2,"path":"advanced_features/rtk-gps.md","ref":"advanced_features/rtk-gps.md","articles":[]},{"title":"Precision Landing","level":"1.8.2","depth":2,"path":"advanced_features/precland.md","ref":"advanced_features/precland.md","articles":[]},{"title":"RockBlock SatCom System","level":"1.8.3","depth":2,"path":"advanced_features/satcom_roadblock.md","ref":"advanced_features/satcom_roadblock.md","articles":[]},{"title":"Obstacle Avoidance","level":"1.8.4","depth":2,"path":"computer_vision/obstacle_avoidance.md","ref":"computer_vision/obstacle_avoidance.md","articles":[]},{"title":"Collision Prevention","level":"1.8.5","depth":2,"path":"computer_vision/collision_prevention.md","ref":"computer_vision/collision_prevention.md","articles":[]}]},"previous":{"title":"Flight Log Analysis","level":"1.7","depth":1,"path":"log/flight_log_analysis.md","ref":"log/flight_log_analysis.md","articles":[{"title":"Log Analysis using Flight Review","level":"1.7.1","depth":2,"path":"log/flight_review.md","ref":"log/flight_review.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"log/flight_review.md","mtime":"2018-12-10T06:15:07.174Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-10T06:16:44.946Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -3011,10 +3015,6 @@ This is at the limit where it starts to negatively affect flight performance.</l
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
-    
-        
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
         
     
@@ -3024,6 +3024,10 @@ This is at the limit where it starts to negatively affect flight performance.</l
     
         
         <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         
