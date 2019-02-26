@@ -2779,34 +2779,34 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="raspberry-pi-23-navio2-autopilot"><a name="raspberry-pi-23-navio2-autopilot" class="plugin-anchor" href="#raspberry-pi-23-navio2-autopilot"><i class="fa fa-link" aria-hidden="true"></i></a>Raspberry Pi 2/3 Navio2 Autopilot</h1>
-<p><img src="../../assets/hardware/hardware-rpi2.jpg" alt=""></p>
+<p><img src="../../assets/hardware/hardware-rpi2.jpg" alt="Ra Pi Image"></p>
 <h2 id="developer-quick-start"><a name="developer-quick-start" class="plugin-anchor" href="#developer-quick-start"><i class="fa fa-link" aria-hidden="true"></i></a>Developer Quick Start</h2>
 <h3 id="os-image"><a name="os-image" class="plugin-anchor" href="#os-image"><i class="fa fa-link" aria-hidden="true"></i></a>OS Image</h3>
 <p>Use the <a href="https://docs.emlid.com/navio2/Navio-APM/configuring-raspberry-pi/" target="_blank">Emlid RT Raspbian image for Navio 2</a>.
-The default image will have most of the setup procedures shown below already
-done.</p>
-<p><strong>Important</strong>: make sure not to upgrade the system (more specifically the kernel).
-By upgrading, a new kernel can get installed which lacks the necessary HW
-support (you can check with <code>ls /sys/class/pwm</code>, the directory should not be
-empty).</p>
+The default image will have most of the setup procedures shown below already done.</p>
+<blockquote class="clearfix alert alert-quote"><strong class="fa fa-2x fa-quote-left"></strong>
+<p> Make sure not to upgrade the system (more specifically the kernel).
+  By upgrading, a new kernel can get installed which lacks the necessary HW support (you can check with <code>ls /sys/class/pwm</code>, the directory should not be empty).</p>
+</blockquote>
 <h3 id="setting-up-access"><a name="setting-up-access" class="plugin-anchor" href="#setting-up-access"><i class="fa fa-link" aria-hidden="true"></i></a>Setting up access</h3>
-<p>The Raspbian image has SSH setup already. Username is &quot;pi&quot; and password is &quot;raspberry&quot;. You can connect to your RPi2/3 over a network (Ethernet is set to come up with DHCP by default) and then proceed to configure WiFi access. We assume that the username and password remain at their defaults for the purpose of this guide.</p>
+<p>The Raspbian image has SSH setup already.
+Username is &quot;pi&quot; and password is &quot;raspberry&quot;.
+You can connect to your RPi2/3 over a network (Ethernet is set to come up with DHCP by default) and then proceed to configure WiFi access. 
+We assume that the username and password remain at their defaults for the purpose of this guide.</p>
 <p>To setup the RPi2/3 to join your local wifi, follow <a href="https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md" target="_blank">this guide</a>.</p>
 <p>Find the IP address of your Pi from your network, and then you can proceed to connect to it using SSH.</p>
-<div class="host-code"></div>
-
 <pre><code class="lang-sh">ssh pi@&lt;IP-ADDRESS&gt;
 </code></pre>
 <h3 id="expand-the-filesystem"><a name="expand-the-filesystem" class="plugin-anchor" href="#expand-the-filesystem"><i class="fa fa-link" aria-hidden="true"></i></a>Expand the Filesystem</h3>
-<p>After installing the OS and connecting to it, make sure to
-<a href="https://www.raspberrypi.org/documentation/configuration/raspi-config.md" target="_blank">expand the Filesystem</a>,
-so there is enough space on the SD Card.</p>
+<p>After installing the OS and connecting to it, make sure to <a href="https://www.raspberrypi.org/documentation/configuration/raspi-config.md" target="_blank">expand the Filesystem</a>, so there is enough space on the SD Card.</p>
 <h3 id="disable-navio-rgb-overlay"><a name="disable-navio-rgb-overlay" class="plugin-anchor" href="#disable-navio-rgb-overlay"><i class="fa fa-link" aria-hidden="true"></i></a>Disable Navio RGB Overlay</h3>
 <p>The existing Navio RGB overlay claims GPIOs used by PX4 for RGB Led.
 Edit <code>/boot/config.txt</code> by commenting the line enabling the <code>navio-rgb</code> overlay.</p>
 <pre><code>#dtoverlay=navio-rgb
 </code></pre><h3 id="changing-hostnames"><a name="changing-hostnames" class="plugin-anchor" href="#changing-hostnames"><i class="fa fa-link" aria-hidden="true"></i></a>Changing hostnames</h3>
-<p>To avoid conflicts with any other RPis on the network, we advise you to change the default hostname to something sensible. We used &quot;px4autopilot&quot; for our setup. Connect to the Pi via SSH and follow the below instructions.</p>
+<p>To avoid conflicts with any other RPis on the network, we advise you to change the default hostname to something sensible. 
+We used &quot;px4autopilot&quot; for our setup. 
+Connect to the Pi via SSH and follow the below instructions.</p>
 <p>Edit the hostname file:</p>
 <pre><code class="lang-sh">sudo nano /etc/hostname
 </code></pre>
@@ -2848,7 +2848,8 @@ sudo insserv avahi-daemon
 <p> You might have to add .local to the hostname to discover it.</p>
 </blockquote>
 <h3 id="configuring-a-ssh-public-key"><a name="configuring-a-ssh-public-key" class="plugin-anchor" href="#configuring-a-ssh-public-key"><i class="fa fa-link" aria-hidden="true"></i></a>Configuring a SSH Public-Key</h3>
-<p>In order to allow the PX4 development environment to automatically push executables to your board, you need to configure passwordless access to the RPi. We use the public-key authentication method for this.</p>
+<p>In order to allow the PX4 development environment to automatically push executables to your board, you need to configure passwordless access to the RPi. 
+We use the public-key authentication method for this.</p>
 <p>To generate new SSH keys enter the following commands (Choose a sensible hostname such as <code>&lt;YOURNANME&gt;@&lt;YOURDEVICE&gt;</code>.  Here we have used <code>pi@px4autopilot</code>)</p>
 <p>These commands need to be run on the HOST development computer!</p>
 <pre><code class="lang-sh">ssh-keygen -t rsa -C pi@px4autopilot
@@ -2878,11 +2879,10 @@ rm hello.txt
 </code></pre>
 <p>This should copy over a &quot;hello.txt&quot; file into the home folder of your RPi. Validate that the file was indeed copied, and you can proceed to the next step.</p>
 <h3 id="native-builds-optional"><a name="native-builds-optional" class="plugin-anchor" href="#native-builds-optional"><i class="fa fa-link" aria-hidden="true"></i></a>Native builds (optional)</h3>
-<p>You can run PX4 builds directly on the Pi if you desire. This is the <em>native</em>
-build. The other option is to run builds on a development computer which
-cross-compiles for the Pi, and pushes the PX4 executable binary directly to the
-Pi. This is the <em>cross-compiler</em> build, and the recommended one for developers
-due to speed of deployment and ease of use.</p>
+<p>You can run PX4 builds directly on the Pi if you desire. 
+This is the <em>native</em> build. 
+The other option is to run builds on a development computer which cross-compiles for the Pi, and pushes the PX4 executable binary directly to the Pi.
+This is the <em>cross-compiler</em> build, and the recommended one for developers due to speed of deployment and ease of use.</p>
 <p>For cross-compiling setups, you can skip this step.</p>
 <p>The steps below will setup the build system on the Pi to that required by PX4.
 Run these commands on the Pi itself!</p>
@@ -2892,7 +2892,7 @@ sudo apt-get install cmake python-empy
 <p>Then clone the Firmware directly onto the Pi.</p>
 <h3 id="building-the-code"><a name="building-the-code" class="plugin-anchor" href="#building-the-code"><i class="fa fa-link" aria-hidden="true"></i></a>Building the code</h3>
 <p>Continue with our <a href="https://dev.px4.io/en/setup/dev_env_linux.html" target="_blank">standard build system installation</a>.</p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-02-25 11:13:58 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-02-26 06:07:20 </span> </footer>
                                 
                                 </section>
                             
@@ -2935,7 +2935,7 @@ sudo apt-get install cmake python-empy
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Raspberry Pi 2/3 Navio2","level":"1.11.5","depth":2,"next":{"title":"OcPoC-Zynq Mini","level":"1.11.6","depth":2,"path":"flight_controller/ocpoc_zynq.md","ref":"flight_controller/ocpoc_zynq.md","articles":[]},"previous":{"title":"Snapdragon Advanced","level":"1.11.4.5","depth":3,"path":"flight_controller/snapdragon_flight_advanced.md","ref":"flight_controller/snapdragon_flight_advanced.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"flight_controller/raspberry_pi_navio2.md","mtime":"2019-02-25T11:13:58.209Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T11:14:56.851Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Raspberry Pi 2/3 Navio2","level":"1.11.5","depth":2,"next":{"title":"OcPoC-Zynq Mini","level":"1.11.6","depth":2,"path":"flight_controller/ocpoc_zynq.md","ref":"flight_controller/ocpoc_zynq.md","articles":[]},"previous":{"title":"Snapdragon Advanced","level":"1.11.4.5","depth":3,"path":"flight_controller/snapdragon_flight_advanced.md","ref":"flight_controller/snapdragon_flight_advanced.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"flight_controller/raspberry_pi_navio2.md","mtime":"2019-02-26T06:07:20.648Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-26T06:08:23.102Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
