@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Bootloader Update (FMUv2) · PX4 User Guide</title>
+        <title>Bootloader Update · PX4 User Guide</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -1570,7 +1570,7 @@
                 <a href="bootloader_update.html">
             
                     
-                    Bootloader Update (FMUv2)
+                    Bootloader Update
             
                 </a>
             
@@ -2763,7 +2763,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Bootloader Update (FMUv2)</a>
+        <a href=".." >Bootloader Update</a>
     </h1>
 </div>
 
@@ -2779,34 +2779,81 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="bootloader-update"><a name="bootloader-update" class="plugin-anchor" href="#bootloader-update"><i class="fa fa-link" aria-hidden="true"></i></a>Bootloader Update</h1>
-<p>Early <a href="../flight_controller/pixhawk_series.html#fmu-versions">Pixhawk-series</a> flight controllers based on FMUv2 had a hardware issue (<a href="../flight_controller/silicon_errata.html#fmuv2--pixhawk-silicon-errata">Silicon Errata</a>) that restricted them to using 1MB of flash memory. 
-The problem was fixed on newer hardware, so it can now (in theory) install FMUv3 Firmware and access all 2MB available memory.</p>
-<p>Unfortunately some boards come from the factory with an old bootloader that is unable to detect whether or not the hardware issue is present. 
-As a result, the memory-restricted FMUv2 Firmware must still be used.</p>
-<p>This topic explains how you can update the bootloader to the latest version so that you can use FMUv3 Firmware on compatible boards.</p>
-<h3 id="main-steps"><a name="main-steps" class="plugin-anchor" href="#main-steps"><i class="fa fa-link" aria-hidden="true"></i></a>Main Steps</h3>
-<p>You can initiate bootloader update on next restart by setting the parameter: <a href="parameter_reference.html#SYS_BL_UPDATE">SYS_BL_UPDATE</a>.</p>
-<p>To update the bootloader:</p>
-<ol>
-<li>Insert an SD card (enables boot logging to debug any problems.)</li>
-<li><p><a href="../config/firmware.html">Update the Firmware</a> to PX4 <em>master</em> version (when updating the firmware, check <strong>Advanced settings</strong> and then select <strong>Developer Build (master)</strong> from the dropdown list).
-<em>QGroundControl</em> will automatically detect that the hardware supports FMUv2 and install the appropriate Firmware.</p>
-<p><img src="../../assets/qgc/setup/firmware/bootloader_update.jpg" alt="FMUv2 update"></p>
-<p>Wait for the vehicle to reboot.</p>
-</li>
-<li><a href="parameters.html#parameter-configuration">Find and enable</a> the parameter <a href="parameter_reference.html#SYS_BL_UPDATE">SYS_BL_UPDATE</a>.</li>
-<li>Reboot (disconnect/reconnect the board). 
-The bootloader update will only take a few seconds.</li>
-<li><p>Then <a href="../config/firmware.html">Update the Firmware</a> again. 
-This time <em>QGroundControl</em> should autodetect the hardware as FMUv3 and update the Firmware appropriately.</p>
-<p><img src="../../assets/qgc/setup/firmware/bootloader_fmu_v3_update.jpg" alt="FMUv3 update"></p>
+<p>The <a href="https://github.com/PX4/Bootloader" target="_blank">PX4 bootloader</a> is used to load firmware for Pixhawk boards (PX4FMU, PX4IO) and <a href="../sensor/px4flow.html">PX4FLOW</a>.</p>
+<p>This topic explains several methods for updating the Pixhawk bootloader.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
-<p> If the hardware has the <em>Silicon Errata</em> it will still be detected as FMUv2 and you will see that FMUv2 was re-installed (in console). 
-  In this case you will not be able to install FMUv3 hardware.</p>
+<p> Hardware usually comes with an appropriate bootloader version pre-installed.
+  A case where you may need to update is newer Pixhawk boards that install FMUv2 firmware: <a href="../config/firmware.html#bootloader">Firmware &gt; FMUv2 Bootloader Update</a>.</p>
+</blockquote>
+<h2 id="qgc_bootloader_update"><a name="qgc_bootloader_update" class="plugin-anchor" href="#qgc_bootloader_update"><i class="fa fa-link" aria-hidden="true"></i></a>QGroundControl Bootloader Update </h2>
+<p>The easiest approach is to first use <em>QGroundControl</em> to install firmware with the desired/latest bootloader. 
+You can then initiate bootloader update on next restart by setting the parameter: <a href="parameter_reference.html#SYS_BL_UPDATE">SYS_BL_UPDATE</a>.</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> This approach can only be used if <a href="parameter_reference.html#SYS_BL_UPDATE">SYS_BL_UPDATE</a> is present in firmware (currently just FMUv2 and some custom firmware).</p>
+</blockquote>
+<p>The steps are:</p>
+<ol>
+<li>Insert an SD card (enables boot logging to debug any problems).</li>
+<li><p><a href="../config/firmware.html#custom">Update the Firmware</a> with an image containing the new/desired bootloader.</p>
+<blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
+<p> The updated bootloader might be supplied in custom firmware (i.e. from the dev team), or it or may be included in the latest master.</p>
+</blockquote>
+<p><img src="../../assets/qgc/setup/firmware/bootloader_update.jpg" alt="FMUv2 update"></p>
+</li>
+<li>Wait for the vehicle to reboot.</li>
+<li><a href="parameters.html#parameter-configuration">Find and enable</a> the parameter <a href="parameter_reference.html#SYS_BL_UPDATE">SYS_BL_UPDATE</a>.</li>
+<li>Reboot (disconnect/reconnect the board).
+The bootloader update will only take a few seconds.</li>
+</ol>
+<p>Generally at this point you may then want to <a href="../config/firmware.html">update the firmware</a> again using the correct/newly installed bootloader.</p>
+<h3 id="dronecode_probe"><a name="dronecode_probe" class="plugin-anchor" href="#dronecode_probe"><i class="fa fa-link" aria-hidden="true"></i></a>Dronecode Probe Bootloader Update </h3>
+<p>The following steps explain how you can &quot;manually&quot; update the bootloader using the dronecode probe:</p>
+<ol>
+<li>Get a binary containing the bootloader (either from dev team or build it yourself).</li>
+<li>Connect the Dronecode probe to your PC via USB. </li>
+<li>Go into the directory containing the binary and run the following command in the terminal:<pre><code class="lang-cmd">arm-none-eabi-gdb px4fmuv5_bl.elf
+</code></pre>
+</li>
+<li>The <em>gdb terminal</em> appears and it should display the following output:<pre><code class="lang-cmd">GNU gdb (GNU Tools <span class="hljs-keyword">for</span> Arm Embedded Processors <span class="hljs-number">7</span>-<span class="hljs-number">2017</span>-q4-major) <span class="hljs-number">8</span>.<span class="hljs-number">0</span>.<span class="hljs-number">50</span>.<span class="hljs-number">20171128</span>-git
+Copyright (C) <span class="hljs-number">2017</span> Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version <span class="hljs-number">3</span> or later &lt;http://gnu.org/licenses/gpl.html&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  <span class="hljs-built_in">Type</span> &quot;show copying&quot;
+and &quot;show warranty&quot; <span class="hljs-keyword">for</span> details.
+This GDB was configured as &quot;--host=x86_64-linux-gnu --target=arm-none-eabi&quot;.
+<span class="hljs-built_in">Type</span> &quot;show configuration&quot; <span class="hljs-keyword">for</span> configuration details.
+<span class="hljs-keyword">For</span> bug reporting instructions, please see:
+&lt;http://www.gnu.org/software/gdb/bugs/&gt;.
+<span class="hljs-built_in">Find</span> the GDB manual and other documentation resources online <span class="hljs-built_in">at</span>:
+&lt;http://www.gnu.org/software/gdb/documentation/&gt;.
+<span class="hljs-keyword">For</span> <span class="hljs-built_in">help</span>, <span class="hljs-built_in">type</span> &quot;<span class="hljs-built_in">help</span>&quot;.
+<span class="hljs-built_in">Type</span> &quot;apropos word&quot; to search <span class="hljs-keyword">for</span> commands related to &quot;word&quot;...
+Reading symbols from px4fmuv5_bl.elf...done.
+</code></pre>
+</li>
+<li>Find your <code>&lt;dronecode-probe-id&gt;</code> by running an ls command in the <strong>/dev/serial/by-id</strong> directory.</li>
+<li>Now connect to the Dronecode probe with the following command:<pre><code>tar ext /dev/serial/by-id/&lt;dronecode-probe-id&gt;
+</code></pre></li>
+<li><p>Power on the Pixhawk with another USB cable and connect the Dronecode probe to the FMU-DEBUG port. </p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> To be able to connect the Dronecode probe to the FMU-DEBUG port, you may need to remove the case (e.g. on Pixhawk 4 you would do this using a T6 Torx screwdriver).</p>
 </blockquote>
 </li>
+<li><p>Use the following command to scan for the Pixhawk&#x2019;s swd and connect to it:</p>
+<pre><code>(gdb) mon swdp_scan
+(gdb) attach 1
+</code></pre></li>
+<li>Load the binary into the Pixhawk:<pre><code>(gdb) load
+</code></pre></li>
 </ol>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-02-28 02:57:58 </span> </footer>
+<p>After the bootloader has updated you can <a href="../config/firmware.html">Load PX4 Firmware</a> using <em>QGroundControl</em>.</p>
+<h2 id="non-pixhawk"><a name="non-pixhawk" class="plugin-anchor" href="#non-pixhawk"><i class="fa fa-link" aria-hidden="true"></i></a>Other Boards (Non-Pixhawk) </h2>
+<p>Boards that are not part of the <a href="../flight_controller/pixhawk_series.html">Pixhawk Series</a> will have their own mechanisms for bootloader update.</p>
+<p>These will be documented (where relevant) with the board:</p>
+<ul>
+<li><a href="../flight_controller/omnibus_f4_sd.html#upload">Omnibus F4 SD &gt; PX4 Bootloader Update</a></li>
+</ul>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-03-01 01:17:54 </span> </footer>
                                 
                                 </section>
                             
@@ -2849,7 +2896,7 @@ This time <em>QGroundControl</em> should autodetect the hardware as FMUv3 and up
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Bootloader Update (FMUv2)","level":"1.9.7","depth":2,"next":{"title":"Land Detector Configuration","level":"1.9.8","depth":2,"path":"advanced_config/land_detector.md","ref":"advanced_config/land_detector.md","articles":[]},"previous":{"title":"ECL/EKF Overview & Tuning","level":"1.9.6","depth":2,"path":"advanced_config/tuning_the_ecl_ekf.md","ref":"advanced_config/tuning_the_ecl_ekf.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"advanced_config/bootloader_update.md","mtime":"2019-02-28T02:57:58.626Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-28T02:59:29.934Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Bootloader Update","level":"1.9.7","depth":2,"next":{"title":"Land Detector Configuration","level":"1.9.8","depth":2,"path":"advanced_config/land_detector.md","ref":"advanced_config/land_detector.md","articles":[]},"previous":{"title":"ECL/EKF Overview & Tuning","level":"1.9.6","depth":2,"path":"advanced_config/tuning_the_ecl_ekf.md","ref":"advanced_config/tuning_the_ecl_ekf.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"Master","selected":true}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"advanced_config/bootloader_update.md","mtime":"2019-03-01T01:17:54.552Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-01T01:19:48.389Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
