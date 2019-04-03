@@ -25,11 +25,19 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-versions/plugin.css">
                 
             
                 
@@ -2673,12 +2681,12 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="battery-and-power-module-setup">Battery and Power Module Setup</h1>
+                                <h1 id="battery-and-power-module-setup"><a name="battery-and-power-module-setup" class="plugin-anchor" href="#battery-and-power-module-setup"><i class="fa fa-link" aria-hidden="true"></i></a>Battery and Power Module Setup</h1>
 <p>This topic explains how to configure power settings.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> The battery monitoring features of PX4 can only be used if you have compatible hardware. In most cases this means a power module that measures the battery voltage, and may also measure the current between battery and vehicle.</p>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<h2 id="overview"><a name="overview" class="plugin-anchor" href="#overview"><i class="fa fa-link" aria-hidden="true"></i></a>Overview</h2>
 <p>The goal of the power setup is to provide a good estimate of remaining battery percentage (and capacity), so that the vehicle is not used to the point that it runs out of power and crashes (or the battery is damaged due to deep-discharge).</p>
 <p>PX4 provides a number of (progressively more effective) methods that can be used to estimate the capacity:</p>
 <ol>
@@ -2687,7 +2695,7 @@
 <li><a href="#current_integration">Voltage-based Estimation with Current Integration</a>: Fuses the load-compensated voltage-based estimate for the available capacity with a current-based estimate of the charge that has been consumed. This results in a capacity estimate that is comparable to that of a smart battery.</li>
 </ol>
 <p>Later methods build on preceding methods. The approach you use will depend on whether the vehicle&apos;s power module can measure current.</p>
-<h2 id="basic_settings">Basic Battery Settings (default) </h2>
+<h2 id="basic_settings"><a name="basic_settings" class="plugin-anchor" href="#basic_settings"><i class="fa fa-link" aria-hidden="true"></i></a>Basic Battery Settings (default) </h2>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> This default/basic power configuration results in relatively coarse estimations due to fluctuations in the estimated charge as the measured voltage changes under load.</p>
 </blockquote>
@@ -2703,7 +2711,7 @@ This method compares the measured raw battery voltage to the range between cell 
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> The basic settings below correspond to <a href="../advanced_config/parameters.html">parameters</a>: <a href="../advanced_config/parameter_reference.html#BAT_N_CELLS">BAT_N_CELLS</a>, <a href="../advanced_config/parameter_reference.html#BAT_V_EMPTY">BAT_V_EMPTY</a>, <a href="../advanced_config/parameter_reference.html#BAT_V_CHARGED">BAT_V_CHARGED</a>. </p>
 </blockquote>
-<h3 id="number-of-cells-in-series">Number of Cells (in Series)</h3>
+<h3 id="number-of-cells-in-series"><a name="number-of-cells-in-series" class="plugin-anchor" href="#number-of-cells-in-series"><i class="fa fa-link" aria-hidden="true"></i></a>Number of Cells (in Series)</h3>
 <p>This sets the number of cells connected in series in the battery. Typically this will be written on the battery as a number followed by &quot;S&quot; (e.g &quot;3S&quot;, &quot;5s&quot;).</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> The voltage across a single galvanic battery cell is dependent on the chemical properties of the battery type. The most common drone battery type (Lithium-Polymer - LiPo) has a nominal cell voltage of 3.7V. In order to achieve higher voltages (which will more efficiently power a vehicle), multiple cells are connected in <em>series</em>. The battery voltage at the terminals is then a multiple of the cell voltage.</p>
@@ -2717,13 +2725,13 @@ This method compares the measured raw battery voltage to the range between cell 
 <li>5S - 18.5V</li>
 <li>6S - 22.2V</li>
 </ul>
-<h3 id="full-voltage-per-cell">Full Voltage (per cell)</h3>
+<h3 id="full-voltage-per-cell"><a name="full-voltage-per-cell" class="plugin-anchor" href="#full-voltage-per-cell"><i class="fa fa-link" aria-hidden="true"></i></a>Full Voltage (per cell)</h3>
 <p>This sets the <em>nominal</em> maximum voltage of each cell (the lowest voltage at which the cell will be considered &quot;full&quot;).</p>
 <p>The value should be set slightly lower that the nominal maximum cell voltage for the battery (4.2V for LiPo), but not so low that the estimated capacity is still 100% after a few minutes of flight. The default value is usually appropriate for LiPo batteries. </p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p>  The voltage of a full battery may drop a small amount over time after charging. Setting a slightly-lower than maximum value compensates for this drop.</p>
 </blockquote>
-<h3 id="empty-voltage-per-cell">Empty Voltage (per cell)</h3>
+<h3 id="empty-voltage-per-cell"><a name="empty-voltage-per-cell" class="plugin-anchor" href="#empty-voltage-per-cell"><i class="fa fa-link" aria-hidden="true"></i></a>Empty Voltage (per cell)</h3>
 <p>This sets the nominal minimum safe voltage of each cell (use below this voltage may damage the battery).</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> There is no single value at which a battery is said to be empty. If you choose a value that is too low the battery may be damaged due to deep discharge (and/or the vehicle may crash). If you choose a value that is too high you may unnecessarily curtail your flight.</p>
@@ -2737,19 +2745,19 @@ This method compares the measured raw battery voltage to the range between cell 
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> Below the conservative range, the sooner you recharge the battery the better - it will last longer and lose capacity slower.</p>
 </blockquote>
-<h3 id="voltage-divider">Voltage divider</h3>
+<h3 id="voltage-divider"><a name="voltage-divider" class="plugin-anchor" href="#voltage-divider"><i class="fa fa-link" aria-hidden="true"></i></a>Voltage divider</h3>
 <p>If you have a vehicle that measures voltage through a power module and the ADC of the flight controller then you should check and calibrate the measurements once per board. To calibrate you&apos;ll need a multimeter.</p>
 <p>The easiest way to calibrate the divider is by using <em>QGroundControl</em> and following the step-by-step guide on <a href="https://docs.qgroundcontrol.com/en/SetupView/Power.html" target="_blank">Setup &gt; Power Setup</a> (QGroundControl User Guide). </p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> This setting corresponds to parameter: <a href="../advanced_config/parameter_reference.html#BAT_A_PER_V">BAT_A_PER_V</a>.</p>
 </blockquote>
-<h3 id="current_divider">Amps per volt </h3>
+<h3 id="current_divider"><a name="current_divider" class="plugin-anchor" href="#current_divider"><i class="fa fa-link" aria-hidden="true"></i></a>Amps per volt </h3>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> This setting is not needed if you are using the basic configuration (without load compensation etc.)</p>
 </blockquote>
 <p>If you are using <a href="#current_based_load_compensation">Current-based Load Compensation</a> or <a href="#current_integration">Current Integration</a> the amps per volt divider must be calibrated. </p>
 <p>The easiest way to calibrate the dividers is by using <em>QGroundControl</em> and following the step-by-step guide on <a href="https://docs.qgroundcontrol.com/en/SetupView/Power.html" target="_blank">Setup &gt; Power Setup</a> (QGroundControl User Guide).</p>
-<h2 id="load_compensation">Voltage-based Estimation with Load Compensation </h2>
+<h2 id="load_compensation"><a name="load_compensation" class="plugin-anchor" href="#load_compensation"><i class="fa fa-link" aria-hidden="true"></i></a>Voltage-based Estimation with Load Compensation </h2>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> With well configured load compensation the voltage used for battery capacity estimation is much more stable, varying far less when flying up and down.</p>
 </blockquote>
@@ -2762,7 +2770,7 @@ This method compares the measured raw battery voltage to the range between cell 
 <li><a href="../advanced_config/parameter_reference.html#BAT_R_INTERNAL">BAT_R_INTERNAL</a> - <a href="#current_based_load_compensation">Current-based Load Compensation</a> (recommended).</li>
 <li><a href="../advanced_config/parameter_reference.html#BAT_V_LOAD_DROP">BAT_V_LOAD_DROP</a> - <a href="#thrust_based_load_compensation">Thrust-based Load Compensation</a>.</li>
 </ul>
-<h3 id="current_based_load_compensation">Current-based Load Compensation (recommended) </h3>
+<h3 id="current_based_load_compensation"><a name="current_based_load_compensation" class="plugin-anchor" href="#current_based_load_compensation"><i class="fa fa-link" aria-hidden="true"></i></a>Current-based Load Compensation (recommended) </h3>
 <p>This load compensation method relies on current measurement to determine load. It is far more accurate than <a href="#thrust_based_load_compensation">Thrust-based Load Compensation</a> but requires that you have a current sensor.</p>
 <p>To enable this feature:</p>
 <ol>
@@ -2772,7 +2780,7 @@ This method compares the measured raw battery voltage to the range between cell 
 </li>
 <li>You should also calibrate the <a href="#current_divider">Amps per volt divider</a> in the basic settings screen.</li>
 </ol>
-<h3 id="thrust_based_load_compensation">Thrust-based Load Compensation </h3>
+<h3 id="thrust_based_load_compensation"><a name="thrust_based_load_compensation" class="plugin-anchor" href="#thrust_based_load_compensation"><i class="fa fa-link" aria-hidden="true"></i></a>Thrust-based Load Compensation </h3>
 <p>This load compensation method estimates the load based on the total thrust that gets commanded to the motors. </p>
 <blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
 <p> This method is not particularly accurate because there&apos;s a delay between thrust command and current, and because the thrust in not linearly proportional to the current. Use  <a href="#current_based_load_compensation">Current-based Load Compensation</a> instead if your vehicle has a current sensor.</p>
@@ -2781,7 +2789,7 @@ This method compares the measured raw battery voltage to the range between cell 
 <ol>
 <li>Set the parameter <a href="../advanced_config/parameter_reference.html#BAT_V_LOAD_DROP">BAT_V_LOAD_DROP</a> to how much voltage drop a cell shows under the load of full throttle.</li>
 </ol>
-<h2 id="current_integration">Voltage-based Estimation Fused with Current Integration </h2>
+<h2 id="current_integration"><a name="current_integration" class="plugin-anchor" href="#current_integration"><i class="fa fa-link" aria-hidden="true"></i></a>Voltage-based Estimation Fused with Current Integration </h2>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> This is the most accurate way to measure relative battery consumption. If set up correctly with a healthy and fresh charged battery on every boot, then the estimation quality will be comparable to that from a smart battery (and theoretically allow for accurate remaining flight time estimation).</p>
 </blockquote>
@@ -2809,7 +2817,7 @@ The emptier the battery gets, the more of the voltage based estimate gets fused 
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> Current integration cannot be used on its own (without voltage-based estimation) because it has no way to determine the <em>initial</em> capacity. Voltage-estimation allows you to estimate the initial capacity and provides ongoing feedback of possible errors (e.g. if the battery is faulty, or if there is a mismatch between capacity calculated using different methods).</p>
 </blockquote>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-04-03 03:10:15 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-04-03 22:06:02 </span> </footer>
                                 
                                 </section>
                             
@@ -2852,7 +2860,7 @@ The emptier the battery gets, the more of the voltage based estimate gets fused 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Battery","level":"1.4.10","depth":2,"next":{"title":"Safety","level":"1.4.11","depth":2,"path":"config/safety.md","ref":"config/safety.md","articles":[]},"previous":{"title":"Flight Modes","level":"1.4.9","depth":2,"path":"config/flight_mode.md","ref":"config/flight_mode.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"1.8.2"},"title":"PX4 v1.8.2 User Guide","language":"en","gitbook":"*"},"file":{"path":"config/battery.md","mtime":"2019-04-03T03:10:15.760Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T03:11:53.620Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Battery","level":"1.4.10","depth":2,"next":{"title":"Safety","level":"1.4.11","depth":2,"path":"config/safety.md","ref":"config/safety.md","articles":[]},"previous":{"title":"Flight Modes","level":"1.4.9","depth":2,"path":"config/flight_mode.md","ref":"config/flight_mode.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"stable (v1.8.2)"},{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8.2"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"1.8.2"},"title":"PX4 v1.8.2 User Guide","language":"en","gitbook":"*"},"file":{"path":"config/battery.md","mtime":"2019-04-03T22:06:02.196Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T22:07:20.697Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -2862,10 +2870,6 @@ The emptier the battery gets, the more of the voltage based estimate gets fused 
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
-    
-        
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
     
         
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
@@ -2880,7 +2884,15 @@ The emptier the battery gets, the more of the voltage based estimate gets fused 
         
     
         
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
         <script src="../../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-versions/plugin.js"></script>
         
     
         

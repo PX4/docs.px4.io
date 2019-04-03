@@ -25,11 +25,19 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-versions/plugin.css">
                 
             
                 
@@ -2673,10 +2681,10 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="pixfalcon-flight-controller">Pixfalcon Flight Controller</h1>
+                                <h1 id="pixfalcon-flight-controller"><a name="pixfalcon-flight-controller" class="plugin-anchor" href="#pixfalcon-flight-controller"><i class="fa fa-link" aria-hidden="true"></i></a>Pixfalcon Flight Controller</h1>
 <p>The Pixfalcon autopilot (designed by <a href="http://www.holybro.com/" target="_blank">Holybro<sup>&#xAE;</sup></a>) is binary-compatible (FMUv2) derivative of the <a href="pixhawk.html">Pixhawk 1</a> design that has been optimized for space-constrained applications such as FPV racers. It has less IO to allow for the reduction in size.</p>
 <p><img src="../../assets/hardware/hardware-pixfalcon.png" alt=""></p>
-<h2 id="quick-summary">Quick Summary</h2>
+<h2 id="quick-summary"><a name="quick-summary" class="plugin-anchor" href="#quick-summary"><i class="fa fa-link" aria-hidden="true"></i></a>Quick Summary</h2>
 <ul>
 <li>Main System-on-Chip: <a href="http://www.st.com/web/en/catalog/mmc/FM141/SC1169/SS1577/LN1789" target="_blank">STM32F427</a><ul>
 <li>CPU: 180 MHz ARM<sup>&#xAE;</sup> Cortex<sup>&#xAE;</sup> M4 with single-precision FPU</li>
@@ -2690,14 +2698,14 @@
 </li>
 <li>GPS: U-Blox<sup>&#xAE;</sup> M8 (bundled)</li>
 </ul>
-<h3 id="connectivity">Connectivity</h3>
+<h3 id="connectivity"><a name="connectivity" class="plugin-anchor" href="#connectivity"><i class="fa fa-link" aria-hidden="true"></i></a>Connectivity</h3>
 <ul>
 <li>1x I2C</li>
 <li>2x UART (one for Telemetry / OSD, no flow control)</li>
 <li>8x PWM with manual override</li>
 <li>S.BUS / PPM input</li>
 </ul>
-<h2 id="availability">Availability:</h2>
+<h2 id="availability"><a name="availability" class="plugin-anchor" href="#availability"><i class="fa fa-link" aria-hidden="true"></i></a>Availability:</h2>
 <p>From manufacturer: <a href="http://www.holybro.com/product/8" target="_blank">Holybro</a> or from distributor <a href="http://www.hobbyking.com/hobbyking/store/__86437__PixFalcon_Micro_PX4_Autopilot_plus_Micro_M8N_GPS_and_Mega_PBD_Power_Module.html" target="_blank">Hobbyking<sup>&#xAE;</sup></a></p>
 <p>Optional hardware:</p>
 <ul>
@@ -2714,13 +2722,13 @@
 </ul>
 </li>
 </ul>
-<h2 id="build-instructions">Build Instructions</h2>
+<h2 id="build-instructions"><a name="build-instructions" class="plugin-anchor" href="#build-instructions"><i class="fa fa-link" aria-hidden="true"></i></a>Build Instructions</h2>
 <p><code>make px4fmu-v2_default upload</code></p>
-<h2 id="key-links">Key Links</h2>
+<h2 id="key-links"><a name="key-links" class="plugin-anchor" href="#key-links"><i class="fa fa-link" aria-hidden="true"></i></a>Key Links</h2>
 <ul>
 <li><a href="http://www.holybro.com/manual/pixfalcon.pdf" target="_blank">User Manual</a></li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-04-03 03:10:15 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-04-03 22:06:02 </span> </footer>
                                 
                                 </section>
                             
@@ -2763,7 +2771,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Pixfalcon","level":"1.11.1.5","depth":3,"next":{"title":"Dropix","level":"1.11.1.6","depth":3,"path":"flight_controller/dropix.md","ref":"flight_controller/dropix.md","articles":[]},"previous":{"title":"HKPilot32","level":"1.11.1.4","depth":3,"path":"flight_controller/HKPilot32.md","ref":"flight_controller/HKPilot32.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"1.8.2"},"title":"PX4 v1.8.2 User Guide","language":"en","gitbook":"*"},"file":{"path":"flight_controller/pixfalcon.md","mtime":"2019-04-03T03:10:15.764Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T03:11:53.620Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Pixfalcon","level":"1.11.1.5","depth":3,"next":{"title":"Dropix","level":"1.11.1.6","depth":3,"path":"flight_controller/dropix.md","ref":"flight_controller/dropix.md","articles":[]},"previous":{"title":"HKPilot32","level":"1.11.1.4","depth":3,"path":"flight_controller/HKPilot32.md","ref":"flight_controller/HKPilot32.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"stable (v1.8.2)"},{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8.2"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"1.8.2"},"title":"PX4 v1.8.2 User Guide","language":"en","gitbook":"*"},"file":{"path":"flight_controller/pixfalcon.md","mtime":"2019-04-03T22:06:02.196Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T22:07:20.697Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -2773,10 +2781,6 @@
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
-    
-        
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
     
         
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
@@ -2791,7 +2795,15 @@
         
     
         
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
         <script src="../../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-versions/plugin.js"></script>
         
     
         

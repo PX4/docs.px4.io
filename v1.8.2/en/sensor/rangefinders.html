@@ -25,11 +25,19 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-versions/plugin.css">
                 
             
                 
@@ -2673,19 +2681,19 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="distance-sensors-rangefinders">Distance Sensors (Rangefinders)</h1>
+                                <h1 id="distance-sensors-rangefinders"><a name="distance-sensors-rangefinders" class="plugin-anchor" href="#distance-sensors-rangefinders"><i class="fa fa-link" aria-hidden="true"></i></a>Distance Sensors (Rangefinders)</h1>
 <p>Distance sensors provide distance measurement that can be used for terrain following, precision hovering (e.g. for photography), warning of regulatory height limits, collision avoidance etc.</p>
 <p>The sensors can usually be connected to either a serial (PWM) or I2C port (depending on the device driver), and is enabled on the port by setting a particular parameter.</p>
 <p>This section lists the distance sensors supported by PX4 (linked to more detailed documentation), the <a href="#configuration">generic configuration</a> required for all rangefinders, testing, and simulation information.</p>
 <p><img src="../../assets/hardware/sensors/lidar_lite/lidar_lite_v3.jpg" alt="Lidar Lite V3" width="200px"><img src="../../assets/hardware/sensors/sf11c_120_m.jpg" alt="LightWare SF11/C Lidar" width="200px"><img src="../../assets/hardware/sensors/uLanding_lite_1.jpg" alt="Aerotenna uLanding" width="200px"></p>
-<h2 id="supported-rangefinders">Supported Rangefinders</h2>
-<h3 id="lidar-lite">Lidar-Lite</h3>
+<h2 id="supported-rangefinders"><a name="supported-rangefinders" class="plugin-anchor" href="#supported-rangefinders"><i class="fa fa-link" aria-hidden="true"></i></a>Supported Rangefinders</h2>
+<h3 id="lidar-lite"><a name="lidar-lite" class="plugin-anchor" href="#lidar-lite"><i class="fa fa-link" aria-hidden="true"></i></a>Lidar-Lite</h3>
 <p><a href="lidar_lite.html">Lidar-Lite</a> is a compact, high-performance optical distant measurement rangefinder. 
 It has a sensor range from (5cm - 40m) and can be connected to either PWM or I2C ports.</p>
-<h3 id="maxbotix-i2cxl-maxsonar-ez">MaxBotix I2CXL-MaxSonar-EZ</h3>
+<h3 id="maxbotix-i2cxl-maxsonar-ez"><a name="maxbotix-i2cxl-maxsonar-ez" class="plugin-anchor" href="#maxbotix-i2cxl-maxsonar-ez"><i class="fa fa-link" aria-hidden="true"></i></a>MaxBotix I2CXL-MaxSonar-EZ</h3>
 <p>The MaxBotix <a href="https://www.maxbotix.com/product-category/i2cxl-maxsonar-ez-products" target="_blank">I2CXL-MaxSonar-EZ</a> range has a number of relatively short-ranged sonar based rangefinders that are suitable for assisted takeoff/landing and collision avoidance. These can be connected using an I2C port.</p>
 <p>The rangefinders are enabled using the parameter <a href="../advanced_config/parameter_reference.html#SENS_EN_MB12XX">SENS_EN_MB12XX</a>.</p>
-<h3 id="lightware-lidars">Lightware LIDARs</h3>
+<h3 id="lightware-lidars"><a name="lightware-lidars" class="plugin-anchor" href="#lightware-lidars"><i class="fa fa-link" aria-hidden="true"></i></a>Lightware LIDARs</h3>
 <p><a href="sfxx_lidar.html">Lightware SFxx Lidar</a> provide a range of lightweight &quot;laser altimeters&quot; that are suitable for many drone applications:</p>
 <ul>
 <li><a href="http://lightware.co.za/shop2017/proximity-sensors/1-sf02f.html" target="_blank">SF02</a></li>
@@ -2696,7 +2704,7 @@ It has a sensor range from (5cm - 40m) and can be connected to either PWM or I2C
 <li><a href="http://lightware.co.za/shop2017/drone-altimeters/51-lw20-100-m.html" target="_blank">SF/LW20</a> (100 m) - Waterproofed (IP67) with servo for sense-and-avoid applications</li>
 </ul>
 <p>Drivers exist for both I2C and serial ports (not all devices are supported for both serial and I2C).</p>
-<h3 id="teraranger-rangefinders">TeraRanger Rangefinders</h3>
+<h3 id="teraranger-rangefinders"><a name="teraranger-rangefinders" class="plugin-anchor" href="#teraranger-rangefinders"><i class="fa fa-link" aria-hidden="true"></i></a>TeraRanger Rangefinders</h3>
 <p>TeraRanger provide a number of lightweight distance measurement sensor based on infrared Time-of-Flight (ToF) technology. They are typically faster and have greater range than sonar, and smaller and lighter than laser-based systems. PX4 supports:</p>
 <ul>
 <li><a href="http://www.teraranger.com/products/teraranger-one/" target="_blank">TeraRanger One</a> (0.2 - 14 m) (Requires an <a href="http://www.teraranger.com/product/teraranger-i2c-adapter/" target="_blank">I2C adapter</a>)</li>
@@ -2712,18 +2720,18 @@ It has a sensor range from (5cm - 40m) and can be connected to either PWM or I2C
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-info"></strong>
 <p> The <em>Terranger One</em> is used in the <a href="../flight_controller/snapdragon_flight.html">Qualcomm Snapdragon Flight</a>.</p>
 </blockquote>
-<h3 id="ulanding-radar">uLanding Radar</h3>
+<h3 id="ulanding-radar"><a name="ulanding-radar" class="plugin-anchor" href="#ulanding-radar"><i class="fa fa-link" aria-hidden="true"></i></a>uLanding Radar</h3>
 <p>The <a href="ulanding_radar.html"><em>Aerotenna</em> uLanding Radar</a> is compact microwave rangefinder that has been optimised for use on UAVs. It has a sensing range of 45m. A particular advantages of this product are that it can operate effectively in all weather conditions and over all terrain types (including water).</p>
-<h3 id="leddarone">LeddarOne</h3>
+<h3 id="leddarone"><a name="leddarone" class="plugin-anchor" href="#leddarone"><i class="fa fa-link" aria-hidden="true"></i></a>LeddarOne</h3>
 <p><a href="leddar_one.html">LeddarOne</a> is small Lidar module with a narrow, yet diffuse beam that offers excellent overall detection range and performance, in a robust, reliable, cost-effective package. It has a sensing range from 1cm to 40m and needs to be connected to a UART/serial bus.</p>
-<h3 id="tfmini">TFmini</h3>
+<h3 id="tfmini"><a name="tfmini" class="plugin-anchor" href="#tfmini"><i class="fa fa-link" aria-hidden="true"></i></a>TFmini</h3>
 <p>The <a href="tfmini.html">Benewake TFmini Lidar</a> is a tiny, low cost, and low power LIDAR with 12m range.</p>
-<h3 id="other">Other</h3>
+<h3 id="other"><a name="other" class="plugin-anchor" href="#other"><i class="fa fa-link" aria-hidden="true"></i></a>Other</h3>
 <p>PX4 also supports the Bebop rangefinder.</p>
-<h2 id="configuration">Rangefinder Configuration </h2>
-<h3 id="setup">Setup</h3>
+<h2 id="configuration"><a name="configuration" class="plugin-anchor" href="#configuration"><i class="fa fa-link" aria-hidden="true"></i></a>Rangefinder Configuration </h2>
+<h3 id="setup"><a name="setup" class="plugin-anchor" href="#setup"><i class="fa fa-link" aria-hidden="true"></i></a>Setup</h3>
 <p>The rangefinder is configured using <a href="../advanced_config/parameter_reference.html#EKF2_RNG_POS_X">EKF2_RNG_*</a> parameters. These configure information about the offset of the rangefinder from the centre of the vehicle body, the approximate delay of data reaching the estimator from the sensor, etc.</p>
-<h3 id="enableuse">Enable/Use</h3>
+<h3 id="enableuse"><a name="enableuse" class="plugin-anchor" href="#enableuse"><i class="fa fa-link" aria-hidden="true"></i></a>Enable/Use</h3>
 <p>The rangefinder can be enabled in two ways:</p>
 <ol>
 <li>Set <a href="../advanced_config/parameter_reference.html#EKF2_HGT_MODE">EKF2_HGT_MODE</a> to <em>Range finder</em> (<code>2</code>). This makes the rangefinder the primary source of height estimation (the default altitude sensor is the barometer).</li>
@@ -2737,9 +2745,9 @@ It has a sensor range from (5cm - 40m) and can be connected to either PWM or I2C
 </ul>
 </li>
 </ol>
-<h2 id="testing">Testing</h2>
+<h2 id="testing"><a name="testing" class="plugin-anchor" href="#testing"><i class="fa fa-link" aria-hidden="true"></i></a>Testing</h2>
 <p>The easiest way to test the rangefinder is to vary the range and compare to the values detected by PX4. The sections below show some approaches to getting the measured range.</p>
-<h3 id="qgroundcontrol-analyze-tool">QGroundControl Analyze Tool</h3>
+<h3 id="qgroundcontrol-analyze-tool"><a name="qgroundcontrol-analyze-tool" class="plugin-anchor" href="#qgroundcontrol-analyze-tool"><i class="fa fa-link" aria-hidden="true"></i></a>QGroundControl Analyze Tool</h3>
 <p>The <em>QGroundControl Analyze Tool</em> tool and <em>QGroundControl MAVLink Inspector</em> let you view messages sent from the vehicle, including <code>DISTANCE_SENSOR</code> information from the rangefinder. The main difference between the tools is that the <em>Analyze</em> tool can plot values in a graph.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> The messages that are sent depend on the vehicle configuration. You will only get <code>DISTANCE_SENSOR</code> messages if the connected vehicle has a rangefinder installed and is publishing sensor values.</p>
@@ -2752,7 +2760,7 @@ It has a sensor range from (5cm - 40m) and can be connected to either PWM or I2C
 <li>Select the message <code>DISTANCE_SENSOR.current_value</code>. The tool will then plot the result:
 <img src="../../assets/qgc/qgc_analyze_tool_distance_sensor.png" alt="QGC Analyze DISTANCE_SENSOR value"></li>
 </ol>
-<h3 id="qgroundcontrol-mavlink-console">QGroundControl MAVLink Console</h3>
+<h3 id="qgroundcontrol-mavlink-console"><a name="qgroundcontrol-mavlink-console" class="plugin-anchor" href="#qgroundcontrol-mavlink-console"><i class="fa fa-link" aria-hidden="true"></i></a>QGroundControl MAVLink Console</h3>
 <p>You can also use the <em>QGroundControl MAVLink Console</em> to observe the <code>distance_sensor</code> uORB topic:</p>
 <pre><code class="lang-sh">listener distance_sensor 5
 </code></pre>
@@ -2760,7 +2768,7 @@ It has a sensor range from (5cm - 40m) and can be connected to either PWM or I2C
 <p> The <em>QGroundControl MAVLink Console</em> works when connected to Pixhawk or other NuttX targets, but not the Simulator. On the Simulator you can run the commands directly in the terminal.</p>
 </blockquote>
 <p>For more information see: <a href="https://dev.px4.io/en/debug/sensor_uorb_topic_debugging.html" target="_blank">Sensor/Topic Debugging using the Listener Command</a> (PX4 Development Guide).</p>
-<h2 id="simulation">Simulation</h2>
+<h2 id="simulation"><a name="simulation" class="plugin-anchor" href="#simulation"><i class="fa fa-link" aria-hidden="true"></i></a>Simulation</h2>
 <p>Lidar and sonar rangefinders can be used in the <a href="https://dev.px4.io/en/simulation/gazebo.html" target="_blank">Gazebo Simulator</a> (PX4 Development Guide).
 To do this you must start the simulator using a vehicle model that includes the rangefinder.</p>
 <p>The iris optical flow model includes a Lidar rangefinder:</p>
@@ -2805,11 +2813,11 @@ To do this you must start the simulator using a vehicle model that includes the 
 </code></pre>
 </li>
 </ul>
-<h2 id="further-information">Further Information</h2>
+<h2 id="further-information"><a name="further-information" class="plugin-anchor" href="#further-information"><i class="fa fa-link" aria-hidden="true"></i></a>Further Information</h2>
 <ul>
 <li><a href="https://pixhawk.org/peripherals/rangefinder" target="_blank">Rangefinder</a> (Pixhawk.org) - Rangefinders supported by Pixhawk</li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-04-03 03:10:15 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-04-03 22:06:02 </span> </footer>
                                 
                                 </section>
                             
@@ -2852,7 +2860,7 @@ To do this you must start the simulator using a vehicle model that includes the 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Distance Sensors (Rangefinders)","level":"1.10.6","depth":2,"next":{"title":"Lightware SFxx Lidar","level":"1.10.6.1","depth":3,"path":"sensor/sfxx_lidar.md","ref":"sensor/sfxx_lidar.md","articles":[]},"previous":{"title":"FrSky Telemetry","level":"1.10.5","depth":2,"path":"peripherals/frsky_telemetry.md","ref":"peripherals/frsky_telemetry.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"1.8.2"},"title":"PX4 v1.8.2 User Guide","language":"en","gitbook":"*"},"file":{"path":"sensor/rangefinders.md","mtime":"2019-04-03T03:10:15.772Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T03:11:53.620Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Distance Sensors (Rangefinders)","level":"1.10.6","depth":2,"next":{"title":"Lightware SFxx Lidar","level":"1.10.6.1","depth":3,"path":"sensor/sfxx_lidar.md","ref":"sensor/sfxx_lidar.md","articles":[]},"previous":{"title":"FrSky Telemetry","level":"1.10.5","depth":2,"path":"peripherals/frsky_telemetry.md","ref":"peripherals/frsky_telemetry.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"stable (v1.8.2)"},{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8.2"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"1.8.2"},"title":"PX4 v1.8.2 User Guide","language":"en","gitbook":"*"},"file":{"path":"sensor/rangefinders.md","mtime":"2019-04-03T22:06:02.204Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T22:07:20.697Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -2862,10 +2870,6 @@ To do this you must start the simulator using a vehicle model that includes the 
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
-    
-        
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
     
         
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
@@ -2880,7 +2884,15 @@ To do this you must start the simulator using a vehicle model that includes the 
         
     
         
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
         <script src="../../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-versions/plugin.js"></script>
         
     
         

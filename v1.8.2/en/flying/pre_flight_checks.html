@@ -25,11 +25,19 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-versions/plugin.css">
                 
             
                 
@@ -2673,13 +2681,13 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="preflight-sensorestimator-checks">Preflight Sensor/Estimator Checks</h1>
+                                <h1 id="preflight-sensorestimator-checks"><a name="preflight-sensorestimator-checks" class="plugin-anchor" href="#preflight-sensorestimator-checks"><i class="fa fa-link" aria-hidden="true"></i></a>Preflight Sensor/Estimator Checks</h1>
 <p>PX4 performs a number of preflight sensor quality and estimator checks to determine if there is a good enough position estimate to arm and fly the vehicle (these checks are controlled by the <a href="../advanced_config/parameter_reference.html#commander">COM_ARM_</a> parameters). </p>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> Any preflight errors are reported in <em>QGroundControl</em> as <code>PREFLIGHT FAIL</code> messages. The <code>estimator_status.gps_check_fail_flags</code> message <a href="../getting_started/flight_reporting.html">in the logs</a> also shows which GPS quality checks are failing.</p>
 </blockquote>
 <p>The sections below list the errors, their likely causes and solutions, and any parameters that affect how the preflight checks are run. </p>
-<h2 id="ekf-preflight-checkserrors">EKF Preflight Checks/Errors</h2>
+<h2 id="ekf-preflight-checkserrors"><a name="ekf-preflight-checkserrors" class="plugin-anchor" href="#ekf-preflight-checkserrors"><i class="fa fa-link" aria-hidden="true"></i></a>EKF Preflight Checks/Errors</h2>
 <p>The following errors (with associated checks and parameters) are reported by the <a href="https://dev.px4.io/en/tutorials/tuning_the_ecl_ekf.html" target="_blank">EKF</a> (and propagate to <em>QGroundControl</em>):</p>
 <p><code>PREFLIGHT FAIL: EKF HGT ERROR</code>:</p>
 <ul>
@@ -2739,17 +2747,17 @@ Common problems/solutions include:<ul>
 </ul>
 </li>
 </ul>
-<h2 id="other-parameters">Other Parameters</h2>
+<h2 id="other-parameters"><a name="other-parameters" class="plugin-anchor" href="#other-parameters"><i class="fa fa-link" aria-hidden="true"></i></a>Other Parameters</h2>
 <p>The following parameters also affect preflight checks.</p>
-<h3 id="comarmwogps">COM_ARM_WO_GPS</h3>
+<h3 id="comarmwogps"><a name="comarmwogps" class="plugin-anchor" href="#comarmwogps"><i class="fa fa-link" aria-hidden="true"></i></a>COM_ARM_WO_GPS</h3>
 <p>The <a href="../advanced_config/parameter_reference.html#COM_ARM_WO_GPS">COM_ARM_WO_GPS</a> parameter controls whether or not arming is allowed without a global position estimate. </p>
 <ul>
 <li><code>1</code> (default): Arming <em>is</em> allowed without a position estimate for flight modes that do not require position information (only).</li>
 <li><code>0</code>: Arming is allowed only if EKF is providing a global position estimate and EFK GPS quality checks are passing</li>
 </ul>
-<h3 id="comarmekfyaw">COM_ARM_EKF_YAW</h3>
+<h3 id="comarmekfyaw"><a name="comarmekfyaw" class="plugin-anchor" href="#comarmekfyaw"><i class="fa fa-link" aria-hidden="true"></i></a>COM_ARM_EKF_YAW</h3>
 <p>The <a href="../advanced_config/parameter_reference.html#COM_ARM_EKF_YAW">COM_ARM_EKF_YAW</a> parameter determines the maximum difference (in radians) between the navigation yaw angle and magnetic yaw angle (magnetometer or external vision) allowed before preflight checks fail. The default value of 0.5 allows the differences to be no more than 50% of the maximum tolerated by the EKF and provides some margin for error increase when flight commences. It can fail if the yaw gyro has a large offset or if the vehicle is moved or rotated in the presence of a bad magnetic interference or magnetometer calibration.</p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-04-03 03:10:15 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-04-03 22:06:02 </span> </footer>
                                 
                                 </section>
                             
@@ -2792,7 +2800,7 @@ Common problems/solutions include:<ul>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Preflight Checks (Internal)","level":"1.6.3","depth":2,"next":{"title":"Flying 101","level":"1.6.4","depth":2,"path":"flying/basic_flying.md","ref":"flying/basic_flying.md","articles":[{"title":"Landing (Fixed Wing)","level":"1.6.4.1","depth":3,"path":"flying/fixed_wing_landing.md","ref":"flying/fixed_wing_landing.md","articles":[]}]},"previous":{"title":"LED Meanings","level":"1.6.2","depth":2,"path":"flying/led_meanings.md","ref":"flying/led_meanings.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"1.8.2"},"title":"PX4 v1.8.2 User Guide","language":"en","gitbook":"*"},"file":{"path":"flying/pre_flight_checks.md","mtime":"2019-04-03T03:10:15.768Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T03:11:53.620Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Preflight Checks (Internal)","level":"1.6.3","depth":2,"next":{"title":"Flying 101","level":"1.6.4","depth":2,"path":"flying/basic_flying.md","ref":"flying/basic_flying.md","articles":[{"title":"Landing (Fixed Wing)","level":"1.6.4.1","depth":3,"path":"flying/fixed_wing_landing.md","ref":"flying/fixed_wing_landing.md","articles":[]}]},"previous":{"title":"LED Meanings","level":"1.6.2","depth":2,"path":"flying/led_meanings.md","ref":"flying/led_meanings.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"stable (v1.8.2)"},{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8.2"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"1.8.2"},"title":"PX4 v1.8.2 User Guide","language":"en","gitbook":"*"},"file":{"path":"flying/pre_flight_checks.md","mtime":"2019-04-03T22:06:02.200Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T22:07:20.697Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -2802,10 +2810,6 @@ Common problems/solutions include:<ul>
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
-    
-        
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
     
         
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
@@ -2820,7 +2824,15 @@ Common problems/solutions include:<ul>
         
     
         
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
         <script src="../../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-versions/plugin.js"></script>
         
     
         

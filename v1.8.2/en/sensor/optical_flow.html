@@ -25,11 +25,19 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-versions/plugin.css">
                 
             
                 
@@ -2673,10 +2681,10 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="optical-flow">Optical Flow</h1>
+                                <h1 id="optical-flow"><a name="optical-flow" class="plugin-anchor" href="#optical-flow"><i class="fa fa-link" aria-hidden="true"></i></a>Optical Flow</h1>
 <p>Optical Flow uses a downward facing camera and a downward facing distance sensor for position estimation.
 Optical Flow based navigation is supported by: EKF2 and LPE.</p>
-<h2 id="setup">Setup</h2>
+<h2 id="setup"><a name="setup" class="plugin-anchor" href="#setup"><i class="fa fa-link" aria-hidden="true"></i></a>Setup</h2>
 <p>An Optical Flow setup requires a downward facing camera and a <a href="rangefinders.html">distance sensor</a> (preferably a LiDAR).
 These can be connected via MAVLink, I2C or any other bus that supports the peripheral.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
@@ -2714,22 +2722,22 @@ These can be connected via MAVLink, I2C or any other bus that supports the perip
 <p>For pure rotations the <code>integrated_xgyro</code> and <code>integrated_x</code> (respectively <code>integrated_ygyro</code> and <code>integrated_y</code>) have to be the same.</p>
 <p>An exemplary setup is the <a href="px4flow.html">PX4Flow</a> and <a href="lidar_lite.html">Lidar-Lite</a>, as shown below.</p>
 <p><img src="../../assets/hardware/sensors/optical_flow/flow_lidar_attached.jpg" alt="Optical flow lidar attached"></p>
-<h3 id="cameras">Cameras</h3>
-<h4 id="px4flow">PX4Flow</h4>
+<h3 id="cameras"><a name="cameras" class="plugin-anchor" href="#cameras"><i class="fa fa-link" aria-hidden="true"></i></a>Cameras</h3>
+<h4 id="px4flow"><a name="px4flow" class="plugin-anchor" href="#px4flow"><i class="fa fa-link" aria-hidden="true"></i></a>PX4Flow</h4>
 <p>The easiest way to calculate the optical flow is to use the <a href="px4flow.html">PX4Flow</a> board (see link for setup information).</p>
-<h4 id="other-cameras">Other Cameras</h4>
+<h4 id="other-cameras"><a name="other-cameras" class="plugin-anchor" href="#other-cameras"><i class="fa fa-link" aria-hidden="true"></i></a>Other Cameras</h4>
 <p>It is also possible to use a board/quad that has an integrated camera (Bebop2, Snapdragon Flight).
 For this the <a href="https://github.com/PX4/OpticalFlow" target="_blank">Optical Flow repo</a> can be used (see also <a href="https://github.com/PX4/snap_cam" target="_blank">snap_cam</a>).</p>
-<h3 id="range-finder">Range Finder</h3>
+<h3 id="range-finder"><a name="range-finder" class="plugin-anchor" href="#range-finder"><i class="fa fa-link" aria-hidden="true"></i></a>Range Finder</h3>
 <p>You can use any supported <a href="rangefinders.html">distance sensor</a>.
 However we recommend using a LIDAR over a Sonar, because of robustness and accuracy.</p>
-<h2 id="estimators">Estimators</h2>
-<h3 id="extended-kalman-filter-ekf2">Extended Kalman Filter (EKF2)</h3>
+<h2 id="estimators"><a name="estimators" class="plugin-anchor" href="#estimators"><i class="fa fa-link" aria-hidden="true"></i></a>Estimators</h2>
+<h3 id="extended-kalman-filter-ekf2"><a name="extended-kalman-filter-ekf2" class="plugin-anchor" href="#extended-kalman-filter-ekf2"><i class="fa fa-link" aria-hidden="true"></i></a>Extended Kalman Filter (EKF2)</h3>
 <p>For optical flow fusion using EKF2, set the use optical flow flag in the <a href="../advanced_config/parameter_reference.html#EKF2_AID_MASK">EKF2_AID_MASK</a> parameter, as shown using QGroundControl below:
 <img src="../../images/qgc_ekf2_enable_flow.png" alt="QGroundControl - Calibrate Sensors"></p>
-<h3 id="local-position-estimator-lpe">Local Position Estimator (LPE)</h3>
+<h3 id="local-position-estimator-lpe"><a name="local-position-estimator-lpe" class="plugin-anchor" href="#local-position-estimator-lpe"><i class="fa fa-link" aria-hidden="true"></i></a>Local Position Estimator (LPE)</h3>
 <p>TODO</p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-04-03 03:10:15 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-04-03 22:06:02 </span> </footer>
                                 
                                 </section>
                             
@@ -2772,7 +2780,7 @@ However we recommend using a LIDAR over a Sonar, because of robustness and accur
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Optical Flow","level":"1.10.8","depth":2,"next":{"title":"PX4FLOW","level":"1.10.8.1","depth":3,"path":"sensor/px4flow.md","ref":"sensor/px4flow.md","articles":[]},"previous":{"title":"Airspeed Sensors","level":"1.10.7","depth":2,"path":"sensor/airspeed.md","ref":"sensor/airspeed.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"1.8.2"},"title":"PX4 v1.8.2 User Guide","language":"en","gitbook":"*"},"file":{"path":"sensor/optical_flow.md","mtime":"2019-04-03T03:10:15.772Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T03:11:53.620Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Optical Flow","level":"1.10.8","depth":2,"next":{"title":"PX4FLOW","level":"1.10.8.1","depth":3,"path":"sensor/px4flow.md","ref":"sensor/px4flow.md","articles":[]},"previous":{"title":"Airspeed Sensors","level":"1.10.7","depth":2,"path":"sensor/airspeed.md","ref":"sensor/airspeed.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"stable (v1.8.2)"},{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8.2"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"1.8.2"},"title":"PX4 v1.8.2 User Guide","language":"en","gitbook":"*"},"file":{"path":"sensor/optical_flow.md","mtime":"2019-04-03T22:06:02.204Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T22:07:20.697Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -2782,10 +2790,6 @@ However we recommend using a LIDAR over a Sonar, because of robustness and accur
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
-    
-        
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
     
         
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
@@ -2800,7 +2804,15 @@ However we recommend using a LIDAR over a Sonar, because of robustness and accur
         
     
         
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
         <script src="../../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-versions/plugin.js"></script>
         
     
         

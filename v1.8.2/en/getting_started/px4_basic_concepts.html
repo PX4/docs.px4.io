@@ -25,11 +25,19 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-versions/plugin.css">
                 
             
                 
@@ -2673,11 +2681,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="basic-concepts">Basic Concepts</h1>
+                                <h1 id="basic-concepts"><a name="basic-concepts" class="plugin-anchor" href="#basic-concepts"><i class="fa fa-link" aria-hidden="true"></i></a>Basic Concepts</h1>
 <p>This topic provides a basic introduction to drones and using PX4 (it is meant mostly for novice users but is also a good introduction for experienced users).</p>
 <p>If you are already familiar with the basic concepts, you can move on to <a href="../assembly/">Basic Assembly</a> to learn how to wire your specific autopilot hardware. 
 To load firmware and set up the vehicle with <em>QGroundControl</em>, see <a href="../config/">Basic Configuration</a>.</p>
-<h2 id="what-is-a-drone">What is a Drone?</h2>
+<h2 id="what-is-a-drone"><a name="what-is-a-drone" class="plugin-anchor" href="#what-is-a-drone"><i class="fa fa-link" aria-hidden="true"></i></a>What is a Drone?</h2>
 <p>A drone is an unmanned &quot;robotic&quot; vehicle that can be remotely or autonomously controlled.</p>
 <p>Drones are used for many consumer, industrial and military <a href="http://px4.io/applications/" target="_blank">use cases and applications</a>. 
 These include (non exhaustively): aerial photography/video, carrying cargo, racing, search and surveying etc. </p>
@@ -2686,9 +2694,9 @@ These include (non exhaustively): aerial photography/video, carrying cargo, raci
 These are (more formally) referred to as Unmanned Aerial Vehicles (UAV), Unmanned Aerial Systems (UAS), Unmanned Ground Vehicles (UGV), Unmanned Surface Vehicles (USV), Unmanned Underwater Vehicles (UUV).</p>
 </blockquote>
 <p>The &quot;brain&quot; of the drone is called an autopilot. It consists of <em>flight stack</em> software running on <em>vehicle controller</em> (&quot;flight controller&quot;) hardware.</p>
-<h2 id="dronecode">Dronecode Platform </h2>
+<h2 id="dronecode"><a name="dronecode" class="plugin-anchor" href="#dronecode"><i class="fa fa-link" aria-hidden="true"></i></a>Dronecode Platform </h2>
 <p>PX4 is part of the <a href="https://www.dronecode.org/platform/" target="_blank">Dronecode Platform</a> &#x2014; a complete end-to-end platform for drone development, delivered under a common industry-friendly open source license. It includes, among other things, the <a href="#autopilot">PX4 flight stack</a>), <a href="#qgc">QGroundControl</a> ground control station, the <a href="https://www.dronecode.org/sdk/" target="_blank">Dronecode SDK</a> and the <a href="https://camera-manager.dronecode.org/en/" target="_blank">Dronecode Camera Manager</a>.</p>
-<h2 id="autopilot">PX4 Autopilot </h2>
+<h2 id="autopilot"><a name="autopilot" class="plugin-anchor" href="#autopilot"><i class="fa fa-link" aria-hidden="true"></i></a>PX4 Autopilot </h2>
 <p><a href="http://px4.io/" target="_blank">PX4</a> is powerful open source autopilot <em>flight stack</em>. </p>
 <p>Some of PX4&apos;s key features are:</p>
 <ul>
@@ -2696,16 +2704,16 @@ These are (more formally) referred to as Unmanned Aerial Vehicles (UAV), Unmanne
 <li>Great choice of hardware for <a href="#vehicle_controller">vehicle controller</a>, sensors and other peripherals.</li>
 <li>Flexible and powerful <a href="#flight_modes">flight modes</a> and <a href="#safety">safety features</a>.</li>
 </ul>
-<h2 id="qgc">QGroundControl </h2>
+<h2 id="qgc"><a name="qgc" class="plugin-anchor" href="#qgc"><i class="fa fa-link" aria-hidden="true"></i></a>QGroundControl </h2>
 <p>The Dronecode ground control station is called <a href="http://qgroundcontrol.com/" target="_blank">QGroundControl</a>.
 You can use <em>QGroundControl</em> to load (flash) PX4 onto the <a href="flight_controller_selection.html">vehicle control hardware</a>, you can setup the vehicle, change different parameters, get real-time flight information and create and execute fully autonomous missions.</p>
 <p><em>QGroundControl</em> runs on Windows, Android, MacOS or Linux. Download and install it from <a href="http://qgroundcontrol.com/downloads/" target="_blank">here</a>. </p>
 <p><img src="../../images/qgc_main_screen.jpg" alt="QGC Main Screen"></p>
-<h2 id="vehicle_controller">Vehicle/Flight Controller Board </h2>
+<h2 id="vehicle_controller"><a name="vehicle_controller" class="plugin-anchor" href="#vehicle_controller"><i class="fa fa-link" aria-hidden="true"></i></a>Vehicle/Flight Controller Board </h2>
 <p>PX4 was initially designed to run on <a href="../flight_controller/pixhawk_series.html">Pixhawk Series</a> controllers, but can now run on Linux computers and other hardware.
 You should select a board that suits the physical constraints of your vehicle, the activities you wish to perform, and of course cost.</p>
 <p>For more information see: <a href="flight_controller_selection.html">Flight Controller Selection</a>.</p>
-<h2 id="sensors">Sensors</h2>
+<h2 id="sensors"><a name="sensors" class="plugin-anchor" href="#sensors"><i class="fa fa-link" aria-hidden="true"></i></a>Sensors</h2>
 <p>PX4 uses sensors to determine vehicle state (needed for stabilization and to enable autonomous control). 
 The system <em>minimally requires</em> a gyroscope, accelerometer, magnetometer (compass) and barometer. 
 A GPS or other positioning system is needed to enable all automatic <a href="flight_modes.html#categories">modes</a>, and some assisted modes. Fixed wing and VTOL-vehicles should additionally include an airspeed sensor (very highly recommended).</p>
@@ -2714,7 +2722,7 @@ A GPS or other positioning system is needed to enable all automatic <a href="fli
 <li><a href="sensor_selection.html">Sensors</a> </li>
 <li><a href="../peripherals/">Peripherals</a></li>
 </ul>
-<h2 id="escs--motors">ESCs &amp; Motors</h2>
+<h2 id="escs--motors"><a name="escs--motors" class="plugin-anchor" href="#escs--motors"><i class="fa fa-link" aria-hidden="true"></i></a>ESCs &amp; Motors</h2>
 <p>Many PX4 drones use brushless motors that are driven by the flight controller via an Electronic Speed Controller (ESC) 
 (the ESC converts a signal from the flight controller to an appropriate level of power delivered to the motor).</p>
 <p>For information about what ESC/Motors are supported by PX4 see:</p>
@@ -2723,13 +2731,13 @@ A GPS or other positioning system is needed to enable all automatic <a href="fli
 <li><a href="../advanced_config/esc_calibration.html">ESC Calibration</a></li>
 <li><a href="https://oscarliang.com/esc-firmware-protocols/" target="_blank">ESC Firmware and Protocols Overview</a> (oscarliang.com)</li>
 </ul>
-<h2 id="batterypower">Battery/Power</h2>
+<h2 id="batterypower"><a name="batterypower" class="plugin-anchor" href="#batterypower"><i class="fa fa-link" aria-hidden="true"></i></a>Battery/Power</h2>
 <p>PX4 drones are mostly commonly powered from Lithium-Polymer (LiPo) batteries. 
 The battery is typically connected to the system using a <em>Power Module</em> or <em>Power Management Board</em>, 
 which provide separate power for the flight controller and to the ESCs (for the motors).</p>
 <p>Information about batteries and battery configuration can be found in <a href="../config/battery.html">Battery Configuration</a>
 and the guides in <a href="../assembly/">Basic Assembly</a> (e.g. <a href="../assembly/quick_start_pixhawk4.html#power">Pixhawk 4 Wiring Quick Start &gt; Power</a>).</p>
-<h2 id="rc_systems">Radio Control (RC) </h2>
+<h2 id="rc_systems"><a name="rc_systems" class="plugin-anchor" href="#rc_systems"><i class="fa fa-link" aria-hidden="true"></i></a>Radio Control (RC) </h2>
 <p>A <a href="rc_transmitter_receiver.html">Radio Control (RC)</a> system is used to <em>manually</em> control the vehicle. 
 It consists of a remote control unit that uses a transmitter to communicate stick/control positions with a receiver based on the vehicle. 
 Some RC systems can additionally receive telemetry information back from the autopilot.</p>
@@ -2743,10 +2751,10 @@ Some RC systems can additionally receive telemetry information back from the aut
 <li><a href="../flying/basic_flying.html">Flying 101</a> - Learn how to fly with a remote control.</li>
 <li><a href="../peripherals/frsky_telemetry.html">FrSky Telemetry</a> - Set up the RC transmitter to receive telemetry/status updates from PX4.</li>
 </ul>
-<h2 id="datatelemetry-radios">Data/Telemetry Radios</h2>
+<h2 id="datatelemetry-radios"><a name="datatelemetry-radios" class="plugin-anchor" href="#datatelemetry-radios"><i class="fa fa-link" aria-hidden="true"></i></a>Data/Telemetry Radios</h2>
 <p><a href="../telemetry/">Data/Telemetry Radios</a> can provide a wireless MAVLink connection between a ground control station like <em>QGroundControl</em> and a vehicle running PX4. 
 This makes it possible to tune parameters while a vehicle is in flight, inspect telemetry in real-time, change a mission on the fly, etc.</p>
-<h2 id="offboardcompanion-computer">Offboard/Companion Computer</h2>
+<h2 id="offboardcompanion-computer"><a name="offboardcompanion-computer" class="plugin-anchor" href="#offboardcompanion-computer"><i class="fa fa-link" aria-hidden="true"></i></a>Offboard/Companion Computer</h2>
 <p>PX4 can be controlled from a separate on-vehicle companion computer via a serial cable or wifi. The companion computer will usually communicate using a MAVLink API like the Dronecode SDK or MAVROS.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> Using a Robotics API requires software development skills, and is outside the scope of this guide.</p>
@@ -2755,7 +2763,7 @@ This makes it possible to tune parameters while a vehicle is in flight, inspect 
 <li><a href="../flight_modes/offboard.html">Off-board Mode</a> - Flight mode for offboard control of PX4 from a GCS or companion computer. </li>
 <li><a href="https://dev.px4.io/en/robotics/" target="_blank">Robotics APIs</a> (PX4 Developer Guide)</li>
 </ul>
-<h2 id="flight_modes">Flight Modes </h2>
+<h2 id="flight_modes"><a name="flight_modes" class="plugin-anchor" href="#flight_modes"><i class="fa fa-link" aria-hidden="true"></i></a>Flight Modes </h2>
 <p>Flight modes provide different types/levels of vehicle automation and autopilot assistance to the user (pilot). 
 <em>Autonomous modes</em> are fully controlled by the autopilot, and require no pilot/remote control input. 
 These are used, for example, to automate common tasks like takeoff, returning to the home position, and landing. 
@@ -2768,7 +2776,7 @@ while others are impossible to flip and will hold position/course against wind.<
 </blockquote>
 <p>An overview of the available flight modes <a href="flight_modes.html">can be found here</a>. 
 Instructions for how to set up your remote control switches to turn on different flight modes is provided in <a href="../config/flight_mode.html">Flight Mode Configuration</a>.</p>
-<h2 id="safety">Safety Settings (Failsafe) </h2>
+<h2 id="safety"><a name="safety" class="plugin-anchor" href="#safety"><i class="fa fa-link" aria-hidden="true"></i></a>Safety Settings (Failsafe) </h2>
 <p>PX4 has configurable failsafe systems to protect and recover your vehicle if something goes wrong! 
 These allow you to specify areas and conditions under which you can safely fly, and the action that will be performed if a failsafe is triggered (for example, landing, holding position, or returning to a specified point).</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
@@ -2787,7 +2795,7 @@ These allow you to specify areas and conditions under which you can safely fly, 
 <li>Traffic avoidance (triggered by transponder data from e.g. ADSB transponders).</li>
 </ul>
 <p>For more information see: <a href="../config/safety.html">Safety</a> (Basic Configuration).</p>
-<h2 id="heading-and-directions">Heading and Directions</h2>
+<h2 id="heading-and-directions"><a name="heading-and-directions" class="plugin-anchor" href="#heading-and-directions"><i class="fa fa-link" aria-hidden="true"></i></a>Heading and Directions</h2>
 <p>All the vehicles, boats and aircraft have a heading direction or an orientation based on their forward motion.</p>
 <p><img src="../../images/frame_heading.png" alt="Frame Heading"></p>
 <p>It is important to know the vehicle heading direction in order to align the autopilot with the vehicle vector of movement. 
@@ -2796,7 +2804,7 @@ Usually manufacturers use a colored props or colored arms to indicate the headin
 <p><img src="../../images/frame_heading_top.png" alt="Frame Heading TOP"></p>
 <p>In our illustrations we will use red coloring for the front propellers of multicopter to show heading.</p>
 <p>You can read in depth about heading in <a href="../config/flight_controller_orientation.html">Flight Controller Orientation</a></p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-04-03 03:10:15 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-04-03 22:06:02 </span> </footer>
                                 
                                 </section>
                             
@@ -2839,7 +2847,7 @@ Usually manufacturers use a colored props or colored arms to indicate the headin
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Basic Concepts","level":"1.2.1","depth":2,"next":{"title":"Vehicles/Frames","level":"1.2.2","depth":2,"path":"getting_started/frame_selection.md","ref":"getting_started/frame_selection.md","articles":[]},"previous":{"title":"Getting Started","level":"1.2","depth":1,"path":"getting_started/README.md","ref":"getting_started/README.md","articles":[{"title":"Basic Concepts","level":"1.2.1","depth":2,"path":"getting_started/px4_basic_concepts.md","ref":"getting_started/px4_basic_concepts.md","articles":[]},{"title":"Vehicles/Frames","level":"1.2.2","depth":2,"path":"getting_started/frame_selection.md","ref":"getting_started/frame_selection.md","articles":[]},{"title":"Flight Controllers","level":"1.2.3","depth":2,"path":"getting_started/flight_controller_selection.md","ref":"getting_started/flight_controller_selection.md","articles":[]},{"title":"Sensors","level":"1.2.4","depth":2,"path":"getting_started/sensor_selection.md","ref":"getting_started/sensor_selection.md","articles":[]},{"title":"Radio Systems","level":"1.2.5","depth":2,"path":"getting_started/rc_transmitter_receiver.md","ref":"getting_started/rc_transmitter_receiver.md","articles":[]},{"title":"Flight Modes","level":"1.2.6","depth":2,"path":"getting_started/flight_modes.md","ref":"getting_started/flight_modes.md","articles":[]},{"title":"Flight Reporting","level":"1.2.7","depth":2,"path":"getting_started/flight_reporting.md","ref":"getting_started/flight_reporting.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"1.8.2"},"title":"PX4 v1.8.2 User Guide","language":"en","gitbook":"*"},"file":{"path":"getting_started/px4_basic_concepts.md","mtime":"2019-04-03T03:10:15.768Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T03:11:53.620Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Basic Concepts","level":"1.2.1","depth":2,"next":{"title":"Vehicles/Frames","level":"1.2.2","depth":2,"path":"getting_started/frame_selection.md","ref":"getting_started/frame_selection.md","articles":[]},"previous":{"title":"Getting Started","level":"1.2","depth":1,"path":"getting_started/README.md","ref":"getting_started/README.md","articles":[{"title":"Basic Concepts","level":"1.2.1","depth":2,"path":"getting_started/px4_basic_concepts.md","ref":"getting_started/px4_basic_concepts.md","articles":[]},{"title":"Vehicles/Frames","level":"1.2.2","depth":2,"path":"getting_started/frame_selection.md","ref":"getting_started/frame_selection.md","articles":[]},{"title":"Flight Controllers","level":"1.2.3","depth":2,"path":"getting_started/flight_controller_selection.md","ref":"getting_started/flight_controller_selection.md","articles":[]},{"title":"Sensors","level":"1.2.4","depth":2,"path":"getting_started/sensor_selection.md","ref":"getting_started/sensor_selection.md","articles":[]},{"title":"Radio Systems","level":"1.2.5","depth":2,"path":"getting_started/rc_transmitter_receiver.md","ref":"getting_started/rc_transmitter_receiver.md","articles":[]},{"title":"Flight Modes","level":"1.2.6","depth":2,"path":"getting_started/flight_modes.md","ref":"getting_started/flight_modes.md","articles":[]},{"title":"Flight Reporting","level":"1.2.7","depth":2,"path":"getting_started/flight_reporting.md","ref":"getting_started/flight_reporting.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"stable (v1.8.2)"},{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8.2"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"1.8.2"},"title":"PX4 v1.8.2 User Guide","language":"en","gitbook":"*"},"file":{"path":"getting_started/px4_basic_concepts.md","mtime":"2019-04-03T22:06:02.204Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T22:07:20.697Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -2849,10 +2857,6 @@ Usually manufacturers use a colored props or colored arms to indicate the headin
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
-    
-        
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
     
         
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
@@ -2867,7 +2871,15 @@ Usually manufacturers use a colored props or colored arms to indicate the headin
         
     
         
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
         <script src="../../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-versions/plugin.js"></script>
         
     
         

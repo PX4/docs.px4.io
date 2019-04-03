@@ -25,11 +25,19 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-versions/plugin.css">
                 
             
                 
@@ -2673,11 +2681,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="iridiumrockblock-satellite-communication-system">Iridium/RockBlock Satellite Communication System</h1>
+                                <h1 id="iridiumrockblock-satellite-communication-system"><a name="iridiumrockblock-satellite-communication-system" class="plugin-anchor" href="#iridiumrockblock-satellite-communication-system"><i class="fa fa-link" aria-hidden="true"></i></a>Iridium/RockBlock Satellite Communication System</h1>
 <p>A satellite communication system can be used to provide long range high latency link between a ground station and a vehicle.</p>
 <p>This topic describes how to set up a system that uses RockBlock as the service provider for the Iridium SBD Satellite Communication System. 
 Given good signal quality, users can expect a latency between 10 to 15 seconds.</p>
-<h2 id="overview">Overview</h2>
+<h2 id="overview"><a name="overview" class="plugin-anchor" href="#overview"><i class="fa fa-link" aria-hidden="true"></i></a>Overview</h2>
 <p>The following components are needed for the satellite communication link:</p>
 <ul>
 <li>A <a href="http://www.rock7mobile.com/products-rockblock-9603" target="_blank">RockBlock 9603</a> module connected to a Pixhawk flashed with the PX4 Autopilot.</li>
@@ -2694,7 +2702,7 @@ Given good signal quality, users can expect a latency between 10 to 15 seconds.<
 The RockBlock 9603 module is recommended because it is smaller and lighter, while providing the same functionality.</li>
 </ul>
 </blockquote>
-<h2 id="costs">Costs</h2>
+<h2 id="costs"><a name="costs" class="plugin-anchor" href="#costs"><i class="fa fa-link" aria-hidden="true"></i></a>Costs</h2>
 <p>The UK link running cost consists of a line rental and per message cost:</p>
 <ul>
 <li>Each module needs to be activated which costs &#xA3;10.00 per month</li>
@@ -2702,13 +2710,13 @@ The RockBlock 9603 module is recommended because it is smaller and lighter, whil
 Bundles of credits can be bought from RockBlock for &#xA3;0.04-&#xA3;0.11 per credit, depending on the bundle size.</li>
 </ul>
 <p>Refer to the <a href="https://docs.rockblock.rock7.com/docs" target="_blank">RockBlock Documentation</a> for a detailed explanation of the modules, running costs and <em>RockBlock</em> in general.</p>
-<h2 id="vehicle-setup">Vehicle Setup</h2>
-<h3 id="wiring">Wiring</h3>
+<h2 id="vehicle-setup"><a name="vehicle-setup" class="plugin-anchor" href="#vehicle-setup"><i class="fa fa-link" aria-hidden="true"></i></a>Vehicle Setup</h2>
+<h3 id="wiring"><a name="wiring" class="plugin-anchor" href="#wiring"><i class="fa fa-link" aria-hidden="true"></i></a>Wiring</h3>
 <p>Connect the RockBlock module to a serial port of the Pixhawk. 
 Due to the power requirements of the module it can only be powered over a high-power serial port as a maximum of 0.5 A at 5 V are required. 
 If none is available/free then another power source which has the same ground level as the Pixhawk and can provide required power has to be setup. 
 The details of the <a href="https://docs.rockblock.rock7.com/docs/connectors" target="_blank">connectors</a> and the <a href="https://docs.rockblock.rock7.com/docs/power-supply" target="_blank">power requirements</a> can be found in the RockBlock documentation.</p>
-<h3 id="module">Module</h3>
+<h3 id="module"><a name="module" class="plugin-anchor" href="#module"><i class="fa fa-link" aria-hidden="true"></i></a>Module</h3>
 <p>The module can either use the internal antenna or an external one connected to the SMA connector. 
 To <a href="https://docs.rockblock.rock7.com/docs/switching-rockblock-9603-antenna-mode" target="_blank">switch between the two antennas modes</a> the position of a small RF link cable needs to changed. 
 If an external antenna is used always make sure that the antenna is connected to the module before powering it up to avoid damage to the module.</p>
@@ -2722,21 +2730,21 @@ The response should be: <code>OK</code>.</li>
 </code></pre></li>
 </ol>
 <p>The module is now ready to be used with PX4.</p>
-<h3 id="software">Software</h3>
+<h3 id="software"><a name="software" class="plugin-anchor" href="#software"><i class="fa fa-link" aria-hidden="true"></i></a>Software</h3>
 <p><a href="../peripherals/serial_configuration.html">Configure the serial port</a> on which the RockBlock module will run using <a href="../advanced_config/parameter_reference.html#ISBD_CONFIG">ISBD_CONFIG</a>.
 There is no need to set the baud rate for the port, as this is configured by the driver.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> If the configuration parameter is not available in <em>QGroundControl</em> then you may need to <a href="../peripherals/serial_configuration.html#parameter_not_in_firmware">add the driver to the firmware</a>:</p>
 <pre><code>  drivers/telemetry/iridiumsbd
 </code></pre></blockquote>
-<h2 id="rockblock-setup">RockBlock Setup</h2>
+<h2 id="rockblock-setup"><a name="rockblock-setup" class="plugin-anchor" href="#rockblock-setup"><i class="fa fa-link" aria-hidden="true"></i></a>RockBlock Setup</h2>
 <p>When buying the first module on RockBlock an user account needs to be created in a first step.</p>
 <p>Log in to the <a href="https://rockblock.rock7.com/Operations" target="_blank">account</a> and register the RockBlock module under the <code>My RockBLOCKs</code>. 
 Activate the line rental for the module and make sure that enough credits for the expected flight duration are available on the account.
 When using the default settings one message per minute is sent from the vehicle to the ground station.</p>
 <p>Set up a delivery group for the message relay server and add the module to that delivery group:</p>
 <p><img src="../../assets/satcom/deliverygroup.png" alt="Delivery Groups"></p>
-<h2 id="relay-server-setup">Relay Server Setup</h2>
+<h2 id="relay-server-setup"><a name="relay-server-setup" class="plugin-anchor" href="#relay-server-setup"><i class="fa fa-link" aria-hidden="true"></i></a>Relay Server Setup</h2>
 <p>The relay server should be run on either Ubuntu 16.04 or 14.04 OS. </p>
 <ol>
 <li><p>The server working as a message relay should have a static IP address and two publicly accessible, open, TCP ports:</p>
@@ -2777,7 +2785,7 @@ sudo rabbitmqctl <span class="hljs-built_in">set</span>_permissions iridiumsbd <
 <li>Reattach to the screen::<pre><code>screen -dr
 </code></pre></li>
 </ul>
-<h2 id="ground-station-computer">Ground Station Computer</h2>
+<h2 id="ground-station-computer"><a name="ground-station-computer" class="plugin-anchor" href="#ground-station-computer"><i class="fa fa-link" aria-hidden="true"></i></a>Ground Station Computer</h2>
 <p>To setup the ground station:</p>
 <ol>
 <li>Install the required python modules:<pre><code>sudo pip install pika tornado future
@@ -2795,7 +2803,7 @@ sudo rabbitmqctl <span class="hljs-built_in">set</span>_permissions iridiumsbd <
 <p><img src="../../assets/satcom/linksettings.png" alt="High Latency Link Settings"></p>
 </li>
 </ol>
-<h3 id="verification">Verification</h3>
+<h3 id="verification"><a name="verification" class="plugin-anchor" href="#verification"><i class="fa fa-link" aria-hidden="true"></i></a>Verification</h3>
 <ol>
 <li><p>Open a terminal on the ground station computer and change to the location of the <em>SatComInfrastructure</em> repository. 
 Then start the <strong>udp2rabbit.py</strong> script:</p>
@@ -2806,7 +2814,7 @@ Then start the <strong>udp2rabbit.py</strong> script:</p>
 </ol>
 <p>If in the terminal where the <code>udp2rabbit.py</code> script is running within a couple of seconds the acknowledge for a message can be observed, then the RockBlock delivery group, the relay server and the udp2rabbit script are set up correctly:</p>
 <p><img src="../../assets/satcom/verification.png" alt="udp2rabbit message acknowledge"></p>
-<h2 id="running-the-system">Running the System</h2>
+<h2 id="running-the-system"><a name="running-the-system" class="plugin-anchor" href="#running-the-system"><i class="fa fa-link" aria-hidden="true"></i></a>Running the System</h2>
 <ol>
 <li><p>Start <em>QGroundControl</em>. 
 Manually connect the high latency link first, then the regular telemetry link:</p>
@@ -2835,7 +2843,7 @@ This link is kept as the priority link as long as this link is active or the use
 </ul>
 </li>
 </ol>
-<h2 id="troubleshooting">Troubleshooting</h2>
+<h2 id="troubleshooting"><a name="troubleshooting" class="plugin-anchor" href="#troubleshooting"><i class="fa fa-link" aria-hidden="true"></i></a>Troubleshooting</h2>
 <ul>
 <li><p>Satellite communication messages from the airplane are received but no commands can be transmitted (the vehicle does not react)</p>
 <ul>
@@ -2866,7 +2874,7 @@ Also make sure that the antenna is is not damaged.</li>
 </ul>
 </li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-04-03 03:10:15 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-04-03 22:06:02 </span> </footer>
                                 
                                 </section>
                             
@@ -2909,7 +2917,7 @@ Also make sure that the antenna is is not damaged.</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"RockBlock SatCom System","level":"1.8.3","depth":2,"next":{"title":"Obstacle Avoidance","level":"1.8.4","depth":2,"path":"computer_vision/obstacle_avoidance.md","ref":"computer_vision/obstacle_avoidance.md","articles":[]},"previous":{"title":"Precision Landing","level":"1.8.2","depth":2,"path":"advanced_features/precland.md","ref":"advanced_features/precland.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"1.8.2"},"title":"PX4 v1.8.2 User Guide","language":"en","gitbook":"*"},"file":{"path":"advanced_features/satcom_roadblock.md","mtime":"2019-04-03T03:10:15.756Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T03:11:53.620Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"RockBlock SatCom System","level":"1.8.3","depth":2,"next":{"title":"Obstacle Avoidance","level":"1.8.4","depth":2,"path":"computer_vision/obstacle_avoidance.md","ref":"computer_vision/obstacle_avoidance.md","articles":[]},"previous":{"title":"Precision Landing","level":"1.8.2","depth":2,"path":"advanced_features/precland.md","ref":"advanced_features/precland.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"stable (v1.8.2)"},{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8.2"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"1.8.2"},"title":"PX4 v1.8.2 User Guide","language":"en","gitbook":"*"},"file":{"path":"advanced_features/satcom_roadblock.md","mtime":"2019-04-03T22:06:02.192Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T22:07:20.697Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -2919,10 +2927,6 @@ Also make sure that the antenna is is not damaged.</li>
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
-    
-        
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
     
         
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
@@ -2937,7 +2941,15 @@ Also make sure that the antenna is is not damaged.</li>
         
     
         
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
         <script src="../../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-versions/plugin.js"></script>
         
     
         

@@ -25,11 +25,19 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-versions/plugin.css">
                 
             
                 
@@ -2673,19 +2681,19 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="esp8266-wifi-module">ESP8266 WiFi Module</h1>
+                                <h1 id="esp8266-wifi-module"><a name="esp8266-wifi-module" class="plugin-anchor" href="#esp8266-wifi-module"><i class="fa fa-link" aria-hidden="true"></i></a>ESP8266 WiFi Module</h1>
 <p>The ESP8266 is a low-cost and readily available Wi-Fi module with full TCP/IP stack and microcontroller capability.
 It can be used with any Pixhawk series controller </p>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> ESP8266 is the <em>defacto</em> default WiFi module for use with <a href="../flight_controller/pixracer.html">Pixracer</a> (and is usually bundled with it).</p>
 </blockquote>
-<h2 id="where-to-buy">Where to Buy</h2>
+<h2 id="where-to-buy"><a name="where-to-buy" class="plugin-anchor" href="#where-to-buy"><i class="fa fa-link" aria-hidden="true"></i></a>Where to Buy</h2>
 <p>The module is readily available. A few vendors are listed below.</p>
 <ul>
 <li><a href="https://www.sparkfun.com/products/13678" target="_blank">Sparkfun</a></li>
 <li><a href="https://us.gearbest.com/esp8266-wifi-module-_gear/" target="_blank">GearBeast</a></li>
 </ul>
-<h2 id="module-setup">Module Setup</h2>
+<h2 id="module-setup"><a name="module-setup" class="plugin-anchor" href="#module-setup"><i class="fa fa-link" aria-hidden="true"></i></a>Module Setup</h2>
 <p>The ESP8266 firmware has these <em>factory</em> settings:</p>
 <ul>
 <li>SSID: PixRacer</li>
@@ -2693,13 +2701,13 @@ It can be used with any Pixhawk series controller </p>
 <li>WiFi Channel: 11</li>
 <li>UART speed 921600</li>
 </ul>
-<h3 id="build-from-sources">Build From Sources</h3>
+<h3 id="build-from-sources"><a name="build-from-sources" class="plugin-anchor" href="#build-from-sources"><i class="fa fa-link" aria-hidden="true"></i></a>Build From Sources</h3>
 <p>The <a href="https://github.com/dogmaphobic/mavesp8266" target="_blank">firmware repository</a> contains instructions and all the tools needed for building and flashing the firmware.</p>
-<h3 id="pre-built-binaries">Pre Built Binaries</h3>
+<h3 id="pre-built-binaries"><a name="pre-built-binaries" class="plugin-anchor" href="#pre-built-binaries"><i class="fa fa-link" aria-hidden="true"></i></a>Pre Built Binaries</h3>
 <p><a href="http://www.grubba.com/mavesp8266/firmware-1.1.1.bin" target="_blank">MavLink ESP8266 Firmware V 1.1.1</a></p>
-<h3 id="updating-the-firmware">Updating the Firmware</h3>
+<h3 id="updating-the-firmware"><a name="updating-the-firmware" class="plugin-anchor" href="#updating-the-firmware"><i class="fa fa-link" aria-hidden="true"></i></a>Updating the Firmware</h3>
 <p>If you have firmware 1.0.4 or greater installed, you can do the update using the ESP&apos;s <em>Over The Air Update</em> feature. Just connect to its AP WiFi link and browse to: <a href="http://192.168.4.1/update" target="_blank">http://192.168.4.1/update</a>. You can then select the firmware file you downloaded above and upload it to the WiFi Module.</p>
-<h3 id="flashing-the-firmware">Flashing the Firmware</h3>
+<h3 id="flashing-the-firmware"><a name="flashing-the-firmware" class="plugin-anchor" href="#flashing-the-firmware"><i class="fa fa-link" aria-hidden="true"></i></a>Flashing the Firmware</h3>
 <p>Before flashing, make sure you boot the ESP8266 in <em>Flash Mode</em> as described below. If you cloned the <a href="https://github.com/dogmaphobic/mavesp8266" target="_blank">MavESP8266</a> repository, you can build and flash the firmware using the provided <a href="http://platformio.org" target="_blank">PlatformIO</a> tools and environment. If you downloaded the pre-built firmware above, download the <a href="https://github.com/espressif/esptool" target="_blank">esptool</a> utility and use the command line below:</p>
 <pre><code>esptool.py --baud 921600 --port /dev/your_serial_port write_flash 0x00000 firmware_xxxxx.bin
 </code></pre><p>Where:</p>
@@ -2707,25 +2715,25 @@ It can be used with any Pixhawk series controller </p>
 <li><strong>firmware_xxxxx.bin</strong> is the firmware you downloaded above</li>
 <li><strong>your_serial_port</strong> is the name of the serial port where the ESP8266 is connected to (<code>/dev/cu.usbmodem</code> for example)</li>
 </ul>
-<h3 id="wiring-for-flashing-the-firmware">Wiring for Flashing the Firmware</h3>
+<h3 id="wiring-for-flashing-the-firmware"><a name="wiring-for-flashing-the-firmware" class="plugin-anchor" href="#wiring-for-flashing-the-firmware"><i class="fa fa-link" aria-hidden="true"></i></a>Wiring for Flashing the Firmware</h3>
 <blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
 <p> ESP8266 must be powered with 3.3 volts only.</p>
 </blockquote>
 <p>There are various methods for setting the ESP8266 into <em>Flash Mode</em> but not all USB/UART adapters provide all the necessary pins for automatic mode switching. In order to boot the ESP8266 in <em>Flash Mode</em>, the GPIO-0 pin must be set low (GND) and the CH_PD pin must be set high (VCC). This is what my own setup looks like:</p>
 <p><img src="../../assets/hardware/telemetry/esp8266_flashing_rig.jpg" alt="esp8266 flashing rig"></p>
 <p>I built a cable where RX, TX, VCC, and GND are properly wired directly from the FTDI adapter to the ESP8266. From the ESP8266, I left two wires connected to GPIO-0 and CH_PD free so I can boot it either normally or in flash mode by connecting them to GND and VCC respectively.</p>
-<h3 id="esp8266-esp-01-pinout">ESP8266 (ESP-01) Pinout</h3>
+<h3 id="esp8266-esp-01-pinout"><a name="esp8266-esp-01-pinout" class="plugin-anchor" href="#esp8266-esp-01-pinout"><i class="fa fa-link" aria-hidden="true"></i></a>ESP8266 (ESP-01) Pinout</h3>
 <p><img src="../../assets/hardware/telemetry/esp8266_pinout.jpg" alt="esp8266 wifi module pinout"></p>
-<h3 id="flashing-diagram-using-a-ftdi-usbuart-adapter">Flashing diagram using a FTDI USB/UART adapter</h3>
+<h3 id="flashing-diagram-using-a-ftdi-usbuart-adapter"><a name="flashing-diagram-using-a-ftdi-usbuart-adapter" class="plugin-anchor" href="#flashing-diagram-using-a-ftdi-usbuart-adapter"><i class="fa fa-link" aria-hidden="true"></i></a>Flashing diagram using a FTDI USB/UART adapter</h3>
 <p><img src="../../assets/hardware/telemetry/esp8266_flashing_ftdi.jpg" alt="esp8266 flashing"></p>
-<h2 id="configuration">Configuration</h2>
+<h2 id="configuration"><a name="configuration" class="plugin-anchor" href="#configuration"><i class="fa fa-link" aria-hidden="true"></i></a>Configuration</h2>
 <p>Install your ESP8266 to your PixRacer.</p>
 <p>Flash PX4 master (a current copy or via QGroundControl) to your Pixracer.</p>
 <p>Using a computer or tablet with WiFi, find the open wireless network for your ESP8266. By default, it will be named <strong>PixRacer</strong>. Connect to this network. The default password is <strong>pixracer</strong>.</p>
-<h2 id="using-qgc">Using QGC</h2>
+<h2 id="using-qgc"><a name="using-qgc" class="plugin-anchor" href="#using-qgc"><i class="fa fa-link" aria-hidden="true"></i></a>Using QGC</h2>
 <p>QGC automatically starts its UDP link on boot. Once your computer/tablet is connected to the <strong>PixRacer</strong> WiFi Access Point, it will automatically make the connection.</p>
 <p>You should now see HUD movement on your QGC computer via wireless link and if using the latest QGC, you will be able to access the setup panel for the ESP8266 WiFi Bridge.</p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-04-03 03:10:15 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-04-03 22:06:02 </span> </footer>
                                 
                                 </section>
                             
@@ -2768,7 +2776,7 @@ It can be used with any Pixhawk series controller </p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ESP8266 WiFi Module","level":"1.10.3.2.1","depth":4,"next":{"title":"3DR Telemetry Wifi (Discontinued)","level":"1.10.3.2.2","depth":4,"path":"telemetry/3dr_telemetry_wifi.md","ref":"telemetry/3dr_telemetry_wifi.md","articles":[]},"previous":{"title":"Telemetry Wifi","level":"1.10.3.2","depth":3,"path":"telemetry/telemetry_wifi.md","ref":"telemetry/telemetry_wifi.md","articles":[{"title":"ESP8266 WiFi Module","level":"1.10.3.2.1","depth":4,"path":"telemetry/esp8266_wifi_module.md","ref":"telemetry/esp8266_wifi_module.md","articles":[]},{"title":"3DR Telemetry Wifi (Discontinued)","level":"1.10.3.2.2","depth":4,"path":"telemetry/3dr_telemetry_wifi.md","ref":"telemetry/3dr_telemetry_wifi.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"1.8.2"},"title":"PX4 v1.8.2 User Guide","language":"en","gitbook":"*"},"file":{"path":"telemetry/esp8266_wifi_module.md","mtime":"2019-04-03T03:10:15.772Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T03:11:53.620Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"ESP8266 WiFi Module","level":"1.10.3.2.1","depth":4,"next":{"title":"3DR Telemetry Wifi (Discontinued)","level":"1.10.3.2.2","depth":4,"path":"telemetry/3dr_telemetry_wifi.md","ref":"telemetry/3dr_telemetry_wifi.md","articles":[]},"previous":{"title":"Telemetry Wifi","level":"1.10.3.2","depth":3,"path":"telemetry/telemetry_wifi.md","ref":"telemetry/telemetry_wifi.md","articles":[{"title":"ESP8266 WiFi Module","level":"1.10.3.2.1","depth":4,"path":"telemetry/esp8266_wifi_module.md","ref":"telemetry/esp8266_wifi_module.md","articles":[]},{"title":"3DR Telemetry Wifi (Discontinued)","level":"1.10.3.2.2","depth":4,"path":"telemetry/3dr_telemetry_wifi.md","ref":"telemetry/3dr_telemetry_wifi.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"stable (v1.8.2)"},{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8.2"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"1.8.2"},"title":"PX4 v1.8.2 User Guide","language":"en","gitbook":"*"},"file":{"path":"telemetry/esp8266_wifi_module.md","mtime":"2019-04-03T22:06:02.204Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T22:07:20.697Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -2778,10 +2786,6 @@ It can be used with any Pixhawk series controller </p>
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
-    
-        
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
     
         
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
@@ -2796,7 +2800,15 @@ It can be used with any Pixhawk series controller </p>
         
     
         
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
         <script src="../../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-versions/plugin.js"></script>
         
     
         

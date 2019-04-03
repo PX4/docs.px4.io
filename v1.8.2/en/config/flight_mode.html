@@ -25,11 +25,19 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-versions/plugin.css">
                 
             
                 
@@ -2673,14 +2681,14 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="flight-mode-configuration">Flight Mode Configuration</h1>
+                                <h1 id="flight-mode-configuration"><a name="flight-mode-configuration" class="plugin-anchor" href="#flight-mode-configuration"><i class="fa fa-link" aria-hidden="true"></i></a>Flight Mode Configuration</h1>
 <p><a href="../flight_modes/">Flight Modes</a> provide different types of <em>autopilot-assisted flight</em>, and <em>fully autonomous flight</em> via missions or offboard (companion computer) control. Different flight modes allow new users to learn flying with a more forgiving platform than provided by basic RC control alone. They also enable automation of common tasks like taking off, landing and returning to the original launch position.</p>
 <p>PX4 allows you to select flight modes from a ground station (tablet or desktop) or from a radio control transmitter. If radio control and tablet are both connected, either system can change the mode and override the previous setting.</p>
 <p>This topic explains how to map flight modes to the switches on your radio control transmitter.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> You must already have <a href="radio.html">configured your radio</a> in order to set flight modes.</p>
 </blockquote>
-<h2 id="what-flight-modes-should-i-set">What Flight Modes Should I Set?</h2>
+<h2 id="what-flight-modes-should-i-set"><a name="what-flight-modes-should-i-set" class="plugin-anchor" href="#what-flight-modes-should-i-set"><i class="fa fa-link" aria-hidden="true"></i></a>What Flight Modes Should I Set?</h2>
 <p>You can set any (or none) of the flight modes <a href="../flight_modes/">described here</a>.</p>
 <p>New users should consider setting one or more of the following modes, which make the vehicle much easier to fly:</p>
 <ul>
@@ -2694,7 +2702,7 @@
 <li><a href="../flight_modes/mission.html">Mission</a> - This mode runs a pre-programmed mission sent by the ground control station.</li>
 <li><span id="kill_switch"></span> <a href="safety.html#kill_switch">Kill Switch</a> - Immediately stops all motor outputs (the vehicle will crash, which may in some circumstances be more desirable than allowing it to continue flying).</li>
 </ul>
-<h2 id="multi-channel-vs-single-channel-mode-selection">Multi Channel vs Single Channel Mode Selection</h2>
+<h2 id="multi-channel-vs-single-channel-mode-selection"><a name="multi-channel-vs-single-channel-mode-selection" class="plugin-anchor" href="#multi-channel-vs-single-channel-mode-selection"><i class="fa fa-link" aria-hidden="true"></i></a>Multi Channel vs Single Channel Mode Selection</h2>
 <p><em>PX4</em> (<em>QGroundControl</em>) supports two modes for mapping flight modes to transmitter switches/dials:</p>
 <ul>
 <li><strong>Single Channel Mode Selection:</strong> Assign up to 6 flight modes to switch positions encoded in a single channel.</li>
@@ -2703,7 +2711,7 @@
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> The recommended approach is use <em>Single Channel Mode Selection</em> because it easy to understand and configure. </p>
 </blockquote>
-<h2 id="single_channel">Single-Channel Flight Mode Selection </h2>
+<h2 id="single_channel"><a name="single_channel" class="plugin-anchor" href="#single_channel"><i class="fa fa-link" aria-hidden="true"></i></a>Single-Channel Flight Mode Selection </h2>
 <p>The single-channel selection mode allows you to specify a &quot;mode&quot; channel and select up to 6 flight modes that will be activated based on the PWM value of the channel. You can also separately specify channels for mapping a kill switch, return to launch mode, and offboard mode.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> In order to use this approach you will first need to configure your <em>transmitter</em> to encode the physical positions of your mode switch(es) into a single channel. We provide a video guide of how this is done for the popular <em>Taranis</em> transmitter <a href="#taranis_setup">below</a> (check your documentation if you use a different transmitter). </p>
@@ -2735,12 +2743,12 @@
 </li>
 </ol>
 <p>All values are automatically saved as they are changed.</p>
-<h3 id="taranis_setup">Single-Channel Setup Video Example (including Transmitter Setup) </h3>
+<h3 id="taranis_setup"><a name="taranis_setup" class="plugin-anchor" href="#taranis_setup"><i class="fa fa-link" aria-hidden="true"></i></a>Single-Channel Setup Video Example (including Transmitter Setup) </h3>
 <p>It is common to use the positions of a 2- and a 3-position switch on the transmitter to represent the 6 flight modes, and encode each combination of switches as a particular PWM value for the mode that will be sent on a single channel. </p>
 <p>The video below shows how this is done with the <em>FrSky Taranis</em> transmitter (a very popular and highly recommended RC transmitter). The process involves assigning a &quot;logical switch&quot; to each combination of positions of the two real switches. Each logical switch is then assigned to a different PWM value on the same channel.</p>
 <p>The video then shows how to use <em>QGroundControl</em> to specify the mode channel and map modes to each of the 6 &quot;slots&quot;.
 <div style="position: relative;padding-bottom: 56.25%;padding-top: 25px;height: 0;"><iframe frameborder="0" allowfullscreen style="border: none;position: absolute;top: 0;left: 0;width: 100%;height: 100%;" src="//www.youtube.com/embed/scqO7vbH2jo"></iframe></div></p>
-<h3 id="single-channel-setup-instructional-example">Single-Channel Setup Instructional Example</h3>
+<h3 id="single-channel-setup-instructional-example"><a name="single-channel-setup-instructional-example" class="plugin-anchor" href="#single-channel-setup-instructional-example"><i class="fa fa-link" aria-hidden="true"></i></a>Single-Channel Setup Instructional Example</h3>
 <p>This example shows how you can configure a transmitter and PX4 with:</p>
 <ul>
 <li>A 3-way switch to choose between flight modes using the single-channel mode setting approach (Manual, Altitude, Acro).</li>
@@ -2757,7 +2765,7 @@
 <p>The <a href="../advanced_config/parameter_reference.html#radio-switches">Radio switch</a> parameters map a particular function to a channel. Assuming you have already mapped a channel in your transmitter you can assign the channel by <a href="../advanced_config/parameters.html">setting the parameter</a>.</p>
 <p>For example, below we map channel 6 to the <a href="../advanced_config/parameter_reference.html#RC_MAP_ARM_SW">RC_MAP_ARM_SW</a> parameter in <em>QGroundControl</em></p>
 <p><img src="../../images/qgc/setup/single_channel_mode_selection_4.png" alt="QGC - Map ARM switch to channel"></p>
-<h2 id="multi_channel">Multi-Channel Flight Mode Selection </h2>
+<h2 id="multi_channel"><a name="multi_channel" class="plugin-anchor" href="#multi_channel"><i class="fa fa-link" aria-hidden="true"></i></a>Multi-Channel Flight Mode Selection </h2>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> We recommend you use <a href="#single_channel">Single Channel Flight Mode</a> selection because the Multi Channel selection user interface can be confusing. If you do choose to use this method, then the best approach is to start assigning channels and take note of information displayed by <em>QGroundControl</em> following your selection. </p>
 </blockquote>
@@ -2792,13 +2800,13 @@ There are a number of complications on the mode to channel assignments:</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> This flight mode selection mechanism is relatively complicated due to the way that PX4 works out which mode should be selected. You may be able to gain some insight from this <a href="https://dev.px4.io/en/concept/flight_modes.html#flight-mode-evaluation-diagram" target="_blank">flow chart</a> (PX4 Developer Guide).</p>
 </blockquote>
-<h2 id="further-information">Further Information</h2>
+<h2 id="further-information"><a name="further-information" class="plugin-anchor" href="#further-information"><i class="fa fa-link" aria-hidden="true"></i></a>Further Information</h2>
 <ul>
 <li><a href="../flight_modes/">Flight Modes Overview</a></li>
 <li><a href="https://docs.qgroundcontrol.com/en/SetupView/FlightModes.html#px4-pro-flight-mode-setup" target="_blank">QGroundControl &gt; Flight Modes</a></li>
 <li><a href="https://youtu.be/91VGmdSlbo4?t=6m53s" target="_blank">PX4 Setup Video - @6m53s</a> (Youtube)</li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-04-03 03:10:15 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-04-03 22:06:02 </span> </footer>
                                 
                                 </section>
                             
@@ -2841,7 +2849,7 @@ There are a number of complications on the mode to channel assignments:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Flight Modes","level":"1.4.9","depth":2,"next":{"title":"Battery","level":"1.4.10","depth":2,"path":"config/battery.md","ref":"config/battery.md","articles":[]},"previous":{"title":"Radio Setup","level":"1.4.8","depth":2,"path":"config/radio.md","ref":"config/radio.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"1.8.2"},"title":"PX4 v1.8.2 User Guide","language":"en","gitbook":"*"},"file":{"path":"config/flight_mode.md","mtime":"2019-04-03T03:10:15.760Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T03:11:53.620Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Flight Modes","level":"1.4.9","depth":2,"next":{"title":"Battery","level":"1.4.10","depth":2,"path":"config/battery.md","ref":"config/battery.md","articles":[]},"previous":{"title":"Radio Setup","level":"1.4.8","depth":2,"path":"config/radio.md","ref":"config/radio.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"stable (v1.8.2)"},{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8.2"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"1.8.2"},"title":"PX4 v1.8.2 User Guide","language":"en","gitbook":"*"},"file":{"path":"config/flight_mode.md","mtime":"2019-04-03T22:06:02.196Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T22:07:20.697Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -2851,10 +2859,6 @@ There are a number of complications on the mode to channel assignments:</p>
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
-    
-        
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
     
         
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
@@ -2869,7 +2873,15 @@ There are a number of complications on the mode to channel assignments:</p>
         
     
         
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
         <script src="../../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-versions/plugin.js"></script>
         
     
         

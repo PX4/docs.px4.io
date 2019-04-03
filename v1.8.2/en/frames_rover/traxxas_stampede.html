@@ -25,11 +25,19 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-versions/plugin.css">
                 
             
                 
@@ -2673,11 +2681,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="traxxas-stampede-vxl">Traxxas Stampede VXL</h1>
+                                <h1 id="traxxas-stampede-vxl"><a name="traxxas-stampede-vxl" class="plugin-anchor" href="#traxxas-stampede-vxl"><i class="fa fa-link" aria-hidden="true"></i></a>Traxxas Stampede VXL</h1>
 <p>This vehicle was chosen to understand how a Pixhawk could be used for wheeled platforms. We chose to use a Traxxas vehicle as they are very popular and it is a very strong brand in the RC community. The idea was to develop a platform that allows for easy control of wheeled UGVs with an autopilot.</p>
 <p><div style="position: relative;padding-bottom: 56.25%;padding-top: 25px;height: 0;"><iframe frameborder="0" allowfullscreen style="border: none;position: absolute;top: 0;left: 0;width: 100%;height: 100%;" src="//www.youtube.com/embed/N3HvSKS3nCw"></iframe></div></p>
 <p><img src="../../assets/airframes/rover/traxxas_stampede_vxl/stampede.jpg" alt="Traxxas Stampede VXL"></p>
-<h2 id="parts-list">Parts List</h2>
+<h2 id="parts-list"><a name="parts-list" class="plugin-anchor" href="#parts-list"><i class="fa fa-link" aria-hidden="true"></i></a>Parts List</h2>
 <ul>
 <li><a href="https://traxxas.com/products/models/electric/stampede-vxl-tsm" target="_blank">Traxxas Stampede</a> All of this is used except for the top plastic cover.</li>
 <li><a href="../flight_controller/pixhawk_mini.html">Pixhawk Mini (Discontinued)</a><ul>
@@ -2689,7 +2697,7 @@
 <li><a href="http://www.spektrumrc.com/Products/Default.aspx?ProdID=SPM4648" target="_blank">Spektrum Quad Race Serial Receiver w/Diversity</a></li>
 <li><a href="https://pixhawk.org/modules/px4flow" target="_blank">PX4Flow</a></li>
 </ul>
-<h2 id="assembly">Assembly</h2>
+<h2 id="assembly"><a name="assembly" class="plugin-anchor" href="#assembly"><i class="fa fa-link" aria-hidden="true"></i></a>Assembly</h2>
 <p>The assembly consists of a wooden frame on which all the autopilot parts were attached. 
 Tests showed that a better vibration insulation should be used, especially for the Pixhawk and the Flow module.</p>
 <p><img src="../../assets/airframes/rover/traxxas_stampede_vxl/stampede_chassis.jpg" alt="Stampede Chassis"></p>
@@ -2704,7 +2712,7 @@ The CAD files are provided <a href="https://github.com/PX4/px4_user_guide/raw/ma
 <blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
 <p> It is <strong>HIGHLY RECOMMENDED</strong> to set the ESC in training mode (see Traxxas Stampede Manual) so to reduce the power to 50%.</p>
 </blockquote>
-<h2 id="output-connections">Output Connections</h2>
+<h2 id="output-connections"><a name="output-connections" class="plugin-anchor" href="#output-connections"><i class="fa fa-link" aria-hidden="true"></i></a>Output Connections</h2>
 <table>
 <thead>
 <tr>
@@ -2726,7 +2734,7 @@ The CAD files are provided <a href="https://github.com/PX4/px4_user_guide/raw/ma
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> As documented in the <a href="../airframes/airframe_reference.html#rover_rover_traxxas_stampede_vxl_2wd">Airframe reference here</a>.</p>
 </blockquote>
-<h2 id="configuration">Configuration</h2>
+<h2 id="configuration"><a name="configuration" class="plugin-anchor" href="#configuration"><i class="fa fa-link" aria-hidden="true"></i></a>Configuration</h2>
 <p>Rovers are configured using <em>QGroundControl</em> in the same way as any other vehicle.</p>
 <p>The main rover-specific configuration is setting the correct frame:</p>
 <ol>
@@ -2736,14 +2744,14 @@ The CAD files are provided <a href="https://github.com/PX4/px4_user_guide/raw/ma
 <li>Choose <strong>Traxxas stampede vxl 2wd</strong> from the drop down list.</li>
 </ol>
 <p><img src="../../images/qgc/setup/airframe_px4_rover_traxxas_stampede_vxl_2wd.jpg" alt="Select Airframe"></p>
-<h2 id="usage">Usage</h2>
+<h2 id="usage"><a name="usage" class="plugin-anchor" href="#usage"><i class="fa fa-link" aria-hidden="true"></i></a>Usage</h2>
 <p>At the current time, PX4 only supports <a href="../flight_modes/mission.html">MISSION</a> and MANUAL modes when a RC remote is connected. To use the mission mode, first upload a new mission to the vehicle with QGC. Then, BEFORE ARMING, select <code>MISSION</code> and then arm. </p>
 <blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
 <p> It is <strong><em>VERY IMPORTANT</em></strong> to do a mission composed <strong><em>ONLY</em></strong> of normal waypoints (i.e. <strong><em>NO TAKEOFF WAYPOINTS</em></strong>) and it is crucial to <strong><em>SET THE WAYPOINT HEIGHT OF EVERY WAYPOINT TO 0</em></strong> for a correct execution. Failing to do so will cause the rover to continuously spin around a waypoint.</p>
 </blockquote>
 <p>A correct mission setup looks as follows:</p>
 <p><img src="../../assets/airframes/rover/traxxas_stampede_vxl/correct_mission.jpg" alt="mission"></p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-04-03 03:10:15 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-04-03 22:06:02 </span> </footer>
                                 
                                 </section>
                             
@@ -2786,7 +2794,7 @@ The CAD files are provided <a href="https://github.com/PX4/px4_user_guide/raw/ma
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Traxxas Stampede","level":"1.5.5.1","depth":3,"next":{"title":"Flying","level":"1.6","depth":1,"path":"flying/README.md","ref":"flying/README.md","articles":[{"title":"First Flight Guidelines","level":"1.6.1","depth":2,"path":"flying/first_flight_guidelines.md","ref":"flying/first_flight_guidelines.md","articles":[]},{"title":"LED Meanings","level":"1.6.2","depth":2,"path":"flying/led_meanings.md","ref":"flying/led_meanings.md","articles":[]},{"title":"Preflight Checks (Internal)","level":"1.6.3","depth":2,"path":"flying/pre_flight_checks.md","ref":"flying/pre_flight_checks.md","articles":[]},{"title":"Flying 101","level":"1.6.4","depth":2,"path":"flying/basic_flying.md","ref":"flying/basic_flying.md","articles":[{"title":"Landing (Fixed Wing)","level":"1.6.4.1","depth":3,"path":"flying/fixed_wing_landing.md","ref":"flying/fixed_wing_landing.md","articles":[]}]},{"title":"Missions","level":"1.6.5","depth":2,"path":"flying/missions.md","ref":"flying/missions.md","articles":[]},{"title":"Flight Modes","level":"1.6.6","depth":2,"path":"flight_modes/README.md","ref":"flight_modes/README.md","articles":[{"title":"Position (MC)","level":"1.6.6.1","depth":3,"path":"flight_modes/position_mc.md","ref":"flight_modes/position_mc.md","articles":[]},{"title":"Altitude (MC)","level":"1.6.6.2","depth":3,"path":"flight_modes/altitude_mc.md","ref":"flight_modes/altitude_mc.md","articles":[]},{"title":"Manual/Stabilized (MC)","level":"1.6.6.3","depth":3,"path":"flight_modes/manual_stabilized_mc.md","ref":"flight_modes/manual_stabilized_mc.md","articles":[]},{"title":"Rattitude (MC)","level":"1.6.6.4","depth":3,"path":"flight_modes/rattitude_mc.md","ref":"flight_modes/rattitude_mc.md","articles":[]},{"title":"Acro (MC)","level":"1.6.6.5","depth":3,"path":"flight_modes/acro_mc.md","ref":"flight_modes/acro_mc.md","articles":[]},{"title":"Position (FW)","level":"1.6.6.6","depth":3,"path":"flight_modes/position_fw.md","ref":"flight_modes/position_fw.md","articles":[]},{"title":"Altitude (FW)","level":"1.6.6.7","depth":3,"path":"flight_modes/altitude_fw.md","ref":"flight_modes/altitude_fw.md","articles":[]},{"title":"Stabilized (FW)","level":"1.6.6.8","depth":3,"path":"flight_modes/stabilized_fw.md","ref":"flight_modes/stabilized_fw.md","articles":[]},{"title":"Acro (FW)","level":"1.6.6.9","depth":3,"path":"flight_modes/acro_fw.md","ref":"flight_modes/acro_fw.md","articles":[]},{"title":"Manual (FW)","level":"1.6.6.10","depth":3,"path":"flight_modes/manual_fw.md","ref":"flight_modes/manual_fw.md","articles":[]},{"title":"Takeoff","level":"1.6.6.11","depth":3,"path":"flight_modes/takeoff.md","ref":"flight_modes/takeoff.md","articles":[]},{"title":"Land","level":"1.6.6.12","depth":3,"path":"flight_modes/land.md","ref":"flight_modes/land.md","articles":[]},{"title":"Return","level":"1.6.6.13","depth":3,"path":"flight_modes/return.md","ref":"flight_modes/return.md","articles":[]},{"title":"Hold","level":"1.6.6.14","depth":3,"path":"flight_modes/hold.md","ref":"flight_modes/hold.md","articles":[]},{"title":"Mission","level":"1.6.6.15","depth":3,"path":"flight_modes/mission.md","ref":"flight_modes/mission.md","articles":[]},{"title":"Follow Me","level":"1.6.6.16","depth":3,"path":"flight_modes/follow_me.md","ref":"flight_modes/follow_me.md","articles":[]},{"title":"Offboard","level":"1.6.6.17","depth":3,"path":"flight_modes/offboard.md","ref":"flight_modes/offboard.md","articles":[]}]}]},"previous":{"title":"Rovers","level":"1.5.5","depth":2,"path":"frames_rover/README.md","ref":"frames_rover/README.md","articles":[{"title":"Traxxas Stampede","level":"1.5.5.1","depth":3,"path":"frames_rover/traxxas_stampede.md","ref":"frames_rover/traxxas_stampede.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"1.8.2"},"title":"PX4 v1.8.2 User Guide","language":"en","gitbook":"*"},"file":{"path":"frames_rover/traxxas_stampede.md","mtime":"2019-04-03T03:10:15.768Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T03:11:53.620Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Traxxas Stampede","level":"1.5.5.1","depth":3,"next":{"title":"Flying","level":"1.6","depth":1,"path":"flying/README.md","ref":"flying/README.md","articles":[{"title":"First Flight Guidelines","level":"1.6.1","depth":2,"path":"flying/first_flight_guidelines.md","ref":"flying/first_flight_guidelines.md","articles":[]},{"title":"LED Meanings","level":"1.6.2","depth":2,"path":"flying/led_meanings.md","ref":"flying/led_meanings.md","articles":[]},{"title":"Preflight Checks (Internal)","level":"1.6.3","depth":2,"path":"flying/pre_flight_checks.md","ref":"flying/pre_flight_checks.md","articles":[]},{"title":"Flying 101","level":"1.6.4","depth":2,"path":"flying/basic_flying.md","ref":"flying/basic_flying.md","articles":[{"title":"Landing (Fixed Wing)","level":"1.6.4.1","depth":3,"path":"flying/fixed_wing_landing.md","ref":"flying/fixed_wing_landing.md","articles":[]}]},{"title":"Missions","level":"1.6.5","depth":2,"path":"flying/missions.md","ref":"flying/missions.md","articles":[]},{"title":"Flight Modes","level":"1.6.6","depth":2,"path":"flight_modes/README.md","ref":"flight_modes/README.md","articles":[{"title":"Position (MC)","level":"1.6.6.1","depth":3,"path":"flight_modes/position_mc.md","ref":"flight_modes/position_mc.md","articles":[]},{"title":"Altitude (MC)","level":"1.6.6.2","depth":3,"path":"flight_modes/altitude_mc.md","ref":"flight_modes/altitude_mc.md","articles":[]},{"title":"Manual/Stabilized (MC)","level":"1.6.6.3","depth":3,"path":"flight_modes/manual_stabilized_mc.md","ref":"flight_modes/manual_stabilized_mc.md","articles":[]},{"title":"Rattitude (MC)","level":"1.6.6.4","depth":3,"path":"flight_modes/rattitude_mc.md","ref":"flight_modes/rattitude_mc.md","articles":[]},{"title":"Acro (MC)","level":"1.6.6.5","depth":3,"path":"flight_modes/acro_mc.md","ref":"flight_modes/acro_mc.md","articles":[]},{"title":"Position (FW)","level":"1.6.6.6","depth":3,"path":"flight_modes/position_fw.md","ref":"flight_modes/position_fw.md","articles":[]},{"title":"Altitude (FW)","level":"1.6.6.7","depth":3,"path":"flight_modes/altitude_fw.md","ref":"flight_modes/altitude_fw.md","articles":[]},{"title":"Stabilized (FW)","level":"1.6.6.8","depth":3,"path":"flight_modes/stabilized_fw.md","ref":"flight_modes/stabilized_fw.md","articles":[]},{"title":"Acro (FW)","level":"1.6.6.9","depth":3,"path":"flight_modes/acro_fw.md","ref":"flight_modes/acro_fw.md","articles":[]},{"title":"Manual (FW)","level":"1.6.6.10","depth":3,"path":"flight_modes/manual_fw.md","ref":"flight_modes/manual_fw.md","articles":[]},{"title":"Takeoff","level":"1.6.6.11","depth":3,"path":"flight_modes/takeoff.md","ref":"flight_modes/takeoff.md","articles":[]},{"title":"Land","level":"1.6.6.12","depth":3,"path":"flight_modes/land.md","ref":"flight_modes/land.md","articles":[]},{"title":"Return","level":"1.6.6.13","depth":3,"path":"flight_modes/return.md","ref":"flight_modes/return.md","articles":[]},{"title":"Hold","level":"1.6.6.14","depth":3,"path":"flight_modes/hold.md","ref":"flight_modes/hold.md","articles":[]},{"title":"Mission","level":"1.6.6.15","depth":3,"path":"flight_modes/mission.md","ref":"flight_modes/mission.md","articles":[]},{"title":"Follow Me","level":"1.6.6.16","depth":3,"path":"flight_modes/follow_me.md","ref":"flight_modes/follow_me.md","articles":[]},{"title":"Offboard","level":"1.6.6.17","depth":3,"path":"flight_modes/offboard.md","ref":"flight_modes/offboard.md","articles":[]}]}]},"previous":{"title":"Rovers","level":"1.5.5","depth":2,"path":"frames_rover/README.md","ref":"frames_rover/README.md","articles":[{"title":"Traxxas Stampede","level":"1.5.5.1","depth":3,"path":"frames_rover/traxxas_stampede.md","ref":"frames_rover/traxxas_stampede.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"stable (v1.8.2)"},{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8.2"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"1.8.2"},"title":"PX4 v1.8.2 User Guide","language":"en","gitbook":"*"},"file":{"path":"frames_rover/traxxas_stampede.md","mtime":"2019-04-03T22:06:02.200Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T22:07:20.697Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -2796,10 +2804,6 @@ The CAD files are provided <a href="https://github.com/PX4/px4_user_guide/raw/ma
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
-    
-        
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
     
         
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
@@ -2814,7 +2818,15 @@ The CAD files are provided <a href="https://github.com/PX4/px4_user_guide/raw/ma
         
     
         
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
         <script src="../../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-versions/plugin.js"></script>
         
     
         

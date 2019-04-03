@@ -25,11 +25,19 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-versions/plugin.css">
                 
             
                 
@@ -2673,20 +2681,20 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="quadplane-vtol-configuration--tuning">QuadPlane VTOL Configuration &amp; Tuning</h1>
+                                <h1 id="quadplane-vtol-configuration--tuning"><a name="quadplane-vtol-configuration--tuning" class="plugin-anchor" href="#quadplane-vtol-configuration--tuning"><i class="fa fa-link" aria-hidden="true"></i></a>QuadPlane VTOL Configuration &amp; Tuning</h1>
 <p>This is the configuration documentation for a QuadPlane VTOL setup (Plane combined with Quadcopter). For airframe specific documentation and build instructions see <a href="../frames_vtol/">VTOL Framebuilds</a>.</p>
-<h2 id="firmware--basic-settings">Firmware &amp; Basic Settings</h2>
+<h2 id="firmware--basic-settings"><a name="firmware--basic-settings" class="plugin-anchor" href="#firmware--basic-settings"><i class="fa fa-link" aria-hidden="true"></i></a>Firmware &amp; Basic Settings</h2>
 <ol>
 <li>Run <em>QGroundControl</em></li>
 <li>Flash the master firmware</li>
 <li>In the Setup tab select the appropriate VTOL airframe, if your airframe is not listed select the Fun Cub VTOL airframe. </li>
 </ol>
-<h3 id="flight--transition-mode-switch">Flight / Transition Mode Switch</h3>
+<h3 id="flight--transition-mode-switch"><a name="flight--transition-mode-switch" class="plugin-anchor" href="#flight--transition-mode-switch"><i class="fa fa-link" aria-hidden="true"></i></a>Flight / Transition Mode Switch</h3>
 <p>In <em>QGroundControl</em> assign a switch of your remote to the transition function during
 the RC calibration step or by setting <a href="../advanced_config/parameter_reference.html#RC_MAP_TRANS_SW">RC_MAP_TRANS_SW</a>.</p>
 <p>This allows you to switch between the multicopter- and fixed wing mode. The switch in the off-position means
 that you are flying in multicopter mode.</p>
-<h3 id="multirotor--fixed-wing-tuning">Multirotor / Fixed Wing Tuning</h3>
+<h3 id="multirotor--fixed-wing-tuning"><a name="multirotor--fixed-wing-tuning" class="plugin-anchor" href="#multirotor--fixed-wing-tuning"><i class="fa fa-link" aria-hidden="true"></i></a>Multirotor / Fixed Wing Tuning</h3>
 <p>Before you attempt your first transition to fixed wing flight you need
 to make absolutely sure that your VTOL is well tuned in multirotor mode.
 One reason is this is the mode you will return to if something goes
@@ -2699,21 +2707,21 @@ goes wrong you need to be ready (and able) to switch back to multirotor
 mode.</p>
 <p>Follow the the respective tuning guides on how to tune multirotors and
 fixed wings.</p>
-<h3 id="transition-tuning">Transition Tuning</h3>
+<h3 id="transition-tuning"><a name="transition-tuning" class="plugin-anchor" href="#transition-tuning"><i class="fa fa-link" aria-hidden="true"></i></a>Transition Tuning</h3>
 <p>While it might seem that you are dealing with a vehicle that can fly in
 two modes (multirotor for vertical takeoffs and landings and fixed wing
 for forwards flight) there is an additional state you also need to tune:
 transition. Getting your transition tuning right is important for
 obtaining a safe entry into fixed wing mode, for example, if your
 airspeed is too slow when it transitions it might stall.</p>
-<h4 id="transition-throttle">Transition Throttle</h4>
+<h4 id="transition-throttle"><a name="transition-throttle" class="plugin-anchor" href="#transition-throttle"><i class="fa fa-link" aria-hidden="true"></i></a>Transition Throttle</h4>
 <p>Parameter: <a href="../advanced_config/parameter_reference.html#VT_TRANS_THR">VT_TRANS_THR</a></p>
 <p>Transition throttle defines the maximum throttle to use during the
 transition. Don&#x2019;t set this too low otherwise you will never reach the
 transition airspeed. If you set it too high it will just use more power
 than you may want. For your first transition you are better off higher
 than lower here.</p>
-<h4 id="forward-transition-duration">Forward Transition Duration</h4>
+<h4 id="forward-transition-duration"><a name="forward-transition-duration" class="plugin-anchor" href="#forward-transition-duration"><i class="fa fa-link" aria-hidden="true"></i></a>Forward Transition Duration</h4>
 <p>Parameter: <a href="../advanced_config/parameter_reference.html#VT_F_TRANS_DUR">VT_F_TRANS_DUR</a></p>
 <p>A forward transition refers to the transition from multirotor to fixed
 wing mode. This is the amount of time in seconds that should be spent
@@ -2724,7 +2732,7 @@ increase this to a larger value, such as 3.</p>
 <p>Note that once the ramp up period ends throttle will be at its target
 setting and will remain there until (hopefully) the transition speed is
 reached.</p>
-<h4 id="blending-airspeed">Blending Airspeed</h4>
+<h4 id="blending-airspeed"><a name="blending-airspeed" class="plugin-anchor" href="#blending-airspeed"><i class="fa fa-link" aria-hidden="true"></i></a>Blending Airspeed</h4>
 <p>Parameter: <a href="../advanced_config/parameter_reference.html#VT_ARSP_BLEND">VT_ARSP_BLEND</a></p>
 <p>By default, as the airspeed gets close to the transition speed, multirotor
 attitude control will be reduced and fixed wing control will start
@@ -2732,21 +2740,21 @@ increasing continuously until the transition occurs.</p>
 <p>Disable blending by setting this parameter to 0 which will keep full
 multirotor control and zero fixed wing control until the transition
 occurs.</p>
-<h4 id="transition-airspeed">Transition Airspeed</h4>
+<h4 id="transition-airspeed"><a name="transition-airspeed" class="plugin-anchor" href="#transition-airspeed"><i class="fa fa-link" aria-hidden="true"></i></a>Transition Airspeed</h4>
 <p>Parameter: <a href="../advanced_config/parameter_reference.html#VT_ARSP_TRANS">VT_ARSP_TRANS</a></p>
 <p>This is the airspeed which, when reached, will trigger the transition
 out of multirotor mode into fixed wing mode. It is critical that you
 have properly calibrated your airspeed sensor. It is also important that
 you pick an airspeed that is comfortably above your airframes stall
 speed (check FW_AIRSPD_MIN) as this is currently not checked.</p>
-<h4 id="fixed-wing-permanent-stabilisation">Fixed Wing Permanent Stabilisation</h4>
+<h4 id="fixed-wing-permanent-stabilisation"><a name="fixed-wing-permanent-stabilisation" class="plugin-anchor" href="#fixed-wing-permanent-stabilisation"><i class="fa fa-link" aria-hidden="true"></i></a>Fixed Wing Permanent Stabilisation</h4>
 <p>Parameter: <a href="../advanced_config/parameter_reference.html#VT_FW_PERM_STAB">VT_FW_PERM_STAB</a></p>
 <p>Activating permanent stabilisation will result in fixed wing flight
 being stabilised by the autopilot at all times. As soon as a transition
 to fixed wing occurs it will be stabilised.</p>
 <p>Note that if you have not yet tuned your fixed wing mode you should
 leave this off until you are sure it behaves well in this mode.</p>
-<h3 id="transitioning_tips .sectionedit9">Transitioning Tips </h3>
+<h3 id="transitioning_tips .sectionedit9"><a name="transitioning_tips .sectionedit9" class="plugin-anchor" href="#transitioning_tips%20.sectionedit9"><i class="fa fa-link" aria-hidden="true"></i></a>Transitioning Tips </h3>
 <p>As already mentioned make sure you have a well tuned multirotor mode. If
 during a transition something goes wrong you will switch back to this
 mode and it should be quite smooth.</p>
@@ -2756,7 +2764,7 @@ and something goes wrong.</p>
 <p>Battery levels: leave enough margin for a multirotor transition for
 landing at the end of your flight. Don&#x2019;t run your batteries too low as
 you will need more power in multirotor mode to land. Be conservative.</p>
-<h4 id="transition-getting-ready">Transition: Getting Ready</h4>
+<h4 id="transition-getting-ready"><a name="transition-getting-ready" class="plugin-anchor" href="#transition-getting-ready"><i class="fa fa-link" aria-hidden="true"></i></a>Transition: Getting Ready</h4>
 <p>Make sure you are at least 20 meters above ground and have enough room
 to complete a transition. It could be that your VTOL will lose height
 when it switches to fixed wing mode, especially if the airspeed isn&#x2019;t
@@ -2764,7 +2772,7 @@ high enough.</p>
 <p>Transition into the wind, whenever possible otherwise it will travel
 further from you before it transitions.</p>
 <p>Make sure the VTOL is in a stable hover before you start the transition.</p>
-<h4 id="transition-multirotor-to-fixed-wing-front-transition">Transition: Multirotor to Fixed Wing (Front-transition)</h4>
+<h4 id="transition-multirotor-to-fixed-wing-front-transition"><a name="transition-multirotor-to-fixed-wing-front-transition" class="plugin-anchor" href="#transition-multirotor-to-fixed-wing-front-transition"><i class="fa fa-link" aria-hidden="true"></i></a>Transition: Multirotor to Fixed Wing (Front-transition)</h4>
 <p>Start your transition. It should transition within 50 &#x2013; 100 meters. If
 it doesn&#x2019;t or it isn&#x2019;t flying in a stable fashion abort the transition
 (see below) and land or hover back to the start position and land. Try
@@ -2778,7 +2786,7 @@ loss which may include throttling up quickly.</p>
   pusher/puller throttle will remain at the <code>VT_TRANS_THR</code> level until you
   move the throttle stick, assuming you are in manual mode.</p>
 </blockquote>
-<h4 id="transition-fixed-wing-to-multirotor-back-transition">Transition: Fixed Wing to Multirotor (Back-transition)</h4>
+<h4 id="transition-fixed-wing-to-multirotor-back-transition"><a name="transition-fixed-wing-to-multirotor-back-transition" class="plugin-anchor" href="#transition-fixed-wing-to-multirotor-back-transition"><i class="fa fa-link" aria-hidden="true"></i></a>Transition: Fixed Wing to Multirotor (Back-transition)</h4>
 <p>When you transition back to multirotor mode bring your aircraft in on a
 straight level approach and reduce its speed, flip the transition switch
 and it will start the multirotor motors and stop the pusher/puller prop
@@ -2788,7 +2796,7 @@ command the amount of thrust your multirotor has at the moment of the
 switch. Because the wing will still be flying you&#x2019;ll find you have
 plenty of time to adjust your throttle to achieve/hold a hover.</p>
 <p>For advanced tuning of the back-transition please refer to the <a href="vtol_back_transition_tuning.html">Back-transition Tuning Guide</a></p>
-<h4 id="aborting_a_transition">Aborting a Transition </h4>
+<h4 id="aborting_a_transition"><a name="aborting_a_transition" class="plugin-anchor" href="#aborting_a_transition"><i class="fa fa-link" aria-hidden="true"></i></a>Aborting a Transition </h4>
 <p>It&#x2019;s important to know what to expect when you revert a transition
 command <em>during</em> a transition.</p>
 <p>When transitioning from <strong>multirotor to fixed wing</strong> (transition switch
@@ -2800,10 +2808,10 @@ VTOL the switch is immediate so there isn&#x2019;t really a backing out option
 here, unlike for tilt rotor VTOLs. If you want it to go back into fixed
 wing you will need to go through the full transition. If it&#x2019;s still
 travelling fast this should happen quickly.</p>
-<h3 id="support">Support</h3>
+<h3 id="support"><a name="support" class="plugin-anchor" href="#support"><i class="fa fa-link" aria-hidden="true"></i></a>Support</h3>
 <p>If you have any questions regarding your VTOL conversion or
 configuration please visit <a href="http://discuss.px4.io/c/vtol" target="_blank">http://discuss.px4.io/c/vtol</a>.</p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-04-03 03:10:15 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-04-03 22:06:02 </span> </footer>
                                 
                                 </section>
                             
@@ -2846,7 +2854,7 @@ configuration please visit <a href="http://discuss.px4.io/c/vtol" target="_blank
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"QuadPlane Configuration","level":"1.9.4.1","depth":3,"next":{"title":"Back-transition Tuning","level":"1.9.4.2","depth":3,"path":"config_vtol/vtol_back_transition_tuning.md","ref":"config_vtol/vtol_back_transition_tuning.md","articles":[]},"previous":{"title":"VTOL Config/Tuning","level":"1.9.4","depth":2,"path":"config_vtol/README.md","ref":"config_vtol/README.md","articles":[{"title":"QuadPlane Configuration","level":"1.9.4.1","depth":3,"path":"config_vtol/vtol_quad_configuration.md","ref":"config_vtol/vtol_quad_configuration.md","articles":[]},{"title":"Back-transition Tuning","level":"1.9.4.2","depth":3,"path":"config_vtol/vtol_back_transition_tuning.md","ref":"config_vtol/vtol_back_transition_tuning.md","articles":[]},{"title":"VTOL w/o Airspeed Sensor","level":"1.9.4.3","depth":3,"path":"config_vtol/vtol_without_airspeed_sensor.md","ref":"config_vtol/vtol_without_airspeed_sensor.md","articles":[]},{"title":"VTOL Weather Vane","level":"1.9.4.4","depth":3,"path":"config_vtol/vtol_weathervane.md","ref":"config_vtol/vtol_weathervane.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"1.8.2"},"title":"PX4 v1.8.2 User Guide","language":"en","gitbook":"*"},"file":{"path":"config_vtol/vtol_quad_configuration.md","mtime":"2019-04-03T03:10:15.760Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T03:11:53.620Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"QuadPlane Configuration","level":"1.9.4.1","depth":3,"next":{"title":"Back-transition Tuning","level":"1.9.4.2","depth":3,"path":"config_vtol/vtol_back_transition_tuning.md","ref":"config_vtol/vtol_back_transition_tuning.md","articles":[]},"previous":{"title":"VTOL Config/Tuning","level":"1.9.4","depth":2,"path":"config_vtol/README.md","ref":"config_vtol/README.md","articles":[{"title":"QuadPlane Configuration","level":"1.9.4.1","depth":3,"path":"config_vtol/vtol_quad_configuration.md","ref":"config_vtol/vtol_quad_configuration.md","articles":[]},{"title":"Back-transition Tuning","level":"1.9.4.2","depth":3,"path":"config_vtol/vtol_back_transition_tuning.md","ref":"config_vtol/vtol_back_transition_tuning.md","articles":[]},{"title":"VTOL w/o Airspeed Sensor","level":"1.9.4.3","depth":3,"path":"config_vtol/vtol_without_airspeed_sensor.md","ref":"config_vtol/vtol_without_airspeed_sensor.md","articles":[]},{"title":"VTOL Weather Vane","level":"1.9.4.4","depth":3,"path":"config_vtol/vtol_weathervane.md","ref":"config_vtol/vtol_weathervane.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"stable (v1.8.2)"},{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8.2"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"1.8.2"},"title":"PX4 v1.8.2 User Guide","language":"en","gitbook":"*"},"file":{"path":"config_vtol/vtol_quad_configuration.md","mtime":"2019-04-03T22:06:02.196Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T22:07:20.697Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -2856,10 +2864,6 @@ configuration please visit <a href="http://discuss.px4.io/c/vtol" target="_blank
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
-    
-        
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
     
         
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
@@ -2874,7 +2878,15 @@ configuration please visit <a href="http://discuss.px4.io/c/vtol" target="_blank
         
     
         
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
         <script src="../../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-versions/plugin.js"></script>
         
     
         

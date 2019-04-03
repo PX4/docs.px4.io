@@ -25,11 +25,19 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-versions/plugin.css">
                 
             
                 
@@ -2673,11 +2681,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="pixhawk-4">Pixhawk 4</h1>
+                                <h1 id="pixhawk-4"><a name="pixhawk-4" class="plugin-anchor" href="#pixhawk-4"><i class="fa fa-link" aria-hidden="true"></i></a>Pixhawk 4</h1>
 <p><em>Pixhawk 4</em><sup>&#xAE;</sup> is an advanced autopilot designed and made in collaboration with Holybro<sup>&#xAE;</sup> and the PX4 team. It is optimized to run PX4 version 1.7, suitable for academic and commercial developers.</p>
 <p>It is based on the <a href="https://pixhawk.org/" target="_blank">Pixhawk-project</a> <strong>FMUv5</strong> open hardware design and runs PX4 on the <a href="http://nuttx.org" target="_blank">NuttX</a> OS.</p>
 <p><img src="../../assets/flight_controller/pixhawk4/pixhawk4_hero_upright.jpg" width="200px" title="Pixhawk4 Upright Image"> <img src="../../assets/flight_controller/pixhawk4/pixhawk4_logo_view.jpg" width="420px" title="Pixhawk4 Image"></p>
-<h2 id="quick-summary">Quick Summary</h2>
+<h2 id="quick-summary"><a name="quick-summary" class="plugin-anchor" href="#quick-summary"><i class="fa fa-link" aria-hidden="true"></i></a>Quick Summary</h2>
 <ul>
 <li>Main FMU Processor: STM32F765<ul>
 <li>32 Bit Arm&#xAE; Cortex&#xAE;-M7, 216MHz, 2MB memory, 512KB RAM</li>
@@ -2725,18 +2733,18 @@
 </li>
 </ul>
 <p>Additional information can be found in the <a href="https://github.com/PX4/px4_user_guide/raw/master/assets/flight_controller/pixhawk4/pixhawk4_technical_data_sheet.pdf" target="_blank">Pixhawk 4 Technical Data Sheet</a>.</p>
-<h2 id="purchase">Purchase</h2>
+<h2 id="purchase"><a name="purchase" class="plugin-anchor" href="#purchase"><i class="fa fa-link" aria-hidden="true"></i></a>Purchase</h2>
 <p>Order from <a href="https://shop.holybro.com/pixhawk-4beta-launch_p1089.html" target="_blank">Holybro</a>.</p>
-<h2 id="connectors">Connectors</h2>
+<h2 id="connectors"><a name="connectors" class="plugin-anchor" href="#connectors"><i class="fa fa-link" aria-hidden="true"></i></a>Connectors</h2>
 <p><img src="../../assets/flight_controller/pixhawk4/pixhawk4-connectors.jpg" alt="Pixhawk 4 connectors"></p>
 <blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
 <p> The <strong>DSM/SBUS RC</strong> and <strong>PPM RC</strong> ports are for RC receivers only. These are powered! NEVER connect any servos, power supplies or batteries (or to any connected receiver).</p>
 </blockquote>
-<h2 id="pinouts">Pinouts</h2>
+<h2 id="pinouts"><a name="pinouts" class="plugin-anchor" href="#pinouts"><i class="fa fa-link" aria-hidden="true"></i></a>Pinouts</h2>
 <p>Download <em>Pixhawk 4</em> pinouts from <a href="http://www.holybro.com/manual/Pixhawk4-Pinouts.pdf" target="_blank">here</a>.</p>
-<h2 id="dimensions">Dimensions</h2>
+<h2 id="dimensions"><a name="dimensions" class="plugin-anchor" href="#dimensions"><i class="fa fa-link" aria-hidden="true"></i></a>Dimensions</h2>
 <p><img src="../../assets/flight_controller/pixhawk4/pixhawk4_dimensions.jpg" alt="Pixhawk 4 Dimensions"></p>
-<h2 id="voltage-ratings">Voltage Ratings</h2>
+<h2 id="voltage-ratings"><a name="voltage-ratings" class="plugin-anchor" href="#voltage-ratings"><i class="fa fa-link" aria-hidden="true"></i></a>Voltage Ratings</h2>
 <p><em>Pixhawk 4</em> can be triple-redundant on the power supply if three power sources are supplied. The three power rails are: <strong>POWER1</strong>, <strong>POWER2</strong> and <strong>USB</strong>.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> The output power rails <strong>FMU PWM OUT</strong> and <strong>I/O PWM OUT</strong> (0V to 36V) do not power the flight controller board (and are not powered by it). You must supply power to one of <strong>POWER1</strong>, <strong>POWER2</strong> or <strong>USB</strong> or the board will be unpowered.</p>
@@ -2754,30 +2762,30 @@
 <li><strong>USB</strong> input (operational range 4.1V to 5.7V, 0V to 6V undamaged)</li>
 <li>Servo input: VDD_SERVO pin of <strong>FMU PWM OUT</strong> and <strong>I/O PWM OUT</strong> (0V to 42V undamaged)</li>
 </ol>
-<h2 id="assemblysetup">Assembly/Setup</h2>
+<h2 id="assemblysetup"><a name="assemblysetup" class="plugin-anchor" href="#assemblysetup"><i class="fa fa-link" aria-hidden="true"></i></a>Assembly/Setup</h2>
 <p>The <a href="../assembly/quick_start_pixhawk4.html">Pixhawk 4 Wiring Quick Start</a> provides instructions on how to assemble required/important peripherals including GPS, Power Management Board etc.</p>
-<h2 id="building-firmware">Building Firmware</h2>
+<h2 id="building-firmware"><a name="building-firmware" class="plugin-anchor" href="#building-firmware"><i class="fa fa-link" aria-hidden="true"></i></a>Building Firmware</h2>
 <p><code>make px4fmu-v5_default upload</code></p>
-<h2 id="debug-port">Debug Port</h2>
+<h2 id="debug-port"><a name="debug-port" class="plugin-anchor" href="#debug-port"><i class="fa fa-link" aria-hidden="true"></i></a>Debug Port</h2>
 <p>The system&apos;s serial console and SWD interface runs on the <strong>FMU Debug</strong> port, while the I/O console and SWD interface can be accessed via <strong>I/O Debug</strong> port.
 In order to access these ports, the user must remove the <em>Pixhawk 4</em> casing.</p>
 <p>Both ports have standard serial pinout and can be connected to a standard FTDI cable (3.3V, but it&apos;s 5V tolerant) or a <a href="https://kb.zubax.com/display/MAINKB/Dronecode+Probe+documentation" target="_blank">Dronecode probe</a>.
 The pinout uses the standard Dronecode debug connector pinout.
 Please refer to the <a href="https://dev.px4.io/en/debug/system_console.html" target="_blank">wiring</a> page for details of how to wire up this port.</p>
-<h2 id="peripherals">Peripherals</h2>
+<h2 id="peripherals"><a name="peripherals" class="plugin-anchor" href="#peripherals"><i class="fa fa-link" aria-hidden="true"></i></a>Peripherals</h2>
 <ul>
 <li><a href="https://drotek.com/shop/en/home/848-sdp3x-airspeed-sensor-kit-sdp33.html" target="_blank">Digital Airspeed Sensor</a></li>
 <li><a href="../telemetry/">Telemetry Radio Modules</a></li>
 <li><a href="../sensor/rangefinders.html">Rangefinders/Distance sensors</a></li>
 </ul>
-<h2 id="supported-platforms--airframes">Supported Platforms / Airframes</h2>
+<h2 id="supported-platforms--airframes"><a name="supported-platforms--airframes" class="plugin-anchor" href="#supported-platforms--airframes"><i class="fa fa-link" aria-hidden="true"></i></a>Supported Platforms / Airframes</h2>
 <p>Any multicopter / airplane / rover or boat that can be controlled with normal RC servos or Futaba S-Bus servos. The complete set of supported configurations can be seen in the <a href="../airframes/airframe_reference.html">Airframes Reference</a>.</p>
-<h2 id="further-info">Further info</h2>
+<h2 id="further-info"><a name="further-info" class="plugin-anchor" href="#further-info"><i class="fa fa-link" aria-hidden="true"></i></a>Further info</h2>
 <ul>
 <li><a href="https://github.com/PX4/px4_user_guide/raw/master/assets/flight_controller/pixhawk4/pixhawk4_technical_data_sheet.pdf" target="_blank">Pixhawk 4 Technical Data Sheet</a></li>
 <li><a href="https://docs.google.com/spreadsheets/d/1-n0__BYDedQrc_2NHqBenG1DNepAgnHpSGglke-QQwY/edit#gid=912976165" target="_blank">FMUv5 reference design pinout</a>.</li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-04-03 03:10:15 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-04-03 22:06:02 </span> </footer>
                                 
                                 </section>
                             
@@ -2820,7 +2828,7 @@ Please refer to the <a href="https://dev.px4.io/en/debug/system_console.html" ta
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Pixhawk 4","level":"1.11.1.11","depth":3,"next":{"title":"Pixhawk 4 Mini","level":"1.11.1.12","depth":3,"path":"flight_controller/pixhawk4_mini.md","ref":"flight_controller/pixhawk4_mini.md","articles":[]},"previous":{"title":"Pixhack v3","level":"1.11.1.10","depth":3,"path":"flight_controller/pixhack_v3.md","ref":"flight_controller/pixhack_v3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"1.8.2"},"title":"PX4 v1.8.2 User Guide","language":"en","gitbook":"*"},"file":{"path":"flight_controller/pixhawk4.md","mtime":"2019-04-03T03:10:15.764Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T03:11:53.620Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Pixhawk 4","level":"1.11.1.11","depth":3,"next":{"title":"Pixhawk 4 Mini","level":"1.11.1.12","depth":3,"path":"flight_controller/pixhawk4_mini.md","ref":"flight_controller/pixhawk4_mini.md","articles":[]},"previous":{"title":"Pixhack v3","level":"1.11.1.10","depth":3,"path":"flight_controller/pixhack_v3.md","ref":"flight_controller/pixhack_v3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"stable (v1.8.2)"},{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8.2"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"1.8.2"},"title":"PX4 v1.8.2 User Guide","language":"en","gitbook":"*"},"file":{"path":"flight_controller/pixhawk4.md","mtime":"2019-04-03T22:06:02.196Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T22:07:20.697Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -2830,10 +2838,6 @@ Please refer to the <a href="https://dev.px4.io/en/debug/system_console.html" ta
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
-    
-        
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
     
         
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
@@ -2848,7 +2852,15 @@ Please refer to the <a href="https://dev.px4.io/en/debug/system_console.html" ta
         
     
         
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
         <script src="../../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-versions/plugin.js"></script>
         
     
         

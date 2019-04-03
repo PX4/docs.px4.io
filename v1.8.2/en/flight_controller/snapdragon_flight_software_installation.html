@@ -25,11 +25,19 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-versions/plugin.css">
                 
             
                 
@@ -2673,7 +2681,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="installing-software-on-the-snapdragon">Installing Software on the Snapdragon</h1>
+                                <h1 id="installing-software-on-the-snapdragon"><a name="installing-software-on-the-snapdragon" class="plugin-anchor" href="#installing-software-on-the-snapdragon"><i class="fa fa-link" aria-hidden="true"></i></a>Installing Software on the Snapdragon</h1>
 <p>To get the platform running with the complete VIO system running, multiple pieces are required. 
 The following is an overview of the different versions used. Detailed installation instructions are provided below.</p>
 <table>
@@ -2727,7 +2735,7 @@ The following is an overview of the different versions used. Detailed installati
 </tr>
 </tbody>
 </table>
-<h2 id="prevent-bricking">Prevent Bricking</h2>
+<h2 id="prevent-bricking"><a name="prevent-bricking" class="plugin-anchor" href="#prevent-bricking"><i class="fa fa-link" aria-hidden="true"></i></a>Prevent Bricking</h2>
 <p>To prevent the system from hanging on boot because of anything wrong with the ADSP firmware, do the following changes before going any further.
 Plug your snapdragon into your computer via USB and open the android debug shell:</p>
 <pre><code>adb shell
@@ -2748,7 +2756,7 @@ Plug your snapdragon into your computer via USB and open the android debug shell
     #while [ &quot;`cat /sys/kernel/debug/msm_subsys/adsp`&quot; != &quot;2&quot; ]; do
     #  sleep 0.1
     #done
-</code></pre><h2 id="update-linux-image">Update Linux Image</h2>
+</code></pre><h2 id="update-linux-image"><a name="update-linux-image" class="plugin-anchor" href="#update-linux-image"><i class="fa fa-link" aria-hidden="true"></i></a>Update Linux Image</h2>
 <blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
 <p> Updating the Linux image on your Snapdragon will erase everything.</p>
 </blockquote>
@@ -2756,13 +2764,13 @@ Plug your snapdragon into your computer via USB and open the android debug shell
 In the unzipped folder is a script that has to be used to update the Linux image. 
 Power your Snapdragon Flight, connect it using a micro USB cable and run:</p>
 <pre><code>sudo ./jflash.sh
-</code></pre><h2 id="update-dsp-processor-firmware">Update DSP Processor Firmware</h2>
+</code></pre><h2 id="update-dsp-processor-firmware"><a name="update-dsp-processor-firmware" class="plugin-anchor" href="#update-dsp-processor-firmware"><i class="fa fa-link" aria-hidden="true"></i></a>Update DSP Processor Firmware</h2>
 <p>Get the latest <strong>Flight_x.x_qcom_flight_controller_hexagon_sdk_add_on.zip</strong> from <a href="https://support.intrinsyc.com/projects/snapdragon-flight/files" target="_blank">here</a> and unzip it. </p>
 <p>In the unzipped folder, run:</p>
 <pre><code>./installfcaddon.sh
 adb shell
 sudo reboot
-</code></pre><h2 id="clone-px4-firmware--build">Clone PX4 Firmware &amp; Build</h2>
+</code></pre><h2 id="clone-px4-firmware--build"><a name="clone-px4-firmware--build" class="plugin-anchor" href="#clone-px4-firmware--build"><i class="fa fa-link" aria-hidden="true"></i></a>Clone PX4 Firmware &amp; Build</h2>
 <p>On your PC, clone the PX4 firmware repo and build it as described below.</p>
 <p>If you haven&apos;t yet cloned the Firmware repo:</p>
 <pre><code>cd ~
@@ -2777,7 +2785,7 @@ make clean
 make eagle_default
 make eagle_default upload
 adb push ROMFS/px4fmu_common/mixers/quad_x.main.mix  /usr/share/data/adsp
-</code></pre><h2 id="install-ros">Install ROS</h2>
+</code></pre><h2 id="install-ros"><a name="install-ros" class="plugin-anchor" href="#install-ros"><i class="fa fa-link" aria-hidden="true"></i></a>Install ROS</h2>
 <p>Set up your Snapdragon Flight to connect to your local Wi-Fi network so you can easily clone git repositories directly onto it.
 To do so, open an <em>adb</em> shell and edit the file <code>/etc/wpa_supplicant/wpa_supplicant.conf</code> and add your local network settings:</p>
 <pre><code>adb shell
@@ -2807,7 +2815,7 @@ sudo apt-get -f -o Dpkg::Options::=&quot;--force-overwrite&quot; install
 <pre><code>sudo chown -R linaro /home/linaro
 echo &quot;source /opt/ros/indigo/setup.bash&quot; &gt;&gt; /home/linaro/.bashrc
 source .bashrc
-</code></pre><h2 id="install-some-extra-packages">Install some Extra Packages</h2>
+</code></pre><h2 id="install-some-extra-packages"><a name="install-some-extra-packages" class="plugin-anchor" href="#install-some-extra-packages"><i class="fa fa-link" aria-hidden="true"></i></a>Install some Extra Packages</h2>
 <p>Before you can use ROS, you will need to initialize rosdep. 
 Rosdep enables you to easily install system dependencies for source you want to compile and is required to run some core components in ROS:</p>
 <pre><code>sudo rosdep init
@@ -2822,13 +2830,13 @@ mkdir -p /home/linaro/ros_ws/src
 cd ros_ws/src
 catkin_init_workspace
 cd ..
-</code></pre><h2 id="create-a-swap-directory-on-the-snapdragon">Create a Swap Directory on the Snapdragon</h2>
+</code></pre><h2 id="create-a-swap-directory-on-the-snapdragon"><a name="create-a-swap-directory-on-the-snapdragon" class="plugin-anchor" href="#create-a-swap-directory-on-the-snapdragon"><i class="fa fa-link" aria-hidden="true"></i></a>Create a Swap Directory on the Snapdragon</h2>
 <p>In order not to run out of memory during compilation of MAVROS, you need to create a swap file:</p>
 <pre><code>sudo fallocate -l 1G /mnt/1GB.swap
 sudo mkswap /mnt/1GB.swap
 sudo swapon /mnt/1GB.swap
 echo &apos;/mnt/1GB.swap  none  swap  sw 0  0&apos; |sudo tee -a /etc/fstab
-</code></pre><h2 id="install-mavros--mavlink">Install MAVROS &amp; MAVLink</h2>
+</code></pre><h2 id="install-mavros--mavlink"><a name="install-mavros--mavlink" class="plugin-anchor" href="#install-mavros--mavlink"><i class="fa fa-link" aria-hidden="true"></i></a>Install MAVROS &amp; MAVLink</h2>
 <p>In order to get MAVROS and MAVLink running, you need to install some Python tools and then clone the code and check out the proper commits for compatibility.</p>
 <pre><code>sudo apt-get install python-pip
 sudo apt-get install python-rosinstall
@@ -2853,14 +2861,14 @@ source ../bashrc
 </code></pre><p><code>catkin build</code> is necessary because it creates the <code>/home/linaro/ros_ws/devel</code> directory. 
 This is where the generated libraries and the executables will be generated. 
 It also generates a new bash setup script which includes the appropriate environment variables for using the &quot;ros_ws&quot; workspace.</p>
-<h3 id="install-geographiclib">Install geographiclib</h3>
+<h3 id="install-geographiclib"><a name="install-geographiclib" class="plugin-anchor" href="#install-geographiclib"><i class="fa fa-link" aria-hidden="true"></i></a>Install geographiclib</h3>
 <p>MAVROS requires geographiclib to be installed on the system. Follow these steps to install it on the Snapdragon:</p>
 <pre><code>mkdir -p /usr/share/geographiclib
 /home/linaro/ros_ws/src/mavros/mavros/scripts/install_geographiclib_datasets.sh
 mkdir /usr/share/geographiclib/GeographicLib
 cd /usr/share/geographiclib
 mv geoids/ GeographicLib/
-</code></pre><h2 id="install-snap-vio">Install Snap VIO</h2>
+</code></pre><h2 id="install-snap-vio"><a name="install-snap-vio" class="plugin-anchor" href="#install-snap-vio"><i class="fa fa-link" aria-hidden="true"></i></a>Install Snap VIO</h2>
 <p>First, download (to your PC) version 1.0.2 <em>Snapdragon Machine Vision SDK</em> from <a href="https://developer.qualcomm.com/sdflight-tools" target="_blank">here</a>. 
 The package name will be: <strong>mv&lt;version&gt;.deb</strong>.</p>
 <p>Push the deb package to the snapdragon and install it:</p>
@@ -2879,7 +2887,7 @@ adb shell sync
 cd ~/ros_ws/src
 git clone https://github.com/PX4/ros-examples
 catkin build
-</code></pre><footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-04-03 03:10:15 </span> </footer>
+</code></pre><footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-04-03 22:06:02 </span> </footer>
                                 
                                 </section>
                             
@@ -2922,7 +2930,7 @@ catkin build
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Snapdragon Software Installation","level":"1.11.4.3","depth":3,"next":{"title":"Configuration","level":"1.11.4.4","depth":3,"path":"flight_controller/snapdragon_flight_configuration.md","ref":"flight_controller/snapdragon_flight_configuration.md","articles":[]},"previous":{"title":"Developer Environment Installation","level":"1.11.4.2","depth":3,"path":"flight_controller/snapdragon_flight_dev_environment_installation.md","ref":"flight_controller/snapdragon_flight_dev_environment_installation.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","ga","richquotes","language-picker","collapsible-menu","page-toc-button","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"1.8.2"},"title":"PX4 v1.8.2 User Guide","language":"en","gitbook":"*"},"file":{"path":"flight_controller/snapdragon_flight_software_installation.md","mtime":"2019-04-03T03:10:15.764Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T03:11:53.620Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Snapdragon Software Installation","level":"1.11.4.3","depth":3,"next":{"title":"Configuration","level":"1.11.4.4","depth":3,"path":"flight_controller/snapdragon_flight_configuration.md","ref":"flight_controller/snapdragon_flight_configuration.md","articles":[]},"previous":{"title":"Developer Environment Installation","level":"1.11.4.2","depth":3,"path":"flight_controller/snapdragon_flight_dev_environment_installation.md","ref":"flight_controller/snapdragon_flight_dev_environment_installation.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"stable (v1.8.2)"},{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8.2"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"1.8.2"},"title":"PX4 v1.8.2 User Guide","language":"en","gitbook":"*"},"file":{"path":"flight_controller/snapdragon_flight_software_installation.md","mtime":"2019-04-03T22:06:02.200Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T22:07:20.697Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
@@ -2932,10 +2940,6 @@ catkin build
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
-    
-        
-        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
     
         
         <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
@@ -2950,7 +2954,15 @@ catkin build
         
     
         
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
         <script src="../../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-versions/plugin.js"></script>
         
     
         
