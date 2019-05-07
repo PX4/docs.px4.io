@@ -1230,6 +1230,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6.5" data-path="../flying/terrain_following_holding.html">
+            
+                <a href="../flying/terrain_following_holding.html">
+            
+                    
+                    Terrain Following/Holding
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -2818,7 +2831,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="distance-sensors-rangefinders"><a name="distance-sensors-rangefinders" class="plugin-anchor" href="#distance-sensors-rangefinders"><i class="fa fa-link" aria-hidden="true"></i></a>Distance Sensors (Rangefinders)</h1>
-<p>Distance sensors provide distance measurement that can be used for terrain following, precision hovering (e.g. for photography), warning of regulatory height limits, collision avoidance etc.</p>
+<p>Distance sensors provide distance measurement that can be used for <a href="../flying/terrain_following_holding.html#terrain_following">terrain following</a>, <a href="../flying/terrain_following_holding.html#terrain_hold">terrain holding</a> (i.e. precision hovering for photography), improved landing behaviour (<a href="../flying/terrain_following_holding.html#range_aid">range aid</a>), warning of regulatory height limits, collision prevention, etc.</p>
 <p>This section lists the distance sensors supported by PX4 (linked to more detailed documentation), the <a href="#configuration">generic configuration</a> required for all rangefinders, <a href="#testing">testing</a>, and <a href="#simulation">simulation</a> information.
 More detailed setup and configuration information is provided in the topics linked below (and sidebar).</p>
 <p><img src="../../assets/hardware/sensors/lidar_lite/lidar_lite_v3.jpg" alt="Lidar Lite V3" width="200px"><img src="../../assets/hardware/sensors/sf11c_120_m.jpg" alt="LightWare SF11/C Lidar" width="200px"><img src="../../assets/hardware/sensors/uLanding_lite_1.jpg" alt="Aerotenna uLanding" width="200px"></p>
@@ -2856,33 +2869,20 @@ It has a sensing range from 1cm to 40m and needs to be connected to a UART/seria
 <h3 id="other"><a name="other" class="plugin-anchor" href="#other"><i class="fa fa-link" aria-hidden="true"></i></a>Other</h3>
 <p>PX4 also supports the Bebop rangefinder.</p>
 <h2 id="configuration"><a name="configuration" class="plugin-anchor" href="#configuration"><i class="fa fa-link" aria-hidden="true"></i></a>Configuration/Setup </h2>
-<p>Rangefinders are usually connected to either a serial (PWM) or I2C port (depending on the device driver), and are enabled on the port by setting a particular parameter.
-The hardware and software setup that is specific to each rangefinder is covered in their respective topics.</p>
-<p>The generic rangefinder configuration, covering both the physical setup and usage is covered below.</p>
+<p>Rangefinders are usually connected to either a serial (PWM) or I2C port (depending on the device driver), and are enabled on the port by setting a particular parameter.</p>
+<p>The hardware and software setup that is <em>specific to each distance sensor</em> is covered in their individual topics.</p>
+<p>The generic configuration that is <em>common to all distance sensors</em>, covering both the physical setup and usage, is given below.</p>
 <h3 id="generic-configuration"><a name="generic-configuration" class="plugin-anchor" href="#generic-configuration"><i class="fa fa-link" aria-hidden="true"></i></a>Generic Configuration</h3>
-<p>The generic rangefinder configuration is specified using <a href="../advanced_config/parameter_reference.html#EKF2_RNG_AID">EKF2_RNG_*</a> parameters:
+<p>The common rangefinder configuration is specified using <a href="../advanced_config/parameter_reference.html#EKF2_RNG_AID">EKF2_RNG_*</a> parameters.
 These include (non exhaustively):</p>
 <ul>
-<li><a href="../advanced_config/parameter_reference.html#EKF2_RNG_POS_X">EKF2_RNG_PITCH</a>, <a href="../advanced_config/parameter_reference.html#EKF2_RNG_POS_X">EKF2_RNG_POS_X</a>, <a href="../advanced_config/parameter_reference.html#EKF2_RNG_POS_Y">EKF2_RNG_POS_Y</a>, <a href="../advanced_config/parameter_reference.html#EKF2_RNG_POS_Z">EKF2_RNG_POS_Z</a> - Offset of the rangefinder from the centre of the vehicle body. </li>
+<li><a href="../advanced_config/parameter_reference.html#EKF2_RNG_POS_X">EKF2_RNG_POS_X</a>, <a href="../advanced_config/parameter_reference.html#EKF2_RNG_POS_Y">EKF2_RNG_POS_Y</a>, <a href="../advanced_config/parameter_reference.html#EKF2_RNG_POS_Z">EKF2_RNG_POS_Z</a> - offset of the rangefinder from the vehicle centre of gravity in X, Y, Z directions.</li>
+<li><a href="../advanced_config/parameter_reference.html#EKF2_RNG_PITCH">EKF2_RNG_PITCH</a> - A value of 0 degrees (default) corresponds to the range finder being exactly aligned with the vehicle vertical axis (i.e. straight down), while 90 degrees indicates that the range finder is pointing forward.
+Simple trigonometry is used to calculate the distance to ground if a non-zero pitch is used.</li>
 <li><a href="../advanced_config/parameter_reference.html#EKF2_RNG_DELAY">EKF2_RNG_DELAY</a> - approximate delay of data reaching the estimator from the sensor.</li>
-<li><a href="../advanced_config/parameter_reference.html#EKF2_RNG_AID">EKF2_RNG_A_*</a> - limits and consistency checks when using the sensor for the <a href="../advanced_config/parameter_reference.html#feature">range aid feature</a>.</li>
+<li><a href="../advanced_config/parameter_reference.html#EKF2_RNG_SFE">EKF2_RNG_SFE</a> - Range finder range dependant noise scaler.</li>
+<li><a href="../advanced_config/parameter_reference.html#EKF2_RNG_NOISE">EKF2_RNG_NOISE</a> - Measurement noise for range finder fusion</li>
 </ul>
-<h3 id="features"><a name="features" class="plugin-anchor" href="#features"><i class="fa fa-link" aria-hidden="true"></i></a>Usage/Features </h3>
-<p>Rangefinders can be enabled to support flight in two ways:</p>
-<ol>
-<li>Set <a href="../advanced_config/parameter_reference.html#EKF2_HGT_MODE">EKF2_HGT_MODE</a> to <em>Range finder</em> (<code>2</code>). 
-This makes the rangefinder the primary source of height estimation (the default altitude sensor is the barometer).</li>
-<li>Set <a href="../advanced_config/parameter_reference.html#EKF2_RNG_AID">EKF2_RNG_AID</a> to <code>1</code>. 
-This makes the vehicle use the rangefinder as the primary source when it is safe to use, but will otherwise use the sensor specified in <code>EKF2_HGT_MODE</code>.<ul>
-<li>Specifically, the rangefinder is enabled when:<ul>
-<li>velocity &lt; <a href="../advanced_config/parameter_reference.html#EKF2_RNG_A_VMAX">EKF2_RNG_A_VMAX</a></li>
-<li>distance to ground &lt; <a href="../advanced_config/parameter_reference.html#EKF2_RNG_A_HMAX">EKF2_RNG_A_HMAX</a></li>
-</ul>
-</li>
-<li>Other parameters affecting &quot;Range aid&quot; are prefixed with <code>EKF2\_RNG\_A\_</code>.</li>
-</ul>
-</li>
-</ol>
 <h2 id="testing"><a name="testing" class="plugin-anchor" href="#testing"><i class="fa fa-link" aria-hidden="true"></i></a>Testing </h2>
 <p>The easiest way to test the rangefinder is to vary the range and compare to the values detected by PX4. 
 The sections below show some approaches to getting the measured range.</p>
@@ -2956,11 +2956,7 @@ You can see how in the respective Iris and Typhoon configuration files:</p>
 </code></pre>
 </li>
 </ul>
-<h2 id="further-information"><a name="further-information" class="plugin-anchor" href="#further-information"><i class="fa fa-link" aria-hidden="true"></i></a>Further Information</h2>
-<ul>
-<li><a href="https://pixhawk.org/peripherals/rangefinder" target="_blank">Rangefinder</a> (Pixhawk.org) - Rangefinders supported by Pixhawk</li>
-</ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-05-01 04:33:26 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-05-07 04:46:36 </span> </footer>
                                 
                                 </section>
                             
@@ -3003,7 +2999,7 @@ You can see how in the respective Iris and Typhoon configuration files:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Distance Sensors (Rangefinders)","level":"1.10.6","depth":2,"next":{"title":"Lightware SFxx Lidar","level":"1.10.6.1","depth":3,"path":"sensor/sfxx_lidar.md","ref":"sensor/sfxx_lidar.md","articles":[]},"previous":{"title":"FrSky Telemetry","level":"1.10.5","depth":2,"path":"peripherals/frsky_telemetry.md","ref":"peripherals/frsky_telemetry.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"stable (v1.8.2)"},{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8.2"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"sensor/rangefinders.md","mtime":"2019-05-01T04:33:26.296Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-01T04:34:41.544Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Distance Sensors (Rangefinders)","level":"1.10.6","depth":2,"next":{"title":"Lightware SFxx Lidar","level":"1.10.6.1","depth":3,"path":"sensor/sfxx_lidar.md","ref":"sensor/sfxx_lidar.md","articles":[]},"previous":{"title":"FrSky Telemetry","level":"1.10.5","depth":2,"path":"peripherals/frsky_telemetry.md","ref":"peripherals/frsky_telemetry.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"stable (v1.8.2)"},{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8.2"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"sensor/rangefinders.md","mtime":"2019-05-07T04:46:36.516Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-07T04:47:51.453Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
