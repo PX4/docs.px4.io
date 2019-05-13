@@ -2843,9 +2843,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="using-the-ecl-ekf"><a name="using-the-ecl-ekf" class="plugin-anchor" href="#using-the-ecl-ekf"><i class="fa fa-link" aria-hidden="true"></i></a>Using the ecl EKF</h1>
+                                <h1 id="using-the-ecl-ekf"><a name="using-the-ecl-ekf" class="plugin-anchor" href="#using-the-ecl-ekf"><i class="fa fa-link" aria-hidden="true"></i></a>Using the ECL EKF</h1>
 <p>This tutorial answers common questions about use of the ECL EKF algorithm.</p>
-<h2 id="what-is-the-ecl-ekf"><a name="what-is-the-ecl-ekf" class="plugin-anchor" href="#what-is-the-ecl-ekf"><i class="fa fa-link" aria-hidden="true"></i></a>What is the ecl EKF?</h2>
+<h2 id="what-is-the-ecl-ekf"><a name="what-is-the-ecl-ekf" class="plugin-anchor" href="#what-is-the-ecl-ekf"><i class="fa fa-link" aria-hidden="true"></i></a>What is the ECL EKF?</h2>
 <p>The Estimation and Control Library (ECL) uses an Extended Kalman Filter (EKF) algorithm to process sensor measurements and provide an estimate of the following states:</p>
 <ul>
 <li>Quaternion defining the rotation from North, East, Down local earth frame to X,Y,Z body frame</li>
@@ -2948,6 +2948,82 @@ Bit position 2 would only be set if the GPS had been selected as a primary heigh
 <li>Where receivers output at different rates, the blended output will be at the rate of slower receiver. 
 Where possible receivers should be configured to output at the same rate.</li>
 </ul>
+<h4 id="gps-performance-requirements"><a name="gps-performance-requirements" class="plugin-anchor" href="#gps-performance-requirements"><i class="fa fa-link" aria-hidden="true"></i></a>GPS Performance Requirements</h4>
+<p>For the ECL to accept GPS data for navigation, certain minimum requirements need to be satisfied over a period of 10 seconds (minimums are defined in the <a href="parameter_reference.html#EKF2_REQ_EPH">EKF2<em>REQ</em>*</a> parameters)</p>
+<p>The table below shows the different metrics directly reported or calculated from the GPS data, and the minimum required values for the data to be used by ECL. 
+In addition, the <em>Average Value</em> column shows typical values that might reasonably be obtained from a standard GNSS module (e.g. uBlox M8 series) - i.e. values that are considered good/acceptable.</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Minimum required</th>
+<th>Average Value</th>
+<th>Units</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eph</td>
+<td>3&#xA0;(<a href="parameter_reference.html#EKF2_REQ_EPH">EKF2_REQ_EPH</a>)</td>
+<td>0.8</td>
+<td>m</td>
+<td>Standard deviation of horizontal position error</td>
+</tr>
+<tr>
+<td>epv</td>
+<td>5&#xA0;(<a href="parameter_reference.html#EKF2_REQ_EPV">EKF2_REQ_EPV</a>)</td>
+<td>1.5</td>
+<td>m</td>
+<td>Standard deviation of vertical position error</td>
+</tr>
+<tr>
+<td>Number of satellites</td>
+<td>6&#xA0;(<a href="parameter_reference.html#EKF2_REQ_NSATS">EKF2_REQ_NSATS</a>)</td>
+<td>14</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>Speed variance</td>
+<td>0.5</td>
+<td>0.3</td>
+<td>m/s</td>
+<td></td>
+</tr>
+<tr>
+<td>Fix type</td>
+<td>3</td>
+<td>4</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>hpos_drift_rate</td>
+<td>0.1&#xA0;(<a href="parameter_reference.html#EKF2_REQ_HDRIFT">EKF2_REQ_HDRIFT</a>)</td>
+<td>0.01</td>
+<td>m/s</td>
+<td>Drift rate calculated from reported GPS position (when stationary).</td>
+</tr>
+<tr>
+<td>vpos_drift_rate</td>
+<td>0.2&#xA0;(<a href="parameter_reference.html#EKF2_REQ_VDRIFT">EKF2_REQ_VDRIFT</a>)</td>
+<td>0.02</td>
+<td>m/s</td>
+<td>Drift rate calculated from reported GPS altitude (when stationary).</td>
+</tr>
+<tr>
+<td>hspd</td>
+<td>0.1&#xA0;(<a href="parameter_reference.html#EKF2_REQ_SACC">EKF2_REQ_SACC</a>)</td>
+<td>0.01</td>
+<td>m/s</td>
+<td>Filtered magnitude of reported GPS horizontal velocity.</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> The <code>hpos_drift_rate</code>, <code>vpos_drift_rate</code> and <code>hspd</code> are calculated over a period of 10 seconds and published in the <code>ekf2_gps_drift</code> topic. Note that <code>ekf2_gps_drift</code> is not logged!</p>
+</blockquote>
 <h3 id="range-finder"><a name="range-finder" class="plugin-anchor" href="#range-finder"><i class="fa fa-link" aria-hidden="true"></i></a>Range Finder</h3>
 <p>Range finder distance to ground is used by a single state filter to estimate the vertical position of the terrain relative to the height datum.</p>
 <p>If operating over a flat surface that can be used as a zero height datum, the range finder data can also be used directly by the EKF to estimate height by setting the <a href="parameter_reference.html#EKF2_HGT_MODE">EKF2_HGT_MODE</a> parameter to 2.</p>
@@ -3242,7 +3318,7 @@ Note how the barometer signal dips at the beginning and end of the flight.</p>
 </ul>
 <p>If a terrain estimate is available (e.g. the vehicle is equipped with a range finder) then you can additionally specify <a href="parameter_reference.html#EKF2_GND_MAX_HGT">EKF2_GND_MAX_HGT</a>, the above ground-level altitude below which ground effect compensation should be activated.
 If no terrain estimate is available this parameter will have no effect and the system will use heuristics to determine if ground effect compensation should be activated.</p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-05-13 01:30:23 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-05-13 02:28:03 </span> </footer>
                                 
                                 </section>
                             
@@ -3285,7 +3361,7 @@ If no terrain estimate is available this parameter will have no effect and the s
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ECL/EKF Overview & Tuning","level":"1.9.6","depth":2,"next":{"title":"Bootloader Update","level":"1.9.7","depth":2,"path":"advanced_config/bootloader_update.md","ref":"advanced_config/bootloader_update.md","articles":[]},"previous":{"title":"ESC Calibration","level":"1.9.5","depth":2,"path":"advanced_config/esc_calibration.md","ref":"advanced_config/esc_calibration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"stable (v1.8.2)"},{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8.2"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"advanced_config/tuning_the_ecl_ekf.md","mtime":"2019-05-13T01:30:23.292Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-13T01:32:13.727Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"ECL/EKF Overview & Tuning","level":"1.9.6","depth":2,"next":{"title":"Bootloader Update","level":"1.9.7","depth":2,"path":"advanced_config/bootloader_update.md","ref":"advanced_config/bootloader_update.md","articles":[]},"previous":{"title":"ESC Calibration","level":"1.9.5","depth":2,"path":"advanced_config/esc_calibration.md","ref":"advanced_config/esc_calibration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"stable (v1.8.2)"},{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8.2"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"advanced_config/tuning_the_ecl_ekf.md","mtime":"2019-05-13T02:28:03.924Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-13T02:29:51.217Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
