@@ -1617,7 +1617,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.7" data-path="../advanced_config/bootloader_update.html">
+        <li class="chapter " data-level="1.9.7" data-path="../advanced_config/flight_termination.html">
+            
+                <a href="../advanced_config/flight_termination.html">
+            
+                    
+                    Flight Termination Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../advanced_config/bootloader_update.html">
             
                 <a href="../advanced_config/bootloader_update.html">
             
@@ -1630,7 +1643,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.8" data-path="../advanced_config/land_detector.html">
+        <li class="chapter " data-level="1.9.9" data-path="../advanced_config/land_detector.html">
             
                 <a href="../advanced_config/land_detector.html">
             
@@ -1643,7 +1656,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.9" data-path="../advanced_config/sensor_thermal_calibration.html">
+        <li class="chapter " data-level="1.9.10" data-path="../advanced_config/sensor_thermal_calibration.html">
             
                 <a href="../advanced_config/sensor_thermal_calibration.html">
             
@@ -1656,7 +1669,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.10" data-path="../advanced_config/advanced_flight_controller_orientation_leveling.html">
+        <li class="chapter " data-level="1.9.11" data-path="../advanced_config/advanced_flight_controller_orientation_leveling.html">
             
                 <a href="../advanced_config/advanced_flight_controller_orientation_leveling.html">
             
@@ -1669,7 +1682,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.11" data-path="../advanced_config/static_pressure_buildup.html">
+        <li class="chapter " data-level="1.9.12" data-path="../advanced_config/static_pressure_buildup.html">
             
                 <a href="../advanced_config/static_pressure_buildup.html">
             
@@ -1682,7 +1695,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.12" data-path="../advanced_config/parameter_reference.html">
+        <li class="chapter " data-level="1.9.13" data-path="../advanced_config/parameter_reference.html">
             
                 <a href="../advanced_config/parameter_reference.html">
             
@@ -2165,7 +2178,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.11" data-path="../peripherals/companion_computer_peripherals.html">
+        <li class="chapter " data-level="1.10.11" data-path="../peripherals/parachute.html">
+            
+                <a href="../peripherals/parachute.html">
+            
+                    
+                    Parachute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.12" data-path="../peripherals/companion_computer_peripherals.html">
             
                 <a href="../peripherals/companion_computer_peripherals.html">
             
@@ -2877,7 +2903,8 @@ The most important failsafe settings are configured in the <em>QGroundControl</e
 <li><a href="#safety_switch">Safety switches</a> on the remote control can be used to immediately stop motors or return the vehicle in the event of a problem. </li>
 </ul>
 <h2 id="failsafe_actions"><a name="failsafe_actions" class="plugin-anchor" href="#failsafe_actions"><i class="fa fa-link" aria-hidden="true"></i></a>Failsafe Actions </h2>
-<p>Each failsafe defines its own set of actions. Some of the more common failsafe actions are:</p>
+<p>Each failsafe defines its own set of actions.
+Some of the more common failsafe actions are:</p>
 <table>
 <thead>
 <tr>
@@ -2911,8 +2938,8 @@ The most important failsafe settings are configured in the <em>QGroundControl</e
 <td>TBD</td>
 </tr>
 <tr>
-<td>Terminate/Flight termination</td>
-<td>Turns off all controllers and sets all PWM outputs to a failsafe value (defined in airframe configuration using <code>FAILSAFE</code> variable). For a fixed-wing vehicle this might allow you to glide the vehicle to safety.</td>
+<td><a href="../advanced_config/flight_termination.html">Flight termination</a></td>
+<td>Turns off all controllers and sets all PWM outputs to their failsafe values (e.g. <a href="../advanced_config/parameter_reference.html#PWM_MAIN_FAIL1">PWM_MAIN_FAILn</a>, <a href="../advanced_config/parameter_reference.html#PWM_AUX_FAIL1">PWM_AUX_FAILn</a>). The failsafe outputs can be used to deploy a parachute, landing gear or perform another operation. For a fixed-wing vehicle this might allow you to glide the vehicle to safety.</td>
 </tr>
 <tr>
 <td>Lockdown</td>
@@ -2921,7 +2948,8 @@ The most important failsafe settings are configured in the <em>QGroundControl</e
 </tbody>
 </table>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
-<p> It is possible to recover from a failsafe action (if the cause is fixed) by switching modes. For example, in the case where RC Loss failsafe causes the vehicle to enter <em>Return mode</em>, if RC is recovered you can change to <em>Position mode</em> and continue flying. </p>
+<p> It is possible to recover from a failsafe action (if the cause is fixed) by switching modes.
+  For example, in the case where RC Loss failsafe causes the vehicle to enter <em>Return mode</em>, if RC is recovered you can change to <em>Position mode</em> and continue flying. </p>
 </blockquote>
 <p><span></span></p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
@@ -3301,6 +3329,44 @@ If triggered, the vehicle will transition to multicopter mode and enter failsafe
 </tr>
 </tbody>
 </table>
+<h2 id="failure_detector"><a name="failure_detector" class="plugin-anchor" href="#failure_detector"><i class="fa fa-link" aria-hidden="true"></i></a>Failure Detector </h2>
+<p>The failure detector allows a vehicle to take protective action(s) if it unexpectedly flips - for example, it can launch a <a href="../peripherals/parachute.html">parachute</a> or perform some other action).</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> Failure detection is deactivated by default using a circuit breaker.
+  You can enable it by setting <a href="../advanced_config/parameter_reference.html#CBRK_FLIGHTTERM">CBRK_FLIGHTTERM=0</a>.</p>
+</blockquote>
+<p>More precisely, the failure detector triggers <a href="../advanced_config/flight_termination.html">flight termination</a> (in all modes) if the vehicle attitude exceeds predefined pitch and roll values for more than a specified time.</p>
+<p>The relevant parameters are shown below:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span id="CBRK_FLIGHTTERM"></span><a href="../advanced_config/parameter_reference.html#CBRK_FLIGHTTERM">CBRK_FLIGHTTERM</a></td>
+<td>Flight termination circuit breaker. Unset from 121212 (default) to enable flight termination due to FailureDetector or FMU loss.</td>
+</tr>
+<tr>
+<td><span id="FD_FAIL_P"></span><a href="../advanced_config/parameter_reference.html#FD_FAIL_P">FD_FAIL_P</a></td>
+<td>Maximum allowed pitch (in degrees).</td>
+</tr>
+<tr>
+<td><span id="FD_FAIL_R"></span><a href="../advanced_config/parameter_reference.html#FD_FAIL_R">FD_FAIL_R</a></td>
+<td>Maximum allowed roll (in degrees).</td>
+</tr>
+<tr>
+<td><span id="FD_FAIL_P_TTRI"></span><a href="../advanced_config/parameter_reference.html#FD_FAIL_P_TTRI">FD_FAIL_P_TTRI</a></td>
+<td>Time to exceed <a href="#FD_FAIL_P">FD_FAIL_P</a> for failure detection (default 0.3s).</td>
+</tr>
+<tr>
+<td><span id="FD_FAIL_R_TTRI"></span><a href="../advanced_config/parameter_reference.html#FD_FAIL_R_TTRI">FD_FAIL_R_TTRI</a></td>
+<td>Time to exceed <a href="#FD_FAIL_R">FD_FAIL_R</a> for failure detection (default 0.3s).</td>
+</tr>
+</tbody>
+</table>
 <h2 id="safety_switch"><a name="safety_switch" class="plugin-anchor" href="#safety_switch"><i class="fa fa-link" aria-hidden="true"></i></a>Safety Switches </h2>
 <p>A safety switch allows you to immediately stop all motors or return the vehicle from the remote control transmitter
 (if you lose control of the vehicle, this may be better than allowing it to continue flying).</p>
@@ -3334,7 +3400,7 @@ The vehicle is not disarmed, and the motors will restart if the switch is revert
 <ul>
 <li><a href="https://docs.qgroundcontrol.com/en/SetupView/Safety.html" target="_blank">QGroundControl User Guide &gt; Safety Setup</a></li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-06-05 15:06:46 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-06-05 23:29:22 </span> </footer>
                                 
                                 </section>
                             
@@ -3377,7 +3443,7 @@ The vehicle is not disarmed, and the motors will restart if the switch is revert
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Safety","level":"1.4.12","depth":2,"next":{"title":"Airframe Builds","level":"1.5","depth":1,"path":"airframes/README.md","ref":"airframes/README.md","articles":[{"title":"Airframes Reference","level":"1.5.1","depth":2,"path":"airframes/airframe_reference.md","ref":"airframes/airframe_reference.md","articles":[]},{"title":"Multicopters","level":"1.5.2","depth":2,"path":"frames_multicopter/README.md","ref":"frames_multicopter/README.md","articles":[{"title":"QAV250 (Pixhawk4 Mini)","level":"1.5.2.1","depth":3,"path":"frames_multicopter/holybro_qav250_pixhawk4_mini.md","ref":"frames_multicopter/holybro_qav250_pixhawk4_mini.md","articles":[]},{"title":"FlameWheel450 + RTK (Pixhawk 3 Pro)","level":"1.5.2.2","depth":3,"path":"frames_multicopter/dji_flamewheel_450.md","ref":"frames_multicopter/dji_flamewheel_450.md","articles":[]},{"title":"QAV250 (Pixhawk Mini)","level":"1.5.2.3","depth":3,"path":"frames_multicopter/lumenier_qav250_pixhawk_mini.md","ref":"frames_multicopter/lumenier_qav250_pixhawk_mini.md","articles":[]},{"title":"QAV250 (Pixhawk/AUAV_X2)","level":"1.5.2.4","depth":3,"path":"frames_multicopter/lumenier_qav250_pixhawk_auav_x2.md","ref":"frames_multicopter/lumenier_qav250_pixhawk_auav_x2.md","articles":[]},{"title":"Spedix 250 (Pixracer)","level":"1.5.2.5","depth":3,"path":"frames_multicopter/spedix_s250_pixracer.md","ref":"frames_multicopter/spedix_s250_pixracer.md","articles":[]},{"title":"Robocat 270 (Pixracer)","level":"1.5.2.6","depth":3,"path":"frames_multicopter/robocat_270_pixracer.md","ref":"frames_multicopter/robocat_270_pixracer.md","articles":[]},{"title":"Matrice 100 (Pixhawk 1)","level":"1.5.2.7","depth":3,"path":"frames_multicopter/matrice100.md","ref":"frames_multicopter/matrice100.md","articles":[]},{"title":"QAV-R 5\" Racer (Pixracer)","level":"1.5.2.8","depth":3,"path":"frames_multicopter/qav_r_5_kiss_esc_racer.md","ref":"frames_multicopter/qav_r_5_kiss_esc_racer.md","articles":[]}]},{"title":"Planes","level":"1.5.3","depth":2,"path":"frames_plane/README.md","ref":"frames_plane/README.md","articles":[{"title":"Wing Wing Z84 (Pixracer)","level":"1.5.3.1","depth":3,"path":"frames_plane/wing_wing_z84.md","ref":"frames_plane/wing_wing_z84.md","articles":[]}]},{"title":"VTOL","level":"1.5.4","depth":2,"path":"frames_vtol/README.md","ref":"frames_vtol/README.md","articles":[{"title":"FunCub QuadPlane (Pixhawk)","level":"1.5.4.1","depth":3,"path":"frames_vtol/vtol_quadplane_fun_cub_vtol_pixhawk.md","ref":"frames_vtol/vtol_quadplane_fun_cub_vtol_pixhawk.md","articles":[]},{"title":"Ranger QuadPlane (Pixhawk)","level":"1.5.4.2","depth":3,"path":"frames_vtol/vtol_quadplane_volantex_ranger_ex_pixhawk.md","ref":"frames_vtol/vtol_quadplane_volantex_ranger_ex_pixhawk.md","articles":[]},{"title":"Convergence Tiltrotor (Pixfalcon)","level":"1.5.4.3","depth":3,"path":"frames_vtol/vtol_tiltrotor_eflite_convergence_pixfalcon.md","ref":"frames_vtol/vtol_tiltrotor_eflite_convergence_pixfalcon.md","articles":[]},{"title":"TBS Caipiroshka (Pixracer)","level":"1.5.4.4","depth":3,"path":"frames_vtol/vtol_tailsitter_caipiroshka_pixracer.md","ref":"frames_vtol/vtol_tailsitter_caipiroshka_pixracer.md","articles":[]},{"title":"Falcon Vertigo QuadPlane (Dropix)","level":"1.5.4.5","depth":3,"path":"frames_vtol/vtol_quadplane_falcon_vertigo_hybrid_rtf_dropix.md","ref":"frames_vtol/vtol_quadplane_falcon_vertigo_hybrid_rtf_dropix.md","articles":[]},{"title":"Archived:FireFly Y6 Tiltrotor (Pixfalcon)","level":"1.5.4.6","depth":3,"path":"frames_vtol/vtol_tiltrotor_birdseyeview_firefly_y6_pixfalcon.md","ref":"frames_vtol/vtol_tiltrotor_birdseyeview_firefly_y6_pixfalcon.md","articles":[]}]},{"title":"Rovers","level":"1.5.5","depth":2,"path":"frames_rover/README.md","ref":"frames_rover/README.md","articles":[{"title":"Traxxas Stampede","level":"1.5.5.1","depth":3,"path":"frames_rover/traxxas_stampede.md","ref":"frames_rover/traxxas_stampede.md","articles":[]}]}]},"previous":{"title":"Battery","level":"1.4.11","depth":2,"path":"config/battery.md","ref":"config/battery.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"stable (v1.9.0)"},{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9.0"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8.2"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"config/safety.md","mtime":"2019-06-05T15:06:46.126Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-05T15:08:01.171Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Safety","level":"1.4.12","depth":2,"next":{"title":"Airframe Builds","level":"1.5","depth":1,"path":"airframes/README.md","ref":"airframes/README.md","articles":[{"title":"Airframes Reference","level":"1.5.1","depth":2,"path":"airframes/airframe_reference.md","ref":"airframes/airframe_reference.md","articles":[]},{"title":"Multicopters","level":"1.5.2","depth":2,"path":"frames_multicopter/README.md","ref":"frames_multicopter/README.md","articles":[{"title":"QAV250 (Pixhawk4 Mini)","level":"1.5.2.1","depth":3,"path":"frames_multicopter/holybro_qav250_pixhawk4_mini.md","ref":"frames_multicopter/holybro_qav250_pixhawk4_mini.md","articles":[]},{"title":"FlameWheel450 + RTK (Pixhawk 3 Pro)","level":"1.5.2.2","depth":3,"path":"frames_multicopter/dji_flamewheel_450.md","ref":"frames_multicopter/dji_flamewheel_450.md","articles":[]},{"title":"QAV250 (Pixhawk Mini)","level":"1.5.2.3","depth":3,"path":"frames_multicopter/lumenier_qav250_pixhawk_mini.md","ref":"frames_multicopter/lumenier_qav250_pixhawk_mini.md","articles":[]},{"title":"QAV250 (Pixhawk/AUAV_X2)","level":"1.5.2.4","depth":3,"path":"frames_multicopter/lumenier_qav250_pixhawk_auav_x2.md","ref":"frames_multicopter/lumenier_qav250_pixhawk_auav_x2.md","articles":[]},{"title":"Spedix 250 (Pixracer)","level":"1.5.2.5","depth":3,"path":"frames_multicopter/spedix_s250_pixracer.md","ref":"frames_multicopter/spedix_s250_pixracer.md","articles":[]},{"title":"Robocat 270 (Pixracer)","level":"1.5.2.6","depth":3,"path":"frames_multicopter/robocat_270_pixracer.md","ref":"frames_multicopter/robocat_270_pixracer.md","articles":[]},{"title":"Matrice 100 (Pixhawk 1)","level":"1.5.2.7","depth":3,"path":"frames_multicopter/matrice100.md","ref":"frames_multicopter/matrice100.md","articles":[]},{"title":"QAV-R 5\" Racer (Pixracer)","level":"1.5.2.8","depth":3,"path":"frames_multicopter/qav_r_5_kiss_esc_racer.md","ref":"frames_multicopter/qav_r_5_kiss_esc_racer.md","articles":[]}]},{"title":"Planes","level":"1.5.3","depth":2,"path":"frames_plane/README.md","ref":"frames_plane/README.md","articles":[{"title":"Wing Wing Z84 (Pixracer)","level":"1.5.3.1","depth":3,"path":"frames_plane/wing_wing_z84.md","ref":"frames_plane/wing_wing_z84.md","articles":[]}]},{"title":"VTOL","level":"1.5.4","depth":2,"path":"frames_vtol/README.md","ref":"frames_vtol/README.md","articles":[{"title":"FunCub QuadPlane (Pixhawk)","level":"1.5.4.1","depth":3,"path":"frames_vtol/vtol_quadplane_fun_cub_vtol_pixhawk.md","ref":"frames_vtol/vtol_quadplane_fun_cub_vtol_pixhawk.md","articles":[]},{"title":"Ranger QuadPlane (Pixhawk)","level":"1.5.4.2","depth":3,"path":"frames_vtol/vtol_quadplane_volantex_ranger_ex_pixhawk.md","ref":"frames_vtol/vtol_quadplane_volantex_ranger_ex_pixhawk.md","articles":[]},{"title":"Convergence Tiltrotor (Pixfalcon)","level":"1.5.4.3","depth":3,"path":"frames_vtol/vtol_tiltrotor_eflite_convergence_pixfalcon.md","ref":"frames_vtol/vtol_tiltrotor_eflite_convergence_pixfalcon.md","articles":[]},{"title":"TBS Caipiroshka (Pixracer)","level":"1.5.4.4","depth":3,"path":"frames_vtol/vtol_tailsitter_caipiroshka_pixracer.md","ref":"frames_vtol/vtol_tailsitter_caipiroshka_pixracer.md","articles":[]},{"title":"Falcon Vertigo QuadPlane (Dropix)","level":"1.5.4.5","depth":3,"path":"frames_vtol/vtol_quadplane_falcon_vertigo_hybrid_rtf_dropix.md","ref":"frames_vtol/vtol_quadplane_falcon_vertigo_hybrid_rtf_dropix.md","articles":[]},{"title":"Archived:FireFly Y6 Tiltrotor (Pixfalcon)","level":"1.5.4.6","depth":3,"path":"frames_vtol/vtol_tiltrotor_birdseyeview_firefly_y6_pixfalcon.md","ref":"frames_vtol/vtol_tiltrotor_birdseyeview_firefly_y6_pixfalcon.md","articles":[]}]},{"title":"Rovers","level":"1.5.5","depth":2,"path":"frames_rover/README.md","ref":"frames_rover/README.md","articles":[{"title":"Traxxas Stampede","level":"1.5.5.1","depth":3,"path":"frames_rover/traxxas_stampede.md","ref":"frames_rover/traxxas_stampede.md","articles":[]}]}]},"previous":{"title":"Battery","level":"1.4.11","depth":2,"path":"config/battery.md","ref":"config/battery.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"stable (v1.9.0)"},{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9.0"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8.2"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"config/safety.md","mtime":"2019-06-05T23:29:22.172Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-05T23:30:55.685Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
