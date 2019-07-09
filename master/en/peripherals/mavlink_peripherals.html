@@ -2925,55 +2925,75 @@
 <p>Ground Control Stations (GCS), On-Screen Displays (OSD), Companion Computers, and other MAVLink peripherals interact with PX4 using separate MAVLink streams, sent via different serial ports.
 These communication channels are configured using the <a href="../advanced_config/parameter_reference.html#mavlink">MAVLink parameters</a>.</p>
 <h2 id="mavlink-instances"><a name="mavlink-instances" class="plugin-anchor" href="#mavlink-instances"><i class="fa fa-link" aria-hidden="true"></i></a>MAVLink Instances</h2>
-<p>In order to assign a particular peripheral to a serial port we use the (abstract) concept of a <em>MAVLink instance</em>. 
-Each instance can represent a particular set of streamed messages (see &quot;mode&quot; below); parameters are used to define the set of messages, the port used, data rate, etc.</p>
+<p>In order to assign a particular peripheral to a serial port we use the (abstract) concept of a <em>MAVLink instance</em>.
+Each instance can represent a particular set of streamed messages (see <a href="#MAV_X_MODE">MAV_X_MODE</a> below); parameters are used to define the set of messages, the port used, data rate, etc.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
-<p> At time of writing three instances are defined, which correspond to the 0, 1, 2 in the parameters listed below.</p>
+<p> At time of writing three MAVLink <em>instances</em> are defined, which correspond to the 0, 1, 2 in the parameters listed below.</p>
 </blockquote>
 <p>The parameters for each instance are:</p>
 <ul>
 <li><a href="../advanced_config/parameter_reference.html#MAV_0_CONFIG">MAV_X_CONFIG</a> - Set the serial port (UART) for this instance &quot;X&quot;, where X is 0, 1, 2. 
 It can be any unused port, e.g.: TELEM2, TELEM3, GPS2 etc. For more information see <a href="serial_configuration.html">Serial Port Configuration</a>.</li>
-<li><p><a href="../advanced_config/parameter_reference.html#MAV_0_MODE">MAV_X_MODE</a> - Specify the telemetry mode/target (the set of messages to stream for the current instance and their rate).
+<li><p><span id="MAV_X_MODE"></span><a href="../advanced_config/parameter_reference.html#MAV_0_MODE">MAV_X_MODE</a> - Specify the telemetry mode/target (the set of messages to stream for the current instance and their rate).
 The default values are:</p>
 <ul>
-<li><em>Normal</em>: Standard set of messages for a GCS.</li>
+<li><em>Normal</em>: Standard set of messages for a GCS. </li>
 <li><em>Custom</em> or <em>Magic</em>: Nothing (in the default PX4 implementation).
-These might be used for testing when developing a new mode.</li>
+ Modes may be used for testing when developing a new mode.</li>
 <li><em>Onboard</em>: Standard set of messages for a companion computer.</li>
 <li><em>OSD</em>: Standard set of messages for an OSD system.</li>
 <li><em>Config</em>: Standard set of messages and rate configuration for a fast link (e.g. USB).</li>
 <li><em>Minimal</em>: Minimal set of messages for use with a GCS connected on a high latency link.</li>
+<li><em>ExtVision</em> or <em>ExtVisionMin</em>: Messages for offboard vision systems (ExtVision needed for VIO).</li>
+<li><em>Iridium</em>: Messages for an <a href="../advanced_features/satcom_roadblock.html">Iridium satellite communication system</a>.</li>
 </ul>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> If you need to find the specific set of message for each mode search for <code>MAVLINK_MODE_</code> in <a href="https://github.com/PX4/Firmware/blob/master/src/modules/mavlink/mavlink_main.cpp" target="_blank">/src/modules/mavlink/mavlink_main.cpp</a>.</p>
+</blockquote>
+<p><span></span></p>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> The mode defines the <em>default</em> messages and rates.
-A connected MAVLink system can still request the streams/rates that it wants using <a href="https://mavlink.io/en/messages/common.html#MAV_CMD_SET_MESSAGE_INTERVAL" target="_blank">MAV_CMD_SET_MESSAGE_INTERVAL</a>.</p>
+  A connected MAVLink system can still request the streams/rates that it wants using <a href="https://mavlink.io/en/messages/common.html#MAV_CMD_SET_MESSAGE_INTERVAL" target="_blank">MAV_CMD_SET_MESSAGE_INTERVAL</a>.</p>
 </blockquote>
 </li>
-<li><a href="../advanced_config/parameter_reference.html#MAV_0_MODE">MAV_X_RATE</a> - Set the maximum data rate for this instance (bytes/second). 
-This is the combined rate for all streams of individual message (the rates for individual messages are reduced if the total rate exceeds this value).
-The default setting will generally be acceptable, but might be reduced if the telemetry link becomes saturated and too many messages are being dropped.
-In many cases the default should be good however.</li>
-<li><a href="../advanced_config/parameter_reference.html#MAV_0_FORWARD">MAV_X_FORWARD</a> - Enable forwarding of MAVLink packets received by the current instance onto other interfaces. This might be used, for example, to transfer messages between a GCS and a companion computer so that the GCS can talk to a MAVLink enabled camera connected to the companion computer.</li>
+<li><a href="../advanced_config/parameter_reference.html#MAV_0_MODE">MAV_X_RATE</a> - Set the maximum <em>data rate</em> for this instance (bytes/second).<ul>
+<li>This is the combined rate for all streams of individual message (the rates for individual messages are reduced if the total rate exceeds this value).</li>
+<li>The default setting will generally be acceptable, but might be reduced if the telemetry link becomes saturated and too many messages are being dropped.</li>
+<li>A value of 0 sets the data rate to half the theoretical value.</li>
 </ul>
+</li>
+<li><a href="../advanced_config/parameter_reference.html#MAV_0_FORWARD">MAV_X_FORWARD</a> - Enable forwarding of MAVLink packets received by the current instance onto other interfaces.
+This might be used, for example, to transfer messages between a GCS and a companion computer so that the GCS can talk to a MAVLink enabled camera connected to the companion computer.</li>
+</ul>
+<p>Next you need to set the baud rate for the serial port you assigned above (in <code>MAV_X_CONFIG</code>).</p>
+<blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
+<p> You will need to reboot PX4 to make the parameter available (i.e. in QGroundControl).</p>
+</blockquote>
+<p>The parameter used will depend on the <a href="../advanced_config/parameter_reference.html#serial">assigned serial port</a>  - for example: <code>SER_GPS1_BAUD</code>, <code>SER_TEL2_BAUD</code>, etc. 
+The value you use will depend on the type of connection and the capabilities of the connected MAVLink peripheral.</p>
 <h2 id="default_ports"><a name="default_ports" class="plugin-anchor" href="#default_ports"><i class="fa fa-link" aria-hidden="true"></i></a>Default MAVLink Ports </h2>
 <p>The <code>TELEM 1</code> port is almost always used for the GCS telemetry stream.</p>
 <p>To support this there is a <a href="serial_configuration.html#default_port_mapping">default serial port mapping</a> of MAVLink instance 0 as shown below:</p>
 <ul>
 <li><a href="../advanced_config/parameter_reference.html#MAV_0_CONFIG">MAV_0_CONFIG</a> = <code>TELEM 1</code></li>
 <li><a href="../advanced_config/parameter_reference.html#MAV_0_MODE">MAV_0_MODE</a> = <code>Normal</code></li>
-<li><a href="../advanced_config/parameter_reference.html#MAV_0_RATE">MAV_0_RATE</a>= <code>57600</code> baud</li>
+<li><a href="../advanced_config/parameter_reference.html#MAV_0_RATE">MAV_0_RATE</a>= <code>1200</code> Bytes/s</li>
 <li><a href="../advanced_config/parameter_reference.html#MAV_0_FORWARD">MAV_0_FORWARD</a> = <code>True</code></li>
+<li><a href="../advanced_config/parameter_reference.html#SER_TEL1_BAUD">SER_TEL1_BAUD</a> = <code>57600</code></li>
 </ul>
 <h2 id="example"><a name="example" class="plugin-anchor" href="#example"><i class="fa fa-link" aria-hidden="true"></i></a>Example</h2>
-<p>For example, to use a Companion Computer on <code>TELEM 2</code> you might set parameters as shown:</p>
+<p>For example, to use a companion computer on <code>TELEM 2</code> you might set parameters as shown:</p>
 <ul>
 <li><a href="../advanced_config/parameter_reference.html#MAV_2_CONFIG">MAV_2_CONFIG</a> = <code>TELEM 2</code></li>
 <li><a href="../advanced_config/parameter_reference.html#MAV_2_MODE">MAV_2_MODE</a> = <code>Onboard</code></li>
-<li><a href="../advanced_config/parameter_reference.html#MAV_2_RATE">MAV_2_RATE</a>= <code>921600</code> baud</li>
+<li><a href="../advanced_config/parameter_reference.html#MAV_2_RATE">MAV_2_RATE</a>= <code>80000</code> Bytes/s<blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
+<p> This value might have to be tuned/reduced in the event of message losses.</p>
+</blockquote>
+</li>
 <li><a href="../advanced_config/parameter_reference.html#MAV_2_FORWARD">MAV_2_FORWARD</a> = <code>True</code></li>
+<li><a href="../advanced_config/parameter_reference.html#SER_TEL2_BAUD">SER_TEL2_BAUD</a> = <code>921600</code> baud</li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-07-09 04:10:47 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-07-09 08:25:23 </span> </footer>
                                 
                                 </section>
                             
@@ -3016,7 +3036,7 @@ In many cases the default should be good however.</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"MAVLink Telemetry (OSD/GCS)","level":"1.10.4","depth":2,"next":{"title":"FrSky Telemetry","level":"1.10.5","depth":2,"path":"peripherals/frsky_telemetry.md","ref":"peripherals/frsky_telemetry.md","articles":[]},"previous":{"title":"3DR Telemetry Wifi (Discontinued)","level":"1.10.3.2.2","depth":4,"path":"telemetry/3dr_telemetry_wifi.md","ref":"telemetry/3dr_telemetry_wifi.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"stable (v1.9.0)"},{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9.0"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8.2"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"peripherals/mavlink_peripherals.md","mtime":"2019-07-09T04:10:47.054Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-09T04:11:59.213Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"MAVLink Telemetry (OSD/GCS)","level":"1.10.4","depth":2,"next":{"title":"FrSky Telemetry","level":"1.10.5","depth":2,"path":"peripherals/frsky_telemetry.md","ref":"peripherals/frsky_telemetry.md","articles":[]},"previous":{"title":"3DR Telemetry Wifi (Discontinued)","level":"1.10.3.2.2","depth":4,"path":"telemetry/3dr_telemetry_wifi.md","ref":"telemetry/3dr_telemetry_wifi.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/en/","text":"stable (v1.9.0)"},{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9.0"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8.2"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"peripherals/mavlink_peripherals.md","mtime":"2019-07-09T08:25:23.706Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-09T08:27:40.461Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
