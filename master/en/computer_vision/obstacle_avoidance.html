@@ -85,10 +85,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="collision_prevention.html" />
+    <link rel="next" href="safe_landing.html" />
     
     
-    <link rel="prev" href="../advanced_features/satcom_roadblock.html" />
+    <link rel="prev" href="../advanced_features/traffic_avoidance_adsb.html" />
     
 
     </head>
@@ -1359,7 +1359,20 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.8.4" data-path="obstacle_avoidance.html">
+        <li class="chapter " data-level="1.8.4" data-path="../advanced_features/traffic_avoidance_adsb.html">
+            
+                <a href="../advanced_features/traffic_avoidance_adsb.html">
+            
+                    
+                    Air Traffic Avoidance: ADSB/FLARM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.5" data-path="obstacle_avoidance.html">
             
                 <a href="obstacle_avoidance.html">
             
@@ -1372,7 +1385,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.5" data-path="collision_prevention.html">
+        <li class="chapter " data-level="1.8.6" data-path="safe_landing.html">
+            
+                <a href="safe_landing.html">
+            
+                    
+                    Safe Landing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="collision_prevention.html">
             
                 <a href="collision_prevention.html">
             
@@ -1385,12 +1411,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.6" data-path="../advanced_features/traffic_avoidance_adsb.html">
+        <li class="chapter " data-level="1.8.8" data-path="path_planning_interface.html">
             
-                <a href="../advanced_features/traffic_avoidance_adsb.html">
+                <a href="path_planning_interface.html">
             
                     
-                    Air Traffic Avoidance: ADSB/FLARM
+                    Path Planning Interface
             
                 </a>
             
@@ -2949,38 +2975,38 @@
                                 
                                 <h1 id="obstacle-avoidance"><a name="obstacle-avoidance" class="plugin-anchor" href="#obstacle-avoidance"><i class="fa fa-link" aria-hidden="true"></i></a>Obstacle Avoidance</h1>
 <p><em>Obstacle Avoidance</em> enables a vehicle to navigate around obstacles when following a preplanned path.</p>
-<p>The feature requires a companion computer that is running computer vision software. 
+<p>The feature requires a companion computer that is running computer vision software.
 This software provides a route for a given desired trajectory, mapping and navigating around obstacles to achieve the best path.</p>
 <p>Obstacle avoidance is intended for automatic modes, and is currently supported for multicopter vehicles in <a href="#mission_mode">Missions</a> and <a href="#offboard_mode">Offboard mode</a>.</p>
 <p>This topic explains how the feature is set up and enabled in both modes.</p>
+<p><div style="position: relative;padding-bottom: 56.25%;padding-top: 25px;height: 0;"><iframe frameborder="0" allowfullscreen style="border: none;position: absolute;top: 0;left: 0;width: 100%;height: 100%;" src="//www.youtube.com/embed/PrGt7pKj3tI"></iframe></div></p>
+<h2 id="limitationscapabilities"><a name="limitationscapabilities" class="plugin-anchor" href="#limitationscapabilities"><i class="fa fa-link" aria-hidden="true"></i></a>Limitations/Capabilities</h2>
+<ul>
+<li><p>The maximum speed for obstacle avoidance is currently approximately 3 m/s (due to the cost of computing the avoidance path).</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> Obstacle avoidance can use the <em>local planner</em> planner emits messages at ~30Hz and can move at around 3 m/s) or global planner (emits messages at ~10Hz and mission speed with obstacle avoidance is around 1-1.5 m/s).</p>
+</blockquote>
+</li>
+</ul>
 <h2 id="offboard_mode"><a name="offboard_mode" class="plugin-anchor" href="#offboard_mode"><i class="fa fa-link" aria-hidden="true"></i></a>Offboard Mode Avoidance </h2>
-<p>PX4 supports collision avoidance in <a href="../flight_modes/offboard.html">Offboard mode</a>.</p>
+<p>PX4 supports obstacle avoidance in <a href="../flight_modes/offboard.html">Offboard mode</a>.</p>
 <p>The desired route comes from a <a href="http://dev.px4.io/en/ros/" target="_blank">ROS</a> node running on a companion computer.
 This is passed into an obstacle avoidance module (another ROS node).
 The avoidance software sends the planned path to the flight stack as a stream of <code>SET_POSITION_TARGET_LOCAL_NED</code> messages.</p>
-<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
-<p> The only required PX4-side setup is to put PX4 into <em>Offboard mode</em>.
-  While the <code>SET_POSITION_TARGET_LOCAL_NED</code> setpoints come from a ROS collision avoidance node, to PX4 could be from any MAVLink system.</p>
-</blockquote>
-<p>The tested hardware/software platform is <a href="../complete_vehicles/intel_aero.html">Intel Aero</a> running either the <em>local_planner</em> or <em>global_planner</em>. Object avoidance can also be tested using Gazebo.
-The set up for both is as described in the <a href="../complete_vehicles/intel_aero.html#obstacle-avoidance">Intel Aero &gt; Obstacle Avoidance</a> and in the <a href="https://github.com/PX4/avoidance#obstacle-detection-and-avoidance" target="_blank">PX4/avoidance</a> Github repo.</p>
+<p>The only required PX4-side setup is to put PX4 into <em>Offboard mode</em>.</p>
+<p>Companion-side hardware setup and hardware/software configuration is provided in the <a href="https://github.com/PX4/avoidance#obstacle-detection-and-avoidance" target="_blank">PX4/avoidance</a> Github repo.</p>
 <h2 id="mission_mode"><a name="mission_mode" class="plugin-anchor" href="#mission_mode"><i class="fa fa-link" aria-hidden="true"></i></a>Mission Mode Avoidance </h2>
-<p>PX4 supports obstacle avoidance in <a href="../flight_modes/mission.html">Mission mode</a>, using avoidance software running on a separate companion computer. </p>
-<p>Obstacle avoidance is enabled within PX4 by <a href="../advanced_config/parameters.html">setting</a> the <a href="../advanced_config/parameter_reference.html#COM_OBS_AVOID">COM_OBS_AVOID</a> to 1.
-PX4 communicates with the obstacle avoidance software using an implementation of the MAVLink <a href="https://mavlink.io/en/services/trajectory.html" target="_blank">Path Planning Protocol</a> (Trajectory Interface) which is <a href="#mission_avoidance_interface">#described below</a>.
-Provided an avoidance system complies with this interface it can be used with PX4.</p>
-<p>The tested companion computer platform is <a href="../complete_vehicles/intel_aero.html">Intel Aero</a> running either the <em>local_planner</em> or <em>global_planner</em> avoidance software. Object avoidance can also be tested using Gazebo.
-The set up for both is as described in the <a href="../complete_vehicles/intel_aero.html#obstacle-avoidance">Intel Aero &gt; Obstacle Avoidance</a> and in the <a href="https://github.com/PX4/avoidance#obstacle-detection-and-avoidance" target="_blank">PX4/avoidance</a> Github repo.</p>
+<p>PX4 supports obstacle avoidance in <a href="../flight_modes/mission.html">Mission mode</a>, using avoidance software running on a separate companion computer.</p>
 <h3 id="mission-progression"><a name="mission-progression" class="plugin-anchor" href="#mission-progression"><i class="fa fa-link" aria-hidden="true"></i></a>Mission Progression</h3>
 <p>Mission behaviour with obstacle avoidance enabled is <em>slightly different</em> to the original plan.</p>
 <p>The difference when avoidance is active are:</p>
 <ul>
 <li>A waypoint is &quot;reached&quot; when the vehicle is within the acceptance radius, regardless of its heading.<ul>
-<li>This differs from normal missions, in which the vehicle must reach a waypoint with a certain heading (i.e. in a &quot;close to&quot; straight line from the previous waypoint). This constraint cannot be fulfilled when bstacle avoidance is active because the obstacle avoidance algorithm has full control of the vehicle heading, and the vehicle always moves in the current field of view. </li>
+<li>This differs from normal missions, in which the vehicle must reach a waypoint with a certain heading (i.e. in a &quot;close to&quot; straight line from the previous waypoint). This constraint cannot be fulfilled when obstacle avoidance is active because the obstacle avoidance algorithm has full control of the vehicle heading, and the vehicle always moves in the current field of view. </li>
 </ul>
 </li>
 <li>PX4 starts emitting a new current/next waypoint once the previous waypoint is reached (i.e. as soon as vehicle enters its acceptance radius).</li>
-<li>If a waypoint is <em>inside</em> an obstacle it may unreachable (and the mission will be stuck). <ul>
+<li>If a waypoint is <em>inside</em> an obstacle it may unreachable (and the mission will be stuck).<ul>
 <li>If the vehicle projection on the line previous-current waypoint passes the current waypoint, the acceptance radius is enlarged such that the current waypoint is set as reached</li>
 <li>If the vehicle within the x-y acceptance radius, the altitude acceptance is modified such that the mission progresses (even if it is not in the altitude acceptance radius).</li>
 </ul>
@@ -2992,120 +3018,25 @@ The speed will be determined by the avoidance software:<ul>
 </ul>
 </li>
 </ul>
-<p>If PX4 stops receiving setpoint updates then obstacle avoidance will be disabled, and the mission continues under normal PX4 <a href="../flight_modes/mission.html">Mission mode</a> control. </p>
-<h3 id="mission_avoidance_interface"><a name="mission_avoidance_interface" class="plugin-anchor" href="#mission_avoidance_interface"><i class="fa fa-link" aria-hidden="true"></i></a>Mission Mode Avoidance Interface </h3>
-<p>Mission mode is enabled on PX4 by setting <code>COM_OBS_AVOID</code> to <code>1</code>.</p>
-<p>PX4 sends the desired trajectory to the companion computer in <a href="https://mavlink.io/en/messages/common.html#TRAJECTORY_REPRESENTATION_WAYPOINTS" target="_blank">TRAJECTORY_REPRESENTATION_WAYPOINTS</a> messages at 5Hz.</p>
-<p>The fields are set as shown:</p>
-<ul>
-<li><code>time_usec</code>: UNIX Epoch time.</li>
-<li><code>valid_points</code>: 3</li>
-<li>Current vehicle information:<ul>
-<li><code>pos_x[0]</code>, <code>pos_y[0]</code>, <code>pos_z[0]</code>: x-y-z NED vehicle local position</li>
-<li><code>vel_x[0]</code>, <code>vel_y[0]</code>, <code>vel_z[0]</code>: x-y-z NED velocity setpoint</li>
-<li><code>acc_x[0]</code>, <code>acc_y[0]</code>, <code>acc_z[0]</code>: x-y-z NED acceleration setpoint</li>
-<li><code>pos_yaw[0]</code>: Current yaw angle</li>
-<li><code>vel_yaw[0]</code>: NaN</li>
-</ul>
-</li>
-<li><p>Current waypoint:</p>
-<ul>
-<li><code>pos_x[1]</code>, <code>pos_y[1]</code>, <code>pos_z[1]</code>: x-y-z NED local position of <em>current</em> mission waypoint</li>
-<li><code>vel_x[1]</code>, <code>vel_y[1]</code>, <code>vel_z[1]</code>: NaN</li>
-<li><code>acc_x[1]</code>, <code>acc_y[1]</code>, <code>acc_z[1]</code>: NaN</li>
-<li><code>pos_yaw[1]</code>: Yaw setpoint</li>
-<li><code>vel_yaw[1]</code>: Yaw speed setpoint</li>
-</ul>
-</li>
-<li><p>Next waypoint:</p>
-<ul>
-<li><code>pos_x[2]</code>, <code>pos_y[2]</code>, <code>pos_z[2]</code>: x-y-z NED local position of <em>next</em> mission waypoint</li>
-<li><code>vel_x[2]</code>, <code>vel_y[2]</code>, <code>vel_z[2]</code>: NaN</li>
-<li><code>acc_x[2]</code>, <code>acc_y[2]</code>, <code>acc_z[2]</code>: NaN</li>
-<li><code>pos_yaw[2]</code>: Yaw setpoint</li>
-<li><code>vel_yaw[2]</code>: Yaw speed setpoint</li>
-</ul>
-</li>
-<li>All other indices/fields are set as NaN. </li>
-</ul>
-<p>PX4 expects to receive target setpoints in a stream of <code>TRAJECTORY_REPRESENTATION_WAYPOINTS</code> messages for the duration of the mission (not just when there are obstacles).</p>
-<p>The fields for the message from the avoidance software are set as shown:</p>
-<ul>
-<li><code>time_usec</code>: UNIX Epoch time.</li>
-<li><code>valid_points</code>: 1</li>
-<li>Current vehicle information:<ul>
-<li><code>pos_x[0]</code>, <code>pos_y[0]</code>, <code>pos_z[0]</code>: x-y-z NED vehicle local position setpoint</li>
-<li><code>vel_x[0]</code>, <code>vel_y[0]</code>, <code>vel_z[0]</code>: x-y-z NED velocity setpoint</li>
-<li><code>acc_x[0]</code>, <code>acc_y[0]</code>, <code>acc_z[0]</code>: NaN</li>
-<li><code>pos_yaw[0]</code>: Yaw angle setpoint</li>
-<li><code>vel_yaw[0]</code>: Yaw speed setpoint</li>
-</ul>
-</li>
-<li>All other indices/fields are set as NaN. </li>
-</ul>
-<p>The rate at which target setpoints are sent depends on the capabilities of the planning software and the desired speed.</p>
+<p>If PX4 stops receiving setpoint updates for more than half a second it will switch into <a href="../flight_modes/hold.html">Hold mode</a>.</p>
+<h3 id="px4-configuration"><a name="px4-configuration" class="plugin-anchor" href="#px4-configuration"><i class="fa fa-link" aria-hidden="true"></i></a>PX4 Configuration</h3>
+<p>Obstacle avoidance is enabled within PX4 by <a href="../advanced_config/parameters.html">setting</a> the <a href="../advanced_config/parameter_reference.html#COM_OBS_AVOID">COM_OBS_AVOID</a> to 1.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
-<p> Currently the <em>local planner</em> emits messages at ~30Hz and can move at around 3 m/s. 
-  The <em>global planner</em> emits messages at ~10Hz and mission speed is around 1-1.5 m/s.</p>
+<p> <code>COM_OBS_AVOID</code> also enables <a href="safe_landing.html">Safe Landing</a> and any other features that use the PX4 <a href="path_planning_interface.html">Path Planning Offoard Interface</a> (Trajectory Interface) to integrate external path planning services with PX4.</p>
 </blockquote>
-<p>The paragraphs below describe the behaviour in greater detail, covering the internal PX4 behaviour and message flow through ROS.</p>
-<h4 id="mission-mode-detailed-behaviour"><a name="mission-mode-detailed-behaviour" class="plugin-anchor" href="#mission-mode-detailed-behaviour"><i class="fa fa-link" aria-hidden="true"></i></a>Mission Mode Detailed Behaviour</h4>
-<p>When a mission is uploaded from QGC and the parameter <code>COM_OBS_AVOID</code> is set to <code>1</code>, PX4 fills the uORB message <code>vehicle_trajectory_waypoint_desired</code> as described below: </p>
-<p>Array <code>waypoints</code>:</p>
-<ul>
-<li><p><em>index 0 :</em></p>
-<ul>
-<li>position: x-y-z NED vehicle local position</li>
-<li>velocity: x-y-z NED velocity setpoint generated by the active FlightTask</li>
-<li>Acceleration: vehicle acceleration</li>
-<li>Yaw: vehicle yaw</li>
-<li>Yaw_speed: NaN</li>
-</ul>
-</li>
-<li><p><em>index 1:</em></p>
-<ul>
-<li>position: x-y-z NED local coordinates of the current mission waypoint</li>
-<li>Velocity: NaN</li>
-<li>Acceleration: NaN</li>
-<li>Yaw: yaw setpoint</li>
-<li>Yaw_speed: yaw speed setpoint</li>
-</ul>
-</li>
-<li><p><em>Index2:</em></p>
-<ul>
-<li>position: x-y-z NED local coordinates of the next mission waypoint</li>
-<li>Velocity: NaN</li>
-<li>Acceleration: NaN</li>
-<li>Yaw: yaw setpoint</li>
-<li>Yaw_speed: yaw speed setpoint</li>
-</ul>
-</li>
-</ul>
-<p>The remaining indices are filled with NaN. </p>
-<p>The message <code>vehicle_trajectory_waypoint_desired</code> is mapped into the MAVLink message <code>TRAJECTORY_REPRESENTATION_WAYPOINTS</code> (see <a href="#mission_avoidance_interface">avoidance interface</a> above). 
-The messages are sent at 5Hz.</p>
-<p>MAVROS translates the MAVLink message into a ROS message called <code>mavros_msgs::trajectory</code> and does the conversion from NED to ENU frames. 
-Messages are published on the ROS topic <code>/mavros/trajectory/desired</code></p>
-<p>On the avoidance side, the algorithm plans a path to the waypoint.</p>
-<p>The position or velocity setpoints generated by the obstacle avoidance to get collision free to the waypoint can be sent to the Firmware with two ROS messages:
-<code>mavros_msgs::trajectory</code> (both velocity and position set points) on ROS topic <code>/mavros/trajectory/generated</code>
-<code>nav_msgs::Path</code> (only position setpoints) on ROS topic <code>/mavros/trajectory/path</code></p>
-<p>MAVROS converts the set points from ENU to NED frame and translates the ROS messages into a MAVLink message <code>TRAJECTORY_REPRESENTATION_WAYPOINTS</code>.</p>
-<p>On the PX4 side, incoming <code>TRAJECTORY_REPRESENTATION_WAYPOINTS</code> are translated into uORB <code>vehicle_trajectory_waypoint</code> messages. 
-The array waypoints contains all NAN expect for index 0:</p>
-<ul>
-<li>Position: position setpoint</li>
-<li>Velocity: velocity setpoint</li>
-<li>acceleration: NaN (acceleration setpoints are not supported by the Firmware)</li>
-<li>Yaw: yaw setpoint</li>
-<li>Yaw_speed: yaw speed setpoint</li>
-</ul>
-<p>The setpoints are tracked by the multicopter position controller.</p>
+<h2 id="companion-computer-setup"><a name="companion-computer-setup" class="plugin-anchor" href="#companion-computer-setup"><i class="fa fa-link" aria-hidden="true"></i></a>Companion Computer Setup</h2>
+<p>Companion-side hardware setup and hardware/software configuration is provided in the <a href="https://github.com/PX4/avoidance#obstacle-detection-and-avoidance" target="_blank">PX4/avoidance</a> Github repo.</p>
+<p>Obstacle avoidance in missions can use either the <em>local planner</em> or <em>global planner</em> (the local planner is recommended/better performing).</p>
+<h2 id="interface"><a name="interface" class="plugin-anchor" href="#interface"><i class="fa fa-link" aria-hidden="true"></i></a>Obstacle Avoidance Interface </h2>
+<p>PX4 uses the <a href="path_planning_interface.html">Path Planning Offboard Interface</a> for integrating path planning services from a companion computer (including <a href="obstacle_avoidance.html#mission_mode">Obstacle Avoidance in missions</a>, <a href="safe_landing.html">Safe Landing</a>, and future services).</p>
+<p>The interface (messages sent) between PX4 and the companion are <em>exactly</em> the same as for any other path planning services.</p>
+<h2 id="supported-hardware"><a name="supported-hardware" class="plugin-anchor" href="#supported-hardware"><i class="fa fa-link" aria-hidden="true"></i></a>Supported Hardware</h2>
+<p>Tested companion computers and cameras are listed in <a href="https://github.com/PX4/avoidance#run-on-hardware" target="_blank">PX4/avoidance</a>.</p>
 <!-- ## Further Information -->
 <!-- @mrivi is expert! -->
 <!-- Issue with discussion : https://github.com/PX4/Devguide/issues/530 -->
 <!-- PR for mavlink docs: https://github.com/mavlink/mavlink-devguide/pull/133 -->
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-07-11 16:01:58 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-07-12 06:44:37 </span> </footer>
                                 
                                 </section>
                             
@@ -3132,12 +3063,12 @@ The array waypoints contains all NAN expect for index 0:</p>
 
             
                 
-                <a href="../advanced_features/satcom_roadblock.html" class="navigation navigation-prev " aria-label="Previous page: RockBlock SatCom System">
+                <a href="../advanced_features/traffic_avoidance_adsb.html" class="navigation navigation-prev " aria-label="Previous page: Air Traffic Avoidance: ADSB/FLARM">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="collision_prevention.html" class="navigation navigation-next " aria-label="Next page: Collision Prevention">
+                <a href="safe_landing.html" class="navigation navigation-next " aria-label="Next page: Safe Landing">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -3148,7 +3079,7 @@ The array waypoints contains all NAN expect for index 0:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Obstacle Avoidance","level":"1.8.4","depth":2,"next":{"title":"Collision Prevention","level":"1.8.5","depth":2,"path":"computer_vision/collision_prevention.md","ref":"computer_vision/collision_prevention.md","articles":[]},"previous":{"title":"RockBlock SatCom System","level":"1.8.3","depth":2,"path":"advanced_features/satcom_roadblock.md","ref":"advanced_features/satcom_roadblock.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"computer_vision/obstacle_avoidance.md","mtime":"2019-07-11T16:01:58.232Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-11T16:03:14.173Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Obstacle Avoidance","level":"1.8.5","depth":2,"next":{"title":"Safe Landing","level":"1.8.6","depth":2,"path":"computer_vision/safe_landing.md","ref":"computer_vision/safe_landing.md","articles":[]},"previous":{"title":"Air Traffic Avoidance: ADSB/FLARM","level":"1.8.4","depth":2,"path":"advanced_features/traffic_avoidance_adsb.md","ref":"advanced_features/traffic_avoidance_adsb.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"computer_vision/obstacle_avoidance.md","mtime":"2019-07-12T06:44:37.424Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-12T06:46:27.028Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
