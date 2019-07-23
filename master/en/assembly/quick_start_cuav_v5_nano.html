@@ -3068,11 +3068,11 @@ We&apos;ll go through each of these in detail in the following sections.</p>
 <tbody>
 <tr>
 <td style="text-align:left">POWER1</td>
-<td style="text-align:left">Connect Power  module;  power input &amp; AD voltage  and current detection</td>
+<td style="text-align:left">Connect Power  module;  power input &amp; AD voltage  and current detection.</td>
 </tr>
 <tr>
 <td style="text-align:left">POWER2</td>
-<td style="text-align:left">Connect i2c smart battery</td>
+<td style="text-align:left">Connect i2c smart battery.</td>
 </tr>
 <tr>
 <td style="text-align:left">TF CARD</td>
@@ -3080,23 +3080,23 @@ We&apos;ll go through each of these in detail in the following sections.</p>
 </tr>
 <tr>
 <td style="text-align:left">M1~M8</td>
-<td style="text-align:left">PWM outputs. Can be used to control motors or servos</td>
+<td style="text-align:left">PWM outputs. Can be used to control motors or servos.</td>
 </tr>
 <tr>
 <td style="text-align:left">A1~A8</td>
-<td style="text-align:left">PWM outputs. Can be used to control motors or servos</td>
+<td style="text-align:left">PWM outputs. Can be used to control motors or servos.</td>
 </tr>
 <tr>
 <td style="text-align:left">DSU7</td>
-<td style="text-align:left">Used for FMU debug, reading debug information</td>
+<td style="text-align:left">Used for FMU debug, reading debug information.</td>
 </tr>
 <tr>
 <td style="text-align:left">I2C1/I2C2</td>
-<td style="text-align:left">Connect an I2C device such as an external compass</td>
+<td style="text-align:left">Connect an I2C device such as an external compass.</td>
 </tr>
 <tr>
 <td style="text-align:left">CAN1/CAN2</td>
-<td style="text-align:left">Connect UAVCAN devices such as CAN GPS</td>
+<td style="text-align:left">Connect UAVCAN devices such as CAN GPS.</td>
 </tr>
 <tr>
 <td style="text-align:left">TYPE-C(USB)</td>
@@ -3104,24 +3104,24 @@ We&apos;ll go through each of these in detail in the following sections.</p>
 </tr>
 <tr>
 <td style="text-align:left">GPS&amp;SAFETY</td>
-<td style="text-align:left">Connect to Neo GPS, which includes GPS, safety switch, buzzer interface</td>
+<td style="text-align:left">Connect to Neo GPS, which includes GPS, safety switch, buzzer interface.</td>
 </tr>
 <tr>
 <td style="text-align:left">TELEM1/TELME2</td>
-<td style="text-align:left">Connect to the Telemetry System</td>
+<td style="text-align:left">Connect to the Telemetry System.</td>
 </tr>
 <tr>
 <td style="text-align:left">DSM/SBUS/RSSI</td>
-<td style="text-align:left">Includes DSM, SBUS, RSSI signal input interface, DSM interface can be connected to DSM satellite receiver, SBUS interface to SBUS remote control receiver, RSSI for signal strength return module</td>
+<td style="text-align:left">Includes DSM, SBUS, RSSI signal input interface, DSM interface can be connected to DSM satellite receiver, SBUS interface to SBUS remote control receiver, RSSI for signal strength return module.</td>
 </tr>
 </tbody>
 </table>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
-<p>For more interface information, please read <a href="http://manual.cuav.net/V5-nano.pdf" target="_blank">V5 nano Manual</a>.</p>
+<p> For more interface information, please read <a href="http://manual.cuav.net/V5-nano.pdf" target="_blank">V5 nano Manual</a>.</p>
 </blockquote>
 <p><img src="../../assets/flight_controller/cuav_v5_nano/connection/v5_nano_quickstart_03.png" alt="quickstart"></p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
-<p> If the controller cannot be mounted in the recommended/default orientation (e.g. due to space constraints) you willneed to configure the autopilot software with the orientation that you actually used:<a href="../advanced_features/rtk-gps.html">Flight Controller Orientation</a>.</p>
+<p> If the controller cannot be mounted in the recommended/default orientation (e.g. due to space constraints) you willneed to configure the autopilot software with the orientation that you actually used: <a href="../advanced_features/rtk-gps.html">Flight Controller Orientation</a>.</p>
 </blockquote>
 <h2 id="gps--compass--safety-switch--led"><a name="gps--compass--safety-switch--led" class="plugin-anchor" href="#gps--compass--safety-switch--led"><i class="fa fa-link" aria-hidden="true"></i></a>GPS + Compass + Safety Switch + LED</h2>
 <p>The recommended GPS module is the Neo v2 GPS, which contains GPS, compass, safety switch, buzzer, LED status light.</p>
@@ -3135,7 +3135,8 @@ Connect to the flight control GPS interface using a cable.</p>
 <p>The dedicated safety switch that comes with the V5+ is only required if you are not using the recommended Neo GPS (which has an inbuilt safety switch).
 If you are flying without the GPS you must attach the switch directly to the  GPS1  port in order to be able to arm the vehicle and fly (If you use the old 6-pin GPS, please read the definition of the bottom interface to change the line.).</p>
 <h2 id="buzzer"><a name="buzzer" class="plugin-anchor" href="#buzzer"><i class="fa fa-link" aria-hidden="true"></i></a>Buzzer</h2>
-<p>If you do not use the recommended  GPS, there may be problems with the buzzer not working. You may need to add an external buzzer instead.</p>
+<p>If you do not use the recommended GPS, there may be problems with the buzzer not working.
+You may need to add an external buzzer instead.</p>
 <h2 id="radio-control"><a name="radio-control" class="plugin-anchor" href="#radio-control"><i class="fa fa-link" aria-hidden="true"></i></a>Radio Control</h2>
 <p>A remote control (RC) radio system is required if you want to manually control your vehicle (PX4 does not require a radio system for autonomous flight modes).
 You will need to select a compatible transmitter/receiver and then bind them so that they communicate (read the instructions that come with your specific transmitter/receiver).</p>
@@ -3145,7 +3146,8 @@ You will need to select a compatible transmitter/receiver and then bind them so 
 <p>The V5 nano has a dedicated DSM cable.
 The Spektrum satellite receiver should be connected to the flight control DSM/SBUS/RSSI interface.</p>
 <h2 id="power"><a name="power" class="plugin-anchor" href="#power"><i class="fa fa-link" aria-hidden="true"></i></a>Power</h2>
-<p>The v5 nano kit includes HV_PM, which supports 2~10s lipo batter. Please connect the 6pin connector of the HW_PM module to the flight control power1 interface.</p>
+<p>The v5 nano kit includes HV_PM, which supports 2~10S LiPo battery.
+Please connect the 6pin connector of the HW_PM module to the flight control <code>Power1</code> interface.</p>
 <p><img src="../../assets/flight_controller/cuav_v5_nano/connection/v5_nano_quickstart_06.png" alt="quickstart"></p>
 <h2 id="telemetry-system-optional"><a name="telemetry-system-optional" class="plugin-anchor" href="#telemetry-system-optional"><i class="fa fa-link" aria-hidden="true"></i></a>Telemetry System (Optional)</h2>
 <p>A telemetry system allows you to communicate with, monitor, and control a vehicle in flight from a ground station (for example, you can direct the UAV to a particular position, or upload a new mission).</p>
@@ -3168,7 +3170,7 @@ The other radio is connected to your ground station computer or mobile device (u
 <li><a href="https://docs.google.com/spreadsheets/d/1-n0__BYDedQrc_2NHqBenG1DNepAgnHpSGglke-QQwY/edit#gid=912976165" target="_blank">FMUv5 reference design pinout</a> (CUAV)</li>
 <li><a href="https://github.com/cuav" target="_blank">CUAV Github</a>  (CUAV)</li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-07-23 01:30:07 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-07-23 04:21:58 </span> </footer>
                                 
                                 </section>
                             
@@ -3211,7 +3213,7 @@ The other radio is connected to your ground station computer or mobile device (u
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"CUAV V5 nano Wiring Quickstart","level":"1.3.4","depth":2,"next":{"title":"Pixhawk 4 Wiring Quickstart","level":"1.3.5","depth":2,"path":"assembly/quick_start_pixhawk4.md","ref":"assembly/quick_start_pixhawk4.md","articles":[]},"previous":{"title":"CUAV V5+ Wiring Quickstart","level":"1.3.3","depth":2,"path":"assembly/quick_start_cuav_v5_plus.md","ref":"assembly/quick_start_cuav_v5_plus.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"assembly/quick_start_cuav_v5_nano.md","mtime":"2019-07-23T01:30:07.359Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-23T01:31:58.999Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"CUAV V5 nano Wiring Quickstart","level":"1.3.4","depth":2,"next":{"title":"Pixhawk 4 Wiring Quickstart","level":"1.3.5","depth":2,"path":"assembly/quick_start_pixhawk4.md","ref":"assembly/quick_start_pixhawk4.md","articles":[]},"previous":{"title":"CUAV V5+ Wiring Quickstart","level":"1.3.3","depth":2,"path":"assembly/quick_start_cuav_v5_plus.md","ref":"assembly/quick_start_cuav_v5_plus.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"assembly/quick_start_cuav_v5_nano.md","mtime":"2019-07-23T04:21:58.023Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-23T04:24:08.849Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
