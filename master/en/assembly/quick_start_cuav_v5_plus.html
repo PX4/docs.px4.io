@@ -3067,16 +3067,16 @@ We&apos;ll go through each of these in detail in the following sections.</p>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">POWER1</td>
-<td style="text-align:left">Connect power module; power input &amp; AD voltage and current detection.</td>
+<td style="text-align:left">Power1</td>
+<td style="text-align:left">Connect power module. Power input with <em>*ANALOG</em> voltage and current detection. Do not use a Digital PM on this connector!</td>
 </tr>
 <tr>
-<td style="text-align:left">POWER2</td>
+<td style="text-align:left">Power2</td>
 <td style="text-align:left">Connect i2c smart battery.</td>
 </tr>
 <tr>
 <td style="text-align:left">TF CARD</td>
-<td style="text-align:left">Insert SD card for log storage</td>
+<td style="text-align:left">SD card for log storage (card pre-inserted in factory).</td>
 </tr>
 <tr>
 <td style="text-align:left">M1~M8</td>
@@ -3128,19 +3128,21 @@ We&apos;ll go through each of these in detail in the following sections.</p>
 <p> If the controller cannot be mounted in the recommended/default orientation (e.g. due to space constraints) you will need to configure the autopilot software with the orientation that you actually used: <a href="../advanced_features/rtk-gps.html">Flight Controller Orientation</a>.</p>
 </blockquote>
 <h2 id="gps--compass--safety-switch--led"><a name="gps--compass--safety-switch--led" class="plugin-anchor" href="#gps--compass--safety-switch--led"><i class="fa fa-link" aria-hidden="true"></i></a>GPS + Compass + Safety Switch + LED</h2>
-<p>The recommended GPS module is the Neo v2 GPS, which contains GPS, compass, safety switch, buzzer, LED status light.</p>
-<p>The GPS/Compass module should be mounted on the frame as far away from other electronics as possible, with the direction marker towards the front of the vehicle (Neo GPS arrow is in the same direction as the flight control arrow).
+<p>The recommended GPS module is the <em>Neo v2 GPS</em>, which contains GPS, compass, safety switch, buzzer, LED status light.</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> Other GPS modules may not work (see <a href="../flight_controller/cuav_v5_nano.html#issue_gps_compatible">this issue</a>).</p>
+</blockquote>
+<p>The GPS/Compass module should be mounted on the frame as far away from other electronics as possible, with the direction marker towards the front of the vehicle (<em>Neo v2 GPS</em> arrow is in the same direction as the flight control arrow).
 Connect to the flight control GPS interface using a cable.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> If you use CAN GPS, please use the cable to connect to the flight control CAN interface.</p>
 </blockquote>
 <p><img src="../../assets/flight_controller/cuav_v5_plus/connection/v5+_quickstart_03.png" alt="V5+ AutoPilot"></p>
 <h2 id="safety-switch"><a name="safety-switch" class="plugin-anchor" href="#safety-switch"><i class="fa fa-link" aria-hidden="true"></i></a>Safety Switch</h2>
-<p>The dedicated safety switch that comes with the V5+ is only required if you are not using the recommended Neo GPS (which has an inbuilt safety switch).
-If you are flying without the GPS you must attach the switch directly to the <code>GPS1</code> port in order to be able to arm the vehicle and fly (If you use the old 6-pin GPS, please read the definition of the bottom interface to change the line.).</p>
+<p>The dedicated safety switch that comes with the V5+ is only required if you are not using the recommended <em>Neo V2 GPS</em> (which has an inbuilt safety switch).</p>
+<p>If you are flying without the GPS you must attach the switch directly to the <code>GPS1</code> port in order to be able to arm the vehicle and fly (if you use the old 6-pin GPS, please read the definition of the bottom interface to change the line).</p>
 <h2 id="buzzer"><a name="buzzer" class="plugin-anchor" href="#buzzer"><i class="fa fa-link" aria-hidden="true"></i></a>Buzzer</h2>
-<p>If you do not use the recommended GPS, the buzzer may not work.
-You may need to add an external buzzer instead.</p>
+<p>If you do not use the recommended GPS, the buzzer may not work.</p>
 <h2 id="radio-control"><a name="radio-control" class="plugin-anchor" href="#radio-control"><i class="fa fa-link" aria-hidden="true"></i></a>Radio Control</h2>
 <p>A remote control (RC) radio system is required if you want to manually control your vehicle (PX4 does not require a radio system for autonomous flight modes).
 You will need to select a compatible transmitter/receiver and then bind them so that they communicate (read the instructions that come with your specific transmitter/receiver).</p>
@@ -3150,13 +3152,24 @@ You will need to select a compatible transmitter/receiver and then bind them so 
 <p>The V5+ has a dedicated DSM cable.
 If using a Spektrum satellite receiver, this should be connected to the flight controller DSM/SBUS/RSSI interface. </p>
 <h2 id="power"><a name="power" class="plugin-anchor" href="#power"><i class="fa fa-link" aria-hidden="true"></i></a>Power</h2>
-<p>The V5+ kit includes the HV_PM, which supports 2~10s LiPo battery.
-Please connect the 6pin connector of the HW_PM module to the flight control <code>Power1</code> interface.</p>
+<p>The V5+ kit includes the <em>HV_PM</em> module, which supports 2~10S LiPo batteries.
+Connect the 6pin connector of the <em>HW_PM</em> module to the flight control <code>Power1</code> interface.</p>
+<blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
+<p> The supplied power module is unfused (see <a href="../flight_controller/cuav_v5_plus.html#issue_pm_unfused">this issue</a>).</p>
+<ul>
+<li>Power <strong>must</strong> be turned off while connecting peripherals.</li>
+<li>Improper wiring can lead to <em>personal harm</em> or equipment damage!</li>
+</ul>
+</blockquote>
 <p><img src="../../assets/flight_controller/cuav_v5_plus/connection/v5+_quickstart_01.png" alt="V5+ AutoPilot"></p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> The power module is not a power source for peripherals connected to the PWM outputs.
+  If you&apos;re connecting servos/actuators you will need to separately power them using a BEC.</p>
+</blockquote>
 <h2 id="telemetry-system-optional"><a name="telemetry-system-optional" class="plugin-anchor" href="#telemetry-system-optional"><i class="fa fa-link" aria-hidden="true"></i></a>Telemetry System (Optional)</h2>
 <p>A telemetry system allows you to communicate with, monitor, and control a vehicle in flight from a ground station (for example, you can direct the UAV to a particular position, or upload a new mission).</p>
 <p>The communication channel is via Telemetry Radios.
-The vehicle-based radio should be connected to either the <strong>TELEM1</strong> or <strong>TELEM2</strong> port (if connected to these ports, no further configuration is required).
+The vehicle-based radio should be connected to either the <code>TELEM1</code> or <code>TELEM2</code> port (if connected to these ports, no further configuration is required).
 The other radio is connected to your ground station computer or mobile device (usually via USB).</p>
 <p><img src="../../assets/flight_controller/cuav_v5_plus/connection/v5+_quickstart_06.png" alt="V5+ AutoPilot"></p>
 <h2 id="sd_card"><a name="sd_card" class="plugin-anchor" href="#sd_card"><i class="fa fa-link" aria-hidden="true"></i></a>SD Card (Optional) </h2>
@@ -3175,7 +3188,7 @@ The other radio is connected to your ground station computer or mobile device (u
 <li><a href="https://github.com/cuav" target="_blank">CUAV Github</a>  (CUAV)</li>
 <li><a href="https://github.com/cuav/hardware/tree/master/V5_Autopilot/V5%2B/V5%2B_BASE" target="_blank">Base board design reference</a>  (CUAV)</li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-07-27 05:37:59 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-07-27 07:54:02 </span> </footer>
                                 
                                 </section>
                             
@@ -3218,7 +3231,7 @@ The other radio is connected to your ground station computer or mobile device (u
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"CUAV V5+ Wiring Quickstart","level":"1.3.3","depth":2,"next":{"title":"CUAV V5 nano Wiring Quickstart","level":"1.3.4","depth":2,"path":"assembly/quick_start_cuav_v5_nano.md","ref":"assembly/quick_start_cuav_v5_nano.md","articles":[]},"previous":{"title":"Vibration Isolation","level":"1.3.2","depth":2,"path":"assembly/vibration_isolation.md","ref":"assembly/vibration_isolation.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"assembly/quick_start_cuav_v5_plus.md","mtime":"2019-07-27T05:37:59.477Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-27T05:39:02.616Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"CUAV V5+ Wiring Quickstart","level":"1.3.3","depth":2,"next":{"title":"CUAV V5 nano Wiring Quickstart","level":"1.3.4","depth":2,"path":"assembly/quick_start_cuav_v5_nano.md","ref":"assembly/quick_start_cuav_v5_nano.md","articles":[]},"previous":{"title":"Vibration Isolation","level":"1.3.2","depth":2,"path":"assembly/vibration_isolation.md","ref":"assembly/vibration_isolation.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"assembly/quick_start_cuav_v5_plus.md","mtime":"2019-07-27T07:54:02.980Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-27T07:56:14.469Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
