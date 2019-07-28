@@ -2885,7 +2885,7 @@
                                 <h1 id="offboard-mode"><a name="offboard-mode" class="plugin-anchor" href="#offboard-mode"><i class="fa fa-link" aria-hidden="true"></i></a>Offboard Mode</h1>
 <p><a href="../getting_started/flight_modes.html#key_position_fixed"><img src="../../assets/site/position_fixed.svg" title="Position fix required (e.g. GPS)" width="30px"></a></p>
 <p>The vehicle obeys a position, velocity or attitude setpoint provided over MAVLink.
-The setpoint may be provided by a MAVLink API (e.g. <a href="https://sdk.dronecode.org/en/" target="_blank">Dronecode SDK</a> or <a href="https://github.com/mavlink/mavros" target="_blank">MAVROS</a>) running on a companion computer (and usually connected via serial cable or wifi).</p>
+The setpoint may be provided by a MAVLink API (e.g. <a href="https://mavsdk.mavlink.io/develop/en/index.html" target="_blank">MAVSDK</a> or <a href="https://github.com/mavlink/mavros" target="_blank">MAVROS</a>) running on a companion computer (and usually connected via serial cable or wifi).</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> Offboard mode is not supported by Fixed Wing vehicles. It is supported for Copter and VTOL vehicles.</p>
 </blockquote>
@@ -2942,7 +2942,7 @@ The action is defined in the parameters <a href="#COM_OBL_ACT">COM_OBL_ACT</a> a
 </tbody>
 </table>
 <h2 id="developer-resources"><a name="developer-resources" class="plugin-anchor" href="#developer-resources"><i class="fa fa-link" aria-hidden="true"></i></a>Developer Resources</h2>
-<p>Typically developers do not directly work at the MAVLink layer, but instead use a robotics API like <a href="https://sdk.dronecode.org/en/" target="_blank">Dronecode SDK</a> or <a href="http://www.ros.org/" target="_blank">ROS</a> (these provide a developer friendly API, and take care of managing and maintaining connections, sending messages and monitoring responses - the minutiae of working with <em>Offboard mode</em> and MAVLink). </p>
+<p>Typically developers do not directly work at the MAVLink layer, but instead use a robotics API like <a href="https://mavsdk.mavlink.io/develop/en/index.html" target="_blank">MAVSDK</a> or <a href="http://www.ros.org/" target="_blank">ROS</a> (these provide a developer friendly API, and take care of managing and maintaining connections, sending messages and monitoring responses - the minutiae of working with <em>Offboard mode</em> and MAVLink). </p>
 <p>The following resources may be useful for a developer audience:</p>
 <ul>
 <li><a href="https://dev.px4.io/en/ros/offboard_control.html" target="_blank">Offboard Control from Linux</a> (PX4 Devguide)</li>
