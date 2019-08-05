@@ -11776,6 +11776,121 @@ the setpoint will be capped to MPC_XY_VEL_MAX</p>   </td>
 </tr>
 </tbody></table>
 
+<h2 id="roboclaw"><a name="roboclaw" class="plugin-anchor" href="#roboclaw"><i class="fa fa-link" aria-hidden="true"></i></a>Roboclaw</h2>
+<table style="width: 100%; table-layout:fixed; font-size:1.5rem; overflow: auto; display:block;">
+ <colgroup><col style="width: 23%"><col style="width: 46%"><col style="width: 11%"><col style="width: 11%"><col style="width: 9%"></colgroup>
+ <thead>
+   <tr><th>Name</th><th>Description</th><th>Min &gt; Max (Incr.)</th><th>Default</th><th>Units</th></tr>
+ </thead>
+<tbody>
+<tr>
+ <td style="vertical-align: top;"><strong id="RBCLW_SER_CFG">RBCLW_SER_CFG</strong> (INT32)</td>
+ <td style="vertical-align: top;"><p>Serial Configuration for Roboclaw Driver</p><p><strong>Comment:</strong> Configure on which serial port to run Roboclaw Driver.</p> <strong>Values:</strong><ul>
+<li><strong>0:</strong> Disabled</li> 
+
+<li><strong>6:</strong> UART 6</li> 
+
+<li><strong>101:</strong> TELEM 1</li> 
+
+<li><strong>102:</strong> TELEM 2</li> 
+
+<li><strong>103:</strong> TELEM 3</li> 
+
+<li><strong>104:</strong> TELEM/SERIAL 4</li> 
+
+<li><strong>201:</strong> GPS 1</li> 
+
+<li><strong>202:</strong> GPS 2</li> 
+
+<li><strong>300:</strong> Radio Controller</li> 
+</ul>
+  <p><b>Reboot required:</b> true</p>
+</td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">0 </td>
+ <td style="vertical-align: top;"></td>
+</tr>
+</tbody></table>
+
+<h2 id="roboclaw-driver"><a name="roboclaw-driver" class="plugin-anchor" href="#roboclaw-driver"><i class="fa fa-link" aria-hidden="true"></i></a>Roboclaw driver</h2>
+<table style="width: 100%; table-layout:fixed; font-size:1.5rem; overflow: auto; display:block;">
+ <colgroup><col style="width: 23%"><col style="width: 46%"><col style="width: 11%"><col style="width: 11%"><col style="width: 9%"></colgroup>
+ <thead>
+   <tr><th>Name</th><th>Description</th><th>Min &gt; Max (Incr.)</th><th>Default</th><th>Units</th></tr>
+ </thead>
+<tbody>
+<tr>
+ <td style="vertical-align: top;"><strong id="RBCLW_ADDRESS">RBCLW_ADDRESS</strong> (INT32)</td>
+ <td style="vertical-align: top;"><p>Address of the Roboclaw</p><p><strong>Comment:</strong> The Roboclaw can be configured to have an address from 0x80 to 0x87, inclusive. It must be configured to match this parameter.</p> <strong>Values:</strong><ul>
+<li><strong>128:</strong> 0x80</li> 
+
+<li><strong>129:</strong> 0x81</li> 
+
+<li><strong>130:</strong> 0x82</li> 
+
+<li><strong>131:</strong> 0x83</li> 
+
+<li><strong>132:</strong> 0x84</li> 
+
+<li><strong>133:</strong> 0x85</li> 
+
+<li><strong>134:</strong> 0x86</li> 
+
+<li><strong>135:</strong> 0x87</li> 
+</ul>
+  </td>
+ <td style="vertical-align: top;">128 &gt; 135 </td>
+ <td style="vertical-align: top;">128 </td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="RBCLW_BAUD">RBCLW_BAUD</strong> (INT32)</td>
+ <td style="vertical-align: top;"><p>Roboclaw serial baud rate</p><p><strong>Comment:</strong> Baud rate of the serial communication with the Roboclaw. The Roboclaw must be configured to match this rate.</p> <strong>Values:</strong><ul>
+<li><strong>2400:</strong> 2400 baud</li> 
+
+<li><strong>9600:</strong> 9600 baud</li> 
+
+<li><strong>19200:</strong> 19200 baud</li> 
+
+<li><strong>38400:</strong> 38400 baud</li> 
+
+<li><strong>57600:</strong> 57600 baud</li> 
+
+<li><strong>115200:</strong> 115200 baud</li> 
+
+<li><strong>230400:</strong> 230400 baud</li> 
+
+<li><strong>460800:</strong> 460800 baud</li> 
+</ul>
+  <p><b>Reboot required:</b> true</p>
+</td>
+ <td style="vertical-align: top;">2400 &gt; 460800 </td>
+ <td style="vertical-align: top;">2400 </td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="RBCLW_COUNTS_REV">RBCLW_COUNTS_REV</strong> (INT32)</td>
+ <td style="vertical-align: top;"><p>Encoder counts per revolution</p><p><strong>Comment:</strong> Number of encoder counts for one revolution. The roboclaw treats analog encoders (potentiometers) as having 2047 counts per rev. The default value of 1200 corresponds to the default configuration of the Aion R1 rover.</p>   </td>
+ <td style="vertical-align: top;">1 &gt; ? </td>
+ <td style="vertical-align: top;">1200 </td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="RBCLW_READ_PER">RBCLW_READ_PER</strong> (INT32)</td>
+ <td style="vertical-align: top;"><p>Encoder read period</p><p><strong>Comment:</strong> How long to wait, in Milliseconds, between reading wheel encoder values over Uart from the Roboclaw</p>   </td>
+ <td style="vertical-align: top;">1 &gt; 1000 </td>
+ <td style="vertical-align: top;">10 </td>
+ <td style="vertical-align: top;">ms</td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="RBCLW_WRITE_PER">RBCLW_WRITE_PER</strong> (INT32)</td>
+ <td style="vertical-align: top;"><p>Uart write period</p><p><strong>Comment:</strong> How long to wait, in Milliseconds, between writing actuator controls over Uart to the Roboclaw</p>   </td>
+ <td style="vertical-align: top;">1 &gt; 1000 </td>
+ <td style="vertical-align: top;">10 </td>
+ <td style="vertical-align: top;">ms</td>
+</tr>
+</tbody></table>
+
 <h2 id="rover-position-control"><a name="rover-position-control" class="plugin-anchor" href="#rover-position-control"><i class="fa fa-link" aria-hidden="true"></i></a>Rover Position Control</h2>
 <table style="width: 100%; table-layout:fixed; font-size:1.5rem; overflow: auto; display:block;">
  <colgroup><col style="width: 23%"><col style="width: 46%"><col style="width: 11%"><col style="width: 11%"><col style="width: 9%"></colgroup>
@@ -16765,7 +16880,7 @@ MPC_Z_VEL_MAX_DN at zero throttle, and 0.5 * MPC_LAND_SPEED at full throttle</p>
 
 
 
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-08-05 02:29:41 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-08-05 10:01:28 </span> </footer>
                                 
                                 </section>
                             
@@ -16808,7 +16923,7 @@ MPC_Z_VEL_MAX_DN at zero throttle, and 0.5 * MPC_LAND_SPEED at full throttle</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Full Parameter Reference","level":"1.9.14","depth":2,"next":{"title":"Peripheral Hardware","level":"1.10","depth":1,"path":"peripherals/README.md","ref":"peripherals/README.md","articles":[{"title":"Serial Port Configuration","level":"1.10.1","depth":2,"path":"peripherals/serial_configuration.md","ref":"peripherals/serial_configuration.md","articles":[]},{"title":"GPS/Compass","level":"1.10.2","depth":2,"path":"gps_compass/README.md","ref":"gps_compass/README.md","articles":[{"title":"RTK GPS","level":"1.10.2.1","depth":3,"path":"gps_compass/rtk_gps.md","ref":"gps_compass/rtk_gps.md","articles":[{"title":"Hex Here+","level":"1.10.2.1.1","depth":4,"path":"gps_compass/rtk_gps_hex_hereplus.md","ref":"gps_compass/rtk_gps_hex_hereplus.md","articles":[]},{"title":"Drotek XL","level":"1.10.2.1.2","depth":4,"path":"gps_compass/rtk_gps_drotek_xl.md","ref":"gps_compass/rtk_gps_drotek_xl.md","articles":[]},{"title":"CUAV C-RTK","level":"1.10.2.1.3","depth":4,"path":"gps_compass/rtk_gps_cuav_c-rtk.md","ref":"gps_compass/rtk_gps_cuav_c-rtk.md","articles":[]},{"title":"Trimble MB-Two","level":"1.10.2.1.4","depth":4,"path":"gps_compass/rtk_gps_trimble_mb_two.md","ref":"gps_compass/rtk_gps_trimble_mb_two.md","articles":[]},{"title":"Hex Here2","level":"1.10.2.1.5","depth":4,"path":"gps_compass/rtk_gps_hex_here2.md","ref":"gps_compass/rtk_gps_hex_here2.md","articles":[]}]}]},{"title":"Telemetry Radios","level":"1.10.3","depth":2,"path":"telemetry/README.md","ref":"telemetry/README.md","articles":[{"title":"SiK Radio","level":"1.10.3.1","depth":3,"path":"telemetry/sik_radio.md","ref":"telemetry/sik_radio.md","articles":[{"title":"RFD900 (SiK) Telemetry Radio","level":"1.10.3.1.1","depth":4,"path":"telemetry/rfd900_telemetry.md","ref":"telemetry/rfd900_telemetry.md","articles":[]},{"title":"HKPilot (SIK) Telemetry Radio","level":"1.10.3.1.2","depth":4,"path":"telemetry/hkpilot_sik_radio.md","ref":"telemetry/hkpilot_sik_radio.md","articles":[]},{"title":"HolyBro (SIK) Telemetry Radio","level":"1.10.3.1.3","depth":4,"path":"telemetry/holybro_sik_radio.md","ref":"telemetry/holybro_sik_radio.md","articles":[]}]},{"title":"Telemetry Wifi","level":"1.10.3.2","depth":3,"path":"telemetry/telemetry_wifi.md","ref":"telemetry/telemetry_wifi.md","articles":[{"title":"ESP8266 WiFi Module","level":"1.10.3.2.1","depth":4,"path":"telemetry/esp8266_wifi_module.md","ref":"telemetry/esp8266_wifi_module.md","articles":[]},{"title":"3DR Telemetry Wifi (Discontinued)","level":"1.10.3.2.2","depth":4,"path":"telemetry/3dr_telemetry_wifi.md","ref":"telemetry/3dr_telemetry_wifi.md","articles":[]}]}]},{"title":"MAVLink Telemetry (OSD/GCS)","level":"1.10.4","depth":2,"path":"peripherals/mavlink_peripherals.md","ref":"peripherals/mavlink_peripherals.md","articles":[]},{"title":"FrSky Telemetry","level":"1.10.5","depth":2,"path":"peripherals/frsky_telemetry.md","ref":"peripherals/frsky_telemetry.md","articles":[]},{"title":"Distance Sensors (Rangefinders)","level":"1.10.6","depth":2,"path":"sensor/rangefinders.md","ref":"sensor/rangefinders.md","articles":[{"title":"Lightware SFxx Lidar","level":"1.10.6.1","depth":3,"path":"sensor/sfxx_lidar.md","ref":"sensor/sfxx_lidar.md","articles":[]},{"title":"uLanding Radar","level":"1.10.6.2","depth":3,"path":"sensor/ulanding_radar.md","ref":"sensor/ulanding_radar.md","articles":[]},{"title":"LeddarOne Lidar","level":"1.10.6.3","depth":3,"path":"sensor/leddar_one.md","ref":"sensor/leddar_one.md","articles":[]},{"title":"Benewake TFmini Lidar","level":"1.10.6.4","depth":3,"path":"sensor/tfmini.md","ref":"sensor/tfmini.md","articles":[]},{"title":"Lidar-Lite","level":"1.10.6.5","depth":3,"path":"sensor/lidar_lite.md","ref":"sensor/lidar_lite.md","articles":[]},{"title":"TeraRanger","level":"1.10.6.6","depth":3,"path":"sensor/teraranger.md","ref":"sensor/teraranger.md","articles":[]},{"title":"Lanbao PSK-CM8JL65-CC5","level":"1.10.6.7","depth":3,"path":"sensor/cm8jl65_ir_distance_sensor.md","ref":"sensor/cm8jl65_ir_distance_sensor.md","articles":[]}]},{"title":"Airspeed Sensors","level":"1.10.7","depth":2,"path":"sensor/airspeed.md","ref":"sensor/airspeed.md","articles":[]},{"title":"Optical Flow","level":"1.10.8","depth":2,"path":"sensor/optical_flow.md","ref":"sensor/optical_flow.md","articles":[{"title":"PX4FLOW","level":"1.10.8.1","depth":3,"path":"sensor/px4flow.md","ref":"sensor/px4flow.md","articles":[]}]},{"title":"ESCs & Motors","level":"1.10.9","depth":2,"path":"peripherals/esc_motors.md","ref":"peripherals/esc_motors.md","articles":[{"title":"PWM ESCs and Servos","level":"1.10.9.1","depth":3,"path":"peripherals/pwm_escs_and_servo.md","ref":"peripherals/pwm_escs_and_servo.md","articles":[]}]},{"title":"Camera","level":"1.10.10","depth":2,"path":"peripherals/camera.md","ref":"peripherals/camera.md","articles":[]},{"title":"Parachute","level":"1.10.11","depth":2,"path":"peripherals/parachute.md","ref":"peripherals/parachute.md","articles":[]},{"title":"Companion Computer Peripherals","level":"1.10.12","depth":2,"path":"peripherals/companion_computer_peripherals.md","ref":"peripherals/companion_computer_peripherals.md","articles":[]},{"title":"ADSB/FLARM (Traffic Avoidance)","level":"1.10.13","depth":2,"path":"peripherals/adsb_flarm.md","ref":"peripherals/adsb_flarm.md","articles":[]}]},"previous":{"title":"Static Pressure Buildup","level":"1.9.13","depth":2,"path":"advanced_config/static_pressure_buildup.md","ref":"advanced_config/static_pressure_buildup.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"advanced_config/parameter_reference.md","mtime":"2019-08-05T02:29:41.503Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-05T02:30:57.189Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Full Parameter Reference","level":"1.9.14","depth":2,"next":{"title":"Peripheral Hardware","level":"1.10","depth":1,"path":"peripherals/README.md","ref":"peripherals/README.md","articles":[{"title":"Serial Port Configuration","level":"1.10.1","depth":2,"path":"peripherals/serial_configuration.md","ref":"peripherals/serial_configuration.md","articles":[]},{"title":"GPS/Compass","level":"1.10.2","depth":2,"path":"gps_compass/README.md","ref":"gps_compass/README.md","articles":[{"title":"RTK GPS","level":"1.10.2.1","depth":3,"path":"gps_compass/rtk_gps.md","ref":"gps_compass/rtk_gps.md","articles":[{"title":"Hex Here+","level":"1.10.2.1.1","depth":4,"path":"gps_compass/rtk_gps_hex_hereplus.md","ref":"gps_compass/rtk_gps_hex_hereplus.md","articles":[]},{"title":"Drotek XL","level":"1.10.2.1.2","depth":4,"path":"gps_compass/rtk_gps_drotek_xl.md","ref":"gps_compass/rtk_gps_drotek_xl.md","articles":[]},{"title":"CUAV C-RTK","level":"1.10.2.1.3","depth":4,"path":"gps_compass/rtk_gps_cuav_c-rtk.md","ref":"gps_compass/rtk_gps_cuav_c-rtk.md","articles":[]},{"title":"Trimble MB-Two","level":"1.10.2.1.4","depth":4,"path":"gps_compass/rtk_gps_trimble_mb_two.md","ref":"gps_compass/rtk_gps_trimble_mb_two.md","articles":[]},{"title":"Hex Here2","level":"1.10.2.1.5","depth":4,"path":"gps_compass/rtk_gps_hex_here2.md","ref":"gps_compass/rtk_gps_hex_here2.md","articles":[]}]}]},{"title":"Telemetry Radios","level":"1.10.3","depth":2,"path":"telemetry/README.md","ref":"telemetry/README.md","articles":[{"title":"SiK Radio","level":"1.10.3.1","depth":3,"path":"telemetry/sik_radio.md","ref":"telemetry/sik_radio.md","articles":[{"title":"RFD900 (SiK) Telemetry Radio","level":"1.10.3.1.1","depth":4,"path":"telemetry/rfd900_telemetry.md","ref":"telemetry/rfd900_telemetry.md","articles":[]},{"title":"HKPilot (SIK) Telemetry Radio","level":"1.10.3.1.2","depth":4,"path":"telemetry/hkpilot_sik_radio.md","ref":"telemetry/hkpilot_sik_radio.md","articles":[]},{"title":"HolyBro (SIK) Telemetry Radio","level":"1.10.3.1.3","depth":4,"path":"telemetry/holybro_sik_radio.md","ref":"telemetry/holybro_sik_radio.md","articles":[]}]},{"title":"Telemetry Wifi","level":"1.10.3.2","depth":3,"path":"telemetry/telemetry_wifi.md","ref":"telemetry/telemetry_wifi.md","articles":[{"title":"ESP8266 WiFi Module","level":"1.10.3.2.1","depth":4,"path":"telemetry/esp8266_wifi_module.md","ref":"telemetry/esp8266_wifi_module.md","articles":[]},{"title":"3DR Telemetry Wifi (Discontinued)","level":"1.10.3.2.2","depth":4,"path":"telemetry/3dr_telemetry_wifi.md","ref":"telemetry/3dr_telemetry_wifi.md","articles":[]}]}]},{"title":"MAVLink Telemetry (OSD/GCS)","level":"1.10.4","depth":2,"path":"peripherals/mavlink_peripherals.md","ref":"peripherals/mavlink_peripherals.md","articles":[]},{"title":"FrSky Telemetry","level":"1.10.5","depth":2,"path":"peripherals/frsky_telemetry.md","ref":"peripherals/frsky_telemetry.md","articles":[]},{"title":"Distance Sensors (Rangefinders)","level":"1.10.6","depth":2,"path":"sensor/rangefinders.md","ref":"sensor/rangefinders.md","articles":[{"title":"Lightware SFxx Lidar","level":"1.10.6.1","depth":3,"path":"sensor/sfxx_lidar.md","ref":"sensor/sfxx_lidar.md","articles":[]},{"title":"uLanding Radar","level":"1.10.6.2","depth":3,"path":"sensor/ulanding_radar.md","ref":"sensor/ulanding_radar.md","articles":[]},{"title":"LeddarOne Lidar","level":"1.10.6.3","depth":3,"path":"sensor/leddar_one.md","ref":"sensor/leddar_one.md","articles":[]},{"title":"Benewake TFmini Lidar","level":"1.10.6.4","depth":3,"path":"sensor/tfmini.md","ref":"sensor/tfmini.md","articles":[]},{"title":"Lidar-Lite","level":"1.10.6.5","depth":3,"path":"sensor/lidar_lite.md","ref":"sensor/lidar_lite.md","articles":[]},{"title":"TeraRanger","level":"1.10.6.6","depth":3,"path":"sensor/teraranger.md","ref":"sensor/teraranger.md","articles":[]},{"title":"Lanbao PSK-CM8JL65-CC5","level":"1.10.6.7","depth":3,"path":"sensor/cm8jl65_ir_distance_sensor.md","ref":"sensor/cm8jl65_ir_distance_sensor.md","articles":[]}]},{"title":"Airspeed Sensors","level":"1.10.7","depth":2,"path":"sensor/airspeed.md","ref":"sensor/airspeed.md","articles":[]},{"title":"Optical Flow","level":"1.10.8","depth":2,"path":"sensor/optical_flow.md","ref":"sensor/optical_flow.md","articles":[{"title":"PX4FLOW","level":"1.10.8.1","depth":3,"path":"sensor/px4flow.md","ref":"sensor/px4flow.md","articles":[]}]},{"title":"ESCs & Motors","level":"1.10.9","depth":2,"path":"peripherals/esc_motors.md","ref":"peripherals/esc_motors.md","articles":[{"title":"PWM ESCs and Servos","level":"1.10.9.1","depth":3,"path":"peripherals/pwm_escs_and_servo.md","ref":"peripherals/pwm_escs_and_servo.md","articles":[]}]},{"title":"Camera","level":"1.10.10","depth":2,"path":"peripherals/camera.md","ref":"peripherals/camera.md","articles":[]},{"title":"Parachute","level":"1.10.11","depth":2,"path":"peripherals/parachute.md","ref":"peripherals/parachute.md","articles":[]},{"title":"Companion Computer Peripherals","level":"1.10.12","depth":2,"path":"peripherals/companion_computer_peripherals.md","ref":"peripherals/companion_computer_peripherals.md","articles":[]},{"title":"ADSB/FLARM (Traffic Avoidance)","level":"1.10.13","depth":2,"path":"peripherals/adsb_flarm.md","ref":"peripherals/adsb_flarm.md","articles":[]}]},"previous":{"title":"Static Pressure Buildup","level":"1.9.13","depth":2,"path":"advanced_config/static_pressure_buildup.md","ref":"advanced_config/static_pressure_buildup.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"advanced_config/parameter_reference.md","mtime":"2019-08-05T10:01:28.510Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-05T10:02:43.354Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
