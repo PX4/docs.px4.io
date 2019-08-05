@@ -1,0 +1,3322 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Sensor Thermal Compensation · PX4 User Guide</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-richquotes/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-language-picker/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-versions-select/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-dronecode/theme_styles.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="advanced_flight_controller_orientation_leveling.html" />
+    
+    
+    <link rel="prev" href="land_detector.html" />
+    
+
+    </head>
+    <body>
+        
+    
+    <!-- ##HW Add dronecode menu -->
+    <div id="common_dronecode_menu">
+
+      <div class="common_menu_logo large_version">
+        <a href="https://www.dronecode.org/">
+          <img src="../../gitbook/gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png" alt="Dronecode logo (large)" />
+        </a>
+      </div>
+      <div class="common_menu_logo small_version">
+        <a href="https://www.dronecode.org/">
+          <img src="../../gitbook/gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png" alt="Dronecode logo (small)" />
+        </a>
+      </div>
+      
+      <div class="common_menu_options">
+        
+            <div class="common_dronecode_menu_item"><a href="http://px4.io/">PX4</a></div>
+            <div class="common_dronecode_menu_item large_version"><a href="http://qgroundcontrol.com/">QGroundControl</a></div>
+            <div class="common_dronecode_menu_item small_version"><a href="http://qgroundcontrol.com/">QGC</a></div>
+            <div class="common_dronecode_menu_item"><a href="https://www.dronecode.org/sdk/">SDK</a></div>
+            <div class="common_dronecode_menu_item"><a href="https://mavlink.io/en/">MAVLink</a></div>
+            <div class="common_dronecode_menu_item large_version"><a href="https://www.dronecode.org/documentation/">Documentation</a></div>
+            <div class="common_dronecode_menu_item small_version"><a href="https://www.dronecode.org/documentation/">Docs</a></div>
+            <div class="common_dronecode_menu_item large_version"><a href="http://discuss.px4.io/">Support</a></div>
+            <div class="common_dronecode_menu_item small_version"><a href="http://discuss.px4.io/">Help</a></div>
+        
+      </div>
+    </div>
+    
+<!-- ##HW END Add dronecode menu -->
+    
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../getting_started/">
+            
+                <a href="../getting_started/">
+            
+                    
+                    入门指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../getting_started/px4_basic_concepts.html">
+            
+                <a href="../getting_started/px4_basic_concepts.html">
+            
+                    
+                    基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../getting_started/frame_selection.html">
+            
+                <a href="../getting_started/frame_selection.html">
+            
+                    
+                    载具/机架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../getting_started/flight_controller_selection.html">
+            
+                <a href="../getting_started/flight_controller_selection.html">
+            
+                    
+                    Flight Controllers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../getting_started/sensor_selection.html">
+            
+                <a href="../getting_started/sensor_selection.html">
+            
+                    
+                    Sensors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../getting_started/rc_transmitter_receiver.html">
+            
+                <a href="../getting_started/rc_transmitter_receiver.html">
+            
+                    
+                    Radio Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../getting_started/flight_modes.html">
+            
+                <a href="../getting_started/flight_modes.html">
+            
+                    
+                    飞行模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../getting_started/vehicle_status.html">
+            
+                <a href="../getting_started/vehicle_status.html">
+            
+                    
+                    Vehicle Status Notifications
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.7.1" data-path="../getting_started/led_meanings.html">
+            
+                <a href="../getting_started/led_meanings.html">
+            
+                    
+                    LED Meanings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.2" data-path="../getting_started/tunes.html">
+            
+                <a href="../getting_started/tunes.html">
+            
+                    
+                    Tune/Sound Meanings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.3" data-path="../flying/pre_flight_checks.html">
+            
+                <a href="../flying/pre_flight_checks.html">
+            
+                    
+                    Preflight Checks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../getting_started/flight_reporting.html">
+            
+                <a href="../getting_started/flight_reporting.html">
+            
+                    
+                    Flight Reporting
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../assembly/">
+            
+                <a href="../assembly/">
+            
+                    
+                    基本装配
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../assembly/mount_and_orient_controller.html">
+            
+                <a href="../assembly/mount_and_orient_controller.html">
+            
+                    
+                    Mounting the Flight Controller
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../assembly/vibration_isolation.html">
+            
+                <a href="../assembly/vibration_isolation.html">
+            
+                    
+                    Vibration Isolation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../assembly/quick_start_cuav_v5_plus.html">
+            
+                <a href="../assembly/quick_start_cuav_v5_plus.html">
+            
+                    
+                    CUAV V5+ Wiring Quickstart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../assembly/quick_start_cuav_v5_nano.html">
+            
+                <a href="../assembly/quick_start_cuav_v5_nano.html">
+            
+                    
+                    CUAV V5 nano Wiring Quickstart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../assembly/quick_start_pixhawk4.html">
+            
+                <a href="../assembly/quick_start_pixhawk4.html">
+            
+                    
+                    Pixhawk 4 Wiring Quickstart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../assembly/quick_start_pixhawk4_mini.html">
+            
+                <a href="../assembly/quick_start_pixhawk4_mini.html">
+            
+                    
+                    Pixhawk 4 Mini Wiring Quickstart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../assembly/quick_start_cube.html">
+            
+                <a href="../assembly/quick_start_cube.html">
+            
+                    
+                    Cube Wiring Quickstart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../assembly/quick_start_pixracer.html">
+            
+                <a href="../assembly/quick_start_pixracer.html">
+            
+                    
+                    Pixracer Wiring Quickstart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../assembly/quick_start_pixhawk.html">
+            
+                <a href="../assembly/quick_start_pixhawk.html">
+            
+                    
+                    Pixhawk Wiring Quickstart
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../config/">
+            
+                <a href="../config/">
+            
+                    
+                    基本配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../config/firmware.html">
+            
+                <a href="../config/firmware.html">
+            
+                    
+                    Firmware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../config/airframe.html">
+            
+                <a href="../config/airframe.html">
+            
+                    
+                    机架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../config/flight_controller_orientation.html">
+            
+                <a href="../config/flight_controller_orientation.html">
+            
+                    
+                    Sensor Orientation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../config/compass.html">
+            
+                <a href="../config/compass.html">
+            
+                    
+                    罗盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../config/gyroscope.html">
+            
+                <a href="../config/gyroscope.html">
+            
+                    
+                    Gyroscope
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../config/accelerometer.html">
+            
+                <a href="../config/accelerometer.html">
+            
+                    
+                    Accelerometer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../config/airspeed.html">
+            
+                <a href="../config/airspeed.html">
+            
+                    
+                    Airspeed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../config/level_horizon_calibration.html">
+            
+                <a href="../config/level_horizon_calibration.html">
+            
+                    
+                    Level Horizon Calibration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../config/radio.html">
+            
+                <a href="../config/radio.html">
+            
+                    
+                    Radio Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../config/flight_mode.html">
+            
+                <a href="../config/flight_mode.html">
+            
+                    
+                    Flight Modes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../config/battery.html">
+            
+                <a href="../config/battery.html">
+            
+                    
+                    Battery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../config/safety.html">
+            
+                <a href="../config/safety.html">
+            
+                    
+                    Safety
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../airframes/">
+            
+                <a href="../airframes/">
+            
+                    
+                    机架组装
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../airframes/airframe_reference.html">
+            
+                <a href="../airframes/airframe_reference.html">
+            
+                    
+                    机架参考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../frames_multicopter/">
+            
+                <a href="../frames_multicopter/">
+            
+                    
+                    多旋翼
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../frames_multicopter/dji_f450_cuav_5plus.html">
+            
+                <a href="../frames_multicopter/dji_f450_cuav_5plus.html">
+            
+                    
+                    DJI F450 (CUAV v5+)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../frames_multicopter/dji_f450_cuav_5nano.html">
+            
+                <a href="../frames_multicopter/dji_f450_cuav_5nano.html">
+            
+                    
+                    DJI F450 (CUAV v5 nano)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3" data-path="../frames_multicopter/holybro_qav250_pixhawk4_mini.html">
+            
+                <a href="../frames_multicopter/holybro_qav250_pixhawk4_mini.html">
+            
+                    
+                    QAV250 (Pixhawk4 Mini)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.4" data-path="../frames_multicopter/dji_flamewheel_450.html">
+            
+                <a href="../frames_multicopter/dji_flamewheel_450.html">
+            
+                    
+                    DJI F450 + RTK (Pixhawk 3 Pro)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.5" data-path="../frames_multicopter/lumenier_qav250_pixhawk_mini.html">
+            
+                <a href="../frames_multicopter/lumenier_qav250_pixhawk_mini.html">
+            
+                    
+                    QAV250 (Pixhawk Mini)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.6" data-path="../frames_multicopter/lumenier_qav250_pixhawk_auav_x2.html">
+            
+                <a href="../frames_multicopter/lumenier_qav250_pixhawk_auav_x2.html">
+            
+                    
+                    QAV250 (Pixhawk/AUAV_X2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.7" data-path="../frames_multicopter/spedix_s250_pixracer.html">
+            
+                <a href="../frames_multicopter/spedix_s250_pixracer.html">
+            
+                    
+                    Spedix 250 (Pixracer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.8" data-path="../frames_multicopter/robocat_270_pixracer.html">
+            
+                <a href="../frames_multicopter/robocat_270_pixracer.html">
+            
+                    
+                    Robocat 270 (Pixracer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.9" data-path="../frames_multicopter/matrice100.html">
+            
+                <a href="../frames_multicopter/matrice100.html">
+            
+                    
+                    Matrice 100 (Pixhawk 1)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.10" data-path="../frames_multicopter/qav_r_5_kiss_esc_racer.html">
+            
+                <a href="../frames_multicopter/qav_r_5_kiss_esc_racer.html">
+            
+                    
+                    QAV-R 5" Racer (Pixracer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../frames_plane/">
+            
+                <a href="../frames_plane/">
+            
+                    
+                    固定翼
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../frames_plane/wing_wing_z84.html">
+            
+                <a href="../frames_plane/wing_wing_z84.html">
+            
+                    
+                    Wing Wing Z84 (Pixracer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../frames_vtol/">
+            
+                <a href="../frames_vtol/">
+            
+                    
+                    垂直起降（VTOL）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../frames_vtol/vtol_quadplane_fun_cub_vtol_pixhawk.html">
+            
+                <a href="../frames_vtol/vtol_quadplane_fun_cub_vtol_pixhawk.html">
+            
+                    
+                    FunCub QuadPlane (Pixhawk)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="../frames_vtol/vtol_quadplane_volantex_ranger_ex_pixhawk.html">
+            
+                <a href="../frames_vtol/vtol_quadplane_volantex_ranger_ex_pixhawk.html">
+            
+                    
+                    Ranger QuadPlane (Pixhawk)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="../frames_vtol/vtol_tiltrotor_eflite_convergence_pixfalcon.html">
+            
+                <a href="../frames_vtol/vtol_tiltrotor_eflite_convergence_pixfalcon.html">
+            
+                    
+                    Convergence Tiltrotor (Pixfalcon)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.4" data-path="../frames_vtol/vtol_tailsitter_caipiroshka_pixracer.html">
+            
+                <a href="../frames_vtol/vtol_tailsitter_caipiroshka_pixracer.html">
+            
+                    
+                    TBS Caipiroshka (Pixracer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.5" data-path="../frames_vtol/vtol_quadplane_falcon_vertigo_hybrid_rtf_dropix.html">
+            
+                <a href="../frames_vtol/vtol_quadplane_falcon_vertigo_hybrid_rtf_dropix.html">
+            
+                    
+                    Falcon Vertigo QuadPlane (Dropix)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.6" data-path="../frames_vtol/vtol_tiltrotor_birdseyeview_firefly_y6_pixfalcon.html">
+            
+                <a href="../frames_vtol/vtol_tiltrotor_birdseyeview_firefly_y6_pixfalcon.html">
+            
+                    
+                    Archived:FireFly Y6 Tiltrotor (Pixfalcon)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../frames_rover/">
+            
+                <a href="../frames_rover/">
+            
+                    
+                    Rovers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.1" data-path="../frames_rover/traxxas_stampede.html">
+            
+                <a href="../frames_rover/traxxas_stampede.html">
+            
+                    
+                    Traxxas Stampede
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../flying/">
+            
+                <a href="../flying/">
+            
+                    
+                    飞行
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../flying/first_flight_guidelines.html">
+            
+                <a href="../flying/first_flight_guidelines.html">
+            
+                    
+                    First Flight Guidelines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../flying/basic_flying.html">
+            
+                <a href="../flying/basic_flying.html">
+            
+                    
+                    Flying 101
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="../flying/fixed_wing_landing.html">
+            
+                <a href="../flying/fixed_wing_landing.html">
+            
+                    
+                    Landing (Fixed Wing)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../flying/missions.html">
+            
+                <a href="../flying/missions.html">
+            
+                    
+                    Missions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../flight_modes/">
+            
+                <a href="../flight_modes/">
+            
+                    
+                    Flight Modes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.4.1" data-path="../flight_modes/position_mc.html">
+            
+                <a href="../flight_modes/position_mc.html">
+            
+                    
+                    Position (MC)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2" data-path="../flight_modes/altitude_mc.html">
+            
+                <a href="../flight_modes/altitude_mc.html">
+            
+                    
+                    Altitude (MC)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.3" data-path="../flight_modes/manual_stabilized_mc.html">
+            
+                <a href="../flight_modes/manual_stabilized_mc.html">
+            
+                    
+                    Manual/Stabilized (MC)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.4" data-path="../flight_modes/rattitude_mc.html">
+            
+                <a href="../flight_modes/rattitude_mc.html">
+            
+                    
+                    Rattitude (MC)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.5" data-path="../flight_modes/acro_mc.html">
+            
+                <a href="../flight_modes/acro_mc.html">
+            
+                    
+                    Acro (MC)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.6" data-path="../flight_modes/orbit.html">
+            
+                <a href="../flight_modes/orbit.html">
+            
+                    
+                    Orbit (MC)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.7" data-path="../flight_modes/position_fw.html">
+            
+                <a href="../flight_modes/position_fw.html">
+            
+                    
+                    Position (FW)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.8" data-path="../flight_modes/altitude_fw.html">
+            
+                <a href="../flight_modes/altitude_fw.html">
+            
+                    
+                    Altitude (FW)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.9" data-path="../flight_modes/stabilized_fw.html">
+            
+                <a href="../flight_modes/stabilized_fw.html">
+            
+                    
+                    Stabilized (FW)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.10" data-path="../flight_modes/acro_fw.html">
+            
+                <a href="../flight_modes/acro_fw.html">
+            
+                    
+                    Acro (FW)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.11" data-path="../flight_modes/manual_fw.html">
+            
+                <a href="../flight_modes/manual_fw.html">
+            
+                    
+                    Manual (FW)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.12" data-path="../flight_modes/takeoff.html">
+            
+                <a href="../flight_modes/takeoff.html">
+            
+                    
+                    Takeoff
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.13" data-path="../flight_modes/land.html">
+            
+                <a href="../flight_modes/land.html">
+            
+                    
+                    Land
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.14" data-path="../flight_modes/return.html">
+            
+                <a href="../flight_modes/return.html">
+            
+                    
+                    Return
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.15" data-path="../flight_modes/hold.html">
+            
+                <a href="../flight_modes/hold.html">
+            
+                    
+                    Hold
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.16" data-path="../flight_modes/mission.html">
+            
+                <a href="../flight_modes/mission.html">
+            
+                    
+                    Mission
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.17" data-path="../flight_modes/follow_me.html">
+            
+                <a href="../flight_modes/follow_me.html">
+            
+                    
+                    Follow Me
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.18" data-path="../flight_modes/offboard.html">
+            
+                <a href="../flight_modes/offboard.html">
+            
+                    
+                    Offboard
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../flying/terrain_following_holding.html">
+            
+                <a href="../flying/terrain_following_holding.html">
+            
+                    
+                    Terrain Following/Holding
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../log/flight_log_analysis.html">
+            
+                <a href="../log/flight_log_analysis.html">
+            
+                    
+                    飞行日志分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../log/flight_review.html">
+            
+                <a href="../log/flight_review.html">
+            
+                    
+                    使用 Flight Review 进行日志分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../advanced_features/">
+            
+                <a href="../advanced_features/">
+            
+                    
+                    高级功能
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../advanced_features/rtk-gps.html">
+            
+                <a href="../advanced_features/rtk-gps.html">
+            
+                    
+                    RTK GPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../advanced_features/precland.html">
+            
+                <a href="../advanced_features/precland.html">
+            
+                    
+                    Precision Landing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../advanced_features/satcom_roadblock.html">
+            
+                <a href="../advanced_features/satcom_roadblock.html">
+            
+                    
+                    RockBlock SatCom System
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../advanced_features/traffic_avoidance_adsb.html">
+            
+                <a href="../advanced_features/traffic_avoidance_adsb.html">
+            
+                    
+                    Air Traffic Avoidance: ADSB/FLARM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../computer_vision/obstacle_avoidance.html">
+            
+                <a href="../computer_vision/obstacle_avoidance.html">
+            
+                    
+                    Obstacle Avoidance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../computer_vision/safe_landing.html">
+            
+                <a href="../computer_vision/safe_landing.html">
+            
+                    
+                    Safe Landing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../computer_vision/collision_prevention.html">
+            
+                <a href="../computer_vision/collision_prevention.html">
+            
+                    
+                    Collision Prevention
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../computer_vision/path_planning_interface.html">
+            
+                <a href="../computer_vision/path_planning_interface.html">
+            
+                    
+                    Path Planning Interface
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    高级配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="parameters.html">
+            
+                <a href="parameters.html">
+            
+                    
+                    参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../config_mc/">
+            
+                <a href="../config_mc/">
+            
+                    
+                    Multicopter Config/Tuning
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.2.1" data-path="../config_mc/pid_tuning_guide_multicopter.html">
+            
+                <a href="../config_mc/pid_tuning_guide_multicopter.html">
+            
+                    
+                    Multicopter PID Tuning Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2.2" data-path="../config_mc/advanced_mc_position_tuning.html">
+            
+                <a href="../config_mc/advanced_mc_position_tuning.html">
+            
+                    
+                    Multicopter Advanced Tuning Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2.3" data-path="../config_mc/racer_setup.html">
+            
+                <a href="../config_mc/racer_setup.html">
+            
+                    
+                    Multicopter Racer Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../config_fw/">
+            
+                <a href="../config_fw/">
+            
+                    
+                    Fixed Wing Config/Tuning
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.3.1" data-path="../config_fw/pid_tuning_guide_fixedwing.html">
+            
+                <a href="../config_fw/pid_tuning_guide_fixedwing.html">
+            
+                    
+                    Fixedwing PID Tuning Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3.2" data-path="../config_fw/advanced_tuning_guide_fixedwing.html">
+            
+                <a href="../config_fw/advanced_tuning_guide_fixedwing.html">
+            
+                    
+                    Fixedwing Advanced Tuning Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3.3" data-path="../config_fw/trimming_guide_fixedwing.html">
+            
+                <a href="../config_fw/trimming_guide_fixedwing.html">
+            
+                    
+                    Fixedwing Trimming Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../config_vtol/">
+            
+                <a href="../config_vtol/">
+            
+                    
+                    VTOL Config/Tuning
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.4.1" data-path="../config_vtol/vtol_quad_configuration.html">
+            
+                <a href="../config_vtol/vtol_quad_configuration.html">
+            
+                    
+                    QuadPlane Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4.2" data-path="../config_vtol/vtol_back_transition_tuning.html">
+            
+                <a href="../config_vtol/vtol_back_transition_tuning.html">
+            
+                    
+                    Back-transition Tuning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4.3" data-path="../config_vtol/vtol_without_airspeed_sensor.html">
+            
+                <a href="../config_vtol/vtol_without_airspeed_sensor.html">
+            
+                    
+                    VTOL w/o Airspeed Sensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4.4" data-path="../config_vtol/vtol_weathervane.html">
+            
+                <a href="../config_vtol/vtol_weathervane.html">
+            
+                    
+                    VTOL Weather Vane
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="esc_calibration.html">
+            
+                <a href="esc_calibration.html">
+            
+                    
+                    电调（ESC）校准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="tuning_the_ecl_ekf.html">
+            
+                <a href="tuning_the_ecl_ekf.html">
+            
+                    
+                    ECL/EKF Overview & Tuning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="flight_termination.html">
+            
+                <a href="flight_termination.html">
+            
+                    
+                    Flight Termination Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="bootloader_update.html">
+            
+                <a href="bootloader_update.html">
+            
+                    
+                    Bootloader Update
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="bootloader_update_from_betaflight.html">
+            
+                <a href="bootloader_update_from_betaflight.html">
+            
+                    
+                    Bootloader Flashing onto Betaflight Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="land_detector.html">
+            
+                <a href="land_detector.html">
+            
+                    
+                    Land Detector Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9.11" data-path="sensor_thermal_calibration.html">
+            
+                <a href="sensor_thermal_calibration.html">
+            
+                    
+                    Sensor Thermal Compensation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.12" data-path="advanced_flight_controller_orientation_leveling.html">
+            
+                <a href="advanced_flight_controller_orientation_leveling.html">
+            
+                    
+                    Advanced Controller Orientation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.13" data-path="static_pressure_buildup.html">
+            
+                <a href="static_pressure_buildup.html">
+            
+                    
+                    Static Pressure Buildup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.14" data-path="parameter_reference.html">
+            
+                <a href="parameter_reference.html">
+            
+                    
+                    Full Parameter Reference
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../peripherals/">
+            
+                <a href="../peripherals/">
+            
+                    
+                    Peripheral Hardware
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../peripherals/serial_configuration.html">
+            
+                <a href="../peripherals/serial_configuration.html">
+            
+                    
+                    Serial Port Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../gps_compass/">
+            
+                <a href="../gps_compass/">
+            
+                    
+                    GPS/Compass
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.2.1" data-path="../gps_compass/rtk_gps.html">
+            
+                <a href="../gps_compass/rtk_gps.html">
+            
+                    
+                    RTK GPS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.2.1.1" data-path="../gps_compass/rtk_gps_hex_hereplus.html">
+            
+                <a href="../gps_compass/rtk_gps_hex_hereplus.html">
+            
+                    
+                    Hex Here+
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.1.2" data-path="../gps_compass/rtk_gps_drotek_xl.html">
+            
+                <a href="../gps_compass/rtk_gps_drotek_xl.html">
+            
+                    
+                    Drotek XL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.1.3" data-path="../gps_compass/rtk_gps_cuav_c-rtk.html">
+            
+                <a href="../gps_compass/rtk_gps_cuav_c-rtk.html">
+            
+                    
+                    CUAV C-RTK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.1.4" data-path="../gps_compass/rtk_gps_trimble_mb_two.html">
+            
+                <a href="../gps_compass/rtk_gps_trimble_mb_two.html">
+            
+                    
+                    Trimble MB-Two
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.1.5" data-path="../gps_compass/rtk_gps_hex_here2.html">
+            
+                <a href="../gps_compass/rtk_gps_hex_here2.html">
+            
+                    
+                    Hex Here2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../telemetry/">
+            
+                <a href="../telemetry/">
+            
+                    
+                    Telemetry Radios
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.3.1" data-path="../telemetry/sik_radio.html">
+            
+                <a href="../telemetry/sik_radio.html">
+            
+                    
+                    SiK 电台
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.3.1.1" data-path="../telemetry/rfd900_telemetry.html">
+            
+                <a href="../telemetry/rfd900_telemetry.html">
+            
+                    
+                    RFD900 (SiK) Telemetry Radio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3.1.2" data-path="../telemetry/hkpilot_sik_radio.html">
+            
+                <a href="../telemetry/hkpilot_sik_radio.html">
+            
+                    
+                    HKPilot（SIK）遥测无线电
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3.1.3" data-path="../telemetry/holybro_sik_radio.html">
+            
+                <a href="../telemetry/holybro_sik_radio.html">
+            
+                    
+                    HolyBro（SIK）遥测无线电
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3.2" data-path="../telemetry/telemetry_wifi.html">
+            
+                <a href="../telemetry/telemetry_wifi.html">
+            
+                    
+                    WiFi 数传
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.3.2.1" data-path="../telemetry/esp8266_wifi_module.html">
+            
+                <a href="../telemetry/esp8266_wifi_module.html">
+            
+                    
+                    ESP8266 WiFi 模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3.2.2" data-path="../telemetry/3dr_telemetry_wifi.html">
+            
+                <a href="../telemetry/3dr_telemetry_wifi.html">
+            
+                    
+                    3DR Wifi 数传（已停产）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../peripherals/mavlink_peripherals.html">
+            
+                <a href="../peripherals/mavlink_peripherals.html">
+            
+                    
+                    MAVLink Telemetry (OSD/GCS)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../peripherals/frsky_telemetry.html">
+            
+                <a href="../peripherals/frsky_telemetry.html">
+            
+                    
+                    睿思凯（FrSky）遥测功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../sensor/rangefinders.html">
+            
+                <a href="../sensor/rangefinders.html">
+            
+                    
+                    Distance Sensors (Rangefinders)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.6.1" data-path="../sensor/sfxx_lidar.html">
+            
+                <a href="../sensor/sfxx_lidar.html">
+            
+                    
+                    Lightware SFxx Lidar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6.2" data-path="../sensor/ulanding_radar.html">
+            
+                <a href="../sensor/ulanding_radar.html">
+            
+                    
+                    uLanding Radar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6.3" data-path="../sensor/leddar_one.html">
+            
+                <a href="../sensor/leddar_one.html">
+            
+                    
+                    LeddarOne Lidar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6.4" data-path="../sensor/tfmini.html">
+            
+                <a href="../sensor/tfmini.html">
+            
+                    
+                    Benewake TFmini Lidar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6.5" data-path="../sensor/lidar_lite.html">
+            
+                <a href="../sensor/lidar_lite.html">
+            
+                    
+                    Lidar-Lite
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6.6" data-path="../sensor/teraranger.html">
+            
+                <a href="../sensor/teraranger.html">
+            
+                    
+                    TeraRanger
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6.7" data-path="../sensor/cm8jl65_ir_distance_sensor.html">
+            
+                <a href="../sensor/cm8jl65_ir_distance_sensor.html">
+            
+                    
+                    Lanbao PSK-CM8JL65-CC5
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="../sensor/airspeed.html">
+            
+                <a href="../sensor/airspeed.html">
+            
+                    
+                    Airspeed Sensors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="../sensor/optical_flow.html">
+            
+                <a href="../sensor/optical_flow.html">
+            
+                    
+                    光流
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.8.1" data-path="../sensor/px4flow.html">
+            
+                <a href="../sensor/px4flow.html">
+            
+                    
+                    PX4FLOW
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="../peripherals/esc_motors.html">
+            
+                <a href="../peripherals/esc_motors.html">
+            
+                    
+                    ESCs & Motors
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.9.1" data-path="../peripherals/pwm_escs_and_servo.html">
+            
+                <a href="../peripherals/pwm_escs_and_servo.html">
+            
+                    
+                    PWM ESCs and Servos
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.10" data-path="../peripherals/camera.html">
+            
+                <a href="../peripherals/camera.html">
+            
+                    
+                    Camera
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.11" data-path="../peripherals/parachute.html">
+            
+                <a href="../peripherals/parachute.html">
+            
+                    
+                    Parachute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.12" data-path="../peripherals/companion_computer_peripherals.html">
+            
+                <a href="../peripherals/companion_computer_peripherals.html">
+            
+                    
+                    Companion Computer Peripherals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.13" data-path="../peripherals/adsb_flarm.html">
+            
+                <a href="../peripherals/adsb_flarm.html">
+            
+                    
+                    ADSB/FLARM (Traffic Avoidance)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../flight_controller/">
+            
+                <a href="../flight_controller/">
+            
+                    
+                    自动驾驶仪硬件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../flight_controller/pixhawk_series.html">
+            
+                <a href="../flight_controller/pixhawk_series.html">
+            
+                    
+                    Pixhawk 系列
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1.1" data-path="../flight_controller/pixhawk.html">
+            
+                <a href="../flight_controller/pixhawk.html">
+            
+                    
+                    3DR Pixhawk 1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.1.2" data-path="../flight_controller/mro_pixhawk.html">
+            
+                <a href="../flight_controller/mro_pixhawk.html">
+            
+                    
+                    mRo Pixhawk
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.1.3" data-path="../flight_controller/mro_x2.1.html">
+            
+                <a href="../flight_controller/mro_x2.1.html">
+            
+                    
+                    mRobotics-X2.1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.1.4" data-path="../flight_controller/HKPilot32.html">
+            
+                <a href="../flight_controller/HKPilot32.html">
+            
+                    
+                    HobbyKing HKPilot32
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.1.5" data-path="../flight_controller/pixfalcon.html">
+            
+                <a href="../flight_controller/pixfalcon.html">
+            
+                    
+                    Holybro Pixfalcon
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.1.6" data-path="../flight_controller/dropix.html">
+            
+                <a href="../flight_controller/dropix.html">
+            
+                    
+                    Drotek Dropix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.1.7" data-path="../flight_controller/pixracer.html">
+            
+                <a href="../flight_controller/pixracer.html">
+            
+                    
+                    mRo Pixracer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.1.8" data-path="../flight_controller/pixhawk-2.html">
+            
+                <a href="../flight_controller/pixhawk-2.html">
+            
+                    
+                    Hex Cube (Pixhawk 2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.1.9" data-path="../flight_controller/pixhawk3_pro.html">
+            
+                <a href="../flight_controller/pixhawk3_pro.html">
+            
+                    
+                    Drotek Pixhawk 3 Pro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.1.10" data-path="../flight_controller/pixhack_v3.html">
+            
+                <a href="../flight_controller/pixhack_v3.html">
+            
+                    
+                    CUAV Pixhack v3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.1.11" data-path="../flight_controller/pixhawk4.html">
+            
+                <a href="../flight_controller/pixhawk4.html">
+            
+                    
+                    Holybro Pixhawk 4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.1.12" data-path="../flight_controller/pixhawk4_mini.html">
+            
+                <a href="../flight_controller/pixhawk4_mini.html">
+            
+                    
+                    Holybro Pixhawk 4 Mini
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.1.13" data-path="../flight_controller/cuav_v5.html">
+            
+                <a href="../flight_controller/cuav_v5.html">
+            
+                    
+                    CUAV v5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.1.14" data-path="../flight_controller/cuav_v5_plus.html">
+            
+                <a href="../flight_controller/cuav_v5_plus.html">
+            
+                    
+                    CUAV V5+
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.1.15" data-path="../flight_controller/cuav_v5_nano.html">
+            
+                <a href="../flight_controller/cuav_v5_nano.html">
+            
+                    
+                    CUAV V5 nano
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.1.16" data-path="../flight_controller/pixhawk_mini.html">
+            
+                <a href="../flight_controller/pixhawk_mini.html">
+            
+                    
+                    3DR Pixhawk Mini (Discontinued)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.1.17" data-path="../flight_controller/auav_x2.html">
+            
+                <a href="../flight_controller/auav_x2.html">
+            
+                    
+                    AUAV-X2 (Discontinued)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.1.18" data-path="../flight_controller/silicon_errata.html">
+            
+                <a href="../flight_controller/silicon_errata.html">
+            
+                    
+                    Silicon Errata
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../flight_controller/mind_series.html">
+            
+                <a href="../flight_controller/mind_series.html">
+            
+                    
+                    (Air)Mind 系列
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.2.1" data-path="../flight_controller/mindpx.html">
+            
+                <a href="../flight_controller/mindpx.html">
+            
+                    
+                    MindPX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.2" data-path="../flight_controller/mindracer.html">
+            
+                <a href="../flight_controller/mindracer.html">
+            
+                    
+                    MindRacer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../flight_controller/kakutef7.html">
+            
+                <a href="../flight_controller/kakutef7.html">
+            
+                    
+                    Holybro Kakute F7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../flight_controller/omnibus_f4_sd.html">
+            
+                <a href="../flight_controller/omnibus_f4_sd.html">
+            
+                    
+                    Omnibus F4 SD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../flight_controller/snapdragon_flight.html">
+            
+                <a href="../flight_controller/snapdragon_flight.html">
+            
+                    
+                    Snapdragon Flight
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.5.1" data-path="../flight_controller/snapdragon_flight_hardware_example_setup.html">
+            
+                <a href="../flight_controller/snapdragon_flight_hardware_example_setup.html">
+            
+                    
+                    Hardware Setup Example
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5.2" data-path="../flight_controller/snapdragon_flight_dev_environment_installation.html">
+            
+                <a href="../flight_controller/snapdragon_flight_dev_environment_installation.html">
+            
+                    
+                    Developer Environment Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5.3" data-path="../flight_controller/snapdragon_flight_software_installation.html">
+            
+                <a href="../flight_controller/snapdragon_flight_software_installation.html">
+            
+                    
+                    Snapdragon Software Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5.4" data-path="../flight_controller/snapdragon_flight_configuration.html">
+            
+                <a href="../flight_controller/snapdragon_flight_configuration.html">
+            
+                    
+                    Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5.5" data-path="../flight_controller/snapdragon_flight_advanced.html">
+            
+                <a href="../flight_controller/snapdragon_flight_advanced.html">
+            
+                    
+                    Snapdragon Advanced
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../flight_controller/raspberry_pi_navio2.html">
+            
+                <a href="../flight_controller/raspberry_pi_navio2.html">
+            
+                    
+                    Raspberry Pi 2/3 Navio2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="../flight_controller/ocpoc_zynq.html">
+            
+                <a href="../flight_controller/ocpoc_zynq.html">
+            
+                    
+                    OcPoC-Zynq Mini
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="../flight_controller/beaglebone_blue.html">
+            
+                <a href="../flight_controller/beaglebone_blue.html">
+            
+                    
+                    BeagleBone Blue
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../complete_vehicles/">
+            
+                <a href="../complete_vehicles/">
+            
+                    
+                    Complete Vehicles
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../complete_vehicles/crazyflie2.html">
+            
+                <a href="../complete_vehicles/crazyflie2.html">
+            
+                    
+                    Crazyflie 2.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../complete_vehicles/bebop.html">
+            
+                <a href="../complete_vehicles/bebop.html">
+            
+                    
+                    Parrot Bebop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../complete_vehicles/mindracer_BNF_RTF.html">
+            
+                <a href="../complete_vehicles/mindracer_BNF_RTF.html">
+            
+                    
+                    MindRacer BNF & RTF
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.3.1" data-path="../complete_vehicles/mindracer210.html">
+            
+                <a href="../complete_vehicles/mindracer210.html">
+            
+                    
+                    MindRacer 210
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3.2" data-path="../complete_vehicles/nanomind110.html">
+            
+                <a href="../complete_vehicles/nanomind110.html">
+            
+                    
+                    NanoMind 110
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../complete_vehicles/betafpv_beta75x.html">
+            
+                <a href="../complete_vehicles/betafpv_beta75x.html">
+            
+                    
+                    BetaFPV Beta75X 2S Brushless Whoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../complete_vehicles/holybro_kopis2.html">
+            
+                <a href="../complete_vehicles/holybro_kopis2.html">
+            
+                    
+                    Holybro Kopis 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" data-path="../complete_vehicles/intel_aero.html">
+            
+                <a href="../complete_vehicles/intel_aero.html">
+            
+                    
+                    Intel® Aero RTF Drone (Discontinued)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../development/development.html">
+            
+                <a href="../development/development.html">
+            
+                    
+                    Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Dronecode 相关资源</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <a target="_blank" href="https://dev.px4.cc/zh/">
+            
+                    
+                    PX4 开发人员指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <a target="_blank" href="https://docs.qgroundcontrol.com/en/">
+            
+                    
+                    QGroundControl用户指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" >
+            
+                <a target="_blank" href="https://dev.qgc.dimianzhan.com/zh/">
+            
+                    
+                    QGroundControl 开发人员指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" >
+            
+                <a target="_blank" href="https://mavlink.io/en/">
+            
+                    
+                    MAVLink指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" >
+            
+                <a target="_blank" href="https://mavsdk.mavlink.io/">
+            
+                    
+                    MAVSDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" >
+            
+                <a target="_blank" href="https://camera-manager.dronecode.org/en/">
+            
+                    
+                    Dronecode相机管理器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Sensor Thermal Compensation</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x70ED;&#x6821;&#x51C6;&#x548C;&#x8865;&#x507F;"><a name="&#x70ED;&#x6821;&#x51C6;&#x548C;&#x8865;&#x507F;" class="plugin-anchor" href="#&#x70ED;&#x6821;&#x51C6;&#x548C;&#x8865;&#x507F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x70ED;&#x6821;&#x51C6;&#x548C;&#x8865;&#x507F;</h1>
+<p>px4 &#x5305;&#x542B;&#x6821;&#x51C6;&#x548C;&#x8865;&#x507F;&#x901F;&#x7387;&#x9640;&#x87BA;&#x4EEA;&#x3001;&#x52A0;&#x901F;&#x5EA6;&#x8BA1;&#x548C;&#x6C14;&#x538B;&#x4F20;&#x611F;&#x5668;&#x7684;&#x529F;&#x80FD;, &#x4EE5;&#x7EA0;&#x6B63;&#x4F20;&#x611F;&#x5668;&#x6E29;&#x5EA6;&#x5BF9;&#x4F20;&#x611F;&#x5668;&#x504F;&#x5DEE;&#x7684;&#x5F71;&#x54CD;&#x3002;</p>
+<p>&#x672C;&#x4E3B;&#x9898;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#x4E86; <a href="#test_setup">&#x6D4B;&#x8BD5;&#x73AF;&#x5883;</a> &#x548C; <a href="#calibration_procedures">&#x6821;&#x51C6;&#x8FC7;&#x7A0B;</a>&#x3002; &#x6700;&#x540E;&#x662F; <a href="#implementation">&#x5B9E;&#x65BD;&#x8FC7;&#x7A0B;</a> &#x7684;&#x63CF;&#x8FF0;&#x3002;</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> At time of writing (June2019/PX4 v1.9) thermal calibration of the magnetometer is not yet supported.</p>
+</blockquote>
+<h2 id="test_setup"><a name="test_setup" class="plugin-anchor" href="#test_setup"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6D4B;&#x8BD5;&#x8BBE;&#x7F6E;/&#x6700;&#x4F73;&#x5B9E;&#x8DF5; </h2>
+<p>&#x4EE5;&#x4E0B;&#x90E8;&#x5206;&#x4E2D;&#x63CF;&#x8FF0;&#x7684; <a href="#calibration_procedures">&#x6821;&#x51C6;&#x7A0B;&#x5E8F;</a> &#x662F;&#x5728;&#x7406;&#x60F3;&#x7684; <em>&#x73AF;&#x5883;&#x5BA4;</em>&#xFF08;&#x6E29;&#x5EA6;&#x548C;&#x6E7F;&#x5EA6;&#x53D7;&#x63A7;&#x7684;&#x73AF;&#x5883;&#xFF09;&#x4E2D;&#x8FDB;&#x884C;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x7535;&#x8DEF;&#x677F;&#x88AB;&#x4ECE;&#x6700;&#x4F4E;&#x6E29;&#x5EA6;&#x52A0;&#x70ED;&#x5230;&#x6700;&#x9AD8;&#x8FD0;&#x884C;/&#x6821;&#x51C6;&#x6E29;&#x5EA6;&#x3002; &#x5728;&#x5F00;&#x59CB;&#x6821;&#x51C6;&#x4E4B;&#x524D;&#xFF0C;&#x9996;&#x5148;&#x5C06;&#x7535;&#x8DEF;&#x677F; <em>&#x51B7;&#x5374;</em>&#xFF08;&#x51B7;&#x5374;&#x81F3;&#x6700;&#x4F4E;&#x6E29;&#x5EA6;&#x5E76;&#x4F7F;&#x5176;&#x8FBE;&#x5230;&#x5E73;&#x8861;&#xFF09;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x51B7;&#x5374;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x666E;&#x901A;&#x7684;&#x5BB6;&#x7528;&#x51B0;&#x7BB1;&#x8FBE;&#x5230; -20C&#xFF0C;&#x5546;&#x7528;&#x51B0;&#x7BB1;&#x53EF;&#x4EE5;&#x8FBE;&#x5230; -40C &#x7684;&#x91CF;&#x7EA7;&#x3002; &#x7535;&#x8DEF;&#x677F;&#x5E94;&#x653E;&#x5728;&#x5E26;&#x6709;&#x7845;&#x80F6;&#x5E72;&#x71E5;&#x5242;&#x5305;&#x7684;&#x62C9;&#x94FE;/&#x9632;&#x9759;&#x7535;&#x888B;&#x4E2D;&#xFF0C;&#x7535;&#x6E90;&#x7EBF;&#x901A;&#x8FC7;&#x5BC6;&#x5C01;&#x5B54;&#x5F15;&#x51FA;&#x3002; &#x51B7;&#x5374;&#x540E;&#xFF0C;&#x53EF;&#x5C06;&#x888B;&#x5B50;&#x79FB;&#x81F3;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#xFF0C;&#x5E76;&#x5728;&#x540C;&#x4E00;&#x888B;&#x4E2D;&#x7EE7;&#x7EED;&#x6D4B;&#x8BD5;&#x3002;</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> The bag/silica is to prevent condensation from forming on the board.</p>
+</blockquote>
+<p>&#x53EF;&#x4EE5;&#x5728;&#x6CA1;&#x6709;&#x5546;&#x4E1A;&#x7EA7;&#x73AF;&#x5883;&#x5BA4;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x6267;&#x884C;&#x6821;&#x51C6;&#x3002; &#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5177;&#x6709;&#x975E;&#x5E38;&#x5C0F;&#x7684;&#x5185;&#x90E8;&#x7A7A;&#x6C14;&#x4F53;&#x79EF;&#x7684;&#x6CE1;&#x6CAB;&#x5851;&#x6599;&#x76D2;&#x6765;&#x521B;&#x9020;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x73AF;&#x5883;&#x5BB9;&#x5668;&#x3002; &#x8FD9;&#x5141;&#x8BB8;&#x81EA;&#x9A7E;&#x4EEA;&#x5C06;&#x7A7A;&#x6C14;&#x76F8;&#x5BF9;&#x5FEB;&#x901F;&#x5730;&#x81EA;&#x52A0;&#x70ED;&#xFF08;&#x786E;&#x4FDD;&#x76D2;&#x5B50;&#x6709;&#x4E00;&#x4E2A;&#x5C0F;&#x5B54;&#x4EE5;&#x5E73;&#x8861;&#x5BB9;&#x5668;&#x5185;&#x5916;&#x538B;&#x529B;&#xFF0C;&#x4F46;&#x4ECD;&#x7136;&#x80FD;&#x591F;&#x5728;&#x5BB9;&#x5668;&#x5185;&#x52A0;&#x70ED;&#xFF09;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x8BBE;&#x7F6E;&#x53EF;&#x4EE5;&#x5C06;&#x7535;&#x8DEF;&#x677F;&#x52A0;&#x70ED;&#x5230;&#x7EA6; 70C &#x3002; &#x8F76;&#x4E8B;&#x8BC1;&#x636E;&#x8868;&#x660E;&#xFF0C;&#x8BB8;&#x591A;&#x666E;&#x901A;&#x677F;&#x53EF;&#x4EE5;&#x52A0;&#x70ED;&#x5230;&#x8FD9;&#x4E2A;&#x6E29;&#x5EA6;&#x800C;&#x6CA1;&#x6709;&#x4E0D;&#x826F;&#x526F;&#x4F5C;&#x7528;&#x3002; &#x5982;&#x6709;&#x7591;&#x95EE;&#xFF0C;&#x8BF7;&#x4E0E;&#x5236;&#x9020;&#x5546;&#x6838;&#x5B9E;&#x5B89;&#x5168;&#x64CD;&#x4F5C;&#x7684;&#x6E29;&#x5EA6;&#x8303;&#x56F4;&#x3002;</p>
+<blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
+<p> To check the status of the onboard thermal calibration use the MAVlink console (or NuttX console) to check the reported internal temp from the sensor.</p>
+</blockquote>
+<h2 id="calibration_procedures"><a name="calibration_procedures" class="plugin-anchor" href="#calibration_procedures"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6821;&#x51C6;&#x8FC7;&#x7A0B; </h2>
+<p>PX4 &#x652F;&#x6301;&#x4E24;&#x79CD;&#x6821;&#x51C6;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<ul>
+<li><a href="#onboard_calibration">&#x677F;&#x8F7D;&#x6821;&#x51C6;</a> - &#x6821;&#x51C6;&#x5728;&#x7535;&#x8DEF;&#x677F;&#x4E0A;&#x8FD0;&#x884C;&#x3002; &#x8BE5;&#x65B9;&#x6CD5;&#x9700;&#x8981;&#x77E5;&#x9053;&#x6D4B;&#x8BD5;&#x8BBE;&#x7F6E;&#x4E2D;&#x53EF;&#x5B9E;&#x73B0;&#x7684;&#x6E29;&#x5347;&#x91CF;&#x3002;</li>
+<li><a href="#offboard_calibration">&#x677F;&#x5916;&#x6821;&#x51C6;</a> - &#x57FA;&#x4E8E;&#x5728;&#x6821;&#x51C6;&#x8FC7;&#x7A0B;&#x671F;&#x95F4;&#x6536;&#x96C6;&#x7684;&#x65E5;&#x5FD7;&#x4FE1;&#x606F;&#x5728;&#x8BA1;&#x7B97;&#x673A;&#x4E0A;&#x8BA1;&#x7B97;&#x8865;&#x507F;&#x53C2;&#x6570;&#x3002; &#x8BE5;&#x65B9;&#x6CD5;&#x5141;&#x8BB8;&#x7528;&#x6237;&#x53EF;&#x89C6;&#x5730;&#x68C0;&#x67E5;&#x6570;&#x636E;&#x548C;&#x66F2;&#x7EBF;&#x62DF;&#x5408;&#x7684;&#x8D28;&#x91CF;&#x3002;</li>
+</ul>
+<p>&#x677F;&#x5916;&#x6821;&#x51C6;&#x66F4;&#x590D;&#x6742;&#xFF0C;&#x901F;&#x5EA6;&#x66F4;&#x6162;&#xFF0C;&#x4F46;&#x9700;&#x8981;&#x66F4;&#x5C11;&#x7684;&#x6D4B;&#x8BD5;&#x8BBE;&#x7F6E;&#x77E5;&#x8BC6;&#xFF0C;&#x66F4;&#x5BB9;&#x6613;&#x9A8C;&#x8BC1;&#x3002;</p>
+<h3 id="onboard_calibration"><a name="onboard_calibration" class="plugin-anchor" href="#onboard_calibration"><i class="fa fa-link" aria-hidden="true"></i></a>&#x677F;&#x8F7D;&#x6821;&#x51C6;&#x8FC7;&#x7A0B; </h3>
+<p>&#x677F;&#x8F7D;&#x6821;&#x51C6;&#x5B8C;&#x5168;&#x5728;&#x8BBE;&#x5907;&#x4E0A;&#x8FD0;&#x884C;&#x3002; &#x5B83;&#x9700;&#x8981;&#x77E5;&#x9053;&#x6D4B;&#x8BD5;&#x8BBE;&#x7F6E;&#x4E2D;&#x53EF;&#x8FBE;&#x5230;&#x7684;&#x6E29;&#x5347;&#x91CF;&#x3002;</p>
+<p>&#x6267;&#x884C;&#x677F;&#x8F7D;&#x6821;&#x51C6;&#xFF1A;</p>
+<ol>
+<li>&#x786E;&#x4FDD;&#x5728;&#x6821;&#x51C6;&#x524D;&#x8BBE;&#x7F6E;&#x673A;&#x67B6;&#x7C7B;&#x578B;&#xFF0C;&#x5426;&#x5219;&#x5728;&#x8BBE;&#x7F6E;&#x98DE;&#x63A7;&#x677F;&#x65F6;&#x6821;&#x51C6;&#x53C2;&#x6570;&#x5C06;&#x4E22;&#x5931;&#x3002;</li>
+<li>&#x4E3A;&#x7535;&#x8DEF;&#x677F;&#x4F9B;&#x7535;&#x5E76;&#x5C06; <code>SYS_CAL _ *</code>&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A; 1&#xFF0C;&#x4EE5;&#x4FBF;&#x5728;&#x4E0B;&#x6B21;&#x542F;&#x52A8;&#x65F6;&#x542F;&#x7528;&#x6240;&#x9700;&#x4F20;&#x611F;&#x5668;&#x7684;&#x6821;&#x51C6;&#x3002; <sup><a href="#fn_1" id="reffn_1">1</a></sup></li>
+<li>&#x5C06;<a href="parameter_reference.html#SYS_CAL_TDEL"> SYS_CAL_TDEL </a> &#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A;&#x677F;&#x8F7D;&#x6821;&#x51C6;&#x5668;&#x5B8C;&#x6210;&#x6240;&#x9700;&#x7684;&#x6E29;&#x5347;&#x5EA6;&#x6570;&#x3002; &#x5982;&#x679C;&#x6B64;&#x53C2;&#x6570;&#x592A;&#x5C0F;&#xFF0C;&#x5219;&#x6821;&#x51C6;&#x5C06;&#x63D0;&#x524D;&#x5B8C;&#x6210;&#xFF0C;&#x5E76;&#x4E14;&#x6821;&#x51C6;&#x7684;&#x6E29;&#x5EA6;&#x8303;&#x56F4;&#x5C06;&#x4E0D;&#x8DB3;&#x4EE5;&#x5728;&#x7535;&#x8DEF;&#x677F;&#x5B8C;&#x5168;&#x9884;&#x70ED;&#x65F6;&#x8FDB;&#x884C;&#x8865;&#x507F;&#x3002; &#x5982;&#x679C;&#x6B64;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x5F97;&#x592A;&#x5927;&#xFF0C;&#x5219;&#x677F;&#x8F7D;&#x6821;&#x51C6;&#x5668;&#x5C06;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x5B8C;&#x6210;&#x3002; &#x5728;&#x8BBE;&#x7F6E;&#x6B64;&#x53C2;&#x6570;&#x65F6;&#xFF0C;&#x5E94;&#x8003;&#x8651;&#x5230;&#x7535;&#x8DEF;&#x677F;&#x81EA;&#x52A0;&#x70ED;&#x5BFC;&#x81F4;&#x7684;&#x6E29;&#x5EA6;&#x5347;&#x9AD8;&#x3002; &#x5982;&#x679C;&#x4F20;&#x611F;&#x5668;&#x7684;&#x6E29;&#x5347;&#x91CF;&#x672A;&#x77E5;&#xFF0C;&#x5219;&#x5E94;&#x4F7F;&#x7528;&#x677F;&#x5916;&#x6821;&#x51C6;&#x65B9;&#x6CD5;&#x3002;</li>
+<li>&#x5C06; <a href="parameter_reference.html#SYS_CAL_TMIN"> SYS_CAL_TMIN </a> &#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A;&#x60A8;&#x5E0C;&#x671B;&#x6821;&#x51C6;&#x5668;&#x53D1;&#x6325;&#x4F5C;&#x7528;&#x7684;&#x6700;&#x4F4E;&#x6E29;&#x5EA6;&#x6570;&#x636E;&#x3002; &#x66F4;&#x4F4E;&#x7684;&#x51B7;&#x5374;&#x6E29;&#x5EA6;&#x80FD;&#x591F;&#x7528;&#x4E8E;&#x51CF;&#x5C11;&#x51B7;&#x5374;&#x65F6;&#x95F4;&#xFF0C;&#x540C;&#x65F6;&#x4FDD;&#x6301;&#x5BF9;&#x6821;&#x51C6;&#x6700;&#x4F4E;&#x6E29;&#x5EA6;&#x7684;&#x63A7;&#x5236;&#x3002; &#x5982;&#x679C;&#x6821;&#x51C6;&#x5668;&#x6E29;&#x5EA6;&#x4F4E;&#x4E8E;&#x6B64;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x7684;&#x503C;&#xFF0C;&#x5219;&#x4E0D;&#x4F1A;&#x4F7F;&#x7528;&#x4F20;&#x611F;&#x5668;&#x7684;&#x6570;&#x636E;&#x3002;</li>
+<li>&#x5C06; <a href="parameter_reference.html#SYS_CAL_TMAX"> SYS_CAL_TMAX </a> &#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A;&#x6821;&#x51C6;&#x5668;&#x8D77;&#x4F5C;&#x7528;&#x7684;&#x6700;&#x9AD8;&#x8D77;&#x59CB;&#x4F20;&#x611F;&#x5668;&#x6E29;&#x5EA6;&#x3002; &#x5982;&#x679C;&#x8D77;&#x59CB;&#x6E29;&#x5EA6;&#x9AD8;&#x4E8E;&#x6B64;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x7684;&#x503C;&#xFF0C;&#x6821;&#x51C6;&#x5C06;&#x9000;&#x51FA;&#x5E76;&#x62A5;&#x544A;&#x9519;&#x8BEF;&#x3002; &#x6CE8;&#x610F;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x540C;&#x4F20;&#x611F;&#x5668;&#x6D4B;&#x91CF;&#x7684;&#x6E29;&#x5EA6;&#x7684;&#x5DEE;&#x5F02;&#x8D85;&#x8FC7; <code>SYS_CAL_TMAX</code> &#x548C; <code>SYS_CAL_TMIN</code>&#x7684;&#x5DEE;&#x503C; &#xFF0C;&#x5219;&#x6821;&#x51C6;&#x5C06;&#x4E0D;&#x53EF;&#x80FD;&#x542F;&#x52A8;&#x3002;</li>
+<li>&#x65AD;&#x5F00;&#x7535;&#x6E90;&#x5E76;&#x5C06;&#x7535;&#x8DEF;&#x677F;&#x51B7;&#x5374;&#x81F3;&#x4F4E;&#x4E8E;<code>SYS_CAL_TMIN</code>&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x7684;&#x8D77;&#x59CB;&#x6E29;&#x5EA6;&#x3002; &#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x5728;&#x6821;&#x51C6;&#x5F00;&#x59CB;&#x4E4B;&#x524D;&#x542F;&#x52A8;&#x8FC7;&#x7A0B;&#x6709;10&#x79D2;&#x7684;&#x5EF6;&#x8FDF;&#xFF0C;&#x4EE5;&#x5141;&#x8BB8;&#x6240;&#x6709;&#x4F20;&#x611F;&#x5668;&#x7A33;&#x5B9A;&#xFF0C;&#x5E76;&#x4E14;&#x4F20;&#x611F;&#x5668;&#x5728;&#x6B64;&#x671F;&#x95F4;&#x4F1A;&#x5185;&#x90E8;&#x53D1;&#x70ED;&#x3002;</li>
+<li>&#x4FDD;&#x6301;&#x7535;&#x8DEF;&#x677F;&#x9759;&#x6B62;<sup><a href="#fn_2" id="reffn_2">2</a></sup>&#xFF0C;&#x63A5;&#x901A;&#x7535;&#x6E90;&#x5E76;&#x52A0;&#x70ED;&#x5230;&#x8DB3;&#x591F;&#x9AD8;&#x7684;&#x6E29;&#x5EA6;&#xFF0C;&#x4EE5;&#x8FBE;&#x5230;&#x7531;<code>SYS_CAL_TDEL</code>&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x7684;&#x6E29;&#x5347;&#x3002; &#x6821;&#x51C6;&#x671F;&#x95F4;&#xFF0C;&#x5B8C;&#x6210;&#x767E;&#x5206;&#x6BD4;&#x5C06;&#x6253;&#x5370;&#x5230;&#x7CFB;&#x7EDF;&#x63A7;&#x5236;&#x53F0;&#x3002; <sup><a href="#fn_3" id="reffn_3">3</a></sup></li>
+<li>&#x6821;&#x51C6;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x65AD;&#x5F00;&#x7535;&#x6E90;&#xFF0C;&#x8BA9;&#x7535;&#x8DEF;&#x677F;&#x51B7;&#x5374;&#x5230;&#x6821;&#x51C6;&#x8303;&#x56F4;&#x5185;&#x7684;&#x6E29;&#x5EA6;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x6267;&#x884C;&#x4E0B;&#x4E00;&#x6B65;&#x3002;</li>
+<li>&#x901A;&#x8FC7;&#x7CFB;&#x7EDF;&#x63A7;&#x5236;&#x53F0;&#x4F7F;&#x7528; <code>commander calibrate accel</code> &#x6307;&#x4EE4;&#x6216;&#x901A;&#x8FC7;<em> QGroundControl </em>&#xFF0C;&#x6267;&#x884C;6&#x70B9;&#x52A0;&#x901F;&#x5EA6;&#x6821;&#x51C6;&#x3002; &#x5982;&#x679C;&#x9996;&#x6B21;&#x8BBE;&#x7F6E;&#x7535;&#x8DEF;&#x677F;&#xFF0C;&#x5219;&#x8FD8;&#x9700;&#x8981;&#x6267;&#x884C;&#x9640;&#x87BA;&#x4EEA;&#x548C;&#x78C1;&#x529B;&#x8BA1;&#x6821;&#x51C6;&#x3002;</li>
+<li>&#x5728;&#x4EFB;&#x4F55;&#x4F20;&#x611F;&#x5668;&#x6821;&#x51C6;&#x4E4B;&#x540E;&#x7684;&#x9996;&#x6B21;&#x98DE;&#x884C;&#x4E4B;&#x524D;&#xFF0C;&#x7535;&#x8DEF;&#x677F;&#x5FC5;&#x987B;&#x91CD;&#x65B0;&#x4E0A;&#x7535;&#xFF0C;&#x56E0;&#x4E3A;&#x6821;&#x51C6;&#x5E26;&#x6765;&#x7684;&#x7A81;&#x7136;&#x7684;&#x504F;&#x79FB;&#x53D8;&#x5316;&#x53EF;&#x80FD;&#x4F1A;&#x6270;&#x4E71;&#x5BFC;&#x822A;&#x4F30;&#x8BA1;&#x5668;&#xFF0C;&#x5E76;&#x4E14;&#x67D0;&#x4E9B;&#x53C2;&#x6570;&#x76F4;&#x5230;&#x4E0B;&#x6B21;&#x542F;&#x52A8;&#x65F6;&#x624D;&#x4F1A;&#x88AB;&#x4F7F;&#x7528;&#x5B83;&#x4EEC;&#x7684;&#x7B97;&#x6CD5;&#x52A0;&#x8F7D;&#x3002; </li>
+</ol>
+<h3 id="offboard_calibration"><a name="offboard_calibration" class="plugin-anchor" href="#offboard_calibration"><i class="fa fa-link" aria-hidden="true"></i></a>&#x677F;&#x5916;&#x6821;&#x51C6;&#x8FC7;&#x7A0B; </h3>
+<p>&#x4F7F;&#x7528;&#x5728;&#x6821;&#x51C6;&#x6D4B;&#x8BD5;&#x671F;&#x95F4;&#x6536;&#x96C6;&#x7684;&#x6570;&#x636E;&#x5728;&#x5F00;&#x53D1;&#x8BA1;&#x7B97;&#x673A;&#x4E0A;&#x8FD0;&#x884C;&#x677F;&#x5916;&#x6821;&#x51C6;&#x3002; &#x8BE5;&#x65B9;&#x6CD5;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x53EF;&#x89C6;&#x5316;&#x68C0;&#x67E5;&#x6570;&#x636E;&#x548C;&#x66F2;&#x7EBF;&#x62DF;&#x5408;&#x8D28;&#x91CF;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x6267;&#x884C;&#x677F;&#x5916;&#x6821;&#x51C6;&#xFF1A;</p>
+<ol>
+<li>&#x786E;&#x4FDD;&#x5728;&#x6821;&#x51C6;&#x524D;&#x8BBE;&#x7F6E;&#x673A;&#x67B6;&#x7C7B;&#x578B;&#xFF0C;&#x5426;&#x5219;&#x5728;&#x8BBE;&#x7F6E;&#x98DE;&#x63A7;&#x677F;&#x65F6;&#x6821;&#x51C6;&#x53C2;&#x6570;&#x5C06;&#x4E22;&#x5931;&#x3002;</li>
+<li>&#x4E0A;&#x7535;&#x5E76;&#x5C06;&#x53C2;&#x6570; <code>TC_A_ENABLE</code>&#xFF0C;<code>TC_B_ENABLE</code> &#x548C; <code>TC_G_ENABLE</code> &#x8BBE;&#x7F6E;&#x4E3A;1&#x3002;</li>
+<li>&#x5C06;&#x6240;&#x6709; <a href="parameter_reference.html#CAL_GYRO0_EN"> CAL_GYRO * </a> &#x548C; <a href="parameter_reference.html#CAL_ACC0_EN"> CAL_ACC * </a>&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A;&#x9ED8;&#x8BA4;&#x503C;&#x3002;</li>
+<li>Set the <a href="parameter_reference.html#SDLOG_MODE">SDLOG_MODE</a> parameter to 2 to enable logging of data from boot. </li>
+<li>Set the <a href="parameter_reference.html#SDLOG_PROFILE">SDLOG_PROFILE</a> checkbox for <em>thermal calibration</em> (bit 2) to log the raw sensor data required for calibration.</li>
+<li>Cold soak the board to the minimum temperature it will be required to operate in.</li>
+<li>Apply power and keeping the board still <sup id="fnref2:2"><a href="#fn:2" class="footnote-ref">2</a></sup>, warm it slowly to the maximum required operating temperature. <sup id="fnref2:3"><a href="#fn:3" class="footnote-ref">3</a></sup></li>
+<li>Remove power and extract the .ulog file.</li>
+<li><p>Open a terminal window in the <strong>Firmware/Tools</strong> directory and run the python calibration script script file: </p>
+<pre><code> sh
+ python process_sensor_caldata.py &lt;full path name to .ulog file&gt; This will generate a 
+</code></pre><p> <strong>.pdf</strong> file showing the measured data and curve fits for each sensor, and a <strong>.params</strong> file containing the calibration parameters.</p>
+</li>
+<li>Power the board, connect <em>QGroundControl</em> and load the parameter from the generated <strong>.params</strong> file onto the board using <em>QGroundControl</em>. Due to the number of parameters, loading them may take some time.</li>
+<li>After parameters have finished loading, set <code>SDLOG_MODE</code> to 1 to re-enable normal logging and remove power.</li>
+<li>Power the board and perform a normal accelerometer sensor calibration using <em>QGroundControl</em>. It is important that this step is performed when board is within the calibration temperature range. The board must be repowered after this step before flying as the sudden offset changes can upset the navigation estimator and some parameters are not loaded by the algorithms that use them until the next startup.</li>
+</ol>
+<h2 id="implementation"><a name="implementation" class="plugin-anchor" href="#implementation"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x65BD;&#x7EC6;&#x8282; </h2>
+<p>&#x6821;&#x51C6;&#x662F;&#x6307;&#x5728;&#x4E00;&#x7CFB;&#x5217;&#x5185;&#x90E8;&#x6E29;&#x5EA6;&#x8303;&#x56F4;&#x5185;&#x6D4B;&#x91CF;&#x4F20;&#x611F;&#x5668;&#x503C;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x5E76;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x591A;&#x9879;&#x5F0F;&#x62DF;&#x5408;&#x4EE5;&#x8BA1;&#x7B97;&#x53EF;&#x7528;&#x4E8E;&#x6821;&#x6B63;&#x4F20;&#x611F;&#x5668;&#x6570;&#x636E;&#x7684;&#x4E00;&#x7EC4;&#x7CFB;&#x6570;&#xFF08;&#x5B58;&#x50A8;&#x4E3A;&#x53C2;&#x6570;&#xFF09;&#x7684;&#x8FC7;&#x7A0B;&#x3002; &#x8865;&#x507F;&#x662F;&#x6307;&#x4F7F;&#x7528;&#x5185;&#x90E8;&#x6E29;&#x5EA6;&#x6765;&#x8BA1;&#x7B97;&#x504F;&#x79FB;&#x91CF;&#xFF0C;&#x4F20;&#x611F;&#x5668;&#x8BFB;&#x6570;&#x5C06;&#x51CF;&#x53BB;&#x8FD9;&#x4E2A;&#x504F;&#x79FB;&#x91CF;&#xFF0C;&#x4EE5;&#x6821;&#x6B63;&#x968F;&#x6E29;&#x5EA6;&#x53D8;&#x5316;&#x7684;&#x504F;&#x79FB;&#x91CF;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x4E09;&#x9636;&#x591A;&#x9879;&#x5F0F;&#x8BA1;&#x7B97;&#x60EF;&#x6027;&#x901F;&#x7387;&#x9640;&#x87BA;&#x4EEA;&#x548C;&#x52A0;&#x901F;&#x5EA6;&#x8BA1;&#x4F20;&#x611F;&#x5668;&#x504F;&#x79FB;&#xFF0C;&#x800C;&#x4F7F;&#x7528;&#x4E94;&#x9636;&#x591A;&#x9879;&#x5F0F;&#x8BA1;&#x7B97;&#x6C14;&#x538B;&#x4F20;&#x611F;&#x5668;&#x504F;&#x79FB;&#x3002; &#x793A;&#x4F8B;&#x62DF;&#x5408;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<p><img src="../../assets/calibration/thermal_calibration_gyro.png" alt="&#x70ED;&#x6821;&#x51C6;&#x9640;&#x87BA;"></p>
+<p><img src="../../assets/calibration/thermal_calibration_accel.png" alt="&#x70ED;&#x6821;&#x51C6;&#x52A0;&#x901F;&#x5EA6;&#x8BA1;"></p>
+<p><img src="../../assets/calibration/thermal_calibration_baro.png" alt="&#x70ED;&#x6821;&#x51C6;&#x6C14;&#x538B;&#x8BA1;"></p>
+<h3 id="&#x6821;&#x51C6;&#x53C2;&#x6570;&#x5B58;&#x50A8;"><a name="&#x6821;&#x51C6;&#x53C2;&#x6570;&#x5B58;&#x50A8;" class="plugin-anchor" href="#&#x6821;&#x51C6;&#x53C2;&#x6570;&#x5B58;&#x50A8;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6821;&#x51C6;&#x53C2;&#x6570;&#x5B58;&#x50A8;</h3>
+<p>&#x5BF9;&#x4E8E;&#x73B0;&#x6709;&#x7684;&#x53C2;&#x6570;&#x7CFB;&#x7EDF;&#x5B9E;&#x73B0;&#xFF0C;&#x6211;&#x4EEC;&#x4EC5;&#x9650;&#x4E8E;&#x5C06;&#x7ED3;&#x6784;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x503C;&#x4F5C;&#x4E3A;&#x5355;&#x72EC;&#x7684;&#x6761;&#x76EE;&#x5B58;&#x50A8;&#x3002; &#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x4E00;&#x9650;&#x5236;&#xFF0C;&#x5BF9; <a href="parameter_reference.html#thermal-compensation">&#x70ED;&#x8865;&#x507F;&#x53C2;&#x6570;</a> &#x4F7F;&#x7528;&#x4E86;&#x4EE5;&#x4E0B;&#x903B;&#x8F91;&#x547D;&#x540D;&#x7EA6;&#x5B9A;&#xFF1A;</p>
+<pre><code>TC_[type][instance]_[cal_name]_[axis]
+</code></pre><p>&#x5176;&#x4E2D;&#xFF1A;</p>
+<ul>
+<li><code>type</code>&#xFF1A;&#x8868;&#x793A; <code>G</code>=&#x901F;&#x7387;&#x9640;&#x87BA;&#x4EEA;&#x3001;<code>A</code>=&#x52A0;&#x901F;&#x5EA6;&#x8BA1;&#x548C; <code>B</code>=&#x6C14;&#x538B;&#x8BA1;&#x7684;&#x4F20;&#x611F;&#x5668;&#x7C7B;&#x578B;&#x3002;</li>
+<li><code>instance</code>&#xFF1A;&#x662F;&#x4E00;&#x4E2A;&#x6574;&#x6570; 0&#x3001;1&#x6216;2 &#xFF0C;&#x5141;&#x8BB8;&#x81F3;&#x591A;&#x6821;&#x51C6;&#x4E09;&#x4E2A;&#x76F8;&#x540C; <code>type</code> &#x7684;&#x4F20;&#x611F;&#x5668;&#x3002;</li>
+<li><p><code>cal_name</code>&#xFF1A;&#x662F;&#x6807;&#x8BC6;&#x6821;&#x51C6;&#x503C;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002; &#x5B83;&#x5177;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x503C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li><code>Xn</code>&#xFF1A;&#x591A;&#x9879;&#x5F0F;&#x7CFB;&#x6570;&#xFF0C;&#x5176;&#x4E2D;n&#x662F;&#x7CFB;&#x6570;&#x7684;&#x9636;&#x6570;&#xFF0C;&#x4F8B;&#x5982; <code>X3* (temperature - reference temperature)**3</code> &#x3002;</li>
+<li><code>SCL</code>&#xFF1A;&#x6BD4;&#x4F8B;&#xFF08;&#x7F29;&#x653E;&#xFF09;&#x7CFB;&#x6570;</li>
+<li><code>TREF</code>&#xFF1A;&#x53C2;&#x8003;&#x6E29;&#x5EA6;(deg C)&#x3002;</li>
+<li><code>TMIN</code>&#xFF1A;&#x6700;&#x4F4E;&#x6709;&#x6548;&#x6E29;&#x5EA6;(deg C)&#x3002;</li>
+<li><code>TMAX</code>&#xFF1A;&#x6700;&#x9AD8;&#x6709;&#x6548;&#x6E29;&#x5EA6;(deg C)&#x3002;</li>
+</ul>
+</li>
+<li><p><code>axis</code>&#xFF1A;&#x662F;&#x4E00;&#x4E2A;&#x6574;&#x6570;0&#xFF0C;1&#x6216;2&#xFF0C;&#x6307;&#x793A;&#x6821;&#x51C6;&#x6570;&#x636E;&#x4E3A;&#x98DE;&#x63A7;&#x677F;&#x53C2;&#x7167;&#x7CFB;&#x7684; X&#xFF0C;Y &#x6216; Z &#x8F74;&#x3002; &#x5BF9;&#x4E8E;&#x6C14;&#x538B;&#x4F20;&#x611F;&#x5668;&#xFF0C;&#x7701;&#x7565; <code>axis</code> &#x540E;&#x7F00;&#x3002;</p>
+</li>
+</ul>
+<p>&#x793A;&#x4F8B;:</p>
+<ul>
+<li><a href="parameter_reference.html#TC_G0_X3_0">TC_G0_X3_0</a> &#x662F;&#x7B2C;&#x4E00;&#x4E2A;&#x9640;&#x87BA; x &#x8F74;&#x7684; <code>^3</code> &#x7CFB;&#x6570;&#x3002;</li>
+<li><a href="parameter_reference.html#TC_A1_TREF">TC_A1_TREF</a> &#x662F;&#x7B2C;&#x4E8C;&#x4E2A;&#x52A0;&#x901F;&#x5EA6;&#x8BA1;&#x7684;&#x53C2;&#x8003;&#x6E29;&#x5EA6;&#x3002;</li>
+</ul>
+<h3 id="&#x6821;&#x51C6;&#x53C2;&#x6570;&#x4F7F;&#x7528;"><a name="&#x6821;&#x51C6;&#x53C2;&#x6570;&#x4F7F;&#x7528;" class="plugin-anchor" href="#&#x6821;&#x51C6;&#x53C2;&#x6570;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6821;&#x51C6;&#x53C2;&#x6570;&#x4F7F;&#x7528;</h3>
+<p>&#x70ED;&#x504F;&#x5DEE;&#x6821;&#x6B63;(&#x4F7F;&#x7528;&#x6821;&#x51C6;&#x53C2;&#x6570;) &#x5728; <a href="https://dev.px4.io/en/middleware/modules_system.html#sensors" target="_blank">sensors module</a> &#x4E2D;&#x6267;&#x884C;&#x3002; &#x6D4B;&#x91CF;&#x6E29;&#x5EA6;&#x4E2D;&#x51CF;&#x53BB;&#x53C2;&#x8003;&#x6E29;&#x5EA6;&#xFF0C;&#x5F97;&#x5230;&#x4E00;&#x4E2A; delta &#x6E29;&#x5EA6;&#xFF0C;&#x5176;&#x4E2D;&#xFF1A;</p>
+<pre><code>delta = measured_temperature - reference_temperature
+</code></pre><p>&#x7136;&#x540E;&#x4F7F;&#x7528; delta &#x6E29;&#x5EA6;&#x6765;&#x8BA1;&#x7B97;&#x504F;&#x79FB;&#x91CF;&#xFF0C;&#x5176;&#x4E2D;&#xFF1A;</p>
+<pre><code>offset = X0 + X1*delta + X2*delta**2 + ... + Xn*delta**n
+</code></pre><p>&#x7136;&#x540E;&#x4F7F;&#x7528;&#x504F;&#x79FB;&#x91CF;&#x548C;&#x6E29;&#x5EA6;&#x6BD4;&#x4F8B;&#xFF08;&#x7F29;&#x653E;&#xFF09;&#x7CFB;&#x6570;&#x6765;&#x6821;&#x6B63;&#x4F20;&#x611F;&#x5668;&#x7684;&#x6D4B;&#x91CF;&#xFF0C;&#x5176;&#x4E2D;&#xFF1A;</p>
+<pre><code>corrected_measurement = (raw_measurement - offset) * scale_factor
+</code></pre><p>&#x5982;&#x679C;&#x6E29;&#x5EA6;&#x8D85;&#x8FC7; <code>*_TMIN</code> &#x548C; <code>*_TMAX</code> &#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x7684;&#x6D4B;&#x8BD5;&#x8303;&#x56F4;&#xFF0C;&#x5219;&#x6240;&#x6D4B;&#x6E29;&#x5EA6;&#x5C06;&#x88AB;&#x88C1;&#x526A;&#x4EE5;&#x4FDD;&#x6301;&#x5728;&#x9650;&#x5236;&#x8303;&#x56F4;&#x5185;&#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x5206;&#x522B;&#x5C06; <a href="parameter_reference.html#TC_A_ENABLE">TC_A_ENABLE</a>&#x3001;<a href="parameter_reference.html#TC_B_ENABLE">TC_B_ENABLE</a> &#x6216; <a href="parameter_reference.html#TC_G_ENABLE">TC_G_ENABLE</a> &#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A; 1&#xFF0C;&#x53EF;&#x4EE5;&#x5BF9;&#x52A0;&#x901F;&#x5EA6;&#x8BA1;&#x3001;&#x6C14;&#x538B;&#x8BA1;&#x6216;&#x901F;&#x7387;&#x9640;&#x87BA;&#x4EEA;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6821;&#x6B63;&#x3002;</p>
+<h3 id="&#x4E0E;&#x9057;&#x7559;-cal-&#x53C2;&#x6570;&#x548C;-commander-&#x63A7;&#x5236;&#x6821;&#x51C6;&#x7684;&#x517C;&#x5BB9;&#x6027;"><a name="&#x4E0E;&#x9057;&#x7559;-cal-&#x53C2;&#x6570;&#x548C;-commander-&#x63A7;&#x5236;&#x6821;&#x51C6;&#x7684;&#x517C;&#x5BB9;&#x6027;" class="plugin-anchor" href="#&#x4E0E;&#x9057;&#x7559;-cal-&#x53C2;&#x6570;&#x548C;-commander-&#x63A7;&#x5236;&#x6821;&#x51C6;&#x7684;&#x517C;&#x5BB9;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E0E;&#x9057;&#x7559; <code>CAL*</code> &#x53C2;&#x6570;&#x548C; commander &#x63A7;&#x5236;&#x6821;&#x51C6;&#x7684;&#x517C;&#x5BB9;&#x6027;</h3>
+<p>&#x4F20;&#x7EDF;&#x7684;&#x4E0D;&#x77E5;&#x9053;&#x6E29;&#x5EA6;&#x7684; PX4 &#x901F;&#x7387;&#x9640;&#x87BA;&#x548C;&#x52A0;&#x901F;&#x5EA6;&#x8BA1;&#x4F20;&#x611F;&#x5668;&#x7684;&#x6821;&#x51C6;&#x662F;&#x7531; commander &#x6A21;&#x5757;&#x8FDB;&#x884C;&#x7684;&#xFF0C;&#x5305;&#x62EC;&#x8C03;&#x6574;&#x504F;&#x79FB;&#x91CF;&#xFF0C;&#x5728;&#x52A0;&#x901F;&#x5EA6;&#x8BA1;&#x6821;&#x51C6;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6BD4;&#x4F8B;&#xFF08;&#x7F29;&#x653E;&#xFF09;&#x7CFB;&#x6570;&#x6821;&#x51C6;&#x53C2;&#x6570;&#x3002; &#x504F;&#x79FB;&#x91CF;&#x548C;&#x6BD4;&#x4F8B;&#x7CFB;&#x6570;&#x53C2;&#x6570;&#x88AB;&#x5E94;&#x7528;&#x5728;&#x6BCF;&#x4E2A;&#x4F20;&#x611F;&#x5668;&#x7684;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#x4E2D;&#x3002; &#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x51FA;&#x73B0;&#x5728; <a href="parameter_reference.html#sensor-calibration">CAL parameter group</a> &#x4E2D;&#x3002;</p>
+<p>&#x677F;&#x8F7D;&#x6E29;&#x5EA6;&#x6821;&#x51C6;&#x7531; events &#x6A21;&#x5757;&#x63A7;&#x5236;&#xFF0C;&#x5728; sensor combined &#x7684; uORB &#x4E3B;&#x9898;&#x53D1;&#x5E03;&#x4E4B;&#x524D;&#xFF0C;&#x5728;&#x4F20;&#x611F;&#x5668;&#x6A21;&#x5757;&#x5185;&#x8FDB;&#x884C;&#x6821;&#x6B63;&#x3002; &#x8FD9;&#x610F;&#x5473;&#x7740;&#xFF0C;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x70ED;&#x8865;&#x507F;&#xFF0C;&#x5728;&#x6267;&#x884C;&#x70ED;&#x6821;&#x51C6;&#x4E4B;&#x524D;&#x6240;&#x6709;&#x76F8;&#x5E94;&#x7684;&#x9057;&#x7559;&#x504F;&#x79FB;&#x91CF;&#x548C;&#x6BD4;&#x4F8B;&#x7CFB;&#x6570;&#x53C2;&#x6570;&#x5FC5;&#x987B;&#x8BBE;&#x7F6E;&#x4E3A;&#x9ED8;&#x8BA4;&#x503C;&#xFF08;&#x96F6;&#x6216;&#x5355;&#x4F4D; 1&#xFF09;&#x3002; &#x5982;&#x679C;&#x6267;&#x884C;&#x677F;&#x8F7D;&#x6E29;&#x5EA6;&#x6821;&#x51C6;&#xFF0C;&#x8FD9;&#x5C06;&#x81EA;&#x52A8;&#x5B8C;&#x6210;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x6B63;&#x5728;&#x6267;&#x884C;&#x677F;&#x5916;&#x6821;&#x51C6;&#xFF0C;&#x5219;&#x91CD;&#x8981;&#x7684;&#x662F;&#x5728;&#x8BB0;&#x5F55;&#x6821;&#x51C6;&#x6570;&#x636E;&#x4E4B;&#x524D;&#x91CD;&#x65B0;&#x8BBE;&#x7F6E;&#x9057;&#x7559;&#x7684; <code>CAL*OFF</code> &#x548C; <code>CAL*Scale</code> &#x53C2;&#x6570;&#x3002;</p>
+<p>&#x9640;&#x87BA;&#x70ED;&#x8865;&#x507F;&#x662F;&#x901A;&#x8FC7;&#x5C06; <code>TC_G_Enable</code> &#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A; 1 &#x6765;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x6B64;&#x65F6;&#x4ECD;&#x53EF;&#x8FDB;&#x884C; commander &#x63A7;&#x5236;&#x7684;&#x9640;&#x87BA;&#x6807;&#x5B9A;&#xFF0C;&#x4F46;&#x5B83;&#x5C06;&#x7528;&#x4E8E;&#x5C06;&#x8865;&#x507F;&#x66F2;&#x7EBF;&#x4E0A;&#x4E0B;&#x504F;&#x79FB;&#xFF0C;&#x4F7F;&#x89D2;&#x901F;&#x5EA6;&#x504F;&#x79FB;&#x4E3A;&#x96F6;&#x3002; &#x5B83;&#x901A;&#x8FC7;&#x8C03;&#x6574; X0 &#x7CFB;&#x6570;&#x6765;&#x5B9E;&#x73B0;&#x8FD9;&#x4E00;&#x70B9;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x5DF2;&#x901A;&#x8FC7;&#x5C06; <code>TC_A_ENABLE</code> &#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A; 1 &#x542F;&#x7528;&#x52A0;&#x901F;&#x5EA6;&#x70ED;&#x8865;&#x507F;&#xFF0C;&#x5219;&#x4ECD;&#x53EF;&#x4EE5;&#x6267;&#x884C; commander &#x63A7;&#x5236;&#x7684; 6 &#x70B9;&#x52A0;&#x901F;&#x5EA6;&#x6821;&#x51C6;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x5E76;&#x975E;&#x8C03;&#x6574; <code>CAL</code> &#x53C2;&#x6570;&#x7EC4;&#x4E2D;&#x7684; <code>*OFF</code> &#x548C; <code>*Scale</code> &#x53C2;&#x6570;&#xFF0C;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x800C;&#x70ED;&#x8865;&#x507F; <code>X0</code> &#x548C; <code>SCL</code> &#x53C2;&#x6570;&#x5C06;&#x88AB;&#x8C03;&#x6574;&#x3002;</p>
+<h3 id="&#x5C40;&#x9650;"><a name="&#x5C40;&#x9650;" class="plugin-anchor" href="#&#x5C40;&#x9650;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C40;&#x9650;</h3>
+<p>&#x7531;&#x4E8E;&#x5728;&#x4E0D;&#x540C;&#x6E29;&#x5EA6;&#x4E0B;&#x6D4B;&#x91CF;&#x6BD4;&#x4F8B;&#x7CFB;&#x6570;&#x5B58;&#x5728;&#x56F0;&#x96BE;&#xFF0C;&#x56E0;&#x6B64;&#x5047;&#x5B9A;&#x6BD4;&#x4F8B;&#x7CFB;&#x6570;&#x662F;&#x4E0D;&#x968F;&#x6E29;&#x5EA6;&#x53D8;&#x5316;&#x7684;&#x3002; &#x8FD9;&#x5C31;&#x9650;&#x5236;&#x4E86;&#x52A0;&#x901F;&#x5EA6;&#x8BA1;&#x6821;&#x51C6;&#x5BF9;&#x4E8E;&#x5177;&#x6709;&#x4E0D;&#x7A33;&#x5B9A;&#x6BD4;&#x4F8B;&#x7CFB;&#x6570;&#x7684;&#x4F20;&#x611F;&#x5668;&#x6A21;&#x578B;&#x7684;&#x9002;&#x7528;&#x6027;&#x3002; &#x7406;&#x8BBA;&#x4E0A;&#xFF0C;&#x5728;&#x70ED;&#x5BA4;&#x6216; IMU &#x52A0;&#x70ED;&#x5668;&#x4E2D;&#x80FD;&#x591F;&#x5C06; IMU &#x5185;&#x90E8;&#x6E29;&#x5EA6;&#x63A7;&#x5236;&#x5728;&#x4E00;&#x5B9A;&#x7A0B;&#x5EA6;&#x5185;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x4E00;&#x7CFB;&#x5217; 6 &#x9762;&#x52A0;&#x901F;&#x5EA6;&#x8BA1;&#x7684;&#x6821;&#x51C6;&#xFF0C;&#x5E76;&#x5BF9;&#x52A0;&#x901F;&#x5EA6;&#x8BA1;&#x8FDB;&#x884C;&#x504F;&#x79FB;&#x548C;&#x6BD4;&#x4F8B;&#x4FEE;&#x6B63;&#x3002; &#x7531;&#x4E8E;&#x96C6;&#x6210;&#x6240;&#x9700;&#x7684;&#x7535;&#x8DEF;&#x677F;&#x786C;&#x4EF6;&#x53D8;&#x52A8;&#x4E0E;&#x6821;&#x51C6;&#x7B97;&#x6CD5;&#x7684;&#x590D;&#x6742;&#x6027;&#xFF0C;&#x8FD9;&#x4E00;&#x529F;&#x80FD;&#x8FD8;&#x6CA1;&#x6709;&#x5305;&#x62EC;&#x5728;&#x5185;&#x3002;</p>
+<hr>
+<blockquote id="fn_1">
+<sup>1</sup>. &#x5F53;&#x6821;&#x51C6;&#x5F00;&#x59CB;&#x65F6;&#xFF0C;<a href="parameter_reference.html#SYS_CAL_ACCEL">SYS_CAL_Accel</a>&#x3001;<a href="parameter_reference.html#SYS_CAL_BARO">SYS_CAL_Baro</a> &#x548C; <a href="parameter_reference.html#SYS_CAL_GYRO">SYS_CAL_GYRO</a> &#x53C2;&#x6570;&#x91CD;&#x7F6E;&#x4E3A; 0&#x3002;<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#x21A9;</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. &#x6C14;&#x538B;&#x4F20;&#x611F;&#x5668;&#x504F;&#x7F6E;&#x7684;&#x6821;&#x51C6;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x7A33;&#x5B9A;&#x7684;&#x6C14;&#x538B;&#x73AF;&#x5883;&#x3002; &#x7531;&#x4E8E;&#x5929;&#x6C14;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x7A7A;&#x6C14;&#x538B;&#x529B;&#x53D8;&#x5316;&#x7F13;&#x6162;&#xFF0C;&#x5EFA;&#x7B51;&#x7269;&#x5185;&#x90E8;&#x7684;&#x6C14;&#x538B;&#x4F1A;&#x56E0;&#x5BA4;&#x5916;&#x98CE;&#x7684;&#x6CE2;&#x52A8;&#x548C;&#x6696;&#x901A;&#x7A7A;&#x8C03;&#x7CFB;&#x7EDF;&#x7684;&#x8FD0;&#x884C;&#x800C;&#x8FC5;&#x901F;&#x53D8;&#x5316;&#x3002;<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#x21A9;</a>
+</blockquote>
+<blockquote id="fn_3">
+<sup>3</sup>. &#x5728;&#x52A0;&#x70ED;&#x51B7;&#x5374;&#x677F;&#x65F6;&#x5FC5;&#x987B;&#x5C0F;&#x5FC3;&#xFF0C;&#x4EE5;&#x907F;&#x514D;&#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#x5728;&#x677F;&#x4E0A;&#x5F62;&#x6210;&#x51DD;&#x7ED3;&#x7269;&#xFF0C;&#x5BFC;&#x81F4;&#x7535;&#x8DEF;&#x677F;&#x635F;&#x574F;&#x3002;<a href="#fnref2:3">&#x21A9;</a>{.footnote-backref}<a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#x21A9;</a>
+</blockquote>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-08-05 00:28:13 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="land_detector.html" class="navigation navigation-prev " aria-label="Previous page: Land Detector Configuration">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="advanced_flight_controller_orientation_leveling.html" class="navigation navigation-next " aria-label="Next page: Advanced Controller Orientation">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Sensor Thermal Compensation","level":"1.9.11","depth":2,"next":{"title":"Advanced Controller Orientation","level":"1.9.12","depth":2,"path":"advanced_config/advanced_flight_controller_orientation_leveling.md","ref":"advanced_config/advanced_flight_controller_orientation_leveling.md","articles":[]},"previous":{"title":"Land Detector Configuration","level":"1.9.10","depth":2,"path":"advanced_config/land_detector.md","ref":"advanced_config/land_detector.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"advanced_config/sensor_thermal_calibration.md","mtime":"2019-08-05T00:28:13.282Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-05T00:30:06.418Z"},"basePath":"..","book":{"language":"zh"}});
+        });
+    </script>
+</div>
+
+    
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-versions-select/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
