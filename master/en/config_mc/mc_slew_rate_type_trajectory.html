@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Multicopter Advanced Tuning Guide · PX4 User Guide</title>
+        <title>MC Slew-rate Type Trajectory · PX4 User Guide</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -85,10 +85,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="racer_setup.html" />
+    <link rel="next" href="mc_jerk_limited_type_trajectory.html" />
     
     
-    <link rel="prev" href="pid_tuning_guide_multicopter.html" />
+    <link rel="prev" href="mc_trajectory_tuning.html" />
     
 
     </head>
@@ -1527,7 +1527,7 @@
                 <a href="pid_tuning_guide_multicopter.html">
             
                     
-                    Multicopter PID Tuning Guide
+                    MC PID Tuning Guide
             
                 </a>
             
@@ -1535,16 +1535,48 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.9.2.2" data-path="advanced_mc_position_tuning.html">
+        <li class="chapter " data-level="1.9.2.2" data-path="mc_trajectory_tuning.html">
             
-                <a href="advanced_mc_position_tuning.html">
+                <a href="mc_trajectory_tuning.html">
             
                     
-                    Multicopter Advanced Tuning Guide
+                    MC Setpoint Tuning (Trajectory Generator)
             
                 </a>
             
 
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.9.2.2.1" data-path="mc_slew_rate_type_trajectory.html">
+            
+                <a href="mc_slew_rate_type_trajectory.html">
+            
+                    
+                    MC Slew-rate Type Trajectory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2.2.2" data-path="mc_jerk_limited_type_trajectory.html">
+            
+                <a href="mc_jerk_limited_type_trajectory.html">
+            
+                    
+                    MC Jerk-limited Type Trajectory
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -3088,7 +3120,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Multicopter Advanced Tuning Guide</a>
+        <a href=".." >MC Slew-rate Type Trajectory</a>
     </h1>
 </div>
 
@@ -3103,86 +3135,80 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="advanced-multicopter-position-control-tuning"><a name="advanced-multicopter-position-control-tuning" class="plugin-anchor" href="#advanced-multicopter-position-control-tuning"><i class="fa fa-link" aria-hidden="true"></i></a>Advanced Multicopter Position Control Tuning</h1>
-<p>This document provides an overview of the multicopter position-control tuning parameters that change the <em>user experience</em>: how fast the vehicle reacts to stick movements, the maximum allowed velocity, etc. (i.e. the parameters that affect the value of a desired setpoint rather than those that affect how well the vehicle <em>tracks</em> the setpoint). </p>
-<blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
-<p> This guide is for advanced users/experts.</p>
+                                <h1 id="slew-rate-type-trajectory-for-multicopters"><a name="slew-rate-type-trajectory-for-multicopters" class="plugin-anchor" href="#slew-rate-type-trajectory-for-multicopters"><i class="fa fa-link" aria-hidden="true"></i></a>Slew-rate Type Trajectory for Multicopters</h1>
+<p>The Slew Rate trajectory type should be used when a quick (and potentially &quot;jerky&quot;) response to stick input is more important than ensuring smooth acceleration and deceleration (e.g.: for inspection, aggressive flight with position hold, fast missions).</p>
+<p>This type is a simple implementation where the jerk and acceleration is limited using slew-rates.
+In manual mode, it allows asymmetric profiles based on user intention (smooth acceleration and quick stop).
+The jerk and acceleration limits are not hard constraints.</p>
+<p>Enable this trajectory type using the following parameter settings: <a href="../advanced_config/parameter_reference.html#MPC_POS_MODE">MPC_POS_MODE=1</a>, <code>MPC_POS_MODE=2</code>, <a href="../advanced_config/parameter_reference.html#MPC_AUTO_MODE">MPC_AUTO_MODE=0</a>.</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> <a href="mc_trajectory_tuning.html">Setpoint Tuning (Trajectory Generator)</a> also supports <a href="mc_jerk_limited_type_trajectory.html">MC Jerk-limited Trajectory Tuning</a> for smoother responses.</p>
 </blockquote>
-<p><span></span></p>
-<blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
-<p> Follow the instructions in the <a href="pid_tuning_guide_multicopter.html">Multicopter PID Tuning Guide</a> <em>before</em> doing any of the higher-level related control tuning described here. Do not use the advanced position control tuning parameters to fix bad tracking or vibration!</p>
-</blockquote>
-<h2 id="overview"><a name="overview" class="plugin-anchor" href="#overview"><i class="fa fa-link" aria-hidden="true"></i></a>Overview</h2>
-<p>The input to the P/PID controller is a <em>desired setpoint</em> that the vehicle should attempt to track. <a href="pid_tuning_guide_multicopter.html">PID Tuning</a> (&quot;Lower level&quot; tuning) aims to reduce the error between the desired setpoint and the estimate of the vehicle state. Poor P/PID Gains can lead to instability.</p>
-<p>The <em>desired</em> setpoint passed to the P/PID controller is itself calculated from a <em>demanded</em> setpoint based on a stick position (in RC modes) or from a mission command. Setpoint value (&quot;higher level&quot;) tuning is used to specify the mapping between the demanded setpoint and the desired setpoint. Poorly tuned setpoint values cannot result in instability, but may result in either very jerky or very unresponsive reactions to setpoint changes.</p>
-<blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
-<p> The demanded setpoint can change very quickly (e.g. if a user moves stick from zero to maximum value as a &quot;step&quot;). Vehicle flight characteristics are better if the corresponding desired setpoint changes as a &quot;ramp&quot;.</p>
-</blockquote>
-<p>The setpoint-value tuning parameters can be split into two groups: tuning parameters for <a href="#position_mode">Position</a> mode and tuning parameters for <a href="#mission_mode">Mission</a> mode. Some parameters will have an effect on both modes. </p>
-<h3 id="definitions"><a name="definitions" class="plugin-anchor" href="#definitions"><i class="fa fa-link" aria-hidden="true"></i></a>Definitions</h3>
-<p>The position controller (<a href="https://dev.px4.io/en/flight_stack/controller_diagrams.html#multicopter-position-controller" target="_blank">diagram here</a>) consists of an outer <strong>P</strong> position-control loop and an inner <strong>PID</strong> velocity-control loop. 
-Depending on the control (flight) mode either both loops are active or just the velocity control loop. </p>
-<p>For the remainder of this topic the term <strong>position-control</strong> represents the case where both loops are active while <strong>velocity-control</strong> refers to the case when only the velocity control loop is in use.</p>
-<h2 id="position_mode"><a name="position_mode" class="plugin-anchor" href="#position_mode"><i class="fa fa-link" aria-hidden="true"></i></a>Position Mode </h2>
-<p>In <a href="../flight_modes/position_mc.html">Position</a> mode the stick inputs are mapped either to <strong>position-control</strong> or <strong>velocity-control</strong>.</p>
-<p>Position-control is active when the stick inputs are within the deadzone <a href="../advanced_config/parameter_reference.html#MPC_HOLD_DZ">MPC_HOLD_DZ</a>, and velocity-control otherwise. All the parameters below are tuning parameters and cannot be mapped directly to the physical quantity.</p>
+<p>This topic explains how the trajectory type works, and can be tuned, in both position and mission modes.</p>
+<h2 id="position-mode"><a name="position-mode" class="plugin-anchor" href="#position-mode"><i class="fa fa-link" aria-hidden="true"></i></a>Position Mode</h2>
+<p>In <a href="../flight_modes/position_mc.html">Position mode</a> the stick inputs are mapped to either <strong>position-control</strong> or <strong>velocity-control</strong>.</p>
+<p>Position-control is active when the stick inputs are within the deadzone <a href="../advanced_config/parameter_reference.html#MPC_HOLD_DZ">MPC_HOLD_DZ</a>, and velocity-control otherwise.
+All the parameters below are tuning parameters and cannot be mapped directly to the physical quantity.</p>
 <h4 id="mpcacchormax"><a name="mpcacchormax" class="plugin-anchor" href="#mpcacchormax"><i class="fa fa-link" aria-hidden="true"></i></a>MPC_ACC_HOR_MAX</h4>
-<p>This parameter is used for position-control in the horizontal direction, where the vehicle is supposed to stay at the current location. 
-The limit for the rate of change of the velocity setpoint is defined by <a href="../advanced_config/parameter_reference.html#MPC_ACC_HOR_MAX">MPC_ACC_HOR_MAX</a>. 
+<p>This parameter is used for position-control in the horizontal direction, where the vehicle is supposed to stay at the current location.
+The limit for the rate of change of the velocity setpoint is defined by <a href="../advanced_config/parameter_reference.html#MPC_ACC_HOR_MAX">MPC_ACC_HOR_MAX</a>.
 This parameter should be set larger than any of the other acceleration related parameters in the horizontal direction.</p>
 <h4 id="mpc_acc_hor-and-mpc_dec_hor_slow"><a name="mpc_acc_hor-and-mpc_dec_hor_slow" class="plugin-anchor" href="#mpc_acc_hor-and-mpc_dec_hor_slow"><i class="fa fa-link" aria-hidden="true"></i></a>MPC_ACC_HOR and MPC_DEC_HOR_SLOW </h4>
-<p>In velocity-control the rate limit for the velocity setpoint is extracted from a linear map from stick input to acceleration limit with maximum <a href="../advanced_config/parameter_reference.html#MPC_ACC_HOR">MPC_ACC_HOR</a> and minimum <a href="../advanced_config/parameter_reference.html#MPC_DEC_HOR_SLOW">MPC_DEC_HOR_SLOW</a>. 
-For example, if the stick input is at <code>MPC_HOLD_DZ</code>, the limiting acceleration is <code>MPC_DEC_HOR_SLOW</code>. 
-If the stick input is at maximum (=<code>1</code>), the limiting acceleration is <code>MPC_ACC_HOR</code> and any stick input in between is mapped linearly between the two parameters. 
-In addition, <code>MPC_DEC_HOR_SLOW</code> also limits the change in velocity setpoint when the user demands a deceleration in the current flight direction. 
+<p>In velocity-control the rate limit for the velocity setpoint is extracted from a linear map from stick input to acceleration limit with maximum <a href="../advanced_config/parameter_reference.html#MPC_ACC_HOR">MPC_ACC_HOR</a> and minimum <a href="../advanced_config/parameter_reference.html#MPC_DEC_HOR_SLOW">MPC_DEC_HOR_SLOW</a>.
+For example, if the stick input is at <code>MPC_HOLD_DZ</code>, the limiting acceleration is <code>MPC_DEC_HOR_SLOW</code>.
+If the stick input is at maximum (=<code>1</code>), the limiting acceleration is <code>MPC_ACC_HOR</code> and any stick input in between is mapped linearly between the two parameters.
+In addition, <code>MPC_DEC_HOR_SLOW</code> also limits the change in velocity setpoint when the user demands a deceleration in the current flight direction.
 For instance, if the stick input changes from maximum (=<code>1</code>) to <code>0.5</code>, the velocity setpoint change will be limited by <code>MPC_DEC_HOR_SLOW</code>.</p>
-<p>During transition from <strong>velocity-control</strong> to <strong>position-control</strong>, there is a hard switch from from <code>MPC_ACC_HOR</code> to <code>MPC_ACC_HOR_MAX</code> and a reset of the velocity setpoint to the current vehicle velocity. 
-The reset and the hard switch can both introduce a jerky flight performance during stopping. 
+<p>During transition from <strong>velocity-control</strong> to <strong>position-control</strong>, there is a hard switch from from <code>MPC_ACC_HOR</code> to <code>MPC_ACC_HOR_MAX</code> and a reset of the velocity setpoint to the current vehicle velocity.
+The reset and the hard switch can both introduce a jerky flight performance during stopping.
 Nonetheless, the reset is required because the smoothing parameters introduce a delay to the setpoint, which can lead to unexpected flight maneuvers.</p>
 <p>A simple example explaining why the reset is needed is given below.</p>
-<p>Consider the case where a user demands full speed from hover followed by a stop request. This is equivalent to full stick input with maximum value of <code>1</code> followed by zero stick input. 
+<p>Consider the case where a user demands full speed from hover followed by a stop request. This is equivalent to full stick input with maximum value of <code>1</code> followed by zero stick input.
 To simplify the example, assume that <code>MPC_ACC_HOR_MAX</code> is equal to <code>MPC_ACC_HOR</code> and therefore there is no hard switch in acceleration limit when switching from <strong>velocity-control</strong> to <strong>position-control</strong>. In addition, let&apos;s assume the maximum speed that can be demanded is <code>4 m/s</code>.</p>
-<p>During full stick input, the velocity setpoint will not change directly from <code>0 m/s</code> to <code>4 m/s</code> (aka step input) - instead the velocity setpoint follows a ramp with slope <code>MPC_ACC_HOR</code>. 
-The actual velocity of the vehicle, however, will not track the setpoint perfectly, but rather will lag behind. The lag will be more significant the larger the value of <code>MPC_ACC_HOR</code>. </p>
+<p>During full stick input, the velocity setpoint will not change directly from <code>0 m/s</code> to <code>4 m/s</code> (aka step input) - instead the velocity setpoint follows a ramp with slope <code>MPC_ACC_HOR</code>.
+The actual velocity of the vehicle, however, will not track the setpoint perfectly, but rather will lag behind.
+The lag will be more significant the larger the value of <code>MPC_ACC_HOR</code>. </p>
 <p><img src="../../images/slewrate_reset.svg" alt="Slewrate Reset"></p>
-<p>Without the reset (the top graph), at the moment of the stop demand (stick equal 0) the velocity setpoint will ramp down with the maximum rate given by <code>MPC_ACC_HOR_MAX</code>. 
-Due to the lag the vehicle will first continue to accelerate in the direction previous to the stop demand followed by slowly decelerating towards zero. 
-With the reset of the velocity setpoint to the current velocity, the delay due to the lag during stop demand can be overcome. </p>
+<p>Without the reset (the top graph), at the moment of the stop demand (stick equal 0) the velocity setpoint will ramp down with the maximum rate given by <code>MPC_ACC_HOR_MAX</code>.
+Due to the lag the vehicle will first continue to accelerate in the direction previous to the stop demand followed by slowly decelerating towards zero.
+With the reset of the velocity setpoint to the current velocity, the delay due to the lag during stop demand can be overcome.</p>
 <h4 id="mpcaccupmax-and-mpcaccdownmax"><a name="mpcaccupmax-and-mpcaccdownmax" class="plugin-anchor" href="#mpcaccupmax-and-mpcaccdownmax"><i class="fa fa-link" aria-hidden="true"></i></a>MPC_ACC_UP_MAX and MPC_ACC_DOWN_MAX</h4>
 <p><code>MPC_ACC_UP_MAX</code> &gt;= <code>MPC_ACC_DOWN_MAX</code>, otherwise the firmware will overwrite the given values.</p>
 <ul>
 <li><strong>position-control:</strong> the limit in velocity setpoint change in z-direction is given by <a href="../advanced_config/parameter_reference.html#MPC_ACC_UP_MAX">MPC_ACC_UP_MAX</a>.</li>
-<li><strong>velocity-control:</strong> the limit in velocity setpoint change for stick input is <code>MPC_ACC_UP_MAX</code> for upward and
-<a href="../advanced_config/parameter_reference.html#MPC_ACC_DOWN_MAX">MPC_ACC_DOWN_MAX</a> for downward direction. </li>
+<li><strong>velocity-control:</strong> the limit in velocity setpoint change for stick input is <code>MPC_ACC_UP_MAX</code> for upward and <a href="../advanced_config/parameter_reference.html#MPC_ACC_DOWN_MAX">MPC_ACC_DOWN_MAX</a> for downward direction.</li>
 </ul>
 <h4 id="mpcjerkmax-and-mpcjerkmin"><a name="mpcjerkmax-and-mpcjerkmin" class="plugin-anchor" href="#mpcjerkmax-and-mpcjerkmin"><i class="fa fa-link" aria-hidden="true"></i></a>MPC_JERK_MAX and MPC_JERK_MIN</h4>
-<p>These two parameters only have effect during the transition from <strong>velocity-control</strong> to <strong>position-control</strong>. The purpose of these two parameters are to minimize the jerk introduced from forward flight to hover (please see <a href="#mpc_acc_hor-and-mpc_dec_hor_slow">MPC_ACC_HOR and MPC_DEC_HOR_SLOW</a>).</p>
-<p>The jerk-parameter controls the rate limit with which the acceleration limit can change to <code>MPC_ACC_HOR_MAX</code>. The actual jerk-value is a linear map from velocity speed to jerk where full speed maps to <a href="../advanced_config/parameter_reference.html#MPC_JERK_MAX">MPC_JERK_MAX</a> and zero speed to <a href="../advanced_config/parameter_reference.html#MPC_JERK_MIN">MPC_JERK_MIN</a>. 
+<p>These two parameters only have effect during the transition from <strong>velocity-control</strong> to <strong>position-control</strong>.
+The purpose of these two parameters are to minimize the jerk introduced from forward flight to hover (please see <a href="#mpc_acc_hor-and-mpc_dec_hor_slow">MPC_ACC_HOR and MPC_DEC_HOR_SLOW</a>).</p>
+<p>The jerk-parameter controls the rate limit with which the acceleration limit can change to <code>MPC_ACC_HOR_MAX</code>.
+The actual jerk-value is a linear map from velocity speed to jerk where full speed maps to <a href="../advanced_config/parameter_reference.html#MPC_JERK_MAX">MPC_JERK_MAX</a> and zero speed to <a href="../advanced_config/parameter_reference.html#MPC_JERK_MIN">MPC_JERK_MIN</a>.
 The smoothing can be turned off by setting <code>MPC_JERK_MAX</code> to a value smaller than <code>MPC_JERK_MIN</code>.</p>
-<h2 id="mission_mode"><a name="mission_mode" class="plugin-anchor" href="#mission_mode"><i class="fa fa-link" aria-hidden="true"></i></a>Mission Mode </h2>
-<p>In <a href="../flight_modes/mission.html">Mission</a> mode the vehicle always follows a straight line from the previous waypoint to the current target. </p>
+<h2 id="mission-mode"><a name="mission-mode" class="plugin-anchor" href="#mission-mode"><i class="fa fa-link" aria-hidden="true"></i></a>Mission Mode</h2>
+<p>In <a href="../flight_modes/mission.html">Mission mode</a> the vehicle always follows a straight line from the previous waypoint to the current target.</p>
 <p><img src="../../images/autologic.png" alt="Mission Logic"></p>
 <p><script type="math/tex; ">\mathbf{wp}_{prev}</script> is the previous waypoint that either was already passed or is the position at the time when the new target waypoint was received, but no previous waypoint provided.</p>
 <p>The setpoint during line tracking can be split into two components:</p>
 <ul>
-<li>position setpoint <script type="math/tex; ">\mathbf{p}_{sp}</script>: it is the pose on the track closest to vehicle position </li>
+<li>position setpoint <script type="math/tex; ">\mathbf{p}_{sp}</script>: it is the pose on the track closest to vehicle position</li>
 <li>velocity setpoint <script type="math/tex; ">\mathbf{v}_{cruise}</script>: it the desired velocity along the track</li>
 </ul>
-<p>The cruise speed of <script type="math/tex; ">\mathbf{v}_{cruise}</script> is by default <a href="../advanced_config/parameter_reference.html#MPC_XY_CRUISE">MPC_XY_CRUISE</a>. However, if the target waypoint (red circle) is close to the previous waypoint, the
-cruise speed will be adjusted accordingly. To reach the cruise speed, <script type="math/tex; ">\mathbf{v}_{cruise}</script> will  accelerate with <code>MPC_ACC_HOR</code>. </p>
-<p>When the vehicle is <code>1.5 x MPC_XY_CRUISE</code> in front of the target waypoint, the vehicle will start to decelerate to a target speed that depends on the angle <script type="math/tex; ">\alpha</script>. 
+<p>The cruise speed of <script type="math/tex; ">\mathbf{v}_{cruise}</script> is by default <a href="../advanced_config/parameter_reference.html#MPC_XY_CRUISE">MPC_XY_CRUISE</a>.
+However, if the target waypoint (red circle) is close to the previous waypoint, the cruise speed will be adjusted accordingly.
+To reach the cruise speed, <script type="math/tex; ">\mathbf{v}_{cruise}</script> will  accelerate with <code>MPC_ACC_HOR</code>. </p>
+<p>When the vehicle is <code>1.5 x MPC_XY_CRUISE</code> in front of the target waypoint, the vehicle will start to decelerate to a target speed that depends on the angle <script type="math/tex; ">\alpha</script>.
 The function used for the mapping from angle to target speed is an exponential function of the form <script type="math/tex; ">a \times b^{x} + c</script>:</p>
 <p><img src="../../images/speed_from_angle.png" alt="Speed Angle"></p>
-<p>At an angle of <code>180 degrees</code>, which corresponds to a straight line from <script type="math/tex; ">\mathbf{wp}_{prev}</script> to <script type="math/tex; ">\mathbf{wp}_{next}</script> with the target waypoint somewhere in between, the target speed at the target waypoint will be <code>MPC_XY_CRUISE</code>. 
+<p>At an angle of <code>180 degrees</code>, which corresponds to a straight line from <script type="math/tex; ">\mathbf{wp}_{prev}</script> to <script type="math/tex; ">\mathbf{wp}_{next}</script> with the target waypoint somewhere in between, the target speed at the target waypoint will be <code>MPC_XY_CRUISE</code>.
 If the angle is <code>0 degrees</code>, which corresponds to having <script type="math/tex; ">\mathbf{wp}_{next}</script> on the line <script type="math/tex; ">\mathbf{wp}_{prev}</script> to target waypoint, then the target speed is set to a minimum speed of <code>1 m/s</code>.
-If the angle is <code>90 degrees</code>, the target speed is set to <a href="../advanced_config/parameter_reference.html#MPC_CRUISE_90">MPC_CRUISE_90</a>. 
-All other possible angles are mapped to the target speed from the same exponential function. 
-If there is no <script type="math/tex; ">\mathbf{wp}_{next}</script> present, then the vehicle will just decelerate to zero cruise speed. </p>
+If the angle is <code>90 degrees</code>, the target speed is set to <a href="../advanced_config/parameter_reference.html#MPC_CRUISE_90">MPC_CRUISE_90</a>.
+All other possible angles are mapped to the target speed from the same exponential function.
+If there is no <script type="math/tex; ">\mathbf{wp}_{next}</script> present, then the vehicle will just decelerate to zero cruise speed.</p>
 <p>A target waypoint is considered reached once the vehicle is within the acceptance radius <script type="math/tex; ">r_{rad}</script> that is parametrized by <a href="../advanced_config/parameter_reference.html#NAV_ACC_RAD">NAV_ACC_RAD</a>.</p>
-<p>In addition, the vehicle also has to reach the desired altitude (threshold <a href="../advanced_config/parameter_reference.html#NAV_MC_ALT_RAD">NAV_MC_ALT_RAD</a>) and the desired yaw (threshold <a href="../advanced_config/parameter_reference.html#MIS_YAW_ERR">MIS_YAW_ERR</a>). 
-Once the vehicle enters that circle, the waypoints will update. 
+<p>In addition, the vehicle also has to reach the desired altitude (threshold <a href="../advanced_config/parameter_reference.html#NAV_MC_ALT_RAD">NAV_MC_ALT_RAD</a>) and the desired yaw (threshold <a href="../advanced_config/parameter_reference.html#MIS_YAW_ERR">MIS_YAW_ERR</a>).
+Once the vehicle enters that circle, the waypoints will update.
 <script type="math/tex; ">\mathbf{wp}_{next}</script> will become the new target waypoint, <script type="math/tex; ">\mathbf{wp}_{prev}</script> will assume the old target waypoint and a new <script type="math/tex; ">\mathbf{wp}_{next}</script> will be added.</p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-08-07 17:12:56 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-08-08 03:23:16 </span> </footer>
                                 
                                 </section>
                             
@@ -3209,12 +3235,12 @@ Once the vehicle enters that circle, the waypoints will update.
 
             
                 
-                <a href="pid_tuning_guide_multicopter.html" class="navigation navigation-prev " aria-label="Previous page: Multicopter PID Tuning Guide">
+                <a href="mc_trajectory_tuning.html" class="navigation navigation-prev " aria-label="Previous page: MC Setpoint Tuning (Trajectory Generator)">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="racer_setup.html" class="navigation navigation-next " aria-label="Next page: Multicopter Racer Setup">
+                <a href="mc_jerk_limited_type_trajectory.html" class="navigation navigation-next " aria-label="Next page: MC Jerk-limited Type Trajectory">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -3225,7 +3251,7 @@ Once the vehicle enters that circle, the waypoints will update.
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Multicopter Advanced Tuning Guide","level":"1.9.2.2","depth":3,"next":{"title":"Multicopter Racer Setup","level":"1.9.2.3","depth":3,"path":"config_mc/racer_setup.md","ref":"config_mc/racer_setup.md","articles":[]},"previous":{"title":"Multicopter PID Tuning Guide","level":"1.9.2.1","depth":3,"path":"config_mc/pid_tuning_guide_multicopter.md","ref":"config_mc/pid_tuning_guide_multicopter.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"config_mc/advanced_mc_position_tuning.md","mtime":"2019-08-07T17:12:56.437Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-07T17:14:13.197Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"MC Slew-rate Type Trajectory","level":"1.9.2.2.1","depth":4,"next":{"title":"MC Jerk-limited Type Trajectory","level":"1.9.2.2.2","depth":4,"path":"config_mc/mc_jerk_limited_type_trajectory.md","ref":"config_mc/mc_jerk_limited_type_trajectory.md","articles":[]},"previous":{"title":"MC Setpoint Tuning (Trajectory Generator)","level":"1.9.2.2","depth":3,"path":"config_mc/mc_trajectory_tuning.md","ref":"config_mc/mc_trajectory_tuning.md","articles":[{"title":"MC Slew-rate Type Trajectory","level":"1.9.2.2.1","depth":4,"path":"config_mc/mc_slew_rate_type_trajectory.md","ref":"config_mc/mc_slew_rate_type_trajectory.md","articles":[]},{"title":"MC Jerk-limited Type Trajectory","level":"1.9.2.2.2","depth":4,"path":"config_mc/mc_jerk_limited_type_trajectory.md","ref":"config_mc/mc_jerk_limited_type_trajectory.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"config_mc/mc_slew_rate_type_trajectory.md","mtime":"2019-08-08T03:23:16.462Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-08T03:24:33.731Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
