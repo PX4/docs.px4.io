@@ -3139,6 +3139,71 @@
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> <strong>This list is auto-generated from the source code</strong> (using <code>make parameters_metadata</code>) and contains the most recent parameter documentation.</p>
 </blockquote>
+<h2 id="airspeed-validator"><a name="airspeed-validator" class="plugin-anchor" href="#airspeed-validator"><i class="fa fa-link" aria-hidden="true"></i></a>Airspeed Validator</h2>
+<table style="width: 100%; table-layout:fixed; font-size:1.5rem; overflow: auto; display:block;">
+ <colgroup><col style="width: 23%"><col style="width: 46%"><col style="width: 11%"><col style="width: 11%"><col style="width: 9%"></colgroup>
+ <thead>
+   <tr><th>Name</th><th>Description</th><th>Min &gt; Max (Incr.)</th><th>Default</th><th>Units</th></tr>
+ </thead>
+<tbody>
+<tr>
+ <td style="vertical-align: top;"><strong id="ARSP_ARSP_SCALE">ARSP_ARSP_SCALE</strong> (FLOAT)</td>
+ <td style="vertical-align: top;"><p>Airspeed scale (scale from IAS to CAS/EAS)</p><p><strong>Comment:</strong> Scale can either be entered manually, or estimated in-flight by setting ARSP_SCALE_EST to 1.</p>   </td>
+ <td style="vertical-align: top;">0.5 &gt; 1.5 </td>
+ <td style="vertical-align: top;">1.0 </td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="ARSP_BETA_GATE">ARSP_BETA_GATE</strong> (INT32)</td>
+ <td style="vertical-align: top;"><p>Airspeed Selector: Gate size for true sideslip fusion</p><p><strong>Comment:</strong> Sets the number of standard deviations used by the innovation consistency test.</p>   </td>
+ <td style="vertical-align: top;">1 &gt; 5 </td>
+ <td style="vertical-align: top;">1 </td>
+ <td style="vertical-align: top;">SD</td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="ARSP_BETA_NOISE">ARSP_BETA_NOISE</strong> (FLOAT)</td>
+ <td style="vertical-align: top;"><p>Airspeed Selector: Wind estimator sideslip measurement noise</p><p><strong>Comment:</strong> Sideslip measurement noise of the internal wind estimator(s) of the airspeed selector.</p>   </td>
+ <td style="vertical-align: top;">0 &gt; 1 </td>
+ <td style="vertical-align: top;">0.3 </td>
+ <td style="vertical-align: top;">rad</td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="ARSP_SCALE_EST">ARSP_SCALE_EST</strong> (INT32)</td>
+ <td style="vertical-align: top;"><p>Automatic airspeed scale estimation on</p><p><strong>Comment:</strong> Turns the automatic airspeed scale (scale from IAS to CAS/EAS) on or off. It is recommended level (keeping altitude) while performing the estimation. Set to 1 to start estimation (best when already flying). Set to 0 to end scale estimation. The estimated scale is then saved in the ARSP_ARSP_SCALE parameter.</p>   </td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">0 </td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="ARSP_SC_P_NOISE">ARSP_SC_P_NOISE</strong> (FLOAT)</td>
+ <td style="vertical-align: top;"><p>Airspeed Selector: Wind estimator true airspeed scale process noise</p><p><strong>Comment:</strong> Airspeed scale process noise of the internal wind estimator(s) of the airspeed selector.</p>   </td>
+ <td style="vertical-align: top;">0 &gt; 0.1 </td>
+ <td style="vertical-align: top;">0.0001 </td>
+ <td style="vertical-align: top;">1/s</td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="ARSP_TAS_GATE">ARSP_TAS_GATE</strong> (INT32)</td>
+ <td style="vertical-align: top;"><p>Airspeed Selector: Gate size for true airspeed fusion</p><p><strong>Comment:</strong> Sets the number of standard deviations used by the innovation consistency test.</p>   </td>
+ <td style="vertical-align: top;">1 &gt; 5 </td>
+ <td style="vertical-align: top;">3 </td>
+ <td style="vertical-align: top;">SD</td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="ARSP_TAS_NOISE">ARSP_TAS_NOISE</strong> (FLOAT)</td>
+ <td style="vertical-align: top;"><p>Airspeed Selector: Wind estimator true airspeed measurement noise</p><p><strong>Comment:</strong> True airspeed measurement noise of the internal wind estimator(s) of the airspeed selector.</p>   </td>
+ <td style="vertical-align: top;">0 &gt; 4 </td>
+ <td style="vertical-align: top;">1.4 </td>
+ <td style="vertical-align: top;">m/s</td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="ARSP_W_P_NOISE">ARSP_W_P_NOISE</strong> (FLOAT)</td>
+ <td style="vertical-align: top;"><p>Airspeed Selector: Wind estimator wind process noise</p><p><strong>Comment:</strong> Wind process noise of the internal wind estimator(s) of the airspeed selector.</p>   </td>
+ <td style="vertical-align: top;">0 &gt; 1 </td>
+ <td style="vertical-align: top;">0.1 </td>
+ <td style="vertical-align: top;">m/s/s</td>
+</tr>
+</tbody></table>
+
 <h2 id="attitude-q-estimator"><a name="attitude-q-estimator" class="plugin-anchor" href="#attitude-q-estimator"><i class="fa fa-link" aria-hidden="true"></i></a>Attitude Q estimator</h2>
 <table style="width: 100%; table-layout:fixed; font-size:1.5rem; overflow: auto; display:block;">
  <colgroup><col style="width: 23%"><col style="width: 46%"><col style="width: 11%"><col style="width: 11%"><col style="width: 9%"></colgroup>
@@ -16815,65 +16880,6 @@ to fixed wing mode. Zero or negative values will produce an instant throttle ris
 </tr>
 </tbody></table>
 
-<h2 id="wind-estimator"><a name="wind-estimator" class="plugin-anchor" href="#wind-estimator"><i class="fa fa-link" aria-hidden="true"></i></a>Wind Estimator</h2>
-<table style="width: 100%; table-layout:fixed; font-size:1.5rem; overflow: auto; display:block;">
- <colgroup><col style="width: 23%"><col style="width: 46%"><col style="width: 11%"><col style="width: 11%"><col style="width: 9%"></colgroup>
- <thead>
-   <tr><th>Name</th><th>Description</th><th>Min &gt; Max (Incr.)</th><th>Default</th><th>Units</th></tr>
- </thead>
-<tbody>
-<tr>
- <td style="vertical-align: top;"><strong id="WEST_BETA_GATE">WEST_BETA_GATE</strong> (INT32)</td>
- <td style="vertical-align: top;"><p>Gate size for true sideslip fusion</p><p><strong>Comment:</strong> Sets the number of standard deviations used by the innovation consistency test.</p>   </td>
- <td style="vertical-align: top;">1 &gt; 5 </td>
- <td style="vertical-align: top;">1 </td>
- <td style="vertical-align: top;">SD</td>
-</tr>
-<tr>
- <td style="vertical-align: top;"><strong id="WEST_BETA_NOISE">WEST_BETA_NOISE</strong> (FLOAT)</td>
- <td style="vertical-align: top;"><p>Wind estimator sideslip measurement noise</p>   </td>
- <td style="vertical-align: top;">0 &gt; 1 </td>
- <td style="vertical-align: top;">0.3 </td>
- <td style="vertical-align: top;">rad</td>
-</tr>
-<tr>
- <td style="vertical-align: top;"><strong id="WEST_EN">WEST_EN</strong> (INT32)</td>
- <td style="vertical-align: top;"><p>Enable Wind estimator</p>   <p><b>Reboot required:</b> true</p>
-</td>
- <td style="vertical-align: top;"></td>
- <td style="vertical-align: top;">0 </td>
- <td style="vertical-align: top;"></td>
-</tr>
-<tr>
- <td style="vertical-align: top;"><strong id="WEST_SC_P_NOISE">WEST_SC_P_NOISE</strong> (FLOAT)</td>
- <td style="vertical-align: top;"><p>Wind estimator true airspeed scale process noise</p>   </td>
- <td style="vertical-align: top;">0 &gt; 0.1 </td>
- <td style="vertical-align: top;">0.0001 </td>
- <td style="vertical-align: top;"></td>
-</tr>
-<tr>
- <td style="vertical-align: top;"><strong id="WEST_TAS_GATE">WEST_TAS_GATE</strong> (INT32)</td>
- <td style="vertical-align: top;"><p>Gate size for true airspeed fusion</p><p><strong>Comment:</strong> Sets the number of standard deviations used by the innovation consistency test.</p>   </td>
- <td style="vertical-align: top;">1 &gt; 5 </td>
- <td style="vertical-align: top;">3 </td>
- <td style="vertical-align: top;">SD</td>
-</tr>
-<tr>
- <td style="vertical-align: top;"><strong id="WEST_TAS_NOISE">WEST_TAS_NOISE</strong> (FLOAT)</td>
- <td style="vertical-align: top;"><p>Wind estimator true airspeed measurement noise</p>   </td>
- <td style="vertical-align: top;">0 &gt; 4 </td>
- <td style="vertical-align: top;">1.4 </td>
- <td style="vertical-align: top;">m/s</td>
-</tr>
-<tr>
- <td style="vertical-align: top;"><strong id="WEST_W_P_NOISE">WEST_W_P_NOISE</strong> (FLOAT)</td>
- <td style="vertical-align: top;"><p>Wind estimator wind process noise</p>   </td>
- <td style="vertical-align: top;">0 &gt; 1 </td>
- <td style="vertical-align: top;">0.1 </td>
- <td style="vertical-align: top;">m/s/s</td>
-</tr>
-</tbody></table>
-
 <h2 id="miscellaneous"><a name="miscellaneous" class="plugin-anchor" href="#miscellaneous"><i class="fa fa-link" aria-hidden="true"></i></a>Miscellaneous</h2>
 <table style="width: 100%; table-layout:fixed; font-size:1.5rem; overflow: auto; display:block;">
  <colgroup><col style="width: 23%"><col style="width: 46%"><col style="width: 11%"><col style="width: 11%"><col style="width: 9%"></colgroup>
@@ -16955,7 +16961,7 @@ MPC_Z_VEL_MAX_DN at zero throttle, and 0.5 * MPC_LAND_SPEED at full throttle</p>
 
 
 
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-08-09 07:55:35 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-08-09 09:10:49 </span> </footer>
                                 
                                 </section>
                             
@@ -16998,7 +17004,7 @@ MPC_Z_VEL_MAX_DN at zero throttle, and 0.5 * MPC_LAND_SPEED at full throttle</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Full Parameter Reference","level":"1.9.14","depth":2,"next":{"title":"Peripheral Hardware","level":"1.10","depth":1,"path":"peripherals/README.md","ref":"peripherals/README.md","articles":[{"title":"Serial Port Configuration","level":"1.10.1","depth":2,"path":"peripherals/serial_configuration.md","ref":"peripherals/serial_configuration.md","articles":[]},{"title":"GPS/Compass","level":"1.10.2","depth":2,"path":"gps_compass/README.md","ref":"gps_compass/README.md","articles":[{"title":"RTK GPS","level":"1.10.2.1","depth":3,"path":"gps_compass/rtk_gps.md","ref":"gps_compass/rtk_gps.md","articles":[{"title":"Hex Here+","level":"1.10.2.1.1","depth":4,"path":"gps_compass/rtk_gps_hex_hereplus.md","ref":"gps_compass/rtk_gps_hex_hereplus.md","articles":[]},{"title":"Drotek XL","level":"1.10.2.1.2","depth":4,"path":"gps_compass/rtk_gps_drotek_xl.md","ref":"gps_compass/rtk_gps_drotek_xl.md","articles":[]},{"title":"CUAV C-RTK","level":"1.10.2.1.3","depth":4,"path":"gps_compass/rtk_gps_cuav_c-rtk.md","ref":"gps_compass/rtk_gps_cuav_c-rtk.md","articles":[]},{"title":"Trimble MB-Two","level":"1.10.2.1.4","depth":4,"path":"gps_compass/rtk_gps_trimble_mb_two.md","ref":"gps_compass/rtk_gps_trimble_mb_two.md","articles":[]},{"title":"Hex Here2","level":"1.10.2.1.5","depth":4,"path":"gps_compass/rtk_gps_hex_here2.md","ref":"gps_compass/rtk_gps_hex_here2.md","articles":[]}]}]},{"title":"Telemetry Radios","level":"1.10.3","depth":2,"path":"telemetry/README.md","ref":"telemetry/README.md","articles":[{"title":"SiK Radio","level":"1.10.3.1","depth":3,"path":"telemetry/sik_radio.md","ref":"telemetry/sik_radio.md","articles":[{"title":"RFD900 (SiK) Telemetry Radio","level":"1.10.3.1.1","depth":4,"path":"telemetry/rfd900_telemetry.md","ref":"telemetry/rfd900_telemetry.md","articles":[]},{"title":"HKPilot (SIK) Telemetry Radio","level":"1.10.3.1.2","depth":4,"path":"telemetry/hkpilot_sik_radio.md","ref":"telemetry/hkpilot_sik_radio.md","articles":[]},{"title":"HolyBro (SIK) Telemetry Radio","level":"1.10.3.1.3","depth":4,"path":"telemetry/holybro_sik_radio.md","ref":"telemetry/holybro_sik_radio.md","articles":[]}]},{"title":"Telemetry Wifi","level":"1.10.3.2","depth":3,"path":"telemetry/telemetry_wifi.md","ref":"telemetry/telemetry_wifi.md","articles":[{"title":"ESP8266 WiFi Module","level":"1.10.3.2.1","depth":4,"path":"telemetry/esp8266_wifi_module.md","ref":"telemetry/esp8266_wifi_module.md","articles":[]},{"title":"3DR Telemetry Wifi (Discontinued)","level":"1.10.3.2.2","depth":4,"path":"telemetry/3dr_telemetry_wifi.md","ref":"telemetry/3dr_telemetry_wifi.md","articles":[]}]}]},{"title":"MAVLink Telemetry (OSD/GCS)","level":"1.10.4","depth":2,"path":"peripherals/mavlink_peripherals.md","ref":"peripherals/mavlink_peripherals.md","articles":[]},{"title":"FrSky Telemetry","level":"1.10.5","depth":2,"path":"peripherals/frsky_telemetry.md","ref":"peripherals/frsky_telemetry.md","articles":[]},{"title":"Distance Sensors (Rangefinders)","level":"1.10.6","depth":2,"path":"sensor/rangefinders.md","ref":"sensor/rangefinders.md","articles":[{"title":"Lightware SFxx Lidar","level":"1.10.6.1","depth":3,"path":"sensor/sfxx_lidar.md","ref":"sensor/sfxx_lidar.md","articles":[]},{"title":"uLanding Radar","level":"1.10.6.2","depth":3,"path":"sensor/ulanding_radar.md","ref":"sensor/ulanding_radar.md","articles":[]},{"title":"LeddarOne Lidar","level":"1.10.6.3","depth":3,"path":"sensor/leddar_one.md","ref":"sensor/leddar_one.md","articles":[]},{"title":"Benewake TFmini Lidar","level":"1.10.6.4","depth":3,"path":"sensor/tfmini.md","ref":"sensor/tfmini.md","articles":[]},{"title":"Lidar-Lite","level":"1.10.6.5","depth":3,"path":"sensor/lidar_lite.md","ref":"sensor/lidar_lite.md","articles":[]},{"title":"TeraRanger","level":"1.10.6.6","depth":3,"path":"sensor/teraranger.md","ref":"sensor/teraranger.md","articles":[]},{"title":"Lanbao PSK-CM8JL65-CC5","level":"1.10.6.7","depth":3,"path":"sensor/cm8jl65_ir_distance_sensor.md","ref":"sensor/cm8jl65_ir_distance_sensor.md","articles":[]}]},{"title":"Airspeed Sensors","level":"1.10.7","depth":2,"path":"sensor/airspeed.md","ref":"sensor/airspeed.md","articles":[]},{"title":"Optical Flow","level":"1.10.8","depth":2,"path":"sensor/optical_flow.md","ref":"sensor/optical_flow.md","articles":[{"title":"PX4FLOW","level":"1.10.8.1","depth":3,"path":"sensor/px4flow.md","ref":"sensor/px4flow.md","articles":[]}]},{"title":"ESCs & Motors","level":"1.10.9","depth":2,"path":"peripherals/esc_motors.md","ref":"peripherals/esc_motors.md","articles":[{"title":"PWM ESCs and Servos","level":"1.10.9.1","depth":3,"path":"peripherals/pwm_escs_and_servo.md","ref":"peripherals/pwm_escs_and_servo.md","articles":[]},{"title":"UAVCAN ESCs","level":"1.10.9.2","depth":3,"path":"peripherals/uavcan_escs.md","ref":"peripherals/uavcan_escs.md","articles":[]}]},{"title":"Camera","level":"1.10.10","depth":2,"path":"peripherals/camera.md","ref":"peripherals/camera.md","articles":[]},{"title":"Parachute","level":"1.10.11","depth":2,"path":"peripherals/parachute.md","ref":"peripherals/parachute.md","articles":[]},{"title":"Companion Computer Peripherals","level":"1.10.12","depth":2,"path":"peripherals/companion_computer_peripherals.md","ref":"peripherals/companion_computer_peripherals.md","articles":[]},{"title":"ADSB/FLARM (Traffic Avoidance)","level":"1.10.13","depth":2,"path":"peripherals/adsb_flarm.md","ref":"peripherals/adsb_flarm.md","articles":[]}]},"previous":{"title":"Static Pressure Buildup","level":"1.9.13","depth":2,"path":"advanced_config/static_pressure_buildup.md","ref":"advanced_config/static_pressure_buildup.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"advanced_config/parameter_reference.md","mtime":"2019-08-09T07:55:35.239Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-09T07:56:43.229Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Full Parameter Reference","level":"1.9.14","depth":2,"next":{"title":"Peripheral Hardware","level":"1.10","depth":1,"path":"peripherals/README.md","ref":"peripherals/README.md","articles":[{"title":"Serial Port Configuration","level":"1.10.1","depth":2,"path":"peripherals/serial_configuration.md","ref":"peripherals/serial_configuration.md","articles":[]},{"title":"GPS/Compass","level":"1.10.2","depth":2,"path":"gps_compass/README.md","ref":"gps_compass/README.md","articles":[{"title":"RTK GPS","level":"1.10.2.1","depth":3,"path":"gps_compass/rtk_gps.md","ref":"gps_compass/rtk_gps.md","articles":[{"title":"Hex Here+","level":"1.10.2.1.1","depth":4,"path":"gps_compass/rtk_gps_hex_hereplus.md","ref":"gps_compass/rtk_gps_hex_hereplus.md","articles":[]},{"title":"Drotek XL","level":"1.10.2.1.2","depth":4,"path":"gps_compass/rtk_gps_drotek_xl.md","ref":"gps_compass/rtk_gps_drotek_xl.md","articles":[]},{"title":"CUAV C-RTK","level":"1.10.2.1.3","depth":4,"path":"gps_compass/rtk_gps_cuav_c-rtk.md","ref":"gps_compass/rtk_gps_cuav_c-rtk.md","articles":[]},{"title":"Trimble MB-Two","level":"1.10.2.1.4","depth":4,"path":"gps_compass/rtk_gps_trimble_mb_two.md","ref":"gps_compass/rtk_gps_trimble_mb_two.md","articles":[]},{"title":"Hex Here2","level":"1.10.2.1.5","depth":4,"path":"gps_compass/rtk_gps_hex_here2.md","ref":"gps_compass/rtk_gps_hex_here2.md","articles":[]}]}]},{"title":"Telemetry Radios","level":"1.10.3","depth":2,"path":"telemetry/README.md","ref":"telemetry/README.md","articles":[{"title":"SiK Radio","level":"1.10.3.1","depth":3,"path":"telemetry/sik_radio.md","ref":"telemetry/sik_radio.md","articles":[{"title":"RFD900 (SiK) Telemetry Radio","level":"1.10.3.1.1","depth":4,"path":"telemetry/rfd900_telemetry.md","ref":"telemetry/rfd900_telemetry.md","articles":[]},{"title":"HKPilot (SIK) Telemetry Radio","level":"1.10.3.1.2","depth":4,"path":"telemetry/hkpilot_sik_radio.md","ref":"telemetry/hkpilot_sik_radio.md","articles":[]},{"title":"HolyBro (SIK) Telemetry Radio","level":"1.10.3.1.3","depth":4,"path":"telemetry/holybro_sik_radio.md","ref":"telemetry/holybro_sik_radio.md","articles":[]}]},{"title":"Telemetry Wifi","level":"1.10.3.2","depth":3,"path":"telemetry/telemetry_wifi.md","ref":"telemetry/telemetry_wifi.md","articles":[{"title":"ESP8266 WiFi Module","level":"1.10.3.2.1","depth":4,"path":"telemetry/esp8266_wifi_module.md","ref":"telemetry/esp8266_wifi_module.md","articles":[]},{"title":"3DR Telemetry Wifi (Discontinued)","level":"1.10.3.2.2","depth":4,"path":"telemetry/3dr_telemetry_wifi.md","ref":"telemetry/3dr_telemetry_wifi.md","articles":[]}]}]},{"title":"MAVLink Telemetry (OSD/GCS)","level":"1.10.4","depth":2,"path":"peripherals/mavlink_peripherals.md","ref":"peripherals/mavlink_peripherals.md","articles":[]},{"title":"FrSky Telemetry","level":"1.10.5","depth":2,"path":"peripherals/frsky_telemetry.md","ref":"peripherals/frsky_telemetry.md","articles":[]},{"title":"Distance Sensors (Rangefinders)","level":"1.10.6","depth":2,"path":"sensor/rangefinders.md","ref":"sensor/rangefinders.md","articles":[{"title":"Lightware SFxx Lidar","level":"1.10.6.1","depth":3,"path":"sensor/sfxx_lidar.md","ref":"sensor/sfxx_lidar.md","articles":[]},{"title":"uLanding Radar","level":"1.10.6.2","depth":3,"path":"sensor/ulanding_radar.md","ref":"sensor/ulanding_radar.md","articles":[]},{"title":"LeddarOne Lidar","level":"1.10.6.3","depth":3,"path":"sensor/leddar_one.md","ref":"sensor/leddar_one.md","articles":[]},{"title":"Benewake TFmini Lidar","level":"1.10.6.4","depth":3,"path":"sensor/tfmini.md","ref":"sensor/tfmini.md","articles":[]},{"title":"Lidar-Lite","level":"1.10.6.5","depth":3,"path":"sensor/lidar_lite.md","ref":"sensor/lidar_lite.md","articles":[]},{"title":"TeraRanger","level":"1.10.6.6","depth":3,"path":"sensor/teraranger.md","ref":"sensor/teraranger.md","articles":[]},{"title":"Lanbao PSK-CM8JL65-CC5","level":"1.10.6.7","depth":3,"path":"sensor/cm8jl65_ir_distance_sensor.md","ref":"sensor/cm8jl65_ir_distance_sensor.md","articles":[]}]},{"title":"Airspeed Sensors","level":"1.10.7","depth":2,"path":"sensor/airspeed.md","ref":"sensor/airspeed.md","articles":[]},{"title":"Optical Flow","level":"1.10.8","depth":2,"path":"sensor/optical_flow.md","ref":"sensor/optical_flow.md","articles":[{"title":"PX4FLOW","level":"1.10.8.1","depth":3,"path":"sensor/px4flow.md","ref":"sensor/px4flow.md","articles":[]}]},{"title":"ESCs & Motors","level":"1.10.9","depth":2,"path":"peripherals/esc_motors.md","ref":"peripherals/esc_motors.md","articles":[{"title":"PWM ESCs and Servos","level":"1.10.9.1","depth":3,"path":"peripherals/pwm_escs_and_servo.md","ref":"peripherals/pwm_escs_and_servo.md","articles":[]},{"title":"UAVCAN ESCs","level":"1.10.9.2","depth":3,"path":"peripherals/uavcan_escs.md","ref":"peripherals/uavcan_escs.md","articles":[]}]},{"title":"Camera","level":"1.10.10","depth":2,"path":"peripherals/camera.md","ref":"peripherals/camera.md","articles":[]},{"title":"Parachute","level":"1.10.11","depth":2,"path":"peripherals/parachute.md","ref":"peripherals/parachute.md","articles":[]},{"title":"Companion Computer Peripherals","level":"1.10.12","depth":2,"path":"peripherals/companion_computer_peripherals.md","ref":"peripherals/companion_computer_peripherals.md","articles":[]},{"title":"ADSB/FLARM (Traffic Avoidance)","level":"1.10.13","depth":2,"path":"peripherals/adsb_flarm.md","ref":"peripherals/adsb_flarm.md","articles":[]}]},"previous":{"title":"Static Pressure Buildup","level":"1.9.13","depth":2,"path":"advanced_config/static_pressure_buildup.md","ref":"advanced_config/static_pressure_buildup.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"advanced_config/parameter_reference.md","mtime":"2019-08-09T09:10:49.500Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-09T09:12:05.346Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
