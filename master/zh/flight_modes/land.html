@@ -1527,7 +1527,7 @@
                 <a href="../config_mc/pid_tuning_guide_multicopter.html">
             
                     
-                    Multicopter PID Tuning Guide
+                    MC PID Tuning Guide
             
                 </a>
             
@@ -1535,12 +1535,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.2.2" data-path="../config_mc/advanced_mc_position_tuning.html">
+        <li class="chapter " data-level="1.9.2.2" data-path="../config_mc/mc_trajectory_tuning.html">
             
-                <a href="../config_mc/advanced_mc_position_tuning.html">
+                <a href="../config_mc/mc_trajectory_tuning.html">
             
                     
-                    Multicopter Advanced Tuning Guide
+                    MC Setpoint Tuning (Trajectory Generator)
             
                 </a>
             
@@ -2283,6 +2283,19 @@
             
                     
                     PWM ESCs and Servos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9.2" data-path="../peripherals/uavcan_escs.html">
+            
+                <a href="../peripherals/uavcan_escs.html">
+            
+                    
+                    UAVCAN ESCs
             
                 </a>
             
@@ -3094,12 +3107,13 @@
 <p><a href="../getting_started/flight_modes.html#key_position_fixed"><img src="../../assets/site/position_fixed.svg" title="&#x9700;&#x8981;&#x5B9A;&#x4F4D;&#x4F30;&#x8BA1;&#xFF08;&#x4F8B;&#x5982;GPS&#xFF09;" width="30px"></a></p>
 <p>The <em>Land</em> flight mode causes the vehicle to land at the position where the mode was engaged. After landing, vehicles will disarm after a short timeout (by default).</p>
 <blockquote class="clearfix alert alert-quote"><strong class="fa fa-2x fa-quote-left"></strong>
-<p> &#x8BE5;&#x6A21;&#x5F0F;&#x9700;&#x8981;&#x6709;&#x6548;&#x7684;&#x4F4D;&#x7F6E;&#x4F30;&#x8BA1;&#xFF0C;&#x9664;&#x975E;&#x7531;&#x4E8E;&#x6545;&#x969C;&#x4FDD;&#x62A4;&#x800C;&#x8FDB;&#x5165;&#x8BE5;&#x6A21;&#x5F0F;&#xFF0C;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x4EC5;&#x9700;&#x8981;&#x9AD8;&#x5EA6;&#xFF08;&#x901A;&#x5E38;&#x5728;&#x98DE;&#x884C;&#x63A7;&#x5236;&#x5668;&#x4E2D;&#x5185;&#x7F6E;&#x6C14;&#x538B;&#x8BA1;&#xFF09;&#x3002; *&#x6B64;&#x6A21;&#x5F0F;&#x4E3A;&#x81EA;&#x52A8;&#x6A21;&#x5F0F;&#xFF08;<a href="../advanced_config/parameter_reference.html#COM_RC_OVERRIDE">&#x9ED8;&#x8BA4;</a>&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;RC&#x63A7;&#x5236;&#x88AB;&#x7981;&#x7528;&#xFF0C;&#x9664;&#x4E86;&#x7528;&#x4E8E;&#x66F4;&#x6539;&#x6A21;&#x5F0F;&#x5916;&#xFF09;&#x3002;</p>
+<p> &#x8BE5;&#x6A21;&#x5F0F;&#x9700;&#x8981;&#x6709;&#x6548;&#x7684;&#x4F4D;&#x7F6E;&#x4F30;&#x8BA1;&#xFF0C;&#x9664;&#x975E;&#x7531;&#x4E8E;&#x6545;&#x969C;&#x4FDD;&#x62A4;&#x800C;&#x8FDB;&#x5165;&#x8BE5;&#x6A21;&#x5F0F;&#xFF0C;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x4EC5;&#x9700;&#x8981;&#x9AD8;&#x5EA6;&#xFF08;&#x901A;&#x5E38;&#x5728;&#x98DE;&#x884C;&#x63A7;&#x5236;&#x5668;&#x4E2D;&#x5185;&#x7F6E;&#x6C14;&#x538B;&#x8BA1;&#xFF09;&#x3002; <em> This mode is automatic - no user intervention is </em>required<em> to control the vehicle. </em> RC control switches can be used to change flight modes on any vehicle. The effect of RC stick movement depends on the vehicle type.</p>
 </blockquote>
 <p>&#x4E0B;&#x9762;&#x63CF;&#x8FF0;&#x6BCF;&#x79CD;&#x7C7B;&#x578B;&#x98DE;&#x673A;&#x7684;&#x5177;&#x4F53;&#x884C;&#x4E3A;&#x3002;</p>
 <h2 id="&#x591A;&#x65CB;&#x7FFC;&#xFF08;mc&#xFF09;"><a name="&#x591A;&#x65CB;&#x7FFC;&#xFF08;mc&#xFF09;" class="plugin-anchor" href="#&#x591A;&#x65CB;&#x7FFC;&#xFF08;mc&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x591A;&#x65CB;&#x7FFC;&#xFF08;MC&#xFF09;</h2>
-<p>&#x98DE;&#x673A;&#x5C06;&#x964D;&#x843D;&#x5728;&#x6A21;&#x5F0F;&#x6240;&#x6307;&#x5B9A;&#x7684;&#x4F4D;&#x7F6E;&#x3002; The vehicle descends at the rate specified in <code>MPC_LAND_SPEED</code> and will disarm after landing (by default).</p>
-<p>&#x7740;&#x9646;&#x53D7;&#x4EE5;&#x4E0B;&#x53C2;&#x6570;&#x5F71;&#x54CD;&#xFF1A;</p>
+<p>&#x98DE;&#x673A;&#x5C06;&#x964D;&#x843D;&#x5728;&#x6A21;&#x5F0F;&#x6240;&#x6307;&#x5B9A;&#x7684;&#x4F4D;&#x7F6E;&#x3002; The vehicle descends at the rate specified in <a href="#MPC_LAND_SPEED">MPC_LAND_SPEED</a> and will disarm after landing (by <a href="#COM_DISARM_LAND">default</a>).</p>
+<p>RC stick movement will <a href="#COM_RC_OVERRIDE">by default</a> change the vehicle to <a href="position_mc.html">Position mode</a> unless handling a critical battery failsafe.</p>
+<p>Landing is affected by the following parameters:</p>
 <table>
 <thead>
 <tr>
@@ -3109,21 +3123,26 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../advanced_config/parameter_reference.html#MPC_LAND_SPEED">MPC_LAND_SPEED</a></td>
+<td><span id="MPC_LAND_SPEED"></span><a href="../advanced_config/parameter_reference.html#MPC_LAND_SPEED">MPC_LAND_SPEED</a></td>
 <td>&#x7740;&#x9646;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x4E0B;&#x964D;&#x901F;&#x7387;&#x3002; &#x9274;&#x4E8E;&#x5730;&#x9762;&#x60C5;&#x51B5;&#x672A;&#x77E5;&#xFF0C;&#x8FD9;&#x4E2A;&#x503C;&#x5E94;&#x8BE5;&#x8BBE;&#x5F97;&#x76F8;&#x5F53;&#x5C0F;&#x3002;</td>
 </tr>
 <tr>
-<td><a href="../advanced_config/parameter_reference.html#COM_DISARM_LAND">COM_DISARM_LAND</a></td>
+<td><span id="COM_DISARM_LAND"></span><a href="../advanced_config/parameter_reference.html#COM_DISARM_LAND">COM_DISARM_LAND</a></td>
 <td>Time-out for auto disarm after landing, in seconds. If set to -1 the vehicle will not disarm on landing.</td>
+</tr>
+<tr>
+<td><span id="COM_RC_OVERRIDE"></span><a href="../advanced_config/parameter_reference.html#COM_RC_OVERRIDE">COM_RC_OVERRIDE</a></td>
+<td>If enabled stick movement gives control back to the pilot in <a href="position_mc.html">Position mode</a> (except when vehicle is handling a critical battery failsafe). Enabled by default.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="&#x56FA;&#x5B9A;&#x7FFC;&#xFF08;fw&#xFF09;"><a name="&#x56FA;&#x5B9A;&#x7FFC;&#xFF08;fw&#xFF09;" class="plugin-anchor" href="#&#x56FA;&#x5B9A;&#x7FFC;&#xFF08;fw&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56FA;&#x5B9A;&#x7FFC;&#xFF08;FW&#xFF09;</h2>
-<p>The vehicle will turn and land at the location at which the mode was engaged. &#x56FA;&#x5B9A;&#x673A;&#x7FFC;&#x7740;&#x9646;&#x903B;&#x8F91;&#x548C;&#x53C2;&#x6570;&#x5728;&#x4E3B;&#x9898;&#xFF1A;<a href="../flying/fixed_wing_landing.html">&#x7740;&#x9646;&#xFF08;&#x56FA;&#x5B9A;&#x7FFC;&#xFF09;</a>&#x4E2D;&#x89E3;&#x91CA;&#x3002;</p>
+<p>The vehicle will turn and land at the location at which the mode was engaged. RC stick movement is ignored.</p>
+<p>Fixed wing landing logic and parameters are explained in the topic: <a href="../flying/fixed_wing_landing.html">Landing (Fixed Wing)</a>.</p>
 <blockquote class="clearfix alert alert-quote"><strong class="fa fa-2x fa-quote-left"></strong>
 <p>&#x901A;&#x5E38;&#xFF0C;&#x56FA;&#x5B9A;&#x7FFC;&#x98DE;&#x673A;&#x5C06;&#x9075;&#x5FAA;&#x56FA;&#x5B9A;&#x7684;&#x7740;&#x9646;&#x8F68;&#x8FF9;&#x5230;&#x5730;&#x9762;&#xFF08;&#x5B83;&#x4E0D;&#x4F1A;&#x5C1D;&#x8BD5;&#x62C9;&#x5E73;&#x7740;&#x9646;&#xFF09;&#x3002; &#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x5728;&#x7740;&#x9646;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x98DE;&#x673A;&#x53EF;&#x80FD;&#x4E0D;&#x77E5;&#x9053;&#x5730;&#x9762;&#x9AD8;&#x5EA6;&#x5E76;&#x4E14;&#x5C06;&#x5047;&#x8BBE;&#x5B83;&#x5904;&#x4E8E;&#x6D77;&#x5E73;&#x9762;&#x3002; &#x7531;&#x4E8E;&#x5730;&#x9762;&#x9AD8;&#x5EA6;&#x53EF;&#x80FD;&#x4F1A;&#x9AD8;&#x5F97;&#x591A;&#xFF0C;&#x56E0;&#x6B64;&#x98DE;&#x673A;&#x901A;&#x5E38;&#x4F1A;&#x5728;&#x9AD8;&#x4E8E;&#x62C9;&#x5E73;&#x8F91;&#x903B;&#x8F91;&#x7684;&#x9AD8;&#x5EA6;&#x5904;&#x5230;&#x8FBE;&#x5730;&#x9762;&#x3002;</p>
 </blockquote>
-<p>&#x7740;&#x9646;&#x53D7;&#x4EE5;&#x4E0B;&#x53C2;&#x6570;&#x5F71;&#x54CD;&#xFF08;&#x53E6;&#x89C1;<a href="../flying/fixed_wing_landing.html">&#x7740;&#x9646;&#xFF08;&#x56FA;&#x5B9A;&#x7FFC;&#xFF09;</a>&#xFF09;&#xFF1A;</p>
+<p>Landing is affected by the following parameters (also see <a href="../flying/fixed_wing_landing.html">Landing (Fixed Wing)</a>):</p>
 <table>
 <thead>
 <tr>
@@ -3139,8 +3158,8 @@
 </tbody>
 </table>
 <h2 id="&#x5782;&#x76F4;&#x8D77;&#x964D;&#xFF08;vtol&#xFF09;"><a name="&#x5782;&#x76F4;&#x8D77;&#x964D;&#xFF08;vtol&#xFF09;" class="plugin-anchor" href="#&#x5782;&#x76F4;&#x8D77;&#x964D;&#xFF08;vtol&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5782;&#x76F4;&#x8D77;&#x964D;&#xFF08;VTOL&#xFF09;</h2>
-<p>&#x5F53;&#x5904;&#x4E8E;FW&#x6A21;&#x5F0F;&#x65F6;&#xFF0C;VTOL&#x9075;&#x5FAA;LAND&#x884C;&#x4E3A;&#x548C;&#x56FA;&#x5B9A;&#x7FFC;&lt;/ 0&gt;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x800C;&#x5F53;&#x5904;&#x4E8E;MC&#x6A21;&#x5F0F;&#x65F6;&#xFF0C;VTOL&#x9075;&#x5FAA;&#x591A;&#x65CB;&#x7FFC;&lt;/ 1&gt;&#x7684;&#x53C2;&#x6570;&#x3002; &#x5F53;&#x8BBE;&#x7F6E;<a href="../advanced_config/parameter_reference.html#NAV_FORCE_VT">NAV_FORCE_VT </a>&#xFF08;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;&#x5F00;&#xFF09;&#x65F6;&#xFF0C;FW&#x6A21;&#x5F0F;&#x4E0B;&#x7684;VTOL&#x5C06;&#x5728;&#x7740;&#x9646;&#x524D;&#x8F6C;&#x6362;&#x56DE;MC&#x6A21;&#x5F0F;&#x3002;&lt;/p&gt;</p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-08-12 23:45:40 </span> </footer>
+<p>A VTOL follows the LAND behavior and parameters of <a href="#fixed-wing-fw">Fixed Wing</a> when in FW mode, and of <a href="#multi-copter-mc">Multicopter</a> when in MC mode. When <a href="../advanced_config/parameter_reference.html#NAV_FORCE_VT">NAV_FORCE_VT</a> is set (default: on) a VTOL in FW mode will transition back to MC just before landing.</p>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-08-13 06:09:28 </span> </footer>
                                 
                                 </section>
                             
@@ -3183,7 +3202,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Land","level":"1.6.4.13","depth":3,"next":{"title":"Return","level":"1.6.4.14","depth":3,"path":"flight_modes/return.md","ref":"flight_modes/return.md","articles":[]},"previous":{"title":"Takeoff","level":"1.6.4.12","depth":3,"path":"flight_modes/takeoff.md","ref":"flight_modes/takeoff.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"flight_modes/land.md","mtime":"2019-08-12T23:45:40.794Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-12T23:47:35.713Z"},"basePath":"..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"Land","level":"1.6.4.13","depth":3,"next":{"title":"Return","level":"1.6.4.14","depth":3,"path":"flight_modes/return.md","ref":"flight_modes/return.md","articles":[]},"previous":{"title":"Takeoff","level":"1.6.4.12","depth":3,"path":"flight_modes/takeoff.md","ref":"flight_modes/takeoff.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"flight_modes/land.md","mtime":"2019-08-13T06:09:28.206Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-13T06:11:43.068Z"},"basePath":"..","book":{"language":"zh"}});
         });
     </script>
 </div>

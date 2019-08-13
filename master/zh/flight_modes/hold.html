@@ -1527,7 +1527,7 @@
                 <a href="../config_mc/pid_tuning_guide_multicopter.html">
             
                     
-                    Multicopter PID Tuning Guide
+                    MC PID Tuning Guide
             
                 </a>
             
@@ -1535,12 +1535,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.2.2" data-path="../config_mc/advanced_mc_position_tuning.html">
+        <li class="chapter " data-level="1.9.2.2" data-path="../config_mc/mc_trajectory_tuning.html">
             
-                <a href="../config_mc/advanced_mc_position_tuning.html">
+                <a href="../config_mc/mc_trajectory_tuning.html">
             
                     
-                    Multicopter Advanced Tuning Guide
+                    MC Setpoint Tuning (Trajectory Generator)
             
                 </a>
             
@@ -2283,6 +2283,19 @@
             
                     
                     PWM ESCs and Servos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9.2" data-path="../peripherals/uavcan_escs.html">
+            
+                <a href="../peripherals/uavcan_escs.html">
+            
+                    
+                    UAVCAN ESCs
             
                 </a>
             
@@ -3098,12 +3111,13 @@
 </blockquote>
 <p><span></span></p>
 <blockquote class="clearfix alert alert-quote"><strong class="fa fa-2x fa-quote-left"></strong>
-<p> &#x8BE5;&#x6A21;&#x5F0F;&#x9700;&#x8981;GPS&#x3002; *&#x6B64;&#x6A21;&#x5F0F;&#x4E3A;&#x81EA;&#x52A8;&#x6A21;&#x5F0F;&#xFF08;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;RC&#x63A7;&#x5236;&#x88AB;&#x7981;&#x7528;&#xFF0C;&#x9664;&#x4E86;&#x7528;&#x4E8E;&#x66F4;&#x6539;&#x6A21;&#x5F0F;&#x5916;&#xFF09;&#x3002;</p>
+<p> &#x8BE5;&#x6A21;&#x5F0F;&#x9700;&#x8981;GPS&#x3002; <em> This mode is automatic - no user intervention is </em>required<em> to control the vehicle. </em> RC control switches can be used to change flight modes on any vehicle. The effect of RC stick movement depends on the vehicle type.</p>
 </blockquote>
 <p>&#x4E0B;&#x9762;&#x63CF;&#x8FF0;&#x6BCF;&#x79CD;&#x7C7B;&#x578B;&#x98DE;&#x673A;&#x7684;&#x5177;&#x4F53;&#x884C;&#x4E3A;&#x3002;</p>
 <h2 id="&#x591A;&#x65CB;&#x7FFC;&#xFF08;mc&#xFF09;"><a name="&#x591A;&#x65CB;&#x7FFC;&#xFF08;mc&#xFF09;" class="plugin-anchor" href="#&#x591A;&#x65CB;&#x7FFC;&#xFF08;mc&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x591A;&#x65CB;&#x7FFC;&#xFF08;MC&#xFF09;</h2>
 <p>&#x591A;&#x65CB;&#x7FFC;&#x98DE;&#x884C;&#x5668;&#x5728;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x548C;&#x9AD8;&#x5EA6;&#x76D8;&#x65CB;&#x3002;</p>
-<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x53C2;&#x6570;&#x914D;&#x7F6E;&#x6B64;&#x884C;&#x4E3A;&#x3002;</p>
+<p>RC stick movement will <a href="#COM_RC_OVERRIDE">by default</a> change the vehicle to <a href="position_mc.html">Position mode</a> unless handling a critical battery failsafe.</p>
+<p>The behaviour can be configured using the parameters below.</p>
 <table>
 <thead>
 <tr>
@@ -3116,12 +3130,17 @@
 <td><span id="MIS_LTRMIN_ALT"></span><a href="../advanced_config/parameter_reference.html#MIS_LTRMIN_ALT">MIS_LTRMIN_ALT</a></td>
 <td>&#x7559;&#x5F85;&#x6A21;&#x5F0F;&#x7684;&#x6700;&#x5C0F;&#x9AD8;&#x5EA6;&#xFF08;&#x5982;&#x679C;&#x6A21;&#x5F0F;&#x5728;&#x8F83;&#x4F4E;&#x7684;&#x9AD8;&#x5EA6;&#x8FDB;&#x884C;&#xFF0C;&#x5219;&#x98DE;&#x884C;&#x5668;&#x5C06;&#x4E0A;&#x5347;&#x5230;&#x6B64;&#x9AD8;&#x5EA6;&#xFF09;&#x3002;</td>
 </tr>
+<tr>
+<td><span id="COM_RC_OVERRIDE"></span><a href="../advanced_config/parameter_reference.html#COM_RC_OVERRIDE">COM_RC_OVERRIDE</a></td>
+<td>If enabled stick movement gives control back to the pilot in <a href="position_mc.html">Position mode</a> (except when vehicle is handling a critical battery failsafe). Enabled by default.</td>
+</tr>
 </tbody>
 </table>
 <!-- Code for this here: https://github.com/PX4/Firmware/blob/master/src/modules/navigator/loiter.cpp#L61 -->
 <h2 id="&#x56FA;&#x5B9A;&#x7FFC;&#x98DE;&#x884C;&#x5668;&#xFF08;fw&#xFF09;"><a name="&#x56FA;&#x5B9A;&#x7FFC;&#x98DE;&#x884C;&#x5668;&#xFF08;fw&#xFF09;" class="plugin-anchor" href="#&#x56FA;&#x5B9A;&#x7FFC;&#x98DE;&#x884C;&#x5668;&#xFF08;fw&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56FA;&#x5B9A;&#x7FFC;&#x98DE;&#x884C;&#x5668;&#xFF08;FW&#xFF09;</h2>
-<p>&#x98DE;&#x673A;&#x5728;&#x5F53;&#x524D;&#x9AD8;&#x5EA6;&#x7684;GPS&#x4FDD;&#x6301;&#x4F4D;&#x7F6E;&#x5468;&#x56F4;&#x65CB;&#x8F6C;&#x3002; &#x5982;&#x679C;&#x6A21;&#x5F0F;&#x4F4E;&#x4E8E;&#x8BE5;&#x9AD8;&#x5EA6;&#xFF0C;&#x5219;&#x98DE;&#x673A;&#x5C06;&#x9996;&#x5148;&#x4E0A;&#x5347;&#x5230;<code>MIS_LTRMIN_ALT</code>&#x3002;</p>
-<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x53C2;&#x6570;&#x914D;&#x7F6E;&#x6B64;&#x884C;&#x4E3A;&#x3002;</p>
+<p>The aircraft circles around the GPS hold position at the current altitude. The vehicle will first ascend to <code>MIS_LTRMIN_ALT</code> if the mode is engaged below this altitude.</p>
+<p>RC stick movement is ignored.</p>
+<p>The behaviour can be configured using the parameters below.</p>
 <table>
 <thead>
 <tr>
@@ -3141,8 +3160,9 @@
 </tbody>
 </table>
 <h2 id="&#x5782;&#x76F4;&#x8D77;&#x964D;&#xFF08;vtol&#xFF09;"><a name="&#x5782;&#x76F4;&#x8D77;&#x964D;&#xFF08;vtol&#xFF09;" class="plugin-anchor" href="#&#x5782;&#x76F4;&#x8D77;&#x964D;&#xFF08;vtol&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5782;&#x76F4;&#x8D77;&#x964D;&#xFF08;VTOL&#xFF09;</h2>
-<p>&#x5F53;&#x5904;&#x4E8E;FW&#x6A21;&#x5F0F;&#x65F6;&#xFF0C;VTOL&#x9075;&#x5FAA;HOLD&#x884C;&#x4E3A;&#x548C;&#x56FA;&#x5B9A;&#x7FFC;&lt;/ 0&gt;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x800C;&#x5F53;&#x5904;&#x4E8E;MC&#x6A21;&#x5F0F;&#x65F6;&#xFF0C;VTOL&#x9075;&#x5FAA;&#x591A;&#x65CB;&#x7FFC;&lt;/ 1&gt;&#x7684;&#x53C2;&#x6570;&#x3002;&lt;/p&gt; <!-- this maps to AUTO_LOITER in flight mode state machine --></p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-08-12 23:45:40 </span> </footer>
+<p>A VTOL follows the HOLD behavior and parameters of <a href="#fixed-wing-fw">Fixed Wing</a> when in FW mode, and of <a href="#multi-copter-mc">Multicopter</a> when in MC mode.</p>
+<!-- this maps to AUTO_LOITER in flight mode state machine -->
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-08-13 06:09:28 </span> </footer>
                                 
                                 </section>
                             
@@ -3185,7 +3205,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Hold","level":"1.6.4.15","depth":3,"next":{"title":"Mission","level":"1.6.4.16","depth":3,"path":"flight_modes/mission.md","ref":"flight_modes/mission.md","articles":[]},"previous":{"title":"Return","level":"1.6.4.14","depth":3,"path":"flight_modes/return.md","ref":"flight_modes/return.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"flight_modes/hold.md","mtime":"2019-08-12T23:45:40.794Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-12T23:47:35.713Z"},"basePath":"..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"Hold","level":"1.6.4.15","depth":3,"next":{"title":"Mission","level":"1.6.4.16","depth":3,"path":"flight_modes/mission.md","ref":"flight_modes/mission.md","articles":[]},"previous":{"title":"Return","level":"1.6.4.14","depth":3,"path":"flight_modes/return.md","ref":"flight_modes/return.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"flight_modes/hold.md","mtime":"2019-08-13T06:09:28.206Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-13T06:11:43.068Z"},"basePath":"..","book":{"language":"zh"}});
         });
     </script>
 </div>

@@ -1527,7 +1527,7 @@
                 <a href="../config_mc/pid_tuning_guide_multicopter.html">
             
                     
-                    Multicopter PID Tuning Guide
+                    MC PID Tuning Guide
             
                 </a>
             
@@ -1535,12 +1535,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.2.2" data-path="../config_mc/advanced_mc_position_tuning.html">
+        <li class="chapter " data-level="1.9.2.2" data-path="../config_mc/mc_trajectory_tuning.html">
             
-                <a href="../config_mc/advanced_mc_position_tuning.html">
+                <a href="../config_mc/mc_trajectory_tuning.html">
             
                     
-                    Multicopter Advanced Tuning Guide
+                    MC Setpoint Tuning (Trajectory Generator)
             
                 </a>
             
@@ -2283,6 +2283,19 @@
             
                     
                     PWM ESCs and Servos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9.2" data-path="../peripherals/uavcan_escs.html">
+            
+                <a href="../peripherals/uavcan_escs.html">
+            
+                    
+                    UAVCAN ESCs
             
                 </a>
             
@@ -3090,165 +3103,156 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="pixhawk-4-mini-0-&#x63A5;&#x7EBF;&#x5FEB;&#x901F;&#x5165;&#x95E8;h1"><a name="pixhawk-4-mini-0-&#x63A5;&#x7EBF;&#x5FEB;&#x901F;&#x5165;&#x95E8;h1" class="plugin-anchor" href="#pixhawk-4-mini-0-&#x63A5;&#x7EBF;&#x5FEB;&#x901F;&#x5165;&#x95E8;h1"><i class="fa fa-link" aria-hidden="true"></i></a>*Pixhawk 4 mini &lt;/0 &gt;&#x63A5;&#x7EBF;&#x5FEB;&#x901F;&#x5165;&#x95E8;&lt;/h1&gt;</h1>
-<p>&#x672C;&#x5FEB;&#x901F;&#x5165;&#x95E8;&#x6307;&#x5357;&#x6F14;&#x793A;&#x5982;&#x4F55;&#x4E3A; <a href="../flight_controller/pixhawk4_mini.html"><em>Pixhawk<sup>&#xAE;</sup> 4 Mini</em></a> &#x98DE;&#x884C;&#x63A7;&#x5236;&#x5668;&#x4F9B;&#x7535;, &#x5E76;&#x8FDE;&#x63A5;&#x5176;&#x6700;&#x91CD;&#x8981;&#x7684;&#x5916;&#x56F4;&#x8BBE;&#x5907;&#x3002;</p>
-<p><img src="../../assets/flight_controller/pixhawk4mini/pixhawk4mini_iso_1.png" width="350px" title="Pixhawk 4 &#x56FE;&#x50CF;"></p>
-<h2 id="&#x63A5;&#x7EBF;&#x56FE;&#x6982;&#x89C8;"><a name="&#x63A5;&#x7EBF;&#x56FE;&#x6982;&#x89C8;" class="plugin-anchor" href="#&#x63A5;&#x7EBF;&#x56FE;&#x6982;&#x89C8;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x63A5;&#x7EBF;&#x56FE;&#x6982;&#x89C8;</h2>
-<p>&#x4E0B;&#x56FE;&#x5C55;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x8FDE;&#x63A5;&#x6700;&#x91CD;&#x8981;&#x7684;&#x4F20;&#x611F;&#x5668;&#x548C;&#x5916;&#x56F4;&#x8BBE;&#x5907; (&#x7535;&#x673A;&#x548C;&#x4F3A;&#x670D;&#x8235;&#x673A;&#x8F93;&#x51FA;&#x9664;&#x5916;)&#x3002;</p>
-<p><img src="../../assets/flight_controller/pixhawk4mini/pixhawk4mini_wiring_overview.png" alt="*Pixhawk 4 Mini* &#x63A5;&#x7EBF;&#x6982;&#x89C8;"></p>
+                                <h1 id="pixhawk-4-mini-wiring-quick-start"><a name="pixhawk-4-mini-wiring-quick-start" class="plugin-anchor" href="#pixhawk-4-mini-wiring-quick-start"><i class="fa fa-link" aria-hidden="true"></i></a><em>Pixhawk 4 Mini</em> Wiring Quick Start</h1>
+<p>This quick start guide shows how to power the <a href="../flight_controller/pixhawk4_mini.html"><em>Pixhawk<sup>&#xAE;</sup> 4 Mini</em></a> flight controller and connect its most important peripherals.</p>
+<p><img src="../../assets/flight_controller/pixhawk4mini/pixhawk4mini_iso_1.png" width="350px" title="Pixhawk4 Image"></p>
+<h2 id="wiring-chart-overview"><a name="wiring-chart-overview" class="plugin-anchor" href="#wiring-chart-overview"><i class="fa fa-link" aria-hidden="true"></i></a>Wiring Chart Overview</h2>
+<p>The image below shows where to connect the most important sensors and peripherals (except for motors and servos).</p>
+<p><img src="../../assets/flight_controller/pixhawk4mini/pixhawk4mini_wiring_overview.png" alt="*Pixhawk 4 Mini* Wiring Overview"></p>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
-<p> &#x6709;&#x5173;&#x66F4;&#x591A;&#x53EF;&#x7528;&#x7AEF;&#x53E3;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;, &#x8BF7;&#x53C2;&#x9605;&#x6B64;&#x5904;: <a href="../flight_controller/pixhawk4_mini.html#interfaces"><em>Pixhawk 4 Mini</em> &gt; &#x7AEF;&#x53E3;</a>&#x3002;</p>
+<p> More information about available ports can be found here: <a href="../flight_controller/pixhawk4_mini.html#interfaces"><em>Pixhawk 4 Mini</em> &gt; Interfaces</a>.</p>
 </blockquote>
-<h2 id="&#x98DE;&#x63A7;&#x7684;&#x5B89;&#x88C5;&#x548C;&#x65B9;&#x5411;"><a name="&#x98DE;&#x63A7;&#x7684;&#x5B89;&#x88C5;&#x548C;&#x65B9;&#x5411;" class="plugin-anchor" href="#&#x98DE;&#x63A7;&#x7684;&#x5B89;&#x88C5;&#x548C;&#x65B9;&#x5411;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x98DE;&#x63A7;&#x7684;&#x5B89;&#x88C5;&#x548C;&#x65B9;&#x5411;</h2>
-<p>&#x5E94;&#x4F7F;&#x7528;&#x51CF;&#x9707;&#x6CE1;&#x6CAB;&#x57AB; (&#x5305;&#x62EC;&#x5728;&#x914D;&#x4EF6;&#x4E2D;) &#x5C06; <em> Pixhawk 4 Mini </em> &#x5B89;&#x88C5;&#x5728;&#x673A;&#x67B6;&#x4E0A;&#x3002; &#x5E94;&#x8BE5;&#x5C3D;&#x53EF;&#x80FD;&#x63A5;&#x8FD1;&#x98DE;&#x673A;&#x7684;&#x91CD;&#x5FC3;&#x4F4D;&#x7F6E;&#xFF0C;&#x6B63;&#x9762;&#x671D;&#x4E0A;&#xFF0C;&#x65B9;&#x5411;&#x7BAD;&#x5934;&#x4E0E;&#x98DE;&#x673A;&#x673A;&#x5934;&#x4E00;&#x81F4;&#x671D;&#x524D;</p>
-<p><img src="../../assets/flight_controller/pixhawk4mini/pixhawk4mini_orientation.png" alt="*Pixhawk 4 Mini* &#x65B9;&#x5411;"></p>
+<h2 id="mount-and-orient-controller"><a name="mount-and-orient-controller" class="plugin-anchor" href="#mount-and-orient-controller"><i class="fa fa-link" aria-hidden="true"></i></a>Mount and Orient Controller</h2>
+<p><em>Pixhawk 4 Mini</em> should be mounted on your frame using vibration-damping foam pads (included in the kit). It should be positioned as close to your vehicle&#x2019;s center of gravity as possible, oriented top-side up with the arrow pointing towards the front of the vehicle.</p>
+<p><img src="../../assets/flight_controller/pixhawk4mini/pixhawk4mini_orientation.png" alt="*Pixhawk 4 Mini* Orientation"></p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
-<p> &#x5982;&#x679C;&#x98DE;&#x884C;&#x63A7;&#x5236;&#x5668;&#x65E0;&#x6CD5;&#x5B89;&#x88C5;&#x5728;&#x63A8;&#x8350;&#x7684;&#x9ED8;&#x8BA4;&#x65B9;&#x5411; (&#x4F8B;&#x5982;, &#x7531;&#x4E8E;&#x7A7A;&#x95F4;&#x9650;&#x5236;), &#x5219;&#x9700;&#x8981;&#x6839;&#x636E;&#x5B9E;&#x9645;&#x5B89;&#x88C5;&#x7684;&#x65B9;&#x5411;&#x6765;&#x914D;&#x7F6E;&#x81EA;&#x52A8;&#x9A7E;&#x9A76;&#x4EEA;&#x8F6F;&#x4EF6;: <a href="../config/flight_controller_orientation.html">&#x98DE;&#x884C;&#x63A7;&#x5236;&#x5668;&#x65B9;&#x5411; </a>&#x53C2;&#x6570;&#x3002;</p>
+<p> If the controller cannot be mounted in the recommended/default orientation (e.g. due to space constraints) you will need to configure the autopilot software with the orientation that you actually used: <a href="../config/flight_controller_orientation.html">Flight Controller Orientation</a>.</p>
 </blockquote>
-<h2 id="gps--&#x6307;&#x5357;&#x9488;--&#x8702;&#x9E23;&#x5668;--&#x5B89;&#x5168;&#x5F00;&#x5173;--led"><a name="gps--&#x6307;&#x5357;&#x9488;--&#x8702;&#x9E23;&#x5668;--&#x5B89;&#x5168;&#x5F00;&#x5173;--led" class="plugin-anchor" href="#gps--&#x6307;&#x5357;&#x9488;--&#x8702;&#x9E23;&#x5668;--&#x5B89;&#x5168;&#x5F00;&#x5173;--led"><i class="fa fa-link" aria-hidden="true"></i></a>Gps + &#x6307;&#x5357;&#x9488; + &#x8702;&#x9E23;&#x5668; + &#x5B89;&#x5168;&#x5F00;&#x5173; + led</h2>
-<p>&#x5C06;&#x6240;&#x63D0;&#x4F9B;&#x7684;&#x96C6;&#x6210;&#x6307;&#x5357;&#x9488;&#x3001;&#x5B89;&#x5168;&#x5F00;&#x5173;&#x3001;&#x8702;&#x9E23;&#x5668;&#x548C; led&#x7684;GPS&#x6A21;&#x5757;&#x8FDE;&#x63A5;&#x5230; **GPS moulle&lt;/0 &gt; &#x7AEF;&#x53E3;&#x3002; GPS/&#x6307;&#x5357;&#x9488;&#x6A21;&#x5757;&#x5E94;&#x5C3D;&#x53EF;&#x80FD;&#x5B89;&#x88C5;&#x5728;&#x8FDC;&#x79BB;&#x5176;&#x4ED6;&#x7535;&#x5B50;&#x8BBE;&#x5907;&#x7684;&#x4F4D;&#x7F6E;&#x4E0A;, &#x65B9;&#x5411;&#x6807;&#x8BB0;&#x671D;&#x5411;&#x8F7D;&#x5177;&#x7684;&#x524D;&#x9762; (&#x5C06;&#x6307;&#x5357;&#x9488;&#x4E0E;&#x5176;&#x4ED6;&#x7535;&#x5B50;&#x8BBE;&#x5907;&#x5206;&#x79BB;&#x5C06;&#x6709;&#x52A9;&#x4E8E;&#x51CF;&#x5C11;&#x5E72;&#x6270;)&#x3002;&lt;/p&gt; </p>
-<p><img src="../../assets/flight_controller/pixhawk4mini/pixhawk4mini_gps.png" alt="&#x5C06; Compassas/GPS &#x8FDE;&#x63A5;&#x5230; Pixhawk 4"></p>
+<h2 id="gps--compass--buzzer--safety-switch--led"><a name="gps--compass--buzzer--safety-switch--led" class="plugin-anchor" href="#gps--compass--buzzer--safety-switch--led"><i class="fa fa-link" aria-hidden="true"></i></a>GPS + Compass + Buzzer + Safety Switch + LED</h2>
+<p>Attach the provided GPS with integrated compass, safety switch, buzzer, and LED to the <strong>GPS MODULE</strong> port. The GPS/Compass should be mounted on the frame as far away from other electronics as possible, with the direction marker towards the front of the vehicle (separating the compass from other electronics will reduce interference).</p>
+<p><img src="../../assets/flight_controller/pixhawk4mini/pixhawk4mini_gps.png" alt="Connect compass/GPS to Pixhawk 4"></p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
-<p> GPS&#x6A21;&#x5757;&#x5185;&#x96C6;&#x6210;&#x7684;&#x5B89;&#x5168;&#x5F00;&#x5173;<em>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B; </em>&#x662F;&#x542F;&#x7528;&#x7684; (&#x542F;&#x7528;&#x540E;, PX4&#x4E0D;&#x4F1A;&#x8BA9;&#x60A8;&#x89E3;&#x9501;&#x98DE;&#x63A7;)&#x3002; &#x5982;&#x9700;&#x5173;&#x95ED;&#x5B89;&#x5168;&#x5F00;&#x5173;&#xFF0C;&#x8BF7;&#x6309;&#x4F4F;&#x5B89;&#x5168;&#x5F00;&#x5173;1&#x79D2;&#x949F;&#x3002; &#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x5B8C;&#x6210;&#x4EFB;&#x52A1;&#x540E;&#x518D;&#x6B21;&#x6309;&#x4E0B;&#x5B89;&#x5168;&#x5F00;&#x5173;&#x4EE5;&#x542F;&#x7528;&#x5E76;&#x9501;&#x5B9A;&#x8F7D;&#x5177; (&#x56E0;&#x4E3A;&#x8FD9;&#x662F;&#x5904;&#x4E8E;&#x5B89;&#x5168;&#x8003;&#x8651;&#x7684;&#x673A;&#x5236;&#xFF0C;&#x65E0;&#x8BBA;&#x51FA;&#x4E8E;&#x4F55;&#x79CD;&#x539F;&#x56E0;&#xFF0C;&#x60A8;&#x5C06;&#x65E0;&#x6CD5;&#x901A;&#x8FC7;&#x9065;&#x63A7;&#x5668;&#x6216;&#x5730;&#x9762;&#x7AD9;&#x6765;&#x8FDC;&#x7A0B;&#x89E3;&#x9501;&#x60A8;&#x7684;&#x8F7D;&#x5177;&#x3002;)</p>
+<p> The GPS module&apos;s integrated safety switch is enabled <em>by default</em> (when enabled, PX4 will not let you arm the vehicle). To disable the safety press and hold the safety switch for 1 second. You can press the safety switch again to enable safety and disarm the vehicle (this can be useful if, for whatever reason, you are unable to disarm the vehicle from your remote control or ground station).</p>
 </blockquote>
-<h2 id="&#x7535;&#x6E90;"><a name="&#x7535;&#x6E90;" class="plugin-anchor" href="#&#x7535;&#x6E90;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7535;&#x6E90;</h2>
-<p>&#x7535;&#x6E90;&#x7BA1;&#x7406;&#x677F;&#xFF08;PMB&#xFF09;&#x63D0;&#x4F9B;&#x4E86;&#x7535;&#x6E90;&#x6A21;&#x5757;&#x4E0E;&#x7535;&#x6E90;&#x5206;&#x7535;&#x677F;&#x7684;&#x4F5C;&#x7528;&#x3002; &#x9664;&#x4E86;&#x4E3A; <em>Pixhawk 4 mini</em>&#x548C; ESC &#x7535;&#x8C03;&#x63D0;&#x4F9B;&#x7A33;&#x538B;&#x7535;&#x6E90;&#x5916;, &#x5B83;&#x8FD8;&#x5411;&#x81EA;&#x52A8;&#x9A7E;&#x9A76;&#x4EEA;&#x53D1;&#x9001;&#x7535;&#x6C60;&#x7535;&#x538B;&#x548C;&#x7535;&#x6D41;&#x7684;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x3002;</p>
-<p>&#x4F7F;&#x7528;6PIN&#x7EBF;&#x6750;&#x5C06;&#x5957;&#x4EF6;&#x9644;&#x5E26;&#x7684;PMB&#x6A21;&#x5757;&#x7684;&#x8F93;&#x51FA;&#x63A5;&#x53E3;&#x8FDE;&#x63A5;&#x5230;<em>Pixhawk 4 mini</em> &#x7684; <strong>POWER</strong> &#x7AEF;&#x53E3;&#x3002; &#x4E0B;&#x8868;&#x89E3;&#x91CA;&#x4E86;&#x7535;&#x6E90;&#x7BA1;&#x7406;&#x677F;&#x7684;&#x8FDE;&#x63A5;, &#x5305;&#x62EC;&#x52A8;&#x529B;&#x7535;&#x6E90;&#x4E0E; ESC&#x7535;&#x8C03;&#x548C;&#x4F3A;&#x670D;&#x8235;&#x673A;&#x7684;&#x4FE1;&#x53F7;&#x8FDE;&#x63A5;&#x3002;</p>
-<p><img src="../../assets/flight_controller/pixhawk4mini/pixhawk4mini_power_management.png" alt="Pixhawk 4 - &#x7535;&#x6E90;&#x7BA1;&#x7406;&#x677F;"></p>
-<blockquote class="clearfix alert alert-quote"><strong class="fa fa-2x fa-quote-left"></strong>
-<p> &#x4E0A;&#x56FE;&#x4EC5;&#x5C55;&#x793A;&#x4E86;&#x5355;&#x4E2A; ESC &#x548C;&#x5355;&#x4E2A;&#x4F3A;&#x670D;&#x8235;&#x673A;&#x7684;&#x8FDE;&#x63A5;&#x65B9;&#x5F0F;&#x3002; &#x4EE5;&#x7C7B;&#x4F3C;&#x65B9;&#x5F0F;&#x8FDE;&#x63A5;&#x5269;&#x4F59;&#x7684; ESC&#x7535;&#x8C03;&#x548C;&#x4F3A;&#x670D;&#x8235;&#x673A;&#x3002;</p>
+<h2 id="power"><a name="power" class="plugin-anchor" href="#power"><i class="fa fa-link" aria-hidden="true"></i></a>Power</h2>
+<p>The Power Management Board (PMB) serves the purpose of a power module as well as a power distribution board. In addition to providing regulated power to <em>Pixhawk 4 Mini</em> and the ESCs, it sends information to the autopilot about the battery&#x2019;s voltage and current draw.</p>
+<p>Connect the output of the PMB that comes with the kit to the <strong>POWER</strong> port of the <em>Pixhawk 4 Mini</em> using a 6-wire cable. The connections of the PMB, including power supply and signal connections to the ESCs and servos, are explained in the image below.</p>
+<p><img src="../../assets/flight_controller/pixhawk4mini/pixhawk4mini_power_management.png" alt="Pixhawk 4 - Power Management Board"></p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> The image above only shows the connection of a single ESC and a single servo. Connect the remaining ESCs and servos similarly.</p>
 </blockquote>
 <table>
 <thead>
 <tr>
-<th>Pin(s) &#x6216;&#x8FDE;&#x63A5;&#x5668;</th>
-<th>&#x529F;&#x80FD;</th>
+<th>Pin(s) or Connector</th>
+<th>Function</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>B+</td>
-<td>&#x8FDE;&#x63A5;&#x5230; ESC&#x7535;&#x8C03;B+&#x4EE5;&#x4E3A; ESC&#x7535;&#x8C03;&#x4F9B;&#x7535;</td>
+<td>Connect to ESC B+ to power the ESC</td>
 </tr>
 <tr>
 <td>GND</td>
-<td>&#x8FDE;&#x63A5;&#x5230; ESC&#x7535;&#x8C03;&#x8D1F;&#x6781;</td>
+<td>Connect to ESC Ground</td>
 </tr>
 <tr>
 <td>PWR</td>
-<td>JST-GH 6-pin &#x63A5;&#x5934;, 5V 3A &#x8F93;&#x51FA;  </td>
+<td>JST-GH 6-pin Connector, 5V 3A output  </td>
 </tr>
 </tbody>
 </table>
-<p>&#x8FDE;&#x63A5;&#x5230;<em>Pixhawk 4 Mini</em> &#x7684;POWER&#x63A5;&#x53E3; |
-| BAT         | &#x7535;&#x6E90;&#x8F93;&#x5165;&#xFF0C;&#x8FDE;&#x63A5;&#x5230;2~12S&#x7684;LiPo&#x7535;&#x6C60;                                     |</p>
-<p><em>Pixhawk 4 Mini</em> &#x7684;<strong>&#x7535;&#x6E90;</strong>&#x8F93;&#x51FA;&#x9488;&#x811A;&#x5982;&#x4E0B;&#x8868;&#x6240;&#x793A;&#x3002; &#x7535;&#x6D41;&#x4FE1;&#x53F7;&#x5E94;&#x63A5;&#x5165;0-3.3V &#x7535;&#x538B;&#x4E14;0-120A &#x7535;&#x6D41;&#x7684;&#x6A21;&#x62DF;&#x4FE1;&#x53F7;&#x3002; &#x7535;&#x538B;&#x4FE1;&#x53F7;&#x5E94;&#x63A5;&#x5165;0-3.3V&#x7535;&#x538B;&#x4E14;0-60A &#x7535;&#x6D41;&#x7684;&#x6A21;&#x62DF;&#x4FE1;&#x53F7;&#x3002; Vcc &#x7EBF;&#x8DEF;&#x5FC5;&#x987B;&#x63D0;&#x4F9B;&#x81F3;&#x5C11;&#x6301;&#x7EED;3A&#x7535;&#x6D41;, &#x5E76;&#x5E94;&#x9ED8;&#x8BA4;&#x4E3A; 5.1V&#x7535;&#x538B;&#x3002; &#x4F4E;&#x4E8E;5V&#x7684;&#x7535;&#x538B;&#x4ECD;&#x7136;&#x662F;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x7684;, &#x4F46;&#x4E0D;&#x63A8;&#x8350;&#x3002;</p>
+<p>connect to <em>Pixhawk 4 Mini</em> POWER |
+| BAT                 | Power Input, connect to 2~12s LiPo Battery                               |</p>
+<p>The pinout of the <em>Pixhawk 4 Mini</em> <strong>POWER</strong> port is shown below. The CURRENT signal should carry an analog voltage from 0-3.3V for 0-120A as default. The VOLTAGE signal should carry an analog voltage from 0-3.3V for 0-60A as default. The VCC lines have to offer at least 3A continuous and should default to 5.1V. A lower voltage of 5V is still acceptable, but discouraged.</p>
 <table>
 <thead>
 <tr>
-<th>&#x9488;&#x811A;</th>
-<th>&#x4FE1;&#x53F7;</th>
-<th>&#x7535;&#x538B;</th>
+<th>Pin</th>
+<th>Signal</th>
+<th>Volt</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1&#xFF08;&#x7EA2;&#xFF09;</td>
+<td>1(red)</td>
 <td>VCC</td>
 <td>+5V</td>
 </tr>
 <tr>
-<td>2&#xFF08;&#x9ED1;&#xFF09;</td>
+<td>2(black)</td>
 <td>VCC</td>
 <td>+5V</td>
 </tr>
 <tr>
-<td>3&#xFF08;&#x9ED1;&#xFF09;</td>
-<td>&#x7535;&#x6D41;</td>
+<td>3(black)</td>
+<td>CURRENT</td>
 <td>+3.3V</td>
 </tr>
 <tr>
-<td>4&#xFF08;&#x9ED1;&#xFF09;</td>
-<td>&#x7535;&#x538B;</td>
+<td>4(black)</td>
+<td>VOLTAGE</td>
 <td>+3.3V</td>
 </tr>
 <tr>
-<td>5&#xFF08;&#x9ED1;&#xFF09;</td>
+<td>5(black)</td>
 <td>GND</td>
 <td>GND</td>
 </tr>
 <tr>
-<td>6&#xFF08;&#x9ED1;&#xFF09;</td>
+<td>6(black)</td>
 <td>GND</td>
 <td>GND</td>
 </tr>
 </tbody>
 </table>
-<blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
-<p> &#x5982;&#x679C;&#x914D;&#x7F6E;&#x4E3A;&#x56FA;&#x5B9A;&#x7FFC;&#x6216;&#x65E0;&#x4EBA;&#x8F66;, &#x98DE;&#x63A7;<strong>MAIN OUT</strong>8&#x4E2A;&#x8F93;&#x51FA;&#x7AEF;&#x53E3;&#x7684; power (+) &#x6B63;&#x6781;&#x7EBF;&#x675F;&#x5C06;&#x8981;&#x8FDB;&#x884C;&#x72EC;&#x7ACB;&#x4F9B;&#x7535; &#xFF0C;&#x4EE5;&#x4FDD;&#x969C;&#x65B9;&#x5411;&#x8235;&#x3001;&#x5347;&#x964D;&#x8235;&#x7B49;&#x4F3A;&#x670D;&#x8235;&#x673A;&#x7684;&#x6B63;&#x5E38;&#x9A71;&#x52A8;&#x3002; &#x4E3A;&#x6B64;&#xFF0C;&#x72EC;&#x7ACB;&#x4F9B;&#x7535;&#x7684;&#x6B63;&#x6781;&#x7EBF;&#x675F;&#x9700;&#x8981;&#x8FDE;&#x63A5;&#x5230;&#x4E00;&#x4E2A;BEC&#xFF0C;&#x5982;&#x5177;&#x5907;BEC&#x72EC;&#x7ACB;5V&#x8F93;&#x51FA;&#x7684;ESC&#x7535;&#x8C03;&#x6216;&#x8005;&#x4E00;&#x4E2A;2SLiPo&#x7535;&#x6C60;&#x3002; &#x8BF7;&#x6CE8;&#x610F;&#x4F60;&#x8981;&#x5728;&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x7684;&#x4F3A;&#x670D;&#x8235;&#x673A;&#x7684;&#x5DE5;&#x4F5C;&#x7535;&#x538B;&#x3002;</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> If using a plane or rover, the 8 pin power (+) rail of <strong>MAIN OUT</strong> will need to be separately powered in order to drive servos for rudders, elevons, etc. To do this, the power rail needs to be connected to a BEC equipped ESC, a standalone 5V BEC, or a 2S LiPo battery. Be careful with the voltage of servo you are going to use here.</p>
 </blockquote>
 <!--  -->
 <!--In the future, when Pixhawk 4 kit is available, add wiring images/videos for different airframes.-->
-<blockquote class="clearfix alert alert-quote"><strong class="fa fa-2x fa-quote-left"></strong><strong class="fa fa-2x fa-quote-left"></strong><strong class="fa fa-2x fa-quote-left"></strong>
-<p> &#x4F7F;&#x7528;&#x5957;&#x4EF6;&#x4E2D;&#x9644;&#x5E26;&#x7684;&#x7535;&#x6E90;&#x6A21;&#x5757;, &#x60A8;&#x9700;&#x8981;&#x5728; &#x7535;&#x6E90;&#x8BBE;&#x7F6E; &lt;/2 &gt;&#x4E2D;&#x914D;&#x7F6E; <em>&#x7535;&#x6C60;&#x7247;&#x6570; </em>&#x53C2;&#x6570;&#xFF0C;&#x4F46;&#x60A8;&#x4E0D;&#x9700;&#x8981;&#x6821;&#x51C6; <em>voltage divider</em> &#x53C2;&#x6570;&#x3002; &#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x7535;&#x6E90;&#x6A21;&#x5757; (&#x4F8B;&#x5982;, &#x6765;&#x81EA; Pixracer &#x7684;&#x7535;&#x6E90;&#x6A21;&#x5757;), &#x5219;&#x5FC5;&#x987B;&#x66F4;&#x65B0;&#x6821;&#x51C6; <em>voltage divider</em> &#x53C2;&#x6570;&#x3002;&lt;/p&gt; &lt;/blockquote&gt; </p>
-<h2 id="&#x65E0;&#x7EBF;&#x7535;&#x9065;&#x63A7;"><a name="&#x65E0;&#x7EBF;&#x7535;&#x9065;&#x63A7;" class="plugin-anchor" href="#&#x65E0;&#x7EBF;&#x7535;&#x9065;&#x63A7;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65E0;&#x7EBF;&#x7535;&#x9065;&#x63A7;</h2>
-<p>&#x5982;&#x679C;&#x4F60;&#x60F3;<em>&#x624B;&#x52A8;</em> &#x63A7;&#x5236;&#x4F60;&#x7684;&#x98DE;&#x884C;&#x5668;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x9065;&#x63A7;&#x5668;&#xFF08;PX4&#x5728;&#x81EA;&#x52A8;&#x98DE;&#x884C;&#x6A21;&#x5F0F;&#x53EF;&#x4EE5;&#x4E0D;&#x9700;&#x8981;&#x9065;&#x63A7;&#x5668;&#xFF09;&#x3002;</p>
-<p>&#x4F60;&#x9700;&#x8981;<a href="../getting_started/rc_transmitter_receiver.html">&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x517C;&#x5BB9;&#x7684;&#x53D1;&#x5C04;&#x673A;/&#x63A5;&#x6536;&#x673A;</a>&#xFF0C;&#x5E76;<em>&#x5BF9;&#x597D;&#x9891;</em> &#x4EE5;&#x4FBF;&#x5B83;&#x4EEC;&#x80FD;&#x591F;&#x6B63;&#x5E38;&#x901A;&#x4FE1;&#xFF08;&#x5BF9;&#x9891;&#x65B9;&#x6CD5;&#x53C2;&#x8003;&#x60A8;&#x7684;&#x7279;&#x5B9A;&#x9065;&#x63A7;&#x5668;&#x4E0E;&#x63A5;&#x6536;&#x673A;&#x9644;&#x5E26;&#x7684;&#x8BF4;&#x660E;&#x4E66;&#xFF09;&#x3002;</p>
-<p>&#x4E0B;&#x9762;&#x7684;&#x8BF4;&#x660E;&#x5C06;&#x6F14;&#x793A;&#x5982;&#x4F55;&#x5C06;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x63A5;&#x6536;&#x673A;&#x8FDE;&#x63A5;&#x5230; <em>Pixhawk 4 Mini</em>:</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> Using the Power Module that comes with the kit you will need to configure the <em>Number of Cells</em> in the <a href="https://docs.qgroundcontrol.com/en/SetupView/Power.html" target="_blank">Power Settings</a> but you won&apos;t need to calibrate the <em>voltage divider</em>. You will have to update the <em>voltage divider</em> if you are using any other power module (e.g. the one from the Pixracer).</p>
+</blockquote>
+<h2 id="radio-control"><a name="radio-control" class="plugin-anchor" href="#radio-control"><i class="fa fa-link" aria-hidden="true"></i></a>Radio Control</h2>
+<p>A remote control (RC) radio system is required if you want to <em>manually</em> control your vehicle (PX4 does not require a radio system for autonomous flight modes).</p>
+<p>You will need to <a href="../getting_started/rc_transmitter_receiver.html">select a compatible transmitter/receiver</a> and then <em>bind</em> them so that they communicate (read the instructions that come with your specific transmitter/receiver).</p>
+<p>The instructions below show how to connect the different types of receivers to <em>Pixhawk 4 Mini</em>:</p>
 <ul>
-<li><p>Spektrum/DSM &#x6216;&#x8005; S.BUS &#x63A5;&#x6536;&#x673A;&#x8FDE;&#x63A5;&#x5230;  &#x8F93;&#x5165;&#x7AEF;&#x53E3;&#x3002;</p>
-<p>  <img src="../../assets/flight_controller/pixhawk4mini/pixhawk4mini_rc_dsmsbus.png" alt="Pixhawk 4 Mini - Spektrum&#x63A5;&#x6536;&#x673A;&#x7684;&#x4FE1;&#x53F7;&#x63A5;&#x53E3;"></p>
+<li><p>Spektrum/DSM or S.BUS receivers connect to the <strong>DSM/SBUS RC</strong> input.</p>
+<p>  <img src="../../assets/flight_controller/pixhawk4mini/pixhawk4mini_rc_dsmsbus.png" alt="Pixhawk 4 Mini - Radio port for Spektrum receivers"></p>
 </li>
-<li><p>PPM &#x63A5;&#x6536;&#x673A;&#x8FDE;&#x63A5;&#x5230; **PPM RC&lt;/0 &gt; &#x8F93;&#x5165;&#x7AEF;&#x53E3;&#x3002;&lt;/p&gt; </p>
-<p>  <img src="../../assets/flight_controller/pixhawk4mini/pixhawk4mini_rc_ppm.png" alt="Pixhawk 4 Mini - PPM&#x63A5;&#x6536;&#x673A;&#x7684;&#x4FE1;&#x53F7;&#x63A5;&#x53E3;">&lt;/li&gt; </p>
-<ul>
-<li><p>PWM &#x63A5;&#x6536;&#x673A;&#x4E3A;&#x6BCF;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x901A;&#x9053;&#x914D;&#x5907;&#x4E86;&#x72EC;&#x7ACB;&#x7684;&#x8FDE;&#x63A5;&#x7EBF;&#xFF0C;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;<em>PPM&#x7F16;&#x7801;&#x5668;, &#x8FDE;&#x63A5;&#x5230; <strong>PPM RC</strong> &#x8F93;&#x5165;&#x7AEF;&#x53E3; </em><a href="http://www.getfpv.com/radios/radio-accessories/holybro-ppm-encoder-module.html" target="_blank"> &#xFF0C;&#x6BD4;&#x5982;&#x8FD9;&#x4E2A;</a>&#x3002;&lt;/ul&gt; </p>
-<p>&#x66F4;&#x591A;&#x6709;&#x5173;&#x9065;&#x63A7;&#x5668;&#x7CFB;&#x7EDF;&#x9009;&#x62E9;&#x3001;&#x63A5;&#x6536;&#x673A;&#x517C;&#x5BB9;&#x6027;&#x548C;&#x9065;&#x63A7;&#x5668;&#x63A5;&#x6536;&#x673A;&#x5BF9;&#x9891;&#x7ED1;&#x5B9A;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;, &#x8BF7;&#x53C2;&#x9605;: &#x9065;&#x63A7;&#x5668;&#x53D1;&#x5C04;&#x673A;&amp;&#x63A5;&#x6536;&#x5668; &lt;/0 &gt;&#x3002;&lt;/p&gt; </p>
-<h2 id="&#x6570;&#x4F20;&#x7535;&#x53F0;&#xFF08;&#x53EF;&#x9009;&#xFF09;"><a name="&#x6570;&#x4F20;&#x7535;&#x53F0;&#xFF08;&#x53EF;&#x9009;&#xFF09;" class="plugin-anchor" href="#&#x6570;&#x4F20;&#x7535;&#x53F0;&#xFF08;&#x53EF;&#x9009;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6570;&#x4F20;&#x7535;&#x53F0;&#xFF08;&#x53EF;&#x9009;&#xFF09;</h2>
-<p>&#x9065;&#x6D4B;&#x65E0;&#x7EBF;&#x7535;&#x53F0;&#x53EF;&#x7528;&#x4E8E;&#x5730;&#x9762;&#x7AD9;&#x7684;&#x901A;&#x4FE1;&#x548C;&#x98DE;&#x884C;&#x63A7;&#x5236; (&#x4F8B;&#x5982;, &#x60A8;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x65E0;&#x4EBA;&#x673A;&#x98DE;&#x884C;&#x81F3;&#x7279;&#x5B9A;&#x4F4D;&#x7F6E;, &#x6216;&#x4E0A;&#x4F20;&#x65B0;&#x7684;&#x4EFB;&#x52A1;)&#x3002;</p>
-<p>&#x673A;&#x8F7D;&#x7AEF;&#x7684;&#x65E0;&#x7EBF;&#x6570;&#x4F20;&#x6A21;&#x5757;&#x5E94;&#x8FDE;&#x63A5;&#x5230; <strong>TELEM1</strong> &#x7AEF;&#x53E3;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A; (&#x5982;&#x679C;&#x8FDE;&#x63A5;&#x5230;&#x6B64;&#x7AEF;&#x53E3;, &#x5219;&#x65E0;&#x9700;&#x8FDB;&#x4E00;&#x6B65;&#x914D;&#x7F6E;)&#x3002; &#x53E6;&#x4E00;&#x4E2A;&#x5339;&#x914D;&#x7684;&#x5730;&#x9762;&#x7AEF;&#x6570;&#x4F20;&#x7535;&#x53F0;&#x5E94;&#x8BE5;&#x8FDE;&#x63A5;&#x5230;&#x60A8;&#x7684;&#x5730;&#x9762;&#x7AD9;&#x7535;&#x8111;&#x6216;&#x8005;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x4E0A;(&#x901A;&#x5E38;&#x662F;&#x901A;&#x8FC7;USB&#x63A5;&#x53E3;)&#x3002;</p>
-<p><img src="../../assets/flight_controller/pixhawk4mini/pixhawk4mini_telemetry.png" alt="Pixhawk 4 mini &#x9065;&#x6D4B;&#x7535;&#x53F0;"></p>
-<h2 id="sd&#x5361;&#xFF08;&#x53EF;&#x9009;&#xFF09;"><a name="sd&#x5361;&#xFF08;&#x53EF;&#x9009;&#xFF09;" class="plugin-anchor" href="#sd&#x5361;&#xFF08;&#x53EF;&#x9009;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>SD&#x5361;&#xFF08;&#x53EF;&#x9009;&#xFF09;</h2>
-<p>SD&#x5361;&#x901A;&#x5E38;&#x662F;&#x7528;&#x6765; <a href="../getting_started/flight_reporting.html">&#x8BB0;&#x5F55;&#x5E76;&#x5206;&#x6790;&#x98DE;&#x884C;&#x6570;&#x636E;</a>. &#x5C06;&#x5185;&#x5B58;&#x5361; (&#x5305;&#x542B;&#x5728;&#x5957;&#x4EF6;&#x4E2D;) &#x63D2;&#x5165; <em>Pixhawk 4 Mini </em> &#x4E2D;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x3002;</p>
-<p><img src="../../assets/flight_controller/pixhawk4mini/pixhawk4mini_sdcard.png" alt="Pixhawk 4 Mini SD&#x5361;"></p>
-<blockquote>
-<p> &#x95EA;&#x8FEA;&#x81F3;&#x5C0A; U3 32GB &#x662F; <a href="https://dev.px4.io/en/log/logging.html#sd-cards" target="_blank">&#x5F3A;&#x70C8;&#x63A8;&#x8350; </a>&#x7684; (&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x6307;&#x5357;)&#x3002;</p>
-</blockquote>
-<h2 id="&#x7535;&#x673A;"><a name="&#x7535;&#x673A;" class="plugin-anchor" href="#&#x7535;&#x673A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7535;&#x673A;</h2>
-<p>&#x7535;&#x673A;&#x548C;&#x8235;&#x673A;&#x6309;&#x7167; <a href="../airframes/airframe_reference.html">&#x673A;&#x67B6;&#x53C2;&#x8003;&#x5217;&#x8868;</a> &#x4E2D;&#x4E3A;&#x60A8;&#x7684;&#x98DE;&#x673A;&#x6307;&#x5B9A;&#x7684;&#x987A;&#x5E8F;&#x8FDE;&#x63A5;&#x81F3; <strong>MAIN OUT</strong> &#x7AEF;&#x53E3;&#x3002; See <a href="../flight_controller/pixhawk4_mini.html#motors"><em>Pixhawk 4 Mini</em> &gt; Supported Platforms</a> for more information.</p>
-<blockquote>
-<p>&#x672C;&#x53C2;&#x8003;&#x5217;&#x51FA;&#x4E86;&#x6240;&#x6709;&#x652F;&#x6301;&#x7684;&#x7A7A;&#x4E2D;&#x548C;&#x5730;&#x9762;&#x673A;&#x67B6;&#x7684;&#x63A5;&#x53E3;&#x4E0E;&#x7535;&#x673A;/&#x8235;&#x673A;&#x7684;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#xFF08;&#x5982;&#x679C;&#x4F60;&#x7684;&#x673A;&#x67B6;&#x6CA1;&#x6709;&#x5728;&#x53C2;&#x8003;&#x5217;&#x8868;&#x91CC;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5BF9;&#x5E94;&#x7C7B;&#x578B;&#x7684;&#x201C;&#x901A;&#x7528;&#x201D;&#x673A;&#x67B6;&#xFF09;&#x3002;</p>
-</blockquote>
+<li><p>PPM receivers connect to the <strong>PPM RC</strong> input port.</p>
+<p>  <img src="../../assets/flight_controller/pixhawk4mini/pixhawk4mini_rc_ppm.png" alt="Pixhawk 4 Mini - Radio port for PPM receivers"></p>
+</li>
+<li><p>PPM and PWM receivers that have an <em>individual wire for each channel</em> must connect to the <strong>PPM RC</strong> port <em>via a PPM encoder</em> <a href="http://www.getfpv.com/radios/radio-accessories/holybro-ppm-encoder-module.html" target="_blank">like this one</a> (PPM-Sum receivers use a single signal wire for all channels).</p>
 </li>
 </ul>
-</li>
-</ul>
+<p>For more information about selecting a radio system, receiver compatibility, and binding your transmitter/receiver pair, see: <a href="../getting_started/rc_transmitter_receiver.html">Remote Control Transmitters &amp; Receivers</a>.</p>
+<h2 id="telemetry-radio-optional"><a name="telemetry-radio-optional" class="plugin-anchor" href="#telemetry-radio-optional"><i class="fa fa-link" aria-hidden="true"></i></a>Telemetry Radio (Optional)</h2>
+<p>Telemetry radios may be used to communicate and control a vehicle in flight from a ground station (for example, you can direct the UAV to a particular position, or upload a new mission).</p>
+<p>The vehicle-based radio should be connected to the <strong>TELEM1</strong> port as shown below (if connected to this port, no further configuration is required). The other radio is connected to your ground station computer or mobile device (usually by USB).</p>
+<p><img src="../../assets/flight_controller/pixhawk4mini/pixhawk4mini_telemetry.png" alt="Pixhawk 4 Mini Telemetry"></p>
+<h2 id="microsd-card-optional"><a name="microsd-card-optional" class="plugin-anchor" href="#microsd-card-optional"><i class="fa fa-link" aria-hidden="true"></i></a>microSD Card (Optional)</h2>
+<p>SD cards are most commonly used to <a href="../getting_started/flight_reporting.html">log and analyse flight details</a>. Insert the card (included in the kit) into <em>Pixhawk 4 Mini</em> as shown below.</p>
+<p><img src="../../assets/flight_controller/pixhawk4mini/pixhawk4mini_sdcard.png" alt="Pixhawk 4 Mini SD Card"></p>
+<blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
+<p> The SanDisk Extreme U3 32GB is <a href="https://dev.px4.io/en/log/logging.html#sd-cards" target="_blank">highly recommended</a> (Developer Guide).</p>
+</blockquote>
+<h2 id="motors"><a name="motors" class="plugin-anchor" href="#motors"><i class="fa fa-link" aria-hidden="true"></i></a>Motors</h2>
+<p>Motors/servos are connected to the <strong>MAIN OUT</strong> ports in the order specified for your vehicle in the <a href="../airframes/airframe_reference.html">Airframe Reference</a>. See <a href="../flight_controller/pixhawk4_mini.html#motors"><em>Pixhawk 4 Mini</em> &gt; Supported Platforms</a> for more information.</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> This reference lists the output port to motor/servo mapping for all supported air and ground frames (if your frame is not listed in the reference then use a &quot;generic&quot; airframe of the correct type).</p>
 </blockquote>
 <p><span></span></p>
-<blockquote>
-<pre><code>&gt; **Caution** &#x8BE5;&#x53C2;&#x8003;&#x5217;&#x8868;&#x5E76;&#x4E0D;&#x662F;&#x4E0E;&#x673A;&#x67B6;&#x7C7B;&#x578B;&#x5B8C;&#x5168;&#x5339;&#x914D;&#x7684;&#x3002;(e.g.&#x60A8;&#x4E0D;&#x80FD;&#x4F9D;&#x8D56;&#x4E8E;&#x6240;&#x6709;&#x7684;&#x98DE;&#x673A;&#x7C7B;&#x578B;&#x90FD;&#x80FD;&#x591F;&#x6709;&#x76F8;&#x540C;&#x7684;&#x6CB9;&#x95E8;&#x503C;&#x8F93;&#x51FA;&#x3002;) &#x8BF7;&#x786E;&#x4FDD;&#x4E3A;&#x60A8;&#x7684;&#x8F7D;&#x5177;&#x4F7F;&#x7528;&#x6B63;&#x786E;&#x7684;&#x914D;&#x7F6E;&#x65B9;&#x5F0F;&#x3002;
+<blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
+<p> The mapping is not consistent across frames (e.g. you can&apos;t rely on the throttle being on the same output for all plane frames). Make sure to use the correct mapping for your vehicle.</p>
+</blockquote>
+<h2 id="other-peripherals"><a name="other-peripherals" class="plugin-anchor" href="#other-peripherals"><i class="fa fa-link" aria-hidden="true"></i></a>Other Peripherals</h2>
+<p>The wiring and configuration of optional/less common components is covered within the topics for individual <a href="../peripherals/">peripherals</a>.</p>
+<h2 id="configuration"><a name="configuration" class="plugin-anchor" href="#configuration"><i class="fa fa-link" aria-hidden="true"></i></a>Configuration</h2>
+<p>General configuration information is covered in: <a href="../config/">Autopilot Configuration</a>.</p>
+<p>QuadPlane specific configuration is covered here: <a href="../config_vtol/vtol_quad_configuration.html">QuadPlane VTOL Configuration</a></p>
+<!-- what about config of other vtol types and plane. Do the instructions in these ones above apply for tailsitters etc? -->
+<!--## Detailed Wiring Infographic (Copter)
 
-## &#x5176;&#x5B83;&#x5916;&#x8BBE;
-
-&#x9488;&#x5BF9;&#x53EF;&#x9009;/&#x975E;&#x901A;&#x7528;&#x7EC4;&#x4EF6;&#x7684;&#x63A5;&#x7EBF;&#x4E0E;&#x914D;&#x7F6E;&#xFF0C;&#x5728; [&#x5916;&#x56F4;&#x8BBE;&#x5907;](../peripherals/README.md) &#x72EC;&#x7ACB;&#x4E3B;&#x9898;&#x4E2D;&#x6709;&#x8BE6;&#x7EC6;&#x7684;&#x5185;&#x5BB9;&#x4ECB;&#x7ECD;&#x3002;
-
-## &#x914D;&#x7F6E;
-
-&#x4E00;&#x822C;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x5728;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#x4E2D;&#x4ECB;&#x7ECD;&#xFF1A;[Autopilot &#x914D;&#x7F6E;](../config/README.md)&#x3002;
-
-QuadPlane&#x7684;&#x7279;&#x5B9A;&#x914D;&#x7F6E;&#x5728;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#x4E2D;&#x4ECB;&#x7ECD;&#xFF1A;[QuadPlane VTOL Configuration](../config_vtol/vtol_quad_configuration.md)
-
-&lt;!-- what about config of other vtol types and plane. Do the instructions in these ones above apply for tailsitters etc? --&gt;
-
-&lt;!--## Detailed Wiring Infographic (Copter)
-</code></pre></blockquote>
-<p><img src="../../images/pixhawk_infographic2.jpg" alt="QuadCopter Pixhawk Wiring Infographic"> --&gt;</p>
-<blockquote>
-<pre><code>## &#x66F4;&#x591A;&#x4FE1;&#x606F;
-
-- [*Pixhawk 4 Mini*](../flight_controller/pixhawk4_mini.md)
-</code></pre></blockquote>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-08-12 23:45:40 </span> </footer>
+![QuadCopter Pixhawk Wiring Infographic](../../images/pixhawk_infographic2.jpg) -->
+<h2 id="further-information"><a name="further-information" class="plugin-anchor" href="#further-information"><i class="fa fa-link" aria-hidden="true"></i></a>Further information</h2>
+<ul>
+<li><a href="../flight_controller/pixhawk4_mini.html"><em>Pixhawk 4 Mini</em></a></li>
+</ul>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-08-13 06:09:28 </span> </footer>
                                 
                                 </section>
                             
@@ -3291,7 +3295,7 @@ QuadPlane&#x7684;&#x7279;&#x5B9A;&#x914D;&#x7F6E;&#x5728;&#x4EE5;&#x4E0B;&#x5185
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Pixhawk 4 Mini Wiring Quickstart","level":"1.3.6","depth":2,"next":{"title":"Cube Wiring Quickstart","level":"1.3.7","depth":2,"path":"assembly/quick_start_cube.md","ref":"assembly/quick_start_cube.md","articles":[]},"previous":{"title":"Pixhawk 4 Wiring Quickstart","level":"1.3.5","depth":2,"path":"assembly/quick_start_pixhawk4.md","ref":"assembly/quick_start_pixhawk4.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"assembly/quick_start_pixhawk4_mini.md","mtime":"2019-08-12T23:45:40.790Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-12T23:47:35.713Z"},"basePath":"..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"Pixhawk 4 Mini Wiring Quickstart","level":"1.3.6","depth":2,"next":{"title":"Cube Wiring Quickstart","level":"1.3.7","depth":2,"path":"assembly/quick_start_cube.md","ref":"assembly/quick_start_cube.md","articles":[]},"previous":{"title":"Pixhawk 4 Wiring Quickstart","level":"1.3.5","depth":2,"path":"assembly/quick_start_pixhawk4.md","ref":"assembly/quick_start_pixhawk4.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"assembly/quick_start_pixhawk4_mini.md","mtime":"2019-08-13T06:09:28.198Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-13T06:11:43.068Z"},"basePath":"..","book":{"language":"zh"}});
         });
     </script>
 </div>

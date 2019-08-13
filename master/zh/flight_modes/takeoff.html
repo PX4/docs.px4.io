@@ -1527,7 +1527,7 @@
                 <a href="../config_mc/pid_tuning_guide_multicopter.html">
             
                     
-                    Multicopter PID Tuning Guide
+                    MC PID Tuning Guide
             
                 </a>
             
@@ -1535,12 +1535,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.2.2" data-path="../config_mc/advanced_mc_position_tuning.html">
+        <li class="chapter " data-level="1.9.2.2" data-path="../config_mc/mc_trajectory_tuning.html">
             
-                <a href="../config_mc/advanced_mc_position_tuning.html">
+                <a href="../config_mc/mc_trajectory_tuning.html">
             
                     
-                    Multicopter Advanced Tuning Guide
+                    MC Setpoint Tuning (Trajectory Generator)
             
                 </a>
             
@@ -2283,6 +2283,19 @@
             
                     
                     PWM ESCs and Servos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9.2" data-path="../peripherals/uavcan_escs.html">
+            
+                <a href="../peripherals/uavcan_escs.html">
+            
+                    
+                    UAVCAN ESCs
             
                 </a>
             
@@ -3093,13 +3106,14 @@
                                 <h1 id="&#x8D77;&#x98DE;&#x6A21;&#x5F0F;"><a name="&#x8D77;&#x98DE;&#x6A21;&#x5F0F;" class="plugin-anchor" href="#&#x8D77;&#x98DE;&#x6A21;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8D77;&#x98DE;&#x6A21;&#x5F0F;</h1>
 <p><a href="../getting_started/flight_modes.html#key_position_fixed"><img src="../../assets/site/position_fixed.svg" title="&#x9700;&#x8981;&#x5B9A;&#x4F4D;&#x4FEE;&#x590D;&#xFF08;&#x4F8B;&#x5982;GPS&#xFF09;" width="30px"></a></p>
 <p><em>&#x8D77;&#x98DE;</em>&#x98DE;&#x884C;&#x6A21;&#x5F0F;&#x4F7F;&#x98DE;&#x673A;&#x8D77;&#x98DE;&#x5230;&#x6307;&#x5B9A;&#x9AD8;&#x5EA6;&#x5E76;&#x7B49;&#x5F85;&#x8FDB;&#x4E00;&#x6B65;&#x6307;&#x4EE4;&#x3002;</p>
-<blockquote class="clearfix alert alert-quote"><strong class="fa fa-2x fa-quote-left"></strong>
-<p> &#x8BE5;&#x6A21;&#x5F0F;&#x9700;&#x8981;GPS&#x3002; <em>&#x6B64;&#x6A21;&#x5F0F;&#x4E3A;&#x81EA;&#x52A8;&#x6A21;&#x5F0F;&#xFF08;<a href="../advanced_config/parameter_reference.html#COM_RC_OVERRIDE">&#x9ED8;&#x8BA4;</a>&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;RC&#x63A7;&#x5236;&#x88AB;&#x7981;&#x7528;&#xFF0C;&#x9664;&#x4E86;&#x7528;&#x4E8E;&#x66F4;&#x6539;&#x6A21;&#x5F0F;&#x5916;&#xFF09;&#x3002; </em> &#x4F7F;&#x7528;&#x6B64;&#x6A21;&#x5F0F;&#x524D;&#x98DE;&#x673A;&#x5FC5;&#x987B;&#x5148;&#x88AB;&#x6FC0;&#x6D3B;&#x3002;</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> <em> This mode requires GPS. </em> The vehicle must be armed before this mode can be engaged. <em> This mode is automatic - no user intervention is </em>required<em> to control the vehicle. </em> RC control switches can be used to change flight modes on any vehicle. The effect of RC stick movement depends on the vehicle type.</p>
 </blockquote>
 <p>&#x4E0B;&#x9762;&#x63CF;&#x8FF0;&#x6BCF;&#x79CD;&#x7C7B;&#x578B;&#x98DE;&#x673A;&#x7684;&#x5177;&#x4F53;&#x884C;&#x4E3A;&#x3002;</p>
 <h2 id="&#x591A;&#x65CB;&#x7FFC;&#xFF08;mc&#xFF09;"><a name="&#x591A;&#x65CB;&#x7FFC;&#xFF08;mc&#xFF09;" class="plugin-anchor" href="#&#x591A;&#x65CB;&#x7FFC;&#xFF08;mc&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x591A;&#x65CB;&#x7FFC;&#xFF08;MC&#xFF09;</h2>
 <p>&#x591A;&#x65CB;&#x7FFC;&#x4E0A;&#x5347;&#x5230;<code>MIS_TAKEOFF_ALT</code>&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x9AD8;&#x5EA6;&#x5E76;&#x4FDD;&#x6301;&#x4F4D;&#x7F6E;&#x3002;</p>
-<p>&#x8D77;&#x98DE;&#x53D7;&#x4EE5;&#x4E0B;&#x53C2;&#x6570;&#x5F71;&#x54CD;&#xFF1A;</p>
+<p>RC stick movement will <a href="#COM_RC_OVERRIDE">by default</a> change the vehicle to <a href="position_mc.html">Position mode</a> unless handling a critical battery failsafe.</p>
+<p>Takeoff is affected by the following parameters:</p>
 <table>
 <thead>
 <tr>
@@ -3109,28 +3123,33 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../advanced_config/parameter_reference.html#MIS_TAKEOFF_ALT">MIS_TAKEOFF_ALT</a></td>
+<td><span id="MIS_TAKEOFF_ALT"></span><a href="../advanced_config/parameter_reference.html#MIS_TAKEOFF_ALT">MIS_TAKEOFF_ALT</a></td>
 <td>&#x8D77;&#x98DE;&#x671F;&#x95F4;&#x7684;&#x76EE;&#x6807;&#x9AD8;&#x5EA6; (&#x9ED8;&#x8BA4;&#x503C;: 2.5 &#x7C73;)</td>
 </tr>
 <tr>
-<td><a href="../advanced_config/parameter_reference.html#MPC_TKO_SPEED">MPC_TKO_SPEED</a></td>
+<td><span id="MPC_TKO_SPEED"></span><a href="../advanced_config/parameter_reference.html#MPC_TKO_SPEED">MPC_TKO_SPEED</a></td>
 <td>&#x4E0A;&#x5347;&#x901F;&#x5EA6; (&#x9ED8;&#x8BA4;&#x503C;: 1.5 m/s)</td>
+</tr>
+<tr>
+<td><span id="COM_RC_OVERRIDE"></span><a href="../advanced_config/parameter_reference.html#COM_RC_OVERRIDE">COM_RC_OVERRIDE</a></td>
+<td>If enabled stick movement gives control back to the pilot in <a href="position_mc.html">Position mode</a> (except when vehicle is handling a critical battery failsafe). Enabled by default.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="fixed_wing"><a name="fixed_wing" class="plugin-anchor" href="#fixed_wing"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56FA;&#x5B9A;&#x7FFC;&#xFF08;FW&#xFF09; </h2>
-<p>&#x98DE;&#x673A;&#x4F7F;&#x7528;<em>&#x5F39;&#x5C04;&#x5668;/&#x624B;&#x52A8;&#x542F;&#x52A8;&#x6A21;&#x5F0F;</em>&#x6216;<em>&#x8DD1;&#x9053;&#x8D77;&#x98DE;&#x6A21;&#x5F0F;</em>&#x5728;&#x5F53;&#x524D;&#x65B9;&#x5411;&#x4E0A;&#x8D77;&#x98DE;&#x3002; &#x6A21;&#x5F0F;&#x9ED8;&#x8BA4;&#x4E3A;&#x5F39;&#x5C04;/&#x624B;&#x52A8;&#x53D1;&#x5C04;&#xFF0C;&#x4F46;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>RWTO_TKOFF</code>&#x8BBE;&#x7F6E;&#x4E3A;&#x8DD1;&#x9053;&#x8D77;&#x98DE;&#x3002;</p>
-<p>&#x5728;<em>&#x5F39;&#x5C04;&#x5668;/&#x624B;&#x52A8;&#x53D1;&#x5C04;&#x6A21;&#x5F0F;</em>&#x4E2D;&#xFF0C;&#x98DE;&#x673A;&#x5C06;&#x6267;&#x884C;&#x5168;&#x6CB9;&#x95E8;&#x722C;&#x5347;&#xFF08;&#x5728;&#x5927;&#x7EA6;2&#x79D2;&#x5185;&#x4E0A;&#x5347;&#x5230;<code>RWTO_MAX_THR</code>&#xFF09;&#x3002; &#x4E00;&#x65E6;&#x9AD8;&#x5EA6;&#x9519;&#x8BEF;<a href="#FW_CLMBOUT_DIFF"> FW_CLMBOUT_DIFF </a>&#xFF0C;&#x5C06;&#x7EE7;&#x7EED;&#x5E38;&#x89C4;&#x5BFC;&#x822A;&#x3002;</p>
+<p>The aircraft takes off in the current direction using either <em>catapult/hand-launch mode</em> or <em>runway takeoff mode</em>. The mode defaults to catapult/hand launch, but can be set to runway takeoff using <a href="#RWTO_TKOFF">RWTO_TKOFF</a>.</p>
+<p>In <em>catapult/hand launch mode</em> the vehicle will perform a full throttle climbout (ramp up to <a href="#RWTO_MAX_THR">RWTO_MAX_THR</a> in about 2 seconds). Once the altitude error &lt; <a href="#FW_CLMBOUT_DIFF">FW_CLMBOUT_DIFF</a>, regular navigation will proceed.</p>
 <blockquote>
 <p>&#x9664;&#x4E86;&#x4E0A;&#x9762;&#x8BA8;&#x8BBA;&#x7684;&#x884C;&#x4E3A;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x542F;&#x52A8;&#x68C0;&#x6D4B;&#x5668;&#x53EF;&#x4EE5;&#x963B;&#x6B62;&#x542F;&#x52A8;&#x7A0B;&#x5E8F;&#x5F00;&#x59CB;&#x76F4;&#x5230;&#x6EE1;&#x8DB3;&#x67D0;&#x4E9B;&#x6761;&#x4EF6;&#x3002; &#x5BF9;&#x4E8E;&#x5F39;&#x5C04;&#x5668;&#x53D1;&#x5C04;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E9B;&#x52A0;&#x901F;&#x5EA6;&#x9608;&#x503C;&#x3002;</p>
 </blockquote>
-<p><em>&#x8DD1;&#x9053;&#x8D77;&#x98DE;&#x6A21;&#x5F0F;</em>&#x5177;&#x6709;&#x4EE5;&#x4E0B;&#x9636;&#x6BB5;&#xFF1A;</p>
+<p>The <em>runway takeoff mode</em> has the following phases:</p>
 <ol>
 <li><strong>&#x6CB9;&#x95E8;&#x659C;&#x5761;</strong>&#xFF1A;&#x98DE;&#x673A;&#x4F9D;&#x9644;&#x5728;&#x8DD1;&#x9053;&#x4E0A;&#xFF08;&#x4FEF;&#x4EF0;&#x56FA;&#x5B9A;&#xFF0C;&#x65E0;&#x6EDA;&#x8F6C;&#xFF0C;&#x822A;&#x5411;&#x4FDD;&#x6301;&#xFF09;&#xFF0C;&#x76F4;&#x5230;&#x8FBE;&#x5230;&#x8D77;&#x6700;&#x5C0F;&#x8D77;&#x98DE;&#x7A7A;&#x901F;&#xFF08;<a href="#FW_AIRSPD_MIN"> FW_AIRSPD_MIN </a> x <a href="#RWTO_AIRSPD_SCL"> RWTO_AIRSPD_SCL </a>&#xFF09; </li>
 <li><strong>&#x8D77;&#x98DE;</strong>&#xFF1A;&#x589E;&#x52A0;&#x4FEF;&#x4EF0;&#x76F4;&#x5230;&#x98DE;&#x673A;&#x9AD8;&#x5EA6;&gt;&#x5BFC;&#x822A;&#x9AD8;&#x5EA6;&#xFF08;<a href="#RWTO_NAV_ALT"> RWTO_NAV_ALT </a>&#xFF09;&#x3002;</li>
 <li><strong> &#x722C;&#x51FA;</strong>&#xFF1A;&#x722C;&#x5347;&#x81F3;&#x5730;&#x9762;&#x4EE5;&#x4E0A;&#x7684;&#x9AD8;&#x5EA6;&gt; <a href="#FW_CLMBOUT_DIFF"> FW_CLMBOUT_DIFF </a>&#x3002; &#x5728;&#x6B64;&#x9636;&#x6BB5;&#x4E2D;, &#x5C06;&#x79FB;&#x9664;&#x6EDA;&#x8F6C;&#x548C;&#x822A;&#x5411;&#x9650;&#x5236;&#x3002;</li>
 </ol>
-<p>&#x8D77;&#x98DE;&#x53D7;&#x4EE5;&#x4E0B;&#x53C2;&#x6570;&#x5F71;&#x54CD;&#xFF1A;&#x9AD8;&#x4E8E;&#x5730;&#x5E73;&#x9762;&#xFF08;AGL&#xFF09;&#x7684;&#x9AD8;&#x5EA6;&#xFF0C;&#x7559;&#x6709;&#x8DB3;&#x591F;&#x7684;&#x79BB;&#x5730;&#x95F4;&#x9699;&#x4EE5;&#x5141;&#x8BB8;&#x4E00;&#x4E9B;&#x6EDA;&#x8F6C;&#x3002; &#x5728;&#x8FBE;&#x5230;<code>RWTO_NAV_ALT</code>&#x4E4B;&#x524D;&#xFF0C;&#x98DE;&#x673A;&#x4FDD;&#x6301;&#x6C34;&#x5E73;&#xFF0C;&#x5E76;&#x4E14;&#x4EC5;&#x4F7F;&#x7528;&#x65B9;&#x5411;&#x8235;&#x6765;&#x4FDD;&#x6301;&#x822A;&#x5411;&#xFF08;&#x53C2;&#x89C1;<span id="RWTO_HDG"> &lt;/ 1&gt; <a href="../advanced_config/parameter_reference.html#RWTO_HDG"> RWTO_HDG </a>&#xFF09;&#x3002; &#x5982;&#x679C;<code> FW_CLMBOUT_DIFF </code>&gt; 0&#xFF0C;&#x5219;&#x5E94;&#x4F4E;&#x4E8E;<code> FW_CLMBOUT_DIFF </code>&#x3002;&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt; </span></p>
+<p>RC stick movement is ignored.</p>
+<p>Takeoff is affected by the following parameters:&#x9AD8;&#x4E8E;&#x5730;&#x5E73;&#x9762;&#xFF08;AGL&#xFF09;&#x7684;&#x9AD8;&#x5EA6;&#xFF0C;&#x7559;&#x6709;&#x8DB3;&#x591F;&#x7684;&#x79BB;&#x5730;&#x95F4;&#x9699;&#x4EE5;&#x5141;&#x8BB8;&#x4E00;&#x4E9B;&#x6EDA;&#x8F6C;&#x3002; &#x5728;&#x8FBE;&#x5230;<code>RWTO_NAV_ALT</code>&#x4E4B;&#x524D;&#xFF0C;&#x98DE;&#x673A;&#x4FDD;&#x6301;&#x6C34;&#x5E73;&#xFF0C;&#x5E76;&#x4E14;&#x4EC5;&#x4F7F;&#x7528;&#x65B9;&#x5411;&#x8235;&#x6765;&#x4FDD;&#x6301;&#x822A;&#x5411;&#xFF08;&#x53C2;&#x89C1;<span id="RWTO_HDG"> &lt;/ 1&gt; <a href="../advanced_config/parameter_reference.html#RWTO_HDG"> RWTO_HDG </a>&#xFF09;&#x3002; &#x5982;&#x679C;<code> FW_CLMBOUT_DIFF </code>&gt; 0&#xFF0C;&#x5219;&#x5E94;&#x4F4E;&#x4E8E;<code> FW_CLMBOUT_DIFF </code>&#x3002;&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt; </span></p>
 <blockquote>
   <p>
     &#x5728;&#x8D77;&#x98DE;&#x671F;&#x95F4;&#x98DE;&#x673A;&#x603B;&#x662F;&#x9075;&#x5B88;&#x6807;&#x51C6;&#x7684;&#x56FA;&#x5B9A;&#x7FFC;&#x6700;&#x5927;/&#x6700;&#x5C0F;&#x6CB9;&#x95E8;&#x8BBE;&#x7F6E;&#xFF08;<a href="../advanced_config/parameter_reference.html#FW_THR_MIN"> FW_THR_MIN </a>&#xFF0C;<a href="../advanced_config/parameter_reference.html#FW_THR_MAX"> FW_THR_MAX </a>&#xFF09;&#x3002;
@@ -3150,7 +3169,7 @@
 </p>
 
 <!-- this maps to AUTO_TAKEOFF in dev -->
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-08-12 23:45:40 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-08-13 06:09:28 </span> </footer>
                                 
                                 </section>
                             
@@ -3193,7 +3212,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Takeoff","level":"1.6.4.12","depth":3,"next":{"title":"Land","level":"1.6.4.13","depth":3,"path":"flight_modes/land.md","ref":"flight_modes/land.md","articles":[]},"previous":{"title":"Manual (FW)","level":"1.6.4.11","depth":3,"path":"flight_modes/manual_fw.md","ref":"flight_modes/manual_fw.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"flight_modes/takeoff.md","mtime":"2019-08-12T23:45:40.798Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-12T23:47:35.713Z"},"basePath":"..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"Takeoff","level":"1.6.4.12","depth":3,"next":{"title":"Land","level":"1.6.4.13","depth":3,"path":"flight_modes/land.md","ref":"flight_modes/land.md","articles":[]},"previous":{"title":"Manual (FW)","level":"1.6.4.11","depth":3,"path":"flight_modes/manual_fw.md","ref":"flight_modes/manual_fw.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"flight_modes/takeoff.md","mtime":"2019-08-13T06:09:28.206Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-13T06:11:43.068Z"},"basePath":"..","book":{"language":"zh"}});
         });
     </script>
 </div>

@@ -1527,7 +1527,7 @@
                 <a href="../config_mc/pid_tuning_guide_multicopter.html">
             
                     
-                    Multicopter PID Tuning Guide
+                    MC PID Tuning Guide
             
                 </a>
             
@@ -1535,12 +1535,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.2.2" data-path="../config_mc/advanced_mc_position_tuning.html">
+        <li class="chapter " data-level="1.9.2.2" data-path="../config_mc/mc_trajectory_tuning.html">
             
-                <a href="../config_mc/advanced_mc_position_tuning.html">
+                <a href="../config_mc/mc_trajectory_tuning.html">
             
                     
-                    Multicopter Advanced Tuning Guide
+                    MC Setpoint Tuning (Trajectory Generator)
             
                 </a>
             
@@ -2283,6 +2283,19 @@
             
                     
                     PWM ESCs and Servos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9.2" data-path="../peripherals/uavcan_escs.html">
+            
+                <a href="../peripherals/uavcan_escs.html">
+            
+                    
+                    UAVCAN ESCs
             
                 </a>
             
@@ -3094,11 +3107,257 @@
 <blockquote class="clearfix alert alert-quote"><strong class="fa fa-2x fa-quote-left"></strong>
 <p>&#x8FD9;&#x4E2A;&#x6E05;&#x5355;&#x662F;&#x4ECE;&#x6E90;&#x4EE3;&#x7801;&#x4E2D;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;** (&#x4F7F;&#x7528;<code>make parameters_metadata</code>) &#x5E76;&#x4E14;&#x5305;&#x542B;&#x4E86;&#x6700;&#x65B0;&#x7684;&#x53C2;&#x6570;&#x6587;&#x6863;.</p>
 </blockquote>
-<h2 id="&#x59FF;&#x6001;-q-&#x4F30;&#x8BA1;&#x5668;"><a name="&#x59FF;&#x6001;-q-&#x4F30;&#x8BA1;&#x5668;" class="plugin-anchor" href="#&#x59FF;&#x6001;-q-&#x4F30;&#x8BA1;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x59FF;&#x6001; Q &#x4F30;&#x8BA1;&#x5668;</h2>
+<h2 id="airspeed-validator"><a name="airspeed-validator" class="plugin-anchor" href="#airspeed-validator"><i class="fa fa-link" aria-hidden="true"></i></a>Airspeed Validator</h2>
 <table style="width: 100%; table-layout:fixed; font-size:1.5rem; overflow: auto; display:block;">
   <colgroup><col style="width: 23%"><col style="width: 46%"><col style="width: 11%"><col style="width: 11%"><col style="width: 9%"></colgroup> <tr>
     <th>
       &#x540D;&#x79F0;
+    </th>
+
+    <th>
+      &#x53C2;&#x6570;&#x63CF;&#x8FF0;
+    </th>
+
+    <th>
+      &#x6700;&#x5C0F;&#x6700;&#x5927;&#x503C; (&#x589E;&#x91CF;)
+    </th>
+
+    <th>
+      &#x9ED8;&#x8BA4;&#x503C;
+    </th>
+
+    <th>
+      &#x5355;&#x4F4D;
+    </th>
+  </tr>
+
+  <tr>
+    <td style="vertical-align: top;">
+      <strong id="ARSP_ARSP_SCALE">ARSP_ARSP_SCALE</strong> (FLOAT)
+    </td>
+
+    <td style="vertical-align: top;">
+      <p>
+        Airspeed scale (scale from IAS to CAS/EAS)
+      </p>
+
+      <p>
+        <strong>Comment:</strong> Scale can either be entered manually, or estimated in-flight by setting ARSP_SCALE_EST to 1.
+      </p>
+    </td>
+
+    <td style="vertical-align: top;">
+      0.5 &gt; 1.5
+    </td>
+
+    <td style="vertical-align: top;">
+      1.0
+    </td>
+
+    <td style="vertical-align: top;">
+    </td>
+  </tr>
+
+  <tr>
+    <td style="vertical-align: top;">
+      <strong id="ARSP_BETA_GATE">ARSP_BETA_GATE</strong> (INT32)
+    </td>
+
+    <td style="vertical-align: top;">
+      <p>
+        Airspeed Selector: Gate size for true sideslip fusion
+      </p>
+
+      <p>
+        <strong>Comment:</strong> Sets the number of standard deviations used by the innovation consistency test.
+      </p>
+    </td>
+
+    <td style="vertical-align: top;">
+      1 &gt; 5
+    </td>
+
+    <td style="vertical-align: top;">
+      1
+    </td>
+
+    <td style="vertical-align: top;">
+      SD
+    </td>
+  </tr>
+
+  <tr>
+    <td style="vertical-align: top;">
+      <strong id="ARSP_BETA_NOISE">ARSP_BETA_NOISE</strong> (FLOAT)
+    </td>
+
+    <td style="vertical-align: top;">
+      <p>
+        Airspeed Selector: Wind estimator sideslip measurement noise
+      </p>
+
+      <p>
+        <strong>Comment:</strong> Sideslip measurement noise of the internal wind estimator(s) of the airspeed selector.
+      </p>
+    </td>
+
+    <td style="vertical-align: top;">
+      0 &gt; 1
+    </td>
+
+    <td style="vertical-align: top;">
+      0.3
+    </td>
+
+    <td style="vertical-align: top;">
+      rad
+    </td>
+  </tr>
+
+  <tr>
+    <td style="vertical-align: top;">
+      <strong id="ARSP_SCALE_EST">ARSP_SCALE_EST</strong> (INT32)
+    </td>
+
+    <td style="vertical-align: top;">
+      <p>
+        Automatic airspeed scale estimation on
+      </p>
+
+      <p>
+        <strong>Comment:</strong> Turns the automatic airspeed scale (scale from IAS to CAS/EAS) on or off. It is recommended level (keeping altitude) while performing the estimation. Set to 1 to start estimation (best when already flying). Set to 0 to end scale estimation. The estimated scale is then saved in the ARSP_ARSP_SCALE parameter.
+      </p>
+    </td>
+
+    <td style="vertical-align: top;">
+    </td>
+
+    <td style="vertical-align: top;">
+      0
+    </td>
+
+    <td style="vertical-align: top;">
+    </td>
+  </tr>
+
+  <tr>
+    <td style="vertical-align: top;">
+      <strong id="ARSP_SC_P_NOISE">ARSP_SC_P_NOISE</strong> (FLOAT)
+    </td>
+
+    <td style="vertical-align: top;">
+      <p>
+        Airspeed Selector: Wind estimator true airspeed scale process noise
+      </p>
+
+      <p>
+        <strong>Comment:</strong> Airspeed scale process noise of the internal wind estimator(s) of the airspeed selector.
+      </p>
+    </td>
+
+    <td style="vertical-align: top;">
+      0 &gt; 0.1
+    </td>
+
+    <td style="vertical-align: top;">
+      0.0001
+    </td>
+
+    <td style="vertical-align: top;">
+      1/s
+    </td>
+  </tr>
+
+  <tr>
+    <td style="vertical-align: top;">
+      <strong id="ARSP_TAS_GATE">ARSP_TAS_GATE</strong> (INT32)
+    </td>
+
+    <td style="vertical-align: top;">
+      <p>
+        Airspeed Selector: Gate size for true airspeed fusion
+      </p>
+
+      <p>
+        <strong>Comment:</strong> Sets the number of standard deviations used by the innovation consistency test.
+      </p>
+    </td>
+
+    <td style="vertical-align: top;">
+      1 &gt; 5
+    </td>
+
+    <td style="vertical-align: top;">
+      3
+    </td>
+
+    <td style="vertical-align: top;">
+      SD
+    </td>
+  </tr>
+
+  <tr>
+    <td style="vertical-align: top;">
+      <strong id="ARSP_TAS_NOISE">ARSP_TAS_NOISE</strong> (FLOAT)
+    </td>
+
+    <td style="vertical-align: top;">
+      <p>
+        Airspeed Selector: Wind estimator true airspeed measurement noise
+      </p>
+
+      <p>
+        <strong>Comment:</strong> True airspeed measurement noise of the internal wind estimator(s) of the airspeed selector.
+      </p>
+    </td>
+
+    <td style="vertical-align: top;">
+      0 &gt; 4
+    </td>
+
+    <td style="vertical-align: top;">
+      1.4
+    </td>
+
+    <td style="vertical-align: top;">
+      m/s
+    </td>
+  </tr>
+
+  <tr>
+    <td style="vertical-align: top;">
+      <strong id="ARSP_W_P_NOISE">ARSP_W_P_NOISE</strong> (FLOAT)
+    </td>
+
+    <td style="vertical-align: top;">
+      <p>
+        Airspeed Selector: Wind estimator wind process noise
+      </p>
+
+      <p>
+        <strong>Comment:</strong> Wind process noise of the internal wind estimator(s) of the airspeed selector.
+      </p>
+    </td>
+
+    <td style="vertical-align: top;">
+      0 &gt; 1
+    </td>
+
+    <td style="vertical-align: top;">
+      0.1
+    </td>
+
+    <td style="vertical-align: top;">
+      m/s/s
+    </td>
+  </tr>
+</table>
+
+<h2 id="attitude-q-estimator"><a name="attitude-q-estimator" class="plugin-anchor" href="#attitude-q-estimator"><i class="fa fa-link" aria-hidden="true"></i></a>Attitude Q estimator</h2>
+<table style="width: 100%; table-layout:fixed; font-size:1.5rem; overflow: auto; display:block;">
+  <colgroup><col style="width: 23%"><col style="width: 46%"><col style="width: 11%"><col style="width: 11%"><col style="width: 9%"></colgroup> <tr>
+    <th>
+      &#x53C2;&#x6570;&#x540D;
     </th>
 
     <th>
@@ -3125,7 +3384,7 @@
 
     <td style="vertical-align: top;">
       <p>
-        &#x57FA;&#x4E8E; GPS &#x7684;&#x52A0;&#x901F;&#x5EA6;&#x8865;&#x507F; &#x901F;&#x5EA6;
+        Acceleration compensation based on GPS velocity
       </p>
     </td>
 
@@ -3147,7 +3406,7 @@
 
     <td style="vertical-align: top;">
       <p>
-        &#x9640;&#x87BA;&#x504F;&#x7F6E;&#x6781;&#x9650;&#x503C;
+        Gyro bias limit
       </p>
     </td>
 
@@ -3171,20 +3430,20 @@
 
     <td style="vertical-align: top;">
       <p>
-        &#x5916;&#x90E8;&#x6A21;&#x5757;&#x822A;&#x5411;&#x4F7F;&#x7528;&#x6A21;&#x5F0F;&#xFF08;&#x8FD0;&#x52A8;&#x6355;&#x6349;/&#x89C6;&#x89C9;&#xFF09;&#x3002;&#x8BBE;&#x7F6E;&#x4E3A;1&#x5219;&#x4F7F;&#x7528;&#x89C6;&#x89C9;&#x6A21;&#x5757;&#x76F8;&#x5173;&#x822A;&#x5411;&#x6570;&#x636E;&#xFF1B; &#x8BBE;&#x7F6E;&#x4E3A; 2&#x5219;&#x4F7F;&#x7528;&#x4ECE;&#x8FD0;&#x52A8;&#x6355;&#x6349;&#x7684;&#x76F8;&#x5173;&#x822A;&#x5411;&#x6570;&#x636E;
+        External heading usage mode (from Motion capture/Vision) Set to 1 to use heading estimate from vision. Set to 2 to use heading from motion capture
       </p>
 
-      <strong>&#x6570;&#x503C;&#xFF1A;</strong>
+      <strong>Values:</strong>
 
       <ul>
         <li>
-          <strong>0:</strong> &#x65E0;&#x5916;&#x90E8;&#x6A21;&#x5757;
+          <strong>0:</strong> None
         </li>
         <li>
-          <strong>1:</strong> &#x89C6;&#x89C9;&#x6A21;&#x5757;
+          <strong>1:</strong> Vision
         </li>
         <li>
-          <strong>2:</strong> &#x8FD0;&#x52A8;&#x6355;&#x6349;
+          <strong>2:</strong> Motion Capture
         </li>
       </ul>
     </td>
@@ -3208,11 +3467,11 @@
 
     <td style="vertical-align: top;">
       <p>
-        &#x78C1;&#x504F;&#x89D2;&#xFF0C;&#x5EA6;
+        Magnetic declination, in degrees
       </p>
 
       <p>
-        <strong>&#x6CE8;&#x91CA;:</strong> &#x5728;&#x6B63;&#x5E38;&#x64CD;&#x4F5C;&#x4E2D;&#x4E0D;&#x4F7F;&#x7528;&#x6B64;&#x53C2;&#x6570;, &#x56E0;&#x4E3A;&#x78C1;&#x504F;&#x89D2;&#x662F;&#x57FA;&#x4E8E;&#x65E0;&#x4EBA;&#x673A;&#x6240;&#x5728;GPS&#x5750;&#x6807;&#x4F4D;&#x7F6E;&#x8FDB;&#x884C;&#x68C0;&#x7D22;&#x5F97;&#x5230;
+        <strong>Comment:</strong> This parameter is not used in normal operation, as the declination is looked up based on the GPS coordinates of the vehicle.
       </p>
     </td>
 
@@ -3235,7 +3494,7 @@
 
     <td style="vertical-align: top;">
       <p>
-        &#x57FA;&#x4E8E;GPS&#x7684;&#x81EA;&#x52A8;&#x78C1;&#x504F;&#x89D2;&#x8865;&#x507F;
+        Automatic GPS based declination compensation
       </p>
     </td>
 
@@ -3257,7 +3516,7 @@
 
     <td style="vertical-align: top;">
       <p>
-        &#x4E92;&#x8865;&#x6EE4;&#x6CE2;&#x5668;&#x52A0;&#x901F;&#x5EA6;&#x8BA1;&#x6743;&#x91CD;&#x503C;
+        Complimentary filter accelerometer weight
       </p>
     </td>
 
@@ -3280,7 +3539,7 @@
 
     <td style="vertical-align: top;">
       <p>
-        &#x4E92;&#x8865;&#x8FC7;&#x6EE4;&#x5668;&#x5916;&#x90E8;&#x822A;&#x5411;&#x6743;&#x91CD;&#x503C;
+        Complimentary filter external heading weight
       </p>
     </td>
 
@@ -3303,7 +3562,7 @@
 
     <td style="vertical-align: top;">
       <p>
-        &#x4E92;&#x8865;&#x8FC7;&#x6EE4;&#x5668;&#x9640;&#x87BA;&#x4EEA;&#x504F;&#x7F6E;&#x6743;&#x91CD;&#x503C;
+        Complimentary filter gyroscope bias weight
       </p>
     </td>
 
@@ -3326,11 +3585,11 @@
 
     <td style="vertical-align: top;">
       <p>
-        &#x4E92;&#x8865;&#x6EE4;&#x6CE2;&#x5668;&#x78C1;&#x7F57;&#x76D8;&#x6743;&#x91CD;&#x503C;
+        Complimentary filter magnetometer weight
       </p>
 
       <p>
-        <strong>&#x6CE8;&#x610F;:</strong> &#x8BBE;&#x4E3A;0&#x65F6;&#xFF0C;&#x4E0D;&#x4F7F;&#x7528;&#x78C1;&#x7F57;&#x76D8;&#x6570;&#x636E;
+        <strong>Comment:</strong> Set to 0 to avoid using the magnetometer.
       </p>
     </td>
 
@@ -3347,7 +3606,7 @@
   </tr>
 </table>
 
-<h2 id="&#x7535;&#x6C60;&#x6821;&#x51C6;"><a name="&#x7535;&#x6C60;&#x6821;&#x51C6;" class="plugin-anchor" href="#&#x7535;&#x6C60;&#x6821;&#x51C6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7535;&#x6C60;&#x6821;&#x51C6;</h2>
+<h2 id="battery-calibration"><a name="battery-calibration" class="plugin-anchor" href="#battery-calibration"><i class="fa fa-link" aria-hidden="true"></i></a>Battery Calibration</h2>
 <table style="width: 100%; table-layout:fixed; font-size:1.5rem; overflow: auto; display:block;">
   <colgroup><col style="width: 23%"><col style="width: 46%"><col style="width: 11%"><col style="width: 11%"><col style="width: 9%"></colgroup> <tr>
     <th>
@@ -3378,11 +3637,11 @@
 
     <td style="vertical-align: top;">
       <p>
-        &#x7535;&#x6C60;&#x7535;&#x538B;&#x6D4B;&#x91CF;ADC&#x901A;&#x9053;
+        Battery ADC Channel
       </p>
 
       <p>
-        <strong>&#x6CE8;&#x610F;:</strong>&#x6B64;&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x7528;&#x4E8E;&#x76D1;&#x89C6;&#x4E3B;&#x7535;&#x6E90;&#x7535;&#x6C60;&#x7535;&#x538B;&#x7684; ADC &#x901A;&#x9053;, &#x5F53;&#x6B64;&#x503C;&#x4E3A;-1.0&#x65F6;&#xFF0C;&#x4F7F;&#x7528;&#x677F;&#x8F7D;&#x9ED8;&#x8BA4;&#x8BBE;&#x5B9A;&#x503C;
+        <strong>Comment:</strong> This parameter specifies the ADC channel used to monitor voltage of main power battery. A value of -1 means to use the board default.
       </p>
     </td>
 
@@ -3404,11 +3663,11 @@
 
     <td style="vertical-align: top;">
       <p>
-        &#x7535;&#x6C60;&#x7535;&#x6D41;&#x548C;&#x68C0;&#x6D4B;&#x7535;&#x538B;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;(A/V)
+        Battery current per volt (A/V)
       </p>
 
       <p>
-        <strong>&#x8BF4;&#x660E;:</strong>&#x901A;&#x8FC7;3.3V ADC&#x91C7;&#x6837;&#x5F97;&#x5230;&#x7684;&#x7535;&#x538B;&#x503C;&#x4E58;&#x4EE5;&#x5F53;&#x524D;&#x8BBE;&#x5B9A;&#x7CFB;&#x6570;&#x5C06;&#x786E;&#x5B9A;&#x7535;&#x6C60;&#x7535;&#x6D41;. &#x5F53;&#x6B64;&#x503C;&#x4E3A;-1&#x65F6;&#xFF0C;&#x4F7F;&#x7528;&#x677F;&#x8F7D;&#x9ED8;&#x8BA4;&#x8BBE;&#x5B9A;&#x503C;.
+        <strong>Comment:</strong> The voltage seen by the 3.3V ADC multiplied by this factor will determine the battery current. A value of -1 means to use the board default.
       </p>
     </td>
 
@@ -3430,15 +3689,15 @@
 
     <td style="vertical-align: top;">
       <p>
-        &#x7535;&#x6C60;&#x5BB9;&#x91CF;
+        Battery capacity
       </p>
 
       <p>
-        <strong>&#x8BF4;&#x660E;:</strong>&#x53C2;&#x6570;&#x63CF;&#x8FF0;&#x4E86;&#x5F53;&#x524D;&#x5B89;&#x88C5;&#x7684;&#x5B89;&#x88C5;&#x7684;&#x7535;&#x6C60;&#x7684;&#x5BB9;&#x91CF;.
+        <strong>Comment:</strong> Defines the capacity of the attached battery.
       </p>
 
       <p>
-        <b>&#x91CD;&#x542F;&#x8981;&#x6C42;: </b>&#x662F;
+        <b>Reboot required:</b> true
       </p>
     </td>
 
@@ -3462,11 +3721,11 @@
 
     <td style="vertical-align: top;">
       <p>
-        &#x4ECE;ADC&#x8F93;&#x5165;&#x901A;&#x9053;(&#x7535;&#x6C60;&#x7535;&#x6D41;&#x6D4B;&#x91CF;&#x901A;&#x9053;) &#x5F97;&#x5230;&#x7684;&#x539F;&#x59CB;&#x503C;&#x8F6C;&#x6362;&#x6210;&#x7535;&#x538B;&#x5BF9;&#x5E94;&#x7684;&#x7CFB;&#x6570;.
+        Scaling from ADC counts to volt on the ADC input (battery current)
       </p>
 
       <p>
-        <strong>&#x8BF4;&#x660E;:</strong>&#x8FD9;&#x4E2A;&#x4E0D;&#x662F;&#x7535;&#x6C60;&#x7535;&#x6D41;&#xFF0C;&#x800C;&#x662F;&#x4E2D;&#x95F4;ADC&#x7535;&#x538B;&#x3002; &#x503C;&#x4E3A;-1 &#x8868;&#x793A;&#x4F7F;&#x7528;&#x4E3B;&#x677F;&#x9ED8;&#x8BA4;&#x503C;, &#x8FD9;&#x662F;&#x5F3A;&#x70C8;&#x5EFA;&#x8BAE;&#x7684;&#x3002;
+        <strong>Comment:</strong> This is not the battery current, but the intermediate ADC voltage. A value of -1 signifies that the board defaults are used, which is highly recommended.
       </p>
     </td>
 
@@ -3488,11 +3747,11 @@
 
     <td style="vertical-align: top;">
       <p>
-        &#x4ECE;ADC&#x8F93;&#x5165;&#x901A;&#x9053;(&#x7535;&#x6C60;&#x7535;&#x538B;&#x6D4B;&#x91CF;&#x901A;&#x9053;) &#x5F97;&#x5230;&#x7684;&#x539F;&#x59CB;&#x503C;&#x8F6C;&#x6362;&#x6210;&#x7535;&#x538B;&#x5BF9;&#x5E94;&#x7684;&#x7CFB;&#x6570;.
+        Scaling from ADC counts to volt on the ADC input (battery voltage)
       </p>
 
       <p>
-        <strong>&#x8BF4;&#x660E;:</strong>&#x8FD9;&#x4E2A;&#x4E0D;&#x662F;&#x7535;&#x6C60;&#x7535;&#x538B;&#xFF0C;&#x800C;&#x662F;&#x4E2D;&#x95F4;ADC&#x7535;&#x538B;&#x3002; &#x503C;&#x4E3A;-1 &#x8868;&#x793A;&#x4F7F;&#x7528;&#x4E3B;&#x677F;&#x9ED8;&#x8BA4;&#x503C;, &#x8FD9;&#x662F;&#x5F3A;&#x70C8;&#x5EFA;&#x8BAE;&#x7684;&#x3002;
+        <strong>Comment:</strong> This is not the battery voltage, but the intermediate ADC voltage. A value of -1 signifies that the board defaults are used, which is highly recommended.
       </p>
     </td>
 
@@ -3514,15 +3773,15 @@
 
     <td style="vertical-align: top;">
       <p>
-        &#x4E34;&#x754C;&#x9608;&#x503C;
+        Critical threshold
       </p>
 
       <p>
-        <strong>&#x8BF4;&#x660E;:</strong>&#x8BBE;&#x7F6E;&#x63D0;&#x793A;&#x4E25;&#x91CD;&#x4F4E;&#x7535;&#x538B;&#x62A5;&#x8B66;&#x7684;&#x9608;&#x503C;. &#x8FD9;&#x4E2A;&#x503C;&#x8BBE;&#x7F6E;&#x5FC5;&#x987B;&#x4F4E;&#x4E8E;&#x4F4E;&#x7535;&#x538B;&#x62A5;&#x8B66;&#x9608;&#x503C;. &#x6B64;&#x9608;&#x503C;&#x901A;&#x5E38;&#x4F1A;&#x89E6;&#x53D1; RTL&#x3002;
+        <strong>Comment:</strong> Sets the threshold when the battery will be reported as critically low. This has to be lower than the low threshold. This threshold commonly will trigger RTL.
       </p>
 
       <p>
-        <b>&#x8981;&#x6C42;&#x91CD;&#x542F;:</b>&#x662F;
+        <b>Reboot required:</b> true
       </p>
     </td>
 
@@ -3546,15 +3805,15 @@
 
     <td style="vertical-align: top;">
       <p>
-        &#x5371;&#x9669;&#x7D27;&#x6025;&#x9608;&#x503C;
+        Emergency threshold
       </p>
 
       <p>
-        <strong>&#x8BF4;&#x660E;:</strong>&#x8BBE;&#x7F6E;&#x4F4E;&#x7535;&#x538B;&#x5371;&#x9669;&#x62A5;&#x8B66;&#x9608;&#x503C;. &#x8FD9;&#x4E2A;&#x503C;&#x5FC5;&#x987B;&#x4F4E;&#x4E8E;&#x4E25;&#x91CD;&#x4F4E;&#x7535;&#x538B;&#x62A5;&#x8B66;&#x9608;&#x503C;. &#x6B64;&#x9608;&#x503C;&#x4E00;&#x822C;&#x4F1A;&#x89E6;&#x53D1;LAND.
+        <strong>Comment:</strong> Sets the threshold when the battery will be reported as dangerously low. This has to be lower than the critical threshold. This threshold commonly will trigger landing.
       </p>
 
       <p>
-        <b>&#x8981;&#x6C42;&#x91CD;&#x542F;:</b>&#x662F;
+        <b>Reboot required:</b> true
       </p>
     </td>
 
@@ -3578,15 +3837,15 @@
 
     <td style="vertical-align: top;">
       <p>
-        &#x4F4E;&#x7535;&#x538B;&#x9608;&#x503C;
+        Low threshold
       </p>
 
       <p>
-        <strong>&#x8BF4;&#x660E;:</strong>&#x6B64;&#x4E3A;&#x89E6;&#x53D1;&#x4F4E;&#x7535;&#x538B;&#x62A5;&#x8B66;&#x7684;&#x9608;&#x503C;. &#x8FD9;&#x4E2A;&#x503C;&#x5FC5;&#x987B;&#x9AD8;&#x4E8E;&#x4E25;&#x91CD;&#x4F4E;&#x7535;&#x538B;&#x62A5;&#x8B66;&#x9608;&#x503C;.
+        <strong>Comment:</strong> Sets the threshold when the battery will be reported as low. This has to be higher than the critical threshold.
       </p>
 
       <p>
-        <b>&#x91CD;&#x542F;&#x8981;&#x6C42;: </b>&#x662F;
+        <b>Reboot required:</b> true
       </p>
     </td>
 
@@ -3610,68 +3869,68 @@
 
     <td style="vertical-align: top;">
       <p>
-        &#x7535;&#x82AF;&#x4E32;&#x8054;&#x6570;
+        Number of cells
       </p>
 
       <p>
-        <strong>&#x8BF4;&#x660E;:</strong>&#x5B9A;&#x4E49;&#x6240;&#x5B89;&#x88C5;&#x7684;&#x7535;&#x6C60;&#x5185;&#x90E8;&#x5305;&#x542B;&#x7684;&#x4E32;&#x8054;&#x7535;&#x82AF;&#x6570;&#x91CF;.
+        <strong>Comment:</strong> Defines the number of cells the attached battery consists of.
       </p>
 
-      <strong>&#x53C2;&#x6570;&#x5BF9;&#x7167;:</strong>
+      <strong>Values:</strong>
 
       <ul>
         <li>
-          <strong>0:</strong>&#x672A;&#x914D;&#x7F6E;
+          <strong>0:</strong> Unconfigured
         </li>
         <li>
-          <strong>2:</strong>2S&#x7535;&#x6C60;
+          <strong>2:</strong> 2S Battery
         </li>
         <li>
-          <strong>3:</strong>3S&#x7535;&#x6C60;
+          <strong>3:</strong> 3S Battery
         </li>
         <li>
-          <strong>4:</strong>4S&#x7535;&#x6C60;
+          <strong>4:</strong> 4S Battery
         </li>
         <li>
-          <strong>5:</strong>5S&#x7535;&#x6C60;
+          <strong>5:</strong> 5S Battery
         </li>
         <li>
-          <strong>6:</strong>6S&#x7535;&#x6C60;
+          <strong>6:</strong> 6S Battery
         </li>
         <li>
-          <strong>7:</strong>7S&#x7535;&#x6C60;
+          <strong>7:</strong> 7S Battery
         </li>
         <li>
-          <strong>8:</strong>8S&#x7535;&#x6C60;
+          <strong>8:</strong> 8S Battery
         </li>
         <li>
-          <strong>9:</strong>9S&#x7535;&#x6C60;
+          <strong>9:</strong> 9S Battery
         </li>
         <li>
-          <strong>10:</strong>10S&#x7535;&#x6C60;
+          <strong>10:</strong> 10S Battery
         </li>
         <li>
-          <strong>11:</strong>11S&#x7535;&#x6C60;
+          <strong>11:</strong> 11S Battery
         </li>
         <li>
-          <strong>12:</strong>12S&#x7535;&#x6C60;
+          <strong>12:</strong> 12S Battery
         </li>
         <li>
-          <strong>13:</strong>13S&#x7535;&#x6C60;
+          <strong>13:</strong> 13S Battery
         </li>
         <li>
-          <strong>14:</strong>14S&#x7535;&#x6C60;
+          <strong>14:</strong> 14S Battery
         </li>
         <li>
-          <strong>15:</strong>15S&#x7535;&#x6C60;
+          <strong>15:</strong> 15S Battery
         </li>
         <li>
-          <strong>16:</strong>16S&#x7535;&#x6C60;
+          <strong>16:</strong> 16S Battery
         </li>
       </ul>
 
       <p>
-        <b>&#x8981;&#x6C42;&#x91CD;&#x542F;:</b>&#x662F;
+        <b>Reboot required:</b> true
       </p>
     </td>
 
@@ -3694,15 +3953,15 @@
 
     <td style="vertical-align: top;">
       <p>
-        &#x660E;&#x786E;&#x7684;&#x5B9A;&#x4E49;&#x6BCF;&#x8282;&#x7535;&#x82AF;&#x7684;&#x5185;&#x90E8;&#x963B;&#x6297;
+        Explicitly defines the per cell internal resistance
       </p>
 
       <p>
-        <strong>&#x8BF4;&#x660E;:</strong>&#x5982;&#x679C;&#x662F;&#x975E;&#x8D1F;&#x503C;, &#x5219;&#x4F1A;&#x7528;&#x4E8E;&#x5728;&#x6240;&#x6709;&#x8BA1;&#x7B97;&#x4E2D;&#x66FF;&#x6362;BAT_V_LOAD_DROP.
+        <strong>Comment:</strong> If non-negative, then this will be used in place of BAT_V_LOAD_DROP for all calculations.
       </p>
 
       <p>
-        <b>&#x91CD;&#x542F;&#x8981;&#x6C42;: </b>&#x662F;
+        <b>Reboot required:</b> true
       </p>
     </td>
 
@@ -3726,21 +3985,21 @@
 
     <td style="vertical-align: top;">
       <p>
-        &#x7535;&#x6C60;&#x7535;&#x538B;&#x68C0;&#x6D4B;&#x5668;&#x6E90;
+        Battery monitoring source
       </p>
 
       <p>
-        <strong>&#x8BF4;&#x660E;:</strong>&#x6B64;&#x53C2;&#x6570;&#x51B3;&#x5B9A;&#x4E86;&#x7535;&#x6C60;&#x76D1;&#x6D4B;&#x6570;&#x636E;&#x7684;&#x6765;&#x6E90;. &#x53C2;&#x6570;&apos;&apos;0&apos;&apos; &#x8868;&#x793A;&#x6D4B;&#x91CF;&#x4FE1;&#x53F7;&#x6765;&#x6E90;&#x4E8E;&#x4E00;&#x4E2A;&#x7535;&#x6E90;&#x6A21;&#x5757;. &#x53C2;&#x6570;&quot;1&quot;&#x8868;&#x793A;&#x7CFB;&#x7EDF;&#x4ECE;&#x5916;&#x90E8;&#x63A5;&#x6536;&#x5230;&#x7684;Mavlink&#x6D88;&#x606F;&#x4E2D;&#x83B7;&#x53D6;&#x7535;&#x6C60;&#x72B6;&#x6001;&#x4FE1;&#x606F;.
+        <strong>Comment:</strong> This parameter controls the source of battery data. The value &apos;Power Module&apos; means that measurements are expected to come from a power module. If the value is set to &apos;External&apos; then the system expects to receive mavlink battery status messages.
       </p>
 
-      <strong>&#x53C2;&#x6570;&#x503C;:</strong>
+      <strong>Values:</strong>
 
       <ul>
         <li>
-          <strong>0:</strong>&#x7535;&#x6E90;&#x6A21;&#x5757;
+          <strong>0:</strong> Power Module
         </li>
         <li>
-          <strong>1:</strong>&#x5916;&#x90E8;&#x4FE1;&#x606F;
+          <strong>1:</strong> External
         </li>
       </ul>
     </td>
@@ -3764,15 +4023,15 @@
 
     <td style="vertical-align: top;">
       <p>
-        &#x6EE1;&#x7535;&#x7535;&#x538B;(5C &#x8D1F;&#x8F7D;)
+        Full cell voltage (5C load)
       </p>
 
       <p>
-        <strong>&#x8BF4;&#x660E;:</strong>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7535;&#x6C60;&#x5355;&#x5143;&#x5728;&#x8F7B;&#x5EA6;&#x8D1F;&#x8F7D;&#x4E0B;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x6EE1;&#x7684;&#x7535;&#x538B;. &#x8FD9;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x662F;&#x6807;&#x79F0;&#x7535;&#x538B;4.2V.
+        <strong>Comment:</strong> Defines the voltage where a single cell of the battery is considered full under a mild load. This will never be the nominal voltage of 4.2V
       </p>
 
       <p>
-        <b>&#x8981;&#x6C42;&#x91CD;&#x542F;:</b>&#x662F;
+        <b>Reboot required:</b> true
       </p>
     </td>
 
@@ -3796,11 +4055,11 @@
 
     <td style="vertical-align: top;">
       <p>
-        &#x7535;&#x6C60;&#x7535;&#x538B;&#x5206;&#x538B;&#x5668;(&#x7535;&#x538B;&#x5206;&#x538B;&#x5668;)
+        Battery voltage divider (V divider)
       </p>
 
       <p>
-        <strong>&#x8BF4;&#x660E;:</strong>&#x8FD9;&#x662F;&#x7535;&#x6C60;&#x7535;&#x538B;&#x5230;3.3V ADC&#x7535;&#x538B;&#x7684;&#x5206;&#x538B;&#x5668;&#x3002; &#x5982;&#x679C;&#x4F7F;&#x7528;Mauch &#x7535;&#x6E90;&#x6A21;&#x5757;&#xFF0C;&#x6570;&#x636E;&#x8868;&#x4E2D;&#x7684;&#x503C;&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x91CC;&#x76F4;&#x63A5;&#x5E94;&#x7528;&#x3002; &#x53C2;&#x6570;&#x503C;&#x4E3A;-1&#x8868;&#x793A;&#x4F7F;&#x7528;&#x677F;&#x8F7D;&#x9ED8;&#x8BA4;&#x503C;&#x3002;
+        <strong>Comment:</strong> This is the divider from battery voltage to 3.3V ADC voltage. If using e.g. Mauch power modules the value from the datasheet can be applied straight here. A value of -1 means to use the board default.
       </p>
     </td>
 
@@ -3822,15 +4081,15 @@
 
     <td style="vertical-align: top;">
       <p>
-        &#x7A7A;&#x7535;&#x7535;&#x538B;(5C&#x8D1F;&#x8F7D;)
+        Empty cell voltage (5C load)
       </p>
 
       <p>
-        <strong>&#x8BF4;&#x660E;:</strong>&#x5B9A;&#x4E49;&#x4E86;&#x5355;&#x8282;&#x7535;&#x6C60;&#x8BA4;&#x4E3A;&#x4E3A;&#x7A7A;&#x7684;&#x65F6;&#x5019;&#x7684;&#x7535;&#x538B;&#x503C;. &#x8BE5;&#x7535;&#x538B;&#x5E94;&#x8BE5;&#x9009;&#x62E9;&#x8BBE;&#x7F6E;&#x5728;&#x9661;&#x964D;&#x81F3;2.8V&#x4E4B;&#x524D;&#xFF0C; &#x4E00;&#x4E2A;&#x5178;&#x578B;&#x7684;&#x9502;&#x7535;&#x6C60;&#x53EA;&#x80FD;&#x653E;&#x7535;&#x5230;10%&#xFF0C;&#x5728;&#x5B83;&#x9661;&#x964D;&#x81F3;&#x4F1A;&#x635F;&#x574F;&#x7535;&#x82AF;&#x7684;&#x7535;&#x538B;&#x4E4B;&#x524D;&#x3002;
+        <strong>Comment:</strong> Defines the voltage where a single cell of the battery is considered empty. The voltage should be chosen before the steep dropoff to 2.8V. A typical lithium battery can only be discharged down to 10% before it drops off to a voltage level damaging the cells.
       </p>
 
       <p>
-        <b>&#x91CD;&#x542F;&#x8981;&#x6C42;: </b>&#x662F;
+        <b>Reboot required:</b> true
       </p>
     </td>
 
@@ -3854,15 +4113,15 @@
 
     <td style="vertical-align: top;">
       <p>
-        &#x5728;&#x5168;&#x6CB9;&#x95E8;&#x5DE5;&#x4F5C;&#x65F6;&#x6BCF;&#x8282;&#x7535;&#x82AF;&#x7684;&#x538B;&#x964D;
+        Voltage drop per cell on full throttle
       </p>
 
       <p>
-        <strong>&#x8BF4;&#x660E;:</strong>&#x8FD9;&#x4E2A;&#x9690;&#x5F0F;&#x5B9A;&#x4E49;&#x4E86;&#x5BF9;&#x6700;&#x5927;&#x7535;&#x6D41;&#x6BD4;&#x7684;&#x5185;&#x963B;&#xFF0C;&#x5E76;&#x5047;&#x8BBE;&#x662F;&#x7EBF;&#x6027;&#x5173;&#x7CFB;&#x3002; &#x6BD4;&#x8F83;&#x597D;&#x7684;&#x503C;&#x662F;&#x6D4B;&#x91CF;&#x5E76;&#x8BA1;&#x7B97;&#x5728;5C&#x8D1F;&#x8F7D;&#x65F6;&#x7684;&#x538B;&#x964D;&#x548C;20~25C&#x8D1F;&#x8F7D;&#x65F6;&#x7684;&#x538B;&#x964D;&#x7684;&#x5DEE;&#x503C;. &#x5F53;&#x53C2;&#x6570;BAT_R_INTERNAL&#x88AB;&#x8BBE;&#x7F6E;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x4E0D;&#x4F7F;&#x7528;&#x6B64;&#x53C2;&#x6570;.
+        <strong>Comment:</strong> This implicitely defines the internal resistance to maximum current ratio and assumes linearity. A good value to use is the difference between the 5C and 20-25C load. Not used if BAT_R_INTERNAL is set.
       </p>
 
       <p>
-        <b>&#x91CD;&#x542F;&#x8981;&#x6C42;: </b>&#x662F;
+        <b>Reboot required:</b> true
       </p>
     </td>
 
@@ -3886,11 +4145,11 @@
 
     <td style="vertical-align: top;">
       <p>
-        &#x7535;&#x6D41;&#x4F20;&#x611F;&#x5668;ADC&#x901A;&#x9053;&#x8F93;&#x5165;&#x7535;&#x538B;&#x504F;&#x79FB;
+        Offset in volt as seen by the ADC input of the current sensor
       </p>
 
       <p>
-        <strong>&#x8BF4;&#x660E;:</strong>&#x5728;&#x6839;&#x636E;&#x7535;&#x538B;&#x8BA1;&#x7B97;&#x7535;&#x6C60;&#x7535;&#x6D41;&#x4E4B;&#x524D;&#xFF0C;&#x8FD9;&#x4E2A;&#x504F;&#x79FB;&#x91CF;&#x5C06;&#x88AB;&#x51CF;&#x53BB;&#x3002;
+        <strong>Comment:</strong> This offset will be subtracted before calculating the battery current based on the voltage.
       </p>
     </td>
 
@@ -4064,7 +4323,7 @@
         <strong>Comment:</strong> Change time measurement
       </p>
 
-      <strong>&#x53C2;&#x6570;&#x5BF9;&#x7167;:</strong>
+      <strong>Values:</strong>
 
       <ul>
         <li>
@@ -4207,7 +4466,7 @@
       </ul>
 
       <p>
-        <b>&#x8981;&#x6C42;&#x91CD;&#x542F;:</b>&#x662F;
+        <b>Reboot required:</b> true
       </p>
     </td>
 
@@ -4312,7 +4571,7 @@
       </p>
 
       <p>
-        <b>&#x91CD;&#x542F;&#x8981;&#x6C42;: </b>&#x662F;
+        <b>Reboot required:</b> true
       </p>
     </td>
 
@@ -4810,6 +5069,32 @@
 
   <tr>
     <td style="vertical-align: top;">
+      <strong id="COM_ARM_CHK_ESCS">COM_ARM_CHK_ESCS</strong> (INT32)
+    </td>
+
+    <td style="vertical-align: top;">
+      <p>
+        Require all the ESCs to be detected to arm
+      </p>
+
+      <p>
+        <strong>Comment:</strong> This param is specific for ESCs reporting status. Normal ESCs configurations are not affected by the change of this param.
+      </p>
+    </td>
+
+    <td style="vertical-align: top;">
+    </td>
+
+    <td style="vertical-align: top;">
+      1
+    </td>
+
+    <td style="vertical-align: top;">
+    </td>
+  </tr>
+
+  <tr>
+    <td style="vertical-align: top;">
       <strong id="COM_ARM_EKF_AB">COM_ARM_EKF_AB</strong> (FLOAT)
     </td>
 
@@ -5002,25 +5287,25 @@
 
   <tr>
     <td style="vertical-align: top;">
-      <strong id="COM_ARM_MAG">COM_ARM_MAG</strong> (FLOAT)
+      <strong id="COM_ARM_MAG_ANG">COM_ARM_MAG_ANG</strong> (INT32)
     </td>
 
     <td style="vertical-align: top;">
       <p>
-        Maximum magnetic field inconsistency between units that will allow arming
+        Maximum magnetic field inconsistency between units that will allow arming Set -1 to disable the check
       </p>
     </td>
 
     <td style="vertical-align: top;">
-      0.05 &gt; 0.5 (0.05)
+      3 &gt; 180
     </td>
 
     <td style="vertical-align: top;">
-      0.15
+      30
     </td>
 
     <td style="vertical-align: top;">
-      Gauss
+      deg
     </td>
   </tr>
 
@@ -12405,6 +12690,34 @@
 
   <tr>
     <td style="vertical-align: top;">
+      <strong id="FW_GND_SPD_MIN">FW_GND_SPD_MIN</strong> (FLOAT)
+    </td>
+
+    <td style="vertical-align: top;">
+      <p>
+        Minimum groundspeed
+      </p>
+
+      <p>
+        <strong>Comment:</strong> The controller will increase the commanded airspeed to maintain this minimum groundspeed to the next waypoint.
+      </p>
+    </td>
+
+    <td style="vertical-align: top;">
+      0.0 &gt; 40 (0.5)
+    </td>
+
+    <td style="vertical-align: top;">
+      5.0
+    </td>
+
+    <td style="vertical-align: top;">
+      m/s
+    </td>
+  </tr>
+
+  <tr>
+    <td style="vertical-align: top;">
       <strong id="FW_T_CLMB_MAX">FW_T_CLMB_MAX</strong> (FLOAT)
     </td>
 
@@ -19352,6 +19665,34 @@
 
   <tr>
     <td style="vertical-align: top;">
+      <strong id="MPC_COL_PREV_ANG">MPC_COL_PREV_ANG</strong> (FLOAT)
+    </td>
+
+    <td style="vertical-align: top;">
+      <p>
+        Angle left/right from the commanded setpoint in which the range data is used to calculate speed limitations. All data further from the commanded direction is not considered
+      </p>
+
+      <p>
+        <strong>Comment:</strong> Only used in Position mode.
+      </p>
+    </td>
+
+    <td style="vertical-align: top;">
+      0 &gt; 90
+    </td>
+
+    <td style="vertical-align: top;">
+      45.
+    </td>
+
+    <td style="vertical-align: top;">
+      [deg]
+    </td>
+  </tr>
+
+  <tr>
+    <td style="vertical-align: top;">
       <strong id="MPC_COL_PREV_D">MPC_COL_PREV_D</strong> (FLOAT)
     </td>
 
@@ -20210,11 +20551,11 @@
     </td>
 
     <td style="vertical-align: top;">
-      0.1 &gt; 5.0
+      0.1 &gt; 1.0
     </td>
 
     <td style="vertical-align: top;">
-      0.3
+      0.5
     </td>
 
     <td style="vertical-align: top;">
@@ -20411,7 +20752,7 @@
     </td>
 
     <td style="vertical-align: top;">
-      0.1 &gt; 5.0
+      0.1 &gt; 1.0
     </td>
 
     <td style="vertical-align: top;">
@@ -30754,6 +31095,317 @@
   </tr>
 </table>
 
+<h2 id="roboclaw"><a name="roboclaw" class="plugin-anchor" href="#roboclaw"><i class="fa fa-link" aria-hidden="true"></i></a>Roboclaw</h2>
+<table style="width: 100%; table-layout:fixed; font-size:1.5rem; overflow: auto; display:block;">
+  <colgroup><col style="width: 23%"><col style="width: 46%"><col style="width: 11%"><col style="width: 11%"><col style="width: 9%"></colgroup> <tr>
+    <th>
+      &#x53C2;&#x6570;&#x540D;
+    </th>
+
+    <th>
+      &#x53C2;&#x6570;&#x63CF;&#x8FF0;
+    </th>
+
+    <th>
+      &#x6700;&#x5C0F;&#x6700;&#x5927;&#x503C; (&#x589E;&#x91CF;)
+    </th>
+
+    <th>
+      &#x9ED8;&#x8BA4;&#x503C;
+    </th>
+
+    <th>
+      &#x5355;&#x4F4D;
+    </th>
+  </tr>
+
+  <tr>
+    <td style="vertical-align: top;">
+      <strong id="RBCLW_SER_CFG">RBCLW_SER_CFG</strong> (INT32)
+    </td>
+
+    <td style="vertical-align: top;">
+      <p>
+        Serial Configuration for Roboclaw Driver
+      </p>
+
+      <p>
+        <strong>Comment:</strong> Configure on which serial port to run Roboclaw Driver.
+      </p>
+
+      <strong>Values:</strong>
+
+      <ul>
+        <li>
+          <strong>0:</strong> Disabled
+        </li>
+        <li>
+          <strong>6:</strong> UART 6
+        </li>
+        <li>
+          <strong>101:</strong> TELEM 1
+        </li>
+        <li>
+          <strong>102:</strong> TELEM 2
+        </li>
+        <li>
+          <strong>103:</strong> TELEM 3
+        </li>
+        <li>
+          <strong>104:</strong> TELEM/SERIAL 4
+        </li>
+        <li>
+          <strong>201:</strong> GPS 1
+        </li>
+        <li>
+          <strong>202:</strong> GPS 2
+        </li>
+        <li>
+          <strong>300:</strong> Radio Controller
+        </li>
+      </ul>
+
+      <p>
+        <b>Reboot required:</b> true
+      </p>
+    </td>
+
+    <td style="vertical-align: top;">
+    </td>
+
+    <td style="vertical-align: top;">
+      0
+    </td>
+
+    <td style="vertical-align: top;">
+    </td>
+  </tr>
+</table>
+
+<h2 id="roboclaw-driver"><a name="roboclaw-driver" class="plugin-anchor" href="#roboclaw-driver"><i class="fa fa-link" aria-hidden="true"></i></a>Roboclaw driver</h2>
+<table style="width: 100%; table-layout:fixed; font-size:1.5rem; overflow: auto; display:block;">
+  <colgroup><col style="width: 23%"><col style="width: 46%"><col style="width: 11%"><col style="width: 11%"><col style="width: 9%"></colgroup> <tr>
+    <th>
+      &#x53C2;&#x6570;&#x540D;
+    </th>
+
+    <th>
+      &#x53C2;&#x6570;&#x63CF;&#x8FF0;
+    </th>
+
+    <th>
+      &#x6700;&#x5C0F;&#x6700;&#x5927;&#x503C; (&#x589E;&#x91CF;)
+    </th>
+
+    <th>
+      &#x9ED8;&#x8BA4;&#x503C;
+    </th>
+
+    <th>
+      &#x5355;&#x4F4D;
+    </th>
+  </tr>
+
+  <tr>
+    <td style="vertical-align: top;">
+      <strong id="RBCLW_ADDRESS">RBCLW_ADDRESS</strong> (INT32)
+    </td>
+
+    <td style="vertical-align: top;">
+      <p>
+        Address of the Roboclaw
+      </p>
+
+      <p>
+        <strong>Comment:</strong> The Roboclaw can be configured to have an address from 0x80 to 0x87, inclusive. It must be configured to match this parameter.
+      </p>
+
+      <strong>Values:</strong>
+
+      <ul>
+        <li>
+          <strong>128:</strong> 0x80
+        </li>
+        <li>
+          <strong>129:</strong> 0x81
+        </li>
+        <li>
+          <strong>130:</strong> 0x82
+        </li>
+        <li>
+          <strong>131:</strong> 0x83
+        </li>
+        <li>
+          <strong>132:</strong> 0x84
+        </li>
+        <li>
+          <strong>133:</strong> 0x85
+        </li>
+        <li>
+          <strong>134:</strong> 0x86
+        </li>
+        <li>
+          <strong>135:</strong> 0x87
+        </li>
+      </ul>
+    </td>
+
+    <td style="vertical-align: top;">
+      128 &gt; 135
+    </td>
+
+    <td style="vertical-align: top;">
+      128
+    </td>
+
+    <td style="vertical-align: top;">
+    </td>
+  </tr>
+
+  <tr>
+    <td style="vertical-align: top;">
+      <strong id="RBCLW_BAUD">RBCLW_BAUD</strong> (INT32)
+    </td>
+
+    <td style="vertical-align: top;">
+      <p>
+        Roboclaw serial baud rate
+      </p>
+
+      <p>
+        <strong>Comment:</strong> Baud rate of the serial communication with the Roboclaw. The Roboclaw must be configured to match this rate.
+      </p>
+
+      <strong>Values:</strong>
+
+      <ul>
+        <li>
+          <strong>2400:</strong> 2400 baud
+        </li>
+        <li>
+          <strong>9600:</strong> 9600 baud
+        </li>
+        <li>
+          <strong>19200:</strong> 19200 baud
+        </li>
+        <li>
+          <strong>38400:</strong> 38400 baud
+        </li>
+        <li>
+          <strong>57600:</strong> 57600 baud
+        </li>
+        <li>
+          <strong>115200:</strong> 115200 baud
+        </li>
+        <li>
+          <strong>230400:</strong> 230400 baud
+        </li>
+        <li>
+          <strong>460800:</strong> 460800 baud
+        </li>
+      </ul>
+
+      <p>
+        <b>Reboot required:</b> true
+      </p>
+    </td>
+
+    <td style="vertical-align: top;">
+      2400 &gt; 460800
+    </td>
+
+    <td style="vertical-align: top;">
+      2400
+    </td>
+
+    <td style="vertical-align: top;">
+    </td>
+  </tr>
+
+  <tr>
+    <td style="vertical-align: top;">
+      <strong id="RBCLW_COUNTS_REV">RBCLW_COUNTS_REV</strong> (INT32)
+    </td>
+
+    <td style="vertical-align: top;">
+      <p>
+        Encoder counts per revolution
+      </p>
+
+      <p>
+        <strong>Comment:</strong> Number of encoder counts for one revolution. The roboclaw treats analog encoders (potentiometers) as having 2047 counts per rev. The default value of 1200 corresponds to the default configuration of the Aion R1 rover.
+      </p>
+    </td>
+
+    <td style="vertical-align: top;">
+      1 &gt; ?
+    </td>
+
+    <td style="vertical-align: top;">
+      1200
+    </td>
+
+    <td style="vertical-align: top;">
+    </td>
+  </tr>
+
+  <tr>
+    <td style="vertical-align: top;">
+      <strong id="RBCLW_READ_PER">RBCLW_READ_PER</strong> (INT32)
+    </td>
+
+    <td style="vertical-align: top;">
+      <p>
+        Encoder read period
+      </p>
+
+      <p>
+        <strong>Comment:</strong> How long to wait, in Milliseconds, between reading wheel encoder values over Uart from the Roboclaw
+      </p>
+    </td>
+
+    <td style="vertical-align: top;">
+      1 &gt; 1000
+    </td>
+
+    <td style="vertical-align: top;">
+      10
+    </td>
+
+    <td style="vertical-align: top;">
+      ms
+    </td>
+  </tr>
+
+  <tr>
+    <td style="vertical-align: top;">
+      <strong id="RBCLW_WRITE_PER">RBCLW_WRITE_PER</strong> (INT32)
+    </td>
+
+    <td style="vertical-align: top;">
+      <p>
+        Uart write period
+      </p>
+
+      <p>
+        <strong>Comment:</strong> How long to wait, in Milliseconds, between writing actuator controls over Uart to the Roboclaw
+      </p>
+    </td>
+
+    <td style="vertical-align: top;">
+      1 &gt; 1000
+    </td>
+
+    <td style="vertical-align: top;">
+      10
+    </td>
+
+    <td style="vertical-align: top;">
+      ms
+    </td>
+  </tr>
+</table>
+
 <h2 id="rover-position-control"><a name="rover-position-control" class="plugin-anchor" href="#rover-position-control"><i class="fa fa-link" aria-hidden="true"></i></a>Rover Position Control</h2>
 <table style="width: 100%; table-layout:fixed; font-size:1.5rem; overflow: auto; display:block;">
   <colgroup><col style="width: 23%"><col style="width: 46%"><col style="width: 11%"><col style="width: 11%"><col style="width: 9%"></colgroup> <tr>
@@ -35077,6 +35729,32 @@
     <td style="vertical-align: top;">
       <p>
         PGA460 Ultrasonic driver (PGA460)
+      </p>
+
+      <p>
+        <b>Reboot required:</b> true
+      </p>
+    </td>
+
+    <td style="vertical-align: top;">
+    </td>
+
+    <td style="vertical-align: top;">
+      0
+    </td>
+
+    <td style="vertical-align: top;">
+    </td>
+  </tr>
+
+  <tr>
+    <td style="vertical-align: top;">
+      <strong id="SENS_EN_PX4FLOW">SENS_EN_PX4FLOW</strong> (INT32)
+    </td>
+
+    <td style="vertical-align: top;">
+      <p>
+        PX4 Flow Optical Flow
       </p>
 
       <p>
@@ -43654,23 +44332,23 @@
 <table style="width: 100%; table-layout:fixed; font-size:1.5rem; overflow: auto; display:block;">
   <colgroup><col style="width: 23%"><col style="width: 46%"><col style="width: 11%"><col style="width: 11%"><col style="width: 9%"></colgroup> <tr>
     <th>
-      &#x53C2;&#x6570;&#x540D;
+      Name
     </th>
 
     <th>
-      &#x53C2;&#x6570;&#x63CF;&#x8FF0;
+      Description
     </th>
 
     <th>
-      &#x6700;&#x5C0F;&#x6700;&#x5927;&#x503C; (&#x589E;&#x91CF;)
+      Min &gt; Max (Incr.)
     </th>
 
     <th>
-      &#x9ED8;&#x8BA4;&#x503C;
+      Default
     </th>
 
     <th>
-      &#x5355;&#x4F4D;
+      Units
     </th>
   </tr>
 
@@ -44550,229 +45228,27 @@
   </tr>
 </table>
 
-<h2 id="wind-estimator"><a name="wind-estimator" class="plugin-anchor" href="#wind-estimator"><i class="fa fa-link" aria-hidden="true"></i></a>Wind Estimator</h2>
-<table style="width: 100%; table-layout:fixed; font-size:1.5rem; overflow: auto; display:block;">
-  <colgroup><col style="width: 23%"><col style="width: 46%"><col style="width: 11%"><col style="width: 11%"><col style="width: 9%"></colgroup> <tr>
-    <th>
-      &#x53C2;&#x6570;&#x540D;
-    </th>
-
-    <th>
-      &#x53C2;&#x6570;&#x63CF;&#x8FF0;
-    </th>
-
-    <th>
-      &#x6700;&#x5C0F;&#x6700;&#x5927;&#x503C; (&#x589E;&#x91CF;)
-    </th>
-
-    <th>
-      &#x9ED8;&#x8BA4;&#x503C;
-    </th>
-
-    <th>
-      &#x5355;&#x4F4D;
-    </th>
-  </tr>
-
-  <tr>
-    <td style="vertical-align: top;">
-      <strong id="WEST_BETA_GATE">WEST_BETA_GATE</strong> (INT32)
-    </td>
-
-    <td style="vertical-align: top;">
-      <p>
-        Gate size for true sideslip fusion
-      </p>
-
-      <p>
-        <strong>Comment:</strong> Sets the number of standard deviations used by the innovation consistency test.
-      </p>
-    </td>
-
-    <td style="vertical-align: top;">
-      1 &gt; 5
-    </td>
-
-    <td style="vertical-align: top;">
-      1
-    </td>
-
-    <td style="vertical-align: top;">
-      SD
-    </td>
-  </tr>
-
-  <tr>
-    <td style="vertical-align: top;">
-      <strong id="WEST_BETA_NOISE">WEST_BETA_NOISE</strong> (FLOAT)
-    </td>
-
-    <td style="vertical-align: top;">
-      <p>
-        Wind estimator sideslip measurement noise
-      </p>
-    </td>
-
-    <td style="vertical-align: top;">
-      0 &gt; 1
-    </td>
-
-    <td style="vertical-align: top;">
-      0.3
-    </td>
-
-    <td style="vertical-align: top;">
-      rad
-    </td>
-  </tr>
-
-  <tr>
-    <td style="vertical-align: top;">
-      <strong id="WEST_EN">WEST_EN</strong> (INT32)
-    </td>
-
-    <td style="vertical-align: top;">
-      <p>
-        Enable Wind estimator
-      </p>
-
-      <p>
-        <b>Reboot required:</b> true
-      </p>
-    </td>
-
-    <td style="vertical-align: top;">
-    </td>
-
-    <td style="vertical-align: top;">
-      0
-    </td>
-
-    <td style="vertical-align: top;">
-    </td>
-  </tr>
-
-  <tr>
-    <td style="vertical-align: top;">
-      <strong id="WEST_SC_P_NOISE">WEST_SC_P_NOISE</strong> (FLOAT)
-    </td>
-
-    <td style="vertical-align: top;">
-      <p>
-        Wind estimator true airspeed scale process noise
-      </p>
-    </td>
-
-    <td style="vertical-align: top;">
-      0 &gt; 0.1
-    </td>
-
-    <td style="vertical-align: top;">
-      0.0001
-    </td>
-
-    <td style="vertical-align: top;">
-    </td>
-  </tr>
-
-  <tr>
-    <td style="vertical-align: top;">
-      <strong id="WEST_TAS_GATE">WEST_TAS_GATE</strong> (INT32)
-    </td>
-
-    <td style="vertical-align: top;">
-      <p>
-        Gate size for true airspeed fusion
-      </p>
-
-      <p>
-        <strong>Comment:</strong> Sets the number of standard deviations used by the innovation consistency test.
-      </p>
-    </td>
-
-    <td style="vertical-align: top;">
-      1 &gt; 5
-    </td>
-
-    <td style="vertical-align: top;">
-      3
-    </td>
-
-    <td style="vertical-align: top;">
-      SD
-    </td>
-  </tr>
-
-  <tr>
-    <td style="vertical-align: top;">
-      <strong id="WEST_TAS_NOISE">WEST_TAS_NOISE</strong> (FLOAT)
-    </td>
-
-    <td style="vertical-align: top;">
-      <p>
-        Wind estimator true airspeed measurement noise
-      </p>
-    </td>
-
-    <td style="vertical-align: top;">
-      0 &gt; 4
-    </td>
-
-    <td style="vertical-align: top;">
-      1.4
-    </td>
-
-    <td style="vertical-align: top;">
-      m/s
-    </td>
-  </tr>
-
-  <tr>
-    <td style="vertical-align: top;">
-      <strong id="WEST_W_P_NOISE">WEST_W_P_NOISE</strong> (FLOAT)
-    </td>
-
-    <td style="vertical-align: top;">
-      <p>
-        Wind estimator wind process noise
-      </p>
-    </td>
-
-    <td style="vertical-align: top;">
-      0 &gt; 1
-    </td>
-
-    <td style="vertical-align: top;">
-      0.1
-    </td>
-
-    <td style="vertical-align: top;">
-      m/s/s
-    </td>
-  </tr>
-</table>
-
 <h2 id="miscellaneous"><a name="miscellaneous" class="plugin-anchor" href="#miscellaneous"><i class="fa fa-link" aria-hidden="true"></i></a>Miscellaneous</h2>
 <table style="width: 100%; table-layout:fixed; font-size:1.5rem; overflow: auto; display:block;">
   <colgroup><col style="width: 23%"><col style="width: 46%"><col style="width: 11%"><col style="width: 11%"><col style="width: 9%"></colgroup> <tr>
     <th>
-      &#x53C2;&#x6570;&#x540D;
+      Name
     </th>
 
     <th>
-      &#x53C2;&#x6570;&#x63CF;&#x8FF0;
+      Description
     </th>
 
     <th>
-      &#x6700;&#x5C0F;&#x6700;&#x5927;&#x503C; (&#x589E;&#x91CF;)
+      Min &gt; Max (Incr.)
     </th>
 
     <th>
-      &#x9ED8;&#x8BA4;&#x503C;
+      Default
     </th>
 
     <th>
-      &#x5355;&#x4F4D;
+      Units
     </th>
   </tr>
 
@@ -44979,7 +45455,7 @@
   </tr>
 </table>
 
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-08-12 23:45:40 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-08-13 06:09:28 </span> </footer>
                                 
                                 </section>
                             
@@ -45022,7 +45498,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Full Parameter Reference","level":"1.9.14","depth":2,"next":{"title":"Peripheral Hardware","level":"1.10","depth":1,"path":"peripherals/README.md","ref":"peripherals/README.md","articles":[{"title":"Serial Port Configuration","level":"1.10.1","depth":2,"path":"peripherals/serial_configuration.md","ref":"peripherals/serial_configuration.md","articles":[]},{"title":"GPS/Compass","level":"1.10.2","depth":2,"path":"gps_compass/README.md","ref":"gps_compass/README.md","articles":[{"title":"RTK GPS","level":"1.10.2.1","depth":3,"path":"gps_compass/rtk_gps.md","ref":"gps_compass/rtk_gps.md","articles":[{"title":"Hex Here+","level":"1.10.2.1.1","depth":4,"path":"gps_compass/rtk_gps_hex_hereplus.md","ref":"gps_compass/rtk_gps_hex_hereplus.md","articles":[]},{"title":"Drotek XL","level":"1.10.2.1.2","depth":4,"path":"gps_compass/rtk_gps_drotek_xl.md","ref":"gps_compass/rtk_gps_drotek_xl.md","articles":[]},{"title":"CUAV C-RTK","level":"1.10.2.1.3","depth":4,"path":"gps_compass/rtk_gps_cuav_c-rtk.md","ref":"gps_compass/rtk_gps_cuav_c-rtk.md","articles":[]},{"title":"Trimble MB-Two","level":"1.10.2.1.4","depth":4,"path":"gps_compass/rtk_gps_trimble_mb_two.md","ref":"gps_compass/rtk_gps_trimble_mb_two.md","articles":[]},{"title":"Hex Here2","level":"1.10.2.1.5","depth":4,"path":"gps_compass/rtk_gps_hex_here2.md","ref":"gps_compass/rtk_gps_hex_here2.md","articles":[]}]}]},{"title":"Telemetry Radios","level":"1.10.3","depth":2,"path":"telemetry/README.md","ref":"telemetry/README.md","articles":[{"title":"SiK 电台","level":"1.10.3.1","depth":3,"path":"telemetry/sik_radio.md","ref":"telemetry/sik_radio.md","articles":[{"title":"RFD900 (SiK) Telemetry Radio","level":"1.10.3.1.1","depth":4,"path":"telemetry/rfd900_telemetry.md","ref":"telemetry/rfd900_telemetry.md","articles":[]},{"title":"HKPilot（SIK）遥测无线电","level":"1.10.3.1.2","depth":4,"path":"telemetry/hkpilot_sik_radio.md","ref":"telemetry/hkpilot_sik_radio.md","articles":[]},{"title":"HolyBro（SIK）遥测无线电","level":"1.10.3.1.3","depth":4,"path":"telemetry/holybro_sik_radio.md","ref":"telemetry/holybro_sik_radio.md","articles":[]}]},{"title":"WiFi 数传","level":"1.10.3.2","depth":3,"path":"telemetry/telemetry_wifi.md","ref":"telemetry/telemetry_wifi.md","articles":[{"title":"ESP8266 WiFi 模块","level":"1.10.3.2.1","depth":4,"path":"telemetry/esp8266_wifi_module.md","ref":"telemetry/esp8266_wifi_module.md","articles":[]},{"title":"3DR Wifi 数传（已停产）","level":"1.10.3.2.2","depth":4,"path":"telemetry/3dr_telemetry_wifi.md","ref":"telemetry/3dr_telemetry_wifi.md","articles":[]}]}]},{"title":"MAVLink Telemetry (OSD/GCS)","level":"1.10.4","depth":2,"path":"peripherals/mavlink_peripherals.md","ref":"peripherals/mavlink_peripherals.md","articles":[]},{"title":"睿思凯（FrSky）遥测功能","level":"1.10.5","depth":2,"path":"peripherals/frsky_telemetry.md","ref":"peripherals/frsky_telemetry.md","articles":[]},{"title":"Distance Sensors (Rangefinders)","level":"1.10.6","depth":2,"path":"sensor/rangefinders.md","ref":"sensor/rangefinders.md","articles":[{"title":"Lightware SFxx Lidar","level":"1.10.6.1","depth":3,"path":"sensor/sfxx_lidar.md","ref":"sensor/sfxx_lidar.md","articles":[]},{"title":"uLanding Radar","level":"1.10.6.2","depth":3,"path":"sensor/ulanding_radar.md","ref":"sensor/ulanding_radar.md","articles":[]},{"title":"LeddarOne Lidar","level":"1.10.6.3","depth":3,"path":"sensor/leddar_one.md","ref":"sensor/leddar_one.md","articles":[]},{"title":"Benewake TFmini Lidar","level":"1.10.6.4","depth":3,"path":"sensor/tfmini.md","ref":"sensor/tfmini.md","articles":[]},{"title":"Lidar-Lite","level":"1.10.6.5","depth":3,"path":"sensor/lidar_lite.md","ref":"sensor/lidar_lite.md","articles":[]},{"title":"TeraRanger","level":"1.10.6.6","depth":3,"path":"sensor/teraranger.md","ref":"sensor/teraranger.md","articles":[]},{"title":"Lanbao PSK-CM8JL65-CC5","level":"1.10.6.7","depth":3,"path":"sensor/cm8jl65_ir_distance_sensor.md","ref":"sensor/cm8jl65_ir_distance_sensor.md","articles":[]}]},{"title":"Airspeed Sensors","level":"1.10.7","depth":2,"path":"sensor/airspeed.md","ref":"sensor/airspeed.md","articles":[]},{"title":"光流","level":"1.10.8","depth":2,"path":"sensor/optical_flow.md","ref":"sensor/optical_flow.md","articles":[{"title":"PX4FLOW","level":"1.10.8.1","depth":3,"path":"sensor/px4flow.md","ref":"sensor/px4flow.md","articles":[]}]},{"title":"ESCs & Motors","level":"1.10.9","depth":2,"path":"peripherals/esc_motors.md","ref":"peripherals/esc_motors.md","articles":[{"title":"PWM ESCs and Servos","level":"1.10.9.1","depth":3,"path":"peripherals/pwm_escs_and_servo.md","ref":"peripherals/pwm_escs_and_servo.md","articles":[]}]},{"title":"Camera","level":"1.10.10","depth":2,"path":"peripherals/camera.md","ref":"peripherals/camera.md","articles":[]},{"title":"Parachute","level":"1.10.11","depth":2,"path":"peripherals/parachute.md","ref":"peripherals/parachute.md","articles":[]},{"title":"Companion Computer Peripherals","level":"1.10.12","depth":2,"path":"peripherals/companion_computer_peripherals.md","ref":"peripherals/companion_computer_peripherals.md","articles":[]},{"title":"ADSB/FLARM (Traffic Avoidance)","level":"1.10.13","depth":2,"path":"peripherals/adsb_flarm.md","ref":"peripherals/adsb_flarm.md","articles":[]}]},"previous":{"title":"Static Pressure Buildup","level":"1.9.13","depth":2,"path":"advanced_config/static_pressure_buildup.md","ref":"advanced_config/static_pressure_buildup.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"advanced_config/parameter_reference.md","mtime":"2019-08-12T23:45:40.786Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-12T23:47:35.713Z"},"basePath":"..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"Full Parameter Reference","level":"1.9.14","depth":2,"next":{"title":"Peripheral Hardware","level":"1.10","depth":1,"path":"peripherals/README.md","ref":"peripherals/README.md","articles":[{"title":"Serial Port Configuration","level":"1.10.1","depth":2,"path":"peripherals/serial_configuration.md","ref":"peripherals/serial_configuration.md","articles":[]},{"title":"GPS/Compass","level":"1.10.2","depth":2,"path":"gps_compass/README.md","ref":"gps_compass/README.md","articles":[{"title":"RTK GPS","level":"1.10.2.1","depth":3,"path":"gps_compass/rtk_gps.md","ref":"gps_compass/rtk_gps.md","articles":[{"title":"Hex Here+","level":"1.10.2.1.1","depth":4,"path":"gps_compass/rtk_gps_hex_hereplus.md","ref":"gps_compass/rtk_gps_hex_hereplus.md","articles":[]},{"title":"Drotek XL","level":"1.10.2.1.2","depth":4,"path":"gps_compass/rtk_gps_drotek_xl.md","ref":"gps_compass/rtk_gps_drotek_xl.md","articles":[]},{"title":"CUAV C-RTK","level":"1.10.2.1.3","depth":4,"path":"gps_compass/rtk_gps_cuav_c-rtk.md","ref":"gps_compass/rtk_gps_cuav_c-rtk.md","articles":[]},{"title":"Trimble MB-Two","level":"1.10.2.1.4","depth":4,"path":"gps_compass/rtk_gps_trimble_mb_two.md","ref":"gps_compass/rtk_gps_trimble_mb_two.md","articles":[]},{"title":"Hex Here2","level":"1.10.2.1.5","depth":4,"path":"gps_compass/rtk_gps_hex_here2.md","ref":"gps_compass/rtk_gps_hex_here2.md","articles":[]}]}]},{"title":"Telemetry Radios","level":"1.10.3","depth":2,"path":"telemetry/README.md","ref":"telemetry/README.md","articles":[{"title":"SiK 电台","level":"1.10.3.1","depth":3,"path":"telemetry/sik_radio.md","ref":"telemetry/sik_radio.md","articles":[{"title":"RFD900 (SiK) Telemetry Radio","level":"1.10.3.1.1","depth":4,"path":"telemetry/rfd900_telemetry.md","ref":"telemetry/rfd900_telemetry.md","articles":[]},{"title":"HKPilot（SIK）遥测无线电","level":"1.10.3.1.2","depth":4,"path":"telemetry/hkpilot_sik_radio.md","ref":"telemetry/hkpilot_sik_radio.md","articles":[]},{"title":"HolyBro（SIK）遥测无线电","level":"1.10.3.1.3","depth":4,"path":"telemetry/holybro_sik_radio.md","ref":"telemetry/holybro_sik_radio.md","articles":[]}]},{"title":"WiFi 数传","level":"1.10.3.2","depth":3,"path":"telemetry/telemetry_wifi.md","ref":"telemetry/telemetry_wifi.md","articles":[{"title":"ESP8266 WiFi 模块","level":"1.10.3.2.1","depth":4,"path":"telemetry/esp8266_wifi_module.md","ref":"telemetry/esp8266_wifi_module.md","articles":[]},{"title":"3DR Wifi 数传（已停产）","level":"1.10.3.2.2","depth":4,"path":"telemetry/3dr_telemetry_wifi.md","ref":"telemetry/3dr_telemetry_wifi.md","articles":[]}]}]},{"title":"MAVLink Telemetry (OSD/GCS)","level":"1.10.4","depth":2,"path":"peripherals/mavlink_peripherals.md","ref":"peripherals/mavlink_peripherals.md","articles":[]},{"title":"睿思凯（FrSky）遥测功能","level":"1.10.5","depth":2,"path":"peripherals/frsky_telemetry.md","ref":"peripherals/frsky_telemetry.md","articles":[]},{"title":"Distance Sensors (Rangefinders)","level":"1.10.6","depth":2,"path":"sensor/rangefinders.md","ref":"sensor/rangefinders.md","articles":[{"title":"Lightware SFxx Lidar","level":"1.10.6.1","depth":3,"path":"sensor/sfxx_lidar.md","ref":"sensor/sfxx_lidar.md","articles":[]},{"title":"uLanding Radar","level":"1.10.6.2","depth":3,"path":"sensor/ulanding_radar.md","ref":"sensor/ulanding_radar.md","articles":[]},{"title":"LeddarOne Lidar","level":"1.10.6.3","depth":3,"path":"sensor/leddar_one.md","ref":"sensor/leddar_one.md","articles":[]},{"title":"Benewake TFmini Lidar","level":"1.10.6.4","depth":3,"path":"sensor/tfmini.md","ref":"sensor/tfmini.md","articles":[]},{"title":"Lidar-Lite","level":"1.10.6.5","depth":3,"path":"sensor/lidar_lite.md","ref":"sensor/lidar_lite.md","articles":[]},{"title":"TeraRanger","level":"1.10.6.6","depth":3,"path":"sensor/teraranger.md","ref":"sensor/teraranger.md","articles":[]},{"title":"Lanbao PSK-CM8JL65-CC5","level":"1.10.6.7","depth":3,"path":"sensor/cm8jl65_ir_distance_sensor.md","ref":"sensor/cm8jl65_ir_distance_sensor.md","articles":[]}]},{"title":"Airspeed Sensors","level":"1.10.7","depth":2,"path":"sensor/airspeed.md","ref":"sensor/airspeed.md","articles":[]},{"title":"光流","level":"1.10.8","depth":2,"path":"sensor/optical_flow.md","ref":"sensor/optical_flow.md","articles":[{"title":"PX4FLOW","level":"1.10.8.1","depth":3,"path":"sensor/px4flow.md","ref":"sensor/px4flow.md","articles":[]}]},{"title":"ESCs & Motors","level":"1.10.9","depth":2,"path":"peripherals/esc_motors.md","ref":"peripherals/esc_motors.md","articles":[{"title":"PWM ESCs and Servos","level":"1.10.9.1","depth":3,"path":"peripherals/pwm_escs_and_servo.md","ref":"peripherals/pwm_escs_and_servo.md","articles":[]},{"title":"UAVCAN ESCs","level":"1.10.9.2","depth":3,"path":"peripherals/uavcan_escs.md","ref":"peripherals/uavcan_escs.md","articles":[]}]},{"title":"Camera","level":"1.10.10","depth":2,"path":"peripherals/camera.md","ref":"peripherals/camera.md","articles":[]},{"title":"Parachute","level":"1.10.11","depth":2,"path":"peripherals/parachute.md","ref":"peripherals/parachute.md","articles":[]},{"title":"Companion Computer Peripherals","level":"1.10.12","depth":2,"path":"peripherals/companion_computer_peripherals.md","ref":"peripherals/companion_computer_peripherals.md","articles":[]},{"title":"ADSB/FLARM (Traffic Avoidance)","level":"1.10.13","depth":2,"path":"peripherals/adsb_flarm.md","ref":"peripherals/adsb_flarm.md","articles":[]}]},"previous":{"title":"Static Pressure Buildup","level":"1.9.13","depth":2,"path":"advanced_config/static_pressure_buildup.md","ref":"advanced_config/static_pressure_buildup.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"advanced_config/parameter_reference.md","mtime":"2019-08-13T06:09:28.198Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-13T06:11:43.068Z"},"basePath":"..","book":{"language":"zh"}});
         });
     </script>
 </div>
