@@ -1074,7 +1074,7 @@
                 <a href="../flight_modes/position_mc.html">
             
                     
-                    Position (MC)
+                    Position Mode (MC)
             
                 </a>
             
@@ -1087,7 +1087,7 @@
                 <a href="../flight_modes/altitude_mc.html">
             
                     
-                    Altitude (MC)
+                    Altitude Mode (MC)
             
                 </a>
             
@@ -1100,7 +1100,7 @@
                 <a href="../flight_modes/manual_stabilized_mc.html">
             
                     
-                    Manual/Stabilized (MC)
+                    Manual/Stabilized Mode (MC)
             
                 </a>
             
@@ -1113,7 +1113,7 @@
                 <a href="../flight_modes/rattitude_mc.html">
             
                     
-                    Rattitude (MC)
+                    Rattitude Mode (MC)
             
                 </a>
             
@@ -1126,7 +1126,7 @@
                 <a href="../flight_modes/acro_mc.html">
             
                     
-                    Acro (MC)
+                    Acro Mode (MC)
             
                 </a>
             
@@ -1139,7 +1139,7 @@
                 <a href="../flight_modes/orbit.html">
             
                     
-                    Orbit (MC)
+                    Orbit Mode (MC)
             
                 </a>
             
@@ -1152,7 +1152,7 @@
                 <a href="../flight_modes/position_fw.html">
             
                     
-                    Position (FW)
+                    Position Mode (FW)
             
                 </a>
             
@@ -1165,7 +1165,7 @@
                 <a href="../flight_modes/altitude_fw.html">
             
                     
-                    Altitude (FW)
+                    Altitude Mode (FW)
             
                 </a>
             
@@ -1178,7 +1178,7 @@
                 <a href="../flight_modes/stabilized_fw.html">
             
                     
-                    Stabilized (FW)
+                    Stabilized Mode (FW)
             
                 </a>
             
@@ -1191,7 +1191,7 @@
                 <a href="../flight_modes/acro_fw.html">
             
                     
-                    Acro (FW)
+                    Acro Mode (FW)
             
                 </a>
             
@@ -1204,7 +1204,7 @@
                 <a href="../flight_modes/manual_fw.html">
             
                     
-                    Manual (FW)
+                    Manual Mode (FW)
             
                 </a>
             
@@ -1217,7 +1217,7 @@
                 <a href="../flight_modes/takeoff.html">
             
                     
-                    Takeoff
+                    Takeoff Mode
             
                 </a>
             
@@ -1230,7 +1230,7 @@
                 <a href="../flight_modes/land.html">
             
                     
-                    Land
+                    Land Mode
             
                 </a>
             
@@ -1243,7 +1243,7 @@
                 <a href="../flight_modes/return.html">
             
                     
-                    Return
+                    Return Mode
             
                 </a>
             
@@ -1256,7 +1256,7 @@
                 <a href="../flight_modes/hold.html">
             
                     
-                    Hold
+                    Hold Mode
             
                 </a>
             
@@ -1269,7 +1269,7 @@
                 <a href="../flight_modes/mission.html">
             
                     
-                    Mission
+                    Mission Mode
             
                 </a>
             
@@ -1282,7 +1282,7 @@
                 <a href="../flight_modes/follow_me.html">
             
                     
-                    Follow Me
+                    Follow Me Mode
             
                 </a>
             
@@ -1295,7 +1295,7 @@
                 <a href="../flight_modes/offboard.html">
             
                     
-                    Offboard
+                    Offboard Mode
             
                 </a>
             
@@ -3106,10 +3106,14 @@
                                 <h1 id="&#x52A0;&#x901F;&#x5EA6;&#x8BA1;"><a name="&#x52A0;&#x901F;&#x5EA6;&#x8BA1;" class="plugin-anchor" href="#&#x52A0;&#x901F;&#x5EA6;&#x8BA1;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x52A0;&#x901F;&#x5EA6;&#x8BA1;</h1>
 <p>&#x6309;&#x7167;<em>QGroundControl</em>&#x7684;&#x6307;&#x5F15;&#xFF0C;&#x5C06;&#x673A;&#x4F53;&#x7FFB;&#x8F6C;&#x5230;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x4F4D;&#x7F6E;&#x5E76;&#x9759;&#x7F6E; (&#x9700;&#x8981;&#x7FFB;&#x8F6C;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x65F6;&#xFF0C;QGC&#x4F1A;&#x6709;&#x63D0;&#x793A;)&#x3002;</p>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
-<p> &#x52A0;&#x901F;&#x5EA6;&#x8BA1;&#x6821;&#x51C6;&#x4E0E; <a href="compass.html">&#x7F57;&#x76D8;&#x6807;&#x5B9A;</a> &#x7C7B;&#x4F3C;&#xFF0C;&#x4E0D;&#x540C;&#x7684;&#x53EA;&#x662F;&#x5728;&#x6BCF;&#x4E2A;&#x4F4D;&#x7F6E;&#x5C06;&#x673A;&#x4F53;&#x9759;&#x7F6E;&#xFF08;&#x800C;&#x975E;&#x65CB;&#x8F6C;&#xFF09;&#x3002;</p>
+<p> This is similar to <a href="compass.html">compass calibration</a> except that you hold the vehicle still (rather than rotate it) in each orientation.</p>
+</blockquote>
+<p><span></span></p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> The calibration uses a least squares &apos;fit&apos; algorithm that doesn&apos;t reaquire you to have &quot;perfect&quot; 90 degree orientations. Provided each axis is pointed mostly up and down at some time in the calibration sequence, and the vehicle is held stationary, the precise orientation doesn&apos;t matter.</p>
 </blockquote>
 <h2 id="&#x6267;&#x884C;&#x6821;&#x51C6;"><a name="&#x6267;&#x884C;&#x6821;&#x51C6;" class="plugin-anchor" href="#&#x6267;&#x884C;&#x6821;&#x51C6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6267;&#x884C;&#x6821;&#x51C6;</h2>
-<p>&#x6807;&#x5B9A;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>The calibration steps are:</p>
 <ol>
 <li>&#x6253;&#x5F00; <em>QGroundControl</em> &#x5E76;&#x8FDE;&#x63A5;&#x4E0A;&#x98DE;&#x673A;&#x3002;</li>
 <li>&#x5728;&#x5DE5;&#x5177;&#x680F;&#x9009;&#x62E9; <strong>&#x9F7F;&#x8F6E;</strong> &#x56FE;&#x6807; (&#x673A;&#x4F53;&#x8BBE;&#x7F6E;)&#xFF0C;&#x7136;&#x540E;&#x5728;&#x4FA7;&#x8FB9;&#x680F;&#x9009;&#x62E9; <strong>&#x4F20;&#x611F;&#x5668;</strong>&#x3002;</li>
@@ -3127,13 +3131,13 @@
 <li><p>&#x5728;&#x6240;&#x6709;&#x6807;&#x5B9A;&#x4F4D;&#x7F6E;&#x91CD;&#x590D;&#x6B65;&#x9AA4;5&#x3002;</p>
 </li>
 </ol>
-<p>&#x6240;&#x6709;&#x4F4D;&#x7F6E;&#x90FD;&#x6807;&#x5B9A;&#x5B8C;&#x6210;&#x540E;&#xFF0C;<em>QGroundControl</em>&#x5C06;&#x663E;&#x793A;<em>&#x6807;&#x5B9A;&#x5B8C;&#x6210;</em> (&#x6240;&#x6709;&#x6807;&#x5B9A;&#x4F4D;&#x7F6E;&#x90FD;&#x53D8;&#x6210;&#x7EFF;&#x8272;&#xFF0C;&#x8FDB;&#x5EA6;&#x6761;&#x4E5F;&#x663E;&#x793A;&#x5B8C;&#x6210;)&#x3002; &#x7136;&#x540E;&#x53EF;&#x4EE5;&#x5F00;&#x59CB;&#x6807;&#x5B9A;&#x4E0B;&#x4E00;&#x4E2A;&#x4F20;&#x611F;&#x5668;&#x3002;</p>
+<p>Once you&apos;ve calibrated the vehicle in all the positions <em>QGroundControl</em> will display <em>Calibration complete</em> (all orientation images will be displayed in green and the progress bar will fill completely). You can then proceed to the next sensor.</p>
 <h2 id="&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF1A;"><a name="&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF1A;" class="plugin-anchor" href="#&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF1A;</h2>
 <ul>
 <li><a href="https://docs.qgroundcontrol.com/en/SetupView/sensors_px4.html#accelerometer" target="_blank">QGroundControl &#x7528;&#x6237;&#x624B;&#x518C; &gt; &#x4F20;&#x611F;&#x5668;</a></li>
 <li><a href="https://youtu.be/91VGmdSlbo4?t=1m46s" target="_blank">PX4 &#x8BBE;&#x7F6E;&#x89C6;&#x9891; - @1m46s</a> (Youtube)</li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-09-01 23:01:55 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-09-02 05:02:14 </span> </footer>
                                 
                                 </section>
                             
@@ -3176,7 +3180,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Accelerometer","level":"1.4.6","depth":2,"next":{"title":"Airspeed","level":"1.4.7","depth":2,"path":"config/airspeed.md","ref":"config/airspeed.md","articles":[]},"previous":{"title":"Gyroscope","level":"1.4.5","depth":2,"path":"config/gyroscope.md","ref":"config/gyroscope.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"config/accelerometer.md","mtime":"2019-09-01T23:01:55.444Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-01T23:03:11.902Z"},"basePath":"..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"Accelerometer","level":"1.4.6","depth":2,"next":{"title":"Airspeed","level":"1.4.7","depth":2,"path":"config/airspeed.md","ref":"config/airspeed.md","articles":[]},"previous":{"title":"Gyroscope","level":"1.4.5","depth":2,"path":"config/gyroscope.md","ref":"config/gyroscope.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"config/accelerometer.md","mtime":"2019-09-02T05:02:14.316Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-02T05:03:25.431Z"},"basePath":"..","book":{"language":"zh"}});
         });
     </script>
 </div>

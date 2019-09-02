@@ -1074,7 +1074,7 @@
                 <a href="../flight_modes/position_mc.html">
             
                     
-                    Position (MC)
+                    Position Mode (MC)
             
                 </a>
             
@@ -1087,7 +1087,7 @@
                 <a href="../flight_modes/altitude_mc.html">
             
                     
-                    Altitude (MC)
+                    Altitude Mode (MC)
             
                 </a>
             
@@ -1100,7 +1100,7 @@
                 <a href="../flight_modes/manual_stabilized_mc.html">
             
                     
-                    Manual/Stabilized (MC)
+                    Manual/Stabilized Mode (MC)
             
                 </a>
             
@@ -1113,7 +1113,7 @@
                 <a href="../flight_modes/rattitude_mc.html">
             
                     
-                    Rattitude (MC)
+                    Rattitude Mode (MC)
             
                 </a>
             
@@ -1126,7 +1126,7 @@
                 <a href="../flight_modes/acro_mc.html">
             
                     
-                    Acro (MC)
+                    Acro Mode (MC)
             
                 </a>
             
@@ -1139,7 +1139,7 @@
                 <a href="../flight_modes/orbit.html">
             
                     
-                    Orbit (MC)
+                    Orbit Mode (MC)
             
                 </a>
             
@@ -1152,7 +1152,7 @@
                 <a href="../flight_modes/position_fw.html">
             
                     
-                    Position (FW)
+                    Position Mode (FW)
             
                 </a>
             
@@ -1165,7 +1165,7 @@
                 <a href="../flight_modes/altitude_fw.html">
             
                     
-                    Altitude (FW)
+                    Altitude Mode (FW)
             
                 </a>
             
@@ -1178,7 +1178,7 @@
                 <a href="../flight_modes/stabilized_fw.html">
             
                     
-                    Stabilized (FW)
+                    Stabilized Mode (FW)
             
                 </a>
             
@@ -1191,7 +1191,7 @@
                 <a href="../flight_modes/acro_fw.html">
             
                     
-                    Acro (FW)
+                    Acro Mode (FW)
             
                 </a>
             
@@ -1204,7 +1204,7 @@
                 <a href="../flight_modes/manual_fw.html">
             
                     
-                    Manual (FW)
+                    Manual Mode (FW)
             
                 </a>
             
@@ -1217,7 +1217,7 @@
                 <a href="../flight_modes/takeoff.html">
             
                     
-                    Takeoff
+                    Takeoff Mode
             
                 </a>
             
@@ -1230,7 +1230,7 @@
                 <a href="../flight_modes/land.html">
             
                     
-                    Land
+                    Land Mode
             
                 </a>
             
@@ -1243,7 +1243,7 @@
                 <a href="../flight_modes/return.html">
             
                     
-                    Return
+                    Return Mode
             
                 </a>
             
@@ -1256,7 +1256,7 @@
                 <a href="../flight_modes/hold.html">
             
                     
-                    Hold
+                    Hold Mode
             
                 </a>
             
@@ -1269,7 +1269,7 @@
                 <a href="../flight_modes/mission.html">
             
                     
-                    Mission
+                    Mission Mode
             
                 </a>
             
@@ -1282,7 +1282,7 @@
                 <a href="../flight_modes/follow_me.html">
             
                     
-                    Follow Me
+                    Follow Me Mode
             
                 </a>
             
@@ -1295,7 +1295,7 @@
                 <a href="../flight_modes/offboard.html">
             
                     
-                    Offboard
+                    Offboard Mode
             
                 </a>
             
@@ -3110,22 +3110,47 @@
 <p>&#x5982;&#x679C;&#x60A8;&#x7684;&#x98DE;&#x673A;&#x901F;&#x5EA6;&#x592A;&#x5FEB;&#xFF0C;&#x9632;&#x649E;&#x529F;&#x80FD;&#x53EF;&#x80FD;&#x65E0;&#x6CD5;&#x8FBE;&#x5230;&#x9884;&#x671F;&#x6548;&#x679C;&#x3002; (&#x5728;&#x7F16;&#x5199;&#x672C;&#x6587;&#x6863;&#x7684;&#x9636;&#x6BB5;) &#x6B64;&#x529F;&#x80FD;&#x4EC5;&#x5728;&#x901F;&#x5EA6;&#x4E0D;&#x8D85;&#x8FC7;4m/s&#x7684;&#x98DE;&#x673A;&#x4E0A;&#x6D4B;&#x8BD5;&#x8FC7;&#x3002;</p>
 </blockquote>
 <h2 id="&#x7EFC;&#x8FF0;"><a name="&#x7EFC;&#x8FF0;" class="plugin-anchor" href="#&#x7EFC;&#x8FF0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7EFC;&#x8FF0;</h2>
-<p>&#x8981;&#x5728;PX4&#x4E0A;&#x5F00;&#x542F;/&#x914D;&#x7F6E;<em>&#x9632;&#x649E;</em>&#x529F;&#x80FD;&#xFF0C;&#x8BF7;&#x8BBE;&#x7F6E;&#x53C2;&#x6570;&#xFF1A;&#x6700;&#x5C0F;&#x5B89;&#x5168;&#x95F4;&#x8DDD;&#xFF08;<a href="../advanced_config/parameter_reference.html#MPC_COL_PREV_D">MPC_COL_PREV_D</a>&#xFF09;&#x3002;</p>
-<p>The feature requires obstacle information from either an external system (sent using the MAVLink <a href="https://mavlink.io/en/messages/common.html#OBSTACLE_DISTANCE" target="_blank">OBSTACLE_DISTANCE</a> message) or a <a href="../sensor/rangefinders.html">distance sensor</a> connected to the flight controller.</p>
+<p><em>Collision Prevention</em> is enabled on PX4 by setting the parameter for minimum allowed approach distance (<a href="../advanced_config/parameter_reference.html#MPC_COL_PREV_D">MPC_COL_PREV_D</a>).</p>
+<p>The feature requires obstacle information from an external system (sent using the MAVLink <a href="https://mavlink.io/en/messages/common.html#OBSTACLE_DISTANCE" target="_blank">OBSTACLE_DISTANCE</a> message) and/or a <a href="../sensor/rangefinders.html">distance sensor</a> connected to the flight controller.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> Multiple sensors can be used to get information about, and prevent collisions with, objects <em>around</em> the vehicle. If multiple sources supply data for the <em>same</em> orientation, the system uses the data that reports the smallest distance to an object.</p>
 </blockquote>
-<p>&#x98DE;&#x673A;&#x4E00;&#x65E6;&#x68C0;&#x6D4B;&#x5230;&#x969C;&#x788D;&#x7269;&#x5C31;&#x5F00;&#x59CB;&#x5236;&#x52A8;&#x3002; &#x671D;&#x5411;&#x969C;&#x788D;&#x7269;&#x7684;&#x901F;&#x5EA6;&#x8BBE;&#x5B9A;&#x503C;&#x5C06;&#x7EBF;&#x6027;&#x964D;&#x4F4E;&#xFF0C;&#x5728;&#x8FBE;&#x5230;&#x6700;&#x5C0F;&#x5B89;&#x5168;&#x8DDD;&#x79BB;&#x65F6;&#x5C06;&#x964D;&#x4F4E;&#x4E3A;&#x96F6;&#x3002; &#x5982;&#x679C; (&#x7531;&#x4E8E;&#x8FC7;&#x51B2;&#x6216;&#x8005;&#x5916;&#x529B;) &#x98DE;&#x673A;&#x8D8A;&#x8FC7;&#x6700;&#x5C0F;&#x5B89;&#x5168;&#x8DDD;&#x79BB;&#xFF0C;&#x52A8;&#x529B;&#x7CFB;&#x7EDF;&#x5C06;&#x542F;&#x52A8;&#x53CD;&#x5411;&#x63A8;&#x529B;&#x4F7F;&#x98DE;&#x673A;&#x8FDC;&#x79BB;&#x969C;&#x788D;&#x7269;&#x3002;</p>
-<p>&#x4F46;&#x53EA;&#x6709; <em>&#x671D;&#x5411;</em> &#x969C;&#x788D;&#x7269;&#x7684;&#x901F;&#x5EA6;&#x5206;&#x91CF;&#x624D;&#x4F1A;&#x53D7;&#x5230;&#x5F71;&#x54CD;&#x3002; &#x5982;&#x679C;&#x9065;&#x63A7;&#x5668;&#x53D1;&#x51FA;&#x6CBF;&#x969C;&#x788D;&#x7269;&#x5207;&#x7EBF;&#x65B9;&#x5411;&#x79FB;&#x52A8;&#x7684;&#x6307;&#x4EE4;&#xFF0C;&#x5C06;&#x6B63;&#x5E38;&#x6267;&#x884C;&#x3002; &#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x8F7D;&#x5177;&#x4EE5;&#x4E00;&#x5B9A;&#x89D2;&#x5EA6;&#x63A5;&#x8FD1;&#x969C;&#x788D;&#x7269;&#xFF0C;&#x8F7D;&#x5177;&#x4F1A;&#x9010;&#x6E10;&#x51CF;&#x901F;&#xFF0C;&#x76F4;&#x5230;&#x6700;&#x5C0F;&#x5B89;&#x5168;&#x8DDD;&#x79BB;&#xFF0C;&#x7136;&#x540E;&#x6CBF;&#x7740;&#x5E73;&#x884C;&#x4E8E;&#x8868;&#x9762;&#x7684;&#x65B9;&#x5411;&#x201C;&#x6ED1;&#x884C;&#x201D;&#xFF0C;&#x76F4;&#x5230;&#x539F;&#x8FD0;&#x52A8;&#x65B9;&#x5411;&#x6062;&#x590D;&#x7545;&#x901A;&#x3002;</p>
-<p>&#x5F53; <em>&#x9632;&#x649E;</em>&#x529F;&#x80FD;&#x4E3B;&#x52A8;&#x8C03;&#x6574;&#x901F;&#x7387;&#x8BBE;&#x5B9A;&#x503C;&#x65F6;&#xFF0C;&#x901A;&#x8FC7; <em>QGroundControl</em> &#x7528;&#x6237;&#x4F1A;&#x6536;&#x5230;&#x901A;&#x77E5;&#x3002;</p>
+<p>The data from all sensors is fused into a range scan (a 360 degree map of the sensor data/state from around the vehicle), which is then input to the collision prevention algorithm. The collision prevention algorithm only uses/considers part of the range scan data in the calculation of the velocity limit (see <a href="#angle_tuning">MPC_COL_PREV_ANG Angle Tuning</a>).</p>
+<p>The vehicle starts braking as soon as it detects an obstacle, and will stop movement when it reaches the minimum allowed separation (the velocity depends on the geometry, measured distances, and range of sensor data being considered). If the vehicle approaches any closer (i.e. it overshoots or is pushed) negative thrust is applied to repel it from the obstacle.</p>
+<p>In order to move away from an obstacle the user must command the vehicle to move toward a setpoint that is an &quot;acceptable&quot; angle away from the obstacle. The angle that must be used depends on <a href="#angle_tuning">MPC_COL_PREV_ANG Angle Tuning</a>.</p>
+<p>The user is notified through <em>QGroundControl</em> while <em>Collision Prevention</em> is actively controlling velocity setpoints.</p>
 <h2 id="px4-&#x8F6F;&#x4EF6;-&#x8BBE;&#x7F6E;"><a name="px4-&#x8F6F;&#x4EF6;-&#x8BBE;&#x7F6E;" class="plugin-anchor" href="#px4-&#x8F6F;&#x4EF6;-&#x8BBE;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>PX4 (&#x8F6F;&#x4EF6;) &#x8BBE;&#x7F6E;</h2>
-<p>Enabled collision prevention by <a href="../advanced_config/parameters.html">setting the following parameter</a> in <em>QGroundControl</em>:</p>
+<p>Configure collision prevention by <a href="../advanced_config/parameters.html">setting the following parameters</a> in <em>QGroundControl</em>:</p>
 <ul>
 <li><p><a href="../advanced_config/parameter_reference.html#MPC_COL_PREV_D">MPC_COL_PREV_D</a> - &#x8BBE;&#x7F6E;&#x6700;&#x5C0F;&#x5B89;&#x5168;&#x8DDD;&#x79BB;&#xFF08;&#x98DE;&#x673A;&#x9760;&#x8FD1;&#x969C;&#x788D;&#x7269;&#x7684;&#x6700;&#x5C0F;&#x8DDD;&#x79BB;&#xFF09;&#x3002; &#x8BBE;&#x7F6E;&#x4E3A;&#x8D1F;&#x503C;&#x5C06;&#x7981;&#x7528; <em>&#x9632;&#x649E;</em> &#x529F;&#x80FD;&#x3002;</p>
-<p>  &#x8C03;&#x53C2;&#x5E94;&#x6839;&#x636E;<em>&#x671F;&#x671B;</em> &#x7684;&#x6700;&#x5C0F;&#x8DDD;&#x79BB;&#x4E0E;&#x98DE;&#x673A;&#x5927;&#x81F4;&#x7684;&#x901F;&#x5EA6;&#x3002;</p>
+<p>&#x8C03;&#x53C2;&#x5E94;&#x6839;&#x636E;<em>&#x671F;&#x671B;</em> &#x7684;&#x6700;&#x5C0F;&#x8DDD;&#x79BB;&#x4E0E;&#x98DE;&#x673A;&#x5927;&#x81F4;&#x7684;&#x901F;&#x5EA6;&#x3002;</p>
+</li>
+<li><p><a href="#angle_tuning">MPC_COL_PREV_ANG</a> - Set the angle (to both sides of the commanded direction) within which collected sensor data is used.</p>
 </li>
 </ul>
 <p>If you are using a distance sensor attached to your flight controller for collision prevention, it will need to be <a href="#rangefinder">attached and configured</a> as described in the next section. If you are using a companion computer to provide obstacle information see <a href="#companion">companion setup</a>.</p>
+<h3 id="angle_tuning"><a name="angle_tuning" class="plugin-anchor" href="#angle_tuning"><i class="fa fa-link" aria-hidden="true"></i></a>MPC_COL_PREV_ANG Angle Tuning </h3>
+<p>The data from all sensors is fused into a range scan (a 360 degree map of the sensor data/state from around the vehicle), which is then input to the collision prevention algorithm.</p>
+<p>The collision prevention algorithm only uses part of the range scan data in the calculation of the velocity limit (which we refer to as the <em>considered sensor data</em>). This comprises the sensor data from the range scan that is within two <a href="../advanced_config/parameter_reference.html#MPC_COL_PREV_ANG">MPC_COL_PREV_ANG</a> degree arcs centered around the commanded direction.</p>
+<p>Provided none of the <em>considered sensor data</em> includes data below the minimum allowed distance, the executed speed depends on the geometry, considered data, and actual sensor values. The vehicle will not move if <strong>any</strong> <em>considered sensor data</em> is below the minimum allowed separation.</p>
+<blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
+<p> Generally 45 degrees is a good compromise value. Using a larger angle reduces the chance of clipping obstacles, but can make it feel like the vehicle is &quot;always getting &quot;stuck&quot; (as you&apos;re more likely to detect an obstacle within the minimum distance).</p>
+</blockquote>
+<p>The diagrams below are used to illustrate how the setting works, where:</p>
+<ul>
+<li>The minimum distance (separation) <code>MPC_COL_PREV_D = 4m</code>, and the sensor range is 12m.</li>
+<li>The pink line shows where the user is trying to move the vehicle (this is the same for both diagrams).</li>
+<li>The blue line shows the angle where received sensor data <em>can be used</em> (and what will be discarded). <ul>
+<li>This is equal to double <code>MPC_COL_PREV_ANG</code> degrees centred on the commanded setpoint.</li>
+<li>On the left diagram the <code>MPC_COL_PREV_D</code> angle is 90 degrees, so all sensor data from the right hand side of the blue line is included.</li>
+<li>On the right the angle is 45 degrees, resulting in a smaller set of sensor data being used (note the sensor data close to the obstacle is excluded!)</li>
+</ul>
+</li>
+<li>The red arc shows the angle where sensor data <em>will be used</em>. This is the subset of sensors that are both in range of an obstacle, and within the angle defined by the blue line.</li>
+</ul>
+<p><img src="../../assets/computer_vision/collision_prevention_angle.png" alt="MPC_COL_PREV_ANG image"></p>
+<p>The vehicle on the left specifies a large angle, causing the collision prevention algorithm to consider sensor data that is within the 4m minimum separation. As a result the commanded setpoint is ignored (vehicle doesn&apos;t move).</p>
+<p>The vehicle on the right uses an angle that causes the collision prevention algorithm to discard the sensor data that is closest to the obstacle. The vehicle is can move in the commanded direction, albeit perhaps at a reduced velocity.</p>
 <h2 id="rangefinder"><a name="rangefinder" class="plugin-anchor" href="#rangefinder"><i class="fa fa-link" aria-hidden="true"></i></a>PX4 Distance Sensor </h2>
 <p>At time of writing PX4 allows you to use the <a href="../sensor/cm8jl65_ir_distance_sensor.html">Lanbao PSK-CM8JL65-CC5</a> IR distance sensor for collision prevention &quot;out of the box&quot;, with minimal additional configuration:</p>
 <ul>
@@ -3154,7 +3179,7 @@
 <p><em>Collision Prevention</em> can also be tested using Gazebo. See <a href="https://github.com/PX4/avoidance#obstacle-detection-and-avoidance" target="_blank">PX4/avoidance</a> for setup instructions.</p>
 <!-- PR companion collision prevention (initial): https://github.com/PX4/Firmware/pull/10785 -->
 <!-- PR for FC sensor collision prevention: https://github.com/PX4/Firmware/pull/12179 -->
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-09-01 23:01:55 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-09-02 05:02:14 </span> </footer>
                                 
                                 </section>
                             
@@ -3197,7 +3222,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Collision Prevention","level":"1.8.7","depth":2,"next":{"title":"Path Planning Interface","level":"1.8.8","depth":2,"path":"computer_vision/path_planning_interface.md","ref":"computer_vision/path_planning_interface.md","articles":[]},"previous":{"title":"Safe Landing","level":"1.8.6","depth":2,"path":"computer_vision/safe_landing.md","ref":"computer_vision/safe_landing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"computer_vision/collision_prevention.md","mtime":"2019-09-01T23:01:55.444Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-01T23:03:11.902Z"},"basePath":"..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"Collision Prevention","level":"1.8.7","depth":2,"next":{"title":"Path Planning Interface","level":"1.8.8","depth":2,"path":"computer_vision/path_planning_interface.md","ref":"computer_vision/path_planning_interface.md","articles":[]},"previous":{"title":"Safe Landing","level":"1.8.6","depth":2,"path":"computer_vision/safe_landing.md","ref":"computer_vision/safe_landing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.1"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"computer_vision/collision_prevention.md","mtime":"2019-09-02T05:02:14.312Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-02T05:03:25.431Z"},"basePath":"..","book":{"language":"zh"}});
         });
     </script>
 </div>
