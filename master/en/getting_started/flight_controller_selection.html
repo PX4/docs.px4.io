@@ -1500,7 +1500,7 @@
                 <a href="../advanced_config/parameters.html">
             
                     
-                    Parameters
+                    Finding/Updating Parameters
             
                 </a>
             
@@ -3151,11 +3151,12 @@
                                 <h1 id="flight-controller-selection"><a name="flight-controller-selection" class="plugin-anchor" href="#flight-controller-selection"><i class="fa fa-link" aria-hidden="true"></i></a>Flight Controller Selection</h1>
 <p>You should select a board that suits the physical constraints of your vehicle, the activities you wish to perform, and of course cost.</p>
 <p>PX4 can run on many flight controller boards (see <a href="../flight_controller/">Autopilot Hardware</a>, or the list of supported boards <a href="https://github.com/PX4/Firmware/#supported-hardware" target="_blank">here on Github</a>). 
-A <em>subset</em> of the available options are listed below. </p>
+A <em>small subset</em> of the available options are listed below. </p>
 <h2 id="pixhawk-series"><a name="pixhawk-series" class="plugin-anchor" href="#pixhawk-series"><i class="fa fa-link" aria-hidden="true"></i></a>Pixhawk Series</h2>
-<p><a href="../flight_controller/pixhawk_series.html">Pixhawk Series</a> open-hardware flight controllers run PX4 on NuttX OS. With many form factors, there are versions targeted towards many use cases and market segments. </p>
+<p><a href="../flight_controller/pixhawk_series.html">Pixhawk Series</a> open-hardware flight controllers run PX4 on NuttX OS.
+With many form factors, there are versions targeted towards many use cases and market segments.</p>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
-<p> If you need computer vision or other computationally intensive tasks then instead consider a <a href="#autopilots-for-computationally-intensive-tasks">board with companion computing</a>.</p>
+<p> We recommend you use Pixhawk boards that can run firmware FMUv3 and later (may require a <a href="../config/firmware.html#bootloader">bootloader update</a>).</p>
 </blockquote>
 <table>
 <thead>
@@ -3166,32 +3167,28 @@ A <em>subset</em> of the available options are listed below. </p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../flight_controller/mro_pixhawk.html">mRo Pixhawk</a></td>
-<td>Popular <em>general purpose</em> flight controller (this is a <em>slightly updated</em> version of the discontinued 3DR <a href="../flight_controller/pixhawk.html">Pixhawk 1</a>). <br>Also consider: <a href="../flight_controller/HKPilot32.html">HKPilot32</a>, <a href="../flight_controller/dropix.html">Dropix</a>, <a href="../flight_controller/mro_x2.1.html">mRobotics-X2.1</a>.</td>
-</tr>
-<tr>
-<td><a href="../flight_controller/pixracer.html">Pixracer</a></td>
-<td>Very small/light autopilot optimised for FPV racers. It is suited to any small frame that requires no more than 6 PWM outputs. <br>Also consider:  <a href="../flight_controller/pixhawk3_pro.html">Pixhawk 3 Pro</a>, <a href="../flight_controller/mindracer.html">MindRacer</a>, <a href="../flight_controller/pixfalcon.html">Pixfalcon</a>.</td>
-</tr>
-<tr>
-<td><a href="../flight_controller/pixhawk_mini.html">Pixhawk Mini</a></td>
-<td>Small <em>general purpose</em> autopilot that has been optimised for ease of setup.<br>The controller has internal vibration damping and only 8 main outputs (<strong>no AUX ports</strong>), making it much less daunting to install and connect. It is not suitable for vehicles/functions that <em>require</em> AUX ports.</td>
-</tr>
-<tr>
-<td><a href="../flight_controller/pixhawk-2.html">Pixhawk 2</a></td>
-<td>Flexible autopilot intended primarily for manufacturers of commercial systems. It is designed to be used with a domain-specific carrier board in order to reduce the wiring, improve reliability, and ease of assembly.</td>
-</tr>
-<tr>
-<td><a href="../flight_controller/pixhawk4.html">Pixhawk 4</a></td>
-<td>Pixhawk 4 is optimized to run PX4 version 1.7 and is suitable for academic and commercial developers. It features more computing power and 2X the RAM than previous versions, additional ports for better integration and expansion, new sensors and integrated vibration isolation.</td>
+<td><a href="../flight_controller/cuav_v5_nano.html">CUAV V5 nano</a></td>
+<td>Based on the Pixhawk <strong>FMUv5</strong> design standard and optimized to run PX4 firmware. Small enough to use in 220mm racing drones, but powerful enough for almost any other drone use.</td>
 </tr>
 <tr>
 <td><a href="../flight_controller/cuav_v5_plus.html">CUAV V5+</a></td>
 <td>The board is based on the Pixhawk <strong>FMUv5 design standard</strong>, the external interface uses the <a href="https://pixhawk.org/pixhawk-connector-standard/" target="_blank">Pixhawk standard pinouts</a>, and the modular design allows the users to customize their own carrier board. The autopilot is compatible <a href="http://px4-travis.s3.amazonaws.com/Firmware/master/px4fmu-v5_default.px4" target="_blank">PX4</a> firmware.can be used for academic research and commercial systems integration.</td>
 </tr>
 <tr>
-<td><a href="../flight_controller/cuav_v5_nano.html">CUAV V5 nano</a></td>
-<td>Based on the Pixhawk <strong>FMUv5</strong> design standard and optimized to run PX4 firmware. Small enough to use in 220mm racing drones, but powerful enough for almost any other drone use.</td>
+<td><a href="../flight_controller/pixhawk4.html">Pixhawk 4</a></td>
+<td>Pixhawk 4 is optimized to run PX4 version 1.7 and is suitable for academic and commercial developers. It features more computing power and 2X the RAM than previous versions, additional ports for better integration and expansion, new sensors and integrated vibration isolation.</td>
+</tr>
+<tr>
+<td><a href="../flight_controller/pixhawk-2.html">Pixhawk 2/Cube</a></td>
+<td>Flexible autopilot intended primarily for manufacturers of commercial systems. It is designed to be used with a domain-specific carrier board in order to reduce the wiring, improve reliability, and ease of assembly.</td>
+</tr>
+<tr>
+<td><a href="../flight_controller/pixracer.html">Pixracer</a></td>
+<td>Very small/light autopilot optimised for FPV racers. It is suited to any small frame that requires no more than 6 PWM outputs. <br>Also consider:  <a href="../flight_controller/pixhawk3_pro.html">Pixhawk 3 Pro</a>, <a href="../flight_controller/mindracer.html">MindRacer</a>.</td>
+</tr>
+<tr>
+<td><a href="../flight_controller/mro_pixhawk.html">mRo Pixhawk</a></td>
+<td>Popular <em>general purpose</em> flight controller (this is an FMUv3 version of the discontinued 3DR <a href="../flight_controller/pixhawk.html">Pixhawk 1</a>).</td>
 </tr>
 </tbody>
 </table>
@@ -3218,7 +3215,7 @@ A <em>subset</em> of the available options are listed below. </p>
 <h2 id="commercial-uavs-that-can-run-px4"><a name="commercial-uavs-that-can-run-px4" class="plugin-anchor" href="#commercial-uavs-that-can-run-px4"><i class="fa fa-link" aria-hidden="true"></i></a>Commercial UAVs that can run PX4</h2>
 <p>PX4 is available on many popular commercial drone products, including some that ship with PX4 and others that can be updated with PX4 (allowing you to add mission planning and other PX4 Flight modes to your vehicle).</p>
 <p>For more information see <a href="../complete_vehicles/">Complete Vehicles</a>.</p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-09-11 13:38:24 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-09-11 22:21:02 </span> </footer>
                                 
                                 </section>
                             
@@ -3261,7 +3258,7 @@ A <em>subset</em> of the available options are listed below. </p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Flight Controllers","level":"1.2.3","depth":2,"next":{"title":"Sensors","level":"1.2.4","depth":2,"path":"getting_started/sensor_selection.md","ref":"getting_started/sensor_selection.md","articles":[]},"previous":{"title":"Vehicles/Frames","level":"1.2.2","depth":2,"path":"getting_started/frame_selection.md","ref":"getting_started/frame_selection.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"getting_started/flight_controller_selection.md","mtime":"2019-09-11T13:38:24.920Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-11T13:39:37.929Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Flight Controllers","level":"1.2.3","depth":2,"next":{"title":"Sensors","level":"1.2.4","depth":2,"path":"getting_started/sensor_selection.md","ref":"getting_started/sensor_selection.md","articles":[]},"previous":{"title":"Vehicles/Frames","level":"1.2.2","depth":2,"path":"getting_started/frame_selection.md","ref":"getting_started/frame_selection.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"getting_started/flight_controller_selection.md","mtime":"2019-09-11T22:21:02.899Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-11T22:22:30.100Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
