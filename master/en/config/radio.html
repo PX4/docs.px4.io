@@ -3154,7 +3154,25 @@
 <p>Before you can calibrate the radio system the receiver and transmitter must be connected/bound. The process for binding a transmitter and receiver pair is hardware specific (see your RC manual for instructions). </p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> If you are using a <em>Spektrum</em> receiver, you can put it into bind mode using <em>QGroundControl</em>, as <a href="#spektrum_bind">shown below</a>.</p>
-<p><strong>Note</strong> If you are using a <em>FrSky</em> receiver, you can bind it with its transmitter, by following instructions <a href="https://www.youtube.com/watch?v=1IYg5mQdLVI" target="_blank">here</a>.</p>
+</blockquote>
+<p><span></span></p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> If you are using a <em>FrSky</em> receiver, you can bind it with its transmitter, by following instructions <a href="https://www.youtube.com/watch?v=1IYg5mQdLVI" target="_blank">here</a>.</p>
+</blockquote>
+<h2 id="rc_loss_detection"><a name="rc_loss_detection" class="plugin-anchor" href="#rc_loss_detection"><i class="fa fa-link" aria-hidden="true"></i></a>RC Loss Detection </h2>
+<p>PX4 needs to be able to detect when the signal from the RC controller has been lost in order to be able to take <a href="safety.html#rc_loss_failsafe">appropriate safety measures</a>.</p>
+<p>RC receivers have different ways of indicating signal loss:</p>
+<ul>
+<li>Output nothing (automatically detected by PX4)</li>
+<li>Output a low throttle value value (you can configure PX4 to detect this).</li>
+<li>Output the last received signal (<em>cannot be detected by PX4</em> as it looks like valid input).</li>
+</ul>
+<p>If your RC receiver does not support outputting no signal on RC loss, you must configure it to set throttle low instead, and set the corresponding value in <a href="../advanced_config/parameter_reference.html#RC_FAILS_THR">RC_FAILS_THR</a>.</p>
+<p>The way to do this is to set the RC controller trim and throttle stick as low as possible, and use the resulting output PWM value in both PX4 and the receiver (read your receiver manual to determine how to set the RC loss value).
+Then reset the throttle stick trim back to its normal position.
+This process ensures that the RC loss value is below the minimum value output by the receiver in normal operation.</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> Do not use a receiver that cannot support one of the two supported RC loss detection methods!</p>
 </blockquote>
 <h2 id="performing-the-calibration"><a name="performing-the-calibration" class="plugin-anchor" href="#performing-the-calibration"><i class="fa fa-link" aria-hidden="true"></i></a>Performing the Calibration</h2>
 <p>The calibration process is straightforward - you will be asked to move the sticks in a specific pattern that is shown on the transmitter diagram on the top right of the screen.</p>
@@ -3213,7 +3231,8 @@
 <p>To use the AUX passthrough channels:</p>
 <ol>
 <li>Map up to 2 transmitter controls to separate channels. </li>
-<li><p>Specify these channels to map to the AUX1 and AUX2 ports respectively, as shown below. Values are saved to the vehicle as soon as they are set.</p>
+<li><p>Specify these channels to map to the AUX1 and AUX2 ports respectively, as shown below.
+Values are saved to the vehicle as soon as they are set.</p>
 <p><img src="../../images/qgc/setup/radio_additional_setup_aux_passthrough_channels.jpg" alt="AUX1 and AUX2 RC passthrough channels"></p>
 </li>
 </ol>
@@ -3227,7 +3246,8 @@
 <p>To set up tuning channels:</p>
 <ol>
 <li>Map up to 3 transmitter controls (dials or sliders) to separate channels.</li>
-<li><p>Select the mapping of <em>PARAM Tuning Id</em> to radio channels, using the selection lists. Values are saved to the vehicle as soon as they are set.</p>
+<li><p>Select the mapping of <em>PARAM Tuning Id</em> to radio channels, using the selection lists.
+Values are saved to the vehicle as soon as they are set.</p>
 <p><img src="../../images/qgc/setup/radio_additional_radio_setup_param_tuning.jpg" alt="Map radio channels to tuning channels"></p>
 </li>
 </ol>
@@ -3236,7 +3256,7 @@
 <li>Open the <strong>Parameters</strong> sidebar. </li>
 <li>Select the parameter to map to your transmitter (this will open the <em>Parameter Editor</em>).</li>
 <li>Check the <strong>Advanced Settings</strong> checkbox.</li>
-<li><p>Click the <strong>Set RC to Param...</strong> button (this will pop-up the forground dialog displayed below)</p>
+<li><p>Click the <strong>Set RC to Param...</strong> button (this will pop-up the foreground dialog displayed below)</p>
 <p><img src="../../images/qgc/setup/parameters_radio_channel_mapping.jpg" alt="Map tuning channels to parameters"></p>
 </li>
 <li>Select the tuning channel to map (1, 2 or 3) from the <em>Parameter Tuning ID</em> selection list.</li>
@@ -3250,8 +3270,9 @@
 <ul>
 <li><a href="https://docs.qgroundcontrol.com/en/SetupView/Radio.html" target="_blank">QGroundControl &gt; Radio Control</a></li>
 <li><a href="https://youtu.be/91VGmdSlbo4?t=4m30s" target="_blank">PX4 Setup Video - @4m30s</a> (Youtube)</li>
+<li><a href="../getting_started/rc_transmitter_receiver.html">RC System Selection</a> - Choose a compatible RC system.</li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-09-16 06:26:41 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-09-17 10:01:47 </span> </footer>
                                 
                                 </section>
                             
@@ -3294,7 +3315,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Radio Setup","level":"1.4.9","depth":2,"next":{"title":"Flight Modes","level":"1.4.10","depth":2,"path":"config/flight_mode.md","ref":"config/flight_mode.md","articles":[]},"previous":{"title":"Level Horizon Calibration","level":"1.4.8","depth":2,"path":"config/level_horizon_calibration.md","ref":"config/level_horizon_calibration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"config/radio.md","mtime":"2019-09-16T06:26:41.693Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-16T06:28:35.122Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Radio Setup","level":"1.4.9","depth":2,"next":{"title":"Flight Modes","level":"1.4.10","depth":2,"path":"config/flight_mode.md","ref":"config/flight_mode.md","articles":[]},"previous":{"title":"Level Horizon Calibration","level":"1.4.8","depth":2,"path":"config/level_horizon_calibration.md","ref":"config/level_horizon_calibration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"config/radio.md","mtime":"2019-09-17T10:01:47.690Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-17T10:03:02.387Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
