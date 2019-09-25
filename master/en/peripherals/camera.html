@@ -3149,9 +3149,18 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="camera-trigger"><a name="camera-trigger" class="plugin-anchor" href="#camera-trigger"><i class="fa fa-link" aria-hidden="true"></i></a>Camera Trigger</h1>
-<p>The camera trigger driver allows the use of the AUX ports to send out pulses in order to trigger a camera. This can be used for multiple applications including timestamping photos for aerial surveying and reconstruction, synchronising a multi-camera system or visual-inertial navigation.</p>
+<p>The camera trigger driver allows the use of the AUX ports to send out pulses in order to trigger a camera.
+This can be used for multiple applications including timestamping photos for aerial surveying and reconstruction, synchronising a multi-camera system or visual-inertial navigation.</p>
 <p>In addition to a pulse being sent out, a MAVLink message is published containing a sequence number (thus the current session&apos;s image sequence number) and the corresponding timestamp.</p>
-<h2 id="trigger-modes"><a name="trigger-modes" class="plugin-anchor" href="#trigger-modes"><i class="fa fa-link" aria-hidden="true"></i></a>Trigger Modes</h2>
+<h2 id="trigger-configuration--triggersetupqgc"><a name="trigger-configuration--triggersetupqgc" class="plugin-anchor" href="#trigger-configuration--triggersetupqgc"><i class="fa fa-link" aria-hidden="true"></i></a>Trigger Configuration  {@trigger_setup_qgc}</h2>
+<p>Camera triggering is usually configured from the <em>QGroundControl</em> <a href="https://docs.qgroundcontrol.com/en/SetupView/Camera.html#px4-camera-setup" target="_blank">Vehicle Setup &gt; Camera</a> section.</p>
+<p><img src="../../assets/camera/trigger_pins.png" alt="Trigger pins"></p>
+<p>The different <a href="#trigger_mode">trigger modes</a>, <a href="#trigger_backend">backend interfaces</a> and <a href="#hardware_setup">hardware setup</a> are described below (these can also be set directly from <a href="../advanced_config/parameters.html">parameters</a>).</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> The camera settings section is not available by default for FMUv2-based flight controllers (e.g. 3DR Pixhawk) because the camera module is not automatically included in firmware.
+  For more information see <a href="../advanced_config/parameters.html#parameter-not-in-firmware">Finding/Updating Parameters &gt; Parameters Not In Firmware</a>.</p>
+</blockquote>
+<h2 id="trigger-modes-triggermode"><a name="trigger-modes-triggermode" class="plugin-anchor" href="#trigger-modes-triggermode"><i class="fa fa-link" aria-hidden="true"></i></a>Trigger Modes {@trigger_mode}</h2>
 <p>Four different modes are supported, controlled by the <a href="../advanced_config/parameter_reference.html#TRIG_MODE">TRIG_MODE</a> parameter:</p>
 <table>
 <thead>
@@ -3186,7 +3195,7 @@
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-info"></strong>
 <p> If it is your first time enabling the camera trigger app, remember to reboot after changing the <code>TRIG_MODE</code> parameter.</p>
 </blockquote>
-<h2 id="trigger-hardware-configuration"><a name="trigger-hardware-configuration" class="plugin-anchor" href="#trigger-hardware-configuration"><i class="fa fa-link" aria-hidden="true"></i></a>Trigger Hardware Configuration</h2>
+<h2 id="hardware_setup"><a name="hardware_setup" class="plugin-anchor" href="#hardware_setup"><i class="fa fa-link" aria-hidden="true"></i></a>Trigger Hardware Configuration </h2>
 <p>You can choose which pins to use for triggering using the <a href="../advanced_config/parameter_reference.html#TRIG_PINS">TRIG_PINS</a> parameter.
 The default is 56, which means that trigger is enabled on <em>FMU</em> pins 5 and 6.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
@@ -3196,10 +3205,12 @@ The default is 56, which means that trigger is enabled on <em>FMU</em> pins 5 an
 </blockquote>
 <p><span></span></p>
 <blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
-<p> With <code>TRIG_PINS</code> set to its <strong>default</strong> value of 56, you can use the AUX pins 1, 2, 3 and 4 as actuator outputs (for servos/ESCs). Due to the way the hardware timers are handled (1234 and 56 are 2 different groups handled by 2 timers), this is the ONLY combination which allows the simultaneous usage of camera trigger and FMU actuator outputs. <strong>DO NOT CHANGE THE DEFAULT VALUE OF <code>TRIG_PINS</code> IF YOU NEED ACTUATOR OUTPUTS.</strong></p>
+<p> With <code>TRIG_PINS</code> set to its <strong>default</strong> value of 56, you can use the AUX pins 1, 2, 3 and 4 as actuator outputs (for servos/ESCs).
+  Due to the way the hardware timers are handled (1234 and 56 are 2 different groups handled by 2 timers), this is the ONLY combination which allows the simultaneous usage of camera trigger and FMU actuator outputs.
+  <strong>DO NOT CHANGE THE DEFAULT VALUE OF <code>TRIG_PINS</code> IF YOU NEED ACTUATOR OUTPUTS.</strong></p>
 </blockquote>
-<h2 id="trigger-interface-backends"><a name="trigger-interface-backends" class="plugin-anchor" href="#trigger-interface-backends"><i class="fa fa-link" aria-hidden="true"></i></a>Trigger Interface Backends</h2>
-<p>The camera trigger driver supports several backends - each for a specific application, controlled by the <a href="../advanced_config/parameter_reference.html#TRIG_INTERFACE">TRIG_INTERFACE</a> parameter : </p>
+<h2 id="trigger_backend"><a name="trigger_backend" class="plugin-anchor" href="#trigger_backend"><i class="fa fa-link" aria-hidden="true"></i></a>Trigger Interface Backends </h2>
+<p>The camera trigger driver supports several backends - each for a specific application, controlled by the <a href="../advanced_config/parameter_reference.html#TRIG_INTERFACE">TRIG_INTERFACE</a> parameter: </p>
 <table>
 <thead>
 <tr>
@@ -3276,7 +3287,9 @@ The default is 56, which means that trigger is enabled on <em>FMU</em> pins 5 an
 </tr>
 </tbody>
 </table>
-<p><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_DO_DIGICAM_CONTROL" target="_blank">MAV_CMD_DO_DIGICAM_CONTROL</a> - Accepted in all modes. This is used by the GCS to test-shoot the camera from the user interface. The trigger driver does not yet support all camera control parameters defined by the MAVLink spec.</p>
+<p><a href="https://mavlink.io/en/messages/common.html#MAV_CMD_DO_DIGICAM_CONTROL" target="_blank">MAV_CMD_DO_DIGICAM_CONTROL</a> - Accepted in all modes.
+This is used by the GCS to test-shoot the camera from the user interface.
+The trigger driver does not yet support all camera control parameters defined by the MAVLink spec.</p>
 <table>
 <thead>
 <tr>
@@ -3298,7 +3311,8 @@ The default is 56, which means that trigger is enabled on <em>FMU</em> pins 5 an
 <li>On the PX4 console: <pre><code>camera_trigger test
 </code></pre></li>
 <li><p>From <em>QGroundControl</em>: </p>
-<p>Click on &quot;Trigger Camera&quot; in the main instrument panel. These shots are not logged or counted for geotagging.</p>
+<p>Click on <strong>Trigger Camera</strong> in the main instrument panel.
+These shots are not logged or counted for geotagging.</p>
 <p><img src="../../assets/camera/qgc_test_camera.png" alt="QGC Test Camera"></p>
 </li>
 </ol>
@@ -3306,17 +3320,18 @@ The default is 56, which means that trigger is enabled on <em>FMU</em> pins 5 an
 <p><img src="../../assets/camera/photogrammetry.png" alt="photogrammetry"></p>
 <p>In this example, we will use a Seagull MAP2 trigger cable to interface to a Sony QX-1 and use the setup to create orthomosaics after flying a fully autonomous survey mission. </p>
 <h3 id="trigger-settings"><a name="trigger-settings" class="plugin-anchor" href="#trigger-settings"><i class="fa fa-link" aria-hidden="true"></i></a>Trigger Settings</h3>
-<p>The camera trigger can be configured from QGroundControl&apos;s &quot;Camera&quot; page under the settings tab</p>
+<p>The recommended camera settings are:</p>
 <ul>
-<li><code>TRIG_INTERFACE</code>: 2, Seagull MAP2.</li>
-<li><code>TRIG_MODE</code>: 4, Mission controlled.</li>
+<li><code>TRIG_INTERFAC=2</code> (Seagull MAP2).</li>
+<li><code>TRIG_MODE=4</code> (Mission controlled).</li>
+<li>Leave the remaining parameters at their defaults.</li>
 </ul>
-<p>Leave the rest of the parameters at their defaults.</p>
-<p><img src="../../assets/camera/trigger_pins.png" alt="Trigger pins"></p>
-<p>You will need to connect the Seagull MAP2 to the auxiliary/FMU pins on your autopilot. Pin 1 goes to AUX 5, and Pin 2 to AUX 6. The other end of the MAP2 cable will go into the QX-1&apos;s &quot;MULTI&quot; port.</p>
+<p>You will need to connect the Seagull MAP2 to the auxiliary/FMU pins on your autopilot.
+Pin 1 goes to <code>AUX 5</code>, and Pin 2 to <code>AUX 6</code>.
+The other end of the MAP2 cable will go into the QX-1&apos;s &quot;MULTI&quot; port.</p>
 <h3 id="camera-configuration"><a name="camera-configuration" class="plugin-anchor" href="#camera-configuration"><i class="fa fa-link" aria-hidden="true"></i></a>Camera Configuration</h3>
 <p>We use a Sony QX-1 with a 16-50mm f3.5-5.6 lens for this example.</p>
-<p>To avoid autofocus and metering lag when the camera is triggered, the following guidelines should be followed :</p>
+<p>To avoid autofocus and metering lag when the camera is triggered, the following guidelines should be followed:</p>
 <ul>
 <li>Manual focus to infinity</li>
 <li>Set camera to continuous shooting mode</li>
@@ -3330,14 +3345,21 @@ The default is 56, which means that trigger is enabled on <em>FMU</em> pins 5 an
 <h3 id="geotagging"><a name="geotagging" class="plugin-anchor" href="#geotagging"><i class="fa fa-link" aria-hidden="true"></i></a>Geotagging</h3>
 <p>Download/copy the logfile and images from the flight and point QGroundControl to them. Then click on &quot;Start Tagging&quot;.</p>
 <p><img src="../../assets/camera/qgc_geotag.png" alt="QGC Geotagging"></p>
-<p>You can verify the geotagging using a free online service like <a href="https://www.pic2map.com/" target="_blank">Pic2Map</a>. Note that Pic2Map is limited to only 40 images.</p>
+<p>You can verify the geotagging using a free online service like <a href="https://www.pic2map.com/" target="_blank">Pic2Map</a>.
+Note that Pic2Map is limited to only 40 images.</p>
 <h3 id="reconstruction"><a name="reconstruction" class="plugin-anchor" href="#reconstruction"><i class="fa fa-link" aria-hidden="true"></i></a>Reconstruction</h3>
 <p>We use <a href="https://pix4d.com/" target="_blank">Pix4D</a> for 3D reconstruction.</p>
 <p><img src="../../assets/camera/geotag.jpg" alt="GeoTag"></p>
 <h2 id="camera-imu-sync-example-vio"><a name="camera-imu-sync-example-vio" class="plugin-anchor" href="#camera-imu-sync-example-vio"><i class="fa fa-link" aria-hidden="true"></i></a>Camera-IMU sync example (VIO)</h2>
-<p>In this example, we will go over the basics of synchronising IMU measurements with visual data to build a stereo Visual-Inertial Navigation System (VINS). To be clear, the idea here isn&apos;t to take an IMU measurement exactly at the same time as we take a picture but rather to correctly time stamp our images so as to provide accurate data to our VIO algorithm.</p>
-<p>The autopilot and companion have different clock bases (boot-time for the autopilot and UNIX epoch for companion), so instead of skewing either clock, we directly observe the time offset between the clocks. This offset is added or subtracted from the timestamps in the MAVLink messages (e.g <code>HIGHRES_IMU</code>) in the cross-middleware translator component (e.g MAVROS on the companion and <code>mavlink_receiver</code> in PX4). The actual synchronisation algorithm is a modified version of the Network Time Protocol (NTP) algorithm and uses an exponential moving average to smooth the tracked time offset. This synchronisation is done automatically if MAVROS is used with a high-bandwidth onboard link (MAVLink mode <code>onboard</code>).</p>
-<p>For acquiring synchronised image frames and inertial measurements, we connect the trigger inputs of the two cameras to a GPIO pin on the autopilot. The timestamp of the inertial measurement from start of exposure and a image sequence number is recorded and sent to the companion computer (<code>CAMERA_TRIGGER</code> message), which buffers these packets and the image frames acquired from the camera. They are matched based on the sequence number (first image frame is sequence 0), the images timestamped (with the timestamp from the <code>CAMERA_TRIGGER</code> message) and then published.</p>
+<p>In this example, we will go over the basics of synchronising IMU measurements with visual data to build a stereo Visual-Inertial Navigation System (VINS).
+To be clear, the idea here isn&apos;t to take an IMU measurement exactly at the same time as we take a picture but rather to correctly time stamp our images so as to provide accurate data to our VIO algorithm.</p>
+<p>The autopilot and companion have different clock bases (boot-time for the autopilot and UNIX epoch for companion), so instead of skewing either clock, we directly observe the time offset between the clocks.
+This offset is added or subtracted from the timestamps in the MAVLink messages (e.g <code>HIGHRES_IMU</code>) in the cross-middleware translator component (e.g MAVROS on the companion and <code>mavlink_receiver</code> in PX4).
+The actual synchronisation algorithm is a modified version of the Network Time Protocol (NTP) algorithm and uses an exponential moving average to smooth the tracked time offset.
+This synchronisation is done automatically if MAVROS is used with a high-bandwidth onboard link (MAVLink mode <code>onboard</code>).</p>
+<p>For acquiring synchronised image frames and inertial measurements, we connect the trigger inputs of the two cameras to a GPIO pin on the autopilot.
+The timestamp of the inertial measurement from start of exposure and a image sequence number is recorded and sent to the companion computer (<code>CAMERA_TRIGGER</code> message), which buffers these packets and the image frames acquired from the camera.
+They are matched based on the sequence number (first image frame is sequence 0), the images timestamped (with the timestamp from the <code>CAMERA_TRIGGER</code> message) and then published.</p>
 <p>The following diagram illustrates the sequence of events which must happen in order to correctly timestamp our images.</p>
 <p><img src="../../assets/camera/sequence_diagram.jpg" alt="Sequence diag"></p>
 <!-- Could generate using Mermaid: https://mermaidjs.github.io/mermaid-live-edito
@@ -3357,11 +3379,9 @@ end
 {/% endmermaid %/}
 -->
 <h3 id="step-1"><a name="step-1" class="plugin-anchor" href="#step-1"><i class="fa fa-link" aria-hidden="true"></i></a>Step 1</h3>
-<p>First, set the TRIG_MODE to 1 to make the driver wait for the start command and
-reboot your FCU to obtain the remaining parameters.</p>
+<p>First, set the TRIG_MODE to 1 to make the driver wait for the start command and reboot your FCU to obtain the remaining parameters.</p>
 <h3 id="step-2"><a name="step-2" class="plugin-anchor" href="#step-2"><i class="fa fa-link" aria-hidden="true"></i></a>Step 2</h3>
-<p>For the purposes of this example we will be configuring the trigger to operate
-in conjunction with a Point Grey Firefly MV camera running at 30 FPS.</p>
+<p>For the purposes of this example we will be configuring the trigger to operate in conjunction with a Point Grey Firefly MV camera running at 30 FPS.</p>
 <ul>
 <li><code>TRIG_INTERVAL</code>: 33.33 ms</li>
 <li><code>TRIG_POLARITY</code>: 0 (active low)</li>
@@ -3372,8 +3392,9 @@ in conjunction with a Point Grey Firefly MV camera running at 30 FPS.</p>
 <h3 id="step-3"><a name="step-3" class="plugin-anchor" href="#step-3"><i class="fa fa-link" aria-hidden="true"></i></a>Step 3</h3>
 <p>Wire up your cameras to your AUX port by connecting the ground and signal pins to the appropriate place.</p>
 <h3 id="step-4"><a name="step-4" class="plugin-anchor" href="#step-4"><i class="fa fa-link" aria-hidden="true"></i></a>Step 4</h3>
-<p>You will have to modify your driver to follow the sequence diagram above. Public reference implementations for <a href="https://github.com/ProjectArtemis/ueye_cam" target="_blank">IDS Imaging UEye</a> cameras and for <a href="https://github.com/andre-nguyen/camera1394" target="_blank">IEEE1394 compliant</a> cameras are available.</p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-09-25 02:01:25 </span> </footer>
+<p>You will have to modify your driver to follow the sequence diagram above.
+Public reference implementations for <a href="https://github.com/ProjectArtemis/ueye_cam" target="_blank">IDS Imaging UEye</a> cameras and for <a href="https://github.com/andre-nguyen/camera1394" target="_blank">IEEE1394 compliant</a> cameras are available.</p>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-09-25 23:17:22 </span> </footer>
                                 
                                 </section>
                             
@@ -3416,7 +3437,7 @@ in conjunction with a Point Grey Firefly MV camera running at 30 FPS.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Camera","level":"1.10.10","depth":2,"next":{"title":"Parachute","level":"1.10.11","depth":2,"path":"peripherals/parachute.md","ref":"peripherals/parachute.md","articles":[]},"previous":{"title":"UAVCAN ESCs","level":"1.10.9.2","depth":3,"path":"peripherals/uavcan_escs.md","ref":"peripherals/uavcan_escs.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"peripherals/camera.md","mtime":"2019-09-25T02:01:25.938Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-25T02:03:25.258Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Camera","level":"1.10.10","depth":2,"next":{"title":"Parachute","level":"1.10.11","depth":2,"path":"peripherals/parachute.md","ref":"peripherals/parachute.md","articles":[]},"previous":{"title":"UAVCAN ESCs","level":"1.10.9.2","depth":3,"path":"peripherals/uavcan_escs.md","ref":"peripherals/uavcan_escs.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"peripherals/camera.md","mtime":"2019-09-25T23:17:22.598Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-25T23:17:51.981Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
