@@ -3150,64 +3150,95 @@
                                 
                                 <h1 id="collision-prevention"><a name="collision-prevention" class="plugin-anchor" href="#collision-prevention"><i class="fa fa-link" aria-hidden="true"></i></a>Collision Prevention</h1>
 <p><em>Collision Prevention</em> may be used to automatically slow and stop a vehicle before it can crash into an obstacle.</p>
-<p>It can be enabled for multicopter vehicles in <a href="../flight_modes/position_mc.html">Position mode</a>, and can use sensor data from an offboard companion computer, a rangefinder attached to the flight controller, or both (fused).</p>
-<blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
-<p> Collision prevention may not prevent a crash if your vehicle is moving too fast!
-  This feature has only been tested (at time of writing) for a vehicle moving at 4 m/s.</p>
+<p>It can be enabled for multicopter vehicles in <a href="../flight_modes/position_mc.html">Position mode</a>, and can use sensor data from an offboard companion computer, offboard rangefinders over MAVLink, a rangefinder attached to the flight controller, or any combination of the above.</p>
+<p>Collision prevention may restrict vehicle maximum speed if the sensor range isn&apos;t large enough!
+It also prevents motion in directions where no sensor data is available (i.e. if you have no rear-sensor data, you will not be able to fly backwards).</p>
+<blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
+<p> If high flight speeds are critical, consider disabling collision prevention when not needed.</p>
+</blockquote>
+<p><span></span></p>
+<blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
+<p> Ensure that you have sensors/sensor data in all directions that you want to fly (when collision prevention is enabled).</p>
 </blockquote>
 <h2 id="overview"><a name="overview" class="plugin-anchor" href="#overview"><i class="fa fa-link" aria-hidden="true"></i></a>Overview</h2>
-<p><em>Collision Prevention</em> is enabled on PX4 by setting the parameter for minimum allowed approach distance (<a href="../advanced_config/parameter_reference.html#MPC_COL_PREV_D">MPC_COL_PREV_D</a>).</p>
+<p><em>Collision Prevention</em> is enabled on PX4 by setting the parameter for minimum allowed approach distance (<a href="#MPC_COL_PREV_D">MPC_COL_PREV_D</a>).</p>
 <p>The feature requires obstacle information from an external system (sent using the MAVLink <a href="https://mavlink.io/en/messages/common.html#OBSTACLE_DISTANCE" target="_blank">OBSTACLE_DISTANCE</a> message) and/or a <a href="../sensor/rangefinders.html">distance sensor</a> connected to the flight controller.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
-<p> Multiple sensors can be used to get information about, and prevent collisions with, objects <em>around</em> the vehicle. 
+<p> Multiple sensors can be used to get information about, and prevent collisions with, objects <em>around</em> the vehicle.
   If multiple sources supply data for the <em>same</em> orientation, the system uses the data that reports the smallest distance to an object.</p>
 </blockquote>
-<p>The data from all sensors is fused into a range scan (a 360 degree map of the sensor data/state from around the vehicle), which is then input to the collision prevention algorithm.
-The collision prevention algorithm only uses/considers part of the range scan data in the calculation of the velocity limit (see <a href="#angle_tuning">MPC_COL_PREV_ANG Angle Tuning</a>).</p>
-<p>The vehicle starts braking as soon as it detects an obstacle, and will stop movement when it reaches the minimum allowed separation (the velocity depends on the geometry, measured distances, and range of sensor data being considered).
-If the vehicle approaches any closer (i.e. it overshoots or is pushed) negative thrust is applied to repel it from the obstacle.</p>
-<p>In order to move away from an obstacle the user must command the vehicle to move toward a setpoint that is an &quot;acceptable&quot; angle away from the obstacle.
-The angle that must be used depends on <a href="#angle_tuning">MPC_COL_PREV_ANG Angle Tuning</a>.</p>
-<p>The user is notified through <em>QGroundControl</em> while <em>Collision Prevention</em> is actively controlling velocity setpoints.</p>
+<p>The vehicle restricts the maximum velocity in order to slow down as it gets closer to obstacles, and will stop movement when it reaches the minimum allowed separation.
+In order to move away from (or parallel to) an obstacle, the user must command the vehicle to move toward a setpoint that does not bring the vehicle closer to the obstacle.
+The algorithm will make minor adjustments to the setpoint direction if it is determined that a &quot;better&quot; setpoint exists within a fixed margin on either side of the requested setpoint.</p>
+<p>Users are notified through <em>QGroundControl</em> while <em>Collision Prevention</em> is actively controlling velocity setpoints.</p>
+<p>PX4 software setup is covered in the next section.
+If you are using a distance sensor attached to your flight controller for collision prevention, it will need to be attached and configured as described in <a href="#rangefinder">PX4 Distance Sensor</a>.
+If you are using a companion computer to provide obstacle information see <a href="#companion">companion setup</a>.</p>
 <h2 id="px4-software-setup"><a name="px4-software-setup" class="plugin-anchor" href="#px4-software-setup"><i class="fa fa-link" aria-hidden="true"></i></a>PX4 (Software) Setup</h2>
 <p>Configure collision prevention by <a href="../advanced_config/parameters.html">setting the following parameters</a> in <em>QGroundControl</em>:</p>
-<ul>
-<li><p><a href="../advanced_config/parameter_reference.html#MPC_COL_PREV_D">MPC_COL_PREV_D</a> - Set the minimum allowed distance (the closest distance that the vehicle can approach the obstacle).
-Set negative to disable <em>collision prevention</em>.</p>
-<p>This should be tuned for both the <em>desired</em> minimal distance and likely speed of the vehicle.</p>
-</li>
-<li><a href="#angle_tuning">MPC_COL_PREV_ANG</a> - Set the angle (to both sides of the commanded direction) within which collected sensor data is used.</li>
-</ul>
-<p>If you are using a distance sensor attached to your flight controller for collision prevention, it will need to be <a href="#rangefinder">attached and configured</a> as described in the next section.
-If you are using a companion computer to provide obstacle information see <a href="#companion">companion setup</a>.</p>
-<h3 id="angle_tuning"><a name="angle_tuning" class="plugin-anchor" href="#angle_tuning"><i class="fa fa-link" aria-hidden="true"></i></a>MPC_COL_PREV_ANG Angle Tuning </h3>
-<p>The data from all sensors is fused into a range scan (a 360 degree map of the sensor data/state from around the vehicle), which is then input to the collision prevention algorithm.</p>
-<p>The collision prevention algorithm only uses part of the range scan data in the calculation of the velocity limit (which we refer to as the <em>considered sensor data</em>). 
-This comprises the sensor data from the range scan that is within two <a href="../advanced_config/parameter_reference.html#MPC_COL_PREV_ANG">MPC_COL_PREV_ANG</a> degree arcs centered around the commanded direction.</p>
-<p>Provided none of the <em>considered sensor data</em> includes data below the minimum allowed distance, the executed speed depends on the geometry, considered data, and actual sensor values.
-The vehicle will not move if <strong>any</strong> <em>considered sensor data</em> is below the minimum allowed separation.</p>
-<blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
-<p> Generally 45 degrees is a good compromise value. 
-  Using a larger angle reduces the chance of clipping obstacles, but can make it feel like the vehicle is &quot;always getting &quot;stuck&quot; (as you&apos;re more likely to detect an obstacle within the minimum distance).</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span id="MPC_COL_PREV_DLY"></span><a href="../advanced_config/parameter_reference.html#MPC_COL_PREV_D">MPC_COL_PREV_D</a></td>
+<td>Set the minimum allowed distance (the closest distance that the vehicle can approach the obstacle). Set negative to disable <em>collision prevention</em>. <br>&gt; <strong>Warning</strong> This value is the distance to the sensors, not the outside of your vehicle or propellers. Be sure to leave a safe margin!</td>
+</tr>
+<tr>
+<td><span id="MPC_COL_PREV_DLY"></span><a href="../advanced_config/parameter_reference.html#MPC_COL_PREV_DLY">MPC_COL_PREV_DLY</a></td>
+<td>Set the sensor and velocity setpoint tracking delay. See <a href="#delay_tuning">Delay Tuning</a> below.</td>
+</tr>
+<tr>
+<td><span id="MPC_COL_PREV_CNG"></span><a href="../advanced_config/parameter_reference.html#MPC_COL_PREV_CNG">MPC_COL_PREV_CNG</a></td>
+<td>Set the angle (to both sides of the commanded direction) within which the vehicle may deviate if it finds fewer obstacles in that direction. See <a href="#angle_change_tuning">Guidance Tuning</a> below.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="algorithm"><a name="algorithm" class="plugin-anchor" href="#algorithm"><i class="fa fa-link" aria-hidden="true"></i></a>Algorithm Description </h2>
+<p>The data from all sensors are fused into an internal representation of 36 sectors around the vehicle, each containing either the sensor data and information about when it was last observed, or an indication that no data for the sector was available.
+When the vehicle is commanded to move in a particular direction, all sectors in the hemisphere of that direction are checked to see if the movement will bring the vehicle closer to any obstacles.
+If so, the vehicle velocity is restricted.</p>
+<p>This velocity restriction takes into account both the inner velocity loop tuned by <a href="../advanced_config/parameter_reference.html#MPC_XY_P">MPC_XY_P</a>, as well as the <a href="../config_mc/mc_jerk_limited_type_trajectory.html">jerk-optimal velocity controller</a> via <a href="../advanced_config/parameter_reference.html#MPC_JERK_MAX">MPC_JERK_MAX</a> and <a href="../advanced_config/parameter_reference.html#MPC_ACC_HOR">MPC_ACC_HOR</a>.
+The velocity is restricted such that the vehicle will stop in time to maintain the distance specified in <a href="#MPC_COL_PREV_D">MPC_COL_PREV_D</a>.
+The range of the sensors for each sector is also taken into account, limiting the velocity via the same mechanism.</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> If there is no sensor data in a particular direction, velocity in that direction is restricted to 0 (preventing the vehicle from crashing into unseen objects).</p>
 </blockquote>
-<p>The diagrams below are used to illustrate how the setting works, where:</p>
-<ul>
-<li>The minimum distance (separation) <code>MPC_COL_PREV_D = 4m</code>, and the sensor range is 12m.</li>
-<li>The pink line shows where the user is trying to move the vehicle (this is the same for both diagrams).</li>
-<li>The blue line shows the angle where received sensor data <em>can be used</em> (and what will be discarded).<ul>
-<li>This is equal to double <code>MPC_COL_PREV_ANG</code> degrees centred on the commanded setpoint.</li>
-<li>On the left diagram the <code>MPC_COL_PREV_D</code> angle is 90 degrees, so all sensor data from the right hand side of the blue line is included.</li>
-<li>On the right the angle is 45 degrees, resulting in a smaller set of sensor data being used (note the sensor data close to the obstacle is excluded!)</li>
-</ul>
-</li>
-<li>The red arc shows the angle where sensor data <em>will be used</em>.
-This is the subset of sensors that are both in range of an obstacle, and within the angle defined by the blue line.</li>
-</ul>
-<p><img src="../../assets/computer_vision/collision_prevention_angle.png" alt="MPC_COL_PREV_ANG image"></p>
-<p>The vehicle on the left specifies a large angle, causing the collision prevention algorithm to consider sensor data that is within the 4m minimum separation.
-As a result the commanded setpoint is ignored (vehicle doesn&apos;t move).</p>
-<p>The vehicle on the right uses an angle that causes the collision prevention algorithm to discard the sensor data that is closest to the obstacle.
-The vehicle is can move in the commanded direction, albeit perhaps at a reduced velocity.</p>
+<p>Delay, both in the vehicle tracking velocity setpoints and in receiving sensor data from external sources, is conservatively estimated via the <a href="#MPC_COL_PREV_DLY">MPC_COL_PREV_DLY</a> parameter.
+This should be <a href="#delay_tuning">tuned</a> to the specific vehicle.</p>
+<p>If the sectors adjacent to the commanded sectors are &apos;better&apos; by a significant margin, the direction of the requested input can be modified by up to the angle specified in <a href="#MPC_COL_PREV_CNG">MPC_COL_PREV_CNG</a>.
+This helps to fine-tune user input to &apos;guide&apos; the vehicle around obstacles rather than getting stuck against them.</p>
+<h3 id="delay_tuning"><a name="delay_tuning" class="plugin-anchor" href="#delay_tuning"><i class="fa fa-link" aria-hidden="true"></i></a>MPC_COL_PREV_DLY Delay Tuning </h3>
+<p>There are two main sources of delay which should be accounted for: <em>sensor delay</em>, and vehicle <em>velocity setpoint tracking delay</em>.
+Both sources of delay are tuned using the <a href="#MPC_COL_PREV_DLY">MPC_COL_PREV_DLY</a> parameter.</p>
+<!-- Not yet answered (fully) how to get sensor delay and how interacts with the setpoint tracking delay.
+  From @jkflying
+    Characterizing sensor delay is a huge pain. 
+    We did it by overlaying a known-low-latency sensor onto our unknown sensor, and then applying movements. 
+    Not sure if there is a better way. -->
+<p>The <em>sensor delay</em> for distance sensors connected directly to the flight controller can be assumed to be 0.
+For external vision-based systems the sensor delay may be as high as 0.2s.</p>
+<p>Vehicle <em>velocity setpoint tracking delay</em> can be measured by flying at full speed in <a href="../flight_modes/position_mc.html">Position mode</a>, then commanding a stop.
+The delay between the actual velocity and the velocity setpoint can then be measured from the logs.
+The tracking delay is typically between 0.1 and 0.5 seconds, depending on vehicle size and tuning.</p>
+<blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
+<p> If vehicle speed oscillates as it approaches the obstacle (i.e. it slows down, speeds up, slows down) the delay is set too high.</p>
+</blockquote>
+<h3 id="angle_change_tuning"><a name="angle_change_tuning" class="plugin-anchor" href="#angle_change_tuning"><i class="fa fa-link" aria-hidden="true"></i></a>MPC_COL_PREV_CNG Guidance Tuning </h3>
+<p>Depending on the vehicle, type of environment and pilot skill different amounts of guidance may be desired.
+Setting the <a href="../advanced_config/parameter_reference.html#MPC_COL_PREV_CNG">MPC_COL_PREV_CNG</a> parameter to 0 will disable the guidance, resulting in the vehicle only moving exactly in the directions commanded.
+Increasing this parameter will let the vehicle choose optimal directions to avoid obstacles, making it easier to fly through tight gaps and to keep the minimum distance exactly while going around objects.</p>
+<p>If this parameter is too small the vehicle may feel &apos;stuck&apos; when close to obstacles, because only movement away from obstacles at minimum distance are allowed.
+If the parameter is too large the vehicle may feel like it &apos;slides&apos; away from obstacles in directions not commanded by the operator.
+From testing, 30 degrees is a good balance, although different vehicles may have different requirements.</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> The guidance feature will never direct the vehicle in a direction without sensor data.
+  If the vehicle feels &apos;stuck&apos; with only a single distance sensor pointing forwards, this is probably because the guidance cannot safely adapt the direction due to lack of information.</p>
+</blockquote>
 <h2 id="rangefinder"><a name="rangefinder" class="plugin-anchor" href="#rangefinder"><i class="fa fa-link" aria-hidden="true"></i></a>PX4 Distance Sensor </h2>
 <p>At time of writing PX4 allows you to use the <a href="../sensor/cm8jl65_ir_distance_sensor.html">Lanbao PSK-CM8JL65-CC5</a> IR distance sensor for collision prevention &quot;out of the box&quot;, with minimal additional configuration:</p>
 <ul>
@@ -3218,30 +3249,30 @@ The vehicle is can move in the commanded direction, albeit perhaps at a reduced 
 <p>Other sensors may be enabled, but this requires modification of driver code to set the sensor orientation and field of view.</p>
 <ul>
 <li>Attach and configure the distance sensor on a particular port (see <a href="../sensor/rangefinders.html">sensor-specific docs</a>) and enable collision prevention using <code>MPC_COL_PREV_D</code>.</li>
-<li>Modify the driver to set the orientation. 
+<li>Modify the driver to set the orientation.
 This should be done by mimicking the <code>SENS_CM8JL65_R_0</code> parameter (though you might also hard-code the orientation in the sensor <em>module.yaml</em> file to something like <code>sf0x start -d ${SERIAL_DEV} -R 25</code> - where 25 is equivalent to <code>ROTATION_DOWNWARD_FACING</code>).</li>
 <li>Modify the driver to set the <em>field of view</em> in the distance sensor UORB topic (<code>distance_sensor_s.h_fov</code>).</li>
 </ul>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
-<p> You can see the required modifications from the <a href="https://github.com/PX4/Firmware/pull/12179" target="_blank">feature PR</a>. 
+<p> You can see the required modifications from the <a href="https://github.com/PX4/Firmware/pull/12179" target="_blank">feature PR</a>.
   Please contribute back your changes!</p>
 </blockquote>
 <h2 id="companion"><a name="companion" class="plugin-anchor" href="#companion"><i class="fa fa-link" aria-hidden="true"></i></a>Companion Setup </h2>
-<p>If using a companion computer, it needs to supply a stream of <a href="https://mavlink.io/en/messages/common.html#OBSTACLE_DISTANCE" target="_blank">OBSTACLE_DISTANCE</a> messages when an obstacle is detected.</p>
+<p>If using a companion computer or external sensor, it needs to supply a stream of <a href="https://mavlink.io/en/messages/common.html#OBSTACLE_DISTANCE" target="_blank">OBSTACLE_DISTANCE</a> messages, which should reflect when and where obstacle were detected.</p>
 <p>The minimum rate at which messages <em>must</em> be sent depends on vehicle speed - at higher rates the vehicle will have a longer time to respond to detected obstacles.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-info"></strong>
-<p> Initial testing of the system used a vehicle moving at 4 m/s with <code>OBSTACLE_DISTANCE</code> messages being emitted at 30Hz (the maximum rate supported by the vision system).
-  The system may work well at significantly higher speeds and lower frequency distance updates. </p>
+<p> Initial testing of the system used a vehicle moving at 4 m/s with <code>OBSTACLE_DISTANCE</code> messages being emitted at 10Hz (the maximum rate supported by the vision system).
+  The system may work well at significantly higher speeds and lower frequency distance updates.</p>
 </blockquote>
 <p>The tested hardware/software platform is <a href="https://auterion.com/if750a/" target="_blank">Auterion IF750A</a> reference multicopter running the <em>local_planner</em> avoidance software from the <a href="https://github.com/PX4/avoidance#obstacle-detection-and-avoidance" target="_blank">PX4/avoidance</a> repo.</p>
 <p>The hardware and software should be set up as described in the <a href="https://github.com/PX4/avoidance#obstacle-detection-and-avoidance" target="_blank">PX4/avoidance</a> repo.
-In order to emit <code>OBSTACLE_DISTANCE</code> messages you must use the <em>rqt_reconfigure</em> tool and set the parameter <code>send_obstacles_fcu</code> to true. </p>
+In order to emit <code>OBSTACLE_DISTANCE</code> messages you must use the <em>rqt_reconfigure</em> tool and set the parameter <code>send_obstacles_fcu</code> to true.</p>
 <h2 id="gazebo-setup"><a name="gazebo-setup" class="plugin-anchor" href="#gazebo-setup"><i class="fa fa-link" aria-hidden="true"></i></a>Gazebo Setup</h2>
 <p><em>Collision Prevention</em> can also be tested using Gazebo.
 See <a href="https://github.com/PX4/avoidance#obstacle-detection-and-avoidance" target="_blank">PX4/avoidance</a> for setup instructions.</p>
 <!-- PR companion collision prevention (initial): https://github.com/PX4/Firmware/pull/10785 -->
 <!-- PR for FC sensor collision prevention: https://github.com/PX4/Firmware/pull/12179 -->
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-10-01 22:16:51 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-10-01 22:29:06 </span> </footer>
                                 
                                 </section>
                             
@@ -3284,7 +3315,7 @@ See <a href="https://github.com/PX4/avoidance#obstacle-detection-and-avoidance" 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Collision Prevention","level":"1.8.7","depth":2,"next":{"title":"Path Planning Interface","level":"1.8.8","depth":2,"path":"computer_vision/path_planning_interface.md","ref":"computer_vision/path_planning_interface.md","articles":[]},"previous":{"title":"Safe Landing","level":"1.8.6","depth":2,"path":"computer_vision/safe_landing.md","ref":"computer_vision/safe_landing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"computer_vision/collision_prevention.md","mtime":"2019-10-01T22:16:51.677Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-01T22:18:21.348Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Collision Prevention","level":"1.8.7","depth":2,"next":{"title":"Path Planning Interface","level":"1.8.8","depth":2,"path":"computer_vision/path_planning_interface.md","ref":"computer_vision/path_planning_interface.md","articles":[]},"previous":{"title":"Safe Landing","level":"1.8.6","depth":2,"path":"computer_vision/safe_landing.md","ref":"computer_vision/safe_landing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"computer_vision/collision_prevention.md","mtime":"2019-10-01T22:29:06.215Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-01T22:31:15.757Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
