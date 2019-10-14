@@ -3392,7 +3392,8 @@ Tuning is easier if this testing is conducted in still conditions.</p>
 <li>External vision system orientation data will be used for yaw estimation if bit position 4 in the <a href="parameter_reference.html#EKF2_AID_MASK">EKF2_AID_MASK</a> parameter is true.</li>
 <li>External vision reference frame offset will be estimated and used to rotate the external vision system data if bit position 6 in the <a href="parameter_reference.html#EKF2_AID_MASK">EKF2_AID_MASK</a> parameter is true.</li>
 </ul>
-<p>Either bit 4 or bit 6 should be set to true. Following <a href="parameter_reference.html#EKF2_AID_MASK">EKF2_AID_MASK</a> values are supported when using with an external vision system.</p>
+<p>Either bit 4 or bit 6 should be set to true.
+Following <a href="parameter_reference.html#EKF2_AID_MASK">EKF2_AID_MASK</a> values are supported when using with an external vision system.</p>
 <table>
 <thead>
 <tr>
@@ -3405,42 +3406,42 @@ Tuning is easier if this testing is conducted in still conditions.</p>
 <tr>
 <td>321</td>
 <td>GPS + EV_VEL + ROTATE_EV</td>
-<td><em>recommended</em>, heading w.r.t. North</td>
+<td>Heading w.r.t. North (<strong>Recommended</strong>) </td>
 </tr>
 <tr>
 <td>73</td>
 <td>GPS + EV_POS + ROTATE_EV</td>
-<td><em>not recommended</em>, use EV_VEL instead, heading w.r.t. North</td>
+<td>Heading w.r.t. North (<em>Not recommended</em>, use <code>EV_VEL</code> instead)</td>
 </tr>
 <tr>
 <td>24</td>
 <td>EV_POS + EV_YAW</td>
-<td>heading w.r.t. external vision frame</td>
+<td>Heading w.r.t. external vision frame</td>
 </tr>
 <tr>
 <td>72</td>
 <td>EV_POS + ROTATE_EV</td>
-<td>heading w.r.t. North</td>
+<td>Heading w.r.t. North</td>
 </tr>
 <tr>
 <td>272</td>
 <td>EV_VEL + EV_YAW</td>
-<td>heading w.r.t. external vision frame</td>
+<td>hHading w.r.t. external vision frame</td>
 </tr>
 <tr>
 <td>320</td>
 <td>EV_VEL + ROTATE_EV</td>
-<td>heading w.r.t. North</td>
+<td>Heading w.r.t. North</td>
 </tr>
 <tr>
 <td>280</td>
 <td>EV_POS + EV_VEL + EV_YAW</td>
-<td>heading w.r.t. external vision frame</td>
+<td>Heading w.r.t. external vision frame</td>
 </tr>
 <tr>
 <td>328</td>
 <td>EV_POS + EV_VEL + ROTATE_EV</td>
-<td>heading w.r.t. North</td>
+<td>Heading w.r.t. North</td>
 </tr>
 </tbody>
 </table>
@@ -3469,7 +3470,8 @@ This should provide the potential for improved attitude estimation if tuned corr
 </ul>
 <h2 id="how-do-i-check-the-ekf-performance"><a name="how-do-i-check-the-ekf-performance" class="plugin-anchor" href="#how-do-i-check-the-ekf-performance"><i class="fa fa-link" aria-hidden="true"></i></a>How do I check the EKF performance?</h2>
 <p>EKF outputs, states and status data are published to a number of uORB topics which are logged to the SD card during flight. 
-The following guide assumes that data has been logged using the <em>.ulog file format</em>. The .ulog format data can be parsed in python by using the <a href="https://github.com/PX4/pyulog" target="_blank">PX4 pyulog library</a>.</p>
+The following guide assumes that data has been logged using the <em>.ulog file format</em>.
+The <strong>.ulog</strong> format data can be parsed in python by using the <a href="https://github.com/PX4/pyulog" target="_blank">PX4 pyulog library</a>.</p>
 <p>Most of the EKF data is found in the <a href="https://github.com/PX4/Firmware/blob/master/msg/ekf2_innovations.msg" target="_blank">ekf2_innovations</a> and <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_status.msg" target="_blank">estimator_status</a> uORB messages that are logged to the .ulog file.</p>
 <p>A python script that automatically generates analysis plots and metadata can be found <a href="https://github.com/PX4/Firmware/blob/master/Tools/ecl_ekf/process_logdata_ekf.py" target="_blank">here</a>. 
 To use this script file, cd to the <code>Tools/ecl_ekf</code> directory and enter <code>python process_logdata_ekf.py &lt;log_file.ulg&gt;</code>. 
@@ -3548,10 +3550,13 @@ To check the magnitude of the angular, velocity and position tracking errors mea
 <li>[1] Velocity tracking error magnitude (m/s). 
 The velocity tracking time constant can be adjusted using the <a href="parameter_reference.html#EKF2_TAU_VEL">EKF2_TAU_VEL</a> parameter.
 Reducing this parameter reduces steady state errors but increases the amount of observation noise on the NED velocity outputs.</li>
-<li>[2] Position tracking error magnitude (m). The position tracking time constant can be adjusted using the <a href="parameter_reference.html#EKF2_TAU_POS">EKF2_TAU_POS</a> parameter. Reducing this parameter reduces steady state errors but increases the amount of observation noise on the NED position outputs.</li>
+<li>[2] Position tracking error magnitude (m).
+The position tracking time constant can be adjusted using the <a href="parameter_reference.html#EKF2_TAU_POS">EKF2_TAU_POS</a> parameter.
+Reducing this parameter reduces steady state errors but increases the amount of observation noise on the NED position outputs.</li>
 </ul>
 <h3 id="ekf-errors"><a name="ekf-errors" class="plugin-anchor" href="#ekf-errors"><i class="fa fa-link" aria-hidden="true"></i></a>EKF Errors</h3>
-<p>The EKF contains internal error checking for badly conditioned state and covariance updates. Refer to the filter_fault_flags in <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_status.msg" target="_blank">estimator_status</a>.</p>
+<p>The EKF contains internal error checking for badly conditioned state and covariance updates.
+Refer to the filter_fault_flags in <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_status.msg" target="_blank">estimator_status</a>.</p>
 <h3 id="observation-errors"><a name="observation-errors" class="plugin-anchor" href="#observation-errors"><i class="fa fa-link" aria-hidden="true"></i></a>Observation Errors</h3>
 <p>There are two categories of observation faults:</p>
 <ul>
@@ -3580,7 +3585,8 @@ The pass/fail status for these checks is logged in the <a href="https://github.c
 This integer will be zero when all required GPS checks have passed. 
 If the EKF is not commencing GPS alignment, check the value of the integer against the bitmask definition <code>gps_check_fail_flags</code> in <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_status.msg" target="_blank">estimator_status</a>.</p>
 <h3 id="ekf-numerical-errors"><a name="ekf-numerical-errors" class="plugin-anchor" href="#ekf-numerical-errors"><i class="fa fa-link" aria-hidden="true"></i></a>EKF Numerical Errors</h3>
-<p>The EKF uses single precision floating point operations for all of its computations and first order approximations for derivation of the covariance prediction and update equations in order to reduce processing requirements. This means that it is possible when re-tuning the EKF to encounter conditions where the covariance matrix operations become badly conditioned enough to cause divergence or significant errors in the state estimates.</p>
+<p>The EKF uses single precision floating point operations for all of its computations and first order approximations for derivation of the covariance prediction and update equations in order to reduce processing requirements.
+This means that it is possible when re-tuning the EKF to encounter conditions where the covariance matrix operations become badly conditioned enough to cause divergence or significant errors in the state estimates.</p>
 <p>To prevent this, every covariance and state update step contains the following error detection and correction steps:</p>
 <ul>
 <li>If the innovation variance is less than the observation variance (this requires a negative state variance which is impossible) or the covariance update will produce a negative variance for any of the states, then:<ul>
@@ -3607,8 +3613,10 @@ As a general rule, the 6 resonant frequencies of the autopilot on the isolation 
 <p>An isolation mount can make vibration worse if the resonant frequencies coincide with motor or propeller blade passage frequencies.</p>
 <p>The EKF can be made more resistant to vibration induced height divergence by making the following parameter changes:</p>
 <ul>
-<li>Double the value of the innovation gate for the primary height sensor. If using barometric height this is <a href="parameter_reference.html#EKF2_BARO_GATE">EKF2_BARO_GATE</a>.</li>
-<li>Increase the value of <a href="parameter_reference.html#EKF2_ACC_NOISE">EKF2_ACC_NOISE</a> to 0.5 initially. If divergence is still occurring, increase in further increments of 0.1 but do not go above 1.0</li>
+<li>Double the value of the innovation gate for the primary height sensor.
+If using barometric height this is <a href="parameter_reference.html#EKF2_BARO_GATE">EKF2_BARO_GATE</a>.</li>
+<li>Increase the value of <a href="parameter_reference.html#EKF2_ACC_NOISE">EKF2_ACC_NOISE</a> to 0.5 initially.
+If divergence is still occurring, increase in further increments of 0.1 but do not go above 1.0</li>
 </ul>
 <p>Note that the effect of these changes will make the EKF more sensitive to errors in GPS vertical velocity and barometric pressure.</p>
 <h2 id="what-should-i-do-if-the-position-estimate-is-diverging"><a name="what-should-i-do-if-the-position-estimate-is-diverging" class="plugin-anchor" href="#what-should-i-do-if-the-position-estimate-is-diverging"><i class="fa fa-link" aria-hidden="true"></i></a>What should I do if the position estimate is diverging?</h2>
@@ -3667,7 +3675,8 @@ Magnetometer test levels are only affected to a small extent.</p>
 <p>(insert example plots showing bad vibration here)</p>
 <h3 id="determination-of-excessive-gyro-bias"><a name="determination-of-excessive-gyro-bias" class="plugin-anchor" href="#determination-of-excessive-gyro-bias"><i class="fa fa-link" aria-hidden="true"></i></a>Determination of Excessive Gyro Bias</h3>
 <p>Large gyro bias offsets are normally characterised by a change in the value of delta angle bias greater than 5E-4 during flight (equivalent to ~3 deg/sec) and can also cause a large increase in the magnetometer test ratio if the yaw axis is affected. 
-Height is normally unaffected other than extreme cases. Switch on bias value of up to 5 deg/sec can be tolerated provided the filter is given time time settle before flying. 
+Height is normally unaffected other than extreme cases.
+Switch on bias value of up to 5 deg/sec can be tolerated provided the filter is given time time settle before flying. 
 Pre-flight checks performed by the commander should prevent arming if the position is diverging.</p>
 <p>(insert example plots showing bad gyro bias here)</p>
 <h3 id="determination-of-poor-yaw-accuracy"><a name="determination-of-poor-yaw-accuracy" class="plugin-anchor" href="#determination-of-poor-yaw-accuracy"><i class="fa fa-link" aria-hidden="true"></i></a>Determination of Poor Yaw Accuracy</h3>
@@ -3676,7 +3685,8 @@ Magnetometer innovations are slightly affected.
 Height is normally unaffected.</p>
 <p>(insert example plots showing bad yaw alignment here)</p>
 <h3 id="determination-of-poor-gps-accuracy"><a name="determination-of-poor-gps-accuracy" class="plugin-anchor" href="#determination-of-poor-gps-accuracy"><i class="fa fa-link" aria-hidden="true"></i></a>Determination of Poor GPS Accuracy</h3>
-<p>Poor GPS accuracy is normally accompanied by a rise in the reported velocity error of the receiver in conjunction with a rise in innovations. Transient errors due to multipath, obscuration and interference are more common causes. 
+<p>Poor GPS accuracy is normally accompanied by a rise in the reported velocity error of the receiver in conjunction with a rise in innovations.
+Transient errors due to multipath, obscuration and interference are more common causes. 
 Here is an example of a temporary loss of GPS accuracy where the multi-rotor started drifting away from its loiter location and had to be corrected using the sticks. 
 The rise in <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_status.msg" target="_blank">estimator_status</a>.vel_test_ratio to greater than 1 indicates the GPs velocity was inconsistent with other measurements and has been rejected.</p>
 <p><img src="../../assets/ecl/gps_glitch_-_test_ratios.png" alt="GPS glitch - test ratios"></p>
@@ -3710,7 +3720,7 @@ If no terrain estimate is available this parameter will have no effect and the s
 <ul>
 <li><a href="https://youtu.be/HkYRJJoyBwQ" target="_blank">PX4 State Estimation Overview</a>, <em>PX4 Developer Summit 2019</em>, Dr. Paul Riseborough): Overview of the estimator, and major changes from 2018/19, and the expected improvements through 2019/20. </li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-10-14 01:58:41 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-10-14 02:08:50 </span> </footer>
                                 
                                 </section>
                             
@@ -3753,7 +3763,7 @@ If no terrain estimate is available this parameter will have no effect and the s
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ECL/EKF Overview & Tuning","level":"1.9.6","depth":2,"next":{"title":"Flight Termination Configuration","level":"1.9.7","depth":2,"path":"advanced_config/flight_termination.md","ref":"advanced_config/flight_termination.md","articles":[]},"previous":{"title":"ESC Calibration","level":"1.9.5","depth":2,"path":"advanced_config/esc_calibration.md","ref":"advanced_config/esc_calibration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"advanced_config/tuning_the_ecl_ekf.md","mtime":"2019-10-14T01:58:41.864Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-14T02:00:11.886Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"ECL/EKF Overview & Tuning","level":"1.9.6","depth":2,"next":{"title":"Flight Termination Configuration","level":"1.9.7","depth":2,"path":"advanced_config/flight_termination.md","ref":"advanced_config/flight_termination.md","articles":[]},"previous":{"title":"ESC Calibration","level":"1.9.5","depth":2,"path":"advanced_config/esc_calibration.md","ref":"advanced_config/esc_calibration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"advanced_config/tuning_the_ecl_ekf.md","mtime":"2019-10-14T02:08:50.034Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-14T02:10:38.301Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
