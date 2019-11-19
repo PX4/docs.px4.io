@@ -3228,9 +3228,13 @@ This frees it of the need of any desktop system.</p>
 <p><img src="../../assets/flight_controller/pixracer/grau_acsp4_2_roh.jpg" alt="Grau ACSP4 2 roh"></p>
 <p><img src="../../assets/flight_controller/pixracer/grau_acsp5_roh.jpg" alt="Grau ACSP5 roh"></p>
 <h2 id="connectors"><a name="connectors" class="plugin-anchor" href="#connectors"><i class="fa fa-link" aria-hidden="true"></i></a>Connectors</h2>
-<p>All connectors follow the <a href="https://wiki.dronecode.org/workgroup/connectors/start" target="_blank">Dronecode connector standard</a>. Unless noted otherwise all connectors are JST GH.</p>
+<p>All connectors follow the <a href="https://pixhawk.org/pixhawk-connector-standard/" target="_blank">Pixhawk connector standard</a>.
+Unless noted otherwise all connectors are JST GH.</p>
 <h2 id="pinouts"><a name="pinouts" class="plugin-anchor" href="#pinouts"><i class="fa fa-link" aria-hidden="true"></i></a>Pinouts</h2>
-<p>TELEM1, TELEM2+OSD ports</p>
+<p><img src="../../assets/flight_controller/pixracer/pixracer_r09_top_pinouts.jpg" alt="Pixracer top pinouts"></p>
+<p><img src="../../assets/flight_controller/pixracer/pixracer_r09_bot_pinouts.jpg" alt="Pixracer bottom pinouts"></p>
+<p><img src="../../assets/flight_controller/pixracer/pixracer_r09_esp_01.jpg" alt="Pixracer esp"></p>
+<h4 id="telem1-telem2osd-ports"><a name="telem1-telem2osd-ports" class="plugin-anchor" href="#telem1-telem2osd-ports"><i class="fa fa-link" aria-hidden="true"></i></a>TELEM1, TELEM2+OSD ports</h4>
 <table>
 <thead>
 <tr>
@@ -3272,7 +3276,7 @@ This frees it of the need of any desktop system.</p>
 </tr>
 </tbody>
 </table>
-<p>GPS port</p>
+<h4 id="gps-port"><a name="gps-port" class="plugin-anchor" href="#gps-port"><i class="fa fa-link" aria-hidden="true"></i></a>GPS port</h4>
 <table>
 <thead>
 <tr>
@@ -3314,7 +3318,7 @@ This frees it of the need of any desktop system.</p>
 </tr>
 </tbody>
 </table>
-<p>FrSky Telemetry / SERIAL4</p>
+<h4 id="frsky-telemetry--serial4"><a name="frsky-telemetry--serial4" class="plugin-anchor" href="#frsky-telemetry--serial4"><i class="fa fa-link" aria-hidden="true"></i></a>FrSky Telemetry / SERIAL4</h4>
 <table>
 <thead>
 <tr>
@@ -3346,7 +3350,7 @@ This frees it of the need of any desktop system.</p>
 </tr>
 </tbody>
 </table>
-<p>RC Input (accepts PPM / S.BUS / Spektrum / SUMD / ST24)</p>
+<h4 id="rc-input-accepts-ppm--sbus--spektrum--sumd--st24"><a name="rc-input-accepts-ppm--sbus--spektrum--sumd--st24" class="plugin-anchor" href="#rc-input-accepts-ppm--sbus--spektrum--sumd--st24"><i class="fa fa-link" aria-hidden="true"></i></a>RC Input (accepts PPM / S.BUS / Spektrum / SUMD / ST24)</h4>
 <table>
 <thead>
 <tr>
@@ -3383,7 +3387,7 @@ This frees it of the need of any desktop system.</p>
 </tr>
 </tbody>
 </table>
-<p>CAN</p>
+<h4 id="can"><a name="can" class="plugin-anchor" href="#can"><i class="fa fa-link" aria-hidden="true"></i></a>CAN</h4>
 <table>
 <thead>
 <tr>
@@ -3415,7 +3419,7 @@ This frees it of the need of any desktop system.</p>
 </tr>
 </tbody>
 </table>
-<p>POWER</p>
+<h4 id="power"><a name="power" class="plugin-anchor" href="#power"><i class="fa fa-link" aria-hidden="true"></i></a>POWER</h4>
 <table>
 <thead>
 <tr>
@@ -3457,7 +3461,7 @@ This frees it of the need of any desktop system.</p>
 </tr>
 </tbody>
 </table>
-<p>SWITCH</p>
+<h4 id="switch"><a name="switch" class="plugin-anchor" href="#switch"><i class="fa fa-link" aria-hidden="true"></i></a>SWITCH</h4>
 <table>
 <thead>
 <tr>
@@ -3494,7 +3498,8 @@ This frees it of the need of any desktop system.</p>
 </tr>
 </tbody>
 </table>
-<p>Dronecode debug port (JST SM06B connector)</p>
+<h4 id="debug-port-jst-sm06b-connector"><a name="debug-port-jst-sm06b-connector" class="plugin-anchor" href="#debug-port-jst-sm06b-connector"><i class="fa fa-link" aria-hidden="true"></i></a>Debug Port (JST SM06B connector)</h4>
+<p>Dronecode debug port.</p>
 <table>
 <thead>
 <tr>
@@ -3536,9 +3541,6 @@ This frees it of the need of any desktop system.</p>
 </tr>
 </tbody>
 </table>
-<p><img src="../../assets/flight_controller/pixracer/pixracer_r09_top_pinouts.jpg" alt="Pixracer top pinouts"></p>
-<p><img src="../../assets/flight_controller/pixracer/pixracer_r09_bot_pinouts.jpg" alt="Pixracer bottom pinouts"></p>
-<p><img src="../../assets/flight_controller/pixracer/pixracer_r09_esp_01.jpg" alt="Pixracer esp"></p>
 <h2 id="schematics"><a name="schematics" class="plugin-anchor" href="#schematics"><i class="fa fa-link" aria-hidden="true"></i></a>Schematics</h2>
 <p>The reference is provided as: <a href="https://github.com/AUAV-OpenSource/FMUv4-PixRacer" target="_blank">Altium Design Files</a></p>
 <p>The following PDF files are provided for <em>convenience only</em>:</p>
@@ -3555,7 +3557,7 @@ This frees it of the need of any desktop system.</p>
 <pre><code>make px4_fmu-v4_default
 </code></pre><h2 id="credits"><a name="credits" class="plugin-anchor" href="#credits"><i class="fa fa-link" aria-hidden="true"></i></a>Credits</h2>
 <p>This design was created by Nick Arsov and Phillip Kocmoud and architected by Lorenz Meier, David Sidrane and Leonard Hall.</p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-11-19 03:28:29 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-11-19 03:43:09 </span> </footer>
                                 
                                 </section>
                             
@@ -3598,7 +3600,7 @@ This frees it of the need of any desktop system.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"mRo Pixracer","level":"1.11.1.7","depth":3,"next":{"title":"Hex Cube (Pixhawk 2)","level":"1.11.1.8","depth":3,"path":"flight_controller/pixhawk-2.md","ref":"flight_controller/pixhawk-2.md","articles":[]},"previous":{"title":"Drotek Dropix","level":"1.11.1.6","depth":3,"path":"flight_controller/dropix.md","ref":"flight_controller/dropix.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"flight_controller/pixracer.md","mtime":"2019-11-19T03:28:29.846Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-19T03:29:46.367Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"mRo Pixracer","level":"1.11.1.7","depth":3,"next":{"title":"Hex Cube (Pixhawk 2)","level":"1.11.1.8","depth":3,"path":"flight_controller/pixhawk-2.md","ref":"flight_controller/pixhawk-2.md","articles":[]},"previous":{"title":"Drotek Dropix","level":"1.11.1.6","depth":3,"path":"flight_controller/dropix.md","ref":"flight_controller/dropix.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"flight_controller/pixracer.md","mtime":"2019-11-19T03:43:09.074Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-19T03:43:29.442Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
