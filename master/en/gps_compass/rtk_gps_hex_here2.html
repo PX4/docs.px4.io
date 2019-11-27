@@ -3371,49 +3371,46 @@
 </table>
 <h2 id="specification"><a name="specification" class="plugin-anchor" href="#specification"><i class="fa fa-link" aria-hidden="true"></i></a>Specification</h2>
 <ul>
-<li>Processor: STM32F302</li>
-<li>Sensor<ul>
-<li>Compass, Gyro, Accelerometer: ICM20948</li>
-<li>Barometer: MS5611</li>
+<li><strong>Processor:</strong> STM32F302</li>
+<li><strong>Sensor</strong><ul>
+<li><strong>Compass, Gyro, Accelerometer:</strong> ICM20948</li>
+<li><strong>Barometer:</strong> MS5611</li>
 </ul>
 </li>
-<li>Receiver Type:<ul>
-<li>72-channel ublox M8N engine, GPS/QZSS L2 C/A, GLONASS L10F, BeiDou B11, Galileo E1B/C, SBAS L1 C/A: WAAS, EGNOS, MSAS, GAGAN</li>
+<li><strong>Receiver Type:</strong> 72-channel ublox M8N engine, GPS/QZSS L2 C/A, GLONASS L10F, BeiDou B11, Galileo E1B/C, SBAS L1 C/A: WAAS, EGNOS, MSAS, GAGAN</li>
+<li><strong>Navigation Update Rate:</strong> Max: 10 Hz</li>
+<li><strong>Positionaing Accuracy:</strong> 3D Fix</li>
+<li><strong>Time to first fix:</strong><ul>
+<li><strong>Cold start:</strong> 26s</li>
+<li><strong>Aided start:</strong> 2s</li>
+<li><strong>Reacquisition:</strong> 1s</li>
 </ul>
 </li>
-<li>Navigation Update Rate: Max: 10 Hz</li>
-<li>Positionaing Accuracy: 3D Fix</li>
-<li>Time to first fix<ul>
-<li>Cold start: 26s</li>
-<li>Aided start: 2s</li>
-<li>Reacquisition: 1s</li>
+<li><strong>Sensitivity:</strong><ul>
+<li><strong>Tracking &amp; Navigation:</strong> -167 dBm</li>
+<li><strong>Hot start:</strong> -148 dBm</li>
+<li><strong>Cold start:</strong> -157 dBm</li>
 </ul>
 </li>
-<li>Sensitivity<ul>
-<li>Tracking &amp; Navigation: -167 dBm</li>
-<li>Hot start: -148 dBm</li>
-<li>Cold start: -157 dBm</li>
-</ul>
-</li>
-<li>Assisted GNSS<ul>
+<li><strong>Assisted GNSS</strong><ul>
 <li>AssistNow GNSS Online</li>
 <li>AssistNow GNSS Offline (up to 35 days)</li>
 <li>AssistNow Autonomous (up to 6 days)</li>
 <li>OMA SUPL&amp; 3GPP compliant</li>
 </ul>
 </li>
-<li>Oscillator: TCXO (NEO-8MN/Q)</li>
-<li>RTC crystal: Build in</li>
-<li>ROM: Flash (NEO-8MN)</li>
-<li>Available Antennas: Active Antenna &amp; Passive Antenna</li>
-<li>Signal Integrity: Signature feature with SHA 256</li>
-<li>Protocols &amp; Interfaces<ul>
-<li>UART/I2C/CAN: JST_GH Main interface, Switch internally.</li>
-<li>STM32 Main Programming Interface: JST_SUR</li>
+<li><strong>Oscillator:</strong> TCXO (NEO-8MN/Q)</li>
+<li><strong>RTC crystal:</strong> Build in</li>
+<li><strong>ROM:</strong> Flash (NEO-8MN)</li>
+<li><strong>Available Antennas:</strong> Active Antenna &amp; Passive Antenna</li>
+<li><strong>Signal Integrity:</strong> Signature feature with SHA 256</li>
+<li><strong>Protocols &amp; Interfaces:</strong><ul>
+<li><strong>UART/I2C/CAN:</strong> JST_GH Main interface, Switch internally.</li>
+<li><strong>STM32 Main Programming Interface:</strong> JST_SUR</li>
 </ul>
 </li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-11-27 21:52:52 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-11-27 22:58:02 </span> </footer>
                                 
                                 </section>
                             
@@ -3456,7 +3453,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Hex Here2","level":"1.10.2.1.5","depth":4,"next":{"title":"Telemetry Radios","level":"1.10.3","depth":2,"path":"telemetry/README.md","ref":"telemetry/README.md","articles":[{"title":"SiK Radio","level":"1.10.3.1","depth":3,"path":"telemetry/sik_radio.md","ref":"telemetry/sik_radio.md","articles":[{"title":"RFD900 (SiK) Telemetry Radio","level":"1.10.3.1.1","depth":4,"path":"telemetry/rfd900_telemetry.md","ref":"telemetry/rfd900_telemetry.md","articles":[]},{"title":"HKPilot (SIK) Telemetry Radio","level":"1.10.3.1.2","depth":4,"path":"telemetry/hkpilot_sik_radio.md","ref":"telemetry/hkpilot_sik_radio.md","articles":[]},{"title":"HolyBro (SIK) Telemetry Radio","level":"1.10.3.1.3","depth":4,"path":"telemetry/holybro_sik_radio.md","ref":"telemetry/holybro_sik_radio.md","articles":[]}]},{"title":"Telemetry Wifi","level":"1.10.3.2","depth":3,"path":"telemetry/telemetry_wifi.md","ref":"telemetry/telemetry_wifi.md","articles":[{"title":"ESP8266 WiFi Module","level":"1.10.3.2.1","depth":4,"path":"telemetry/esp8266_wifi_module.md","ref":"telemetry/esp8266_wifi_module.md","articles":[]},{"title":"3DR Telemetry Wifi (Discontinued)","level":"1.10.3.2.2","depth":4,"path":"telemetry/3dr_telemetry_wifi.md","ref":"telemetry/3dr_telemetry_wifi.md","articles":[]}]}]},"previous":{"title":"Trimble MB-Two","level":"1.10.2.1.4","depth":4,"path":"gps_compass/rtk_gps_trimble_mb_two.md","ref":"gps_compass/rtk_gps_trimble_mb_two.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"gps_compass/rtk_gps_hex_here2.md","mtime":"2019-11-27T21:52:52.823Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-27T21:54:02.744Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Hex Here2","level":"1.10.2.1.5","depth":4,"next":{"title":"Telemetry Radios","level":"1.10.3","depth":2,"path":"telemetry/README.md","ref":"telemetry/README.md","articles":[{"title":"SiK Radio","level":"1.10.3.1","depth":3,"path":"telemetry/sik_radio.md","ref":"telemetry/sik_radio.md","articles":[{"title":"RFD900 (SiK) Telemetry Radio","level":"1.10.3.1.1","depth":4,"path":"telemetry/rfd900_telemetry.md","ref":"telemetry/rfd900_telemetry.md","articles":[]},{"title":"HKPilot (SIK) Telemetry Radio","level":"1.10.3.1.2","depth":4,"path":"telemetry/hkpilot_sik_radio.md","ref":"telemetry/hkpilot_sik_radio.md","articles":[]},{"title":"HolyBro (SIK) Telemetry Radio","level":"1.10.3.1.3","depth":4,"path":"telemetry/holybro_sik_radio.md","ref":"telemetry/holybro_sik_radio.md","articles":[]}]},{"title":"Telemetry Wifi","level":"1.10.3.2","depth":3,"path":"telemetry/telemetry_wifi.md","ref":"telemetry/telemetry_wifi.md","articles":[{"title":"ESP8266 WiFi Module","level":"1.10.3.2.1","depth":4,"path":"telemetry/esp8266_wifi_module.md","ref":"telemetry/esp8266_wifi_module.md","articles":[]},{"title":"3DR Telemetry Wifi (Discontinued)","level":"1.10.3.2.2","depth":4,"path":"telemetry/3dr_telemetry_wifi.md","ref":"telemetry/3dr_telemetry_wifi.md","articles":[]}]}]},"previous":{"title":"Trimble MB-Two","level":"1.10.2.1.4","depth":4,"path":"gps_compass/rtk_gps_trimble_mb_two.md","ref":"gps_compass/rtk_gps_trimble_mb_two.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"gps_compass/rtk_gps_hex_here2.md","mtime":"2019-11-27T22:58:02.798Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-27T23:00:04.919Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
