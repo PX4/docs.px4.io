@@ -85,7 +85,7 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../sensor/rangefinders.html" />
+    <link rel="next" href="holybro_pm07_pixhawk4_power_module.html" />
     
     
     <link rel="prev" href="cuav_hv_pm.html" />
@@ -2197,7 +2197,7 @@
                 <a href="./">
             
                     
-                    Power module
+                    Power Modules
             
                 </a>
             
@@ -2225,6 +2225,32 @@
             
                     
                     CUAV CAN PMU
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6.3" data-path="holybro_pm07_pixhawk4_power_module.html">
+            
+                <a href="holybro_pm07_pixhawk4_power_module.html">
+            
+                    
+                    Holybro PM07 (Pixhawk 4 PM)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6.4" data-path="holybro_pm06_pixhawk4mini_power_module.html">
+            
+                <a href="holybro_pm06_pixhawk4mini_power_module.html">
+            
+                    
+                    Holybro PM06 (Micro Power Module)
             
                 </a>
             
@@ -3259,101 +3285,66 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="cauv-can-pmu"><a name="cauv-can-pmu" class="plugin-anchor" href="#cauv-can-pmu"><i class="fa fa-link" aria-hidden="true"></i></a>CAUV CAN PMU</h1>
-<p><img src="../../assets/hardware/power_module/can_pmu.jpg" alt="CAN PMU"></p>
-<p>CAN PMU<sup>&#xAE;</sup> is a high-precision power module developed by CUAV<sup>&#xAE;</sup>. It uses <a href="new.uavcan.org">UAVCAN</a> protocol and runs CUAV ITT compensation algorithm, which enables drones to obtain battery data more accurately.</p>
-<p>it is recommended to use in large commercial no one. Machines can also be applied to technical research and other fields.</p>
-<h2 id="quick-summary"><a name="quick-summary" class="plugin-anchor" href="#quick-summary"><i class="fa fa-link" aria-hidden="true"></i></a>Quick Summary</h2>
+<p>CAN PMU<sup>&#xAE;</sup> is a high-precision power module developed by CUAV<sup>&#xAE;</sup>.
+It uses the <a href="https://new.uavcan.org/" target="_blank">UAVCAN</a> protocol and runs the CUAV ITT compensation algorithm, which enables drones to get the battery data more accurately.</p>
+<p><img src="../../assets/hardware/power_module/cuav_can/can_pmu.jpg" alt="CAN PMU"></p>
+<p>It is recommended for use in large commercial vehicles, but might also be used for research vehicles.</p>
+<h2 id="specifications"><a name="specifications" class="plugin-anchor" href="#specifications"><i class="fa fa-link" aria-hidden="true"></i></a>Specifications</h2>
 <ul>
-<li><strong>processor</strong> <ul>
-<li>STM32F412</li>
-</ul>
-</li>
-<li><strong>Voltage input </strong><ul>
-<li>6~62V(2-15S)</li>
-</ul>
-</li>
-<li><strong>Max current</strong> <ul>
-<li>110A</li>
-</ul>
-</li>
-<li><strong>Voltage accuracy </strong> <ul>
-<li>&#xB1;0.05V</li>
-</ul>
-</li>
-<li><strong>Current accuracy </strong><ul>
-<li>&#xB1;0.1A</li>
-</ul>
-</li>
-<li><strong>Resolution</strong><ul>
-<li>0.01A/V</li>
-</ul>
-</li>
-<li><strong>Max output power </strong><ul>
-<li>6000W/90S</li>
-</ul>
-</li>
-<li><strong>Max stable power </strong><ul>
-<li>5000W</li>
-</ul>
-</li>
-<li><strong>Power port output</strong><ul>
-<li>5.4V/5A</li>
-</ul>
-</li>
-<li><strong>protocol</strong><ul>
-<li>UAVCAN</li>
-</ul>
-</li>
-<li><strong>Operating temp</strong><ul>
-<li>-20~+100&#x2103;</li>
-</ul>
-</li>
-<li><strong>Firmware upgrade</strong><ul>
-<li>Support</li>
-</ul>
-</li>
-<li><strong>calibration</strong><ul>
-<li>no need</li>
-</ul>
-</li>
-<li><strong>Interface Type</strong><ul>
-<li>IN/OUT:XT90(Cable&#xFF09;/Amass 8.0(Module&#xFF09;</li>
-<li>Power port:5025850670</li>
-<li>CAN: GHR-04V-S</li>
+<li><strong>Processor:</strong> STM32F412</li>
+<li><strong>Voltage input</strong>: 6~62V(2-15S)</li>
+<li><strong>Max current:</strong> 110A</li>
+<li><strong>Voltage accuracy:</strong> &#xB1;0.05V</li>
+<li><strong>Current accuracy:</strong> &#xB1;0.1A</li>
+<li><strong>Resolution:</strong> 0.01A/V</li>
+<li><strong>Max output power:</strong> 6000W/90S</li>
+<li><strong>Max stable power:</strong> 5000W</li>
+<li><strong>Power port output:</strong> 5.4V/5A</li>
+<li><strong>Protocol:</strong> UAVCAN</li>
+<li><strong>Operating temp:</strong> -20~+100</li>
+<li><strong>Firmware upgrade:</strong> Supported.</li>
+<li><strong>Calibration:</strong> Not needed.</li>
+<li><strong>Interface Type:</strong><ul>
+<li><strong>IN/OUT:</strong> XT90(Cable&#xFF09;/Amass 8.0(Module&#xFF09;</li>
+<li><strong>Power port:</strong> 5025850670</li>
+<li><strong>CAN:</strong> GHR-04V-S</li>
 </ul>
 </li>
 <li><strong>Appearance:</strong><ul>
-<li>Size:46.5mm * 38.5mm * 22.5mm</li>
-<li>Weight:76g</li>
+<li><strong>Size:</strong> 46.5mm * 38.5mm * 22.5mm</li>
+<li><strong>Weight:</strong> 76g</li>
 </ul>
 </li>
 </ul>
 <h2 id="purchase"><a name="purchase" class="plugin-anchor" href="#purchase"><i class="fa fa-link" aria-hidden="true"></i></a>Purchase</h2>
-<p><a href="https://store.cuav.net/index.php" target="_blank">CUAV store</a>
-<a href="https://www.aliexpress.com/item/4000369700535.html" target="_blank">CUAV aliexpress </a></p>
+<ul>
+<li><a href="https://store.cuav.net/index.php" target="_blank">CUAV store</a></li>
+<li><a href="https://www.aliexpress.com/item/4000369700535.html" target="_blank">CUAV aliexpress </a></li>
+</ul>
 <h2 id="pinouts"><a name="pinouts" class="plugin-anchor" href="#pinouts"><i class="fa fa-link" aria-hidden="true"></i></a>Pinouts</h2>
-<p><img src="../../assets/hardware/power_module/can_pmu_pinouts_en.png" alt="CAN PMU"> </p>
-<p><img src="../../assets/hardware/power_module/can_pmu_pinouts_en2.png" alt="CAN PMU"></p>
+<p><img src="../../assets/hardware/power_module/cuav_can/can_pmu_pinouts_en.png" alt="CAN PMU"></p>
+<p><img src="../../assets/hardware/power_module/cuav_can/can_pmu_pinouts_en2.png" alt="CAN PMU"></p>
 <h2 id="connection"><a name="connection" class="plugin-anchor" href="#connection"><i class="fa fa-link" aria-hidden="true"></i></a>Connection</h2>
-<p><img src="../../assets/hardware/power_module/can_pmu_connection_en.png" alt="CAN PMU"></p>
-<p><strong>Connection method:</strong></p>
+<p><img src="../../assets/hardware/power_module/cuav_can/can_pmu_connection_en.png" alt="CAN PMU"></p>
+<p>The connection steps are:</p>
 <ul>
 <li>Connect the flight control CAN1/2 and the module CAN interface.</li>
-<li>Connect the V5 series power cable to the V5 Flight Control Power2 (if other flight controllers are connect to the Power interface) and the module Power  interface.</li>
+<li>Connect the V5 series power cable to the V5 Flight Control Power2 (if other flight controllers are connect to the Power interface) and the module Power interface.</li>
 </ul>
 <h2 id="enable-can-pmu"><a name="enable-can-pmu" class="plugin-anchor" href="#enable-can-pmu"><i class="fa fa-link" aria-hidden="true"></i></a>Enable CAN PMU</h2>
-<p>Set the following parameters in the QGroundControl parameter list and restart after writing:</p>
+<p>Set the following parameters in the <em>QGroundControl</em> <a href="../advanced_config/parameters.html">parameter list</a> and then restart:</p>
 <ul>
-<li>Uavcan_enble set to &quot;sensors Automatic config&quot;</li>
+<li><p><code>UAVCAN_ENABLE</code>: set to: <em>Sensors Automatic Config</em></p>
+<p><img src="../../assets/hardware/power_module/cuav_can/qgc_set_en.png" alt="qgc set"></p>
+</li>
 </ul>
-<p><img src="../../assets/hardware/power_module/qgc_set_en.png" alt="qgc set"></p>
-<h1 id="list"><a name="list" class="plugin-anchor" href="#list"><i class="fa fa-link" aria-hidden="true"></i></a>list</h1>
-<p><img src="../../assets/hardware/power_module/can_pmu_list.png" alt="CAN PMU list"></p>
-<h2 id="more-information"><a name="more-information" class="plugin-anchor" href="#more-information"><i class="fa fa-link" aria-hidden="true"></i></a>More information</h2>
+<h1 id="package-contents"><a name="package-contents" class="plugin-anchor" href="#package-contents"><i class="fa fa-link" aria-hidden="true"></i></a>Package Contents</h1>
+<p><img src="../../assets/hardware/power_module/cuav_can/can_pmu_list.png" alt="CAN PMU list"></p>
+<h2 id="further-information"><a name="further-information" class="plugin-anchor" href="#further-information"><i class="fa fa-link" aria-hidden="true"></i></a>Further Information</h2>
 <p><a href="http://manual.cuav.net/power-module/CAN-PMU.pdf" target="_blank">CAN PMU Manual</a></p>
-<p><a href="Doc.cuav.net/power-module/can-pmu">CUAV docs</a></p>
-<p><a href="https://new.uavcan.org/" target="_blank">UAV CAN</a></p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-11-26 23:24:40 </span> </footer>
+<p><a href="http://doc.cuav.net/power-module/can-pmu/en/#px4-firmware" target="_blank">CUAV docs</a></p>
+<p><a href="https://new.uavcan.org/" target="_blank">UAVCAN</a></p>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-11-27 01:58:24 </span> </footer>
                                 
                                 </section>
                             
@@ -3385,7 +3376,7 @@
                 </a>
                 
                 
-                <a href="../sensor/rangefinders.html" class="navigation navigation-next " aria-label="Next page: Distance Sensors (Rangefinders)">
+                <a href="holybro_pm07_pixhawk4_power_module.html" class="navigation navigation-next " aria-label="Next page: Holybro PM07 (Pixhawk 4 PM)">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -3396,7 +3387,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"CUAV CAN PMU","level":"1.10.6.2","depth":3,"next":{"title":"Distance Sensors (Rangefinders)","level":"1.10.7","depth":2,"path":"sensor/rangefinders.md","ref":"sensor/rangefinders.md","articles":[{"title":"Lightware SFxx Lidar","level":"1.10.7.1","depth":3,"path":"sensor/sfxx_lidar.md","ref":"sensor/sfxx_lidar.md","articles":[]},{"title":"uLanding Radar","level":"1.10.7.2","depth":3,"path":"sensor/ulanding_radar.md","ref":"sensor/ulanding_radar.md","articles":[]},{"title":"LeddarOne Lidar","level":"1.10.7.3","depth":3,"path":"sensor/leddar_one.md","ref":"sensor/leddar_one.md","articles":[]},{"title":"Benewake TFmini Lidar","level":"1.10.7.4","depth":3,"path":"sensor/tfmini.md","ref":"sensor/tfmini.md","articles":[]},{"title":"Lidar-Lite","level":"1.10.7.5","depth":3,"path":"sensor/lidar_lite.md","ref":"sensor/lidar_lite.md","articles":[]},{"title":"TeraRanger","level":"1.10.7.6","depth":3,"path":"sensor/teraranger.md","ref":"sensor/teraranger.md","articles":[]},{"title":"Lanbao PSK-CM8JL65-CC5","level":"1.10.7.7","depth":3,"path":"sensor/cm8jl65_ir_distance_sensor.md","ref":"sensor/cm8jl65_ir_distance_sensor.md","articles":[]}]},"previous":{"title":"CUAV HV pm","level":"1.10.6.1","depth":3,"path":"power_module/cuav_hv_pm.md","ref":"power_module/cuav_hv_pm.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"power_module/cuav_can_pmu.md","mtime":"2019-11-26T23:24:40.353Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-26T23:26:46.514Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"CUAV CAN PMU","level":"1.10.6.2","depth":3,"next":{"title":"Holybro PM07 (Pixhawk 4 PM)","level":"1.10.6.3","depth":3,"path":"power_module/holybro_pm07_pixhawk4_power_module.md","ref":"power_module/holybro_pm07_pixhawk4_power_module.md","articles":[]},"previous":{"title":"CUAV HV pm","level":"1.10.6.1","depth":3,"path":"power_module/cuav_hv_pm.md","ref":"power_module/cuav_hv_pm.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9 - stable"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"power_module/cuav_can_pmu.md","mtime":"2019-11-27T01:58:24.780Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-27T02:00:24.998Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
