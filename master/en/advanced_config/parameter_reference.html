@@ -4266,6 +4266,13 @@ Set -1 to disable the check</p>   </td>
  <td style="vertical-align: top;">deg</td>
 </tr>
 <tr>
+ <td style="vertical-align: top;"><strong id="COM_ARM_MAG_STR">COM_ARM_MAG_STR</strong> (INT32)</td>
+ <td style="vertical-align: top;"><p>Enable mag strength preflight check</p><p><strong>Comment:</strong> Deny arming if the estimator detects a strong magnetic disturbance (check enabled by EKF2_MAG_CHECK)</p>   </td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">Enabled (1)</td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
  <td style="vertical-align: top;"><strong id="COM_ARM_MIS_REQ">COM_ARM_MIS_REQ</strong> (INT32)</td>
  <td style="vertical-align: top;"><p>Require valid mission to arm</p><p><strong>Comment:</strong> The default allows to arm the vehicle without a valid mission.</p>   </td>
  <td style="vertical-align: top;"></td>
@@ -4274,14 +4281,9 @@ Set -1 to disable the check</p>   </td>
 </tr>
 <tr>
  <td style="vertical-align: top;"><strong id="COM_ARM_SWISBTN">COM_ARM_SWISBTN</strong> (INT32)</td>
- <td style="vertical-align: top;"><p>Arm switch is only a button</p><p><strong>Comment:</strong> The default uses the arm switch as real switch. If parameter set button gets handled like stick arming.</p> <strong>Values:</strong><ul>
-<li><strong>0:</strong> Arm switch is a switch that stays on when armed</li> 
-
-<li><strong>1:</strong> Arm switch is a button that only triggers arming and disarming</li> 
-</ul>
-  </td>
- <td style="vertical-align: top;">0 &gt; 1 </td>
- <td style="vertical-align: top;">0</td>
+ <td style="vertical-align: top;"><p>Arm switch is only a button</p><p><strong>Comment:</strong> The default uses the arm switch as real switch. If parameter set button gets handled like stick arming.</p>   </td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">Disabled (0)</td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
@@ -4855,6 +4857,8 @@ See COM_OBL_ACT and COM_OBL_RC_ACT to configure action</p>   </td>
 <li><strong>201:</strong> GPS 1</li> 
 
 <li><strong>202:</strong> GPS 2</li> 
+
+<li><strong>203:</strong> GPS 3</li> 
 
 <li><strong>300:</strong> Radio Controller</li> 
 </ul>
@@ -6750,6 +6754,8 @@ but also ignore less noise</p>   </td>
 
 <li><strong>202:</strong> GPS 2</li> 
 
+<li><strong>203:</strong> GPS 3</li> 
+
 <li><strong>300:</strong> Radio Controller</li> 
 </ul>
   <p><b>Reboot required:</b> true</p>
@@ -6776,6 +6782,8 @@ but also ignore less noise</p>   </td>
 <li><strong>201:</strong> GPS 1</li> 
 
 <li><strong>202:</strong> GPS 2</li> 
+
+<li><strong>203:</strong> GPS 3</li> 
 
 <li><strong>300:</strong> Radio Controller</li> 
 </ul>
@@ -6960,6 +6968,8 @@ but also ignore less noise</p>   </td>
 <li><strong>201:</strong> GPS 1</li> 
 
 <li><strong>202:</strong> GPS 2</li> 
+
+<li><strong>203:</strong> GPS 3</li> 
 
 <li><strong>300:</strong> Radio Controller</li> 
 </ul>
@@ -7476,6 +7486,8 @@ Used to calculate increased terrain random walk nosie due to movement</p>   </td
 
 <li><strong>202:</strong> GPS 2</li> 
 
+<li><strong>203:</strong> GPS 3</li> 
+
 <li><strong>300:</strong> Radio Controller</li> 
 </ul>
   <p><b>Reboot required:</b> true</p>
@@ -7544,6 +7556,8 @@ Used to calculate increased terrain random walk nosie due to movement</p>   </td
 
 <li><strong>202:</strong> GPS 2</li> 
 
+<li><strong>203:</strong> GPS 3</li> 
+
 <li><strong>300:</strong> Radio Controller</li> 
 </ul>
   <p><b>Reboot required:</b> true</p>
@@ -7611,6 +7625,8 @@ Used to calculate increased terrain random walk nosie due to movement</p>   </td
 <li><strong>201:</strong> GPS 1</li> 
 
 <li><strong>202:</strong> GPS 2</li> 
+
+<li><strong>203:</strong> GPS 3</li> 
 
 <li><strong>300:</strong> Radio Controller</li> 
 </ul>
@@ -8466,16 +8482,6 @@ if required by the gimbal (only in AUX output mode)</p>   </td>
  <td style="vertical-align: top;">m/s/s</td>
 </tr>
 <tr>
- <td style="vertical-align: top;"><strong id="MPC_ACC_HOR_ESTM">MPC_ACC_HOR_ESTM</strong> (FLOAT)</td>
- <td style="vertical-align: top;"><p>Horizontal acceleration in manual modes when te estimator speed limit is removed.
-If full stick is being applied and the estimator stops demanding a speed limit,
-which it had been before (e.g if GPS is gained while flying on optical flow/vision only),
-the vehicle will accelerate at this rate until the normal position control speed is achieved</p>   </td>
- <td style="vertical-align: top;">0.2 &gt; 2.0 (0.1)</td>
- <td style="vertical-align: top;">0.5</td>
- <td style="vertical-align: top;">m/s/s</td>
-</tr>
-<tr>
  <td style="vertical-align: top;"><strong id="MPC_ACC_HOR_MAX">MPC_ACC_HOR_MAX</strong> (FLOAT)</td>
  <td style="vertical-align: top;"><p>Maximum horizontal acceleration for auto mode and for manual mode</p><p><strong>Comment:</strong> Manual mode: Maximum deceleration for MPC_POS_MODE 1 and 2. Maximum acceleration and deceleration for MPC_POS_MODE 3. Auto mode: Used with MPC_AUTO_MODE 0 only. For MPC_AUTO_MODE 1, MPC_ACC_HOR is always used.</p>   </td>
  <td style="vertical-align: top;">2.0 &gt; 15.0 (1)</td>
@@ -8574,14 +8580,14 @@ is 90 degrees. It should be lower than MPC_XY_CRUISE</p><p><strong>Comment:</str
 </tr>
 <tr>
  <td style="vertical-align: top;"><strong id="MPC_LAND_ALT1">MPC_LAND_ALT1</strong> (FLOAT)</td>
- <td style="vertical-align: top;"><p>Altitude for 1. step of slow landing (descend)</p><p><strong>Comment:</strong> Below this altitude descending velocity gets limited to a value between &quot;MPC_Z_VEL_MAX&quot; and &quot;MPC_LAND_SPEED&quot; to enable a smooth descent experience Value needs to be higher than &quot;MPC_LAND_ALT2&quot;</p>   </td>
+ <td style="vertical-align: top;"><p>Altitude for 1. step of slow landing (descend)</p><p><strong>Comment:</strong> Below this altitude: - descending velocity gets limited to a value between &quot;MPC_Z_VEL_MAX&quot; and &quot;MPC_LAND_SPEED&quot; - horizontal velocity gets limited to a value between &quot;MPC_VEL_MANUAL&quot; and &quot;MPC_LAND_VEL_XY&quot; for a smooth descent and landing experience. Value needs to be higher than &quot;MPC_LAND_ALT2&quot;</p>   </td>
  <td style="vertical-align: top;">0 &gt; 122 </td>
  <td style="vertical-align: top;">10.0</td>
  <td style="vertical-align: top;">m</td>
 </tr>
 <tr>
  <td style="vertical-align: top;"><strong id="MPC_LAND_ALT2">MPC_LAND_ALT2</strong> (FLOAT)</td>
- <td style="vertical-align: top;"><p>Altitude for 2. step of slow landing (landing)</p><p><strong>Comment:</strong> Below this altitude descending velocity gets limited to &quot;MPC_LAND_SPEED&quot; Value needs to be lower than &quot;MPC_LAND_ALT1&quot;</p>   </td>
+ <td style="vertical-align: top;"><p>Altitude for 2. step of slow landing (landing)</p><p><strong>Comment:</strong> Below this altitude descending and horizontal velocities get limited to &quot;MPC_LAND_SPEED&quot; and &quot;MPC_LAND_VEL_XY&quot;, respectively. Value needs to be lower than &quot;MPC_LAND_ALT1&quot;</p>   </td>
  <td style="vertical-align: top;">0 &gt; 122 </td>
  <td style="vertical-align: top;">5.0</td>
  <td style="vertical-align: top;">m</td>
@@ -8591,6 +8597,14 @@ is 90 degrees. It should be lower than MPC_XY_CRUISE</p><p><strong>Comment:</str
  <td style="vertical-align: top;"><p>Landing descend rate</p>   </td>
  <td style="vertical-align: top;">0.6 &gt; ? </td>
  <td style="vertical-align: top;">0.7</td>
+ <td style="vertical-align: top;">m/s</td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="MPC_LAND_VEL_XY">MPC_LAND_VEL_XY</strong> (FLOAT)</td>
+ <td style="vertical-align: top;"><p>Maximum horizontal velocity during landing
+Set the value higher than the otherwise expected maximum to disable any slowdown</p>   </td>
+ <td style="vertical-align: top;">0 &gt; ? </td>
+ <td style="vertical-align: top;">2.</td>
  <td style="vertical-align: top;">m/s</td>
 </tr>
 <tr>
@@ -10080,6 +10094,8 @@ default 1.5 turns per second</p>   </td>
 
 <li><strong>202:</strong> GPS 2</li> 
 
+<li><strong>203:</strong> GPS 3</li> 
+
 <li><strong>300:</strong> Radio Controller</li> 
 </ul>
   <p><b>Reboot required:</b> true</p>
@@ -10106,6 +10122,8 @@ default 1.5 turns per second</p>   </td>
 <li><strong>201:</strong> GPS 1</li> 
 
 <li><strong>202:</strong> GPS 2</li> 
+
+<li><strong>203:</strong> GPS 3</li> 
 
 <li><strong>300:</strong> Radio Controller</li> 
 </ul>
@@ -12495,6 +12513,8 @@ default 1.5 turns per second</p>   </td>
 
 <li><strong>202:</strong> GPS 2</li> 
 
+<li><strong>203:</strong> GPS 3</li> 
+
 <li><strong>300:</strong> Radio Controller</li> 
 </ul>
   <p><b>Reboot required:</b> true</p>
@@ -12789,7 +12809,7 @@ FW_CLMBOUT_DIFF if FW_CLMBOUT_DIFF &gt; 0</p>   </td>
 A taildragger with stearable wheel might need to pitch up
 a little to keep it&apos;s wheel on the ground before airspeed
 to takeoff is reached</p>   </td>
- <td style="vertical-align: top;">0.0 &gt; 20.0 (0.5)</td>
+ <td style="vertical-align: top;">-10.0 &gt; 20.0 (0.5)</td>
  <td style="vertical-align: top;">0.0</td>
  <td style="vertical-align: top;">deg</td>
 </tr>
@@ -13976,6 +13996,8 @@ is less than 50% of this value</p>   </td>
 
 <li><strong>202:</strong> GPS 2</li> 
 
+<li><strong>203:</strong> GPS 3</li> 
+
 <li><strong>300:</strong> Radio Controller</li> 
 </ul>
   <p><b>Reboot required:</b> true</p>
@@ -14214,6 +14236,8 @@ is less than 50% of this value</p>   </td>
 <li><strong>201:</strong> GPS 1</li> 
 
 <li><strong>202:</strong> GPS 2</li> 
+
+<li><strong>203:</strong> GPS 3</li> 
 
 <li><strong>300:</strong> Radio Controller</li> 
 </ul>
@@ -14842,6 +14866,8 @@ is less than 50% of this value</p>   </td>
 
 <li><strong>202:</strong> GPS 2</li> 
 
+<li><strong>203:</strong> GPS 3</li> 
+
 <li><strong>300:</strong> Radio Controller</li> 
 </ul>
   <p><b>Reboot required:</b> true</p>
@@ -14876,6 +14902,8 @@ is less than 50% of this value</p>   </td>
 
 <li><strong>202:</strong> GPS 2</li> 
 
+<li><strong>203:</strong> GPS 3</li> 
+
 <li><strong>300:</strong> Radio Controller</li> 
 </ul>
   <p><b>Reboot required:</b> true</p>
@@ -14902,6 +14930,8 @@ is less than 50% of this value</p>   </td>
 <li><strong>201:</strong> GPS 1</li> 
 
 <li><strong>202:</strong> GPS 2</li> 
+
+<li><strong>203:</strong> GPS 3</li> 
 
 <li><strong>300:</strong> Radio Controller</li> 
 </ul>
@@ -14938,6 +14968,8 @@ is less than 50% of this value</p>   </td>
 <li><strong>201:</strong> GPS 1</li> 
 
 <li><strong>202:</strong> GPS 2</li> 
+
+<li><strong>203:</strong> GPS 3</li> 
 
 <li><strong>300:</strong> Radio Controller</li> 
 </ul>
@@ -15011,6 +15043,67 @@ is less than 50% of this value</p>   </td>
 <tr>
  <td style="vertical-align: top;"><strong id="SER_GPS2_BAUD">SER_GPS2_BAUD</strong> (INT32)</td>
  <td style="vertical-align: top;"><p>Baudrate for the GPS 2 Serial Port</p><p><strong>Comment:</strong> Configure the Baudrate for the GPS 2 Serial Port. Note: certain drivers such as the GPS can determine the Baudrate automatically.</p> <strong>Values:</strong><ul>
+<li><strong>0:</strong> Auto</li> 
+
+<li><strong>50:</strong> 50 8N1</li> 
+
+<li><strong>75:</strong> 75 8N1</li> 
+
+<li><strong>110:</strong> 110 8N1</li> 
+
+<li><strong>134:</strong> 134 8N1</li> 
+
+<li><strong>150:</strong> 150 8N1</li> 
+
+<li><strong>200:</strong> 200 8N1</li> 
+
+<li><strong>300:</strong> 300 8N1</li> 
+
+<li><strong>600:</strong> 600 8N1</li> 
+
+<li><strong>1200:</strong> 1200 8N1</li> 
+
+<li><strong>1800:</strong> 1800 8N1</li> 
+
+<li><strong>2400:</strong> 2400 8N1</li> 
+
+<li><strong>4800:</strong> 4800 8N1</li> 
+
+<li><strong>9600:</strong> 9600 8N1</li> 
+
+<li><strong>19200:</strong> 19200 8N1</li> 
+
+<li><strong>38400:</strong> 38400 8N1</li> 
+
+<li><strong>57600:</strong> 57600 8N1</li> 
+
+<li><strong>115200:</strong> 115200 8N1</li> 
+
+<li><strong>230400:</strong> 230400 8N1</li> 
+
+<li><strong>460800:</strong> 460800 8N1</li> 
+
+<li><strong>500000:</strong> 500000 8N1</li> 
+
+<li><strong>921600:</strong> 921600 8N1</li> 
+
+<li><strong>1000000:</strong> 1000000 8N1</li> 
+
+<li><strong>1500000:</strong> 1500000 8N1</li> 
+
+<li><strong>2000000:</strong> 2000000 8N1</li> 
+
+<li><strong>3000000:</strong> 3000000 8N1</li> 
+</ul>
+  <p><b>Reboot required:</b> true</p>
+</td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">0</td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="SER_GPS3_BAUD">SER_GPS3_BAUD</strong> (INT32)</td>
+ <td style="vertical-align: top;"><p>Baudrate for the GPS 3 Serial Port</p><p><strong>Comment:</strong> Configure the Baudrate for the GPS 3 Serial Port. Note: certain drivers such as the GPS can determine the Baudrate automatically.</p> <strong>Values:</strong><ul>
 <li><strong>0:</strong> Auto</li> 
 
 <li><strong>50:</strong> 50 8N1</li> 
@@ -15848,6 +15941,8 @@ is less than 50% of this value</p>   </td>
 
 <li><strong>202:</strong> GPS 2</li> 
 
+<li><strong>203:</strong> GPS 3</li> 
+
 <li><strong>300:</strong> Radio Controller</li> 
 </ul>
   <p><b>Reboot required:</b> true</p>
@@ -15874,6 +15969,8 @@ is less than 50% of this value</p>   </td>
 <li><strong>201:</strong> GPS 1</li> 
 
 <li><strong>202:</strong> GPS 2</li> 
+
+<li><strong>203:</strong> GPS 3</li> 
 
 <li><strong>300:</strong> Radio Controller</li> 
 </ul>
@@ -17454,7 +17551,7 @@ MPC_Z_VEL_MAX_DN at zero throttle, and 0.5 * MPC_LAND_SPEED at full throttle</p>
 
 
 
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2019-12-09 21:04:15 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-01-06 01:00:33 </span> </footer>
                                 
                                 </section>
                             
@@ -17497,7 +17594,7 @@ MPC_Z_VEL_MAX_DN at zero throttle, and 0.5 * MPC_LAND_SPEED at full throttle</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Full Parameter Reference","level":"1.9.15","depth":2,"next":{"title":"Peripheral Hardware","level":"1.10","depth":1,"path":"peripherals/README.md","ref":"peripherals/README.md","articles":[{"title":"Serial Port Configuration","level":"1.10.1","depth":2,"path":"peripherals/serial_configuration.md","ref":"peripherals/serial_configuration.md","articles":[]},{"title":"GPS/Compass","level":"1.10.2","depth":2,"path":"gps_compass/README.md","ref":"gps_compass/README.md","articles":[{"title":"RTK GPS","level":"1.10.2.1","depth":3,"path":"gps_compass/rtk_gps.md","ref":"gps_compass/rtk_gps.md","articles":[{"title":"Hex Here+","level":"1.10.2.1.1","depth":4,"path":"gps_compass/rtk_gps_hex_hereplus.md","ref":"gps_compass/rtk_gps_hex_hereplus.md","articles":[]},{"title":"Drotek XL","level":"1.10.2.1.2","depth":4,"path":"gps_compass/rtk_gps_drotek_xl.md","ref":"gps_compass/rtk_gps_drotek_xl.md","articles":[]},{"title":"CUAV C-RTK","level":"1.10.2.1.3","depth":4,"path":"gps_compass/rtk_gps_cuav_c-rtk.md","ref":"gps_compass/rtk_gps_cuav_c-rtk.md","articles":[]},{"title":"Trimble MB-Two","level":"1.10.2.1.4","depth":4,"path":"gps_compass/rtk_gps_trimble_mb_two.md","ref":"gps_compass/rtk_gps_trimble_mb_two.md","articles":[]},{"title":"Hex Here2","level":"1.10.2.1.5","depth":4,"path":"gps_compass/rtk_gps_hex_here2.md","ref":"gps_compass/rtk_gps_hex_here2.md","articles":[]}]}]},{"title":"Telemetry Radios","level":"1.10.3","depth":2,"path":"telemetry/README.md","ref":"telemetry/README.md","articles":[{"title":"SiK Radio","level":"1.10.3.1","depth":3,"path":"telemetry/sik_radio.md","ref":"telemetry/sik_radio.md","articles":[{"title":"RFD900 (SiK) Telemetry Radio","level":"1.10.3.1.1","depth":4,"path":"telemetry/rfd900_telemetry.md","ref":"telemetry/rfd900_telemetry.md","articles":[]},{"title":"HKPilot (SIK) Telemetry Radio","level":"1.10.3.1.2","depth":4,"path":"telemetry/hkpilot_sik_radio.md","ref":"telemetry/hkpilot_sik_radio.md","articles":[]},{"title":"HolyBro (SIK) Telemetry Radio","level":"1.10.3.1.3","depth":4,"path":"telemetry/holybro_sik_radio.md","ref":"telemetry/holybro_sik_radio.md","articles":[]}]},{"title":"Telemetry Wifi","level":"1.10.3.2","depth":3,"path":"telemetry/telemetry_wifi.md","ref":"telemetry/telemetry_wifi.md","articles":[{"title":"ESP8266 WiFi Module","level":"1.10.3.2.1","depth":4,"path":"telemetry/esp8266_wifi_module.md","ref":"telemetry/esp8266_wifi_module.md","articles":[]},{"title":"3DR Telemetry Wifi (Discontinued)","level":"1.10.3.2.2","depth":4,"path":"telemetry/3dr_telemetry_wifi.md","ref":"telemetry/3dr_telemetry_wifi.md","articles":[]}]}]},{"title":"MAVLink Telemetry (OSD/GCS)","level":"1.10.4","depth":2,"path":"peripherals/mavlink_peripherals.md","ref":"peripherals/mavlink_peripherals.md","articles":[]},{"title":"FrSky Telemetry","level":"1.10.5","depth":2,"path":"peripherals/frsky_telemetry.md","ref":"peripherals/frsky_telemetry.md","articles":[]},{"title":"Power Modules","level":"1.10.6","depth":2,"path":"power_module/README.md","ref":"power_module/README.md","articles":[{"title":"CUAV HV pm","level":"1.10.6.1","depth":3,"path":"power_module/cuav_hv_pm.md","ref":"power_module/cuav_hv_pm.md","articles":[]},{"title":"CUAV CAN PMU","level":"1.10.6.2","depth":3,"path":"power_module/cuav_can_pmu.md","ref":"power_module/cuav_can_pmu.md","articles":[]},{"title":"Holybro PM07 (Pixhawk 4 PM)","level":"1.10.6.3","depth":3,"path":"power_module/holybro_pm07_pixhawk4_power_module.md","ref":"power_module/holybro_pm07_pixhawk4_power_module.md","articles":[]},{"title":"Holybro PM06 (Micro Power Module)","level":"1.10.6.4","depth":3,"path":"power_module/holybro_pm06_pixhawk4mini_power_module.md","ref":"power_module/holybro_pm06_pixhawk4mini_power_module.md","articles":[]}]},{"title":"Distance Sensors (Rangefinders)","level":"1.10.7","depth":2,"path":"sensor/rangefinders.md","ref":"sensor/rangefinders.md","articles":[{"title":"Lightware SFxx Lidar","level":"1.10.7.1","depth":3,"path":"sensor/sfxx_lidar.md","ref":"sensor/sfxx_lidar.md","articles":[]},{"title":"uLanding Radar","level":"1.10.7.2","depth":3,"path":"sensor/ulanding_radar.md","ref":"sensor/ulanding_radar.md","articles":[]},{"title":"LeddarOne Lidar","level":"1.10.7.3","depth":3,"path":"sensor/leddar_one.md","ref":"sensor/leddar_one.md","articles":[]},{"title":"Benewake TFmini Lidar","level":"1.10.7.4","depth":3,"path":"sensor/tfmini.md","ref":"sensor/tfmini.md","articles":[]},{"title":"Lidar-Lite","level":"1.10.7.5","depth":3,"path":"sensor/lidar_lite.md","ref":"sensor/lidar_lite.md","articles":[]},{"title":"TeraRanger","level":"1.10.7.6","depth":3,"path":"sensor/teraranger.md","ref":"sensor/teraranger.md","articles":[]},{"title":"Lanbao PSK-CM8JL65-CC5","level":"1.10.7.7","depth":3,"path":"sensor/cm8jl65_ir_distance_sensor.md","ref":"sensor/cm8jl65_ir_distance_sensor.md","articles":[]}]},{"title":"Airspeed Sensors","level":"1.10.8","depth":2,"path":"sensor/airspeed.md","ref":"sensor/airspeed.md","articles":[]},{"title":"Optical Flow","level":"1.10.9","depth":2,"path":"sensor/optical_flow.md","ref":"sensor/optical_flow.md","articles":[{"title":"PX4FLOW","level":"1.10.9.1","depth":3,"path":"sensor/px4flow.md","ref":"sensor/px4flow.md","articles":[]}]},{"title":"ESCs & Motors","level":"1.10.10","depth":2,"path":"peripherals/esc_motors.md","ref":"peripherals/esc_motors.md","articles":[{"title":"PWM ESCs and Servos","level":"1.10.10.1","depth":3,"path":"peripherals/pwm_escs_and_servo.md","ref":"peripherals/pwm_escs_and_servo.md","articles":[]},{"title":"DShot ESCs","level":"1.10.10.2","depth":3,"path":"peripherals/dshot.md","ref":"peripherals/dshot.md","articles":[]},{"title":"UAVCAN ESCs","level":"1.10.10.3","depth":3,"path":"peripherals/uavcan_escs.md","ref":"peripherals/uavcan_escs.md","articles":[]}]},{"title":"Camera","level":"1.10.11","depth":2,"path":"peripherals/camera.md","ref":"peripherals/camera.md","articles":[]},{"title":"Parachute","level":"1.10.12","depth":2,"path":"peripherals/parachute.md","ref":"peripherals/parachute.md","articles":[]},{"title":"Companion Computer Peripherals","level":"1.10.13","depth":2,"path":"peripherals/companion_computer_peripherals.md","ref":"peripherals/companion_computer_peripherals.md","articles":[]},{"title":"ADSB/FLARM (Traffic Avoidance)","level":"1.10.14","depth":2,"path":"peripherals/adsb_flarm.md","ref":"peripherals/adsb_flarm.md","articles":[]}]},"previous":{"title":"Prearm/Arm/Disarm Configuration","level":"1.9.14","depth":2,"path":"advanced_config/prearm_arm_disarm.md","ref":"advanced_config/prearm_arm_disarm.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"advanced_config/parameter_reference.md","mtime":"2019-12-09T21:04:15.224Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-09T21:05:12.264Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Full Parameter Reference","level":"1.9.15","depth":2,"next":{"title":"Peripheral Hardware","level":"1.10","depth":1,"path":"peripherals/README.md","ref":"peripherals/README.md","articles":[{"title":"Serial Port Configuration","level":"1.10.1","depth":2,"path":"peripherals/serial_configuration.md","ref":"peripherals/serial_configuration.md","articles":[]},{"title":"GPS/Compass","level":"1.10.2","depth":2,"path":"gps_compass/README.md","ref":"gps_compass/README.md","articles":[{"title":"RTK GPS","level":"1.10.2.1","depth":3,"path":"gps_compass/rtk_gps.md","ref":"gps_compass/rtk_gps.md","articles":[{"title":"Hex Here+","level":"1.10.2.1.1","depth":4,"path":"gps_compass/rtk_gps_hex_hereplus.md","ref":"gps_compass/rtk_gps_hex_hereplus.md","articles":[]},{"title":"Drotek XL","level":"1.10.2.1.2","depth":4,"path":"gps_compass/rtk_gps_drotek_xl.md","ref":"gps_compass/rtk_gps_drotek_xl.md","articles":[]},{"title":"CUAV C-RTK","level":"1.10.2.1.3","depth":4,"path":"gps_compass/rtk_gps_cuav_c-rtk.md","ref":"gps_compass/rtk_gps_cuav_c-rtk.md","articles":[]},{"title":"Trimble MB-Two","level":"1.10.2.1.4","depth":4,"path":"gps_compass/rtk_gps_trimble_mb_two.md","ref":"gps_compass/rtk_gps_trimble_mb_two.md","articles":[]},{"title":"Hex Here2","level":"1.10.2.1.5","depth":4,"path":"gps_compass/rtk_gps_hex_here2.md","ref":"gps_compass/rtk_gps_hex_here2.md","articles":[]}]}]},{"title":"Telemetry Radios","level":"1.10.3","depth":2,"path":"telemetry/README.md","ref":"telemetry/README.md","articles":[{"title":"SiK Radio","level":"1.10.3.1","depth":3,"path":"telemetry/sik_radio.md","ref":"telemetry/sik_radio.md","articles":[{"title":"RFD900 (SiK) Telemetry Radio","level":"1.10.3.1.1","depth":4,"path":"telemetry/rfd900_telemetry.md","ref":"telemetry/rfd900_telemetry.md","articles":[]},{"title":"HKPilot (SIK) Telemetry Radio","level":"1.10.3.1.2","depth":4,"path":"telemetry/hkpilot_sik_radio.md","ref":"telemetry/hkpilot_sik_radio.md","articles":[]},{"title":"HolyBro (SIK) Telemetry Radio","level":"1.10.3.1.3","depth":4,"path":"telemetry/holybro_sik_radio.md","ref":"telemetry/holybro_sik_radio.md","articles":[]}]},{"title":"Telemetry Wifi","level":"1.10.3.2","depth":3,"path":"telemetry/telemetry_wifi.md","ref":"telemetry/telemetry_wifi.md","articles":[{"title":"ESP8266 WiFi Module","level":"1.10.3.2.1","depth":4,"path":"telemetry/esp8266_wifi_module.md","ref":"telemetry/esp8266_wifi_module.md","articles":[]},{"title":"3DR Telemetry Wifi (Discontinued)","level":"1.10.3.2.2","depth":4,"path":"telemetry/3dr_telemetry_wifi.md","ref":"telemetry/3dr_telemetry_wifi.md","articles":[]}]}]},{"title":"MAVLink Telemetry (OSD/GCS)","level":"1.10.4","depth":2,"path":"peripherals/mavlink_peripherals.md","ref":"peripherals/mavlink_peripherals.md","articles":[]},{"title":"FrSky Telemetry","level":"1.10.5","depth":2,"path":"peripherals/frsky_telemetry.md","ref":"peripherals/frsky_telemetry.md","articles":[]},{"title":"Power Modules","level":"1.10.6","depth":2,"path":"power_module/README.md","ref":"power_module/README.md","articles":[{"title":"CUAV HV pm","level":"1.10.6.1","depth":3,"path":"power_module/cuav_hv_pm.md","ref":"power_module/cuav_hv_pm.md","articles":[]},{"title":"CUAV CAN PMU","level":"1.10.6.2","depth":3,"path":"power_module/cuav_can_pmu.md","ref":"power_module/cuav_can_pmu.md","articles":[]},{"title":"Holybro PM07 (Pixhawk 4 PM)","level":"1.10.6.3","depth":3,"path":"power_module/holybro_pm07_pixhawk4_power_module.md","ref":"power_module/holybro_pm07_pixhawk4_power_module.md","articles":[]},{"title":"Holybro PM06 (Micro Power Module)","level":"1.10.6.4","depth":3,"path":"power_module/holybro_pm06_pixhawk4mini_power_module.md","ref":"power_module/holybro_pm06_pixhawk4mini_power_module.md","articles":[]}]},{"title":"Distance Sensors (Rangefinders)","level":"1.10.7","depth":2,"path":"sensor/rangefinders.md","ref":"sensor/rangefinders.md","articles":[{"title":"Lightware SFxx Lidar","level":"1.10.7.1","depth":3,"path":"sensor/sfxx_lidar.md","ref":"sensor/sfxx_lidar.md","articles":[]},{"title":"uLanding Radar","level":"1.10.7.2","depth":3,"path":"sensor/ulanding_radar.md","ref":"sensor/ulanding_radar.md","articles":[]},{"title":"LeddarOne Lidar","level":"1.10.7.3","depth":3,"path":"sensor/leddar_one.md","ref":"sensor/leddar_one.md","articles":[]},{"title":"Benewake TFmini Lidar","level":"1.10.7.4","depth":3,"path":"sensor/tfmini.md","ref":"sensor/tfmini.md","articles":[]},{"title":"Lidar-Lite","level":"1.10.7.5","depth":3,"path":"sensor/lidar_lite.md","ref":"sensor/lidar_lite.md","articles":[]},{"title":"TeraRanger","level":"1.10.7.6","depth":3,"path":"sensor/teraranger.md","ref":"sensor/teraranger.md","articles":[]},{"title":"Lanbao PSK-CM8JL65-CC5","level":"1.10.7.7","depth":3,"path":"sensor/cm8jl65_ir_distance_sensor.md","ref":"sensor/cm8jl65_ir_distance_sensor.md","articles":[]}]},{"title":"Airspeed Sensors","level":"1.10.8","depth":2,"path":"sensor/airspeed.md","ref":"sensor/airspeed.md","articles":[]},{"title":"Optical Flow","level":"1.10.9","depth":2,"path":"sensor/optical_flow.md","ref":"sensor/optical_flow.md","articles":[{"title":"PX4FLOW","level":"1.10.9.1","depth":3,"path":"sensor/px4flow.md","ref":"sensor/px4flow.md","articles":[]}]},{"title":"ESCs & Motors","level":"1.10.10","depth":2,"path":"peripherals/esc_motors.md","ref":"peripherals/esc_motors.md","articles":[{"title":"PWM ESCs and Servos","level":"1.10.10.1","depth":3,"path":"peripherals/pwm_escs_and_servo.md","ref":"peripherals/pwm_escs_and_servo.md","articles":[]},{"title":"DShot ESCs","level":"1.10.10.2","depth":3,"path":"peripherals/dshot.md","ref":"peripherals/dshot.md","articles":[]},{"title":"UAVCAN ESCs","level":"1.10.10.3","depth":3,"path":"peripherals/uavcan_escs.md","ref":"peripherals/uavcan_escs.md","articles":[]}]},{"title":"Camera","level":"1.10.11","depth":2,"path":"peripherals/camera.md","ref":"peripherals/camera.md","articles":[]},{"title":"Parachute","level":"1.10.12","depth":2,"path":"peripherals/parachute.md","ref":"peripherals/parachute.md","articles":[]},{"title":"Companion Computer Peripherals","level":"1.10.13","depth":2,"path":"peripherals/companion_computer_peripherals.md","ref":"peripherals/companion_computer_peripherals.md","articles":[]},{"title":"ADSB/FLARM (Traffic Avoidance)","level":"1.10.14","depth":2,"path":"peripherals/adsb_flarm.md","ref":"peripherals/adsb_flarm.md","articles":[]}]},"previous":{"title":"Prearm/Arm/Disarm Configuration","level":"1.9.14","depth":2,"path":"advanced_config/prearm_arm_disarm.md","ref":"advanced_config/prearm_arm_disarm.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"advanced_config/parameter_reference.md","mtime":"2020-01-06T01:00:33.930Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-06T01:01:21.860Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
