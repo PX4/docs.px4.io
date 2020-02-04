@@ -1463,7 +1463,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.5" data-path="../computer_vision/obstacle_avoidance.html">
+        <li class="chapter " data-level="1.8.5" data-path="../advanced_features/traffic_avoidance_utm.html">
+            
+                <a href="../advanced_features/traffic_avoidance_utm.html">
+            
+                    
+                    Air Traffic Avoidance: UTM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../computer_vision/obstacle_avoidance.html">
             
                 <a href="../computer_vision/obstacle_avoidance.html">
             
@@ -1476,7 +1489,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.6" data-path="../computer_vision/safe_landing.html">
+        <li class="chapter " data-level="1.8.7" data-path="../computer_vision/safe_landing.html">
             
                 <a href="../computer_vision/safe_landing.html">
             
@@ -1489,7 +1502,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.7" data-path="../computer_vision/collision_prevention.html">
+        <li class="chapter " data-level="1.8.8" data-path="../computer_vision/collision_prevention.html">
             
                 <a href="../computer_vision/collision_prevention.html">
             
@@ -1502,7 +1515,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.8" data-path="../computer_vision/path_planning_interface.html">
+        <li class="chapter " data-level="1.8.9" data-path="../computer_vision/path_planning_interface.html">
             
                 <a href="../computer_vision/path_planning_interface.html">
             
@@ -2251,6 +2264,19 @@
             
                     
                     Holybro PM06 (Micro Power Module)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6.5" data-path="../power_module/pomegranate_systems_pm.html">
+            
+                <a href="../power_module/pomegranate_systems_pm.html">
+            
+                    
+                    Pomegranate Systems Power Module
             
                 </a>
             
@@ -3039,20 +3065,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.12.2" data-path="../complete_vehicles/bebop.html">
-            
-                <a href="../complete_vehicles/bebop.html">
-            
-                    
-                    Parrot Bebop
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.12.3" data-path="../complete_vehicles/mindracer_BNF_RTF.html">
+        <li class="chapter " data-level="1.12.2" data-path="../complete_vehicles/mindracer_BNF_RTF.html">
             
                 <a href="../complete_vehicles/mindracer_BNF_RTF.html">
             
@@ -3066,7 +3079,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.12.3.1" data-path="../complete_vehicles/mindracer210.html">
+        <li class="chapter " data-level="1.12.2.1" data-path="../complete_vehicles/mindracer210.html">
             
                 <a href="../complete_vehicles/mindracer210.html">
             
@@ -3079,7 +3092,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.12.3.2" data-path="../complete_vehicles/nanomind110.html">
+        <li class="chapter " data-level="1.12.2.2" data-path="../complete_vehicles/nanomind110.html">
             
                 <a href="../complete_vehicles/nanomind110.html">
             
@@ -3097,7 +3110,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.12.4" data-path="../complete_vehicles/betafpv_beta75x.html">
+        <li class="chapter " data-level="1.12.3" data-path="../complete_vehicles/betafpv_beta75x.html">
             
                 <a href="../complete_vehicles/betafpv_beta75x.html">
             
@@ -3110,7 +3123,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.12.5" data-path="../complete_vehicles/holybro_kopis2.html">
+        <li class="chapter " data-level="1.12.4" data-path="../complete_vehicles/holybro_kopis2.html">
             
                 <a href="../complete_vehicles/holybro_kopis2.html">
             
@@ -3123,7 +3136,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.12.6" data-path="../complete_vehicles/intel_aero.html">
+        <li class="chapter " data-level="1.12.5" data-path="../complete_vehicles/intel_aero.html">
             
                 <a href="../complete_vehicles/intel_aero.html">
             
@@ -3299,10 +3312,14 @@
 <p> For more information see the <a href="https://docs.qgroundcontrol.com/en/PlanView/PlanView.html" target="_blank">QGroundControl User Guide</a>.</p>
 </blockquote>
 <p><img src="../../images/planning_mission.jpg" alt="planning-mission"></p>
+<h3 id="setting-vehicle-yaw"><a name="setting-vehicle-yaw" class="plugin-anchor" href="#setting-vehicle-yaw"><i class="fa fa-link" aria-hidden="true"></i></a>Setting Vehicle Yaw</h3>
+<p>If set, a multi-rotor vehicle will yaw to face the <strong>Heading</strong> value specified in the target waypoint (corresponding to <a href="https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_WAYPOINT" target="_blank">MAV_CMD_NAV_WAYPOINT.param4</a>).</p>
+<p>If <strong>Heading</strong> has not been explicitly set for the target waypoint (<code>param4=NaN</code>) then the vehicle will yaw towards a location specified in the parameter <a href="../advanced_config/parameter_reference.html#MPC_YAW_MODE">MPC_YAW_MODE</a>. By default this is the next waypoint.</p>
+<p>Vehicle types that cannot independently control yaw and direction of travel will ignore yaw settings (e.g. Fixed Wing).</p>
 <h2 id="&#x6267;&#x884C;&#x98DE;&#x884C;&#x4EFB;&#x52A1;"><a name="&#x6267;&#x884C;&#x98DE;&#x884C;&#x4EFB;&#x52A1;" class="plugin-anchor" href="#&#x6267;&#x884C;&#x98DE;&#x884C;&#x4EFB;&#x52A1;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6267;&#x884C;&#x98DE;&#x884C;&#x4EFB;&#x52A1;</h2>
-<p>&#x4E00;&#x65E6;&#x4EFB;&#x52A1;&#x4E0A;&#x4F20;, &#x5207;&#x6362;&#x5230;&#x98DE;&#x884C;&#x89C6;&#x56FE;&#x3002; &#x8BE5;&#x4EFB;&#x52A1;&#x4EE5;&#x4FBF;&#x4E8E;&#x8DDF;&#x8E2A;&#x8FDB;&#x5EA6;&#x7684;&#x65B9;&#x5F0F;&#x663E;&#x793A; (&#x5728;&#x6B64;&#x89C6;&#x56FE;&#x4E2D;&#x65E0;&#x6CD5;&#x4FEE;&#x6539;&#x822A;&#x70B9;)&#x3002;</p>
+<p>Once the mission is uploaded, switch to the flight view. The mission is displayed in a way that makes it easy to track progress (it cannot be modified in this view).</p>
 <p><img src="../../images/flying_mission.jpg" alt="flying-mission"></p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-02-03 15:09:05 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-02-04 03:55:37 </span> </footer>
                                 
                                 </section>
                             
@@ -3345,7 +3362,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Missions","level":"1.6.3","depth":2,"next":{"title":"GeoFence","level":"1.6.4","depth":2,"path":"flying/geofence.md","ref":"flying/geofence.md","articles":[]},"previous":{"title":"Landing (Fixed Wing)","level":"1.6.2.1","depth":3,"path":"flying/fixed_wing_landing.md","ref":"flying/fixed_wing_landing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"flying/missions.md","mtime":"2020-02-03T15:09:05.153Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-03T15:09:55.054Z"},"basePath":"..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"Missions","level":"1.6.3","depth":2,"next":{"title":"GeoFence","level":"1.6.4","depth":2,"path":"flying/geofence.md","ref":"flying/geofence.md","articles":[]},"previous":{"title":"Landing (Fixed Wing)","level":"1.6.2.1","depth":3,"path":"flying/fixed_wing_landing.md","ref":"flying/fixed_wing_landing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"flying/missions.md","mtime":"2020-02-04T03:55:37.799Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-04T03:57:00.977Z"},"basePath":"..","book":{"language":"zh"}});
         });
     </script>
 </div>
