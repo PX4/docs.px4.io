@@ -2910,7 +2910,39 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.6" data-path="../flight_controller/snapdragon_flight.html">
+        <li class="chapter " data-level="1.11.6" data-path="../flight_controller/modalai.html">
+            
+                <a href="../flight_controller/modalai.html">
+            
+                    
+                    ModalAI
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.6.1" data-path="../flight_controller/modalai_fc_v1.html">
+            
+                <a href="../flight_controller/modalai_fc_v1.html">
+            
+                    
+                    Flight Core v1
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="../flight_controller/snapdragon_flight.html">
             
                 <a href="../flight_controller/snapdragon_flight.html">
             
@@ -2924,7 +2956,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.11.6.1" data-path="../flight_controller/snapdragon_flight_hardware_example_setup.html">
+        <li class="chapter " data-level="1.11.7.1" data-path="../flight_controller/snapdragon_flight_hardware_example_setup.html">
             
                 <a href="../flight_controller/snapdragon_flight_hardware_example_setup.html">
             
@@ -2937,7 +2969,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.6.2" data-path="../flight_controller/snapdragon_flight_dev_environment_installation.html">
+        <li class="chapter " data-level="1.11.7.2" data-path="../flight_controller/snapdragon_flight_dev_environment_installation.html">
             
                 <a href="../flight_controller/snapdragon_flight_dev_environment_installation.html">
             
@@ -2950,7 +2982,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.6.3" data-path="../flight_controller/snapdragon_flight_software_installation.html">
+        <li class="chapter " data-level="1.11.7.3" data-path="../flight_controller/snapdragon_flight_software_installation.html">
             
                 <a href="../flight_controller/snapdragon_flight_software_installation.html">
             
@@ -2963,7 +2995,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.6.4" data-path="../flight_controller/snapdragon_flight_configuration.html">
+        <li class="chapter " data-level="1.11.7.4" data-path="../flight_controller/snapdragon_flight_configuration.html">
             
                 <a href="../flight_controller/snapdragon_flight_configuration.html">
             
@@ -2976,7 +3008,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.6.5" data-path="../flight_controller/snapdragon_flight_advanced.html">
+        <li class="chapter " data-level="1.11.7.5" data-path="../flight_controller/snapdragon_flight_advanced.html">
             
                 <a href="../flight_controller/snapdragon_flight_advanced.html">
             
@@ -2994,7 +3026,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.7" data-path="../flight_controller/raspberry_pi_navio2.html">
+        <li class="chapter " data-level="1.11.8" data-path="../flight_controller/raspberry_pi_navio2.html">
             
                 <a href="../flight_controller/raspberry_pi_navio2.html">
             
@@ -3007,7 +3039,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.8" data-path="../flight_controller/ocpoc_zynq.html">
+        <li class="chapter " data-level="1.11.9" data-path="../flight_controller/ocpoc_zynq.html">
             
                 <a href="../flight_controller/ocpoc_zynq.html">
             
@@ -3020,7 +3052,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.9" data-path="../flight_controller/beaglebone_blue.html">
+        <li class="chapter " data-level="1.11.10" data-path="../flight_controller/beaglebone_blue.html">
             
                 <a href="../flight_controller/beaglebone_blue.html">
             
@@ -3338,7 +3370,7 @@
 <ul>
 <li>In <em>QGroundControl</em>: <ul>
 <li>Update the firmware on PX4Flow (in the top left menu, click on CONFIG, then on Firmware Upgrade)</li>
-<li>Set the parameter <a href="../advanced_config/parameter_reference.html#SENS_EN_PX4FLOW">SENS_EN_PX4FLOW</a> and reboot (see <a href="../advanced_config/parameters.html">Parameters</a> for infomration on finding and setting parameters).</li>
+<li>Set the parameter <a href="../advanced_config/parameter_reference.html#SENS_EN_PX4FLOW">SENS_EN_PX4FLOW</a> and reboot (see <a href="../advanced_config/parameters.html">Parameters</a> for information on finding and setting parameters).</li>
 </ul>
 </li>
 <li>Connect PX4Flow I2C to the Pixhawk I2C</li>
@@ -3613,10 +3645,10 @@ verify...
 <pre><code class="lang-bash">sudo usermod <span class="hljs-_">-a</span> -G plugdev <span class="hljs-variable">$USER</span>
 </code></pre>
 <h2 id="focus-image"><a name="focus-image" class="plugin-anchor" href="#focus-image"><i class="fa fa-link" aria-hidden="true"></i></a>Focus Image</h2>
-<p>Connect PX4FLOW to QGroundcontrol:</p>
+<p>Connect PX4FLOW to QGroundControl:</p>
 <ul>
 <li>Connect PX4FLOW sensor over USB to PC</li>
-<li>Open QGroundcontrol</li>
+<li>Open QGroundControl</li>
 <li>Switch to Plot perspective: Perspectives/Plot </li>
 <li>Connect to PX4FLOW sensor: Communication/Add Link</li>
 </ul>
@@ -3626,7 +3658,7 @@ verify...
 <li>Protocol: MAVLink</li>
 <li>Serial Port: corresponding Port (e.g. /dev/ttyACM<em> or COMM</em>)</li>
 </ul>
-<p>Now a new Unmanned System should appear and Onboard Parameters are loaded (click on &quot;Get&quot; if not)</p>
+<p>Now a new unmanned system should appear and onboard parameters are loaded (click on &quot;Get&quot; if not)</p>
 <p>Change Parameter <code>VIDEO_ONLY</code> to 1 and press Set.</p>
 <p>The Widget Video Downlink shows now the Image in full resolution. Focus the lens on 1.5m. Fix the lens position and switch <code>VIDEO_ONLY</code> Mode off.</p>
 <h2 id="data-output"><a name="data-output" class="plugin-anchor" href="#data-output"><i class="fa fa-link" aria-hidden="true"></i></a>Data Output</h2>
@@ -3657,10 +3689,22 @@ verify...
 </thead>
 <tbody>
 <tr>
-<td>BFLOW_F_THLD</td>
-<td>30</td>
+<td>AEC</td>
+<td>1</td>
 <td>RW</td>
-<td>This parameter is a feature threshold and limits the quality of patterns that are used to calculate the bottom flow. For low values (e.g. 10) almost every pattern is taken, for higher values (e.g. 100) only significant patters are taken.</td>
+<td>Camera Automatic Exposure Control. 1: ON, 0: OFF.</td>
+</tr>
+<tr>
+<td>AGC</td>
+<td>1</td>
+<td>RW</td>
+<td>Camera Automatic Gain Control. 1: ON, 0: OFF.</td>
+</tr>
+<tr>
+<td>BFLOW_F_THLD</td>
+<td>40</td>
+<td>RW</td>
+<td>This parameter is a feature threshold and limits the quality of patterns that are used to calculate the bottom flow. For low values (e.g. 10) almost every pattern is taken, for higher values (e.g. 100) only significant patterns are taken.</td>
 </tr>
 <tr>
 <td>BFLOW_V_THLD</td>
@@ -3672,19 +3716,19 @@ verify...
 <td>BFLOW_HIST_FIL</td>
 <td>0</td>
 <td>RW</td>
-<td>1: Flow histogram filter is ON, 0: OFF</td>
+<td>Flow histogram filter. 1: ON, 0: OFF.</td>
 </tr>
 <tr>
 <td>BFLOW_GYRO_COM</td>
 <td>0</td>
 <td>RW</td>
-<td>1: Gyro compensation is ON, 0: OFF</td>
+<td>Gyro compensation. 1: ON, 0: OFF.</td>
 </tr>
 <tr>
 <td>BFLOW_LP_FIL</td>
 <td>0</td>
 <td>RW</td>
-<td>1: Lowpass filter on flow output is ON, 0: OFF</td>
+<td>Lowpass filter on flow output. 1: ON, 0: OFF.</td>
 </tr>
 <tr>
 <td>BFLOW_W_NEW</td>
@@ -3693,10 +3737,40 @@ verify...
 <td>Flow lowpass filter gain</td>
 </tr>
 <tr>
+<td>BFLOW_MAX_PIX</td>
+<td>8</td>
+<td>R</td>
+<td>Delete (parameter not used).</td>
+</tr>
+<tr>
+<td>BFLOW_RATE</td>
+<td>10.0</td>
+<td>RW</td>
+<td>Rate with which updates for optical flow are published</td>
+</tr>
+<tr>
+<td>BRIGHT</td>
+<td>20</td>
+<td>RW</td>
+<td>Desired brightness level from camera</td>
+</tr>
+<tr>
 <td>DEBUG</td>
 <td>1</td>
 <td>RW</td>
-<td>1: Debug messages ON, 0: OFF</td>
+<td>Debug messages. 1: ON, 0: OFF</td>
+</tr>
+<tr>
+<td>EXPOSURE_MAX</td>
+<td>500</td>
+<td>RW</td>
+<td>Maximal exposure time (&#x3BC;s)</td>
+</tr>
+<tr>
+<td>GAIN_MAX</td>
+<td>16</td>
+<td>RW</td>
+<td>Maximal gain (units?)</td>
 </tr>
 <tr>
 <td>GYRO_SENS_DPS</td>
@@ -3711,10 +3785,10 @@ verify...
 <td>Gyro compensation threshold (dps): Gyro data lower than this threshold is not compensated to prevent drift</td>
 </tr>
 <tr>
-<td>IMAGE_WIDTH</td>
-<td>64</td>
-<td>R</td>
-<td>Image width (pixels)</td>
+<td>HDR</td>
+<td>1</td>
+<td>RW</td>
+<td>Camera High Dynamic Range. 1: ON, 0: OFF</td>
 </tr>
 <tr>
 <td>IMAGE_HEIGHT</td>
@@ -3723,26 +3797,32 @@ verify...
 <td>Image height (pixels)</td>
 </tr>
 <tr>
+<td>IMAGE_WIDTH</td>
+<td>64</td>
+<td>R</td>
+<td>Image width (pixels)</td>
+</tr>
+<tr>
 <td>IMAGE_L_LIGHT</td>
 <td>0</td>
 <td>RW</td>
-<td>1: Image sensor low light mode ON, 0: OFF</td>
+<td>Delete (parameter not used).</td>
 </tr>
 <tr>
 <td>IMAGE_NOISE_C</td>
 <td>1</td>
 <td>RW</td>
-<td>1: Image sensor noise correction ON, 0: OFF</td>
+<td>Image sensor noise correction, 1: ON, 0: OFF</td>
 </tr>
 <tr>
 <td>IMAGE_TEST_PAT</td>
 <td>0</td>
 <td>RW</td>
-<td>1: Gray-shaded test pattern mode ON, 0: OFF</td>
+<td>Gray-shaded test pattern mode. 1: ON, 0: OFF</td>
 </tr>
 <tr>
 <td>LENS_FOCAL_LEN</td>
-<td>16</td>
+<td>16.0</td>
 <td>RW</td>
 <td>Focal length of lens (mm)</td>
 </tr>
@@ -3753,22 +3833,40 @@ verify...
 <td>0: Only position 0 is used (Bottom: 0, Front: 1, Top: 2, Back: 3, Right: 4, Left: 5)</td>
 </tr>
 <tr>
+<td>SHTR_W_1</td>
+<td>443</td>
+<td>RW</td>
+<td>Camera Shutter W_1 ?</td>
+</tr>
+<tr>
+<td>SHTR_W_2</td>
+<td>473</td>
+<td>RW</td>
+<td>Camera Shutter W_2 ?</td>
+</tr>
+<tr>
+<td>SHTR_W_TOT</td>
+<td>480</td>
+<td>RW</td>
+<td>Camera Shutter Total ?</td>
+</tr>
+<tr>
 <td>SONAR_FILTERED</td>
 <td>0</td>
 <td>RW</td>
-<td>1: Kalman filter on sonar output is ON, 0: OFF</td>
+<td>Kalman filter on sonar output. 1: ON, 0: OFF.</td>
 </tr>
 <tr>
 <td>SONAR_KAL_L1</td>
 <td>0.8461</td>
 <td>RW</td>
-<td>Sonar Kalman gain L1</td>
+<td>Sonar Kalman gain L1 (for the position)</td>
 </tr>
 <tr>
 <td>SONAR_KAL_L2</td>
 <td>6.2034</td>
 <td>RW</td>
-<td>Sonar Kalman gain L2</td>
+<td>Sonar Kalman gain L2 (for the speed)</td>
 </tr>
 <tr>
 <td>SYS_ID</td>
@@ -3792,13 +3890,13 @@ verify...
 <td>SYS_TYPE</td>
 <td>0</td>
 <td>RW</td>
-<td><a href="https://mavlink.io/en/" target="_blank">MAVLink</a> System Type</td>
+<td><a href="https://mavlink.io/en/" target="_blank">MAVLink</a> System Type (0 means generic)</td>
 </tr>
 <tr>
 <td>SYS_AP_TYPE</td>
-<td>1</td>
+<td>0</td>
 <td>RW</td>
-<td><a href="https://mavlink.io/en/" target="_blank">MAVLink</a> Autopilot Type</td>
+<td><a href="https://mavlink.io/en/" target="_blank">MAVLink</a> Autopilot Type (0 means generic)</td>
 </tr>
 <tr>
 <td>SYS_SW_VER</td>
@@ -3810,7 +3908,13 @@ verify...
 <td>SYS_SEND_STATE</td>
 <td>1</td>
 <td>RW</td>
-<td>1: Send <a href="https://mavlink.io/en/" target="_blank">MAVLink</a> Heartbeat, 0: Not</td>
+<td>Send <a href="https://mavlink.io/en/messages/common.html#HEARTBEAT" target="_blank">MAVLink</a> Heartbeat. 1: ON, 0: OFF.</td>
+</tr>
+<tr>
+<td>SYS_SEND_LPOS</td>
+<td>1</td>
+<td>RW</td>
+<td>Send <a href="https://mavlink.io/en/messages/common.html#LOCAL_POSITION_NED" target="_blank">MAVLink</a> Local position estimate. 1: ON, 0: OFF.</td>
 </tr>
 <tr>
 <td>USART_2_BAUD</td>
@@ -3825,64 +3929,59 @@ verify...
 <td>Baudrate USART 3 (Data Output)</td>
 </tr>
 <tr>
-<td>USB_SEND_VIDEO</td>
+<td>USB_SEND_DEBUG</td>
 <td>1</td>
 <td>RW</td>
-<td>1: Send video over USB, 0: Not</td>
+<td>Send debug msgs over USB. 1: ON, 0: OFF.</td>
 </tr>
 <tr>
 <td>USB_SEND_FLOW</td>
 <td>1</td>
 <td>RW</td>
-<td>1: Send flow over USB, 0: Not</td>
-</tr>
-<tr>
-<td>USB_SEND_GYRO</td>
-<td>1</td>
-<td>RW</td>
-<td>1: Send gyro data over USB, 0: Not</td>
+<td>Send flow over USB. 1: ON. 0: OFF.</td>
 </tr>
 <tr>
 <td>USB_SEND_FWD</td>
 <td>0</td>
 <td>RW</td>
-<td>1: Send forwarded flow over USB, 0: Not</td>
+<td>Send forwarded flow over USB. 1: ON, 0: OFF.</td>
 </tr>
 <tr>
-<td>USB_SEND_DEBUG</td>
+<td>USB_SEND_GYRO</td>
 <td>1</td>
 <td>RW</td>
-<td>1: Send debug msgs over USB, 0: Not</td>
+<td>Send gyro data over USB. 1: ON, 0: OFF.</td>
 </tr>
 <tr>
-<td>VIDEO_RATE</td>
-<td>150</td>
+<td>USB_SEND_VIDEO</td>
+<td>1</td>
 <td>RW</td>
-<td>Time in milliseconds between images of video transmission</td>
+<td>Send video over USB. 1: ON, 0: OFF.</td>
 </tr>
 <tr>
 <td>VIDEO_ONLY</td>
 <td>0</td>
 <td>RW</td>
-<td>1: High resolution video mode is ON, 0: OFF</td>
+<td>High resolution video mode. 1: ON, 0: OFF</td>
+</tr>
+<tr>
+<td>VIDEO_RATE</td>
+<td>50</td>
+<td>RW</td>
+<td>Time between images of video transmission (ms)</td>
 </tr>
 </tbody>
 </table>
 <h2 id="modes"><a name="modes" class="plugin-anchor" href="#modes"><i class="fa fa-link" aria-hidden="true"></i></a>Modes</h2>
 <h3 id="VIDEO_ONLY"><a name="VIDEO_ONLY" class="plugin-anchor" href="#VIDEO_ONLY"><i class="fa fa-link" aria-hidden="true"></i></a>VIDEO ONLY Mode </h3>
 <p>Set <code>VIDEO_ONLY</code> to 1 for high resolution mode. In this mode the camera image is transmitted at a higher resolution to ease the lens focus process. No flow values are calculated in this mode.</p>
-<h3 id="low-light-mode"><a name="low-light-mode" class="plugin-anchor" href="#low-light-mode"><i class="fa fa-link" aria-hidden="true"></i></a>Low Light Mode</h3>
-<p>If <code>IMAGE_L_LIGHT</code> is set to 1, the sensor operates in low light mode.</p>
-<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
-<p> This mode is under construction, and results are more noisy</p>
-</blockquote>
 <h3 id="test-pattern-mode"><a name="test-pattern-mode" class="plugin-anchor" href="#test-pattern-mode"><i class="fa fa-link" aria-hidden="true"></i></a>Test Pattern Mode</h3>
 <p>If the parameter <code>IMAGE_TEST_PAT</code> is set to 1, the sensor inserts a vertical gray-shaded test pattern in the signal chain.</p>
 <ul>
 <li>Test Pattern 64x64 (VIDEO ONLY Mode is OFF) <img src="../../assets/hardware/sensors/px4flow/test_pattern_64x64.png" alt="test_pattern_64x64"></li>
 <li>Test Pattern 376x240 (VIDEO ONLY Mode is ON) <img src="../../assets/hardware/sensors/px4flow/test_pattern_376x240.png" alt="test_pattern_376x240"></li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-02-19 04:58:28 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-02-23 11:02:30 </span> </footer>
                                 
                                 </section>
                             
@@ -3925,7 +4024,7 @@ verify...
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"PX4FLOW","level":"1.10.9.1","depth":3,"next":{"title":"ESCs & Motors","level":"1.10.10","depth":2,"path":"peripherals/esc_motors.md","ref":"peripherals/esc_motors.md","articles":[{"title":"PWM ESCs and Servos","level":"1.10.10.1","depth":3,"path":"peripherals/pwm_escs_and_servo.md","ref":"peripherals/pwm_escs_and_servo.md","articles":[]},{"title":"DShot ESCs","level":"1.10.10.2","depth":3,"path":"peripherals/dshot.md","ref":"peripherals/dshot.md","articles":[]},{"title":"UAVCAN ESCs","level":"1.10.10.3","depth":3,"path":"peripherals/uavcan_escs.md","ref":"peripherals/uavcan_escs.md","articles":[]}]},"previous":{"title":"Optical Flow","level":"1.10.9","depth":2,"path":"sensor/optical_flow.md","ref":"sensor/optical_flow.md","articles":[{"title":"PX4FLOW","level":"1.10.9.1","depth":3,"path":"sensor/px4flow.md","ref":"sensor/px4flow.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"sensor/px4flow.md","mtime":"2020-02-19T04:58:28.105Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-19T05:00:01.360Z"},"basePath":"..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"PX4FLOW","level":"1.10.9.1","depth":3,"next":{"title":"ESCs & Motors","level":"1.10.10","depth":2,"path":"peripherals/esc_motors.md","ref":"peripherals/esc_motors.md","articles":[{"title":"PWM ESCs and Servos","level":"1.10.10.1","depth":3,"path":"peripherals/pwm_escs_and_servo.md","ref":"peripherals/pwm_escs_and_servo.md","articles":[]},{"title":"DShot ESCs","level":"1.10.10.2","depth":3,"path":"peripherals/dshot.md","ref":"peripherals/dshot.md","articles":[]},{"title":"UAVCAN ESCs","level":"1.10.10.3","depth":3,"path":"peripherals/uavcan_escs.md","ref":"peripherals/uavcan_escs.md","articles":[]}]},"previous":{"title":"Optical Flow","level":"1.10.9","depth":2,"path":"sensor/optical_flow.md","ref":"sensor/optical_flow.md","articles":[{"title":"PX4FLOW","level":"1.10.9.1","depth":3,"path":"sensor/px4flow.md","ref":"sensor/px4flow.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"sensor/px4flow.md","mtime":"2020-02-23T11:02:30.101Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-23T11:04:03.333Z"},"basePath":"..","book":{"language":"zh"}});
         });
     </script>
 </div>
