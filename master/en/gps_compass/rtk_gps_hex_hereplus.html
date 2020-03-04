@@ -3353,19 +3353,66 @@
 </ul>
 <h2 id="configuration"><a name="configuration" class="plugin-anchor" href="#configuration"><i class="fa fa-link" aria-hidden="true"></i></a>Configuration</h2>
 <p>RTK setup and use on PX4 via <em>QGroundControl</em> is largely plug and play (see <a href="../advanced_features/rtk-gps.html">RTK GPS</a> for more information).</p>
-<h2 id="wiring-and-connections"><a name="wiring-and-connections" class="plugin-anchor" href="#wiring-and-connections"><i class="fa fa-link" aria-hidden="true"></i></a>Wiring and Connections</h2>
-<p>The Here+ GPS comes with an 8 pin connector that can be inserted directly into the <a href="http://www.hex.aero/wp-content/uploads/2016/07/DRS_Pixhawk-2-17th-march-2016.pdf" target="_blank">Pixhawk 2</a> GPS UART port.</p>
-<p>The Pixhawk 3 Pro and Pixracer have a 6 pin GPS port connector. For these controllers you can modify the GPS cable (as shown below) to remove pin 6 and 7. </p>
-<p><img src="../../assets/hardware/gps/rtk_here_plug_gps_to_6pin_connector.jpg" width="500px"> </p>
-<p>Pin 6 and 7 are for the safety button - these can be attached as well if needed.</p>
-<h3 id="pinout"><a name="pinout" class="plugin-anchor" href="#pinout"><i class="fa fa-link" aria-hidden="true"></i></a>Pinout</h3>
-<p>The Here+ GPS pinout is provided below. This can be used to help modify the connector for other autopilot boards.</p>
+<h2 id="pinout"><a name="pinout" class="plugin-anchor" href="#pinout"><i class="fa fa-link" aria-hidden="true"></i></a>Pinout</h2>
+<p>The Here+ GPS comes with an 8 pin connector with the following pinout</p>
+<p><img src="../../assets/hardware/gps/rtk_here_plus_connectors.jpg" alt="Here+ Pinout (viewed from base)"></p>
 <table>
 <thead>
 <tr>
-<th>pin</th>
+<th>Pin</th>
 <th>Here+ GPS</th>
-<th>pin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 (purple)</td>
+<td>VCC_5V</td>
+</tr>
+<tr>
+<td>2 (blue)</td>
+<td>GPS_RX</td>
+</tr>
+<tr>
+<td>3 (green)</td>
+<td>GPS_TX</td>
+</tr>
+<tr>
+<td>4 (yellow)</td>
+<td>I2C SCL</td>
+</tr>
+<tr>
+<td>5 (orange)</td>
+<td>I2C SDA</td>
+</tr>
+<tr>
+<td>6 (red)</td>
+<td>SAFETY BUTTON</td>
+</tr>
+<tr>
+<td>7 (brown)</td>
+<td>BUTTON_LED</td>
+</tr>
+<tr>
+<td>8 (black)</td>
+<td>GND</td>
+</tr>
+</tbody>
+</table>
+<h2 id="wiring-and-connections"><a name="wiring-and-connections" class="plugin-anchor" href="#wiring-and-connections"><i class="fa fa-link" aria-hidden="true"></i></a>Wiring and Connections</h2>
+<p>Connection examples are shown below for a number of boards (these can be used to modify the cable as needed for other boards).</p>
+<h3 id="hex-cube"><a name="hex-cube" class="plugin-anchor" href="#hex-cube"><i class="fa fa-link" aria-hidden="true"></i></a>Hex Cube</h3>
+<p>The supplied cable can be inserted directly into the <a href="../flight_controller/pixhawk-2.html">Hex Cube (Pixhawk 2)</a> GPS UART port.</p>
+<h4 id="pixhawk-3-pro"><a name="pixhawk-3-pro" class="plugin-anchor" href="#pixhawk-3-pro"><i class="fa fa-link" aria-hidden="true"></i></a>Pixhawk 3 Pro</h4>
+<p>The <a href="../flight_controller/pixhawk3_pro.html">Pixhawk 3 Pro</a> and <a href="../flight_controller/pixracer.html">Pixracer</a> have a 6 pin GPS port connector.
+For these controllers you can modify the GPS cable (as shown below) to remove pin 6 and 7.</p>
+<p><img src="../../assets/hardware/gps/rtk_here_plug_gps_to_6pin_connector.jpg" alt="rtk_here_plug_gps_to_6pin_connector"></p>
+<p>Pin 6 and 7 are for the safety button - these can be attached as well if needed.</p>
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>Here+ GPS</th>
+<th>Pin</th>
 <th>Pixhawk 3 Pro GPS</th>
 </tr>
 </thead>
@@ -3390,13 +3437,13 @@
 </tr>
 <tr>
 <td>4</td>
-<td>SCL</td>
+<td>I2C SCL</td>
 <td>4</td>
 <td>SCL</td>
 </tr>
 <tr>
 <td>5</td>
-<td>SDA</td>
+<td>I2C SDA</td>
 <td>5</td>
 <td>SDA</td>
 </tr>
@@ -3420,7 +3467,85 @@
 </tr>
 </tbody>
 </table>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-02-26 16:08:46 </span> </footer>
+<h4 id="pixhawk-4"><a name="pixhawk-4" class="plugin-anchor" href="#pixhawk-4"><i class="fa fa-link" aria-hidden="true"></i></a>Pixhawk 4</h4>
+<p>The Here+ to <a href="../flight_controller/pixhawk4.html">Pixhawk 4</a> GPS port pin mapping is 1:1 for pins 1-7 and then connect GND (Here+ pin 8 / Pixhawk pin 10).
+Pixhawk 4 GPS port pins 8 and 9 can be left disconnected. </p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> The Pixhawk 4 GPS port has pin 1 on the left hand side.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>Here+ GPS</th>
+<th>pin</th>
+<th>Pixhawk 4 GPS Port</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>VCC_5V</td>
+<td>1</td>
+<td>VCC (+5V)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>GPS_RX</td>
+<td>2</td>
+<td>GPS_TX</td>
+</tr>
+<tr>
+<td>3</td>
+<td>GPS_TX</td>
+<td>3</td>
+<td>GPS_RX</td>
+</tr>
+<tr>
+<td>4</td>
+<td>I2C SCL</td>
+<td>4</td>
+<td>SCL1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>I2C SDA</td>
+<td>5</td>
+<td>SDA1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>BUTTON</td>
+<td>6</td>
+<td>SAFETY_SWITCH</td>
+</tr>
+<tr>
+<td>7</td>
+<td>BUTTON_LED</td>
+<td>7</td>
+<td>SAFETY_SWITCH_LED</td>
+</tr>
+<tr>
+<td>/</td>
+<td>-</td>
+<td>8</td>
+<td>VDD_3V3</td>
+</tr>
+<tr>
+<td>/</td>
+<td>-</td>
+<td>9</td>
+<td>BUZZER</td>
+</tr>
+<tr>
+<td>8</td>
+<td>GND</td>
+<td>10</td>
+<td>GND</td>
+</tr>
+</tbody>
+</table>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-03-04 05:49:06 </span> </footer>
                                 
                                 </section>
                             
@@ -3463,7 +3588,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Hex Here+","level":"1.10.2.1.1","depth":4,"next":{"title":"Drotek XL","level":"1.10.2.1.2","depth":4,"path":"gps_compass/rtk_gps_drotek_xl.md","ref":"gps_compass/rtk_gps_drotek_xl.md","articles":[]},"previous":{"title":"RTK GPS","level":"1.10.2.1","depth":3,"path":"gps_compass/rtk_gps.md","ref":"gps_compass/rtk_gps.md","articles":[{"title":"Hex Here+","level":"1.10.2.1.1","depth":4,"path":"gps_compass/rtk_gps_hex_hereplus.md","ref":"gps_compass/rtk_gps_hex_hereplus.md","articles":[]},{"title":"Drotek XL","level":"1.10.2.1.2","depth":4,"path":"gps_compass/rtk_gps_drotek_xl.md","ref":"gps_compass/rtk_gps_drotek_xl.md","articles":[]},{"title":"CUAV C-RTK","level":"1.10.2.1.3","depth":4,"path":"gps_compass/rtk_gps_cuav_c-rtk.md","ref":"gps_compass/rtk_gps_cuav_c-rtk.md","articles":[]},{"title":"Trimble MB-Two","level":"1.10.2.1.4","depth":4,"path":"gps_compass/rtk_gps_trimble_mb_two.md","ref":"gps_compass/rtk_gps_trimble_mb_two.md","articles":[]},{"title":"Hex Here2","level":"1.10.2.1.5","depth":4,"path":"gps_compass/rtk_gps_hex_here2.md","ref":"gps_compass/rtk_gps_hex_here2.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"gps_compass/rtk_gps_hex_hereplus.md","mtime":"2020-02-26T16:08:46.245Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-26T16:09:40.617Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Hex Here+","level":"1.10.2.1.1","depth":4,"next":{"title":"Drotek XL","level":"1.10.2.1.2","depth":4,"path":"gps_compass/rtk_gps_drotek_xl.md","ref":"gps_compass/rtk_gps_drotek_xl.md","articles":[]},"previous":{"title":"RTK GPS","level":"1.10.2.1","depth":3,"path":"gps_compass/rtk_gps.md","ref":"gps_compass/rtk_gps.md","articles":[{"title":"Hex Here+","level":"1.10.2.1.1","depth":4,"path":"gps_compass/rtk_gps_hex_hereplus.md","ref":"gps_compass/rtk_gps_hex_hereplus.md","articles":[]},{"title":"Drotek XL","level":"1.10.2.1.2","depth":4,"path":"gps_compass/rtk_gps_drotek_xl.md","ref":"gps_compass/rtk_gps_drotek_xl.md","articles":[]},{"title":"CUAV C-RTK","level":"1.10.2.1.3","depth":4,"path":"gps_compass/rtk_gps_cuav_c-rtk.md","ref":"gps_compass/rtk_gps_cuav_c-rtk.md","articles":[]},{"title":"Trimble MB-Two","level":"1.10.2.1.4","depth":4,"path":"gps_compass/rtk_gps_trimble_mb_two.md","ref":"gps_compass/rtk_gps_trimble_mb_two.md","articles":[]},{"title":"Hex Here2","level":"1.10.2.1.5","depth":4,"path":"gps_compass/rtk_gps_hex_here2.md","ref":"gps_compass/rtk_gps_hex_here2.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"gps_compass/rtk_gps_hex_hereplus.md","mtime":"2020-03-04T05:49:06.326Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-04T05:50:32.745Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
