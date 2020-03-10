@@ -3413,104 +3413,105 @@ This topic shows how to set up the board to run PX4 with <a href="https://github
 </ul>
 <p>Information about flashing OS images can be found on <a href="https://github.com/beagleboard/beaglebone-blue/wiki/Flashing-firmware" target="_blank">this page</a>.
 Other useful information can be found in the <a href="https://github.com/beagleboard/beaglebone-blue/wiki/Frequently-Asked-Questions-(FAQ)" target="_blank">FAQ</a>.</p>
-<h2 id="robot-control-library"><a name="robot-control-library" class="plugin-anchor" href="#robot-control-library"><i class="fa fa-link" aria-hidden="true"></i></a>Robot Control Library</h2>
-<p>On <a href="https://beagleboard.org/blue" target="_blank">BeagleBone Blue</a>, PX4 requires <a href="https://github.com/StrawsonDesign/librobotcontrol" target="_blank">librobotcontrol</a> version 1.0.0 or higher.</p>
-<p>BeagleBoard OS images come with <em>librobotcontrol</em> preinstalled, but it may not work properly in all OS images.</p>
-<p>One way to check if <em>librobotcontrol</em> works properly is to run <em>rc_test_drivers</em> which comes with <em>librobotcontrol</em>. 
-As shown in the following example, all tests should pass. 
-Optionally run other tests such as <em>rc_test_bmp</em>, <em>rc_test_mpu</em>, etc.</p>
-<pre><code class="lang-sh">debian@beaglebone:~$ rc_<span class="hljs-built_in">test</span>_drivers
-
-Kernel: 4.14.56-ti-rt-r64
-BeagleBoard.org Debian Image 2018-07-22
-Debian: 9.5
-
-PASSED: gpio 0
-PASSED: gpio 1
-PASSED: gpio 2
-PASSED: gpio 3
-PASSED: pwm1
-PASSED: pwm2
-PASSED: eqep0
-PASSED: eqep1
-PASSED: eqep2
-PASSED: pru-rproc
-PASSED: uart1
-PASSED: uart2
-PASSED: uart4
-PASSED: uart5
-PASSED: i2c1
-PASSED: i2c2
-PASSED: spi
-PASSED: LED
-PASSED: ADC iio
-
-Currently running on a:
-MODEL_BB_BLUE
-Robot Control library Version:
-1.0.0
-</code></pre>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> Optionally you can update to a realtime kernel, and if you do, re-check if <em>librobotcontrol</em> works properly with the realtime kernel.</p>
 </blockquote>
-<p>The latest OS images at time of updating this document is <a href="https://debian.beagleboard.org/images/bone-debian-9.5-iot-armhf-2018-10-07-4gb.img.xz" target="_blank">bone-debian-9.5-iot-armhf-2018-10-07-4gb.img.xz</a>.</p>
-<h3 id="setup-robot-control-library"><a name="setup-robot-control-library" class="plugin-anchor" href="#setup-robot-control-library"><i class="fa fa-link" aria-hidden="true"></i></a>Setup Robot Control Library</h3>
-<p>If you want to build PX4, there are additional setup steps for this library.</p>
-<p>Here are steps to build the <em>librobotcontrol</em> with PX4 extensions natively on a BeagleBone board:</p>
-<pre><code class="lang-sh">   git <span class="hljs-built_in">clone</span> https://github.com/StrawsonDesign/librobotcontrol.git
-   <span class="hljs-built_in">cd</span> librobotcontrol
-   make EXT_CFLAGS=-DRC_AUTOPILOT_EXT
-   sudo make install
-</code></pre>
-<blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
-<p> <code>EXT_CFLAGS</code> was added after version 1.0.4. If it&apos;s not in your version of <strong>librobotcontrol/library/Makefile</strong>, add it to <code>CLFAGS</code>, e.g., <code>CFLAGS := $(EXT_CFLAGS) -g -fPIC -I $(INCLUDEDIR)</code></p>
-</blockquote>
-<p>After acquiring the pre-built library,</p>
-<ol>
-<li>Select the <em>librobotcontrol</em> installation directory, and set it in the <code>LIBROBOTCONTROL_INSTALL_DIR</code> environment variable so that other unwanted headers will not be included</li>
-<li>Install <strong>robotcontrol.h</strong> and <strong>rc/*</strong> into <code>$LIBROBOTCONTROL_INSTALL_DIR/include</code></li>
-<li>Install pre-built native (ARM) version of librobotcontrol.* into <code>$LIBROBOTCONTROL_INSTALL_DIR/lib</code></li>
-</ol>
-<p>At this point the BeagleBone Blue target can be built on both cross compile host system and native build system, i.e., </p>
-<pre><code class="lang-sh">make posix_bbblue_cross [upload]
-</code></pre>
-<h2 id="cross-compiler-build"><a name="cross-compiler-build" class="plugin-anchor" href="#cross-compiler-build"><i class="fa fa-link" aria-hidden="true"></i></a>Cross Compiler Build</h2>
+<p>The latest OS images at time of updating this document is <a href="https://debian.beagleboard.org/images/bone-debian-9.9-iot-armhf-2019-08-03-4gb.img.xz" target="_blank">bone-debian-9.9-iot-armhf-2019-08-03-4gb.img.xz</a>.</p>
+<h2 id="cross-compiler-build-recommend"><a name="cross-compiler-build-recommend" class="plugin-anchor" href="#cross-compiler-build-recommend"><i class="fa fa-link" aria-hidden="true"></i></a>Cross Compiler Build (Recommend)</h2>
 <p>The recommended way to build PX4 for <em>BeagleBone Blue</em> is to compile on a development computer and upload the PX4 executable binary directly to the BeagleBone Blue. </p>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> This approach is recommended over <a href="#native_builds">native build</a> due to speed of deployment and ease of use.</p>
 </blockquote>
-<h3 id="cross-compiler-setup"><a name="cross-compiler-setup" class="plugin-anchor" href="#cross-compiler-setup"><i class="fa fa-link" aria-hidden="true"></i></a>Cross Compiler Setup</h3>
-<p>ARM Cross Compiler for <em>BeagleBone Blue</em> can be found at <a href="http://www.linaro.org/downloads/" target="_blank">Linaro Toolchain Binaries site</a>. 
-The following is an example setup on development host. </p>
+<h3 id="beaglebone-blue-wifi-setup"><a name="beaglebone-blue-wifi-setup" class="plugin-anchor" href="#beaglebone-blue-wifi-setup"><i class="fa fa-link" aria-hidden="true"></i></a>Beaglebone Blue WIFI Setup</h3>
+<p>For easy access to your board, you can connect it to your home network via wifi.</p>
+<p>The steps are:</p>
+<pre><code>sudo -su
+connmanctl
+connmanctl&gt;scan wifi
+connmanctl&gt;services
+(at this point you should see your network appear along with other stuff, in my case it was &quot;AR Crystal wifi_f45eab2f1ee1_6372797774616c_managed_psk&quot;)
+connmanctl&gt;agent on
+connmanctl&gt;connect wifi_f45eab2f1ee1_6372797774616c_managed_psk
+connmanctl&gt;quit
+</code></pre><h3 id="ssh-root-login-on-beaglebone"><a name="ssh-root-login-on-beaglebone" class="plugin-anchor" href="#ssh-root-login-on-beaglebone"><i class="fa fa-link" aria-hidden="true"></i></a>SSH root Login on Beaglebone</h3>
+<p>With USB Serial connected </p>
+<pre><code>echo &quot;PermitRootLogin yes&quot; &gt;&gt;  /etc/ssh/sshd_config &amp;&amp; systemctl restart sshd
+</code></pre><h3 id="cross-compiler-setup"><a name="cross-compiler-setup" class="plugin-anchor" href="#cross-compiler-setup"><i class="fa fa-link" aria-hidden="true"></i></a>Cross Compiler Setup</h3>
 <ol>
-<li><p>First install the toolchain into <em>/opt/bbblue_toolchain/gcc-arm-linux-gnueabihf</em>. Here is an example of using soft link to select which version of the toolchain you want to use:</p>
-<pre><code class="lang-sh"> ...@ubuntu:/opt/bbblue_toolchain$ ls <span class="hljs-_">-l</span>
+<li>First set up <em>rsync</em> (this is is used to transfer files from the development computer to the target board over a network - WiFi or Ethernet). 
+For <em>rsync</em> over SSH with key authentication, follow steps here:<ol>
+<li>sudo su</li>
+<li>ssh-keygen -t rsa -C root@beaglebone</li>
+<li>ENTER //no passphrase</li>
+<li>ENTER</li>
+<li>ENTER</li>
+<li>ssh-copy-id root@beaglebone</li>
+<li>When promted if you trust - yes</li>
+<li>password root</li>
+<li>On the development computer, define the BeagleBone Blue board as <code>beaglebone</code> in <strong>/etc/hosts</strong></li>
+</ol>
+</li>
+<li>Cross Compile Setup<ol>
+<li>Toolchain download<ol>
+<li>First install the toolchain into <em>/opt/bbblue_toolchain/gcc-arm-linux-gnueabihf</em>.
+Here is an example of using soft link to select which version of the toolchain you want to use:<pre><code>mkdir -p /opt/bbblue_toolchain/gcc-arm-linux-gnueabihf
+chmod -R 777 /opt/bbblue_toolchain
+</code></pre>ARM Cross Compiler for <em>BeagleBone Blue</em> can be found at <a href="http://www.linaro.org/downloads/" target="_blank">Linaro Toolchain Binaries site</a>. </li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<pre><code>     &gt; **Tip** GCC in the toolchain should be compatible with kernel in *BeagleBone Blue*.
+        General rule of thumb is to choose a toolchain where version of GCC is not higher than version of GCC which comes with the OS image on *BeagleBone Blue*. 
+
+     Download and unpack [gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf](https://releases.linaro.org/components/toolchain/binaries/latest-7/arm-linux-gnueabihf/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf.tar.xz) to the bbblue_toolchain folder
+     ``` 
+     sh
+     ...@ubuntu:/opt/bbblue_toolchain$ ls -l
      lrwxrwxrwx 1 root root   51 Mar 22 16:10 gcc-arm-linux-gnueabihf -&gt; gcc-linaro-6.3.1-2017.05-x86_64_arm-linux-gnueabihf
      drwxr-xr-x 8 root root 4096 May 17  2017 gcc-linaro-6.3.1-2017.05-x86_64_arm-linux-gnueabihf
      drwxr-xr-x 8 root root 4096 Nov 19 03:51 gcc-linaro-6.4.1-2017.11-x86_64_arm-linux-gnueabihf
-</code></pre>
-</li>
-<li><p>Add it to the PATH in ~/.profile as shown below</p>
-<pre><code class="lang-sh"><span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$PATH</span>:/opt/bbblue_toolchain/gcc-arm-linux-gnueabihf/bin
-<span class="hljs-built_in">export</span> CrossCompiler=/opt/bbblue_toolchain/gcc-arm-linux-gnueabihf/bin/arm-linux-gnueabihf-
-</code></pre>
-</li>
-</ol>
-<blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
-<p> GCC in the toolchain should be compatible with kernel in <em>BeagleBone Blue</em>. General rule of thumb is to choose a toolchain 
-where version of GCC is not higher than version of GCC which comes with the OS image on <em>BeagleBone Blue</em>. </p>
+     ```
+     The following is an example setup on development host. 
+  1. Add it to the PATH in ~/.profile as shown below
+     ```sh
+     export PATH=$PATH:/opt/bbblue_toolchain/gcc-arm-linux-gnueabihf/gcc-linaro-6.3.1-2017.05-x86_64_arm-linux-gnueabihf/bin
+     export CrossCompiler=/opt/bbblue_toolchain/gcc-arm-linux-gnueabihf/gcc-linaro-6.3.1-2017.05-x86_64_arm-linux-gnueabihf/bin/arm-linux-    gnueabihf-
+     ```
+     ```
+     sudo usermod -a -G dialout $USER
+     ```
+     &gt; **Note** Logout and Login to make the change working
+
+     Download script for Ubuntu and run it
+     ```
+     curl https://raw.githubusercontent.com/PX4/Devguide/v1.9.0/build_scripts/ubuntu_sim_ros_melodic.sh --output ubuntu_sim_ros_melodic.sh
+     chmod 777 ubuntu_sim_ros_melodic.sh
+     apt-get install git
+     mkdir ~/src
+     cd ~/src
+     git clone https://github.com/PX4/Firmware.git
+     cd Firmware
+     apt install python3-pip
+     pip3 install --user empy
+     pip3 install --user toml
+     pip3 install --user numpy
+     pip3 install --user jinja2
+     ./ubuntu_sim_ros_melodic.sh
+     ```
+     After sucessfull build:
+     ```
+     nano Firmware/boards/beaglebone/blue/cmake/upload.cmake
+
+     in row 37 change debian@beaglebone.lan --&gt; root@beaglebone
+     ```
+</code></pre><h3 id="cross-compile-and-upload"><a name="cross-compile-and-upload" class="plugin-anchor" href="#cross-compile-and-upload"><i class="fa fa-link" aria-hidden="true"></i></a>Cross Compile and Upload</h3>
+<p>Compile and Upload</p>
+<pre><code>make beaglebone_blue_default upload
+</code></pre><blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> Without upload, files stored local in build folder.</p>
 </blockquote>
-<h3 id="cross-compile-and-upload"><a name="cross-compile-and-upload" class="plugin-anchor" href="#cross-compile-and-upload"><i class="fa fa-link" aria-hidden="true"></i></a>Cross Compile and Upload</h3>
-<ol>
-<li>First set up <em>rsync</em> (this is is used to transfer files from the development computer to the target board over a network - WiFi or Ethernet). <ul>
-<li>For <em>rsync</em> over SSH with key authentication, follow steps similar to those for <a href="raspberry_pi_navio2.html">Raspberry Pi/Navio</a></li>
-<li>On the development computer, define the BeagleBone Blue board as <code>BBBluePX4</code> in <strong>/etc/hosts</strong></li>
-</ul>
-</li>
-<li>Run the following command to build and upload files:<pre><code class="lang-sh">make posix_bbblue_cross upload
-</code></pre>
-</li>
-</ol>
 <p>To test the uploaded files, run the following commands on the <em>BeagleBone Blue</em> board:</p>
 <pre><code class="lang-sh"><span class="hljs-built_in">cd</span> /home/debian/px4 
 sudo ./bin/px4 <span class="hljs-_">-s</span> px4.config
@@ -3520,6 +3521,12 @@ sudo ./bin/px4 <span class="hljs-_">-s</span> px4.config
 </blockquote>
 <h2 id="native_builds"><a name="native_builds" class="plugin-anchor" href="#native_builds"><i class="fa fa-link" aria-hidden="true"></i></a>Native Builds (optional) </h2>
 <p>You can also natively build PX4 builds directly on the BeagleBone Blue.</p>
+<p>After acquiring the pre-built library,</p>
+<ol>
+<li>Select the <em>librobotcontrol</em> installation directory, and set it in the <code>LIBROBOTCONTROL_INSTALL_DIR</code> environment variable so that other unwanted headers will not be included</li>
+<li>Install <strong>robotcontrol.h</strong> and <strong>rc/*</strong> into <code>$LIBROBOTCONTROL_INSTALL_DIR/include</code></li>
+<li>Install pre-built native (ARM) version of librobotcontrol.* into <code>$LIBROBOTCONTROL_INSTALL_DIR/lib</code></li>
+</ol>
 <p>Run the following commands on the BeagleBone Blue (i.e. via SSH):</p>
 <ol>
 <li>Install dependencies:<pre><code class="lang-sh">sudo apt-get update
@@ -3529,6 +3536,13 @@ sudo apt-get install cmake python-empy
 <li>Clone the PX4 Firmware directly onto the BeagleBone Blue.</li>
 <li>Continue with the <a href="https://dev.px4.io/master/en/setup/dev_env_linux.html" target="_blank">standard build system installation</a>.</li>
 </ol>
+<h2 id="chnages-in-config"><a name="chnages-in-config" class="plugin-anchor" href="#chnages-in-config"><i class="fa fa-link" aria-hidden="true"></i></a>Chnages in config</h2>
+<p>All changes can be made in de px4.config file on beaglebone direct.
+For example, you can change the WIFI to wlan.</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> If you wanna change permanent for build, you have to change Firmware/posix-configs/bbblue/px4.config on the Build Machine before build. </p>
+</blockquote>
+<p>you have to change the file </p>
 <h2 id="autostart-during-boot"><a name="autostart-during-boot" class="plugin-anchor" href="#autostart-during-boot"><i class="fa fa-link" aria-hidden="true"></i></a>Autostart During Boot</h2>
 <p>Here is an example [/etc/rc.local]:</p>
 <pre><code class="lang-sh"><span class="hljs-comment">#!/bin/sh -e</span>
@@ -3575,33 +3589,25 @@ WantedBy=multi-user.target
 <h4 id="power-servo-rail"><a name="power-servo-rail" class="plugin-anchor" href="#power-servo-rail"><i class="fa fa-link" aria-hidden="true"></i></a>Power Servo Rail</h4>
 <p>When PX4 starts, it automatically applies power to servos.</p>
 <h4 id="unique-features"><a name="unique-features" class="plugin-anchor" href="#unique-features"><i class="fa fa-link" aria-hidden="true"></i></a>Unique Features</h4>
-<p>BeagleBone Blue has some unique features such as multiple choices of WiFi interfaces
-and power sources. Refer to comments in <strong>/home/debian/px4/px4.config</strong> for usage of 
-these features.</p>
+<p>BeagleBone Blue has some unique features such as multiple choices of WiFi interfaces and power sources.
+Refer to comments in <strong>/home/debian/px4/px4.config</strong> for usage of these features.</p>
 <h4 id="sbus-signal-converter"><a name="sbus-signal-converter" class="plugin-anchor" href="#sbus-signal-converter"><i class="fa fa-link" aria-hidden="true"></i></a>SBUS Signal Converter</h4>
-<p>SBUS signal from receiver (e.g., FrSky X8R) is an inverted signal. 
-UARTs on BeagleBone Blue can only work with non-inverted 3.3V level signal. 
-<a href="https://dev.px4.io/master/en/tutorials/linux_sbus.html" target="_blank">This tutorial</a> contains a 
-SBUS signal inverter circuit.</p>
+<p>SBUS signal from receiver (e.g., FrSky X8R) is an inverted signal.
+UARTs on BeagleBone Blue can only work with non-inverted 3.3V level signal.
+<a href="https://dev.px4.io/master/en/tutorials/linux_sbus.html" target="_blank">This tutorial</a> contains a SBUS signal inverter circuit.</p>
 <h4 id="typical-connections"><a name="typical-connections" class="plugin-anchor" href="#typical-connections"><i class="fa fa-link" aria-hidden="true"></i></a>Typical Connections</h4>
 <p>For a quadcopter with GPS and an SBUS receiver, here are typical connections:</p>
 <ol>
-<li><p>Connect the ESC of motor 1, 2, 3 and 4 to channel 1, 2, 3 and 4 of servo outputs 
-on BeagleBone Blue, respectively. If your ESC connector contains a power output 
-pin, remove it and do not connect it to the power output pin of the servo channel 
-on the BeagleBone Blue.</p>
+<li><p>Connect the ESC of motor 1, 2, 3 and 4 to channel 1, 2, 3 and 4 of servo outputs on BeagleBone Blue, respectively.
+If your ESC connector contains a power output pin, remove it and do not connect it to the power output pin of the servo channel on the BeagleBone Blue.</p>
 </li>
-<li><p>Connect the above mentioned converted SBUS signal to the dsm2 port if you have 
-the matching connector for dsm2, otherwise connect it to any other available 
-UART port and change the corresponding port in <strong>/home/debian/px4/px4.config</strong> 
-accordingly.</p>
+<li><p>Connect the above mentioned converted SBUS signal to the dsm2 port if you have the matching connector for dsm2, otherwise connect it to any other available UART port and change the corresponding port in <strong>/home/debian/px4/px4.config</strong> accordingly.</p>
 </li>
-<li><p>Connect the signals of GPS module to GPS port on the BeagleBone Blue. Note
-that the signal pins of the GPS port on the BeagleBone Blue are only 3.3V
-tolerant, so choose your GPS module accordingly.</p>
+<li><p>Connect the signals of GPS module to GPS port on the BeagleBone Blue.
+Note that the signal pins of the GPS port on the BeagleBone Blue are only 3.3V tolerant, so choose your GPS module accordingly.</p>
 </li>
 </ol>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-03-09 23:27:59 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-03-10 00:56:09 </span> </footer>
                                 
                                 </section>
                             
@@ -3644,7 +3650,7 @@ tolerant, so choose your GPS module accordingly.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"BeagleBone Blue","level":"1.11.10","depth":2,"next":{"title":"Complete Vehicles","level":"1.12","depth":1,"path":"complete_vehicles/README.md","ref":"complete_vehicles/README.md","articles":[{"title":"PX4 Vision Kit","level":"1.12.1","depth":2,"path":"complete_vehicles/px4_vision_kit.md","ref":"complete_vehicles/px4_vision_kit.md","articles":[]},{"title":"Crazyflie 2.0","level":"1.12.2","depth":2,"path":"complete_vehicles/crazyflie2.md","ref":"complete_vehicles/crazyflie2.md","articles":[]},{"title":"MindRacer BNF & RTF","level":"1.12.3","depth":2,"path":"complete_vehicles/mindracer_BNF_RTF.md","ref":"complete_vehicles/mindracer_BNF_RTF.md","articles":[{"title":"MindRacer 210","level":"1.12.3.1","depth":3,"path":"complete_vehicles/mindracer210.md","ref":"complete_vehicles/mindracer210.md","articles":[]},{"title":"NanoMind 110","level":"1.12.3.2","depth":3,"path":"complete_vehicles/nanomind110.md","ref":"complete_vehicles/nanomind110.md","articles":[]}]},{"title":"BetaFPV Beta75X 2S Brushless Whoop","level":"1.12.4","depth":2,"path":"complete_vehicles/betafpv_beta75x.md","ref":"complete_vehicles/betafpv_beta75x.md","articles":[]},{"title":"Holybro Kopis 2","level":"1.12.5","depth":2,"path":"complete_vehicles/holybro_kopis2.md","ref":"complete_vehicles/holybro_kopis2.md","articles":[]},{"title":"Intel® Aero RTF Drone (Discontinued)","level":"1.12.6","depth":2,"path":"complete_vehicles/intel_aero.md","ref":"complete_vehicles/intel_aero.md","articles":[]}]},"previous":{"title":"OcPoC-Zynq Mini","level":"1.11.9","depth":2,"path":"flight_controller/ocpoc_zynq.md","ref":"flight_controller/ocpoc_zynq.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"flight_controller/beaglebone_blue.md","mtime":"2020-03-09T23:27:59.893Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-09T23:29:27.437Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"BeagleBone Blue","level":"1.11.10","depth":2,"next":{"title":"Complete Vehicles","level":"1.12","depth":1,"path":"complete_vehicles/README.md","ref":"complete_vehicles/README.md","articles":[{"title":"PX4 Vision Kit","level":"1.12.1","depth":2,"path":"complete_vehicles/px4_vision_kit.md","ref":"complete_vehicles/px4_vision_kit.md","articles":[]},{"title":"Crazyflie 2.0","level":"1.12.2","depth":2,"path":"complete_vehicles/crazyflie2.md","ref":"complete_vehicles/crazyflie2.md","articles":[]},{"title":"MindRacer BNF & RTF","level":"1.12.3","depth":2,"path":"complete_vehicles/mindracer_BNF_RTF.md","ref":"complete_vehicles/mindracer_BNF_RTF.md","articles":[{"title":"MindRacer 210","level":"1.12.3.1","depth":3,"path":"complete_vehicles/mindracer210.md","ref":"complete_vehicles/mindracer210.md","articles":[]},{"title":"NanoMind 110","level":"1.12.3.2","depth":3,"path":"complete_vehicles/nanomind110.md","ref":"complete_vehicles/nanomind110.md","articles":[]}]},{"title":"BetaFPV Beta75X 2S Brushless Whoop","level":"1.12.4","depth":2,"path":"complete_vehicles/betafpv_beta75x.md","ref":"complete_vehicles/betafpv_beta75x.md","articles":[]},{"title":"Holybro Kopis 2","level":"1.12.5","depth":2,"path":"complete_vehicles/holybro_kopis2.md","ref":"complete_vehicles/holybro_kopis2.md","articles":[]},{"title":"Intel® Aero RTF Drone (Discontinued)","level":"1.12.6","depth":2,"path":"complete_vehicles/intel_aero.md","ref":"complete_vehicles/intel_aero.md","articles":[]}]},"previous":{"title":"OcPoC-Zynq Mini","level":"1.11.9","depth":2,"path":"flight_controller/ocpoc_zynq.md","ref":"flight_controller/ocpoc_zynq.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"flight_controller/beaglebone_blue.md","mtime":"2020-03-10T00:56:09.233Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-10T00:56:59.008Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
