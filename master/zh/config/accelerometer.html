@@ -959,7 +959,7 @@
                 <a href="../frames_vtol/vtol_tiltrotor_eflite_convergence_pixfalcon.html">
             
                     
-                    Convergence Tiltrotor (Pixfalcon)
+                    Convergence 倾转旋翼机（Pixfalcon）
             
                 </a>
             
@@ -2276,7 +2276,7 @@
                 <a href="../power_module/cuav_hv_pm.html">
             
                     
-                    CUAV HV pm
+                    CUAV HV 电源模块
             
                 </a>
             
@@ -2373,7 +2373,7 @@
                 <a href="../sensor/ulanding_radar.html">
             
                     
-                    uLanding Radar
+                    uLanding 微波雷达
             
                 </a>
             
@@ -2399,7 +2399,7 @@
                 <a href="../sensor/tfmini.html">
             
                     
-                    Benewake TFmini Lidar
+                    北醒 Benewake TFmini 激光雷达
             
                 </a>
             
@@ -2488,7 +2488,7 @@
                 <a href="../sensor/airspeed.html">
             
                     
-                    Airspeed Sensors
+                    空速传感器
             
                 </a>
             
@@ -2533,7 +2533,7 @@
                 <a href="../peripherals/esc_motors.html">
             
                     
-                    ESCs & Motors
+                    电调 & 电机
             
                 </a>
             
@@ -2591,7 +2591,7 @@
                 <a href="../peripherals/camera.html">
             
                     
-                    Camera
+                    相机
             
                 </a>
             
@@ -2604,7 +2604,7 @@
                 <a href="../peripherals/parachute.html">
             
                     
-                    Parachute
+                    降落伞 
             
                 </a>
             
@@ -2617,7 +2617,7 @@
                 <a href="../peripherals/companion_computer_peripherals.html">
             
                     
-                    Companion Computer Peripherals
+                    机载计算机外设
             
                 </a>
             
@@ -2630,7 +2630,7 @@
                 <a href="../peripherals/adsb_flarm.html">
             
                     
-                    ADSB/FLARM (Traffic Avoidance)
+                    ADSB/FLARM（交通避撞）
             
                 </a>
             
@@ -2871,7 +2871,7 @@
                 <a href="../flight_controller/pixhawk_mini.html">
             
                     
-                    3DR Pixhawk Mini (Discontinued)
+                    3DR Pixhawk Mini
             
                 </a>
             
@@ -2897,7 +2897,7 @@
                 <a href="../flight_controller/silicon_errata.html">
             
                     
-                    Silicon Errata
+                    芯片勘误表
             
                 </a>
             
@@ -3031,7 +3031,7 @@
                 <a href="../flight_controller/snapdragon_flight.html">
             
                     
-                    Snapdragon Flight
+                    高通骁龙飞控（Snapdragon Flight）
             
                 </a>
             
@@ -3159,7 +3159,7 @@
                 <a href="../complete_vehicles/">
             
                     
-                    Complete Vehicles
+                    成品机
             
                 </a>
             
@@ -3270,7 +3270,7 @@
                 <a href="../complete_vehicles/intel_aero.html">
             
                     
-                    Intel® Aero RTF Drone (Discontinued)
+                    Intel® Aero RTF Drone（已停产）
             
                 </a>
             
@@ -3288,7 +3288,7 @@
                 <a href="../development/development.html">
             
                     
-                    Development
+                    开发用途
             
                 </a>
             
@@ -3426,45 +3426,45 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x52A0;&#x901F;&#x5EA6;&#x8BA1;"><a name="&#x52A0;&#x901F;&#x5EA6;&#x8BA1;" class="plugin-anchor" href="#&#x52A0;&#x901F;&#x5EA6;&#x8BA1;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x52A0;&#x901F;&#x5EA6;&#x8BA1;</h1>
+                                <h1 id="&#x52A0;&#x901F;&#x5EA6;&#x8BA1;-accelerometer"><a name="&#x52A0;&#x901F;&#x5EA6;&#x8BA1;-accelerometer" class="plugin-anchor" href="#&#x52A0;&#x901F;&#x5EA6;&#x8BA1;-accelerometer"><i class="fa fa-link" aria-hidden="true"></i></a>&#x52A0;&#x901F;&#x5EA6;&#x8BA1; Accelerometer</h1>
 <p>You will need to calibrate your accelerometer on first use or if the flight controller orientation is changed. Otherwise you should not need to recalibrate (except perhaps in winter, if you have a flight controller that was not <a href="../advanced_config/sensor_thermal_calibration.html">thermally calibrated</a> in the factory).</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> Poor accelerometer calibration is generally caught by preflight checks and arming-denied messages (QGC warnings typically refer to &quot;high accelerometer bias&quot; and &quot;consistency check failures&quot;).</p>
 </blockquote>
-<p><em>QGroundControl</em> will guide you to place and hold your vehicle in a number of orientations (you will be prompted when to move between positions).</p>
+<p>&#x6309;&#x7167; QGC&#x5730;&#x9762;&#x7AD9; &#x7684;&#x6307;&#x5F15;&#xFF0C;&#x5C06;&#x673A;&#x4F53;&#x7FFB;&#x8F6C;&#x5230;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x4F4D;&#x7F6E;&#x5E76;&#x9759;&#x7F6E;&#xFF08;&#x9700;&#x8981;&#x7FFB;&#x8F6C;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x65F6;&#xFF0C;QGC&#x4F1A;&#x6709;&#x63D0;&#x793A;&#xFF09;&#x3002;</p>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
-<p> This is similar to <a href="compass.html">compass calibration</a> except that you hold the vehicle still (rather than rotate it) in each orientation.</p>
+<p> &#x8FD9;&#x4E2A;&#x6B65;&#x9AA4;&#x4E0E; <a href="compass.html">&#x7F57;&#x76D8;&#x6821;&#x51C6;</a> &#x7C7B;&#x4F3C;&#xFF0C;&#x4E0D;&#x540C;&#x7684;&#x53EA;&#x662F;&#x5728;&#x6BCF;&#x4E2A;&#x65B9;&#x5411;&#x5C06;&#x673A;&#x4F53;&#x9759;&#x7F6E;&#xFF08;&#x800C;&#x975E;&#x65CB;&#x8F6C;&#xFF09;&#x3002;</p>
 </blockquote>
 <p><span></span></p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> The calibration uses a least squares &apos;fit&apos; algorithm that doesn&apos;t reaquire you to have &quot;perfect&quot; 90 degree orientations. Provided each axis is pointed mostly up and down at some time in the calibration sequence, and the vehicle is held stationary, the precise orientation doesn&apos;t matter.</p>
 </blockquote>
 <h2 id="&#x6267;&#x884C;&#x6821;&#x51C6;"><a name="&#x6267;&#x884C;&#x6821;&#x51C6;" class="plugin-anchor" href="#&#x6267;&#x884C;&#x6821;&#x51C6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6267;&#x884C;&#x6821;&#x51C6;</h2>
-<p>The calibration steps are:</p>
+<p>&#x6821;&#x51C6;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;</p>
 <ol>
 <li>&#x6253;&#x5F00; <em>QGroundControl</em> &#x5E76;&#x8FDE;&#x63A5;&#x4E0A;&#x98DE;&#x673A;&#x3002;</li>
-<li>&#x5728;&#x5DE5;&#x5177;&#x680F;&#x9009;&#x62E9; <strong>&#x9F7F;&#x8F6E;</strong> &#x56FE;&#x6807; (&#x673A;&#x4F53;&#x8BBE;&#x7F6E;)&#xFF0C;&#x7136;&#x540E;&#x5728;&#x4FA7;&#x8FB9;&#x680F;&#x9009;&#x62E9; <strong>&#x4F20;&#x611F;&#x5668;</strong>&#x3002;</li>
+<li>&#x5728;&#x5DE5;&#x5177;&#x680F;&#x9009;&#x62E9; <strong>&#x9F7F;&#x8F6E;</strong> &#x56FE;&#x6807;&#xFF08;&#x673A;&#x4F53;&#x8BBE;&#x7F6E;&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x4FA7;&#x8FB9;&#x680F;&#x9009;&#x62E9; <strong>&#x4F20;&#x611F;&#x5668;</strong>&#x3002;</li>
 <li><p>&#x70B9;&#x51FB; <strong>&#x52A0;&#x901F;&#x5EA6;&#x8BA1;</strong> &#x4F20;&#x611F;&#x5668;&#x6309;&#x94AE;&#x3002;</p>
 <p> <img src="../../assets/qgc/setup/sensor/accelerometer.jpg" alt="&#x52A0;&#x901F;&#x5EA6;&#x8BA1;&#x6821;&#x51C6;"></p>
-<blockquote class="clearfix alert alert-quote"><strong class="fa fa-2x fa-quote-left"></strong>
-<p> &#x4F60;&#x5FC5;&#x987B;&#x9996;&#x5148;&#x8BBE;&#x7F6E;&#x597D; <a href="flight_controller_orientation.html">&#x81EA;&#x52A8;&#x9A7E;&#x9A76;&#x4EEA;&#x5750;&#x6807;&#x7CFB;</a>&#x3002; &#x5982;&#x679C;&#x6CA1;&#x6709;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x91CC;&#x8BBE;&#x7F6E;&#x3002;</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> &#x4F60;&#x5FC5;&#x987B;&#x9996;&#x5148;&#x8BBE;&#x7F6E;&#x597D; <a href="flight_controller_orientation.html">&#x81EA;&#x52A8;&#x9A7E;&#x9A76;&#x4EEA;&#x65B9;&#x5411;</a>&#x3002; &#x5982;&#x679C;&#x6CA1;&#x6709;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x91CC;&#x8BBE;&#x7F6E;&#x3002;</p>
 </blockquote>
 </li>
-<li><p>&#x70B9;&#x51FB;<strong>&#x786E;&#x5B9A;</strong>&#x5F00;&#x59CB;&#x6807;&#x5B9A;&#x3002;</p>
+<li><p>&#x70B9;&#x51FB;<strong>&#x786E;&#x5B9A;</strong>&#x5F00;&#x59CB;&#x6821;&#x51C6;&#x3002;</p>
 </li>
 <li><p>&#x6309;&#x7167;&#x5C4F;&#x5E55;&#x4E0A;&#x7684;<em>&#x56FE;&#x793A;</em>&#x5F15;&#x5BFC;&#xFF0C;&#x5C06;&#x673A;&#x4F53;&#x7FFB;&#x8F6C;&#x5230;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x3002; &#x770B;&#x5230; (&#x56FE;&#x793A;&#x4F4D;&#x7F6E;&#x53D8;&#x6210;&#x9EC4;&#x8272;) &#x7684;&#x63D0;&#x793A;&#xFF0C;&#x63E1;&#x7D27;&#x673A;&#x4F53;&#x5E76;&#x4FDD;&#x6301;&#x9759;&#x6B62;&#x3002; &#x8BE5;&#x4F4D;&#x7F6E;&#x6807;&#x5B9A;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x5C4F;&#x5E55;&#x4E0A;&#x7684;&#x76F8;&#x5E94;&#x56FE;&#x793A;&#x5C06;&#x53D8;&#x6210;&#x7EFF;&#x8272;&#x3002;</p>
 <p> <img src="../../assets/qgc/setup/sensor/accelerometer_positions_px4.jpg" alt="&#x52A0;&#x901F;&#x5EA6;&#x8BA1;&#x6821;&#x51C6;"></p>
 </li>
-<li><p>&#x5728;&#x6240;&#x6709;&#x6807;&#x5B9A;&#x4F4D;&#x7F6E;&#x91CD;&#x590D;&#x6B65;&#x9AA4;5&#x3002;</p>
+<li><p>&#x5728;&#x673A;&#x4F53;&#x7684;&#x6240;&#x6709;&#x65B9;&#x5411;&#x4E0A;&#x91CD;&#x590D;&#x6821;&#x51C6;&#x6B65;&#x9AA4;&#x3002;</p>
 </li>
 </ol>
 <p>Once you&apos;ve calibrated the vehicle in all the positions <em>QGroundControl</em> will display <em>Calibration complete</em> (all orientation images will be displayed in green and the progress bar will fill completely). You can then proceed to the next sensor.</p>
 <h2 id="&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF1A;"><a name="&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF1A;" class="plugin-anchor" href="#&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF1A;</h2>
 <ul>
 <li><a href="https://docs.qgroundcontrol.com/en/SetupView/sensors_px4.html#accelerometer" target="_blank">QGroundControl &#x7528;&#x6237;&#x624B;&#x518C; &gt; &#x4F20;&#x611F;&#x5668;</a></li>
-<li><a href="https://youtu.be/91VGmdSlbo4?t=1m46s" target="_blank">PX4 &#x8BBE;&#x7F6E;&#x89C6;&#x9891; - @1m46s</a> (Youtube)</li>
+<li><a href="https://youtu.be/91VGmdSlbo4?t=1m46s" target="_blank">PX4 &#x8BBE;&#x7F6E;&#x89C6;&#x9891; - @1&#x5206;46&#x79D2;</a>&#xFF08;Youtube&#xFF09;</li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-03-23 12:56:14 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-03-24 03:38:02 </span> </footer>
                                 
                                 </section>
                             
@@ -3507,7 +3507,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"加速度计","level":"1.4.6","depth":2,"next":{"title":"空速：","level":"1.4.7","depth":2,"path":"config/airspeed.md","ref":"config/airspeed.md","articles":[]},"previous":{"title":"陀螺仪","level":"1.4.5","depth":2,"path":"config/gyroscope.md","ref":"config/gyroscope.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"config/accelerometer.md","mtime":"2020-03-23T12:56:14.075Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-23T12:57:03.176Z"},"basePath":"..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"加速度计","level":"1.4.6","depth":2,"next":{"title":"空速：","level":"1.4.7","depth":2,"path":"config/airspeed.md","ref":"config/airspeed.md","articles":[]},"previous":{"title":"陀螺仪","level":"1.4.5","depth":2,"path":"config/gyroscope.md","ref":"config/gyroscope.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"config/accelerometer.md","mtime":"2020-03-24T03:38:02.777Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-24T03:39:32.623Z"},"basePath":"..","book":{"language":"zh"}});
         });
     </script>
 </div>
