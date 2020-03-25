@@ -2523,6 +2523,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.10.10.2" data-path="../sensor/pmw3901.html">
+            
+                <a href="../sensor/pmw3901.html">
+            
+                    
+                    PMW3901
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -3521,7 +3534,7 @@
 <p>To <a href="https://dev.px4.io/master/en/setup/building_px4.html" target="_blank">build PX4</a> for this target:</p>
 <pre><code>make px4_fmu-v5_default
 </code></pre><h2 id="debug-port"><a name="debug-port" class="plugin-anchor" href="#debug-port"><i class="fa fa-link" aria-hidden="true"></i></a>Debug Port</h2>
-<p>The <a href="https://dev.px4.io/master/en/debug/system_console.html" target="_blank">PX4 System Console</a> and SWD interface operate on the <strong>FMU Debug</strong> port (<code>DSU7</code>). The board does not have an I/O debug interface.</p>
+<p>The <a href="https://dev.px4.io/master/en/debug/system_console.html" target="_blank">PX4 System Console</a> and <a href="http://dev.px4.io/master/en/debug/swd_debug.html" target="_blank">SWD interface</a> operate on the <strong>FMU Debug</strong> port (<code>DSU7</code>). The board does not have an I/O debug interface.</p>
 <p><img src="../../assets/flight_controller/cuav_v5_plus/debug_port_dsu7.jpg" alt="Debug port (DSU7)"></p>
 <p>The debug port (<code>DSU7</code>) uses a <a href="https://www.digikey.com.au/product-detail/en/jst-sales-america-inc/BM06B-GHS-TBT-LF-SN-N/455-1582-1-ND/807850" target="_blank">JST BM06B</a> connector and has the following pinout:</p>
 <table>
@@ -3572,6 +3585,53 @@
 <p>Some JTAG adapters (SEGGER J-Link) will use the Vref voltage to set the voltage on the SWD lines. For direct connection to <em>Segger Jlink</em> we recommended you use the 3.3 Volts from pin 4 of the connector marked <code>DSM</code>/<code>SBUS</code>/<code>RSSI</code> to provide <code>Vtref</code> to the JTAG (i.e. providing 3.3V and <em>NOT</em> 5V).</p>
 <p>For more information see <a href="#issue_jtag">Using JTAG for hardware debugging</a>.</p>
 </blockquote>
+<h2 id="serial-port-mapping"><a name="serial-port-mapping" class="plugin-anchor" href="#serial-port-mapping"><i class="fa fa-link" aria-hidden="true"></i></a>Serial Port Mapping</h2>
+<table>
+<thead>
+<tr>
+<th>UART</th>
+<th>Device</th>
+<th>Port</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UART1</td>
+<td>/dev/ttyS0</td>
+<td>GPS</td>
+</tr>
+<tr>
+<td>USART2</td>
+<td>/dev/ttyS1</td>
+<td>TELEM1 (flow control)</td>
+</tr>
+<tr>
+<td>USART3</td>
+<td>/dev/ttyS2</td>
+<td>TELEM2 (flow control)</td>
+</tr>
+<tr>
+<td>UART4</td>
+<td>/dev/ttyS3</td>
+<td>TELEM4</td>
+</tr>
+<tr>
+<td>USART6</td>
+<td>/dev/ttyS4</td>
+<td>TX is RC input from SBUS_RC connector</td>
+</tr>
+<tr>
+<td>UART7</td>
+<td>/dev/ttyS5</td>
+<td>Debug Console</td>
+</tr>
+<tr>
+<td>UART8</td>
+<td>/dev/ttyS6</td>
+<td>PX4IO</td>
+</tr>
+</tbody>
+</table>
 <h2 id="optional-hardware"><a name="optional-hardware" class="plugin-anchor" href="#optional-hardware"><i class="fa fa-link" aria-hidden="true"></i></a>Peripherals </h2>
 <ul>
 <li><a href="https://item.taobao.com/item.htm?spm=a1z10.3-c-s.w4002-16371268452.37.6d9f48afsFgGZI&amp;id=9512463037" target="_blank">Digital Airspeed Sensor</a></li>
@@ -3627,7 +3687,7 @@
 <li><a href="../assembly/quick_start_cuav_v5_plus.html">CUAV V5+ Wiring Quickstart</a></li>
 <li><a href="../frames_multicopter/dji_f450_cuav_5plus.html">Airframe build-log using CUAV v5+ on a DJI FlameWheel450</a></li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-03-25 05:16:46 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-03-25 05:48:58 </span> </footer>
                                 
                                 </section>
                             
@@ -3670,7 +3730,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"CUAV V5+ (FMUv5)","level":"1.11.1.14","depth":3,"next":{"title":"CUAV V5 nano (FMUv5)","level":"1.11.1.15","depth":3,"path":"flight_controller/cuav_v5_nano.md","ref":"flight_controller/cuav_v5_nano.md","articles":[]},"previous":{"title":"CUAV v5 (FMUv5)","level":"1.11.1.13","depth":3,"path":"flight_controller/cuav_v5.md","ref":"flight_controller/cuav_v5.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"flight_controller/cuav_v5_plus.md","mtime":"2020-03-25T05:16:46.120Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-25T05:17:47.976Z"},"basePath":"..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"CUAV V5+ (FMUv5)","level":"1.11.1.14","depth":3,"next":{"title":"CUAV V5 nano (FMUv5)","level":"1.11.1.15","depth":3,"path":"flight_controller/cuav_v5_nano.md","ref":"flight_controller/cuav_v5_nano.md","articles":[]},"previous":{"title":"CUAV v5 (FMUv5)","level":"1.11.1.13","depth":3,"path":"flight_controller/cuav_v5.md","ref":"flight_controller/cuav_v5.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"flight_controller/cuav_v5_plus.md","mtime":"2020-03-25T05:48:58.036Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-25T05:49:49.118Z"},"basePath":"..","book":{"language":"zh"}});
         });
     </script>
 </div>

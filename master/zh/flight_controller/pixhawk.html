@@ -2523,6 +2523,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.10.10.2" data-path="../sensor/pmw3901.html">
+            
+                <a href="../sensor/pmw3901.html">
+            
+                    
+                    PMW3901
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -3908,6 +3921,47 @@
 </tr>
 </tbody>
 </table>
+<h2 id="serial-port-mapping"><a name="serial-port-mapping" class="plugin-anchor" href="#serial-port-mapping"><i class="fa fa-link" aria-hidden="true"></i></a>Serial Port Mapping</h2>
+<table>
+<thead>
+<tr>
+<th>UART</th>
+<th>Device</th>
+<th>Port</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UART1</td>
+<td>/dev/ttyS0</td>
+<td>IO debug</td>
+</tr>
+<tr>
+<td>USART2</td>
+<td>/dev/ttyS1</td>
+<td>TELEM1 (flow control)</td>
+</tr>
+<tr>
+<td>USART3</td>
+<td>/dev/ttyS2</td>
+<td>TELEM2 (flow control)</td>
+</tr>
+<tr>
+<td>UART4</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>UART7</td>
+<td>CONSOLE</td>
+<td></td>
+</tr>
+<tr>
+<td>UART8</td>
+<td>SERIAL4</td>
+</tr>
+</tbody>
+</table>
 <h2 id="debug-ports"><a name="debug-ports" class="plugin-anchor" href="#debug-ports"><i class="fa fa-link" aria-hidden="true"></i></a>Debug Ports</h2>
 <h3 id="console-port"><a name="console-port" class="plugin-anchor" href="#console-port"><i class="fa fa-link" aria-hidden="true"></i></a>Console Port</h3>
 <p>The <a href="https://dev.px4.io/master/en/debug/system_console.html" target="_blank">PX4 System Console</a> runs on the port labeled <a href="#serial-45-port">SERIAL4/5</a>.</p>
@@ -3973,7 +4027,7 @@
 </blockquote>
 </blockquote>
 <h3 id="swd-port"><a name="swd-port" class="plugin-anchor" href="#swd-port"><i class="fa fa-link" aria-hidden="true"></i></a>SWD Port</h3>
-<p>The SWD (JTAG) ports are hidden under the cover (which must be removed for hardware debugging). There are separate ports for FMU and IO, as highlighted below.</p>
+<p>The <a href="http://dev.px4.io/master/en/debug/swd_debug.html" target="_blank">SWD</a> (JTAG) ports are hidden under the cover (which must be removed for hardware debugging). There are separate ports for FMU and IO, as highlighted below.</p>
 <p><img src="../../assets/flight_controller/pixhawk1/pixhawk_swd.jpg" alt="Pixhawk SWD"></p>
 <p>The ports are ARM 10-pin JTAG connectors, which you will probably have to solder. The pinout for the ports is shown below (the square markers in the corners above indicates pin 1).</p>
 <p><img src="../../assets/flight_controller/pixhawk1/arm_10pin_jtag_connector_pinout.jpg" alt="ARM 10-Pin connector pinout"></p>
@@ -3981,7 +4035,7 @@
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> All Pixhawk FMUv2 boards have a similar SWD port.</p>
 </blockquote>
-<h2 id="&#x7F16;&#x8BD1;&#x56FA;&#x4EF6;"><a name="&#x7F16;&#x8BD1;&#x56FA;&#x4EF6;" class="plugin-anchor" href="#&#x7F16;&#x8BD1;&#x56FA;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7F16;&#x8BD1;&#x56FA;&#x4EF6;</h2>
+<h2 id="building-firmware"><a name="building-firmware" class="plugin-anchor" href="#building-firmware"><i class="fa fa-link" aria-hidden="true"></i></a>Building Firmware</h2>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> Most users will not need to build this firmware! It is pre-built and automatically installed by <em>QGroundControl</em> when appropriate hardware is connected.</p>
 </blockquote>
@@ -4001,9 +4055,9 @@
 </li>
 <li><strong>I2C and CAN</strong>: Hirose DF13 4 pos (<a href="https://www.digikey.com/products/en?keywords=H3369-ND" target="_blank">Digi-Key Link: DF13A-4P-1.25H(20)</a>)</li>
 </ul>
-<h2 id="&#x652F;&#x6301;&#x7684;&#x5E73;&#x53F0;&#x673A;&#x8EAB;"><a name="&#x652F;&#x6301;&#x7684;&#x5E73;&#x53F0;&#x673A;&#x8EAB;" class="plugin-anchor" href="#&#x652F;&#x6301;&#x7684;&#x5E73;&#x53F0;&#x673A;&#x8EAB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x652F;&#x6301;&#x7684;&#x5E73;&#x53F0;/&#x673A;&#x8EAB;</h2>
+<h2 id="supported-platforms--airframes"><a name="supported-platforms--airframes" class="plugin-anchor" href="#supported-platforms--airframes"><i class="fa fa-link" aria-hidden="true"></i></a>Supported Platforms / Airframes</h2>
 <p>Any multicopter / airplane / rover or boat that can be controlled with normal RC servos or Futaba S-Bus servos.</p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-03-25 05:16:46 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-03-25 05:48:58 </span> </footer>
                                 
                                 </section>
                             
@@ -4046,7 +4100,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3DR Pixhawk 1 (FMUv2)","level":"1.11.1.1","depth":3,"next":{"title":"mRo Pixhawk (FMUv2)","level":"1.11.1.2","depth":3,"path":"flight_controller/mro_pixhawk.md","ref":"flight_controller/mro_pixhawk.md","articles":[]},"previous":{"title":"Pixhawk 系列","level":"1.11.1","depth":2,"path":"flight_controller/pixhawk_series.md","ref":"flight_controller/pixhawk_series.md","articles":[{"title":"3DR Pixhawk 1 (FMUv2)","level":"1.11.1.1","depth":3,"path":"flight_controller/pixhawk.md","ref":"flight_controller/pixhawk.md","articles":[]},{"title":"mRo Pixhawk (FMUv2)","level":"1.11.1.2","depth":3,"path":"flight_controller/mro_pixhawk.md","ref":"flight_controller/mro_pixhawk.md","articles":[]},{"title":"mRobotics-X2.1","level":"1.11.1.3","depth":3,"path":"flight_controller/mro_x2.1.md","ref":"flight_controller/mro_x2.1.md","articles":[]},{"title":"HobbyKing HKPilot32 (FMUv2)","level":"1.11.1.4","depth":3,"path":"flight_controller/HKPilot32.md","ref":"flight_controller/HKPilot32.md","articles":[]},{"title":"Holybro Pixfalcon (FMUv2)","level":"1.11.1.5","depth":3,"path":"flight_controller/pixfalcon.md","ref":"flight_controller/pixfalcon.md","articles":[]},{"title":"Drotek Dropix (FMUv2)","level":"1.11.1.6","depth":3,"path":"flight_controller/dropix.md","ref":"flight_controller/dropix.md","articles":[]},{"title":"mRo Pixracer (FMUv4)","level":"1.11.1.7","depth":3,"path":"flight_controller/pixracer.md","ref":"flight_controller/pixracer.md","articles":[]},{"title":"Hex Cube (Pixhawk 2) (FMUv3)","level":"1.11.1.8","depth":3,"path":"flight_controller/pixhawk-2.md","ref":"flight_controller/pixhawk-2.md","articles":[]},{"title":"Drotek Pixhawk 3 Pro (FMUv4pro)","level":"1.11.1.9","depth":3,"path":"flight_controller/pixhawk3_pro.md","ref":"flight_controller/pixhawk3_pro.md","articles":[]},{"title":"CUAV Pixhack v3 (FMUv3)","level":"1.11.1.10","depth":3,"path":"flight_controller/pixhack_v3.md","ref":"flight_controller/pixhack_v3.md","articles":[]},{"title":"Holybro Pixhawk 4 (FMUv5)","level":"1.11.1.11","depth":3,"path":"flight_controller/pixhawk4.md","ref":"flight_controller/pixhawk4.md","articles":[]},{"title":"Holybro Pixhawk 4 Mini (FMUv5)","level":"1.11.1.12","depth":3,"path":"flight_controller/pixhawk4_mini.md","ref":"flight_controller/pixhawk4_mini.md","articles":[]},{"title":"CUAV v5 (FMUv5)","level":"1.11.1.13","depth":3,"path":"flight_controller/cuav_v5.md","ref":"flight_controller/cuav_v5.md","articles":[]},{"title":"CUAV V5+ (FMUv5)","level":"1.11.1.14","depth":3,"path":"flight_controller/cuav_v5_plus.md","ref":"flight_controller/cuav_v5_plus.md","articles":[]},{"title":"CUAV V5 nano (FMUv5)","level":"1.11.1.15","depth":3,"path":"flight_controller/cuav_v5_nano.md","ref":"flight_controller/cuav_v5_nano.md","articles":[]},{"title":"3DR Pixhawk Mini","level":"1.11.1.16","depth":3,"path":"flight_controller/pixhawk_mini.md","ref":"flight_controller/pixhawk_mini.md","articles":[]},{"title":"AUAV-X2 (Discontinued)","level":"1.11.1.17","depth":3,"path":"flight_controller/auav_x2.md","ref":"flight_controller/auav_x2.md","articles":[]},{"title":"芯片勘误表","level":"1.11.1.18","depth":3,"path":"flight_controller/silicon_errata.md","ref":"flight_controller/silicon_errata.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"flight_controller/pixhawk.md","mtime":"2020-03-25T05:16:46.120Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-25T05:17:47.976Z"},"basePath":"..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"3DR Pixhawk 1 (FMUv2)","level":"1.11.1.1","depth":3,"next":{"title":"mRo Pixhawk (FMUv2)","level":"1.11.1.2","depth":3,"path":"flight_controller/mro_pixhawk.md","ref":"flight_controller/mro_pixhawk.md","articles":[]},"previous":{"title":"Pixhawk 系列","level":"1.11.1","depth":2,"path":"flight_controller/pixhawk_series.md","ref":"flight_controller/pixhawk_series.md","articles":[{"title":"3DR Pixhawk 1 (FMUv2)","level":"1.11.1.1","depth":3,"path":"flight_controller/pixhawk.md","ref":"flight_controller/pixhawk.md","articles":[]},{"title":"mRo Pixhawk (FMUv2)","level":"1.11.1.2","depth":3,"path":"flight_controller/mro_pixhawk.md","ref":"flight_controller/mro_pixhawk.md","articles":[]},{"title":"mRobotics-X2.1","level":"1.11.1.3","depth":3,"path":"flight_controller/mro_x2.1.md","ref":"flight_controller/mro_x2.1.md","articles":[]},{"title":"HobbyKing HKPilot32 (FMUv2)","level":"1.11.1.4","depth":3,"path":"flight_controller/HKPilot32.md","ref":"flight_controller/HKPilot32.md","articles":[]},{"title":"Holybro Pixfalcon (FMUv2)","level":"1.11.1.5","depth":3,"path":"flight_controller/pixfalcon.md","ref":"flight_controller/pixfalcon.md","articles":[]},{"title":"Drotek Dropix (FMUv2)","level":"1.11.1.6","depth":3,"path":"flight_controller/dropix.md","ref":"flight_controller/dropix.md","articles":[]},{"title":"mRo Pixracer (FMUv4)","level":"1.11.1.7","depth":3,"path":"flight_controller/pixracer.md","ref":"flight_controller/pixracer.md","articles":[]},{"title":"Hex Cube (Pixhawk 2) (FMUv3)","level":"1.11.1.8","depth":3,"path":"flight_controller/pixhawk-2.md","ref":"flight_controller/pixhawk-2.md","articles":[]},{"title":"Drotek Pixhawk 3 Pro (FMUv4pro)","level":"1.11.1.9","depth":3,"path":"flight_controller/pixhawk3_pro.md","ref":"flight_controller/pixhawk3_pro.md","articles":[]},{"title":"CUAV Pixhack v3 (FMUv3)","level":"1.11.1.10","depth":3,"path":"flight_controller/pixhack_v3.md","ref":"flight_controller/pixhack_v3.md","articles":[]},{"title":"Holybro Pixhawk 4 (FMUv5)","level":"1.11.1.11","depth":3,"path":"flight_controller/pixhawk4.md","ref":"flight_controller/pixhawk4.md","articles":[]},{"title":"Holybro Pixhawk 4 Mini (FMUv5)","level":"1.11.1.12","depth":3,"path":"flight_controller/pixhawk4_mini.md","ref":"flight_controller/pixhawk4_mini.md","articles":[]},{"title":"CUAV v5 (FMUv5)","level":"1.11.1.13","depth":3,"path":"flight_controller/cuav_v5.md","ref":"flight_controller/cuav_v5.md","articles":[]},{"title":"CUAV V5+ (FMUv5)","level":"1.11.1.14","depth":3,"path":"flight_controller/cuav_v5_plus.md","ref":"flight_controller/cuav_v5_plus.md","articles":[]},{"title":"CUAV V5 nano (FMUv5)","level":"1.11.1.15","depth":3,"path":"flight_controller/cuav_v5_nano.md","ref":"flight_controller/cuav_v5_nano.md","articles":[]},{"title":"3DR Pixhawk Mini","level":"1.11.1.16","depth":3,"path":"flight_controller/pixhawk_mini.md","ref":"flight_controller/pixhawk_mini.md","articles":[]},{"title":"AUAV-X2 (Discontinued)","level":"1.11.1.17","depth":3,"path":"flight_controller/auav_x2.md","ref":"flight_controller/auav_x2.md","articles":[]},{"title":"芯片勘误表","level":"1.11.1.18","depth":3,"path":"flight_controller/silicon_errata.md","ref":"flight_controller/silicon_errata.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"flight_controller/pixhawk.md","mtime":"2020-03-25T05:48:58.036Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-25T05:49:49.118Z"},"basePath":"..","book":{"language":"zh"}});
         });
     </script>
 </div>
