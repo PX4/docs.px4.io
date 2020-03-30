@@ -7,6 +7,9 @@ require(['gitbook', 'jQuery'], function (gitbook, $) {
   function updateVersions(_versions) {
     versions = _versions || versions;
     current = $('.versions-select select').val() || current;
+    var CurAddr = location.href.substr(gitbook.state.root.length);
+    var sharp = CurAddr.indexOf("#");
+    var CurAddrNoAnchor = (sharp == -1)? CurAddr : CurAddr.substr(0, sharp);
 
     // Cleanup existing selector
     $('.versions-select').remove();
@@ -36,7 +39,9 @@ require(['gitbook', 'jQuery'], function (gitbook, $) {
             // Get actual version Object from array
       var version = filtered[0];
 
-      var filePath = window.location.href.replace(gitbook.state.bookRoot, '');
+      //var filePath = window.location.href.replace(gitbook.state.bookRoot, '');
+      var filePath = CurAddrNoAnchor;
+      version.includeFilepath=true; //This is otherwise undefined. Supposed to come from file but gets skipped.
       window.location.href = version.includeFilepath ? (version.value + filePath) : version.value;
     });
 
