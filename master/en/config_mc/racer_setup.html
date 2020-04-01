@@ -3464,14 +3464,12 @@ You should already have some experience, or let someone with experience help you
 <p> A racer usually omits some sensors (e.g. GPS). As a result, fewer failsafe options are available.</p>
 </blockquote>
 <h2 id="build-options"><a name="build-options" class="plugin-anchor" href="#build-options"><i class="fa fa-link" aria-hidden="true"></i></a>Build Options</h2>
-<p>A racer usually omits some sensors. </p>
+<p>A racer usually omits some sensors.</p>
 <p>The minimal configuration is to use only a gyro and accelerometer sensor.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> If the board has an internal magnetometer, it should not be used (small racers are particularly prone to strong electromagnetic interference).</p>
 </blockquote>
-<p>Racers typically do not have a GPS as it adds some weight and is prone to damage during crashes
-(a GPS + external magnetometer must be placed on a GPS mast away from high currents to avoid
-magnetic interference, which unfortunately means that it is easy to break). </p>
+<p>Racers typically do not have a GPS as it adds some weight and is prone to damage during crashes (a GPS + external magnetometer must be placed on a GPS mast away from high currents to avoid magnetic interference, which unfortunately means that it is easy to break). </p>
 <p>There are however some benefits in adding GPS, particularly for beginners:</p>
 <ul>
 <li>You can go into position hold and the vehicle will just stay in one place.
@@ -3484,7 +3482,7 @@ battery failsafe.</li>
 This can help to improve your acrobatic flight skills.</li>
 </ul>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
-<p> During aggressive acrobatic maneuvers the GPS can lose its position fix for a short time. 
+<p> During aggressive acrobatic maneuvers the GPS can lose its position fix for a short time.
 If you switch into position mode during that time, altitude mode will be used instead until the position becomes valid again.</p>
 </blockquote>
 <h2 id="hardware-setup"><a name="hardware-setup" class="plugin-anchor" href="#hardware-setup"><i class="fa fa-link" aria-hidden="true"></i></a>Hardware Setup</h2>
@@ -3500,16 +3498,15 @@ If you need complete build instructions, you can follow the
 Left-right balance is usually not a problem, but front-back balance may be.
 You can move the battery until it is correct and mark it on the frame so you will always place it correctly.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
-<p> The integral term can account for an imbalanced setup, and a custom mixer can do that even better. However it is best to fix any imbalance as part of the vehicle setup.</p>
+<p> The integral term can account for an imbalanced setup, and a custom mixer can do that even better.
+  However it is best to fix any imbalance as part of the vehicle setup.</p>
 </blockquote>
 <h3 id="motor-ordering"><a name="motor-ordering" class="plugin-anchor" href="#motor-ordering"><i class="fa fa-link" aria-hidden="true"></i></a>Motor Ordering</h3>
 <p>If you plan to use a 4-in-1 ESC, such as the <a href="http://www.hobbywing.com/goods.php?id=588" target="_blank">Hobbywing XRotor Micro 40A 4in1</a>, you will notice that it uses a motor ordering that is different from the one that PX4 uses.
 PX4 allows you to change the motor ordering in software via <a href="../advanced_config/parameter_reference.html#MOT_ORDERING">MOT_ORDERING</a> parameter. You can select the Betaflight/Cleanflight motor ordering that is typically used on these 4-in-1 ESCs.</p>
 <h2 id="software-setup"><a name="software-setup" class="plugin-anchor" href="#software-setup"><i class="fa fa-link" aria-hidden="true"></i></a>Software Setup</h2>
 <p>After having built the racer, you will need to configure the software.
-Go through the <a href="../config/">Basic Configuration Guide</a> and choose the
-<a href="../airframes/airframe_reference.html#copter_quadrotor_x_generic_250_racer">Generic 250 Racer</a>
-airframe, which already sets some racer-specific parameters.</p>
+Go through the <a href="../config/">Basic Configuration Guide</a> and choose the <a href="../airframes/airframe_reference.html#copter_quadrotor_x_generic_250_racer">Generic 250 Racer</a> airframe, which already sets some racer-specific parameters.</p>
 <p>These parameters are important:</p>
 <ul>
 <li>Enable One-Shot by setting <a href="../advanced_config/parameter_reference.html#PWM_RATE">PWM_RATE</a> to 0.</li>
@@ -3541,9 +3538,8 @@ Test RC loss on the bench without props attached by turning off the remote when 
 </blockquote>
 <p>At this point you should be ready for a first test flight.</p>
 <p>If it goes well, do a first pass of <a href="pid_tuning_guide_multicopter.html">PID tuning</a> (ignore the thrust curve settings).
-The vehicle needs to be <strong>undertuned</strong>, meaning the <strong>P</strong> and <strong>D</strong> gains should be set too low - such that there are no oscillations from the controller that could
-be interpreted as noise (the default gains might be good enough). 
-This is important for the <a href="#filters">filter</a> tuning. 
+The vehicle needs to be <strong>undertuned</strong>, meaning the <strong>P</strong> and <strong>D</strong> gains should be set too low - such that there are no oscillations from the controller that could be interpreted as noise (the default gains might be good enough). 
+This is important for the <a href="#filters">filter</a> tuning.
 There will be a second PID tuning round later.</p>
 <h3 id="control_latency"><a name="control_latency" class="plugin-anchor" href="#control_latency"><i class="fa fa-link" aria-hidden="true"></i></a>Control Latency </h3>
 <p>The <em>control latency</em> is the delay from a physical disturbance of the vehicle until the motors react to the change.</p>
@@ -3567,27 +3563,27 @@ To avoid the IO delay, disable <a href="../advanced_config/parameter_reference.h
 <ul>
 <li>On-chip DLPF for the gyro sensor. 
 The cutoff frequency is set to 98Hz and it is sampled at 1kHz.</li>
-<li>Low-pass filter on the gyro sensor data. It can be configured with the
-<a href="../advanced_config/parameter_reference.html#IMU_GYRO_CUTOFF">IMU_GYRO_CUTOFF</a> parameter.</li>
-<li>Low-pass filter on the D-term. The D-term is most susceptible to noise while
-slightly increased latency does not negatively affect performance. For this
-reason the D-term has an additional low-pass filter, configurable via
-<a href="../advanced_config/parameter_reference.html#MC_DTERM_CUTOFF">MC_DTERM_CUTOFF</a>.</li>
-<li>A slewrate filter on the motor outputs (<a href="../advanced_config/parameter_reference.html#MOT_SLEW_MAX">MOT_SLEW_MAX</a>). Generally not used.</li>
+<li>Low-pass filter on the gyro sensor data.
+It can be configured with the <a href="../advanced_config/parameter_reference.html#IMU_GYRO_CUTOFF">IMU_GYRO_CUTOFF</a> parameter.</li>
+<li>A separate low-pass filter on the D-term.
+The D-term is most susceptible to noise while slightly increased latency does not negatively affect performance.
+For this reason the D-term has a separately-configurable low-pass filter, <a href="../advanced_config/parameter_reference.html#IMU_DGYRO_CUTOFF">IMU_DGYRO_CUTOFF</a>.</li>
+<li>A slewrate filter on the motor outputs (<a href="../advanced_config/parameter_reference.html#MOT_SLEW_MAX">MOT_SLEW_MAX</a>).
+Generally not used.</li>
 </ul>
-<p>To reduce the control latency, we want to increase the cutoff frequency for the low-pass filters. 
-However this is a trade-off as it will also increase the noise of the signal, which is fed to the motors. 
+<p>To reduce the control latency, we want to increase the cutoff frequency for the low-pass filters.
+However this is a trade-off as it will also increase the noise of the signal, which is fed to the motors.
 Noise on the motors has the following consequences:</p>
 <ul>
 <li>Motors and ESCs can get hot, to the point where they get damaged.</li>
 <li>Reduced flight time because the motors continuously change their speed.</li>
 <li>Visible random small twitches.</li>
 </ul>
-<p>The best filter settings depend on the vehicle. The defaults are set conservatively &#x2014; such that they work on lower-quality setups as well.</p>
+<p>The best filter settings depend on the vehicle.
+The defaults are set conservatively &#x2014; such that they work on lower-quality setups as well.</p>
 <h4 id="filter-tuning"><a name="filter-tuning" class="plugin-anchor" href="#filter-tuning"><i class="fa fa-link" aria-hidden="true"></i></a>Filter Tuning</h4>
-<p>First make sure to have the high-rate logging profile activated
-(<a href="../advanced_config/parameter_reference.html#SDLOG_PROFILE">SDLOG_PROFILE</a> parameter). <a href="../getting_started/flight_reporting.html">Flight Review</a> will then show an FFT plot for the
-roll, pitch and yaw controls.</p>
+<p>First make sure to have the high-rate logging profile activated (<a href="../advanced_config/parameter_reference.html#SDLOG_PROFILE">SDLOG_PROFILE</a> parameter).
+<a href="../getting_started/flight_reporting.html">Flight Review</a> will then show an FFT plot for the roll, pitch and yaw controls.</p>
 <blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
 <p> Do not try to fix a vehicle that suffers from high vibrations with filter tuning. Instead fix the vehicle hardware setup.</p>
 </blockquote>
@@ -3597,16 +3593,14 @@ but make sure to disarm in between so that separate log files are created.</p>
 <p>The performed flight maneuver can simply be hovering in <a href="../flight_modes/manual_stabilized_mc.html">Manual/Stabilized mode</a> with some rolling and pitching to all directions and some increased throttle periods.
 The total duration does not need to be more than 30 seconds. 
 In order to better compare, the maneuver should be similar in all tests.</p>
-<p>First tune the gyro filter <a href="../advanced_config/parameter_reference.html#IMU_GYRO_CUTOFF">IMU_GYRO_CUTOFF</a> by increasing it in steps of 10 Hz while using a low D-term filter value (<a href="../advanced_config/parameter_reference.html#MC_DTERM_CUTOFF">MC_DTERM_CUTOFF</a> = 30). 
-Upload the logs to <a href="https://logs.px4.io" target="_blank">https://logs.px4.io</a> and compare the <em>Actuator Controls FFT</em> plot. 
+<p>First tune the gyro filter <a href="../advanced_config/parameter_reference.html#IMU_GYRO_CUTOFF">IMU_GYRO_CUTOFF</a> by increasing it in steps of 10 Hz while using a low D-term filter value (<a href="../advanced_config/parameter_reference.html#IMU_DGYRO_CUTOFF">IMU_DGYRO_CUTOFF</a> = 30).<br>Upload the logs to <a href="https://logs.px4.io" target="_blank">https://logs.px4.io</a> and compare the <em>Actuator Controls FFT</em> plot. 
 Set the cutoff frequency to a value before the noise starts to increase noticeably (for frequencies around and above 60 Hz). 
-Then tune the D-term filter (<code>MC_DTERM_CUTOFF</code>) in the same way.</p>
+Then tune the D-term filter (<code>IMU_DGYRO_CUTOFF</code>) in the same way. </p>
 <p>Below is an example for three different filter values (40Hz, 70Hz, 90Hz). 
-At 90 Hz the general noise level starts to increase (especially for roll), 
-and thus a cutoff frequency of 70 Hz is a safe setting.
-<img src="../../images/racer_setup/actuator_controls_fft_dterm_40.png" alt="MC_DTERM_CUTOFF=40">
-<img src="../../images/racer_setup/actuator_controls_fft_dterm_70.png" alt="MC_DTERM_CUTOFF=70">
-<img src="../../images/racer_setup/actuator_controls_fft_dterm_90.png" alt="MC_DTERM_CUTOFF=90"></p>
+At 90 Hz the general noise level starts to increase (especially for roll), and thus a cutoff frequency of 70 Hz is a safe setting.
+<img src="../../assets/airframes/multicopter/racer_setup/actuator_controls_fft_dgyrocutoff_40.png" alt="IMU_DGYRO_CUTOFF=40">
+<img src="../../assets/airframes/multicopter/racer_setup/actuator_controls_fft_dgyrocutoff_70.png" alt="IMU_DGYRO_CUTOFF=70">
+<img src="../../assets/airframes/multicopter/racer_setup/actuator_controls_fft_dgyrocutoff_90.png" alt="IMU_DGYRO_CUTOFF=90"></p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> The plot cannot be compared between different vehicles, as the y axis scale can be different. 
 On the same vehicle it is consistent and independent of the flight duration though.</p>
@@ -3614,11 +3608,10 @@ On the same vehicle it is consistent and independent of the flight duration thou
 <h3 id="pid-tuning-second-round"><a name="pid-tuning-second-round" class="plugin-anchor" href="#pid-tuning-second-round"><i class="fa fa-link" aria-hidden="true"></i></a>PID Tuning (Second Round)</h3>
 <p>Now do a second round of PID tuning, this time as tight as possible, and also tune the thrust curve.</p>
 <h3 id="airmode"><a name="airmode" class="plugin-anchor" href="#airmode"><i class="fa fa-link" aria-hidden="true"></i></a>Airmode</h3>
-<p>After you verified that the vehicle flies well at low and high throttle, you can
-enable <a href="pid_tuning_guide_multicopter.html#airmode">airmode</a> with the <a href="../advanced_config/parameter_reference.html#MC_AIRMODE">MC_AIRMODE</a> parameter. This feature makes sure that the
-vehicle is still controllable and tracks the rate at low throttle.</p>
+<p>After you verified that the vehicle flies well at low and high throttle, you can enable <a href="pid_tuning_guide_multicopter.html#airmode">airmode</a> with the <a href="../advanced_config/parameter_reference.html#MC_AIRMODE">MC_AIRMODE</a> parameter.
+This feature makes sure that the vehicle is still controllable and tracks the rate at low throttle.</p>
 <p>Happy flipping :)</p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-04-01 00:54:26 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-04-01 01:17:45 </span> </footer>
                                 
                                 </section>
                             
@@ -3661,7 +3654,7 @@ vehicle is still controllable and tracks the rate at low throttle.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Multicopter Racer Setup","level":"1.9.2.3","depth":3,"next":{"title":"Fixed Wing  Config/Tuning","level":"1.9.3","depth":2,"path":"config_fw/README.md","ref":"config_fw/README.md","articles":[{"title":"Fixedwing PID Tuning Guide","level":"1.9.3.1","depth":3,"path":"config_fw/pid_tuning_guide_fixedwing.md","ref":"config_fw/pid_tuning_guide_fixedwing.md","articles":[]},{"title":"Fixedwing Advanced Tuning Guide","level":"1.9.3.2","depth":3,"path":"config_fw/advanced_tuning_guide_fixedwing.md","ref":"config_fw/advanced_tuning_guide_fixedwing.md","articles":[]},{"title":"Fixedwing Trimming Guide","level":"1.9.3.3","depth":3,"path":"config_fw/trimming_guide_fixedwing.md","ref":"config_fw/trimming_guide_fixedwing.md","articles":[]}]},"previous":{"title":"MC Jerk-limited Type Trajectory","level":"1.9.2.2.2","depth":4,"path":"config_mc/mc_jerk_limited_type_trajectory.md","ref":"config_mc/mc_jerk_limited_type_trajectory.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"config_mc/racer_setup.md","mtime":"2020-04-01T00:54:26.520Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-01T00:55:17.435Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Multicopter Racer Setup","level":"1.9.2.3","depth":3,"next":{"title":"Fixed Wing  Config/Tuning","level":"1.9.3","depth":2,"path":"config_fw/README.md","ref":"config_fw/README.md","articles":[{"title":"Fixedwing PID Tuning Guide","level":"1.9.3.1","depth":3,"path":"config_fw/pid_tuning_guide_fixedwing.md","ref":"config_fw/pid_tuning_guide_fixedwing.md","articles":[]},{"title":"Fixedwing Advanced Tuning Guide","level":"1.9.3.2","depth":3,"path":"config_fw/advanced_tuning_guide_fixedwing.md","ref":"config_fw/advanced_tuning_guide_fixedwing.md","articles":[]},{"title":"Fixedwing Trimming Guide","level":"1.9.3.3","depth":3,"path":"config_fw/trimming_guide_fixedwing.md","ref":"config_fw/trimming_guide_fixedwing.md","articles":[]}]},"previous":{"title":"MC Jerk-limited Type Trajectory","level":"1.9.2.2.2","depth":4,"path":"config_mc/mc_jerk_limited_type_trajectory.md","ref":"config_mc/mc_jerk_limited_type_trajectory.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"config_mc/racer_setup.md","mtime":"2020-04-01T01:17:45.859Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-01T01:18:36.628Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
