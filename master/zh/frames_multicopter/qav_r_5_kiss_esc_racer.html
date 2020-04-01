@@ -1909,12 +1909,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.12" data-path="../advanced_config/advanced_flight_controller_orientation_leveling.html">
+        <li class="chapter " data-level="1.9.12" data-path="../advanced_config/compass_power_compensation.html">
+            
+                <a href="../advanced_config/compass_power_compensation.html">
+            
+                    
+                    Compass Power Compensation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.13" data-path="../advanced_config/advanced_flight_controller_orientation_leveling.html">
             
                 <a href="../advanced_config/advanced_flight_controller_orientation_leveling.html">
             
                     
-                    高级控制器方向
+                    Advanced Controller Orientation
             
                 </a>
             
@@ -1922,12 +1935,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.13" data-path="../advanced_config/static_pressure_buildup.html">
+        <li class="chapter " data-level="1.9.14" data-path="../advanced_config/static_pressure_buildup.html">
             
                 <a href="../advanced_config/static_pressure_buildup.html">
             
                     
-                    静态压力生成
+                    Static Pressure Buildup
             
                 </a>
             
@@ -1935,12 +1948,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.14" data-path="../advanced_config/prearm_arm_disarm.html">
+        <li class="chapter " data-level="1.9.15" data-path="../advanced_config/prearm_arm_disarm.html">
             
                 <a href="../advanced_config/prearm_arm_disarm.html">
             
                     
-                    预解锁/解锁/加锁 配置
+                    Prearm/Arm/Disarm Configuration
             
                 </a>
             
@@ -1948,12 +1961,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.15" data-path="../advanced_config/parameter_reference.html">
+        <li class="chapter " data-level="1.9.16" data-path="../advanced_config/parameter_reference.html">
             
                 <a href="../advanced_config/parameter_reference.html">
             
                     
-                    全部参数对照表
+                    Full Parameter Reference
             
                 </a>
             
@@ -2373,7 +2386,7 @@
                 <a href="../sensor/ulanding_radar.html">
             
                     
-                    uLanding 微波雷达
+                    Ainstein US-D1 Standard Radar Altimeter
             
                 </a>
             
@@ -3447,7 +3460,7 @@
 <li><strong>Flight controller:</strong> <a href="../flight_controller/pixracer.html">Pixracer</a></li>
 </ul>
 <p><div style="position: relative;padding-bottom: 56.25%;padding-top: 25px;height: 0;"><iframe frameborder="0" allowfullscreen style="border: none;position: absolute;top: 0;left: 0;width: 100%;height: 100%;" src="//www.youtube.com/embed/wMYgqvsNEwQ"></iframe></div></p>
-<p><img src="../../assets/airframes/multicopter/qav_r_5_kiss_esc_racer/preview.jpg" alt=""> <img src="../../assets/airframes/multicopter/qav_r_5_kiss_esc_racer/preview2.jpg" alt=""></p>
+<p><img src="../../assets/airframes/multicopter/qav_r_5_kiss_esc_racer/preview.jpg" alt="QAV Racer complete"> <img src="../../assets/airframes/multicopter/qav_r_5_kiss_esc_racer/preview2.jpg" alt="QAV Racer complete 2"></p>
 <h2 id="parts-list"><a name="parts-list" class="plugin-anchor" href="#parts-list"><i class="fa fa-link" aria-hidden="true"></i></a>Parts List</h2>
 <h3 id="vehicle-needed-for-flying"><a name="vehicle-needed-for-flying" class="plugin-anchor" href="#vehicle-needed-for-flying"><i class="fa fa-link" aria-hidden="true"></i></a>Vehicle (needed for flying)</h3>
 <ul>
@@ -3519,7 +3532,7 @@
 <p> Double check the pin assignment of every component you connect. Sadly not every hardware component out there is plug and play even if it may look like this at first glance.</p>
 </blockquote>
 <p>You&apos;ll need the <a href="../flight_controller/pixracer.html">hardware documentation of the Pixracer</a> for this step to find all needed connectors. I tried to route all the cables under the Pixracer board to have a clean build and save space for FPV camera and transmitter in the future.</p>
-<p>I mounted the Pixracer using the nylon spacers and screws that get shipped with the QAV-R frame but <strong>put some small O-rings</strong> between the board and the spacers to add a bit of vibration dampening. Make sure to <strong>not tighten the screws too much or too less</strong>, do it such that the board clearly touches both sides but is not clamped with any tension. The board should not dangle in any way but be slightly movable if you apply force to it with your fingers.</p>
+<p>I mounted the Pixracer using the nylon spacers and screws that get shipped with the QAV-R frame but <strong>put some small O-rings</strong> between the board and the spacers to add a bit of vibration dampening. Make sure to <strong>not tighten the screws too much or little</strong>, do it such that the board clearly touches both sides but is not clamped with any tension. The board should not dangle in any way but be slightly movable if you apply force to it with your fingers.</p>
 <blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
 <p> This can heavily influence the vibration noise level your gyroscope and accelerometer sensors measure during flight.</p>
 </blockquote>
@@ -3527,7 +3540,9 @@
 <p><img src="../../assets/airframes/multicopter/qav_r_5_kiss_esc_racer/center-connections.jpg" alt="Center connections"> <img src="../../assets/airframes/multicopter/qav_r_5_kiss_esc_racer/center-overview.jpg" alt="Center overview"></p>
 <h3 id="rc-receiver"><a name="rc-receiver" class="plugin-anchor" href="#rc-receiver"><i class="fa fa-link" aria-hidden="true"></i></a>RC Receiver</h3>
 <p>I hooked up the FrSky S-BUS receiver using the cable shipped with the Pixracer but cut away the unnecessary cable branch.</p>
-<p>For the smart telemetry port I used the cable shipping with the receiver. I removed all unnecessary pins from the connector using tweezers and switched the white loose end cable to the correct pin of the connector to have the &quot;smart&quot; signal connected. I then soldered the loose end to a cable fitting the FrSky port following this schematic: <img src="../../assets/flight_controller/pixracer/grau_b_pixracer_frskys.port_connection.jpg" alt="schematic"> I also skipped the ground (GND) pin because like the voltage supply positive pin it is already connected through the RCin S-BUS cable.</p>
+<p>For the smart telemetry port I used the cable shipping with the receiver. I removed all unnecessary pins from the connector using tweezers and switched the white loose end cable to the correct pin of the connector to have the &quot;smart&quot; signal connected. I then soldered the loose end to a cable fitting the FrSky port following this schematic:</p>
+<p><img src="../../assets/flight_controller/pixracer/grau_b_pixracer_frskys.port_connection.jpg" alt="schematic"></p>
+<p>I also skipped the ground (GND) pin because like the voltage supply positive pin it is already connected through the RCin S-BUS cable.</p>
 <p><img src="../../assets/airframes/multicopter/qav_r_5_kiss_esc_racer/rc-receiver-connections.jpg" alt=""></p>
 <h3 id="rc-antenna-mount"><a name="rc-antenna-mount" class="plugin-anchor" href="#rc-antenna-mount"><i class="fa fa-link" aria-hidden="true"></i></a>RC Antenna Mount</h3>
 <p>To have a good RC link while not risking to have the antenna in the props I employed a rugged mount method using heat shrinks and zip ties.</p>
@@ -3619,11 +3634,11 @@
 <h2 id="fpv-setup"><a name="fpv-setup" class="plugin-anchor" href="#fpv-setup"><i class="fa fa-link" aria-hidden="true"></i></a>FPV Setup</h2>
 <p>This are instruction for the optional 5.8GHz FPV live video transmission. You&apos;ll need the additional FPV parts listed at the beginning. The FPV transmission described here is electronically independent of the flight controller, it only takes the battery voltage after the power module.</p>
 <p>I first did a bench test to make sure everything is working correctly. For this connect the video signal cable that comes with your transmitter and plug it to the back of your FPV camera and to the matching plug of the transmitter. Screw the Then connect the JST power plug to your draft vehicle or to some other voltage source. The transmitter LED should light up. Use your 5.8GHz receiver device tuned in to the correct channel to check for the video. To configure the transmitter to an other channel and adjust the transmission power please refer to the <a href="https://www.immersionrc.com/?download=5016" target="_blank">Tramp HV User Manual</a>.</p>
-<p><img src="../../assets/airframes/multicopter/qav_r_5_kiss_esc_racer/fpv-wiring.jpg" alt=""></p>
+<p><img src="../../assets/airframes/multicopter/qav_r_5_kiss_esc_racer/fpv-wiring.jpg" alt="FPV wiring"></p>
 <p>Like you can see I mounted the transmitter from the inside to the &quot;roof&quot; of the frame using a ziptie. Always put a self sticking piece of foam in between when mounting electronics like this to avoid physical damage during flight. Make sure to place the transmitter such that the antenna connector fits to the dedicated hole of the frame.</p>
-<p><img src="../../assets/airframes/multicopter/qav_r_5_kiss_esc_racer/fpv-tx.jpg" alt=""></p>
+<p><img src="../../assets/airframes/multicopter/qav_r_5_kiss_esc_racer/fpv-tx.jpg" alt="Transmitter"></p>
 <p>The magnificent FPV camera set in the part list comes not only with the best FPV lens I&apos;ve seen so far but also includes multiple camera mounts one of which is very flexible for adjusting the camera angle and nicely fits into the QAV-R frame. I mounted it like you can see in the next picture. The two screws and nuts to lock the camera mount to the frame were taken from the spare ones remaining from the frame set.</p>
-<p><img src="../../assets/airframes/multicopter/qav_r_5_kiss_esc_racer/fpv-cam.jpg" alt=""></p>
+<p><img src="../../assets/airframes/multicopter/qav_r_5_kiss_esc_racer/fpv-cam.jpg" alt="Camera"></p>
 <h2 id="software-configuration"><a name="software-configuration" class="plugin-anchor" href="#software-configuration"><i class="fa fa-link" aria-hidden="true"></i></a>Software Configuration</h2>
 <blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
 <p> Always make sure to have either battery or propellers physically removed from your vehicle during any initial configuration. Better safe than sorry!</p>
@@ -3643,7 +3658,7 @@
 <h3 id="log-examples"><a name="log-examples" class="plugin-anchor" href="#log-examples"><i class="fa fa-link" aria-hidden="true"></i></a>Log Examples</h3>
 <p><a href="https://logs.px4.io/plot_app?log=9c311942-bc7c-4b0c-8be8-eeb64fa8192c" target="_blank">Log in FPV acro flight (maximum values: 108km/h speed, 85A total current draw)</a></p>
 <p><a href="https://logs.px4.io/plot_app?log=6de8b8cd-74f9-4eae-ad2f-76867e916f4f" target="_blank">Log in (mostly) manual LOS flight for the entire battery</a></p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-04-01 01:17:46 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-04-01 02:53:47 </span> </footer>
                                 
                                 </section>
                             
@@ -3686,7 +3701,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"QAV-R 5\" Racer (Pixracer)","level":"1.5.2.12","depth":3,"next":{"title":"固定翼","level":"1.5.3","depth":2,"path":"frames_plane/README.md","ref":"frames_plane/README.md","articles":[{"title":"Wing Wing Z84 (Pixracer)","level":"1.5.3.1","depth":3,"path":"frames_plane/wing_wing_z84.md","ref":"frames_plane/wing_wing_z84.md","articles":[]}]},"previous":{"title":"Matrice 100 (Pixhawk 1)","level":"1.5.2.11","depth":3,"path":"frames_multicopter/matrice100.md","ref":"frames_multicopter/matrice100.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"frames_multicopter/qav_r_5_kiss_esc_racer.md","mtime":"2020-04-01T01:17:46.067Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-01T01:18:36.628Z"},"basePath":"..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"QAV-R 5\" Racer (Pixracer)","level":"1.5.2.12","depth":3,"next":{"title":"固定翼","level":"1.5.3","depth":2,"path":"frames_plane/README.md","ref":"frames_plane/README.md","articles":[{"title":"Wing Wing Z84 (Pixracer)","level":"1.5.3.1","depth":3,"path":"frames_plane/wing_wing_z84.md","ref":"frames_plane/wing_wing_z84.md","articles":[]}]},"previous":{"title":"Matrice 100 (Pixhawk 1)","level":"1.5.2.11","depth":3,"path":"frames_multicopter/matrice100.md","ref":"frames_multicopter/matrice100.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"frames_multicopter/qav_r_5_kiss_esc_racer.md","mtime":"2020-04-01T02:53:47.408Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-01T02:55:18.098Z"},"basePath":"..","book":{"language":"zh"}});
         });
     </script>
 </div>

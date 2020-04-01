@@ -1909,12 +1909,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.12" data-path="../advanced_config/advanced_flight_controller_orientation_leveling.html">
+        <li class="chapter " data-level="1.9.12" data-path="../advanced_config/compass_power_compensation.html">
+            
+                <a href="../advanced_config/compass_power_compensation.html">
+            
+                    
+                    Compass Power Compensation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.13" data-path="../advanced_config/advanced_flight_controller_orientation_leveling.html">
             
                 <a href="../advanced_config/advanced_flight_controller_orientation_leveling.html">
             
                     
-                    高级控制器方向
+                    Advanced Controller Orientation
             
                 </a>
             
@@ -1922,12 +1935,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.13" data-path="../advanced_config/static_pressure_buildup.html">
+        <li class="chapter " data-level="1.9.14" data-path="../advanced_config/static_pressure_buildup.html">
             
                 <a href="../advanced_config/static_pressure_buildup.html">
             
                     
-                    静态压力生成
+                    Static Pressure Buildup
             
                 </a>
             
@@ -1935,12 +1948,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.14" data-path="../advanced_config/prearm_arm_disarm.html">
+        <li class="chapter " data-level="1.9.15" data-path="../advanced_config/prearm_arm_disarm.html">
             
                 <a href="../advanced_config/prearm_arm_disarm.html">
             
                     
-                    预解锁/解锁/加锁 配置
+                    Prearm/Arm/Disarm Configuration
             
                 </a>
             
@@ -1948,12 +1961,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.15" data-path="../advanced_config/parameter_reference.html">
+        <li class="chapter " data-level="1.9.16" data-path="../advanced_config/parameter_reference.html">
             
                 <a href="../advanced_config/parameter_reference.html">
             
                     
-                    全部参数对照表
+                    Full Parameter Reference
             
                 </a>
             
@@ -2373,7 +2386,7 @@
                 <a href="../sensor/ulanding_radar.html">
             
                     
-                    uLanding 微波雷达
+                    Ainstein US-D1 Standard Radar Altimeter
             
                 </a>
             
@@ -3524,7 +3537,7 @@
 <ul>
 <li>On-chip DLPF for the gyro sensor. The cutoff frequency is set to 98Hz and it is sampled at 1kHz.</li>
 <li>Low-pass filter on the gyro sensor data. It can be configured with the <a href="../advanced_config/parameter_reference.html#IMU_GYRO_CUTOFF">IMU_GYRO_CUTOFF</a> parameter.</li>
-<li>Low-pass filter on the D-term. The D-term is most susceptible to noise while slightly increased latency does not negatively affect performance. For this reason the D-term has an additional low-pass filter, configurable via <a href="../advanced_config/parameter_reference.html#MC_DTERM_CUTOFF">MC_DTERM_CUTOFF</a>.</li>
+<li>A separate low-pass filter on the D-term. The D-term is most susceptible to noise while slightly increased latency does not negatively affect performance. For this reason the D-term has a separately-configurable low-pass filter, <a href="../advanced_config/parameter_reference.html#IMU_DGYRO_CUTOFF">IMU_DGYRO_CUTOFF</a>.</li>
 <li>A slewrate filter on the motor outputs (<a href="../advanced_config/parameter_reference.html#MOT_SLEW_MAX">MOT_SLEW_MAX</a>). Generally not used.</li>
 </ul>
 <p>To reduce the control latency, we want to increase the cutoff frequency for the low-pass filters. However this is a trade-off as it will also increase the noise of the signal, which is fed to the motors. Noise on the motors has the following consequences:</p>
@@ -3541,8 +3554,8 @@
 </blockquote>
 <p>Filter tuning is best done by reviewing flight logs. You can do multiple flights right after each other with different parameters and then inspect all logs, but make sure to disarm in between so that separate log files are created.</p>
 <p>The performed flight maneuver can simply be hovering in <a href="../flight_modes/manual_stabilized_mc.html">Manual/Stabilized mode</a> with some rolling and pitching to all directions and some increased throttle periods. The total duration does not need to be more than 30 seconds. In order to better compare, the maneuver should be similar in all tests.</p>
-<p>First tune the gyro filter <a href="../advanced_config/parameter_reference.html#IMU_GYRO_CUTOFF">IMU_GYRO_CUTOFF</a> by increasing it in steps of 10 Hz while using a low D-term filter value (<a href="../advanced_config/parameter_reference.html#MC_DTERM_CUTOFF">MC_DTERM_CUTOFF</a> = 30). Upload the logs to <a href="https://logs.px4.io" target="_blank">https://logs.px4.io</a> and compare the <em>Actuator Controls FFT</em> plot. Set the cutoff frequency to a value before the noise starts to increase noticeably (for frequencies around and above 60 Hz). Then tune the D-term filter (<code>MC_DTERM_CUTOFF</code>) in the same way.</p>
-<p>Below is an example for three different filter values (40Hz, 70Hz, 90Hz). At 90 Hz the general noise level starts to increase (especially for roll), and thus a cutoff frequency of 70 Hz is a safe setting. <img src="../../images/racer_setup/actuator_controls_fft_dterm_40.png" alt="MC_DTERM_CUTOFF=40"> <img src="../../images/racer_setup/actuator_controls_fft_dterm_70.png" alt="MC_DTERM_CUTOFF=70"> <img src="../../images/racer_setup/actuator_controls_fft_dterm_90.png" alt="MC_DTERM_CUTOFF=90"></p>
+<p>First tune the gyro filter <a href="../advanced_config/parameter_reference.html#IMU_GYRO_CUTOFF">IMU_GYRO_CUTOFF</a> by increasing it in steps of 10 Hz while using a low D-term filter value (<a href="../advanced_config/parameter_reference.html#IMU_DGYRO_CUTOFF">IMU_DGYRO_CUTOFF</a> = 30).<br>Upload the logs to <a href="https://logs.px4.io" target="_blank">https://logs.px4.io</a> and compare the <em>Actuator Controls FFT</em> plot. Set the cutoff frequency to a value before the noise starts to increase noticeably (for frequencies around and above 60 Hz). Then tune the D-term filter (<code>IMU_DGYRO_CUTOFF</code>) in the same way.</p>
+<p>Below is an example for three different filter values (40Hz, 70Hz, 90Hz). At 90 Hz the general noise level starts to increase (especially for roll), and thus a cutoff frequency of 70 Hz is a safe setting. <img src="../../assets/airframes/multicopter/racer_setup/actuator_controls_fft_dgyrocutoff_40.png" alt="IMU_DGYRO_CUTOFF=40"> <img src="../../assets/airframes/multicopter/racer_setup/actuator_controls_fft_dgyrocutoff_70.png" alt="IMU_DGYRO_CUTOFF=70"> <img src="../../assets/airframes/multicopter/racer_setup/actuator_controls_fft_dgyrocutoff_90.png" alt="IMU_DGYRO_CUTOFF=90"></p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> The plot cannot be compared between different vehicles, as the y axis scale can be different. On the same vehicle it is consistent and independent of the flight duration though.</p>
 </blockquote>
@@ -3551,7 +3564,7 @@
 <h3 id="airmode"><a name="airmode" class="plugin-anchor" href="#airmode"><i class="fa fa-link" aria-hidden="true"></i></a>Airmode</h3>
 <p>After you verified that the vehicle flies well at low and high throttle, you can enable <a href="pid_tuning_guide_multicopter.html#airmode">airmode</a> with the <a href="../advanced_config/parameter_reference.html#MC_AIRMODE">MC_AIRMODE</a> parameter. This feature makes sure that the vehicle is still controllable and tracks the rate at low throttle.</p>
 <p>Happy flipping :)</p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-04-01 01:17:46 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-04-01 02:53:47 </span> </footer>
                                 
                                 </section>
                             
@@ -3594,7 +3607,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"多旋翼竞赛设置 ","level":"1.9.2.3","depth":3,"next":{"title":"固定翼形配置/调试","level":"1.9.3","depth":2,"path":"config_fw/README.md","ref":"config_fw/README.md","articles":[{"title":"固定翼 PID 调参指南","level":"1.9.3.1","depth":3,"path":"config_fw/pid_tuning_guide_fixedwing.md","ref":"config_fw/pid_tuning_guide_fixedwing.md","articles":[]},{"title":"固定翼高级调试指南","level":"1.9.3.2","depth":3,"path":"config_fw/advanced_tuning_guide_fixedwing.md","ref":"config_fw/advanced_tuning_guide_fixedwing.md","articles":[]},{"title":"固定翼微调指南","level":"1.9.3.3","depth":3,"path":"config_fw/trimming_guide_fixedwing.md","ref":"config_fw/trimming_guide_fixedwing.md","articles":[]}]},"previous":{"title":"MC Jerk-limited Type Trajectory","level":"1.9.2.2.2","depth":4,"path":"config_mc/mc_jerk_limited_type_trajectory.md","ref":"config_mc/mc_jerk_limited_type_trajectory.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"config_mc/racer_setup.md","mtime":"2020-04-01T01:17:46.063Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-01T01:18:36.628Z"},"basePath":"..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"多旋翼竞赛设置 ","level":"1.9.2.3","depth":3,"next":{"title":"固定翼形配置/调试","level":"1.9.3","depth":2,"path":"config_fw/README.md","ref":"config_fw/README.md","articles":[{"title":"固定翼 PID 调参指南","level":"1.9.3.1","depth":3,"path":"config_fw/pid_tuning_guide_fixedwing.md","ref":"config_fw/pid_tuning_guide_fixedwing.md","articles":[]},{"title":"固定翼高级调试指南","level":"1.9.3.2","depth":3,"path":"config_fw/advanced_tuning_guide_fixedwing.md","ref":"config_fw/advanced_tuning_guide_fixedwing.md","articles":[]},{"title":"固定翼微调指南","level":"1.9.3.3","depth":3,"path":"config_fw/trimming_guide_fixedwing.md","ref":"config_fw/trimming_guide_fixedwing.md","articles":[]}]},"previous":{"title":"MC Jerk-limited Type Trajectory","level":"1.9.2.2.2","depth":4,"path":"config_mc/mc_jerk_limited_type_trajectory.md","ref":"config_mc/mc_jerk_limited_type_trajectory.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"config_mc/racer_setup.md","mtime":"2020-04-01T02:53:47.400Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-01T02:55:18.098Z"},"basePath":"..","book":{"language":"zh"}});
         });
     </script>
 </div>
