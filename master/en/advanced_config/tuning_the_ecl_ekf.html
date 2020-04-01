@@ -3460,14 +3460,14 @@
 <h2 id="what-is-the-ecl-ekf"><a name="what-is-the-ecl-ekf" class="plugin-anchor" href="#what-is-the-ecl-ekf"><i class="fa fa-link" aria-hidden="true"></i></a>What is the ECL EKF?</h2>
 <p>The Estimation and Control Library (ECL) uses an Extended Kalman Filter (EKF) algorithm to process sensor measurements and provide an estimate of the following states:</p>
 <ul>
-<li>Quaternion defining the rotation from North, East, Down local earth frame to X,Y,Z body frame</li>
-<li>Velocity at the IMU - North,East,Down (m/s)</li>
-<li>Position at the IMU - North,East,Down (m)</li>
-<li>IMU delta angle bias estimates - X,Y,Z (rad)</li>
-<li>IMU delta velocity bias estimates - X,Y,Z(m/s)</li>
-<li>Earth Magnetic field components - North,East,Down (gauss)</li>
-<li>Vehicle body frame magnetic field bias - X,Y,Z (gauss)</li>
-<li>Wind velocity - North,East (m/s)</li>
+<li>Quaternion defining the rotation from North, East, Down local earth frame to X, Y, Z body frame</li>
+<li>Velocity at the IMU - North, East, Down (m/s)</li>
+<li>Position at the IMU - North, East, Down (m)</li>
+<li>IMU delta angle bias estimates - X, Y, Z (rad)</li>
+<li>IMU delta velocity bias estimates - X, Y, Z(m/s)</li>
+<li>Earth Magnetic field components - North, East, Down (gauss)</li>
+<li>Vehicle body frame magnetic field bias - X, Y, Z (gauss)</li>
+<li>Wind velocity - North, East (m/s)</li>
 </ul>
 <p>The EKF runs on a delayed &apos;fusion time horizon&apos; to allow for different time delays on each measurement relative to the IMU. 
 Data for each sensor is FIFO buffered and retrieved from the buffer by the EKF to be used at the correct time.
@@ -3496,21 +3496,23 @@ Note: Coning corrections should be applied to the IMU delta angle data before it
 <h3 id="magnetometer"><a name="magnetometer" class="plugin-anchor" href="#magnetometer"><i class="fa fa-link" aria-hidden="true"></i></a>Magnetometer</h3>
 <p>Three axis body fixed magnetometer data (or external vision system pose data) at a minimum rate of 5Hz is required. Magnetometer data can be used in two ways:</p>
 <ul>
-<li>Magnetometer measurements are converted to a yaw angle using the tilt estimate and magnetic declination. 
-This yaw angle is then used as an observation by the EKF. 
-This method is less accurate and does not allow for learning of body frame field offsets, however it is more robust to magnetic anomalies and large start-up gyro biases. 
+<li>Magnetometer measurements are converted to a yaw angle using the tilt estimate and magnetic declination.
+This yaw angle is then used as an observation by the EKF.
+This method is less accurate and does not allow for learning of body frame field offsets, however it is more robust to magnetic anomalies and large start-up gyro biases.
 It is the default method used during start-up and on ground.</li>
-<li>The  XYZ magnetometer readings are used as separate observations. 
-This method is more accurate and allows body frame offsets to be learned, but assumes the earth magnetic field environment only changes slowly and performs less well when there are significant external magnetic anomalies. 
-It is the default method when the vehicle is airborne and has climbed past 1.5 m altitude.</li>
+<li>The XYZ magnetometer readings are used as separate observations.
+This method is more accurate and allows body frame offsets to be learned, but assumes the earth magnetic field environment only changes slowly and performs less well when there are significant external magnetic anomalies.</li>
 </ul>
-<p>The logic used to select the mode is set by the <a href="parameter_reference.html#EKF2_MAG_TYPE">EKF2_MAG_TYPE</a> parameter.</p>
+<p>The logic used to select these modes is set by the <a href="parameter_reference.html#EKF2_MAG_TYPE">EKF2_MAG_TYPE</a> parameter.</p>
+<p>The option is available to operate without a magnetometer, either by replacing it using <a href="#yaw_measurements">yaw from a dual antenna GPS</a> or using the IMU measurements and GPS velocity data to <a href="#yaw_from_gps_velocity">estimate yaw from vehicle movement</a>.</p>
 <h3 id="height"><a name="height" class="plugin-anchor" href="#height"><i class="fa fa-link" aria-hidden="true"></i></a>Height</h3>
-<p>A source of height data - either GPS, barometric pressure, range finder or external vision at a minimum rate of 5Hz is required. 
-Note: The primary source of height data is controlled by the <a href="parameter_reference.html#EKF2_HGT_MODE">EKF2_HGT_MODE</a> parameter.</p>
-<p>If these measurements are not present, the EKF will not start. 
+<p>A source of height data - either GPS, barometric pressure, range finder or external vision at a minimum rate of 5Hz is required.</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> The primary source of height data is controlled by the <a href="parameter_reference.html#EKF2_HGT_MODE">EKF2_HGT_MODE</a> parameter.</p>
+</blockquote>
+<p>If these measurements are not present, the EKF will not start.
 When these measurements have been detected, the EKF will initialise the states and complete the tilt and yaw alignment. 
-When tilt and yaw alignment is complete, the EKF can then transition to other modes of operation  enabling use of additional sensor data:</p>
+When tilt and yaw alignment is complete, the EKF can then transition to other modes of operation enabling use of additional sensor data:</p>
 <h4 id="correction-for-static-pressure-position-error"><a name="correction-for-static-pressure-position-error" class="plugin-anchor" href="#correction-for-static-pressure-position-error"><i class="fa fa-link" aria-hidden="true"></i></a>Correction for Static Pressure Position Error</h4>
 <p>Barometric pressure altitude is subject to errors generated by aerodynamic disturbances caused by vehicle wind relative velocity and orientation. 
 This is known in aeronautics as <em>static pressure position error</em>. 
@@ -3535,15 +3537,29 @@ See the following parameter documentation for information on how to use this fea
 These checks are controlled by the <a href="parameter_reference.html#EKF2_GPS_CHECK">EKF2_GPS_CHECK</a> and <code>EKF2_REQ_*</code> parameters. </li>
 <li>GPS height can be used directly by the EKF via setting of the <a href="parameter_reference.html#EKF2_HGT_MODE">EKF2_HGT_MODE</a> parameter.</li>
 </ul>
-<h4 id="yaw-measurements"><a name="yaw-measurements" class="plugin-anchor" href="#yaw-measurements"><i class="fa fa-link" aria-hidden="true"></i></a>Yaw Measurements</h4>
-<p>Some GPS receivers such as the <a href="https://www.trimble.com/Precision-GNSS/MB-Two-Board.aspx" target="_blank">Trimble MB-Two RTK GPS receiver</a> can be used to provide a heading measurement that replaces the use of magnetometer data. 
-This can be a significant advantage when operating in an environment where large magnetic anomalies are present, or at latitudes here the earth&apos;s magnetic field has a high inclination. 
+<h4 id="yaw_measurements"><a name="yaw_measurements" class="plugin-anchor" href="#yaw_measurements"><i class="fa fa-link" aria-hidden="true"></i></a>Yaw Measurements </h4>
+<p>Some GPS receivers such as the <a href="https://www.trimble.com/Precision-GNSS/MB-Two-Board.aspx" target="_blank">Trimble MB-Two RTK GPS receiver</a> can be used to provide a heading measurement that replaces the use of magnetometer data.
+This can be a significant advantage when operating in an environment where large magnetic anomalies are present, or at latitudes here the earth&apos;s magnetic field has a high inclination.
 Use of GPS yaw measurements is enabled by setting bit position 7 to 1 (adding 128) in the <a href="parameter_reference.html#EKF2_AID_MASK">EKF2_AID_MASK</a> parameter.</p>
+<h4 id="yaw_from_gps_velocity"><a name="yaw_from_gps_velocity" class="plugin-anchor" href="#yaw_from_gps_velocity"><i class="fa fa-link" aria-hidden="true"></i></a>Yaw From GPS Velocity </h4>
+<p>The EKF runs an additional multi-hypothesis filter internally that uses multiple 3-state Extended Kalman Filters (EKF&apos;s) whose states are NE velocity and yaw angle.
+These individual yaw angle estimates are then combined using a Gaussian Sum Filter (GSF). The individual 3-state EKF&apos;s use IMU and GPS horizontal velocity data (plus optional airspeed data) and do not rely on any prior knowledge of the yaw angle or magnetometer measurements.
+This provides a backup to the yaw from the main filter and is used to reset the yaw for the main 24-state EKF when a post-takeoff loss of navigation indicates that the yaw estimate from the magnetometer is bad.
+This will result in an <code>Emergency yaw reset - magnetometer use stopped</code> message information message at the GCS.</p>
+<p>Data from this estimator is logged when ekf2 replay logging is enabled and can be viewed in the <code>yaw_estimator_status</code> message.
+The individual yaw estimates from the individual 3-state EKF yaw estimators are in the <code>yaw</code> fields.
+The GSF combined yaw estimate is in the <code>yaw_composite</code> field.
+The variance for the GSF yaw estimate is in the <code>yaw_variance</code> field.
+All angles are in radians.
+Weightings applied by the GSF to the individual 3-state EKF outputs are in the<code>weight</code> fields.</p>
+<p>This also makes it possible to operate without any magnetometer data or dual antenna GPS receiver for yaw provided some horizontal movement after takeoff can be performed to enable the yaw to become observable.
+To use this feature, set <a href="parameter_reference.html#EKF2_MAG_TYPE">EKF2_MAG_TYPE</a> to <code>none</code> (5) to disable magnetometer use.
+Once the vehicle has performed sufficient horizontal movement to make the yaw observable, the main 24-state EKF will align it&apos;s yaw to the GSF estimate and commence use of GPS.</p>
 <h4 id="dual-receivers"><a name="dual-receivers" class="plugin-anchor" href="#dual-receivers"><i class="fa fa-link" aria-hidden="true"></i></a>Dual Receivers</h4>
 <p>Data from GPS receivers can be blended using an algorithm that weights data based on reported accuracy (this works best if both receivers output data at the same rate and use the same accuracy).
-The mechanism also provides automatic failover if data from a receiver is lost (it allows, for example, a standard GPS to be used as a backup to a more accurate RTK receiver). 
+The mechanism also provides automatic failover if data from a receiver is lost (it allows, for example, a standard GPS to be used as a backup to a more accurate RTK receiver).
 This is controlled by the <a href="parameter_reference.html#EKF2_GPS_MASK">EKF2_GPS_MASK</a> parameter. </p>
-<p>The <a href="parameter_reference.html#EKF2_GPS_MASK">EKF2_GPS_MASK</a> parameter is set by default to disable blending and always use the first receiver, so it will have to be set to select which receiver accuracy metrics are used to decide how much each receiver output contributes to the blended solution. 
+<p>The <a href="parameter_reference.html#EKF2_GPS_MASK">EKF2_GPS_MASK</a> parameter is set by default to disable blending and always use the first receiver, so it will have to be set to select which receiver accuracy metrics are used to decide how much each receiver output contributes to the blended solution.
 Where different receiver models are used, it is important that the <a href="parameter_reference.html#EKF2_GPS_MASK">EKF2_GPS_MASK</a> parameter is set to a value that uses accuracy metrics that are supported by both receivers. 
 For example do not set bit position 0 to <code>true</code> unless the drivers for both receivers publish values in the <code>s_variance_m_s</code> field of the <code>vehicle_gps_position</code> message that are comparable.
 This can be difficult with receivers from different manufacturers due to the different way that accuracy is defined, e.g. CEP vs 1-sigma, etc.</p>
@@ -3704,7 +3720,7 @@ Following <a href="parameter_reference.html#EKF2_AID_MASK">EKF2_AID_MASK</a> val
 <tr>
 <td>272</td>
 <td>EV_VEL + EV_YAW</td>
-<td>hHading w.r.t. external vision frame</td>
+<td>Heading w.r.t. external vision frame</td>
 </tr>
 <tr>
 <td>320</td>
@@ -3741,7 +3757,7 @@ It is therefore more difficult for users that are not achieving good results to 
 </ul>
 <h3 id="advantages"><a name="advantages" class="plugin-anchor" href="#advantages"><i class="fa fa-link" aria-hidden="true"></i></a>Advantages</h3>
 <ul>
-<li>The ecl EKF is able to fuse data from sensors with different time delays and data rates in a mathematically consistent way which improves accuracy during dynamic manoeuvres once time delay parameters are set correctly.</li>
+<li>The ecl EKF is able to fuse data from sensors with different time delays and data rates in a mathematically consistent way which improves accuracy during dynamic maneuvers once time delay parameters are set correctly.</li>
 <li>The ecl EKF is capable of fusing a large range of different sensor types.</li>
 <li>The ecl EKF detects and reports statistically significant inconsistencies in sensor data, assisting with diagnosis of sensor errors.</li>
 <li>For fixed wing operation, the ecl EKF estimates wind speed with or without an airspeed sensor and is able to use the estimated wind in combination with airspeed measurements and sideslip assumptions to extend the dead-reckoning time available if GPS is lost in flight.</li>
@@ -3957,7 +3973,7 @@ Magnetometer test levels are only affected to a small extent.</p>
 <h3 id="determination-of-excessive-gyro-bias"><a name="determination-of-excessive-gyro-bias" class="plugin-anchor" href="#determination-of-excessive-gyro-bias"><i class="fa fa-link" aria-hidden="true"></i></a>Determination of Excessive Gyro Bias</h3>
 <p>Large gyro bias offsets are normally characterised by a change in the value of delta angle bias greater than 5E-4 during flight (equivalent to ~3 deg/sec) and can also cause a large increase in the magnetometer test ratio if the yaw axis is affected. 
 Height is normally unaffected other than extreme cases.
-Switch on bias value of up to 5 deg/sec can be tolerated provided the filter is given time time settle before flying. 
+Switch on bias value of up to 5 deg/sec can be tolerated provided the filter is given time settle before flying. 
 Pre-flight checks performed by the commander should prevent arming if the position is diverging.</p>
 <p>(insert example plots showing bad gyro bias here)</p>
 <h3 id="determination-of-poor-yaw-accuracy"><a name="determination-of-poor-yaw-accuracy" class="plugin-anchor" href="#determination-of-poor-yaw-accuracy"><i class="fa fa-link" aria-hidden="true"></i></a>Determination of Poor Yaw Accuracy</h3>
@@ -4001,7 +4017,7 @@ If no terrain estimate is available this parameter will have no effect and the s
 <ul>
 <li><a href="https://youtu.be/HkYRJJoyBwQ" target="_blank">PX4 State Estimation Overview</a>, <em>PX4 Developer Summit 2019</em>, Dr. Paul Riseborough): Overview of the estimator, and major changes from 2018/19, and the expected improvements through 2019/20. </li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-04-01 02:53:47 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-04-01 13:54:48 </span> </footer>
                                 
                                 </section>
                             
@@ -4044,7 +4060,7 @@ If no terrain estimate is available this parameter will have no effect and the s
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ECL/EKF Overview & Tuning","level":"1.9.6","depth":2,"next":{"title":"Flight Termination Configuration","level":"1.9.7","depth":2,"path":"advanced_config/flight_termination.md","ref":"advanced_config/flight_termination.md","articles":[]},"previous":{"title":"ESC Calibration","level":"1.9.5","depth":2,"path":"advanced_config/esc_calibration.md","ref":"advanced_config/esc_calibration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"advanced_config/tuning_the_ecl_ekf.md","mtime":"2020-04-01T02:53:47.135Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-01T02:55:18.098Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"ECL/EKF Overview & Tuning","level":"1.9.6","depth":2,"next":{"title":"Flight Termination Configuration","level":"1.9.7","depth":2,"path":"advanced_config/flight_termination.md","ref":"advanced_config/flight_termination.md","articles":[]},"previous":{"title":"ESC Calibration","level":"1.9.5","depth":2,"path":"advanced_config/esc_calibration.md","ref":"advanced_config/esc_calibration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"advanced_config/tuning_the_ecl_ekf.md","mtime":"2020-04-01T13:54:48.656Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-01T13:56:16.449Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
