@@ -2674,7 +2674,7 @@
                 <a href="../flight_controller/">
             
                     
-                    自动驾驶仪硬件
+                    Autopilot Hardware
             
                 </a>
             
@@ -3052,12 +3052,51 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.7" data-path="../flight_controller/snapdragon_flight.html">
+        <li class="chapter " data-level="1.11.7" data-path="../flight_controller/raspberry_pi_navio2.html">
+            
+                <a href="../flight_controller/raspberry_pi_navio2.html">
+            
+                    
+                    Raspberry Pi 2/3 Navio2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="../flight_controller/ocpoc_zynq.html">
+            
+                <a href="../flight_controller/ocpoc_zynq.html">
+            
+                    
+                    OcPoC-Zynq Mini
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="../flight_controller/beaglebone_blue.html">
+            
+                <a href="../flight_controller/beaglebone_blue.html">
+            
+                    
+                    BeagleBone Blue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.10" data-path="../flight_controller/snapdragon_flight.html">
             
                 <a href="../flight_controller/snapdragon_flight.html">
             
                     
-                    高通骁龙飞控（Snapdragon Flight）
+                    Snapdragon Flight (Discontinued)
             
                 </a>
             
@@ -3066,7 +3105,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.11.7.1" data-path="../flight_controller/snapdragon_flight_hardware_example_setup.html">
+        <li class="chapter " data-level="1.11.10.1" data-path="../flight_controller/snapdragon_flight_hardware_example_setup.html">
             
                 <a href="../flight_controller/snapdragon_flight_hardware_example_setup.html">
             
@@ -3079,7 +3118,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.7.2" data-path="../flight_controller/snapdragon_flight_dev_environment_installation.html">
+        <li class="chapter " data-level="1.11.10.2" data-path="../flight_controller/snapdragon_flight_dev_environment_installation.html">
             
                 <a href="../flight_controller/snapdragon_flight_dev_environment_installation.html">
             
@@ -3092,7 +3131,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.7.3" data-path="../flight_controller/snapdragon_flight_software_installation.html">
+        <li class="chapter " data-level="1.11.10.3" data-path="../flight_controller/snapdragon_flight_software_installation.html">
             
                 <a href="../flight_controller/snapdragon_flight_software_installation.html">
             
@@ -3105,7 +3144,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.7.4" data-path="../flight_controller/snapdragon_flight_configuration.html">
+        <li class="chapter " data-level="1.11.10.4" data-path="../flight_controller/snapdragon_flight_configuration.html">
             
                 <a href="../flight_controller/snapdragon_flight_configuration.html">
             
@@ -3118,7 +3157,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.7.5" data-path="../flight_controller/snapdragon_flight_advanced.html">
+        <li class="chapter " data-level="1.11.10.5" data-path="../flight_controller/snapdragon_flight_advanced.html">
             
                 <a href="../flight_controller/snapdragon_flight_advanced.html">
             
@@ -3136,45 +3175,6 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.8" data-path="../flight_controller/raspberry_pi_navio2.html">
-            
-                <a href="../flight_controller/raspberry_pi_navio2.html">
-            
-                    
-                    Raspberry Pi 2/3 Navio2
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.11.9" data-path="../flight_controller/ocpoc_zynq.html">
-            
-                <a href="../flight_controller/ocpoc_zynq.html">
-            
-                    
-                    OcPoC-Zynq Mini
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.11.10" data-path="../flight_controller/beaglebone_blue.html">
-            
-                <a href="../flight_controller/beaglebone_blue.html">
-            
-                    
-                    BeagleBone Blue
-            
-                </a>
-            
-
-            
-        </li>
-    
 
             </ul>
             
@@ -3185,7 +3185,7 @@
                 <a href="../complete_vehicles/">
             
                     
-                    成品机
+                    Complete Vehicles
             
                 </a>
             
@@ -3456,7 +3456,7 @@
 <p>PX4 has a number of safety features to protect and recover your vehicle if something goes wrong:</p>
 <ul>
 <li><em>Failsafes</em> allow you to specify areas and conditions under which you can safely fly, and the <a href="#failsafe_actions">action</a> that will be performed if a failsafe is triggered (for example, landing, holding position, or returning to a specified point). The most important failsafe settings are configured in the <em>QGroundControl</em> <a href="#qgc_safety_setup">Safety Setup</a> page. Others must be configured via <a href="#failsafe_other">parameters</a>.</li>
-<li><a href="#safety_switch">Safety switches</a> on the remote control can be used to immediately stop motors or return the vehicle in the event of a problem. </li>
+<li><a href="#safety_switch">Safety switches</a> on the remote control can be used to immediately stop motors or return the vehicle in the event of a problem.</li>
 </ul>
 <h2 id="failsafe_actions"><a name="failsafe_actions" class="plugin-anchor" href="#failsafe_actions"><i class="fa fa-link" aria-hidden="true"></i></a>Failsafe Actions </h2>
 <p>Each failsafe defines its own set of actions. Some of the more common failsafe actions are:</p>
@@ -3469,31 +3469,31 @@
 </thead>
 <tbody>
 <tr>
-<td>None/Disabled</td>
+<td><span id="action_none"></span>None/Disabled</td>
 <td>No action (the failsafe will be ignored).</td>
 </tr>
 <tr>
-<td>&#x62A5;&#x8B66;</td>
+<td><span id="action_warning"></span>&#x62A5;&#x8B66;</td>
 <td>A warning message will be sent to <em>QGroundControl</em>.</td>
 </tr>
 <tr>
-<td><a href="../flight_modes/hold.html">Hold mode</a></td>
+<td><span id="action_hold"></span><a href="../flight_modes/hold.html">Hold mode</a></td>
 <td>The vehicle will enter <em>Hold mode</em>. For multicopters this means the vehicle will hover, while for fixed/wing the vehicle will circle.</td>
 </tr>
 <tr>
-<td><a href="../flight_modes/return.html">&#x8FD4;&#x822A;&#x6A21;&#x5F0F;</a></td>
+<td><span id="action_return"></span><a href="../flight_modes/return.html">Return mode</a></td>
 <td>The vehicle will enter <em>Return mode</em>. Return behaviour can be set in the <a href="#return_settings">Return Home Settings</a> (below).</td>
 </tr>
 <tr>
-<td><a href="../flight_modes/land.html">&#x964D;&#x843D;&#x6A21;&#x5F0F;</a></td>
+<td><span id="action_land"></span><a href="../flight_modes/land.html">Land mode</a></td>
 <td>The vehicle will enter <em>Land mode</em>, and lands immediately.</td>
 </tr>
 <tr>
-<td><a href="../advanced_config/flight_termination.html">Flight termination</a></td>
+<td><span id="action_flight_termination"></span><a href="../advanced_config/flight_termination.html">Flight termination</a></td>
 <td>Turns off all controllers and sets all PWM outputs to their failsafe values (e.g. <a href="../advanced_config/parameter_reference.html#PWM_MAIN_FAIL1">PWM_MAIN_FAILn</a>, <a href="../advanced_config/parameter_reference.html#PWM_AUX_FAIL1">PWM_AUX_FAILn</a>). The failsafe outputs can be used to deploy a parachute, landing gear or perform another operation. For a fixed-wing vehicle this might allow you to glide the vehicle to safety.</td>
 </tr>
 <tr>
-<td>Lockdown</td>
+<td><span id="action_lockdown"></span>Lockdown</td>
 <td>Kills the motors (sets them to disarmed). This is the same as using the <a href="#kill_switch">kill switch</a>.</td>
 </tr>
 </tbody>
@@ -3871,10 +3871,12 @@
 </table>
 <h2 id="failure_detector"><a name="failure_detector" class="plugin-anchor" href="#failure_detector"><i class="fa fa-link" aria-hidden="true"></i></a>Failure Detector </h2>
 <p>The failure detector allows a vehicle to take protective action(s) if it unexpectedly flips, or if it is notified by an external failure detection system.</p>
-<p>More precisely, the failure detector can be used to trigger <a href="../advanced_config/flight_termination.html">flight termination</a> (in all modes) if failure conditions are met, and can then launch a <a href="../peripherals/parachute.html">parachute</a> or perform some other action.</p>
+<p>During flight, the failure detector can be used to trigger <a href="../advanced_config/flight_termination.html">flight termination</a> if failure conditions are met, which may then launch a <a href="../peripherals/parachute.html">parachute</a> or perform some other action.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
-<p> Failure detection is deactivated by default. You can enable it by setting <a href="#CBRK_FLIGHTTERM">CBRK_FLIGHTTERM=0</a>.</p>
+<p> Failure detection during flight is deactivated by default (enable by setting the parameter: <a href="#CBRK_FLIGHTTERM">CBRK_FLIGHTTERM=0</a>).</p>
 </blockquote>
+<p>During takeoff the failure detector <a href="#attitude_trigger">attitude trigger</a> invokes the <a href="#action_lockdown">lockdown action</a> if the vehicle flips (lockdown kills the motors but, unlike flight termination, will not launch a parachute or perform other failure actions). Note that this check is always enabled on takeoff, irrespective of the <code>CBRK_FLIGHTTERM</code> parameter.</p>
+<p>The failure detector is active in all vehicle types and modes, except for those where the vehicle is <em>expected</em> to do flips (i.e. <a href="../flight_modes/altitude_mc.html">Acro mode (MC)</a>, <a href="../flight_modes/altitude_fw.html">Acro mode (FW)</a>, <a href="../flight_modes/rattitude_mc.html">Rattitude</a> and <a href="../flight_modes/manual_fw.html">Manual (FW)</a>).</p>
 <h3 id="attitude_trigger"><a name="attitude_trigger" class="plugin-anchor" href="#attitude_trigger"><i class="fa fa-link" aria-hidden="true"></i></a>Attitude Trigger </h3>
 <p>The failure detector can be configured to trigger if the vehicle attitude exceeds predefined pitch and roll values for longer than a specified time.</p>
 <p>The relevant parameters are shown below:</p>
@@ -3954,10 +3956,10 @@
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> <a href="#auto-disarming-timeouts">Auto disarm timeouts</a> (e.g. via <a href="#COM_DISARM_LAND">COM_DISARM_LAND</a>) are independent of the arm/disarm switch - ie even if the switch is armed the timeouts will still work.</p>
 </blockquote>
-<!-- 
-> **Note** This can also be done by [manually setting](../advanced_config/parameters.md) the [RC_MAP_ARM_SW](../advanced_config/parameter_reference.md#RC_MAP_ARM_SW) parameter to the corresponding switch RC channel. 
-  If the switch positions are reversed, change the sign of the parameter [RC_ARMSWITCH_TH](../advanced_config/parameter_reference.md#RC_ARMSWITCH_TH) (or also change its value to alter the threshold value). 
-  -->
+<!--
+> **Note** This can also be done by [manually setting](../advanced_config/parameters.md) the [RC_MAP_ARM_SW](../advanced_config/parameter_reference.md#RC_MAP_ARM_SW) parameter to the corresponding switch RC channel.
+  If the switch positions are reversed, change the sign of the parameter [RC_ARMSWITCH_TH](../advanced_config/parameter_reference.md#RC_ARMSWITCH_TH) (or also change its value to alter the threshold value).
+-->
 <h3 id="return_switch"><a name="return_switch" class="plugin-anchor" href="#return_switch"><i class="fa fa-link" aria-hidden="true"></i></a>Return Switch </h3>
 <p>A return switch can be used to immediately engage <a href="../flight_modes/return.html">Return mode</a>.</p>
 <h2 id="other-safety-settings"><a name="other-safety-settings" class="plugin-anchor" href="#other-safety-settings"><i class="fa fa-link" aria-hidden="true"></i></a>Other Safety Settings</h2>
@@ -3986,7 +3988,7 @@
 <ul>
 <li><a href="https://docs.qgroundcontrol.com/en/SetupView/Safety.html" target="_blank">QGroundControl User Guide &gt; Safety Setup</a></li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-04-03 03:31:10 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-04-03 06:11:43 </span> </footer>
                                 
                                 </section>
                             
@@ -4029,7 +4031,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"安全性","level":"1.4.13","depth":2,"next":{"title":"电机/舵机","level":"1.4.14","depth":2,"path":"config/motors.md","ref":"config/motors.md","articles":[]},"previous":{"title":"电池","level":"1.4.12","depth":2,"path":"config/battery.md","ref":"config/battery.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"config/safety.md","mtime":"2020-04-03T03:31:10.535Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-03T03:32:08.382Z"},"basePath":"..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"安全性","level":"1.4.13","depth":2,"next":{"title":"电机/舵机","level":"1.4.14","depth":2,"path":"config/motors.md","ref":"config/motors.md","articles":[]},"previous":{"title":"电池","level":"1.4.12","depth":2,"path":"config/battery.md","ref":"config/battery.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"config/safety.md","mtime":"2020-04-03T06:11:43.543Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-03T06:13:13.151Z"},"basePath":"..","book":{"language":"zh"}});
         });
     </script>
 </div>
