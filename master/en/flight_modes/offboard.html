@@ -3541,8 +3541,24 @@ The action is defined in the parameters <a href="#COM_OBL_ACT">COM_OBL_ACT</a> a
 <ul>
 <li><p><a href="https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_LOCAL_NED" target="_blank">SET_POSITION_TARGET_LOCAL_NED</a></p>
 <ul>
-<li>The following input combinations are supported: <!-- https://github.com/PX4/Firmware/blob/master/src/lib/FlightTasks/tasks/Offboard/FlightTaskOffboard.cpp#L166-L170 --><ul>
-<li>Position setpoint (only <code>x</code>, <code>y</code>, <code>z</code>)</li>
+<li><p>The following input combinations are supported (via <code>type_mask</code>): <!-- https://github.com/PX4/Firmware/blob/master/src/lib/FlightTasks/tasks/Offboard/FlightTaskOffboard.cpp#L166-L170 --></p>
+<ul>
+<li><p>Position setpoint (only <code>x</code>, <code>y</code>, <code>z</code>)</p>
+<ul>
+<li><p>Specify the <em>type</em> of the setpoint in <code>type_mask</code> (if these bits are not set the vehicle will fly in a flower-like pattern):</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> The <em>setpoint type</em> values below are not part of the MAVLink standard for the <code>type_mask</code> field.</p>
+</blockquote>
+<p>The values are:</p>
+<ul>
+<li>4096: Takeoff setpoint.</li>
+<li>8192: Land setpoint.</li>
+<li>12288: Loiter setpoint (fly a circle centred on setpoint).</li>
+<li>16384: Idle setpoint (zero throttle, zero roll / pitch).</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>PX4 supports the coordinate frames (<code>coordinate_frame</code> field): <a href="https://mavlink.io/en/messages/common.html#MAV_FRAME_LOCAL_NED" target="_blank">MAV_FRAME_LOCAL_NED</a> and <a href="https://mavlink.io/en/messages/common.html#MAV_FRAME_BODY_NED" target="_blank">MAV_FRAME_BODY_NED</a>.</li>
@@ -3550,8 +3566,24 @@ The action is defined in the parameters <a href="#COM_OBL_ACT">COM_OBL_ACT</a> a
 </li>
 <li><p><a href="https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_GLOBAL_INT" target="_blank">SET_POSITION_TARGET_GLOBAL_INT</a></p>
 <ul>
-<li>The following input combinations are supported: <!-- https://github.com/PX4/Firmware/blob/master/src/lib/FlightTasks/tasks/Offboard/FlightTaskOffboard.cpp#L166-L170 --><ul>
-<li>Position setpoint (only <code>lat_int</code>, <code>lon_int</code>, <code>alt</code>)</li>
+<li><p>The following input combinations are supported (via <code>type_mask</code>): <!-- https://github.com/PX4/Firmware/blob/master/src/lib/FlightTasks/tasks/Offboard/FlightTaskOffboard.cpp#L166-L170 --></p>
+<ul>
+<li><p>Position setpoint (only <code>lat_int</code>, <code>lon_int</code>, <code>alt</code>)</p>
+<ul>
+<li><p>Specify the <em>type</em> of the setpoint in <code>type_mask</code> (if these bits are not set the vehicle will fly in a flower-like pattern):</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> The <em>setpoint type</em> values below are not part of the MAVLink standard for the <code>type_mask</code> field.</p>
+</blockquote>
+<p>The values are:</p>
+<ul>
+<li>4096: Takeoff setpoint.</li>
+<li>8192: Land setpoint.</li>
+<li>12288: Loiter setpoint (fly a circle centred on setpoint).</li>
+<li>16384: Idle setpoint (zero throttle, zero roll / pitch).</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>PX4 supports the coordinate frames (<code>coordinate_frame</code> field): <a href="https://mavlink.io/en/messages/common.html#MAV_FRAME_GLOBAL" target="_blank">MAV_FRAME_GLOBAL</a>.</li>
@@ -3573,8 +3605,21 @@ See https://github.com/PX4/Firmware/pull/12149 and https://github.com/PX4/Firmwa
 <ul>
 <li><p><a href="https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_LOCAL_NED" target="_blank">SET_POSITION_TARGET_LOCAL_NED</a></p>
 <ul>
-<li>The following input combinations are supported: <!-- https://github.com/PX4/Firmware/blob/master/src/lib/FlightTasks/tasks/Offboard/FlightTaskOffboard.cpp#L166-L170 --><ul>
-<li>Position setpoint (only <code>x</code>, <code>y</code>, <code>z</code>)</li>
+<li><p>The following input combinations are supported (in <code>type_mask</code>): <!-- https://github.com/PX4/Firmware/blob/master/src/lib/FlightTasks/tasks/Offboard/FlightTaskOffboard.cpp#L166-L170 --></p>
+<ul>
+<li><p>Position setpoint (only <code>x</code>, <code>y</code>, <code>z</code>)</p>
+<ul>
+<li><p>Specify the <em>type</em> of the setpoint in <code>type_mask</code>:</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> The <em>setpoint type</em> values below are not part of the MAVLink standard for the <code>type_mask</code> field.</p>
+</blockquote>
+<p>The values are:</p>
+<ul>
+<li>12288: Loiter setpoint (vehicle stops when close enough to setpoint).</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>Velocity setpoint (only <code>vx</code>, <code>yy</code>, <code>vz</code>)</li>
 </ul>
 </li>
@@ -3583,8 +3628,14 @@ See https://github.com/PX4/Firmware/pull/12149 and https://github.com/PX4/Firmwa
 </li>
 <li><p><a href="https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_GLOBAL_INT" target="_blank">SET_POSITION_TARGET_GLOBAL_INT</a></p>
 <ul>
-<li>The following input combinations are supported: <!-- https://github.com/PX4/Firmware/blob/master/src/lib/FlightTasks/tasks/Offboard/FlightTaskOffboard.cpp#L166-L170 --><ul>
+<li>The following input combinations are supported (in <code>type_mask</code>): <!-- https://github.com/PX4/Firmware/blob/master/src/lib/FlightTasks/tasks/Offboard/FlightTaskOffboard.cpp#L166-L170 --><ul>
 <li>Position setpoint (only <code>lat_int</code>, <code>lon_int</code>, <code>alt</code>)</li>
+</ul>
+</li>
+<li>Specify the <em>type</em> of the setpoint in <code>type_mask</code> (not part of the MAVLink standard).
+The values are:<ul>
+<li>Following bits not set then normal behaviour.</li>
+<li>12288: Loiter setpoint (vehicle stops when close enough to setpoint).</li>
 </ul>
 </li>
 <li>PX4 supports the coordinate frames (<code>coordinate_frame</code> field): <a href="https://mavlink.io/en/messages/common.html#MAV_FRAME_GLOBAL" target="_blank">MAV_FRAME_GLOBAL</a>.</li>
@@ -3637,7 +3688,7 @@ See https://github.com/PX4/Firmware/pull/12149 and https://github.com/PX4/Firmwa
 <li><a href="https://dev.px4.io/master/en/ros/offboard_control.html" target="_blank">Offboard Control from Linux</a> (PX4 Devguide)</li>
 <li><a href="https://dev.px4.io/master/en/ros/mavros_offboard.html" target="_blank">MAVROS Offboard control example</a> (PX4 Devguide)</li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-04-14 01:35:02 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-04-14 06:10:53 </span> </footer>
                                 
                                 </section>
                             
@@ -3680,7 +3731,7 @@ See https://github.com/PX4/Firmware/pull/12149 and https://github.com/PX4/Firmwa
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Offboard Mode","level":"1.6.6.18","depth":3,"next":{"title":"Terrain Following/Holding","level":"1.6.7","depth":2,"path":"flying/terrain_following_holding.md","ref":"flying/terrain_following_holding.md","articles":[]},"previous":{"title":"Follow Me Mode","level":"1.6.6.17","depth":3,"path":"flight_modes/follow_me.md","ref":"flight_modes/follow_me.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"flight_modes/offboard.md","mtime":"2020-04-14T01:35:02.117Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T01:36:30.869Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Offboard Mode","level":"1.6.6.18","depth":3,"next":{"title":"Terrain Following/Holding","level":"1.6.7","depth":2,"path":"flying/terrain_following_holding.md","ref":"flying/terrain_following_holding.md","articles":[]},"previous":{"title":"Follow Me Mode","level":"1.6.6.17","depth":3,"path":"flight_modes/follow_me.md","ref":"flight_modes/follow_me.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"flight_modes/offboard.md","mtime":"2020-04-14T06:10:53.096Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T06:12:21.778Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
