@@ -1,0 +1,3712 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>电调（ESC）校准 · PX4 User Guide</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-richquotes/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-language-picker/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-versions-select/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-dronecode/theme_styles.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="tuning_the_ecl_ekf.html" />
+    
+    
+    <link rel="prev" href="../config_vtol/vtol_weathervane.html" />
+    
+
+    </head>
+    <body>
+        
+    
+    <!-- ##HW Add dronecode menu -->
+    <div id="common_dronecode_menu">
+
+      <div class="common_menu_logo large_version">
+        <a href="https://www.dronecode.org/">
+          <img src="../../gitbook/gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png" alt="Dronecode logo (large)" />
+        </a>
+      </div>
+      <div class="common_menu_logo small_version">
+        <a href="https://www.dronecode.org/">
+          <img src="../../gitbook/gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png" alt="Dronecode logo (small)" />
+        </a>
+      </div>
+      
+      <div class="common_menu_options">
+        
+            <div class="common_dronecode_menu_item"><a href="http://px4.io/">PX4</a></div>
+            <div class="common_dronecode_menu_item large_version"><a href="http://qgroundcontrol.com/">QGroundControl</a></div>
+            <div class="common_dronecode_menu_item small_version"><a href="http://qgroundcontrol.com/">QGC</a></div>
+            <div class="common_dronecode_menu_item"><a href="https://www.dronecode.org/sdk/">SDK</a></div>
+            <div class="common_dronecode_menu_item"><a href="https://mavlink.io/en/">MAVLink</a></div>
+            <div class="common_dronecode_menu_item large_version"><a href="https://www.dronecode.org/documentation/">Documentation</a></div>
+            <div class="common_dronecode_menu_item small_version"><a href="https://www.dronecode.org/documentation/">Docs</a></div>
+            <div class="common_dronecode_menu_item large_version"><a href="http://discuss.px4.io/">Support</a></div>
+            <div class="common_dronecode_menu_item small_version"><a href="http://discuss.px4.io/">Help</a></div>
+        
+      </div>
+    </div>
+    
+<!-- ##HW END Add dronecode menu -->
+    
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../getting_started/">
+            
+                <a href="../getting_started/">
+            
+                    
+                    入门指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../getting_started/px4_basic_concepts.html">
+            
+                <a href="../getting_started/px4_basic_concepts.html">
+            
+                    
+                    基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../getting_started/frame_selection.html">
+            
+                <a href="../getting_started/frame_selection.html">
+            
+                    
+                    载具/机架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../getting_started/flight_controller_selection.html">
+            
+                <a href="../getting_started/flight_controller_selection.html">
+            
+                    
+                    飞控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../getting_started/sensor_selection.html">
+            
+                <a href="../getting_started/sensor_selection.html">
+            
+                    
+                    传感器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../getting_started/rc_transmitter_receiver.html">
+            
+                <a href="../getting_started/rc_transmitter_receiver.html">
+            
+                    
+                    无线电系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../getting_started/flight_modes.html">
+            
+                <a href="../getting_started/flight_modes.html">
+            
+                    
+                    飞行模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../getting_started/vehicle_status.html">
+            
+                <a href="../getting_started/vehicle_status.html">
+            
+                    
+                    载具状态通知
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.7.1" data-path="../getting_started/led_meanings.html">
+            
+                <a href="../getting_started/led_meanings.html">
+            
+                    
+                    LED灯含义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.2" data-path="../getting_started/tunes.html">
+            
+                <a href="../getting_started/tunes.html">
+            
+                    
+                    声调/声音含义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.3" data-path="../flying/pre_flight_checks.html">
+            
+                <a href="../flying/pre_flight_checks.html">
+            
+                    
+                    飞行前检查
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../getting_started/flight_reporting.html">
+            
+                <a href="../getting_started/flight_reporting.html">
+            
+                    
+                    飞行报告
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../assembly/">
+            
+                <a href="../assembly/">
+            
+                    
+                    基本装配
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../assembly/mount_and_orient_controller.html">
+            
+                <a href="../assembly/mount_and_orient_controller.html">
+            
+                    
+                    安装飞控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../assembly/vibration_isolation.html">
+            
+                <a href="../assembly/vibration_isolation.html">
+            
+                    
+                    震动隔离
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../assembly/quick_start_cuav_v5_plus.html">
+            
+                <a href="../assembly/quick_start_cuav_v5_plus.html">
+            
+                    
+                    雷迅 V5+飞控快速接线指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../assembly/quick_start_cuav_v5_nano.html">
+            
+                <a href="../assembly/quick_start_cuav_v5_nano.html">
+            
+                    
+                    雷迅 V5 nano飞控快速接线指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../assembly/quick_start_durandal.html">
+            
+                <a href="../assembly/quick_start_durandal.html">
+            
+                    
+                    Durandal 快速接线指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../assembly/quick_start_pixhawk4.html">
+            
+                <a href="../assembly/quick_start_pixhawk4.html">
+            
+                    
+                    Pixhawk 4 快速接线指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../assembly/quick_start_pixhawk4_mini.html">
+            
+                <a href="../assembly/quick_start_pixhawk4_mini.html">
+            
+                    
+                    Pixhawk 4 Mini 快速接线指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../assembly/quick_start_cube.html">
+            
+                <a href="../assembly/quick_start_cube.html">
+            
+                    
+                    Cube 快速接线指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../assembly/quick_start_pixracer.html">
+            
+                <a href="../assembly/quick_start_pixracer.html">
+            
+                    
+                    Pixracer 快速接线指南 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../assembly/quick_start_pixhawk.html">
+            
+                <a href="../assembly/quick_start_pixhawk.html">
+            
+                    
+                    Pixhawk 快速接线指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../config/">
+            
+                <a href="../config/">
+            
+                    
+                    基本配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../config/firmware.html">
+            
+                <a href="../config/firmware.html">
+            
+                    
+                    固件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../config/airframe.html">
+            
+                <a href="../config/airframe.html">
+            
+                    
+                    机架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../config/flight_controller_orientation.html">
+            
+                <a href="../config/flight_controller_orientation.html">
+            
+                    
+                    传感器方向
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../config/compass.html">
+            
+                <a href="../config/compass.html">
+            
+                    
+                    罗盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../config/gyroscope.html">
+            
+                <a href="../config/gyroscope.html">
+            
+                    
+                    陀螺仪
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../config/accelerometer.html">
+            
+                <a href="../config/accelerometer.html">
+            
+                    
+                    加速度计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../config/airspeed.html">
+            
+                <a href="../config/airspeed.html">
+            
+                    
+                    空速：
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../config/level_horizon_calibration.html">
+            
+                <a href="../config/level_horizon_calibration.html">
+            
+                    
+                    水平平面校准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../config/radio.html">
+            
+                <a href="../config/radio.html">
+            
+                    
+                    无线电系统设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../config/joystick.html">
+            
+                <a href="../config/joystick.html">
+            
+                    
+                    游戏手柄设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../config/flight_mode.html">
+            
+                <a href="../config/flight_mode.html">
+            
+                    
+                    飞行模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../config/battery.html">
+            
+                <a href="../config/battery.html">
+            
+                    
+                    电池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../config/safety.html">
+            
+                <a href="../config/safety.html">
+            
+                    
+                    安全性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../config/motors.html">
+            
+                <a href="../config/motors.html">
+            
+                    
+                    电机/舵机
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../airframes/">
+            
+                <a href="../airframes/">
+            
+                    
+                    机架组装
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../airframes/airframe_reference.html">
+            
+                <a href="../airframes/airframe_reference.html">
+            
+                    
+                    机架参考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../frames_multicopter/">
+            
+                <a href="../frames_multicopter/">
+            
+                    
+                    多旋翼
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../frames_multicopter/dji_f450_cuav_5plus.html">
+            
+                <a href="../frames_multicopter/dji_f450_cuav_5plus.html">
+            
+                    
+                    DJI F450 (雷迅 v5+)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../frames_multicopter/dji_f450_cuav_5nano.html">
+            
+                <a href="../frames_multicopter/dji_f450_cuav_5nano.html">
+            
+                    
+                    DJI F450 (雷迅 v5 nano)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3" data-path="../frames_multicopter/holybro_qav250_pixhawk4_mini.html">
+            
+                <a href="../frames_multicopter/holybro_qav250_pixhawk4_mini.html">
+            
+                    
+                    QAV250 (Pixhawk4 Mini)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.4" data-path="../frames_multicopter/holybro_x500_pixhawk4.html">
+            
+                <a href="../frames_multicopter/holybro_x500_pixhawk4.html">
+            
+                    
+                    X500 (Pixhawk 4)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.5" data-path="../frames_multicopter/holybro_s500_v2_pixhawk4.html">
+            
+                <a href="../frames_multicopter/holybro_s500_v2_pixhawk4.html">
+            
+                    
+                    S500 V2 (Pixhawk 4)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.6" data-path="../frames_multicopter/dji_flamewheel_450.html">
+            
+                <a href="../frames_multicopter/dji_flamewheel_450.html">
+            
+                    
+                    DJI F450 + RTK (Pixhawk 3 Pro)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.7" data-path="../frames_multicopter/lumenier_qav250_pixhawk_mini.html">
+            
+                <a href="../frames_multicopter/lumenier_qav250_pixhawk_mini.html">
+            
+                    
+                    QAV250 (Pixhawk Mini)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.8" data-path="../frames_multicopter/lumenier_qav250_pixhawk_auav_x2.html">
+            
+                <a href="../frames_multicopter/lumenier_qav250_pixhawk_auav_x2.html">
+            
+                    
+                    QAV250 (Pixhawk/AUAV_X2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.9" data-path="../frames_multicopter/spedix_s250_pixracer.html">
+            
+                <a href="../frames_multicopter/spedix_s250_pixracer.html">
+            
+                    
+                    Spedix 250 (Pixracer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.10" data-path="../frames_multicopter/robocat_270_pixracer.html">
+            
+                <a href="../frames_multicopter/robocat_270_pixracer.html">
+            
+                    
+                    Robocat 270 (Pixracer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.11" data-path="../frames_multicopter/matrice100.html">
+            
+                <a href="../frames_multicopter/matrice100.html">
+            
+                    
+                    Matrice 100 (Pixhawk 1)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.12" data-path="../frames_multicopter/qav_r_5_kiss_esc_racer.html">
+            
+                <a href="../frames_multicopter/qav_r_5_kiss_esc_racer.html">
+            
+                    
+                    QAV-R 5" Racer (Pixracer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../frames_plane/">
+            
+                <a href="../frames_plane/">
+            
+                    
+                    固定翼
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../frames_plane/wing_wing_z84.html">
+            
+                <a href="../frames_plane/wing_wing_z84.html">
+            
+                    
+                    Wing Wing Z84 (Pixracer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../frames_vtol/">
+            
+                <a href="../frames_vtol/">
+            
+                    
+                    垂直起降（VTOL）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../frames_vtol/vtol_quadplane_fun_cub_vtol_pixhawk.html">
+            
+                <a href="../frames_vtol/vtol_quadplane_fun_cub_vtol_pixhawk.html">
+            
+                    
+                    FunCub QuadPlane (Pixhawk)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="../frames_vtol/vtol_quadplane_volantex_ranger_ex_pixhawk.html">
+            
+                <a href="../frames_vtol/vtol_quadplane_volantex_ranger_ex_pixhawk.html">
+            
+                    
+                    Ranger QuadPlane (Pixhawk)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="../frames_vtol/vtol_tiltrotor_eflite_convergence_pixfalcon.html">
+            
+                <a href="../frames_vtol/vtol_tiltrotor_eflite_convergence_pixfalcon.html">
+            
+                    
+                    Convergence 倾转旋翼机（Pixfalcon）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.4" data-path="../frames_vtol/vtol_tailsitter_caipiroshka_pixracer.html">
+            
+                <a href="../frames_vtol/vtol_tailsitter_caipiroshka_pixracer.html">
+            
+                    
+                    TBS Caipiroshka (Pixracer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.5" data-path="../frames_vtol/vtol_quadplane_falcon_vertigo_hybrid_rtf_dropix.html">
+            
+                <a href="../frames_vtol/vtol_quadplane_falcon_vertigo_hybrid_rtf_dropix.html">
+            
+                    
+                    Falcon Vertigo 四旋翼 (Dropix)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../frames_rover/">
+            
+                <a href="../frames_rover/">
+            
+                    
+                    小车
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.1" data-path="../frames_rover/traxxas_stampede.html">
+            
+                <a href="../frames_rover/traxxas_stampede.html">
+            
+                    
+                    Traxxas Stampede
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../flying/">
+            
+                <a href="../flying/">
+            
+                    
+                    飞行
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../flying/first_flight_guidelines.html">
+            
+                <a href="../flying/first_flight_guidelines.html">
+            
+                    
+                    首次飞行指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../flying/basic_flying.html">
+            
+                <a href="../flying/basic_flying.html">
+            
+                    
+                    飞行基础指南 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="../flying/fixed_wing_landing.html">
+            
+                <a href="../flying/fixed_wing_landing.html">
+            
+                    
+                    着陆(固定翼)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../flying/missions.html">
+            
+                <a href="../flying/missions.html">
+            
+                    
+                    任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../flying/geofence.html">
+            
+                <a href="../flying/geofence.html">
+            
+                    
+                    地理围栏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../flying/plan_safety_points.html">
+            
+                <a href="../flying/plan_safety_points.html">
+            
+                    
+                    安全点规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../flight_modes/">
+            
+                <a href="../flight_modes/">
+            
+                    
+                    飞行模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.6.1" data-path="../flight_modes/position_mc.html">
+            
+                <a href="../flight_modes/position_mc.html">
+            
+                    
+                    定点模式（多旋翼）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.2" data-path="../flight_modes/altitude_mc.html">
+            
+                <a href="../flight_modes/altitude_mc.html">
+            
+                    
+                    定高模式（多旋翼）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.3" data-path="../flight_modes/manual_stabilized_mc.html">
+            
+                <a href="../flight_modes/manual_stabilized_mc.html">
+            
+                    
+                    手动／自稳模式（多旋翼）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.4" data-path="../flight_modes/rattitude_mc.html">
+            
+                <a href="../flight_modes/rattitude_mc.html">
+            
+                    
+                    角速度模式（多旋翼）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.5" data-path="../flight_modes/acro_mc.html">
+            
+                <a href="../flight_modes/acro_mc.html">
+            
+                    
+                    特技模式（多旋翼）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.6" data-path="../flight_modes/orbit.html">
+            
+                <a href="../flight_modes/orbit.html">
+            
+                    
+                    环绕模式（多旋翼）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.7" data-path="../flight_modes/position_fw.html">
+            
+                <a href="../flight_modes/position_fw.html">
+            
+                    
+                    定点模式（固定翼）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.8" data-path="../flight_modes/altitude_fw.html">
+            
+                <a href="../flight_modes/altitude_fw.html">
+            
+                    
+                    定高模式（固定翼）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.9" data-path="../flight_modes/stabilized_fw.html">
+            
+                <a href="../flight_modes/stabilized_fw.html">
+            
+                    
+                    自稳模式（固定翼）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.10" data-path="../flight_modes/acro_fw.html">
+            
+                <a href="../flight_modes/acro_fw.html">
+            
+                    
+                    特技模式（固定翼）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.11" data-path="../flight_modes/manual_fw.html">
+            
+                <a href="../flight_modes/manual_fw.html">
+            
+                    
+                    手动模式（固定翼）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.12" data-path="../flight_modes/takeoff.html">
+            
+                <a href="../flight_modes/takeoff.html">
+            
+                    
+                    起飞模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.13" data-path="../flight_modes/land.html">
+            
+                <a href="../flight_modes/land.html">
+            
+                    
+                    着陆模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.14" data-path="../flight_modes/return.html">
+            
+                <a href="../flight_modes/return.html">
+            
+                    
+                    返航模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.15" data-path="../flight_modes/hold.html">
+            
+                <a href="../flight_modes/hold.html">
+            
+                    
+                    保持模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.16" data-path="../flight_modes/mission.html">
+            
+                <a href="../flight_modes/mission.html">
+            
+                    
+                    任务模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.17" data-path="../flight_modes/follow_me.html">
+            
+                <a href="../flight_modes/follow_me.html">
+            
+                    
+                    跟随模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.18" data-path="../flight_modes/offboard.html">
+            
+                <a href="../flight_modes/offboard.html">
+            
+                    
+                    Offboard 模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../flying/terrain_following_holding.html">
+            
+                <a href="../flying/terrain_following_holding.html">
+            
+                    
+                    地形跟随/保持
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../log/flight_log_analysis.html">
+            
+                <a href="../log/flight_log_analysis.html">
+            
+                    
+                    飞行日志分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../log/flight_review.html">
+            
+                <a href="../log/flight_review.html">
+            
+                    
+                    使用 Flight Review 进行日志分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../advanced_features/">
+            
+                <a href="../advanced_features/">
+            
+                    
+                    高级功能
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../advanced_features/traffic_avoidance_adsb.html">
+            
+                <a href="../advanced_features/traffic_avoidance_adsb.html">
+            
+                    
+                    Air Traffic Avoidance: ADSB/FLARM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../advanced_features/traffic_avoidance_utm.html">
+            
+                <a href="../advanced_features/traffic_avoidance_utm.html">
+            
+                    
+                    Air Traffic Avoidance: UTM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../computer_vision/">
+            
+                <a href="../computer_vision/">
+            
+                    
+                    Computer Vision
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.3.1" data-path="../computer_vision/obstacle_avoidance.html">
+            
+                <a href="../computer_vision/obstacle_avoidance.html">
+            
+                    
+                    Obstacle Avoidance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.2" data-path="../computer_vision/safe_landing.html">
+            
+                <a href="../computer_vision/safe_landing.html">
+            
+                    
+                    Safe Landing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.3" data-path="../computer_vision/collision_prevention.html">
+            
+                <a href="../computer_vision/collision_prevention.html">
+            
+                    
+                    Collision Prevention
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.4" data-path="../computer_vision/path_planning_interface.html">
+            
+                <a href="../computer_vision/path_planning_interface.html">
+            
+                    
+                    Path Planning Interface
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.5" data-path="../computer_vision/motion_capture.html">
+            
+                <a href="../computer_vision/motion_capture.html">
+            
+                    
+                    Motion Capture (MoCap)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.6" data-path="../computer_vision/visual_inertial_odometry.html">
+            
+                <a href="../computer_vision/visual_inertial_odometry.html">
+            
+                    
+                    Visual Inertial Odometry (VIO)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.3.6.1" data-path="../peripherals/camera_t265_vio.html">
+            
+                <a href="../peripherals/camera_t265_vio.html">
+            
+                    
+                    Realsense T265 Tracking Camera (VIO)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../advanced_features/precland.html">
+            
+                <a href="../advanced_features/precland.html">
+            
+                    
+                    Precision Landing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../advanced_features/rtk-gps.html">
+            
+                <a href="../advanced_features/rtk-gps.html">
+            
+                    
+                    RTK GPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../advanced_features/satcom_roadblock.html">
+            
+                <a href="../advanced_features/satcom_roadblock.html">
+            
+                    
+                    RockBlock SatCom System
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    高级配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="parameters.html">
+            
+                <a href="parameters.html">
+            
+                    
+                    查找/更新参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../config_mc/">
+            
+                <a href="../config_mc/">
+            
+                    
+                    多旋翼配置/调试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.2.1" data-path="../config_mc/pid_tuning_guide_multicopter.html">
+            
+                <a href="../config_mc/pid_tuning_guide_multicopter.html">
+            
+                    
+                    多旋翼 PID 调试指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2.2" data-path="../config_mc/mc_trajectory_tuning.html">
+            
+                <a href="../config_mc/mc_trajectory_tuning.html">
+            
+                    
+                    多旋翼 设置点调整 (轨道生成器)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.2.2.1" data-path="../config_mc/mc_jerk_limited_type_trajectory.html">
+            
+                <a href="../config_mc/mc_jerk_limited_type_trajectory.html">
+            
+                    
+                    MC Jerk-limited Type Trajectory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2.2.2" data-path="../config_mc/mc_slew_rate_type_trajectory.html">
+            
+                <a href="../config_mc/mc_slew_rate_type_trajectory.html">
+            
+                    
+                    MC Slew-rate Type Trajectory
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2.3" data-path="../config_mc/racer_setup.html">
+            
+                <a href="../config_mc/racer_setup.html">
+            
+                    
+                    多旋翼竞赛设置 
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../config_fw/">
+            
+                <a href="../config_fw/">
+            
+                    
+                    固定翼形配置/调试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.3.1" data-path="../config_fw/pid_tuning_guide_fixedwing.html">
+            
+                <a href="../config_fw/pid_tuning_guide_fixedwing.html">
+            
+                    
+                    固定翼 PID 调参指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3.2" data-path="../config_fw/advanced_tuning_guide_fixedwing.html">
+            
+                <a href="../config_fw/advanced_tuning_guide_fixedwing.html">
+            
+                    
+                    固定翼高级调试指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3.3" data-path="../config_fw/trimming_guide_fixedwing.html">
+            
+                <a href="../config_fw/trimming_guide_fixedwing.html">
+            
+                    
+                    固定翼微调指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../config_vtol/">
+            
+                <a href="../config_vtol/">
+            
+                    
+                    垂直起降配置/调试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.4.1" data-path="../config_vtol/vtol_quad_configuration.html">
+            
+                <a href="../config_vtol/vtol_quad_configuration.html">
+            
+                    
+                    四旋翼型固定翼配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4.2" data-path="../config_vtol/vtol_back_transition_tuning.html">
+            
+                <a href="../config_vtol/vtol_back_transition_tuning.html">
+            
+                    
+                    VTOL后转换调参
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4.3" data-path="../config_vtol/vtol_without_airspeed_sensor.html">
+            
+                <a href="../config_vtol/vtol_without_airspeed_sensor.html">
+            
+                    
+                    没有空速传感器的VTOL 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4.4" data-path="../config_vtol/vtol_weathervane.html">
+            
+                <a href="../config_vtol/vtol_weathervane.html">
+            
+                    
+                    垂直起降风向仪
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9.5" data-path="esc_calibration.html">
+            
+                <a href="esc_calibration.html">
+            
+                    
+                    电调（ESC）校准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="tuning_the_ecl_ekf.html">
+            
+                <a href="tuning_the_ecl_ekf.html">
+            
+                    
+                    ECL/EKF 概述 &调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="flight_termination.html">
+            
+                <a href="flight_termination.html">
+            
+                    
+                    飞行终止配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="bootloader_update.html">
+            
+                <a href="bootloader_update.html">
+            
+                    
+                    Bootloader 更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="bootloader_update_from_betaflight.html">
+            
+                <a href="bootloader_update_from_betaflight.html">
+            
+                    
+                    刷写 Bootloader 到 Betaflight 系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="land_detector.html">
+            
+                <a href="land_detector.html">
+            
+                    
+                    着陆探测器配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.11" data-path="sensor_thermal_calibration.html">
+            
+                <a href="sensor_thermal_calibration.html">
+            
+                    
+                    传感器热补偿
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.12" data-path="compass_power_compensation.html">
+            
+                <a href="compass_power_compensation.html">
+            
+                    
+                    指南针动力补偿
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.13" data-path="advanced_flight_controller_orientation_leveling.html">
+            
+                <a href="advanced_flight_controller_orientation_leveling.html">
+            
+                    
+                    高级控制器转向
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.14" data-path="static_pressure_buildup.html">
+            
+                <a href="static_pressure_buildup.html">
+            
+                    
+                    Static Pressure Buildup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.15" data-path="prearm_arm_disarm.html">
+            
+                <a href="prearm_arm_disarm.html">
+            
+                    
+                    解锁前/解锁/加锁 配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.16" data-path="parameter_reference.html">
+            
+                <a href="parameter_reference.html">
+            
+                    
+                    全部参数对照表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../peripherals/">
+            
+                <a href="../peripherals/">
+            
+                    
+                    外围硬件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../peripherals/serial_configuration.html">
+            
+                <a href="../peripherals/serial_configuration.html">
+            
+                    
+                    串口配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../gps_compass/">
+            
+                <a href="../gps_compass/">
+            
+                    
+                    GPS/指南针
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.2.1" data-path="../gps_compass/rtk_gps.html">
+            
+                <a href="../gps_compass/rtk_gps.html">
+            
+                    
+                    RTK GPS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.2.1.1" data-path="../gps_compass/rtk_gps_hex_hereplus.html">
+            
+                <a href="../gps_compass/rtk_gps_hex_hereplus.html">
+            
+                    
+                    Hex Here+
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.1.2" data-path="../gps_compass/rtk_gps_drotek_xl.html">
+            
+                <a href="../gps_compass/rtk_gps_drotek_xl.html">
+            
+                    
+                    Drotek XL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.1.3" data-path="../gps_compass/rtk_gps_cuav_c-rtk.html">
+            
+                <a href="../gps_compass/rtk_gps_cuav_c-rtk.html">
+            
+                    
+                    CUAV C-RTK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.1.4" data-path="../gps_compass/rtk_gps_trimble_mb_two.html">
+            
+                <a href="../gps_compass/rtk_gps_trimble_mb_two.html">
+            
+                    
+                    Trimble MB-Two
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.1.5" data-path="../gps_compass/rtk_gps_hex_here2.html">
+            
+                <a href="../gps_compass/rtk_gps_hex_here2.html">
+            
+                    
+                    Hex Here2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.1.6" data-path="../gps_compass/rtk_gps_freefly.html">
+            
+                <a href="../gps_compass/rtk_gps_freefly.html">
+            
+                    
+                    Freefly RTK GPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../telemetry/">
+            
+                <a href="../telemetry/">
+            
+                    
+                    数传电台
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.3.1" data-path="../telemetry/sik_radio.html">
+            
+                <a href="../telemetry/sik_radio.html">
+            
+                    
+                    SiK 电台
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.3.1.1" data-path="../telemetry/rfd900_telemetry.html">
+            
+                <a href="../telemetry/rfd900_telemetry.html">
+            
+                    
+                    RFD900 数传电台
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3.1.2" data-path="../telemetry/hkpilot_sik_radio.html">
+            
+                <a href="../telemetry/hkpilot_sik_radio.html">
+            
+                    
+                    HKPilot（SIK）遥测无线电
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3.1.3" data-path="../telemetry/holybro_sik_radio.html">
+            
+                <a href="../telemetry/holybro_sik_radio.html">
+            
+                    
+                    HolyBro（SIK）遥测无线电
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3.2" data-path="../telemetry/telemetry_wifi.html">
+            
+                <a href="../telemetry/telemetry_wifi.html">
+            
+                    
+                    WiFi 数传
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.3.2.1" data-path="../telemetry/esp8266_wifi_module.html">
+            
+                <a href="../telemetry/esp8266_wifi_module.html">
+            
+                    
+                    ESP8266 WiFi 模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3.2.2" data-path="../telemetry/3dr_telemetry_wifi.html">
+            
+                <a href="../telemetry/3dr_telemetry_wifi.html">
+            
+                    
+                    3DR Wifi 数传（已停产）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../peripherals/mavlink_peripherals.html">
+            
+                <a href="../peripherals/mavlink_peripherals.html">
+            
+                    
+                    MAVLink 回传（OSD/GCS）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../peripherals/frsky_telemetry.html">
+            
+                <a href="../peripherals/frsky_telemetry.html">
+            
+                    
+                    睿思凯（FrSky）遥测功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../power_module/">
+            
+                <a href="../power_module/">
+            
+                    
+                    电源模块
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.6.1" data-path="../power_module/cuav_hv_pm.html">
+            
+                <a href="../power_module/cuav_hv_pm.html">
+            
+                    
+                    CUAV HV 电源模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6.2" data-path="../power_module/cuav_can_pmu.html">
+            
+                <a href="../power_module/cuav_can_pmu.html">
+            
+                    
+                    CUAV CAN PMU
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6.3" data-path="../power_module/holybro_pm07_pixhawk4_power_module.html">
+            
+                <a href="../power_module/holybro_pm07_pixhawk4_power_module.html">
+            
+                    
+                    Holybro PM07（Pixhawk 4 电源模块）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6.4" data-path="../power_module/holybro_pm06_pixhawk4mini_power_module.html">
+            
+                <a href="../power_module/holybro_pm06_pixhawk4mini_power_module.html">
+            
+                    
+                    Holybro PM06（体积小带四路分电板）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6.5" data-path="../power_module/pomegranate_systems_pm.html">
+            
+                <a href="../power_module/pomegranate_systems_pm.html">
+            
+                    
+                    Pomegranate Systems Power Module
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="../sensor/rangefinders.html">
+            
+                <a href="../sensor/rangefinders.html">
+            
+                    
+                    距离传感器 (测距仪)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.7.1" data-path="../sensor/sfxx_lidar.html">
+            
+                <a href="../sensor/sfxx_lidar.html">
+            
+                    
+                    Lightware SFxx Lidar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7.2" data-path="../sensor/ulanding_radar.html">
+            
+                <a href="../sensor/ulanding_radar.html">
+            
+                    
+                    Ainstein US-D1 Standard Radar Altimeter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7.3" data-path="../sensor/leddar_one.html">
+            
+                <a href="../sensor/leddar_one.html">
+            
+                    
+                    LeddarOne Lidar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7.4" data-path="../sensor/tfmini.html">
+            
+                <a href="../sensor/tfmini.html">
+            
+                    
+                    北醒 Benewake TFmini 激光雷达
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7.5" data-path="../sensor/lidar_lite.html">
+            
+                <a href="../sensor/lidar_lite.html">
+            
+                    
+                    Lidar-Lite
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7.6" data-path="../sensor/teraranger.html">
+            
+                <a href="../sensor/teraranger.html">
+            
+                    
+                    TeraRanger
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7.7" data-path="../sensor/cm8jl65_ir_distance_sensor.html">
+            
+                <a href="../sensor/cm8jl65_ir_distance_sensor.html">
+            
+                    
+                    Lanbao PSK-CM8JL65-CC5
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="../sensor/tachometers.html">
+            
+                <a href="../sensor/tachometers.html">
+            
+                    
+                    Tachometers (Revolution Counters)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.8.1" data-path="../sensor/thunderfly_tachometer.html">
+            
+                <a href="../sensor/thunderfly_tachometer.html">
+            
+                    
+                    ThunderFly TFRPM01 Tachometer Sensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="../sensor/airspeed.html">
+            
+                <a href="../sensor/airspeed.html">
+            
+                    
+                    空速传感器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.10" data-path="../sensor/optical_flow.html">
+            
+                <a href="../sensor/optical_flow.html">
+            
+                    
+                    光流
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.10.1" data-path="../sensor/px4flow.html">
+            
+                <a href="../sensor/px4flow.html">
+            
+                    
+                    PX4FLOW
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.10.2" data-path="../sensor/pmw3901.html">
+            
+                <a href="../sensor/pmw3901.html">
+            
+                    
+                    PMW3901
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.11" data-path="../peripherals/esc_motors.html">
+            
+                <a href="../peripherals/esc_motors.html">
+            
+                    
+                    电调 & 电机
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.11.1" data-path="../peripherals/pwm_escs_and_servo.html">
+            
+                <a href="../peripherals/pwm_escs_and_servo.html">
+            
+                    
+                    PWM ESCs and Servos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.11.2" data-path="../peripherals/dshot.html">
+            
+                <a href="../peripherals/dshot.html">
+            
+                    
+                    DShot ESCs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.11.3" data-path="../peripherals/uavcan_escs.html">
+            
+                <a href="../peripherals/uavcan_escs.html">
+            
+                    
+                    UAVCAN 电调
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.12" data-path="../peripherals/camera.html">
+            
+                <a href="../peripherals/camera.html">
+            
+                    
+                    相机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.13" data-path="../peripherals/parachute.html">
+            
+                <a href="../peripherals/parachute.html">
+            
+                    
+                    降落伞 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.14" data-path="../peripherals/companion_computer_peripherals.html">
+            
+                <a href="../peripherals/companion_computer_peripherals.html">
+            
+                    
+                    机载计算机外设
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.15" data-path="../peripherals/adsb_flarm.html">
+            
+                <a href="../peripherals/adsb_flarm.html">
+            
+                    
+                    ADSB/FLARM（交通避撞）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../flight_controller/">
+            
+                <a href="../flight_controller/">
+            
+                    
+                    自动驾驶仪硬件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../flight_controller/pixhawk_series.html">
+            
+                <a href="../flight_controller/pixhawk_series.html">
+            
+                    
+                    Pixhawk 系列
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1.1" data-path="../flight_controller/silicon_errata.html">
+            
+                <a href="../flight_controller/silicon_errata.html">
+            
+                    
+                    芯片勘误表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../flight_controller/autopilot_pixhawk_standard.html">
+            
+                <a href="../flight_controller/autopilot_pixhawk_standard.html">
+            
+                    
+                    Pixhawk 标准自动驾驶仪
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.2.1" data-path="../flight_controller/pixhawk4.html">
+            
+                <a href="../flight_controller/pixhawk4.html">
+            
+                    
+                    Holybro Pixhawk 4 (FMUv5)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.2" data-path="../flight_controller/pixhawk4_mini.html">
+            
+                <a href="../flight_controller/pixhawk4_mini.html">
+            
+                    
+                    Holybro Pixhawk 4 Mini (FMUv5)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.3" data-path="../flight_controller/pixhawk3_pro.html">
+            
+                <a href="../flight_controller/pixhawk3_pro.html">
+            
+                    
+                    Drotek Pixhawk 3 Pro (FMUv4pro)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.4" data-path="../flight_controller/pixracer.html">
+            
+                <a href="../flight_controller/pixracer.html">
+            
+                    
+                    mRo Pixracer (FMUv4)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.5" data-path="../flight_controller/pixhawk-2.html">
+            
+                <a href="../flight_controller/pixhawk-2.html">
+            
+                    
+                    Hex Cube Black (FMUv3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.6" data-path="../flight_controller/pixhack_v3.html">
+            
+                <a href="../flight_controller/pixhack_v3.html">
+            
+                    
+                    CUAV Pixhack v3 (FMUv3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.7" data-path="../flight_controller/mro_pixhawk.html">
+            
+                <a href="../flight_controller/mro_pixhawk.html">
+            
+                    
+                    mRo Pixhawk (FMUv2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../flight_controller/autopilot_manufacturer_supported.html">
+            
+                <a href="../flight_controller/autopilot_manufacturer_supported.html">
+            
+                    
+                    由制造商支持的自动驾驶仪
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.3.1" data-path="../flight_controller/mindpx.html">
+            
+                <a href="../flight_controller/mindpx.html">
+            
+                    
+                    AirMind MindPX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.2" data-path="../flight_controller/mindracer.html">
+            
+                <a href="../flight_controller/mindracer.html">
+            
+                    
+                    AirMind MindRacer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.3" data-path="../flight_controller/cuav_v5_plus.html">
+            
+                <a href="../flight_controller/cuav_v5_plus.html">
+            
+                    
+                    CUAV V5+ (FMUv5)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.4" data-path="../flight_controller/cuav_v5_nano.html">
+            
+                <a href="../flight_controller/cuav_v5_nano.html">
+            
+                    
+                    CUAV V5 nano (FMUv5)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.5" data-path="../flight_controller/dropix.html">
+            
+                <a href="../flight_controller/dropix.html">
+            
+                    
+                    Drotek Dropix (FMUv2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.6" data-path="../flight_controller/kakutef7.html">
+            
+                <a href="../flight_controller/kakutef7.html">
+            
+                    
+                    Holybro Kakute F7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.7" data-path="../flight_controller/durandal.html">
+            
+                <a href="../flight_controller/durandal.html">
+            
+                    
+                    Holybro Durandal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.8" data-path="../flight_controller/mro_x2.1.html">
+            
+                <a href="../flight_controller/mro_x2.1.html">
+            
+                    
+                    mRobotics-X2.1 (FMUv2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.9" data-path="../flight_controller/nxp_rddrone_fmuk66.html">
+            
+                <a href="../flight_controller/nxp_rddrone_fmuk66.html">
+            
+                    
+                    NXP RDDRONE-FMUK66 FMU
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.10" data-path="../flight_controller/omnibus_f4_sd.html">
+            
+                <a href="../flight_controller/omnibus_f4_sd.html">
+            
+                    
+                    Omnibus F4 SD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.11" data-path="../flight_controller/mro_control_zero_f7.html">
+            
+                <a href="../flight_controller/mro_control_zero_f7.html">
+            
+                    
+                    mRo Control Zero F7)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.12" data-path="../flight_controller/modalai_fc_v1.html">
+            
+                <a href="../flight_controller/modalai_fc_v1.html">
+            
+                    
+                    ModalAI Flight Core v1
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../flight_controller/autopilot_experimental.html">
+            
+                <a href="../flight_controller/autopilot_experimental.html">
+            
+                    
+                    Experimental/Discontinued Autopilots
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.4.1" data-path="../flight_controller/ocpoc_zynq.html">
+            
+                <a href="../flight_controller/ocpoc_zynq.html">
+            
+                    
+                    Aerotenna OcPoC-Zynq Mini
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.2" data-path="../flight_controller/beaglebone_blue.html">
+            
+                <a href="../flight_controller/beaglebone_blue.html">
+            
+                    
+                    BeagleBone Blue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.3" data-path="../complete_vehicles/crazyflie2.html">
+            
+                <a href="../complete_vehicles/crazyflie2.html">
+            
+                    
+                    Bitcraze Crazyflie 2.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.4" data-path="../flight_controller/cuav_v5.html">
+            
+                <a href="../flight_controller/cuav_v5.html">
+            
+                    
+                    CUAV v5 (Discontinued)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.5" data-path="../flight_controller/HKPilot32.html">
+            
+                <a href="../flight_controller/HKPilot32.html">
+            
+                    
+                    HobbyKing HKPilot32 (Discontinued)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.6" data-path="../flight_controller/pixfalcon.html">
+            
+                <a href="../flight_controller/pixfalcon.html">
+            
+                    
+                    Holybro Pixfalcon (Discontinued)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.7" data-path="../complete_vehicles/intel_aero.html">
+            
+                <a href="../complete_vehicles/intel_aero.html">
+            
+                    
+                    Intel® Aero RTF Drone (Discontinued)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.8" data-path="../flight_controller/auav_x2.html">
+            
+                <a href="../flight_controller/auav_x2.html">
+            
+                    
+                    mRo AUAV-X2 (Discontinued)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.9" data-path="../flight_controller/raspberry_pi_navio2.html">
+            
+                <a href="../flight_controller/raspberry_pi_navio2.html">
+            
+                    
+                    Raspberry Pi 2/3 Navio2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.10" data-path="../flight_controller/snapdragon_flight.html">
+            
+                <a href="../flight_controller/snapdragon_flight.html">
+            
+                    
+                    Snapdragon Flight (Discontinued)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.4.10.1" data-path="../flight_controller/snapdragon_flight_hardware_example_setup.html">
+            
+                <a href="../flight_controller/snapdragon_flight_hardware_example_setup.html">
+            
+                    
+                    Hardware Setup Example
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.10.2" data-path="../flight_controller/snapdragon_flight_dev_environment_installation.html">
+            
+                <a href="../flight_controller/snapdragon_flight_dev_environment_installation.html">
+            
+                    
+                    Developer Environment Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.10.3" data-path="../flight_controller/snapdragon_flight_software_installation.html">
+            
+                <a href="../flight_controller/snapdragon_flight_software_installation.html">
+            
+                    
+                    Snapdragon Software Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.10.4" data-path="../flight_controller/snapdragon_flight_configuration.html">
+            
+                <a href="../flight_controller/snapdragon_flight_configuration.html">
+            
+                    
+                    Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.10.5" data-path="../flight_controller/snapdragon_flight_advanced.html">
+            
+                <a href="../flight_controller/snapdragon_flight_advanced.html">
+            
+                    
+                    Snapdragon Advanced
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.11" data-path="../flight_controller/pixhawk.html">
+            
+                <a href="../flight_controller/pixhawk.html">
+            
+                    
+                    3DR Pixhawk 1 (Discontinued)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.12" data-path="../flight_controller/pixhawk_mini.html">
+            
+                <a href="../flight_controller/pixhawk_mini.html">
+            
+                    
+                    3DR Pixhawk Mini
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../complete_vehicles/">
+            
+                <a href="../complete_vehicles/">
+            
+                    
+                    成品机
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../complete_vehicles/px4_vision_kit.html">
+            
+                <a href="../complete_vehicles/px4_vision_kit.html">
+            
+                    
+                    PX4 视觉套机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../complete_vehicles/mindracer_BNF_RTF.html">
+            
+                <a href="../complete_vehicles/mindracer_BNF_RTF.html">
+            
+                    
+                    MindRacer BNF & RTF
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.2.1" data-path="../complete_vehicles/mindracer210.html">
+            
+                <a href="../complete_vehicles/mindracer210.html">
+            
+                    
+                    MindRacer 210
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2.2" data-path="../complete_vehicles/nanomind110.html">
+            
+                <a href="../complete_vehicles/nanomind110.html">
+            
+                    
+                    NanoMind 110
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../complete_vehicles/betafpv_beta75x.html">
+            
+                <a href="../complete_vehicles/betafpv_beta75x.html">
+            
+                    
+                    BetaFPV Beta75X 2S Brushless Whoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../complete_vehicles/holybro_kopis2.html">
+            
+                <a href="../complete_vehicles/holybro_kopis2.html">
+            
+                    
+                    Holybro Kopis 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../development/development.html">
+            
+                <a href="../development/development.html">
+            
+                    
+                    开发用途
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Dronecode 相关资源</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <a target="_blank" href="https://dev.px4.cc/master/zh/">
+            
+                    
+                    PX4 开发人员指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <a target="_blank" href="https://docs.qgroundcontrol.com/en/">
+            
+                    
+                    QGroundControl用户指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" >
+            
+                <a target="_blank" href="https://dev.qgc.dimianzhan.com/zh/">
+            
+                    
+                    QGroundControl 开发人员指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" >
+            
+                <a target="_blank" href="https://mavlink.io/en/">
+            
+                    
+                    MAVLink指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" >
+            
+                <a target="_blank" href="https://mavsdk.mavlink.io/">
+            
+                    
+                    MAVSDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" >
+            
+                <a target="_blank" href="https://camera-manager.dronecode.org/en/">
+            
+                    
+                    Dronecode相机管理器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >电调（ESC）校准</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7535;&#x8C03;&#xFF08;esc&#xFF09;&#x6821;&#x51C6;"><a name="&#x7535;&#x8C03;&#xFF08;esc&#xFF09;&#x6821;&#x51C6;" class="plugin-anchor" href="#&#x7535;&#x8C03;&#xFF08;esc&#xFF09;&#x6821;&#x51C6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7535;&#x8C03;&#xFF08;ESC&#xFF09;&#x6821;&#x51C6;</h1>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> &#x8FD9;&#x4E9B;&#x8BF4;&#x660E;&#x4EC5;&#x4E0E; <a href="../peripherals/pwm_escs_and_servo.html">PWM &#x7535;&#x8C03;</a> &#x6709;&#x5173;&#x3002;</p>
+</blockquote>
+<p>&#x7535;&#x5B50;&#x901F;&#x5EA6;&#x63A7;&#x5236;&#x5668; (ESCs) &#x6839;&#x636E;&#x6765;&#x81EA;&#x98DE;&#x884C;&#x63A7;&#x5236;&#x5668; (FC) &#x7684; PWM &#x8F93;&#x5165;&#x503C;&#x8C03;&#x8282;&#x7535;&#x673A;&#x901F;&#x5EA6; (&#x548C;&#x65B9;&#x5411;)&#x3002; ESC &#x54CD;&#x5E94;&#x7684;&#x8F93;&#x5165;&#x8303;&#x56F4;&#x662F;&#x53EF;&#x914D;&#x7F6E;&#x7684;, &#x751A;&#x81F3;&#x540C;&#x4E00;&#x578B;&#x53F7;&#x7684;&#x4E0D;&#x540C; ESC &#x4E4B;&#x95F4;&#x7684;&#x9ED8;&#x8BA4;&#x8303;&#x56F4;&#x4E5F;&#x4F1A;&#x6709;&#x6240;&#x4E0D;&#x540C;&#x3002;</p>
+<p>&#x6B64;&#x6821;&#x51C6;&#x5C06;&#x66F4;&#x65B0;&#x6240;&#x6709; ESCs, &#x5176;&#x6700;&#x5927;&#x548C;&#x6700;&#x5C0F; PWM &#x8F93;&#x5165;&#x503C;&#x5C06;&#x7531;&#x98DE;&#x884C;&#x63A7;&#x5236;&#x5668;&#x63D0;&#x4F9B;&#x3002; &#x7EE7;&#x800C;&#xFF0C;&#x6240;&#x6709;&#x7684;ECSs&#x5C06;&#x4EE5;&#x540C;&#x6837;&#x7684;&#x65B9;&#x5F0F;&#x54CD;&#x5E94;&#x98DE;&#x63A7;&#x7684;&#x8F93;&#x5165;(&#x5728;&#x5B8C;&#x6574;&#x7684;&#x8F93;&#x5165;&#x8303;&#x56F4;&#x5185;)&#x3002;</p>
+<p>&#x5EFA;&#x8BAE;&#x540C;&#x65F6;&#x6821;&#x51C6;&#x6240;&#x6709;&#x7684;ESCs&#xFF0C;&#x7279;&#x522B;&#x662F;&#x5BF9;&#x4E8E;&#x4F4E;&#x6210;&#x672C;&#x7684;&#x6A21;&#x578B;&#x673A;&#x3002;</p>
+<h2 id="&#x64CD;&#x4F5C;&#x524D;&#x63D0;"><a name="&#x64CD;&#x4F5C;&#x524D;&#x63D0;" class="plugin-anchor" href="#&#x64CD;&#x4F5C;&#x524D;&#x63D0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x64CD;&#x4F5C;&#x524D;&#x63D0;</h2>
+<p>&#x7CFB;&#x7EDF;&#x5FC5;&#x987B;&#x5305;&#x62EC;&#x4E00;&#x4E2A;&#x7535;&#x6E90;&#x6A21;&#x5757;&#xFF08;PX4 &#x4F7F;&#x7528;&#x6D4B;&#x91CF;&#x8FC7;&#x7684;&#x7535;&#x538B;&#x6765;&#x786E;&#x5B9A;&#x7535;&#x6C60;&#x662F;&#x5426;&#x8FDE;&#x63A5;&#xFF09;&#x3002;</p>
+<h2 id="&#x6B65;&#x9AA4;"><a name="&#x6B65;&#x9AA4;" class="plugin-anchor" href="#&#x6B65;&#x9AA4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6B65;&#x9AA4;</h2>
+<p>&#x6821;&#x51C6;&#x7535;&#x8C03;&#xFF1A;</p>
+<ol>
+<li><p>&#x5378;&#x4E0B;&#x87BA;&#x65CB;&#x6868;&#x3002;</p>
+<blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
+<p> &#x5207;&#x52FF;&#x8FDB;&#x884C;&#x7535;&#x8C03;&#x6821;&#x51C6;&#x65F6;&#x5C06;&#x87BA;&#x65CB;&#x6868;&#x88C5;&#x4E0A;&#x3002;</p>
+<p>&#x7535;&#x8C03;&#x6821;&#x51C6;&#x671F;&#x95F4;&#x7535;&#x673A;&#x4E0D;&#x5E94;&#x65CB;&#x8F6C;&#x3002; &#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;ESC&#x6CA1;&#x6709;&#x6B63;&#x786E;&#x7684;&#x8FDB;&#x5165;&#x6821;&#x51C6;&#x7A0B;&#x5E8F;&#xFF0C;&#x5B83;&#x5C06;&#x901A;&#x8FC7;&#x4EE5;&#x6700;&#x5927;&#x7684;&#x901F;&#x5EA6;&#x8FD0;&#x884C;&#x7535;&#x673A;&#x6765;&#x54CD;&#x5E94;pwm&#x8F93;&#x5165;&#x3002;</p>
+</blockquote>
+</li>
+<li><p>&#x65AD;&#x5F00;&#x7535;&#x6C60;&#x5E76;&#xFF08;&#x4EC5;&#xFF09;&#x901A;&#x8FC7; USB &#x8FDE;&#x63A5;&#x98DE;&#x884C;&#x63A7;&#x5236;&#x5668;&#x3002;</p>
+</li>
+<li><p>&#x6253;&#x5F00; <em> QGroundControl **</em> &#x8BBE;&#x7F6E; &gt; &#x7535;&#x6E90;<strong>&#x754C;&#x9762;&#xFF0C;&#x7136;&#x540E;&#x6309; </strong>&#x6821;&#x51C6;** &#x6309;&#x94AE;&#x3002;</p>
+<p> <img src="../../images/qgc_esc_calibration.png" alt="ESC&#x6821;&#x51C6;&#x6B65;&#x9AA4;1"></p>
+</li>
+<li><p>&#x5728;&#x51FA;&#x73B0;&#x63D0;&#x793A;&#x65F6;&#x8FDE;&#x63A5;&#x7535;&#x6C60;:</p>
+<p> <img src="../../images/esc_calibration_step_2.png" alt="ESC&#x6821;&#x51C6;&#x6B65;&#x9AA4;2"></p>
+<p> &#x6821;&#x51C6;&#x5C06;&#x81EA;&#x52A8;&#x5F00;&#x59CB;:</p>
+<p> <img src="../../images/esc_calibration_step_3.png" alt="ESC&#x6821;&#x51C6;&#x6B65;&#x9AA4;3"></p>
+</li>
+<li><p>&#x6821;&#x51C6;&#x5B8C;&#x6210;&#x540E;, &#x7CFB;&#x7EDF;&#x5C06;&#x63D0;&#x793A;&#x60A8;&#x65AD;&#x5F00;&#x7535;&#x6C60;&#x7684;&#x8FDE;&#x63A5;&#x3002;</p>
+<p> <img src="../../images/esc_calibration_step_4.png" alt="ESC&#x6821;&#x51C6;&#x6B65;&#x9AA4;4"></p>
+</li>
+</ol>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> &#x67D0;&#x4E9B;&#x9AD8;&#x54C1;&#x8D28;&#x7684;ESC&#x5728;&#x51FA;&#x5382;&#x65F6;&#x5C31;&#x5DF2;&#x7ECF;&#x88AB;&#x6821;&#x51C6;&#x8FC7;&#x3002; <em>&#x6309;&#x7406;&#x8BF4;</em>&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x8FD9;&#x4E9B;&#x7535;&#x8C03;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x7535;&#x8C03;&#x6280;&#x672F;&#x89C4;&#x683C;&#x4E66;&#x4EC5;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E; <a href="parameter_reference.html#PWM_MIN">PWM_MIN</a>&#xFF0C;<a href="parameter_reference.html#PWM_MAX">PWM_MAX</a>&#x53C2;&#x6570;&#x6765;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#x5373;&#x53EF;&#x3002; &#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x9AD8;&#x54C1;&#x8D28;&#x7684;&#x98DE;&#x63A7;&#x4E5F;&#x5B58;&#x5728;&#x7740;&#x4E0D;&#x540C;&#x7684;&#x8F93;&#x5165;&#x8303;&#x56F4;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x63A8;&#x8350;&#x518D;&#x6B21;&#x6821;&#x51C6;&#x3002;</p>
+</blockquote>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-05-18 08:52:30 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../config_vtol/vtol_weathervane.html" class="navigation navigation-prev " aria-label="Previous page: 垂直起降风向仪">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="tuning_the_ecl_ekf.html" class="navigation navigation-next " aria-label="Next page: ECL/EKF 概述 &调试">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"电调（ESC）校准","level":"1.9.5","depth":2,"next":{"title":"ECL/EKF 概述 &调试","level":"1.9.6","depth":2,"path":"advanced_config/tuning_the_ecl_ekf.md","ref":"advanced_config/tuning_the_ecl_ekf.md","articles":[]},"previous":{"title":"垂直起降风向仪","level":"1.9.4.4","depth":3,"path":"config_vtol/vtol_weathervane.md","ref":"config_vtol/vtol_weathervane.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"v1.11.0"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"advanced_config/esc_calibration.md","mtime":"2020-05-18T08:52:30.699Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-18T08:53:24.470Z"},"basePath":"..","book":{"language":"zh"}});
+        });
+    </script>
+</div>
+
+    
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-versions-select/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,4260 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>ECL/EKF Overview & Tuning · PX4 User Guide</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-richquotes/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-language-picker/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-versions-select/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-dronecode/theme_styles.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="flight_termination.html" />
+    
+    
+    <link rel="prev" href="esc_calibration.html" />
+    
+
+    </head>
+    <body>
+        
+    
+    <!-- ##HW Add dronecode menu -->
+    <div id="common_dronecode_menu">
+
+      <div class="common_menu_logo large_version">
+        <a href="https://www.dronecode.org/">
+          <img src="../../gitbook/gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png" alt="Dronecode logo (large)" />
+        </a>
+      </div>
+      <div class="common_menu_logo small_version">
+        <a href="https://www.dronecode.org/">
+          <img src="../../gitbook/gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png" alt="Dronecode logo (small)" />
+        </a>
+      </div>
+      
+      <div class="common_menu_options">
+        
+            <div class="common_dronecode_menu_item"><a href="http://px4.io/">PX4</a></div>
+            <div class="common_dronecode_menu_item large_version"><a href="http://qgroundcontrol.com/">QGroundControl</a></div>
+            <div class="common_dronecode_menu_item small_version"><a href="http://qgroundcontrol.com/">QGC</a></div>
+            <div class="common_dronecode_menu_item"><a href="https://www.dronecode.org/sdk/">SDK</a></div>
+            <div class="common_dronecode_menu_item"><a href="https://mavlink.io/en/">MAVLink</a></div>
+            <div class="common_dronecode_menu_item large_version"><a href="https://www.dronecode.org/documentation/">Documentation</a></div>
+            <div class="common_dronecode_menu_item small_version"><a href="https://www.dronecode.org/documentation/">Docs</a></div>
+            <div class="common_dronecode_menu_item large_version"><a href="http://discuss.px4.io/">Support</a></div>
+            <div class="common_dronecode_menu_item small_version"><a href="http://discuss.px4.io/">Help</a></div>
+        
+      </div>
+    </div>
+    
+<!-- ##HW END Add dronecode menu -->
+    
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../getting_started/">
+            
+                <a href="../getting_started/">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../getting_started/px4_basic_concepts.html">
+            
+                <a href="../getting_started/px4_basic_concepts.html">
+            
+                    
+                    Basic Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../getting_started/frame_selection.html">
+            
+                <a href="../getting_started/frame_selection.html">
+            
+                    
+                    Vehicles/Frames
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../getting_started/flight_controller_selection.html">
+            
+                <a href="../getting_started/flight_controller_selection.html">
+            
+                    
+                    Flight Controllers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../getting_started/sensor_selection.html">
+            
+                <a href="../getting_started/sensor_selection.html">
+            
+                    
+                    Sensors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../getting_started/rc_transmitter_receiver.html">
+            
+                <a href="../getting_started/rc_transmitter_receiver.html">
+            
+                    
+                    Radio Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../getting_started/flight_modes.html">
+            
+                <a href="../getting_started/flight_modes.html">
+            
+                    
+                    Flight Modes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../getting_started/vehicle_status.html">
+            
+                <a href="../getting_started/vehicle_status.html">
+            
+                    
+                    Vehicle Status Notifications
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.7.1" data-path="../getting_started/led_meanings.html">
+            
+                <a href="../getting_started/led_meanings.html">
+            
+                    
+                    LED Meanings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.2" data-path="../getting_started/tunes.html">
+            
+                <a href="../getting_started/tunes.html">
+            
+                    
+                    Tune/Sound Meanings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.3" data-path="../flying/pre_flight_checks.html">
+            
+                <a href="../flying/pre_flight_checks.html">
+            
+                    
+                    Preflight Checks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../getting_started/flight_reporting.html">
+            
+                <a href="../getting_started/flight_reporting.html">
+            
+                    
+                    Flight Reporting
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../assembly/">
+            
+                <a href="../assembly/">
+            
+                    
+                    Basic Assembly
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../assembly/mount_and_orient_controller.html">
+            
+                <a href="../assembly/mount_and_orient_controller.html">
+            
+                    
+                    Mounting the Flight Controller
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../assembly/vibration_isolation.html">
+            
+                <a href="../assembly/vibration_isolation.html">
+            
+                    
+                    Vibration Isolation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../assembly/quick_start_cuav_v5_plus.html">
+            
+                <a href="../assembly/quick_start_cuav_v5_plus.html">
+            
+                    
+                    CUAV V5+ Wiring Quickstart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../assembly/quick_start_cuav_v5_nano.html">
+            
+                <a href="../assembly/quick_start_cuav_v5_nano.html">
+            
+                    
+                    CUAV V5 nano Wiring Quickstart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../assembly/quick_start_durandal.html">
+            
+                <a href="../assembly/quick_start_durandal.html">
+            
+                    
+                    Durandal Wiring Quickstart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../assembly/quick_start_pixhawk4.html">
+            
+                <a href="../assembly/quick_start_pixhawk4.html">
+            
+                    
+                    Pixhawk 4 Wiring Quickstart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../assembly/quick_start_pixhawk4_mini.html">
+            
+                <a href="../assembly/quick_start_pixhawk4_mini.html">
+            
+                    
+                    Pixhawk 4 Mini Wiring Quickstart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../assembly/quick_start_cube.html">
+            
+                <a href="../assembly/quick_start_cube.html">
+            
+                    
+                    Cube Wiring Quickstart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../assembly/quick_start_pixracer.html">
+            
+                <a href="../assembly/quick_start_pixracer.html">
+            
+                    
+                    Pixracer Wiring Quickstart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../assembly/quick_start_pixhawk.html">
+            
+                <a href="../assembly/quick_start_pixhawk.html">
+            
+                    
+                    Pixhawk Wiring Quickstart
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../config/">
+            
+                <a href="../config/">
+            
+                    
+                    Basic Configuration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../config/firmware.html">
+            
+                <a href="../config/firmware.html">
+            
+                    
+                    Firmware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../config/airframe.html">
+            
+                <a href="../config/airframe.html">
+            
+                    
+                    Airframe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../config/flight_controller_orientation.html">
+            
+                <a href="../config/flight_controller_orientation.html">
+            
+                    
+                    Sensor Orientation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../config/compass.html">
+            
+                <a href="../config/compass.html">
+            
+                    
+                    Compass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../config/gyroscope.html">
+            
+                <a href="../config/gyroscope.html">
+            
+                    
+                    Gyroscope
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../config/accelerometer.html">
+            
+                <a href="../config/accelerometer.html">
+            
+                    
+                    Accelerometer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../config/airspeed.html">
+            
+                <a href="../config/airspeed.html">
+            
+                    
+                    Airspeed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../config/level_horizon_calibration.html">
+            
+                <a href="../config/level_horizon_calibration.html">
+            
+                    
+                    Level Horizon Calibration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../config/radio.html">
+            
+                <a href="../config/radio.html">
+            
+                    
+                    Radio Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../config/joystick.html">
+            
+                <a href="../config/joystick.html">
+            
+                    
+                    Joystick Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../config/flight_mode.html">
+            
+                <a href="../config/flight_mode.html">
+            
+                    
+                    Flight Modes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../config/battery.html">
+            
+                <a href="../config/battery.html">
+            
+                    
+                    Battery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../config/safety.html">
+            
+                <a href="../config/safety.html">
+            
+                    
+                    Safety
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../config/motors.html">
+            
+                <a href="../config/motors.html">
+            
+                    
+                    Motors/Servos
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../airframes/">
+            
+                <a href="../airframes/">
+            
+                    
+                    Airframe Builds
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../airframes/airframe_reference.html">
+            
+                <a href="../airframes/airframe_reference.html">
+            
+                    
+                    Airframes Reference
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../frames_multicopter/">
+            
+                <a href="../frames_multicopter/">
+            
+                    
+                    Multicopters
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../frames_multicopter/dji_f450_cuav_5plus.html">
+            
+                <a href="../frames_multicopter/dji_f450_cuav_5plus.html">
+            
+                    
+                    DJI F450 (CUAV v5+)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../frames_multicopter/dji_f450_cuav_5nano.html">
+            
+                <a href="../frames_multicopter/dji_f450_cuav_5nano.html">
+            
+                    
+                    DJI F450 (CUAV v5 nano)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3" data-path="../frames_multicopter/holybro_qav250_pixhawk4_mini.html">
+            
+                <a href="../frames_multicopter/holybro_qav250_pixhawk4_mini.html">
+            
+                    
+                    QAV250 (Pixhawk4 Mini)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.4" data-path="../frames_multicopter/holybro_x500_pixhawk4.html">
+            
+                <a href="../frames_multicopter/holybro_x500_pixhawk4.html">
+            
+                    
+                    X500 (Pixhawk 4)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.5" data-path="../frames_multicopter/holybro_s500_v2_pixhawk4.html">
+            
+                <a href="../frames_multicopter/holybro_s500_v2_pixhawk4.html">
+            
+                    
+                    S500 V2 (Pixhawk 4)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.6" data-path="../frames_multicopter/dji_flamewheel_450.html">
+            
+                <a href="../frames_multicopter/dji_flamewheel_450.html">
+            
+                    
+                    DJI F450 + RTK (Pixhawk 3 Pro)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.7" data-path="../frames_multicopter/lumenier_qav250_pixhawk_mini.html">
+            
+                <a href="../frames_multicopter/lumenier_qav250_pixhawk_mini.html">
+            
+                    
+                    QAV250 (Pixhawk Mini)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.8" data-path="../frames_multicopter/lumenier_qav250_pixhawk_auav_x2.html">
+            
+                <a href="../frames_multicopter/lumenier_qav250_pixhawk_auav_x2.html">
+            
+                    
+                    QAV250 (Pixhawk/AUAV_X2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.9" data-path="../frames_multicopter/spedix_s250_pixracer.html">
+            
+                <a href="../frames_multicopter/spedix_s250_pixracer.html">
+            
+                    
+                    Spedix 250 (Pixracer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.10" data-path="../frames_multicopter/robocat_270_pixracer.html">
+            
+                <a href="../frames_multicopter/robocat_270_pixracer.html">
+            
+                    
+                    Robocat 270 (Pixracer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.11" data-path="../frames_multicopter/matrice100.html">
+            
+                <a href="../frames_multicopter/matrice100.html">
+            
+                    
+                    Matrice 100 (Pixhawk 1)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.12" data-path="../frames_multicopter/qav_r_5_kiss_esc_racer.html">
+            
+                <a href="../frames_multicopter/qav_r_5_kiss_esc_racer.html">
+            
+                    
+                    QAV-R 5" Racer (Pixracer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../frames_plane/">
+            
+                <a href="../frames_plane/">
+            
+                    
+                    Planes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../frames_plane/wing_wing_z84.html">
+            
+                <a href="../frames_plane/wing_wing_z84.html">
+            
+                    
+                    Wing Wing Z84 (Pixracer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../frames_vtol/">
+            
+                <a href="../frames_vtol/">
+            
+                    
+                    VTOL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../frames_vtol/vtol_quadplane_fun_cub_vtol_pixhawk.html">
+            
+                <a href="../frames_vtol/vtol_quadplane_fun_cub_vtol_pixhawk.html">
+            
+                    
+                    FunCub QuadPlane (Pixhawk)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="../frames_vtol/vtol_quadplane_volantex_ranger_ex_pixhawk.html">
+            
+                <a href="../frames_vtol/vtol_quadplane_volantex_ranger_ex_pixhawk.html">
+            
+                    
+                    Ranger QuadPlane (Pixhawk)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="../frames_vtol/vtol_tiltrotor_eflite_convergence_pixfalcon.html">
+            
+                <a href="../frames_vtol/vtol_tiltrotor_eflite_convergence_pixfalcon.html">
+            
+                    
+                    Convergence Tiltrotor (Pixfalcon)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.4" data-path="../frames_vtol/vtol_tailsitter_caipiroshka_pixracer.html">
+            
+                <a href="../frames_vtol/vtol_tailsitter_caipiroshka_pixracer.html">
+            
+                    
+                    TBS Caipiroshka (Pixracer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.5" data-path="../frames_vtol/vtol_quadplane_falcon_vertigo_hybrid_rtf_dropix.html">
+            
+                <a href="../frames_vtol/vtol_quadplane_falcon_vertigo_hybrid_rtf_dropix.html">
+            
+                    
+                    Falcon Vertigo QuadPlane (Dropix)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../frames_rover/">
+            
+                <a href="../frames_rover/">
+            
+                    
+                    Rovers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.1" data-path="../frames_rover/traxxas_stampede.html">
+            
+                <a href="../frames_rover/traxxas_stampede.html">
+            
+                    
+                    Traxxas Stampede
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../flying/">
+            
+                <a href="../flying/">
+            
+                    
+                    Flying
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../flying/first_flight_guidelines.html">
+            
+                <a href="../flying/first_flight_guidelines.html">
+            
+                    
+                    First Flight Guidelines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../flying/basic_flying.html">
+            
+                <a href="../flying/basic_flying.html">
+            
+                    
+                    Flying 101
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="../flying/fixed_wing_landing.html">
+            
+                <a href="../flying/fixed_wing_landing.html">
+            
+                    
+                    Landing (Fixed Wing)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../flying/missions.html">
+            
+                <a href="../flying/missions.html">
+            
+                    
+                    Missions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../flying/geofence.html">
+            
+                <a href="../flying/geofence.html">
+            
+                    
+                    GeoFence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../flying/plan_safety_points.html">
+            
+                <a href="../flying/plan_safety_points.html">
+            
+                    
+                    Safety Point Planning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../flight_modes/">
+            
+                <a href="../flight_modes/">
+            
+                    
+                    Flight Modes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.6.1" data-path="../flight_modes/position_mc.html">
+            
+                <a href="../flight_modes/position_mc.html">
+            
+                    
+                    Position Mode (MC)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.2" data-path="../flight_modes/altitude_mc.html">
+            
+                <a href="../flight_modes/altitude_mc.html">
+            
+                    
+                    Altitude Mode (MC)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.3" data-path="../flight_modes/manual_stabilized_mc.html">
+            
+                <a href="../flight_modes/manual_stabilized_mc.html">
+            
+                    
+                    Manual/Stabilized Mode (MC)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.4" data-path="../flight_modes/rattitude_mc.html">
+            
+                <a href="../flight_modes/rattitude_mc.html">
+            
+                    
+                    Rattitude Mode (MC)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.5" data-path="../flight_modes/acro_mc.html">
+            
+                <a href="../flight_modes/acro_mc.html">
+            
+                    
+                    Acro Mode (MC)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.6" data-path="../flight_modes/orbit.html">
+            
+                <a href="../flight_modes/orbit.html">
+            
+                    
+                    Orbit Mode (MC)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.7" data-path="../flight_modes/position_fw.html">
+            
+                <a href="../flight_modes/position_fw.html">
+            
+                    
+                    Position Mode (FW)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.8" data-path="../flight_modes/altitude_fw.html">
+            
+                <a href="../flight_modes/altitude_fw.html">
+            
+                    
+                    Altitude Mode (FW)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.9" data-path="../flight_modes/stabilized_fw.html">
+            
+                <a href="../flight_modes/stabilized_fw.html">
+            
+                    
+                    Stabilized Mode (FW)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.10" data-path="../flight_modes/acro_fw.html">
+            
+                <a href="../flight_modes/acro_fw.html">
+            
+                    
+                    Acro Mode (FW)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.11" data-path="../flight_modes/manual_fw.html">
+            
+                <a href="../flight_modes/manual_fw.html">
+            
+                    
+                    Manual Mode (FW)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.12" data-path="../flight_modes/takeoff.html">
+            
+                <a href="../flight_modes/takeoff.html">
+            
+                    
+                    Takeoff Mode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.13" data-path="../flight_modes/land.html">
+            
+                <a href="../flight_modes/land.html">
+            
+                    
+                    Land Mode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.14" data-path="../flight_modes/return.html">
+            
+                <a href="../flight_modes/return.html">
+            
+                    
+                    Return Mode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.15" data-path="../flight_modes/hold.html">
+            
+                <a href="../flight_modes/hold.html">
+            
+                    
+                    Hold Mode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.16" data-path="../flight_modes/mission.html">
+            
+                <a href="../flight_modes/mission.html">
+            
+                    
+                    Mission Mode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.17" data-path="../flight_modes/follow_me.html">
+            
+                <a href="../flight_modes/follow_me.html">
+            
+                    
+                    Follow Me Mode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.18" data-path="../flight_modes/offboard.html">
+            
+                <a href="../flight_modes/offboard.html">
+            
+                    
+                    Offboard Mode
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../flying/terrain_following_holding.html">
+            
+                <a href="../flying/terrain_following_holding.html">
+            
+                    
+                    Terrain Following/Holding
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../log/flight_log_analysis.html">
+            
+                <a href="../log/flight_log_analysis.html">
+            
+                    
+                    Flight Log Analysis
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../log/flight_review.html">
+            
+                <a href="../log/flight_review.html">
+            
+                    
+                    Log Analysis using Flight Review
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../advanced_features/">
+            
+                <a href="../advanced_features/">
+            
+                    
+                    Advanced Features
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../advanced_features/traffic_avoidance_adsb.html">
+            
+                <a href="../advanced_features/traffic_avoidance_adsb.html">
+            
+                    
+                    Air Traffic Avoidance: ADSB/FLARM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../advanced_features/traffic_avoidance_utm.html">
+            
+                <a href="../advanced_features/traffic_avoidance_utm.html">
+            
+                    
+                    Air Traffic Avoidance: UTM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../computer_vision/">
+            
+                <a href="../computer_vision/">
+            
+                    
+                    Computer Vision
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.3.1" data-path="../computer_vision/obstacle_avoidance.html">
+            
+                <a href="../computer_vision/obstacle_avoidance.html">
+            
+                    
+                    Obstacle Avoidance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.2" data-path="../computer_vision/safe_landing.html">
+            
+                <a href="../computer_vision/safe_landing.html">
+            
+                    
+                    Safe Landing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.3" data-path="../computer_vision/collision_prevention.html">
+            
+                <a href="../computer_vision/collision_prevention.html">
+            
+                    
+                    Collision Prevention
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.4" data-path="../computer_vision/path_planning_interface.html">
+            
+                <a href="../computer_vision/path_planning_interface.html">
+            
+                    
+                    Path Planning Interface
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.5" data-path="../computer_vision/motion_capture.html">
+            
+                <a href="../computer_vision/motion_capture.html">
+            
+                    
+                    Motion Capture (MoCap)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.6" data-path="../computer_vision/visual_inertial_odometry.html">
+            
+                <a href="../computer_vision/visual_inertial_odometry.html">
+            
+                    
+                    Visual Inertial Odometry (VIO)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.3.6.1" data-path="../peripherals/camera_t265_vio.html">
+            
+                <a href="../peripherals/camera_t265_vio.html">
+            
+                    
+                    Realsense T265 Tracking Camera (VIO)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../advanced_features/precland.html">
+            
+                <a href="../advanced_features/precland.html">
+            
+                    
+                    Precision Landing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../advanced_features/rtk-gps.html">
+            
+                <a href="../advanced_features/rtk-gps.html">
+            
+                    
+                    RTK GPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../advanced_features/satcom_roadblock.html">
+            
+                <a href="../advanced_features/satcom_roadblock.html">
+            
+                    
+                    RockBlock SatCom System
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Advanced Configuration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="parameters.html">
+            
+                <a href="parameters.html">
+            
+                    
+                    Finding/Updating Parameters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../config_mc/">
+            
+                <a href="../config_mc/">
+            
+                    
+                    Multicopter Config/Tuning
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.2.1" data-path="../config_mc/pid_tuning_guide_multicopter.html">
+            
+                <a href="../config_mc/pid_tuning_guide_multicopter.html">
+            
+                    
+                    MC PID Tuning Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2.2" data-path="../config_mc/mc_trajectory_tuning.html">
+            
+                <a href="../config_mc/mc_trajectory_tuning.html">
+            
+                    
+                    MC Setpoint Tuning (Trajectory Generator)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.2.2.1" data-path="../config_mc/mc_jerk_limited_type_trajectory.html">
+            
+                <a href="../config_mc/mc_jerk_limited_type_trajectory.html">
+            
+                    
+                    MC Jerk-limited Type Trajectory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2.2.2" data-path="../config_mc/mc_slew_rate_type_trajectory.html">
+            
+                <a href="../config_mc/mc_slew_rate_type_trajectory.html">
+            
+                    
+                    MC Slew-rate Type Trajectory
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2.3" data-path="../config_mc/racer_setup.html">
+            
+                <a href="../config_mc/racer_setup.html">
+            
+                    
+                    Multicopter Racer Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../config_fw/">
+            
+                <a href="../config_fw/">
+            
+                    
+                    Fixed Wing  Config/Tuning
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.3.1" data-path="../config_fw/pid_tuning_guide_fixedwing.html">
+            
+                <a href="../config_fw/pid_tuning_guide_fixedwing.html">
+            
+                    
+                    Fixedwing PID Tuning Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3.2" data-path="../config_fw/advanced_tuning_guide_fixedwing.html">
+            
+                <a href="../config_fw/advanced_tuning_guide_fixedwing.html">
+            
+                    
+                    Fixedwing Advanced Tuning Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3.3" data-path="../config_fw/trimming_guide_fixedwing.html">
+            
+                <a href="../config_fw/trimming_guide_fixedwing.html">
+            
+                    
+                    Fixedwing Trimming Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../config_vtol/">
+            
+                <a href="../config_vtol/">
+            
+                    
+                    VTOL Config/Tuning
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.4.1" data-path="../config_vtol/vtol_quad_configuration.html">
+            
+                <a href="../config_vtol/vtol_quad_configuration.html">
+            
+                    
+                    QuadPlane Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4.2" data-path="../config_vtol/vtol_back_transition_tuning.html">
+            
+                <a href="../config_vtol/vtol_back_transition_tuning.html">
+            
+                    
+                    Back-transition Tuning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4.3" data-path="../config_vtol/vtol_without_airspeed_sensor.html">
+            
+                <a href="../config_vtol/vtol_without_airspeed_sensor.html">
+            
+                    
+                    VTOL w/o Airspeed Sensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4.4" data-path="../config_vtol/vtol_weathervane.html">
+            
+                <a href="../config_vtol/vtol_weathervane.html">
+            
+                    
+                    VTOL Weather Vane
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="esc_calibration.html">
+            
+                <a href="esc_calibration.html">
+            
+                    
+                    ESC Calibration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9.6" data-path="tuning_the_ecl_ekf.html">
+            
+                <a href="tuning_the_ecl_ekf.html">
+            
+                    
+                    ECL/EKF Overview & Tuning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="flight_termination.html">
+            
+                <a href="flight_termination.html">
+            
+                    
+                    Flight Termination Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="bootloader_update.html">
+            
+                <a href="bootloader_update.html">
+            
+                    
+                    Bootloader Update
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="bootloader_update_from_betaflight.html">
+            
+                <a href="bootloader_update_from_betaflight.html">
+            
+                    
+                    Bootloader Flashing onto Betaflight Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="land_detector.html">
+            
+                <a href="land_detector.html">
+            
+                    
+                    Land Detector Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.11" data-path="sensor_thermal_calibration.html">
+            
+                <a href="sensor_thermal_calibration.html">
+            
+                    
+                    Sensor Thermal Compensation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.12" data-path="compass_power_compensation.html">
+            
+                <a href="compass_power_compensation.html">
+            
+                    
+                    Compass Power Compensation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.13" data-path="advanced_flight_controller_orientation_leveling.html">
+            
+                <a href="advanced_flight_controller_orientation_leveling.html">
+            
+                    
+                    Advanced Controller Orientation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.14" data-path="static_pressure_buildup.html">
+            
+                <a href="static_pressure_buildup.html">
+            
+                    
+                    Static Pressure Buildup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.15" data-path="prearm_arm_disarm.html">
+            
+                <a href="prearm_arm_disarm.html">
+            
+                    
+                    Prearm/Arm/Disarm Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.16" data-path="parameter_reference.html">
+            
+                <a href="parameter_reference.html">
+            
+                    
+                    Full Parameter Reference
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../peripherals/">
+            
+                <a href="../peripherals/">
+            
+                    
+                    Peripheral Hardware
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../peripherals/serial_configuration.html">
+            
+                <a href="../peripherals/serial_configuration.html">
+            
+                    
+                    Serial Port Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../gps_compass/">
+            
+                <a href="../gps_compass/">
+            
+                    
+                    GPS/Compass
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.2.1" data-path="../gps_compass/rtk_gps.html">
+            
+                <a href="../gps_compass/rtk_gps.html">
+            
+                    
+                    RTK GPS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.2.1.1" data-path="../gps_compass/rtk_gps_hex_hereplus.html">
+            
+                <a href="../gps_compass/rtk_gps_hex_hereplus.html">
+            
+                    
+                    Hex Here+
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.1.2" data-path="../gps_compass/rtk_gps_drotek_xl.html">
+            
+                <a href="../gps_compass/rtk_gps_drotek_xl.html">
+            
+                    
+                    Drotek XL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.1.3" data-path="../gps_compass/rtk_gps_cuav_c-rtk.html">
+            
+                <a href="../gps_compass/rtk_gps_cuav_c-rtk.html">
+            
+                    
+                    CUAV C-RTK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.1.4" data-path="../gps_compass/rtk_gps_trimble_mb_two.html">
+            
+                <a href="../gps_compass/rtk_gps_trimble_mb_two.html">
+            
+                    
+                    Trimble MB-Two
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.1.5" data-path="../gps_compass/rtk_gps_hex_here2.html">
+            
+                <a href="../gps_compass/rtk_gps_hex_here2.html">
+            
+                    
+                    Hex Here2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.1.6" data-path="../gps_compass/rtk_gps_freefly.html">
+            
+                <a href="../gps_compass/rtk_gps_freefly.html">
+            
+                    
+                    Freefly RTK GPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../telemetry/">
+            
+                <a href="../telemetry/">
+            
+                    
+                    Telemetry Radios
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.3.1" data-path="../telemetry/sik_radio.html">
+            
+                <a href="../telemetry/sik_radio.html">
+            
+                    
+                    SiK Radio
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.3.1.1" data-path="../telemetry/rfd900_telemetry.html">
+            
+                <a href="../telemetry/rfd900_telemetry.html">
+            
+                    
+                    RFD900 (SiK) Telemetry Radio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3.1.2" data-path="../telemetry/hkpilot_sik_radio.html">
+            
+                <a href="../telemetry/hkpilot_sik_radio.html">
+            
+                    
+                    HKPilot (SIK) Telemetry Radio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3.1.3" data-path="../telemetry/holybro_sik_radio.html">
+            
+                <a href="../telemetry/holybro_sik_radio.html">
+            
+                    
+                    HolyBro (SIK) Telemetry Radio
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3.2" data-path="../telemetry/telemetry_wifi.html">
+            
+                <a href="../telemetry/telemetry_wifi.html">
+            
+                    
+                    Telemetry Wifi
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.3.2.1" data-path="../telemetry/esp8266_wifi_module.html">
+            
+                <a href="../telemetry/esp8266_wifi_module.html">
+            
+                    
+                    ESP8266 WiFi Module
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3.2.2" data-path="../telemetry/3dr_telemetry_wifi.html">
+            
+                <a href="../telemetry/3dr_telemetry_wifi.html">
+            
+                    
+                    3DR Telemetry Wifi (Discontinued)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../peripherals/mavlink_peripherals.html">
+            
+                <a href="../peripherals/mavlink_peripherals.html">
+            
+                    
+                    MAVLink Telemetry (OSD/GCS)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../peripherals/frsky_telemetry.html">
+            
+                <a href="../peripherals/frsky_telemetry.html">
+            
+                    
+                    FrSky Telemetry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../power_module/">
+            
+                <a href="../power_module/">
+            
+                    
+                    Power Modules
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.6.1" data-path="../power_module/cuav_hv_pm.html">
+            
+                <a href="../power_module/cuav_hv_pm.html">
+            
+                    
+                    CUAV HV pm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6.2" data-path="../power_module/cuav_can_pmu.html">
+            
+                <a href="../power_module/cuav_can_pmu.html">
+            
+                    
+                    CUAV CAN PMU
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6.3" data-path="../power_module/holybro_pm07_pixhawk4_power_module.html">
+            
+                <a href="../power_module/holybro_pm07_pixhawk4_power_module.html">
+            
+                    
+                    Holybro PM07 (Pixhawk 4 PM)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6.4" data-path="../power_module/holybro_pm06_pixhawk4mini_power_module.html">
+            
+                <a href="../power_module/holybro_pm06_pixhawk4mini_power_module.html">
+            
+                    
+                    Holybro PM06 (Micro Power Module)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6.5" data-path="../power_module/pomegranate_systems_pm.html">
+            
+                <a href="../power_module/pomegranate_systems_pm.html">
+            
+                    
+                    Pomegranate Systems Power Module
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="../sensor/rangefinders.html">
+            
+                <a href="../sensor/rangefinders.html">
+            
+                    
+                    Distance Sensors (Rangefinders)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.7.1" data-path="../sensor/sfxx_lidar.html">
+            
+                <a href="../sensor/sfxx_lidar.html">
+            
+                    
+                    Lightware SFxx Lidar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7.2" data-path="../sensor/ulanding_radar.html">
+            
+                <a href="../sensor/ulanding_radar.html">
+            
+                    
+                    Ainstein US-D1 Standard Radar Altimeter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7.3" data-path="../sensor/leddar_one.html">
+            
+                <a href="../sensor/leddar_one.html">
+            
+                    
+                    LeddarOne Lidar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7.4" data-path="../sensor/tfmini.html">
+            
+                <a href="../sensor/tfmini.html">
+            
+                    
+                    Benewake TFmini Lidar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7.5" data-path="../sensor/lidar_lite.html">
+            
+                <a href="../sensor/lidar_lite.html">
+            
+                    
+                    Lidar-Lite
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7.6" data-path="../sensor/teraranger.html">
+            
+                <a href="../sensor/teraranger.html">
+            
+                    
+                    TeraRanger
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7.7" data-path="../sensor/cm8jl65_ir_distance_sensor.html">
+            
+                <a href="../sensor/cm8jl65_ir_distance_sensor.html">
+            
+                    
+                    Lanbao PSK-CM8JL65-CC5
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="../sensor/tachometers.html">
+            
+                <a href="../sensor/tachometers.html">
+            
+                    
+                    Tachometers (Revolution Counters)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.8.1" data-path="../sensor/thunderfly_tachometer.html">
+            
+                <a href="../sensor/thunderfly_tachometer.html">
+            
+                    
+                    ThunderFly TFRPM01 Tachometer Sensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="../sensor/airspeed.html">
+            
+                <a href="../sensor/airspeed.html">
+            
+                    
+                    Airspeed Sensors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.10" data-path="../sensor/optical_flow.html">
+            
+                <a href="../sensor/optical_flow.html">
+            
+                    
+                    Optical Flow
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.10.1" data-path="../sensor/px4flow.html">
+            
+                <a href="../sensor/px4flow.html">
+            
+                    
+                    PX4FLOW
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.10.2" data-path="../sensor/pmw3901.html">
+            
+                <a href="../sensor/pmw3901.html">
+            
+                    
+                    PMW3901
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.11" data-path="../peripherals/esc_motors.html">
+            
+                <a href="../peripherals/esc_motors.html">
+            
+                    
+                    ESCs & Motors
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.11.1" data-path="../peripherals/pwm_escs_and_servo.html">
+            
+                <a href="../peripherals/pwm_escs_and_servo.html">
+            
+                    
+                    PWM ESCs and Servos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.11.2" data-path="../peripherals/dshot.html">
+            
+                <a href="../peripherals/dshot.html">
+            
+                    
+                    DShot ESCs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.11.3" data-path="../peripherals/uavcan_escs.html">
+            
+                <a href="../peripherals/uavcan_escs.html">
+            
+                    
+                    UAVCAN ESCs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.12" data-path="../peripherals/camera.html">
+            
+                <a href="../peripherals/camera.html">
+            
+                    
+                    Camera
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.13" data-path="../peripherals/parachute.html">
+            
+                <a href="../peripherals/parachute.html">
+            
+                    
+                    Parachute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.14" data-path="../peripherals/companion_computer_peripherals.html">
+            
+                <a href="../peripherals/companion_computer_peripherals.html">
+            
+                    
+                    Companion Computer Peripherals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.15" data-path="../peripherals/adsb_flarm.html">
+            
+                <a href="../peripherals/adsb_flarm.html">
+            
+                    
+                    ADSB/FLARM (Traffic Avoidance)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../flight_controller/">
+            
+                <a href="../flight_controller/">
+            
+                    
+                    Autopilot Hardware
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../flight_controller/pixhawk_series.html">
+            
+                <a href="../flight_controller/pixhawk_series.html">
+            
+                    
+                    Pixhawk Series
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1.1" data-path="../flight_controller/silicon_errata.html">
+            
+                <a href="../flight_controller/silicon_errata.html">
+            
+                    
+                    Silicon Errata
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../flight_controller/autopilot_pixhawk_standard.html">
+            
+                <a href="../flight_controller/autopilot_pixhawk_standard.html">
+            
+                    
+                    Pixhawk Standard Autopilots
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.2.1" data-path="../flight_controller/pixhawk4.html">
+            
+                <a href="../flight_controller/pixhawk4.html">
+            
+                    
+                    Holybro Pixhawk 4 (FMUv5)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.2" data-path="../flight_controller/pixhawk4_mini.html">
+            
+                <a href="../flight_controller/pixhawk4_mini.html">
+            
+                    
+                    Holybro Pixhawk 4 Mini (FMUv5)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.3" data-path="../flight_controller/pixhawk3_pro.html">
+            
+                <a href="../flight_controller/pixhawk3_pro.html">
+            
+                    
+                    Drotek Pixhawk 3 Pro (FMUv4pro)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.4" data-path="../flight_controller/pixracer.html">
+            
+                <a href="../flight_controller/pixracer.html">
+            
+                    
+                    mRo Pixracer (FMUv4)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.5" data-path="../flight_controller/pixhawk-2.html">
+            
+                <a href="../flight_controller/pixhawk-2.html">
+            
+                    
+                    Hex Cube Black (FMUv3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.6" data-path="../flight_controller/pixhack_v3.html">
+            
+                <a href="../flight_controller/pixhack_v3.html">
+            
+                    
+                    CUAV Pixhack v3 (FMUv3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.7" data-path="../flight_controller/mro_pixhawk.html">
+            
+                <a href="../flight_controller/mro_pixhawk.html">
+            
+                    
+                    mRo Pixhawk (FMUv2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../flight_controller/autopilot_manufacturer_supported.html">
+            
+                <a href="../flight_controller/autopilot_manufacturer_supported.html">
+            
+                    
+                    Manufacturer-Supported Autopilots
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.3.1" data-path="../flight_controller/mindpx.html">
+            
+                <a href="../flight_controller/mindpx.html">
+            
+                    
+                    AirMind MindPX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.2" data-path="../flight_controller/mindracer.html">
+            
+                <a href="../flight_controller/mindracer.html">
+            
+                    
+                    AirMind MindRacer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.3" data-path="../flight_controller/cuav_v5_plus.html">
+            
+                <a href="../flight_controller/cuav_v5_plus.html">
+            
+                    
+                    CUAV V5+ (FMUv5)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.4" data-path="../flight_controller/cuav_v5_nano.html">
+            
+                <a href="../flight_controller/cuav_v5_nano.html">
+            
+                    
+                    CUAV V5 nano (FMUv5)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.5" data-path="../flight_controller/dropix.html">
+            
+                <a href="../flight_controller/dropix.html">
+            
+                    
+                    Drotek Dropix (FMUv2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.6" data-path="../flight_controller/kakutef7.html">
+            
+                <a href="../flight_controller/kakutef7.html">
+            
+                    
+                    Holybro Kakute F7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.7" data-path="../flight_controller/durandal.html">
+            
+                <a href="../flight_controller/durandal.html">
+            
+                    
+                    Holybro Durandal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.8" data-path="../flight_controller/mro_x2.1.html">
+            
+                <a href="../flight_controller/mro_x2.1.html">
+            
+                    
+                    mRobotics-X2.1 (FMUv2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.9" data-path="../flight_controller/nxp_rddrone_fmuk66.html">
+            
+                <a href="../flight_controller/nxp_rddrone_fmuk66.html">
+            
+                    
+                    NXP RDDRONE-FMUK66 FMU
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.10" data-path="../flight_controller/omnibus_f4_sd.html">
+            
+                <a href="../flight_controller/omnibus_f4_sd.html">
+            
+                    
+                    Omnibus F4 SD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.11" data-path="../flight_controller/mro_control_zero_f7.html">
+            
+                <a href="../flight_controller/mro_control_zero_f7.html">
+            
+                    
+                    mRo Control Zero F7)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.12" data-path="../flight_controller/modalai_fc_v1.html">
+            
+                <a href="../flight_controller/modalai_fc_v1.html">
+            
+                    
+                    ModalAI Flight Core v1
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../flight_controller/autopilot_experimental.html">
+            
+                <a href="../flight_controller/autopilot_experimental.html">
+            
+                    
+                    Experimental/Discontinued Autopilots
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.4.1" data-path="../flight_controller/ocpoc_zynq.html">
+            
+                <a href="../flight_controller/ocpoc_zynq.html">
+            
+                    
+                    Aerotenna OcPoC-Zynq Mini
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.2" data-path="../flight_controller/beaglebone_blue.html">
+            
+                <a href="../flight_controller/beaglebone_blue.html">
+            
+                    
+                    BeagleBone Blue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.3" data-path="../complete_vehicles/crazyflie2.html">
+            
+                <a href="../complete_vehicles/crazyflie2.html">
+            
+                    
+                    Bitcraze Crazyflie 2.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.4" data-path="../flight_controller/cuav_v5.html">
+            
+                <a href="../flight_controller/cuav_v5.html">
+            
+                    
+                    CUAV v5 (Discontinued)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.5" data-path="../flight_controller/HKPilot32.html">
+            
+                <a href="../flight_controller/HKPilot32.html">
+            
+                    
+                    HobbyKing HKPilot32 (Discontinued)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.6" data-path="../flight_controller/pixfalcon.html">
+            
+                <a href="../flight_controller/pixfalcon.html">
+            
+                    
+                    Holybro Pixfalcon (Discontinued)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.7" data-path="../complete_vehicles/intel_aero.html">
+            
+                <a href="../complete_vehicles/intel_aero.html">
+            
+                    
+                    Intel® Aero RTF Drone (Discontinued)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.8" data-path="../flight_controller/auav_x2.html">
+            
+                <a href="../flight_controller/auav_x2.html">
+            
+                    
+                    mRo AUAV-X2 (Discontinued)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.9" data-path="../flight_controller/raspberry_pi_navio2.html">
+            
+                <a href="../flight_controller/raspberry_pi_navio2.html">
+            
+                    
+                    Raspberry Pi 2/3 Navio2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.10" data-path="../flight_controller/snapdragon_flight.html">
+            
+                <a href="../flight_controller/snapdragon_flight.html">
+            
+                    
+                    Snapdragon Flight (Discontinued)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.4.10.1" data-path="../flight_controller/snapdragon_flight_hardware_example_setup.html">
+            
+                <a href="../flight_controller/snapdragon_flight_hardware_example_setup.html">
+            
+                    
+                    Hardware Setup Example
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.10.2" data-path="../flight_controller/snapdragon_flight_dev_environment_installation.html">
+            
+                <a href="../flight_controller/snapdragon_flight_dev_environment_installation.html">
+            
+                    
+                    Developer Environment Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.10.3" data-path="../flight_controller/snapdragon_flight_software_installation.html">
+            
+                <a href="../flight_controller/snapdragon_flight_software_installation.html">
+            
+                    
+                    Snapdragon Software Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.10.4" data-path="../flight_controller/snapdragon_flight_configuration.html">
+            
+                <a href="../flight_controller/snapdragon_flight_configuration.html">
+            
+                    
+                    Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.10.5" data-path="../flight_controller/snapdragon_flight_advanced.html">
+            
+                <a href="../flight_controller/snapdragon_flight_advanced.html">
+            
+                    
+                    Snapdragon Advanced
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.11" data-path="../flight_controller/pixhawk.html">
+            
+                <a href="../flight_controller/pixhawk.html">
+            
+                    
+                    3DR Pixhawk 1 (Discontinued)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.12" data-path="../flight_controller/pixhawk_mini.html">
+            
+                <a href="../flight_controller/pixhawk_mini.html">
+            
+                    
+                    3DR Pixhawk Mini
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../complete_vehicles/">
+            
+                <a href="../complete_vehicles/">
+            
+                    
+                    Complete Vehicles
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../complete_vehicles/px4_vision_kit.html">
+            
+                <a href="../complete_vehicles/px4_vision_kit.html">
+            
+                    
+                    PX4 Vision Kit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../complete_vehicles/mindracer_BNF_RTF.html">
+            
+                <a href="../complete_vehicles/mindracer_BNF_RTF.html">
+            
+                    
+                    MindRacer BNF & RTF
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.2.1" data-path="../complete_vehicles/mindracer210.html">
+            
+                <a href="../complete_vehicles/mindracer210.html">
+            
+                    
+                    MindRacer 210
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2.2" data-path="../complete_vehicles/nanomind110.html">
+            
+                <a href="../complete_vehicles/nanomind110.html">
+            
+                    
+                    NanoMind 110
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../complete_vehicles/betafpv_beta75x.html">
+            
+                <a href="../complete_vehicles/betafpv_beta75x.html">
+            
+                    
+                    BetaFPV Beta75X 2S Brushless Whoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../complete_vehicles/holybro_kopis2.html">
+            
+                <a href="../complete_vehicles/holybro_kopis2.html">
+            
+                    
+                    Holybro Kopis 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../development/development.html">
+            
+                <a href="../development/development.html">
+            
+                    
+                    Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Dronecode Shortcuts</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <a target="_blank" href="https://dev.px4.io/master/en/">
+            
+                    
+                    PX4 Developer Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <a target="_blank" href="https://docs.qgroundcontrol.com/en/">
+            
+                    
+                    QGroundControl User Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" >
+            
+                <a target="_blank" href="https://dev.qgroundcontrol.com/en/">
+            
+                    
+                    QGroundControl Developer Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" >
+            
+                <a target="_blank" href="https://mavlink.io/en/">
+            
+                    
+                    MAVLink Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" >
+            
+                <a target="_blank" href="https://mavsdk.mavlink.io/">
+            
+                    
+                    MAVSDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" >
+            
+                <a target="_blank" href="https://camera-manager.dronecode.org/en/">
+            
+                    
+                    Dronecode Camera Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >ECL/EKF Overview & Tuning</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="using-the-ecl-ekf"><a name="using-the-ecl-ekf" class="plugin-anchor" href="#using-the-ecl-ekf"><i class="fa fa-link" aria-hidden="true"></i></a>Using the ECL EKF</h1>
+<p>This tutorial answers common questions about use of the ECL EKF algorithm.</p>
+<blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
+<p> The <a href="https://youtu.be/HkYRJJoyBwQ" target="_blank">PX4 State Estimation Overview</a> video from the <em>PX4 Developer Summit 2019</em> (Dr. Paul Riseborough) provides an overview of the estimator, and additionally describes both the major changes from 2018/2019, and the expected improvements through 2020.</p>
+</blockquote>
+<h2 id="what-is-the-ecl-ekf"><a name="what-is-the-ecl-ekf" class="plugin-anchor" href="#what-is-the-ecl-ekf"><i class="fa fa-link" aria-hidden="true"></i></a>What is the ECL EKF?</h2>
+<p>The Estimation and Control Library (ECL) uses an Extended Kalman Filter (EKF) algorithm to process sensor measurements and provide an estimate of the following states:</p>
+<ul>
+<li>Quaternion defining the rotation from North, East, Down local earth frame to X, Y, Z body frame</li>
+<li>Velocity at the IMU - North, East, Down (m/s)</li>
+<li>Position at the IMU - North, East, Down (m)</li>
+<li>IMU delta angle bias estimates - X, Y, Z (rad)</li>
+<li>IMU delta velocity bias estimates - X, Y, Z(m/s)</li>
+<li>Earth Magnetic field components - North, East, Down (gauss)</li>
+<li>Vehicle body frame magnetic field bias - X, Y, Z (gauss)</li>
+<li>Wind velocity - North, East (m/s)</li>
+</ul>
+<p>The EKF runs on a delayed &apos;fusion time horizon&apos; to allow for different time delays on each measurement relative to the IMU.
+Data for each sensor is FIFO buffered and retrieved from the buffer by the EKF to be used at the correct time.
+The delay compensation for each sensor is controlled by the <a href="parameter_reference.html#ekf2">EKF2_*_DELAY</a> parameters.</p>
+<p>A complementary filter is used to propagate the states forward from the &apos;fusion time horizon&apos; to current time using the buffered IMU data.
+The time constant for this filter is controlled by the <a href="parameter_reference.html#EKF2_TAU_VEL">EKF2_TAU_VEL</a> and <a href="parameter_reference.html#EKF2_TAU_POS">EKF2_TAU_POS</a> parameters.</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> The &apos;fusion time horizon&apos; delay and length of the buffers is determined by the largest of the <code>EKF2_*_DELAY</code> parameters.
+  If a sensor is not being used, it is recommended to set its time delay to zero.
+  Reducing the &apos;fusion time horizon&apos; delay reduces errors in the complementary filter used to propagate states forward to current time.</p>
+</blockquote>
+<p>The position and velocity states are adjusted to account for the offset between the IMU and the body frame before they are output to the control loops.
+The position of the IMU relative to the body frame is set by the <code>EKF2_IMU_POS_X,Y,Z</code> parameters.</p>
+<p>The EKF uses the IMU data for state prediction only. IMU data is not used as an observation in the EKF derivation.
+The algebraic equations for the covariance prediction, state update and covariance update were derived using the Matlab symbolic toolbox and can be found here: <a href="https://github.com/PX4/ecl/blob/master/EKF/matlab/scripts/Inertial Nav EKF/GenerateNavFilterEquations.m" target="_blank">Matlab Symbolic Derivation</a>.</p>
+<h2 id="what-sensor-measurements-does-it-use"><a name="what-sensor-measurements-does-it-use" class="plugin-anchor" href="#what-sensor-measurements-does-it-use"><i class="fa fa-link" aria-hidden="true"></i></a>What sensor measurements does it use?</h2>
+<p>The EKF has different modes of operation that allow for different combinations of sensor measurements.
+On start-up the filter checks for a minimum viable combination of sensors and after initial tilt, yaw and height alignment is completed, enters a mode that provides rotation, vertical velocity, vertical position, IMU delta angle bias and IMU delta velocity bias estimates.</p>
+<p>This mode requires IMU data, a source of yaw (magnetometer or external vision) and a source of height data.
+This minimum data set is required for all EKF modes of operation. Other sensor data can then be used to estimate additional states.</p>
+<h3 id="imu"><a name="imu" class="plugin-anchor" href="#imu"><i class="fa fa-link" aria-hidden="true"></i></a>IMU</h3>
+<ul>
+<li>Three axis body fixed Inertial Measurement unit delta angle and delta velocity data at a minimum rate of 100Hz.
+Note: Coning corrections should be applied to the IMU delta angle data before it is used by the EKF.</li>
+</ul>
+<h3 id="magnetometer"><a name="magnetometer" class="plugin-anchor" href="#magnetometer"><i class="fa fa-link" aria-hidden="true"></i></a>Magnetometer</h3>
+<p>Three axis body fixed magnetometer data (or external vision system pose data) at a minimum rate of 5Hz is required. Magnetometer data can be used in two ways:</p>
+<ul>
+<li>Magnetometer measurements are converted to a yaw angle using the tilt estimate and magnetic declination.
+This yaw angle is then used as an observation by the EKF.
+This method is less accurate and does not allow for learning of body frame field offsets, however it is more robust to magnetic anomalies and large start-up gyro biases.
+It is the default method used during start-up and on ground.</li>
+<li>The XYZ magnetometer readings are used as separate observations.
+This method is more accurate and allows body frame offsets to be learned, but assumes the earth magnetic field environment only changes slowly and performs less well when there are significant external magnetic anomalies.</li>
+</ul>
+<p>The logic used to select these modes is set by the <a href="parameter_reference.html#EKF2_MAG_TYPE">EKF2_MAG_TYPE</a> parameter.</p>
+<p>The option is available to operate without a magnetometer, either by replacing it using <a href="#yaw_measurements">yaw from a dual antenna GPS</a> or using the IMU measurements and GPS velocity data to <a href="#yaw_from_gps_velocity">estimate yaw from vehicle movement</a>.</p>
+<h3 id="height"><a name="height" class="plugin-anchor" href="#height"><i class="fa fa-link" aria-hidden="true"></i></a>Height</h3>
+<p>A source of height data - either GPS, barometric pressure, range finder or external vision at a minimum rate of 5Hz is required.</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> The primary source of height data is controlled by the <a href="parameter_reference.html#EKF2_HGT_MODE">EKF2_HGT_MODE</a> parameter.</p>
+</blockquote>
+<p>If these measurements are not present, the EKF will not start.
+When these measurements have been detected, the EKF will initialise the states and complete the tilt and yaw alignment.
+When tilt and yaw alignment is complete, the EKF can then transition to other modes of operation enabling use of additional sensor data:</p>
+<h4 id="correction-for-static-pressure-position-error"><a name="correction-for-static-pressure-position-error" class="plugin-anchor" href="#correction-for-static-pressure-position-error"><i class="fa fa-link" aria-hidden="true"></i></a>Correction for Static Pressure Position Error</h4>
+<p>Barometric pressure altitude is subject to errors generated by aerodynamic disturbances caused by vehicle wind relative velocity and orientation.
+This is known in aeronautics as <em>static pressure position error</em>.
+The EKF2 module that uses the ECL/EKF2 estimator library provides a method of compensating for these errors, provided wind speed state estimation is active.</p>
+<p>For platforms operating in a fixed wing mode, wind speed state estimation requires either <a href="#airspeed">Airspeed</a> and/or <a href="#synthetic-sideslip">Synthetic Sideslip</a> fusion to be enabled.</p>
+<p>For multi-rotors, fusion of <a href="#mc_wind_estimation_using_drag">Drag Specific Forces</a> can be enabled and tuned to provide the required wind velocity state estimates.</p>
+<p>The EKF2 module models the error as a body fixed ellipsoid that specifies the fraction of dynamic pressure that is added to/subtracted from the barometric pressure - before it is converted to a height estimate.
+See the following parameter documentation for information on how to use this feature:</p>
+<ul>
+<li><a href="parameter_reference.html#EKF2_PCOEF_XP">EKF2_PCOEF_XP</a></li>
+<li><a href="parameter_reference.html#EKF2_PCOEF_XN">EKF2_PCOEF_XN</a></li>
+<li><a href="parameter_reference.html#EKF2_PCOEF_YP">EKF2_PCOEF_YP</a></li>
+<li><a href="parameter_reference.html#EKF2_PCOEF_YN">EKF2_PCOEF_YN</a></li>
+<li><a href="parameter_reference.html#EKF2_PCOEF_Z">EKF2_PCOEF_Z</a></li>
+</ul>
+<h3 id="gps"><a name="gps" class="plugin-anchor" href="#gps"><i class="fa fa-link" aria-hidden="true"></i></a>GPS</h3>
+<h4 id="position-and-velocity-measurements"><a name="position-and-velocity-measurements" class="plugin-anchor" href="#position-and-velocity-measurements"><i class="fa fa-link" aria-hidden="true"></i></a>Position and Velocity Measurements</h4>
+<p>GPS measurements will be used for position and velocity if the following conditions are met:</p>
+<ul>
+<li>GPS use is enabled via setting of the <a href="parameter_reference.html#EKF2_AID_MASK">EKF2_AID_MASK</a> parameter.</li>
+<li>GPS quality checks have passed.
+These checks are controlled by the <a href="parameter_reference.html#EKF2_GPS_CHECK">EKF2_GPS_CHECK</a> and <code>EKF2_REQ_*</code> parameters.</li>
+<li>GPS height can be used directly by the EKF via setting of the <a href="parameter_reference.html#EKF2_HGT_MODE">EKF2_HGT_MODE</a> parameter.</li>
+</ul>
+<h4 id="yaw_measurements"><a name="yaw_measurements" class="plugin-anchor" href="#yaw_measurements"><i class="fa fa-link" aria-hidden="true"></i></a>Yaw Measurements </h4>
+<p>Some GPS receivers such as the <a href="https://www.trimble.com/Precision-GNSS/MB-Two-Board.aspx" target="_blank">Trimble MB-Two RTK GPS receiver</a> can be used to provide a heading measurement that replaces the use of magnetometer data.
+This can be a significant advantage when operating in an environment where large magnetic anomalies are present, or at latitudes here the earth&apos;s magnetic field has a high inclination.
+Use of GPS yaw measurements is enabled by setting bit position 7 to 1 (adding 128) in the <a href="parameter_reference.html#EKF2_AID_MASK">EKF2_AID_MASK</a> parameter.</p>
+<h4 id="yaw_from_gps_velocity"><a name="yaw_from_gps_velocity" class="plugin-anchor" href="#yaw_from_gps_velocity"><i class="fa fa-link" aria-hidden="true"></i></a>Yaw From GPS Velocity </h4>
+<p>The EKF runs an additional multi-hypothesis filter internally that uses multiple 3-state Extended Kalman Filters (EKF&apos;s) whose states are NE velocity and yaw angle.
+These individual yaw angle estimates are then combined using a Gaussian Sum Filter (GSF). The individual 3-state EKF&apos;s use IMU and GPS horizontal velocity data (plus optional airspeed data) and do not rely on any prior knowledge of the yaw angle or magnetometer measurements.
+This provides a backup to the yaw from the main filter and is used to reset the yaw for the main 24-state EKF when a post-takeoff loss of navigation indicates that the yaw estimate from the magnetometer is bad.
+This will result in an <code>Emergency yaw reset - magnetometer use stopped</code> message information message at the GCS.</p>
+<p>Data from this estimator is logged when ekf2 replay logging is enabled and can be viewed in the <code>yaw_estimator_status</code> message.
+The individual yaw estimates from the individual 3-state EKF yaw estimators are in the <code>yaw</code> fields.
+The GSF combined yaw estimate is in the <code>yaw_composite</code> field.
+The variance for the GSF yaw estimate is in the <code>yaw_variance</code> field.
+All angles are in radians.
+Weightings applied by the GSF to the individual 3-state EKF outputs are in the<code>weight</code> fields.</p>
+<p>This also makes it possible to operate without any magnetometer data or dual antenna GPS receiver for yaw provided some horizontal movement after takeoff can be performed to enable the yaw to become observable.
+To use this feature, set <a href="parameter_reference.html#EKF2_MAG_TYPE">EKF2_MAG_TYPE</a> to <code>none</code> (5) to disable magnetometer use.
+Once the vehicle has performed sufficient horizontal movement to make the yaw observable, the main 24-state EKF will align it&apos;s yaw to the GSF estimate and commence use of GPS.</p>
+<h4 id="dual-receivers"><a name="dual-receivers" class="plugin-anchor" href="#dual-receivers"><i class="fa fa-link" aria-hidden="true"></i></a>Dual Receivers</h4>
+<p>Data from GPS receivers can be blended using an algorithm that weights data based on reported accuracy (this works best if both receivers output data at the same rate and use the same accuracy).
+The mechanism also provides automatic failover if data from a receiver is lost (it allows, for example, a standard GPS to be used as a backup to a more accurate RTK receiver).
+This is controlled by the <a href="parameter_reference.html#EKF2_GPS_MASK">EKF2_GPS_MASK</a> parameter.</p>
+<p>The <a href="parameter_reference.html#EKF2_GPS_MASK">EKF2_GPS_MASK</a> parameter is set by default to disable blending and always use the first receiver, so it will have to be set to select which receiver accuracy metrics are used to decide how much each receiver output contributes to the blended solution.
+Where different receiver models are used, it is important that the <a href="parameter_reference.html#EKF2_GPS_MASK">EKF2_GPS_MASK</a> parameter is set to a value that uses accuracy metrics that are supported by both receivers.
+For example do not set bit position 0 to <code>true</code> unless the drivers for both receivers publish values in the <code>s_variance_m_s</code> field of the <code>vehicle_gps_position</code> message that are comparable.
+This can be difficult with receivers from different manufacturers due to the different way that accuracy is defined, e.g. CEP vs 1-sigma, etc.</p>
+<p>The following items should be checked during setup:</p>
+<ul>
+<li>Verify that data for the second receiver is present.
+This will be logged as <code>vehicle_gps_position_1</code> and can also be checked when connected via the <em>nsh console</em> using the command <code>listener vehicle_gps_position -i 1</code>.
+The <a href="parameter_reference.html#GPS_2_CONFIG">GPS_2_CONFIG</a> parameter will need to be set correctly.</li>
+<li>Check the <code>s_variance_m_s</code>, <code>eph</code> and <code>epv</code> data from each receiver and decide which accuracy metrics can be used.
+If both receivers output sensible <code>s_variance_m_s</code> and <code>eph</code> data, and GPS vertical position is not being used directly for navigation, then setting <a href="parameter_reference.html#EKF2_GPS_MASK">EKF2_GPS_MASK</a> to 3 is recommended.
+Where only <code>eph</code> data is available and both receivers do not output <code>s_variance_m_s</code> data, set <a href="parameter_reference.html#EKF2_GPS_MASK">EKF2_GPS_MASK</a> to 2.
+Bit position 2 would only be set if the GPS had been selected as a primary height source with the <a href="parameter_reference.html#EKF2_HGT_MODE">EKF2_HGT_MODE</a> parameter and both receivers output sensible <code>epv</code> data.</li>
+<li>The output from the blended receiver data is logged as <code>ekf_gps_position</code>, and can be checked whilst connect via the nsh terminal using the command <code>listener ekf_gps_position</code>.</li>
+<li>Where receivers output at different rates, the blended output will be at the rate of slower receiver.
+Where possible receivers should be configured to output at the same rate.</li>
+</ul>
+<h4 id="gps-performance-requirements"><a name="gps-performance-requirements" class="plugin-anchor" href="#gps-performance-requirements"><i class="fa fa-link" aria-hidden="true"></i></a>GPS Performance Requirements</h4>
+<p>For the ECL to accept GPS data for navigation, certain minimum requirements need to be satisfied over a period of 10 seconds (minimums are defined in the <a href="parameter_reference.html#EKF2_REQ_EPH">EKF2<em>REQ</em>*</a> parameters)</p>
+<p>The table below shows the different metrics directly reported or calculated from the GPS data, and the minimum required values for the data to be used by ECL.
+In addition, the <em>Average Value</em> column shows typical values that might reasonably be obtained from a standard GNSS module (e.g. uBlox M8 series) - i.e. values that are considered good/acceptable.</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Minimum required</th>
+<th>Average Value</th>
+<th>Units</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eph</td>
+<td>3&#xA0;(<a href="parameter_reference.html#EKF2_REQ_EPH">EKF2_REQ_EPH</a>)</td>
+<td>0.8</td>
+<td>m</td>
+<td>Standard deviation of horizontal position error</td>
+</tr>
+<tr>
+<td>epv</td>
+<td>5&#xA0;(<a href="parameter_reference.html#EKF2_REQ_EPV">EKF2_REQ_EPV</a>)</td>
+<td>1.5</td>
+<td>m</td>
+<td>Standard deviation of vertical position error</td>
+</tr>
+<tr>
+<td>Number of satellites</td>
+<td>6&#xA0;(<a href="parameter_reference.html#EKF2_REQ_NSATS">EKF2_REQ_NSATS</a>)</td>
+<td>14</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>Speed variance</td>
+<td>0.5</td>
+<td>0.3</td>
+<td>m/s</td>
+<td></td>
+</tr>
+<tr>
+<td>Fix type</td>
+<td>3</td>
+<td>4</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>hpos_drift_rate</td>
+<td>0.1&#xA0;(<a href="parameter_reference.html#EKF2_REQ_HDRIFT">EKF2_REQ_HDRIFT</a>)</td>
+<td>0.01</td>
+<td>m/s</td>
+<td>Drift rate calculated from reported GPS position (when stationary).</td>
+</tr>
+<tr>
+<td>vpos_drift_rate</td>
+<td>0.2&#xA0;(<a href="parameter_reference.html#EKF2_REQ_VDRIFT">EKF2_REQ_VDRIFT</a>)</td>
+<td>0.02</td>
+<td>m/s</td>
+<td>Drift rate calculated from reported GPS altitude (when stationary).</td>
+</tr>
+<tr>
+<td>hspd</td>
+<td>0.1&#xA0;(<a href="parameter_reference.html#EKF2_REQ_SACC">EKF2_REQ_SACC</a>)</td>
+<td>0.01</td>
+<td>m/s</td>
+<td>Filtered magnitude of reported GPS horizontal velocity.</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> The <code>hpos_drift_rate</code>, <code>vpos_drift_rate</code> and <code>hspd</code> are calculated over a period of 10 seconds and published in the <code>ekf2_gps_drift</code> topic. Note that <code>ekf2_gps_drift</code> is not logged!</p>
+</blockquote>
+<h3 id="range-finder"><a name="range-finder" class="plugin-anchor" href="#range-finder"><i class="fa fa-link" aria-hidden="true"></i></a>Range Finder</h3>
+<p>Range finder distance to ground is used by a single state filter to estimate the vertical position of the terrain relative to the height datum.</p>
+<p>If operating over a flat surface that can be used as a zero height datum, the range finder data can also be used directly by the EKF to estimate height by setting the <a href="parameter_reference.html#EKF2_HGT_MODE">EKF2_HGT_MODE</a> parameter to 2.</p>
+<h3 id="airspeed"><a name="airspeed" class="plugin-anchor" href="#airspeed"><i class="fa fa-link" aria-hidden="true"></i></a>Airspeed</h3>
+<p>Equivalent Airspeed (EAS) data can be used to estimate wind velocity and reduce drift when GPS is lost by setting <a href="parameter_reference.html#EKF2_ARSP_THR">EKF2_ARSP_THR</a> to a positive value.
+Airspeed data will be used when it exceeds the threshold set by a positive value for <a href="parameter_reference.html#EKF2_ARSP_THR">EKF2_ARSP_THR</a> and the vehicle type is not rotary wing.</p>
+<h3 id="synthetic-sideslip"><a name="synthetic-sideslip" class="plugin-anchor" href="#synthetic-sideslip"><i class="fa fa-link" aria-hidden="true"></i></a>Synthetic Sideslip</h3>
+<p>Fixed wing platforms can take advantage of an assumed sideslip observation of zero to improve wind speed estimation and also enable wind speed estimation without an airspeed sensor.
+This is enabled by setting the <a href="parameter_reference.html#EKF2_FUSE_BETA">EKF2_FUSE_BETA</a> parameter to 1.</p>
+<h3 id="mc_wind_estimation_using_drag"><a name="mc_wind_estimation_using_drag" class="plugin-anchor" href="#mc_wind_estimation_using_drag"><i class="fa fa-link" aria-hidden="true"></i></a>Multicopter Wind Estimation using Drag Specific Forces </h3>
+<p>Multi-rotor platforms can take advantage of the relationship between airspeed and drag force along the X and Y body axes to estimate North/East components of wind velocity.
+This is enabled by setting bit position 5 in the <a href="parameter_reference.html#EKF2_AID_MASK">EKF2_AID_MASK</a> parameter to true.
+The relationship between airspeed and specific force (IMU acceleration) along the X and Y body axes is controlled by the <a href="parameter_reference.html#EKF2_BCOEF_X">EKF2_BCOEF_X</a> and <a href="parameter_reference.html#EKF2_BCOEF_Y">EKF2_BCOEF_Y</a> parameters which set the ballistic coefficients for flight in the X and Y directions respectively.
+The amount of specific force observation noise is set by the <a href="parameter_reference.html#EKF2_DRAG_NOISE">EKF2_DRAG_NOISE</a> parameter.</p>
+<p>These can be tuned by flying the vehicle in <a href="../flight_modes/position_mc.html">Position mode</a> repeatedly forwards/backwards between rest and maximum maximum speed, adjusting <a href="parameter_reference.html#EKF2_BCOEF_X">EKF2_BCOEF_X</a> so that the corresponding innovation sequence in the <code>ekf2_innovations_0.drag_innov[0]</code> log message is minimised.
+This is then repeated for right/left movement with adjustment of <a href="parameter_reference.html#EKF2_BCOEF_Y">EKF2_BCOEF_Y</a> to minimise the <code>ekf2_innovations_0.drag_innov[1]</code> innovation sequence.
+Tuning is easier if this testing is conducted in still conditions.</p>
+<p>If you are able to log data without dropouts from boot using <a href="parameter_reference.html#SDLOG_MODE">SDLOG_MODE = 1</a> and <a href="parameter_reference.html#SDLOG_PROFILE">SDLOG_PROFILE = 2</a>, have access to the development environment, and are able to build code, then we recommended you fly <em>once</em> and perform the tuning on logs generated via <a href="https://dev.px4.io/master/en/debug/system_wide_replay.html#ekf2-replay" target="_blank">EKF2 Replay</a> of the flight data.</p>
+<h3 id="optical-flow"><a name="optical-flow" class="plugin-anchor" href="#optical-flow"><i class="fa fa-link" aria-hidden="true"></i></a>Optical Flow</h3>
+<p>Optical flow data will be used if the following conditions are met:</p>
+<ul>
+<li>Valid range finder data is available.</li>
+<li>Bit position 1 in the <a href="parameter_reference.html#EKF2_AID_MASK">EKF2_AID_MASK</a> parameter is true.</li>
+<li>The quality metric returned by the flow sensor is greater than the minimum requirement set by the <a href="parameter_reference.html#EKF2_OF_QMIN">EKF2_OF_QMIN</a> parameter.</li>
+</ul>
+<h3 id="ekf2_extvis"><a name="ekf2_extvis" class="plugin-anchor" href="#ekf2_extvis"><i class="fa fa-link" aria-hidden="true"></i></a>External Vision System </h3>
+<p>Position, velocity or orientation measurements from an external vision system, e.g. Vicon, can be used:</p>
+<ul>
+<li>External vision system horizontal position data will be used if bit position 3 in the <a href="parameter_reference.html#EKF2_AID_MASK">EKF2_AID_MASK</a> parameter is true.</li>
+<li>External vision system vertical position data will be used if the <a href="parameter_reference.html#EKF2_HGT_MODE">EKF2_HGT_MODE</a> parameter is set to 3.</li>
+<li>External vision system velocity data will be used if bit position 8 in the <a href="parameter_reference.html#EKF2_AID_MASK">EKF2_AID_MASK</a> parameter is true.</li>
+<li>External vision system orientation data will be used for yaw estimation if bit position 4 in the <a href="parameter_reference.html#EKF2_AID_MASK">EKF2_AID_MASK</a> parameter is true.</li>
+<li>External vision reference frame offset will be estimated and used to rotate the external vision system data if bit position 6 in the <a href="parameter_reference.html#EKF2_AID_MASK">EKF2_AID_MASK</a> parameter is true.</li>
+</ul>
+<p>Either bit 4 (<code>EV_YAW</code>) or bit 6 (<code>EV_ROTATE</code>) should be set to true, but not both together.
+Following <a href="parameter_reference.html#EKF2_AID_MASK">EKF2_AID_MASK</a> values are supported when using with an external vision system.</p>
+<table>
+<thead>
+<tr>
+<th>EKF_AID_MASK value</th>
+<th>Set bits</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>321</td>
+<td>GPS + EV_VEL + ROTATE_EV</td>
+<td>Heading w.r.t. North (<strong>Recommended</strong>)</td>
+</tr>
+<tr>
+<td>73</td>
+<td>GPS + EV_POS + ROTATE_EV</td>
+<td>Heading w.r.t. North (<em>Not recommended</em>, use <code>EV_VEL</code> instead)</td>
+</tr>
+<tr>
+<td>24</td>
+<td>EV_POS + EV_YAW</td>
+<td>Heading w.r.t. external vision frame</td>
+</tr>
+<tr>
+<td>72</td>
+<td>EV_POS + ROTATE_EV</td>
+<td>Heading w.r.t. North</td>
+</tr>
+<tr>
+<td>272</td>
+<td>EV_VEL + EV_YAW</td>
+<td>Heading w.r.t. external vision frame</td>
+</tr>
+<tr>
+<td>320</td>
+<td>EV_VEL + ROTATE_EV</td>
+<td>Heading w.r.t. North</td>
+</tr>
+<tr>
+<td>280</td>
+<td>EV_POS + EV_VEL + EV_YAW</td>
+<td>Heading w.r.t. external vision frame</td>
+</tr>
+<tr>
+<td>328</td>
+<td>EV_POS + EV_VEL + ROTATE_EV</td>
+<td>Heading w.r.t. North</td>
+</tr>
+</tbody>
+</table>
+<p>The EKF considers uncertainty in the visual pose estimate.
+This uncertainty information can be sent via the covariance fields in the MAVLink <a href="https://mavlink.io/en/messages/common.html#ODOMETRY" target="_blank">ODOMETRY</a> message or it can be set through the parameters <a href="parameter_reference.html#EKF2_EVP_NOISE">EKF2_EVP_NOISE</a>, <a href="parameter_reference.html#EKF2_EVV_NOISE">EKF2_EVV_NOISE</a> and <a href="parameter_reference.html#EKF2_EVA_NOISE">EKF2_EVA_NOISE</a>.
+You can choose the source of the uncertainty with <a href="parameter_reference.html#EKF2_EV_NOISE_MD">EKF2_EV_NOISE_MD</a>.</p>
+<h2 id="how-do-i-use-the-ecl-library-ekf"><a name="how-do-i-use-the-ecl-library-ekf" class="plugin-anchor" href="#how-do-i-use-the-ecl-library-ekf"><i class="fa fa-link" aria-hidden="true"></i></a>How do I use the &apos;ecl&apos; library EKF?</h2>
+<p>Set the <a href="parameter_reference.html#SYS_MC_EST_GROUP">SYS_MC_EST_GROUP</a> parameter to 2 to use the ecl EKF.</p>
+<h2 id="what-are-the-advantages-and-disadvantages-of-the-ecl-ekf-over-other-estimators"><a name="what-are-the-advantages-and-disadvantages-of-the-ecl-ekf-over-other-estimators" class="plugin-anchor" href="#what-are-the-advantages-and-disadvantages-of-the-ecl-ekf-over-other-estimators"><i class="fa fa-link" aria-hidden="true"></i></a>What are the advantages and disadvantages of the ecl EKF over other estimators?</h2>
+<p>Like all estimators, much of the performance comes from the tuning to match sensor characteristics.
+Tuning is a compromise between accuracy and robustness and although we have attempted to provide a tune that meets the needs of most users, there will be applications where tuning changes are required.</p>
+<p>For this reason, no claims for accuracy relative to the legacy combination of <code>attitude_estimator_q</code> + <code>local_position_estimator</code> have been made and the best choice of estimator will depend on the application and tuning.</p>
+<h3 id="disadvantages"><a name="disadvantages" class="plugin-anchor" href="#disadvantages"><i class="fa fa-link" aria-hidden="true"></i></a>Disadvantages</h3>
+<ul>
+<li>The ecl EKF is a complex algorithm that requires a good understanding of extended Kalman filter theory and its application to navigation problems to tune successfully.
+It is therefore more difficult for users that are not achieving good results to know what to change.</li>
+<li>The ecl EKF uses more RAM and flash space.</li>
+<li>The ecl EKF uses more logging space.</li>
+</ul>
+<h3 id="advantages"><a name="advantages" class="plugin-anchor" href="#advantages"><i class="fa fa-link" aria-hidden="true"></i></a>Advantages</h3>
+<ul>
+<li>The ecl EKF is able to fuse data from sensors with different time delays and data rates in a mathematically consistent way which improves accuracy during dynamic maneuvers once time delay parameters are set correctly.</li>
+<li>The ecl EKF is capable of fusing a large range of different sensor types.</li>
+<li>The ecl EKF detects and reports statistically significant inconsistencies in sensor data, assisting with diagnosis of sensor errors.</li>
+<li>For fixed wing operation, the ecl EKF estimates wind speed with or without an airspeed sensor and is able to use the estimated wind in combination with airspeed measurements and sideslip assumptions to extend the dead-reckoning time available if GPS is lost in flight.</li>
+<li>The ecl EKF estimates 3-axis accelerometer bias which improves accuracy for tailsitters and other vehicles that experience large attitude changes between flight phases.</li>
+<li>The federated architecture (combined attitude and position/velocity estimation) means that attitude estimation benefits from all sensor measurements.
+This should provide the potential for improved attitude estimation if tuned correctly.</li>
+</ul>
+<h2 id="how-do-i-check-the-ekf-performance"><a name="how-do-i-check-the-ekf-performance" class="plugin-anchor" href="#how-do-i-check-the-ekf-performance"><i class="fa fa-link" aria-hidden="true"></i></a>How do I check the EKF performance?</h2>
+<p>EKF outputs, states and status data are published to a number of uORB topics which are logged to the SD card during flight.
+The following guide assumes that data has been logged using the <em>.ulog file format</em>.
+The <strong>.ulog</strong> format data can be parsed in python by using the <a href="https://github.com/PX4/pyulog" target="_blank">PX4 pyulog library</a>.</p>
+<p>Most of the EKF data is found in the <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_innovations.msg" target="_blank">ekf2_innovations</a> and <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_status.msg" target="_blank">estimator_status</a> uORB messages that are logged to the .ulog file.</p>
+<p>A python script that automatically generates analysis plots and metadata can be found <a href="https://github.com/PX4/Firmware/blob/master/Tools/ecl_ekf/process_logdata_ekf.py" target="_blank">here</a>.
+To use this script file, cd to the <code>Tools/ecl_ekf</code> directory and enter <code>python process_logdata_ekf.py &lt;log_file.ulg&gt;</code>.
+This saves performance metadata in a csv file named <strong><log_file>.mdat.csv</log_file></strong> and plots in a pdf file named <code>&lt;log_file&gt;.pdf</code>.</p>
+<p>Multiple log files in a directory can be analysed using the <a href="https://github.com/PX4/Firmware/blob/master/Tools/ecl_ekf/batch_process_logdata_ekf.py" target="_blank">batch_process_logdata_ekf.py</a> script.
+When this has been done, the performance metadata files can be processed to provide a statistical assessment of the estimator performance across the population of logs using the <a href="https://github.com/PX4/Firmware/blob/master/Tools/ecl_ekf/batch_process_metadata_ekf.py" target="_blank">batch_process_metadata_ekf.py</a> script.</p>
+<h3 id="output-data"><a name="output-data" class="plugin-anchor" href="#output-data"><i class="fa fa-link" aria-hidden="true"></i></a>Output Data</h3>
+<ul>
+<li>Attitude output data is found in the <a href="https://github.com/PX4/Firmware/blob/master/msg/vehicle_attitude.msg" target="_blank">vehicle_attitude</a> message.</li>
+<li>Local position output data is found in the <a href="https://github.com/PX4/Firmware/blob/master/msg/vehicle_local_position.msg" target="_blank">vehicle_local_position</a> message.</li>
+<li>Global (WGS-84) output data is found in the <a href="https://github.com/PX4/Firmware/blob/master/msg/vehicle_global_position.msg" target="_blank">vehicle_global_position</a> message.</li>
+<li>Wind velocity output data is found in the <a href="https://github.com/PX4/Firmware/blob/master/msg/wind_estimate.msg" target="_blank">wind_estimate</a> message.</li>
+</ul>
+<h3 id="states"><a name="states" class="plugin-anchor" href="#states"><i class="fa fa-link" aria-hidden="true"></i></a>States</h3>
+<p>Refer to states[32] in <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_status.msg" target="_blank">estimator_status</a>.
+The index map for states[32] is as follows:</p>
+<ul>
+<li>[0 ... 3] Quaternions</li>
+<li>[4 ... 6] Velocity NED (m/s)</li>
+<li>[7 ... 9] Position NED (m)</li>
+<li>[10 ... 12] IMU delta angle bias XYZ (rad)</li>
+<li>[13 ... 15] IMU delta velocity bias XYZ (m/s)</li>
+<li>[16 ... 18] Earth magnetic field NED (gauss)</li>
+<li>[19 ... 21] Body magnetic field XYZ (gauss)</li>
+<li>[22 ... 23] Wind velocity NE (m/s)</li>
+<li>[24 ... 32] Not Used</li>
+</ul>
+<h3 id="state-variances"><a name="state-variances" class="plugin-anchor" href="#state-variances"><i class="fa fa-link" aria-hidden="true"></i></a>State Variances</h3>
+<p>Refer to covariances[28] in <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_status.msg" target="_blank">estimator_status</a>.
+The index map for covariances[28] is as follows:</p>
+<ul>
+<li>[0 ... 3] Quaternions</li>
+<li>[4 ... 6] Velocity NED (m/s)^2</li>
+<li>[7 ... 9] Position NED (m^2)</li>
+<li>[10 ... 12] IMU delta angle bias XYZ (rad^2)</li>
+<li>[13 ... 15] IMU delta velocity bias XYZ (m/s)^2</li>
+<li>[16 ... 18] Earth magnetic field NED (gauss^2)</li>
+<li>[19 ... 21] Body magnetic field XYZ (gauss^2)</li>
+<li>[22 ... 23] Wind velocity NE (m/s)^2</li>
+<li>[24 ... 28] Not Used</li>
+</ul>
+<h3 id="observation-innovations--innovation-variances"><a name="observation-innovations--innovation-variances" class="plugin-anchor" href="#observation-innovations--innovation-variances"><i class="fa fa-link" aria-hidden="true"></i></a>Observation Innovations &amp; Innovation Variances</h3>
+<p>The observation <code>estimator_innovations</code>, <code>estimator_innovation_variances</code>, and <code>estimator_innovation_test_ratios</code> message fields are defined in <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_innovations.msg" target="_blank">estimator_innovations.msg</a>.
+The messages all have the same field names/types (but different units).</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> The messages have the same fields because they are generated from the same field definition.
+  The <code># TOPICS</code> line (at the end of <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_innovations.msg" target="_blank">the file</a>) lists the names of the set of messages to be created):</p>
+<pre><code>  # TOPICS estimator_innovations estimator_innovation_variances estimator_innovation_test_ratios
+</code></pre></blockquote>
+<p>Some of the observations are:</p>
+<ul>
+<li>Magnetometer XYZ (gauss, gauss^2) : <code>mag_field[3]</code></li>
+<li>Yaw angle (rad, rad^2) : <code>heading</code></li>
+<li>True Airspeed (m/s, (m/s)^2) : <code>airspeed</code></li>
+<li>Synthetic sideslip (rad, rad^2) : <code>beta</code></li>
+<li>Optical flow XY (rad/sec, (rad/s)^2) : <code>flow</code></li>
+<li>Height above ground (m, m^2) : <code>hagl</code></li>
+<li>Drag specific force ((m/s)^2): <code>drag</code></li>
+<li>Velocity and position innovations : per sensor</li>
+</ul>
+<p>In addition, each sensor has its own fields for horizontal and vertical position and/or velocity values (where appropriate).
+These are largely self documenting, and are reproduced below:</p>
+<pre><code># GPS
+float32[2] gps_hvel    # horizontal GPS velocity innovation (m/sec) and innovation variance ((m/sec)**2)
+float32    gps_vvel    # vertical GPS velocity innovation (m/sec) and innovation variance ((m/sec)**2)
+float32[2] gps_hpos    # horizontal GPS position innovation (m) and innovation variance (m**2)
+float32    gps_vpos    # vertical GPS position innovation (m) and innovation variance (m**2)
+
+# External Vision
+float32[2] ev_hvel    # horizontal external vision velocity innovation (m/sec) and innovation variance ((m/sec)**2)
+float32    ev_vvel    # vertical external vision velocity innovation (m/sec) and innovation variance ((m/sec)**2)
+float32[2] ev_hpos    # horizontal external vision position innovation (m) and innovation variance (m**2)
+float32    ev_vpos    # vertical external vision position innovation (m) and innovation variance (m**2)
+
+# Fake Position and Velocity
+float32[2] fake_hvel    # fake horizontal velocity innovation (m/s) and innovation variance ((m/s)**2)
+float32    fake_vvel    # fake vertical velocity innovation (m/s) and innovation variance ((m/s)**2)
+float32[2] fake_hpos    # fake horizontal position innovation (m) and innovation variance (m**2)
+float32    fake_vpos    # fake vertical position innovation (m) and innovation variance (m**2)
+
+# Height sensors
+float32 rng_vpos    # range sensor height innovation (m) and innovation variance (m**2)
+float32 baro_vpos    # barometer height innovation (m) and innovation variance (m**2)
+
+# Auxiliary velocity
+float32[2] aux_hvel    # horizontal auxiliar velocity innovation from landing target measurement (m/sec) and innovation variance ((m/sec)**2)
+float32    aux_vvel    # vertical auxiliar velocity innovation from landing target measurement (m/sec) and innovation variance ((m/sec)**2)
+</code></pre><h3 id="output-complementary-filter"><a name="output-complementary-filter" class="plugin-anchor" href="#output-complementary-filter"><i class="fa fa-link" aria-hidden="true"></i></a>Output Complementary Filter</h3>
+<p>The output complementary filter is used to propagate states forward from the fusion time horizon to current time.
+To check the magnitude of the angular, velocity and position tracking errors measured at the fusion time horizon, refer to <code>output_tracking_error[3]</code> in the <code>ekf2_innovations</code> message.</p>
+<p>The index map is as follows:</p>
+<ul>
+<li>[0] Angular tracking error magnitude (rad)</li>
+<li>[1] Velocity tracking error magnitude (m/s).
+The velocity tracking time constant can be adjusted using the <a href="parameter_reference.html#EKF2_TAU_VEL">EKF2_TAU_VEL</a> parameter.
+Reducing this parameter reduces steady state errors but increases the amount of observation noise on the NED velocity outputs.</li>
+<li>[2] Position tracking error magnitude (m).
+The position tracking time constant can be adjusted using the <a href="parameter_reference.html#EKF2_TAU_POS">EKF2_TAU_POS</a> parameter.
+Reducing this parameter reduces steady state errors but increases the amount of observation noise on the NED position outputs.</li>
+</ul>
+<h3 id="ekf-errors"><a name="ekf-errors" class="plugin-anchor" href="#ekf-errors"><i class="fa fa-link" aria-hidden="true"></i></a>EKF Errors</h3>
+<p>The EKF contains internal error checking for badly conditioned state and covariance updates.
+Refer to the filter_fault_flags in <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_status.msg" target="_blank">estimator_status</a>.</p>
+<h3 id="observation-errors"><a name="observation-errors" class="plugin-anchor" href="#observation-errors"><i class="fa fa-link" aria-hidden="true"></i></a>Observation Errors</h3>
+<p>There are two categories of observation faults:</p>
+<ul>
+<li>Loss of data.
+An example of this is a range finder failing to provide a return.</li>
+<li>The innovation, which is the difference between the state prediction and sensor observation is excessive.
+An example of this is excessive vibration causing a large vertical position error, resulting in the barometer height measurement being rejected.</li>
+</ul>
+<p>Both of these can result in observation data being rejected for long enough to cause the EKF to attempt a reset of the states using the sensor observations.
+All observations have a statistical confidence checks applied to the innovations.
+The number of standard deviations for the check are controlled by the <code>EKF2_*_GATE</code> parameter for each observation type.</p>
+<p>Test levels are  available in <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_status.msg" target="_blank">estimator_status</a> as follows:</p>
+<ul>
+<li><code>mag_test_ratio</code>: ratio of the largest magnetometer innovation component to the innovation test limit</li>
+<li><code>vel_test_ratio</code>: ratio of the largest velocity innovation component to the innovation test limit</li>
+<li><code>pos_test_ratio</code>: ratio of the largest horizontal position innovation component to the innovation test limit</li>
+<li><code>hgt_test_ratio</code>: ratio of the vertical position innovation to the innovation test limit</li>
+<li><code>tas_test_ratio</code>: ratio of the true airspeed innovation to the innovation test limit</li>
+<li><code>hagl_test_ratio</code>: ratio of the height above ground innovation to the innovation test limit</li>
+</ul>
+<p>For a binary pass/fail summary for each sensor, refer to innovation_check_flags in <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_status.msg" target="_blank">estimator_status</a>.</p>
+<h3 id="gps-quality-checks"><a name="gps-quality-checks" class="plugin-anchor" href="#gps-quality-checks"><i class="fa fa-link" aria-hidden="true"></i></a>GPS Quality Checks</h3>
+<p>The EKF applies a number of GPS quality checks before commencing GPS aiding.
+These checks are controlled by the <a href="parameter_reference.html#EKF2_GPS_CHECK">EKF2_GPS_CHECK</a> and <code>EKF2_REQ_*</code> parameters.
+The pass/fail status for these checks is logged in the <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_status.msg" target="_blank">estimator_status</a>.gps_check_fail_flags message.
+This integer will be zero when all required GPS checks have passed.
+If the EKF is not commencing GPS alignment, check the value of the integer against the bitmask definition <code>gps_check_fail_flags</code> in <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_status.msg" target="_blank">estimator_status</a>.</p>
+<h3 id="ekf-numerical-errors"><a name="ekf-numerical-errors" class="plugin-anchor" href="#ekf-numerical-errors"><i class="fa fa-link" aria-hidden="true"></i></a>EKF Numerical Errors</h3>
+<p>The EKF uses single precision floating point operations for all of its computations and first order approximations for derivation of the covariance prediction and update equations in order to reduce processing requirements.
+This means that it is possible when re-tuning the EKF to encounter conditions where the covariance matrix operations become badly conditioned enough to cause divergence or significant errors in the state estimates.</p>
+<p>To prevent this, every covariance and state update step contains the following error detection and correction steps:</p>
+<ul>
+<li>If the innovation variance is less than the observation variance (this requires a negative state variance which is impossible) or the covariance update will produce a negative variance for any of the states, then:<ul>
+<li>The state and covariance update is skipped</li>
+<li>The corresponding rows and columns in the covariance matrix are reset</li>
+<li>The failure is recorded in the <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_status.msg" target="_blank">estimator_status</a> filter_fault_flags message</li>
+</ul>
+</li>
+<li>State variances (diagonals in the covariance matrix) are constrained to be non-negative.</li>
+<li>An upper limit is applied to state variances.</li>
+<li>Symmetry is forced on the covariance matrix.</li>
+</ul>
+<p>After re-tuning the filter, particularly re-tuning that involve reducing the noise variables, the value of <code>estimator_status.gps_check_fail_flags</code> should be checked to ensure that it remains zero.</p>
+<h2 id="what-should-i-do-if-the-height-estimate-is-diverging"><a name="what-should-i-do-if-the-height-estimate-is-diverging" class="plugin-anchor" href="#what-should-i-do-if-the-height-estimate-is-diverging"><i class="fa fa-link" aria-hidden="true"></i></a>What should I do if the height estimate is diverging?</h2>
+<p>The most common cause of EKF height diverging away from GPS and altimeter measurements during flight is clipping and/or aliasing of the IMU measurements caused by vibration.
+If this is occurring, then the following signs should be evident in the data</p>
+<ul>
+<li><a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_innovations.msg" target="_blank">ekf2_innovations</a>.vel_pos_innov[2] and  <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_innovations.msg" target="_blank">ekf2_innovations</a>.vel_pos_innov[5] will both have the same sign.</li>
+<li><a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_status.msg" target="_blank">estimator_status</a>.hgt_test_ratio will be greater than 1.0</li>
+</ul>
+<p>The recommended first step is to ensure that the autopilot is isolated from the airframe using an effective isolation mounting system.
+An isolation mount has 6 degrees of freedom, and therefore 6 resonant frequencies.
+As a general rule, the 6 resonant frequencies of the autopilot on the isolation mount should be above 25Hz to avoid interaction with the autopilot dynamics and below the frequency of the motors.</p>
+<p>An isolation mount can make vibration worse if the resonant frequencies coincide with motor or propeller blade passage frequencies.</p>
+<p>The EKF can be made more resistant to vibration induced height divergence by making the following parameter changes:</p>
+<ul>
+<li>Double the value of the innovation gate for the primary height sensor.
+If using barometric height this is <a href="parameter_reference.html#EKF2_BARO_GATE">EKF2_BARO_GATE</a>.</li>
+<li>Increase the value of <a href="parameter_reference.html#EKF2_ACC_NOISE">EKF2_ACC_NOISE</a> to 0.5 initially.
+If divergence is still occurring, increase in further increments of 0.1 but do not go above 1.0</li>
+</ul>
+<p>Note that the effect of these changes will make the EKF more sensitive to errors in GPS vertical velocity and barometric pressure.</p>
+<h2 id="what-should-i-do-if-the-position-estimate-is-diverging"><a name="what-should-i-do-if-the-position-estimate-is-diverging" class="plugin-anchor" href="#what-should-i-do-if-the-position-estimate-is-diverging"><i class="fa fa-link" aria-hidden="true"></i></a>What should I do if the position estimate is diverging?</h2>
+<p>The most common causes of position divergence are:</p>
+<ul>
+<li>High vibration levels.<ul>
+<li>Fix by improving mechanical isolation of the autopilot.</li>
+<li>Increasing the value of <a href="parameter_reference.html#EKF2_ACC_NOISE">EKF2_ACC_NOISE</a> and <a href="parameter_reference.html#EKF2_GYR_NOISE">EKF2_GYR_NOISE</a> can help, but does make the EKF more vulnerable to GPS glitches.</li>
+</ul>
+</li>
+<li>Large gyro bias offsets.<ul>
+<li>Fix by re-calibrating the gyro.
+Check for excessive temperature sensitivity (&gt; 3 deg/sec bias change during warm-up from a cold start and replace the sensor if affected of insulate to to slow the rate of temperature change.</li>
+</ul>
+</li>
+<li>Bad yaw alignment<ul>
+<li>Check the magnetometer calibration and alignment.</li>
+<li>Check the heading shown QGC is within within 15 deg truth</li>
+</ul>
+</li>
+<li>Poor GPS accuracy<ul>
+<li>Check for interference</li>
+<li>Improve separation and shielding</li>
+<li>Check flying location for GPS signal obstructions and reflectors (nearby tall buildings)</li>
+</ul>
+</li>
+<li>Loss of GPS</li>
+</ul>
+<p>Determining which of these is the primary cause requires a methodical approach to analysis of the EKF log data:</p>
+<ul>
+<li>Plot the velocity innovation test ratio - <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_status.msg" target="_blank">estimator_status</a>.vel_test_ratio</li>
+<li>Plot the horizontal position innovation test ratio - <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_status.msg" target="_blank">estimator_status</a>.pos_test_ratio</li>
+<li>Plot the height innovation test ratio - <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_status.msg" target="_blank">estimator_status</a>.hgt_test_ratio</li>
+<li>Plot the magnetometer innovation test ratio - <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_status.msg" target="_blank">estimator_status</a>.mag_test_ratio</li>
+<li>Plot the GPS receiver reported speed accuracy - <a href="https://github.com/PX4/Firmware/blob/master/msg/vehicle_gps_position.msg" target="_blank">vehicle_gps_position</a>.s_variance_m_s</li>
+<li>Plot the IMU delta angle state estimates - <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_status.msg" target="_blank">estimator_status</a>.states[10], states[11] and states[12]</li>
+<li>Plot the EKF internal high frequency vibration metrics:<ul>
+<li>Delta angle coning vibration - <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_status.msg" target="_blank">estimator_status</a>.vibe[0]</li>
+<li>High frequency delta angle vibration - <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_status.msg" target="_blank">estimator_status</a>.vibe[1]</li>
+<li>High frequency delta velocity vibration - <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_status.msg" target="_blank">estimator_status</a>.vibe[2]</li>
+</ul>
+</li>
+</ul>
+<p>During normal operation, all the test ratios should remain below 0.5 with only occasional spikes above this as shown in the example below from a successful flight:</p>
+<p><img src="../../assets/ecl/test_ratios_-_successful.png" alt="Position, Velocity, Height and Magnetometer Test Ratios"></p>
+<p>The following plot shows the EKF vibration metrics for a multirotor with good isolation.
+The landing shock and the increased vibration during takeoff and landing can be seen.
+Insufficient data has been gathered with these metrics to provide specific advice on maximum thresholds.</p>
+<p><img src="../../assets/ecl/vibration_metrics_-_successful.png" alt="Vibration metrics - successful"></p>
+<p>The above vibration metrics are of limited value as the presence of vibration at a frequency close to the IMU sampling frequency (1 kHz for most boards) will cause offsets to appear in the data that do not show up in the high frequency vibration metrics.
+The only way to detect aliasing errors is in their effect on inertial navigation accuracy and the rise in innovation levels.</p>
+<p>In addition to generating large position and velocity test ratios of &gt; 1.0, the different error mechanisms affect the other test ratios in different ways:</p>
+<h3 id="determination-of-excessive-vibration"><a name="determination-of-excessive-vibration" class="plugin-anchor" href="#determination-of-excessive-vibration"><i class="fa fa-link" aria-hidden="true"></i></a>Determination of Excessive Vibration</h3>
+<p>High vibration levels normally affect vertical position and velocity innovations as well as the horizontal components.
+Magnetometer test levels are only affected to a small extent.</p>
+<p>(insert example plots showing bad vibration here)</p>
+<h3 id="determination-of-excessive-gyro-bias"><a name="determination-of-excessive-gyro-bias" class="plugin-anchor" href="#determination-of-excessive-gyro-bias"><i class="fa fa-link" aria-hidden="true"></i></a>Determination of Excessive Gyro Bias</h3>
+<p>Large gyro bias offsets are normally characterised by a change in the value of delta angle bias greater than 5E-4 during flight (equivalent to ~3 deg/sec) and can also cause a large increase in the magnetometer test ratio if the yaw axis is affected.
+Height is normally unaffected other than extreme cases.
+Switch on bias value of up to 5 deg/sec can be tolerated provided the filter is given time settle before flying.
+Pre-flight checks performed by the commander should prevent arming if the position is diverging.</p>
+<p>(insert example plots showing bad gyro bias here)</p>
+<h3 id="determination-of-poor-yaw-accuracy"><a name="determination-of-poor-yaw-accuracy" class="plugin-anchor" href="#determination-of-poor-yaw-accuracy"><i class="fa fa-link" aria-hidden="true"></i></a>Determination of Poor Yaw Accuracy</h3>
+<p>Bad yaw alignment causes a velocity test ratio that increases rapidly when the vehicle starts moving due inconsistency in the direction of velocity calculated by the inertial nav and the GPS measurement.
+Magnetometer innovations are slightly affected.
+Height is normally unaffected.</p>
+<p>(insert example plots showing bad yaw alignment here)</p>
+<h3 id="determination-of-poor-gps-accuracy"><a name="determination-of-poor-gps-accuracy" class="plugin-anchor" href="#determination-of-poor-gps-accuracy"><i class="fa fa-link" aria-hidden="true"></i></a>Determination of Poor GPS Accuracy</h3>
+<p>Poor GPS accuracy is normally accompanied by a rise in the reported velocity error of the receiver in conjunction with a rise in innovations.
+Transient errors due to multipath, obscuration and interference are more common causes.
+Here is an example of a temporary loss of GPS accuracy where the multi-rotor started drifting away from its loiter location and had to be corrected using the sticks.
+The rise in <a href="https://github.com/PX4/Firmware/blob/master/msg/estimator_status.msg" target="_blank">estimator_status</a>.vel_test_ratio to greater than 1 indicates the GPs velocity was inconsistent with other measurements and has been rejected.</p>
+<p><img src="../../assets/ecl/gps_glitch_-_test_ratios.png" alt="GPS glitch - test ratios"></p>
+<p>This is accompanied with rise in the GPS receivers reported velocity accuracy which indicates that it was likely a GPS error.</p>
+<p><img src="../../assets/ecl/gps_glitch_-_reported_receiver_accuracy.png" alt="GPS Glitch - reported receiver accuracy"></p>
+<p>If we also look at the GPS horizontal velocity innovations and innovation variances, we can see the large spike in North velocity innovation that accompanies this GPS &apos;glitch&apos; event.</p>
+<p><img src="../../assets/ecl/gps_glitch_-_velocity_innovations.png" alt="GPS Glitch - velocity innovations"></p>
+<h3 id="determination-of-gps-data-loss"><a name="determination-of-gps-data-loss" class="plugin-anchor" href="#determination-of-gps-data-loss"><i class="fa fa-link" aria-hidden="true"></i></a>Determination of GPS Data Loss</h3>
+<p>Loss of GPS data will be shown by the velocity and position innovation test ratios &apos;flat-lining&apos;.
+If this occurs, check the other GPS status data in <code>vehicle_gps_position</code> for further information.</p>
+<p>The following plot shows the NED GPS velocity innovations <code>ekf2_innovations_0.vel_pos_innov[0 ... 2]</code>, the GPS NE position innovations <code>ekf2_innovations_0.vel_pos_innov[3 ... 4]</code> and the Baro vertical position innovation <code>ekf2_innovations_0.vel_pos_innov[5]</code> generated from a simulated VTOL flight using SITL Gazebo.</p>
+<p>The simulated GPS was made to lose lock at 73 seconds.
+Note the NED velocity innovations and NE position innovations &apos;flat-line&apos; after GPS is lost.
+Note that after 10 seconds without GPS data, the EKF reverts back to a static position mode using the last known position and the NE position innovations start to change again.</p>
+<p><img src="../../assets/ecl/gps_data_loss_-_velocity_innovations.png" alt="GPS Data Loss - in SITL"></p>
+<h3 id="barometer-ground-effect-compensation"><a name="barometer-ground-effect-compensation" class="plugin-anchor" href="#barometer-ground-effect-compensation"><i class="fa fa-link" aria-hidden="true"></i></a>Barometer Ground Effect Compensation</h3>
+<p>If the vehicle has the tendency during landing to climb back into the air when close to the ground, the most likely cause is barometer ground effect.</p>
+<p>This is caused when air pushed down by the propellers hits the ground and creates a high pressure zone below the drone.
+The result is a lower reading of pressure altitude, leading to an unwanted climb being commanded.
+The figure below shows a typical situation where the ground effect is present.
+Note how the barometer signal dips at the beginning and end of the flight.</p>
+<p><img src="../../assets/ecl/gnd_effect.png" alt="Barometer ground effect"></p>
+<p>You can enable <em>ground effect compensation</em> to fix this problem:</p>
+<ul>
+<li>From the plot estimate the magnitude of the barometer dip during takeoff or landing. In the plot above one can read a barometer dip of about 6 meters during landing.</li>
+<li>Then set the parameter <a href="parameter_reference.html#EKF2_GND_EFF_DZ">EKF2_GND_EFF_DZ</a> to that value and add a 10 percent margin. Therefore, in this case a value of 6.6 meters would be a good starting point.</li>
+</ul>
+<p>If a terrain estimate is available (e.g. the vehicle is equipped with a range finder) then you can additionally specify <a href="parameter_reference.html#EKF2_GND_MAX_HGT">EKF2_GND_MAX_HGT</a>, the above ground-level altitude below which ground effect compensation should be activated.
+If no terrain estimate is available this parameter will have no effect and the system will use heuristics to determine if ground effect compensation should be activated.</p>
+<h2 id="further-information"><a name="further-information" class="plugin-anchor" href="#further-information"><i class="fa fa-link" aria-hidden="true"></i></a>Further Information</h2>
+<ul>
+<li><a href="https://youtu.be/HkYRJJoyBwQ" target="_blank">PX4 State Estimation Overview</a>, <em>PX4 Developer Summit 2019</em>, Dr. Paul Riseborough): Overview of the estimator, and major changes from 2018/19, and the expected improvements through 2019/20.</li>
+</ul>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-05-18 08:52:30 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="esc_calibration.html" class="navigation navigation-prev " aria-label="Previous page: ESC Calibration">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="flight_termination.html" class="navigation navigation-next " aria-label="Next page: Flight Termination Configuration">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ECL/EKF Overview & Tuning","level":"1.9.6","depth":2,"next":{"title":"Flight Termination Configuration","level":"1.9.7","depth":2,"path":"advanced_config/flight_termination.md","ref":"advanced_config/flight_termination.md","articles":[]},"previous":{"title":"ESC Calibration","level":"1.9.5","depth":2,"path":"advanced_config/esc_calibration.md","ref":"advanced_config/esc_calibration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"v1.11.0"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"advanced_config/tuning_the_ecl_ekf.md","mtime":"2020-05-18T08:52:30.495Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-18T08:53:24.470Z"},"basePath":"..","book":{"language":"en"}});
+        });
+    </script>
+</div>
+
+    
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-versions-select/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
