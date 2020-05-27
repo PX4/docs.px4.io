@@ -3156,20 +3156,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.4.7" data-path="../complete_vehicles/intel_aero.html">
-            
-                <a href="../complete_vehicles/intel_aero.html">
-            
-                    
-                    Intel® Aero RTF Drone (Discontinued)
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.11.4.8" data-path="../flight_controller/auav_x2.html">
+        <li class="chapter " data-level="1.11.4.7" data-path="../flight_controller/auav_x2.html">
             
                 <a href="../flight_controller/auav_x2.html">
             
@@ -3182,7 +3169,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.4.9" data-path="../flight_controller/raspberry_pi_navio2.html">
+        <li class="chapter " data-level="1.11.4.8" data-path="../flight_controller/raspberry_pi_navio2.html">
             
                 <a href="../flight_controller/raspberry_pi_navio2.html">
             
@@ -3195,7 +3182,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.4.10" data-path="../flight_controller/snapdragon_flight.html">
+        <li class="chapter " data-level="1.11.4.9" data-path="../flight_controller/snapdragon_flight.html">
             
                 <a href="../flight_controller/snapdragon_flight.html">
             
@@ -3209,7 +3196,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.11.4.10.1" data-path="../flight_controller/snapdragon_flight_hardware_example_setup.html">
+        <li class="chapter " data-level="1.11.4.9.1" data-path="../flight_controller/snapdragon_flight_hardware_example_setup.html">
             
                 <a href="../flight_controller/snapdragon_flight_hardware_example_setup.html">
             
@@ -3222,7 +3209,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.4.10.2" data-path="../flight_controller/snapdragon_flight_dev_environment_installation.html">
+        <li class="chapter " data-level="1.11.4.9.2" data-path="../flight_controller/snapdragon_flight_dev_environment_installation.html">
             
                 <a href="../flight_controller/snapdragon_flight_dev_environment_installation.html">
             
@@ -3235,7 +3222,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.4.10.3" data-path="../flight_controller/snapdragon_flight_software_installation.html">
+        <li class="chapter " data-level="1.11.4.9.3" data-path="../flight_controller/snapdragon_flight_software_installation.html">
             
                 <a href="../flight_controller/snapdragon_flight_software_installation.html">
             
@@ -3248,7 +3235,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.4.10.4" data-path="../flight_controller/snapdragon_flight_configuration.html">
+        <li class="chapter " data-level="1.11.4.9.4" data-path="../flight_controller/snapdragon_flight_configuration.html">
             
                 <a href="../flight_controller/snapdragon_flight_configuration.html">
             
@@ -3261,7 +3248,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.4.10.5" data-path="../flight_controller/snapdragon_flight_advanced.html">
+        <li class="chapter " data-level="1.11.4.9.5" data-path="../flight_controller/snapdragon_flight_advanced.html">
             
                 <a href="../flight_controller/snapdragon_flight_advanced.html">
             
@@ -3279,7 +3266,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.4.11" data-path="../flight_controller/pixhawk.html">
+        <li class="chapter " data-level="1.11.4.10" data-path="../flight_controller/pixhawk.html">
             
                 <a href="../flight_controller/pixhawk.html">
             
@@ -3292,7 +3279,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.4.12" data-path="../flight_controller/pixhawk_mini.html">
+        <li class="chapter " data-level="1.11.4.11" data-path="../flight_controller/pixhawk_mini.html">
             
                 <a href="../flight_controller/pixhawk_mini.html">
             
@@ -3406,6 +3393,19 @@
             
                     
                     Holybro Kopis 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../complete_vehicles/intel_aero.html">
+            
+                <a href="../complete_vehicles/intel_aero.html">
+            
+                    
+                    Intel® Aero RTF Drone (Discontinued)
             
                 </a>
             
@@ -3586,11 +3586,11 @@
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> Enabling <code>CBRK_AIRSPD_CHK</code> will prevent the sensor driver from starting and prevent calibrarion (i.e. it does more than just bypassing flight checks).</p>
 </blockquote>
-<p>To tell the flight controller it will fly without an airspeed sensor you need to set the airspeed mode (<a href="../advanced_config/parameter_reference.html#FW_ARSP_MODE">FW_ARSP_MODE</a>) to &apos;declare airspeed invalid&apos; (2).</p>
+<p>To tell the flight controller that it is fling without an airspeed sensor you need to set the airspeed mode to &apos;Airspeed disabled&apos; (<a href="../advanced_config/parameter_reference.html#FW_ARSP_MODE">FW_ARSP_MODE=1</a>).</p>
 <p>Set the cruise throttle (<a href="../advanced_config/parameter_reference.html#FW_THR_CRUISE">FW_THR_CRUISE</a>) to the percentage as determined from the log of the reference flight. Note that QGC scales this from 1..100 and the thrust value from the log is scaled from 0..1. So a thrust of 0.65 should be entered as 65. For safety reasons it is recommended to add +- 10% throttle to the determined value for testing a first flight.</p>
 <p>Set the minimum front transition time (<a href="../advanced_config/parameter_reference.html#VT_TRANS_MIN_TM">VT_TRANS_MIN_TM</a>) to the number of seconds determined from the reference flight and add +- 30% for safety.</p>
 <h3 id="optional-recommended-parameters"><a name="optional-recommended-parameters" class="plugin-anchor" href="#optional-recommended-parameters"><i class="fa fa-link" aria-hidden="true"></i></a>Optional Recommended Parameters</h3>
-<p>Because the risk of stalling is real, it is recommended to set the &apos;fixed wing minimum altitude&apos; aka &apos;QuadChute&apos;  (<a href="../advanced_config/parameter_reference.html#VT_FW_MIN_ALT">VT_FW_MIN_ALT</a>). This will cause the VTOL to transition back to multicopter mode and initiate the <a href="../flight_modes/return.html">Return mode</a> below a certain altitude. You could set this to 15 or 20 meters to give the multicopter time to recover from a stall.</p>
+<p>Because the risk of stalling is real, it is recommended to set the &apos;fixed wing minimum altitude&apos; aka &apos;QuadChute&apos; (<a href="../advanced_config/parameter_reference.html#VT_FW_MIN_ALT">VT_FW_MIN_ALT</a>). This will cause the VTOL to transition back to multicopter mode and initiate the <a href="../flight_modes/return.html">Return mode</a> below a certain altitude. You could set this to 15 or 20 meters to give the multicopter time to recover from a stall.</p>
 <p>The position estimator tested for this mode is EKF2, you can set this by changing the <a href="../advanced_config/parameter_reference.html#SYS_MC_EST_GROUP">SYS_MC_EST_GROUP</a>.</p>
 <h2 id="first-flight-without-airspeed-sensor"><a name="first-flight-without-airspeed-sensor" class="plugin-anchor" href="#first-flight-without-airspeed-sensor"><i class="fa fa-link" aria-hidden="true"></i></a>First Flight Without Airspeed Sensor</h2>
 <p>The values apply to a position controlled flight (like <a href="../flight_modes/hold.html">Hold mode</a> or <a href="../flight_modes/mission.html">Mission mode</a> or Mission mode). It is therefor recommended that a mission is configured at a safe altitude, approximately 10m above the QuadChute threshold. Like for the reference flight, this flight should be performed in very low wind conditions. For the first flight the following is recommended:</p>
@@ -3616,7 +3616,7 @@
 <li><a href="../advanced_config/parameter_reference.html#VT_TRANS_MIN_TM">VT_TRANS_MIN_TM</a>: determined (e.g. 10 seconds)</li>
 <li><a href="../advanced_config/parameter_reference.html#VT_FW_MIN_ALT">VT_FW_MIN_ALT</a>: 15</li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-05-25 07:06:46 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-05-27 01:21:26 </span> </footer>
                                 
                                 </section>
                             
@@ -3659,7 +3659,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"没有空速传感器的VTOL ","level":"1.9.4.3","depth":3,"next":{"title":"垂直起降风向仪","level":"1.9.4.4","depth":3,"path":"config_vtol/vtol_weathervane.md","ref":"config_vtol/vtol_weathervane.md","articles":[]},"previous":{"title":"VTOL后转换调参","level":"1.9.4.2","depth":3,"path":"config_vtol/vtol_back_transition_tuning.md","ref":"config_vtol/vtol_back_transition_tuning.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"config_vtol/vtol_without_airspeed_sensor.md","mtime":"2020-05-25T07:06:46.381Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-25T07:08:15.898Z"},"basePath":"..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"没有空速传感器的VTOL ","level":"1.9.4.3","depth":3,"next":{"title":"垂直起降风向仪","level":"1.9.4.4","depth":3,"path":"config_vtol/vtol_weathervane.md","ref":"config_vtol/vtol_weathervane.md","articles":[]},"previous":{"title":"VTOL后转换调参","level":"1.9.4.2","depth":3,"path":"config_vtol/vtol_back_transition_tuning.md","ref":"config_vtol/vtol_back_transition_tuning.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"zh","gitbook":"*"},"file":{"path":"config_vtol/vtol_without_airspeed_sensor.md","mtime":"2020-05-27T01:21:26.661Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-27T01:22:56.560Z"},"basePath":"..","book":{"language":"zh"}});
         });
     </script>
 </div>
