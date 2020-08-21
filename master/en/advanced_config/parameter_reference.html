@@ -4871,7 +4871,7 @@ Note: ekf2 will limit the delta velocity bias estimate magnitude to be less than
  <td style="vertical-align: top;"><p>Maximum magnetic field inconsistency between units that will allow arming
 Set -1 to disable the check</p>   </td>
  <td style="vertical-align: top;">3 &gt; 180 </td>
- <td style="vertical-align: top;">30</td>
+ <td style="vertical-align: top;">45</td>
  <td style="vertical-align: top;">deg</td>
 </tr>
 <tr>
@@ -13528,17 +13528,30 @@ Particularly useful for testing different low-battery behaviour</p>   </td>
  </thead>
 <tbody>
 <tr>
- <td style="vertical-align: top;"><strong id="CAL_ACC0_EN">CAL_ACC0_EN</strong> (INT32)</td>
- <td style="vertical-align: top;"><p>Accelerometer 0 enabled</p>   </td>
- <td style="vertical-align: top;"></td>
- <td style="vertical-align: top;">Enabled (1)</td>
- <td style="vertical-align: top;"></td>
-</tr>
-<tr>
  <td style="vertical-align: top;"><strong id="CAL_ACC0_ID">CAL_ACC0_ID</strong> (INT32)</td>
  <td style="vertical-align: top;"><p>ID of the Accelerometer that the calibration is for</p>   </td>
  <td style="vertical-align: top;"></td>
  <td style="vertical-align: top;">0</td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="CAL_ACC0_PRIO">CAL_ACC0_PRIO</strong> (INT32)</td>
+ <td style="vertical-align: top;"><p>Accelerometer 0 priority</p> <strong>Values:</strong><ul>
+<li><strong>0:</strong>   Disabled</li> 
+
+<li><strong>1:</strong>   Min</li> 
+
+<li><strong>25:</strong>  Low</li> 
+
+<li><strong>50:</strong>  Medium (Default)</li> 
+
+<li><strong>75:</strong>  High</li> 
+
+<li><strong>100:</strong> Max</li> 
+</ul>
+  </td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">50</td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
@@ -13584,17 +13597,30 @@ Particularly useful for testing different low-battery behaviour</p>   </td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
- <td style="vertical-align: top;"><strong id="CAL_ACC1_EN">CAL_ACC1_EN</strong> (INT32)</td>
- <td style="vertical-align: top;"><p>Accelerometer 1 enabled</p>   </td>
- <td style="vertical-align: top;"></td>
- <td style="vertical-align: top;">Enabled (1)</td>
- <td style="vertical-align: top;"></td>
-</tr>
-<tr>
  <td style="vertical-align: top;"><strong id="CAL_ACC1_ID">CAL_ACC1_ID</strong> (INT32)</td>
  <td style="vertical-align: top;"><p>ID of the Accelerometer that the calibration is for</p>   </td>
  <td style="vertical-align: top;"></td>
  <td style="vertical-align: top;">0</td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="CAL_ACC1_PRIO">CAL_ACC1_PRIO</strong> (INT32)</td>
+ <td style="vertical-align: top;"><p>Accelerometer 1 priority</p> <strong>Values:</strong><ul>
+<li><strong>0:</strong>   Disabled</li> 
+
+<li><strong>1:</strong>   Min</li> 
+
+<li><strong>25:</strong>  Low</li> 
+
+<li><strong>50:</strong>  Medium (Default)</li> 
+
+<li><strong>75:</strong>  High</li> 
+
+<li><strong>100:</strong> Max</li> 
+</ul>
+  </td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">50</td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
@@ -13640,17 +13666,30 @@ Particularly useful for testing different low-battery behaviour</p>   </td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
- <td style="vertical-align: top;"><strong id="CAL_ACC2_EN">CAL_ACC2_EN</strong> (INT32)</td>
- <td style="vertical-align: top;"><p>Accelerometer 2 enabled</p>   </td>
- <td style="vertical-align: top;"></td>
- <td style="vertical-align: top;">Enabled (1)</td>
- <td style="vertical-align: top;"></td>
-</tr>
-<tr>
  <td style="vertical-align: top;"><strong id="CAL_ACC2_ID">CAL_ACC2_ID</strong> (INT32)</td>
  <td style="vertical-align: top;"><p>ID of the Accelerometer that the calibration is for</p>   </td>
  <td style="vertical-align: top;"></td>
  <td style="vertical-align: top;">0</td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="CAL_ACC2_PRIO">CAL_ACC2_PRIO</strong> (INT32)</td>
+ <td style="vertical-align: top;"><p>Accelerometer 2 priority</p> <strong>Values:</strong><ul>
+<li><strong>0:</strong>   Disabled</li> 
+
+<li><strong>1:</strong>   Min</li> 
+
+<li><strong>25:</strong>  Low</li> 
+
+<li><strong>50:</strong>  Medium (Default)</li> 
+
+<li><strong>75:</strong>  High</li> 
+
+<li><strong>100:</strong> Max</li> 
+</ul>
+  </td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">50</td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
@@ -13696,24 +13735,30 @@ Particularly useful for testing different low-battery behaviour</p>   </td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
- <td style="vertical-align: top;"><strong id="CAL_ACC_PRIME">CAL_ACC_PRIME</strong> (INT32)</td>
- <td style="vertical-align: top;"><p>Primary accel ID</p>   </td>
- <td style="vertical-align: top;"></td>
- <td style="vertical-align: top;">0</td>
- <td style="vertical-align: top;"></td>
-</tr>
-<tr>
- <td style="vertical-align: top;"><strong id="CAL_GYRO0_EN">CAL_GYRO0_EN</strong> (INT32)</td>
- <td style="vertical-align: top;"><p>Gyro 0 enabled</p>   </td>
- <td style="vertical-align: top;"></td>
- <td style="vertical-align: top;">Enabled (1)</td>
- <td style="vertical-align: top;"></td>
-</tr>
-<tr>
  <td style="vertical-align: top;"><strong id="CAL_GYRO0_ID">CAL_GYRO0_ID</strong> (INT32)</td>
  <td style="vertical-align: top;"><p>ID of the Gyro that the calibration is for</p>   </td>
  <td style="vertical-align: top;"></td>
  <td style="vertical-align: top;">0</td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="CAL_GYRO0_PRIO">CAL_GYRO0_PRIO</strong> (INT32)</td>
+ <td style="vertical-align: top;"><p>Gyro 0 priority</p> <strong>Values:</strong><ul>
+<li><strong>0:</strong>   Disabled</li> 
+
+<li><strong>1:</strong>   Min</li> 
+
+<li><strong>25:</strong>  Low</li> 
+
+<li><strong>50:</strong>  Medium (Default)</li> 
+
+<li><strong>75:</strong>  High</li> 
+
+<li><strong>100:</strong> Max</li> 
+</ul>
+  </td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">50</td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
@@ -13738,17 +13783,30 @@ Particularly useful for testing different low-battery behaviour</p>   </td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
- <td style="vertical-align: top;"><strong id="CAL_GYRO1_EN">CAL_GYRO1_EN</strong> (INT32)</td>
- <td style="vertical-align: top;"><p>Gyro 1 enabled</p>   </td>
- <td style="vertical-align: top;"></td>
- <td style="vertical-align: top;">Enabled (1)</td>
- <td style="vertical-align: top;"></td>
-</tr>
-<tr>
  <td style="vertical-align: top;"><strong id="CAL_GYRO1_ID">CAL_GYRO1_ID</strong> (INT32)</td>
  <td style="vertical-align: top;"><p>ID of the Gyro that the calibration is for</p>   </td>
  <td style="vertical-align: top;"></td>
  <td style="vertical-align: top;">0</td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="CAL_GYRO1_PRIO">CAL_GYRO1_PRIO</strong> (INT32)</td>
+ <td style="vertical-align: top;"><p>Gyro 1 priority</p> <strong>Values:</strong><ul>
+<li><strong>0:</strong>   Disabled</li> 
+
+<li><strong>1:</strong>   Min</li> 
+
+<li><strong>25:</strong>  Low</li> 
+
+<li><strong>50:</strong>  Medium (Default)</li> 
+
+<li><strong>75:</strong>  High</li> 
+
+<li><strong>100:</strong> Max</li> 
+</ul>
+  </td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">50</td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
@@ -13773,17 +13831,30 @@ Particularly useful for testing different low-battery behaviour</p>   </td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
- <td style="vertical-align: top;"><strong id="CAL_GYRO2_EN">CAL_GYRO2_EN</strong> (INT32)</td>
- <td style="vertical-align: top;"><p>Gyro 2 enabled</p>   </td>
- <td style="vertical-align: top;"></td>
- <td style="vertical-align: top;">Enabled (1)</td>
- <td style="vertical-align: top;"></td>
-</tr>
-<tr>
  <td style="vertical-align: top;"><strong id="CAL_GYRO2_ID">CAL_GYRO2_ID</strong> (INT32)</td>
  <td style="vertical-align: top;"><p>ID of the Gyro that the calibration is for</p>   </td>
  <td style="vertical-align: top;"></td>
  <td style="vertical-align: top;">0</td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="CAL_GYRO2_PRIO">CAL_GYRO2_PRIO</strong> (INT32)</td>
+ <td style="vertical-align: top;"><p>Gyro 2 priority</p> <strong>Values:</strong><ul>
+<li><strong>0:</strong>   Disabled</li> 
+
+<li><strong>1:</strong>   Min</li> 
+
+<li><strong>25:</strong>  Low</li> 
+
+<li><strong>50:</strong>  Medium (Default)</li> 
+
+<li><strong>75:</strong>  High</li> 
+
+<li><strong>100:</strong> Max</li> 
+</ul>
+  </td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">50</td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
@@ -13808,24 +13879,30 @@ Particularly useful for testing different low-battery behaviour</p>   </td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
- <td style="vertical-align: top;"><strong id="CAL_GYRO_PRIME">CAL_GYRO_PRIME</strong> (INT32)</td>
- <td style="vertical-align: top;"><p>Primary gyro ID</p>   </td>
- <td style="vertical-align: top;"></td>
- <td style="vertical-align: top;">0</td>
- <td style="vertical-align: top;"></td>
-</tr>
-<tr>
- <td style="vertical-align: top;"><strong id="CAL_MAG0_EN">CAL_MAG0_EN</strong> (INT32)</td>
- <td style="vertical-align: top;"><p>Mag 0 enabled</p>   </td>
- <td style="vertical-align: top;"></td>
- <td style="vertical-align: top;">Enabled (1)</td>
- <td style="vertical-align: top;"></td>
-</tr>
-<tr>
  <td style="vertical-align: top;"><strong id="CAL_MAG0_ID">CAL_MAG0_ID</strong> (INT32)</td>
  <td style="vertical-align: top;"><p>ID of Magnetometer the calibration is for</p>   </td>
  <td style="vertical-align: top;"></td>
  <td style="vertical-align: top;">0</td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="CAL_MAG0_PRIO">CAL_MAG0_PRIO</strong> (INT32)</td>
+ <td style="vertical-align: top;"><p>Mag 0 priority</p> <strong>Values:</strong><ul>
+<li><strong>0:</strong>   Disabled</li> 
+
+<li><strong>1:</strong>   Min</li> 
+
+<li><strong>25:</strong>  Low</li> 
+
+<li><strong>50:</strong>  Medium (Default)</li> 
+
+<li><strong>75:</strong>  High</li> 
+
+<li><strong>100:</strong> Max</li> 
+</ul>
+  </td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">50</td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
@@ -13943,6 +14020,13 @@ for current-based compensation [G/kA]</p>   </td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
+ <td style="vertical-align: top;"><strong id="CAL_MAG0_XODIAG">CAL_MAG0_XODIAG</strong> (FLOAT)</td>
+ <td style="vertical-align: top;"><p>Magnetometer X-axis off diagonal factor</p>   </td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">0.0</td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
  <td style="vertical-align: top;"><strong id="CAL_MAG0_XOFF">CAL_MAG0_XOFF</strong> (FLOAT)</td>
  <td style="vertical-align: top;"><p>Magnetometer X-axis offset</p>   </td>
  <td style="vertical-align: top;"></td>
@@ -13963,6 +14047,13 @@ Y component of magnetometer in body frame axis
 and either current or throttle depending on value of CAL_MAG_COMP_TYP
 Unit for throttle-based compensation is [G] and
 for current-based compensation [G/kA]</p>   </td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">0.0</td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="CAL_MAG0_YODIAG">CAL_MAG0_YODIAG</strong> (FLOAT)</td>
+ <td style="vertical-align: top;"><p>Magnetometer Y-axis off diagonal factor</p>   </td>
  <td style="vertical-align: top;"></td>
  <td style="vertical-align: top;">0.0</td>
  <td style="vertical-align: top;"></td>
@@ -13993,6 +14084,13 @@ for current-based compensation [G/kA]</p>   </td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
+ <td style="vertical-align: top;"><strong id="CAL_MAG0_ZODIAG">CAL_MAG0_ZODIAG</strong> (FLOAT)</td>
+ <td style="vertical-align: top;"><p>Magnetometer Z-axis off diagonal factor</p>   </td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">0.0</td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
  <td style="vertical-align: top;"><strong id="CAL_MAG0_ZOFF">CAL_MAG0_ZOFF</strong> (FLOAT)</td>
  <td style="vertical-align: top;"><p>Magnetometer Z-axis offset</p>   </td>
  <td style="vertical-align: top;"></td>
@@ -14007,17 +14105,30 @@ for current-based compensation [G/kA]</p>   </td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
- <td style="vertical-align: top;"><strong id="CAL_MAG1_EN">CAL_MAG1_EN</strong> (INT32)</td>
- <td style="vertical-align: top;"><p>Mag 1 enabled</p>   </td>
- <td style="vertical-align: top;"></td>
- <td style="vertical-align: top;">Enabled (1)</td>
- <td style="vertical-align: top;"></td>
-</tr>
-<tr>
  <td style="vertical-align: top;"><strong id="CAL_MAG1_ID">CAL_MAG1_ID</strong> (INT32)</td>
  <td style="vertical-align: top;"><p>ID of Magnetometer the calibration is for</p>   </td>
  <td style="vertical-align: top;"></td>
  <td style="vertical-align: top;">0</td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="CAL_MAG1_PRIO">CAL_MAG1_PRIO</strong> (INT32)</td>
+ <td style="vertical-align: top;"><p>Mag 1 priority</p> <strong>Values:</strong><ul>
+<li><strong>0:</strong>   Disabled</li> 
+
+<li><strong>1:</strong>   Min</li> 
+
+<li><strong>25:</strong>  Low</li> 
+
+<li><strong>50:</strong>  Medium (Default)</li> 
+
+<li><strong>75:</strong>  High</li> 
+
+<li><strong>100:</strong> Max</li> 
+</ul>
+  </td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">50</td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
@@ -14135,6 +14246,13 @@ for current-based compensation [G/kA]</p>   </td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
+ <td style="vertical-align: top;"><strong id="CAL_MAG1_XODIAG">CAL_MAG1_XODIAG</strong> (FLOAT)</td>
+ <td style="vertical-align: top;"><p>Magnetometer X-axis off diagonal factor</p>   </td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">0.0</td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
  <td style="vertical-align: top;"><strong id="CAL_MAG1_XOFF">CAL_MAG1_XOFF</strong> (FLOAT)</td>
  <td style="vertical-align: top;"><p>Magnetometer X-axis offset</p>   </td>
  <td style="vertical-align: top;"></td>
@@ -14155,6 +14273,13 @@ Y component of magnetometer in body frame axis
 and either current or throttle depending on value of CAL_MAG_COMP_TYP
 Unit for throttle-based compensation is [G] and
 for current-based compensation [G/kA]</p>   </td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">0.0</td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="CAL_MAG1_YODIAG">CAL_MAG1_YODIAG</strong> (FLOAT)</td>
+ <td style="vertical-align: top;"><p>Magnetometer Y-axis off diagonal factor</p>   </td>
  <td style="vertical-align: top;"></td>
  <td style="vertical-align: top;">0.0</td>
  <td style="vertical-align: top;"></td>
@@ -14185,6 +14310,13 @@ for current-based compensation [G/kA]</p>   </td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
+ <td style="vertical-align: top;"><strong id="CAL_MAG1_ZODIAG">CAL_MAG1_ZODIAG</strong> (FLOAT)</td>
+ <td style="vertical-align: top;"><p>Magnetometer Z-axis off diagonal factor</p>   </td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">0.0</td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
  <td style="vertical-align: top;"><strong id="CAL_MAG1_ZOFF">CAL_MAG1_ZOFF</strong> (FLOAT)</td>
  <td style="vertical-align: top;"><p>Magnetometer Z-axis offset</p>   </td>
  <td style="vertical-align: top;"></td>
@@ -14199,17 +14331,30 @@ for current-based compensation [G/kA]</p>   </td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
- <td style="vertical-align: top;"><strong id="CAL_MAG2_EN">CAL_MAG2_EN</strong> (INT32)</td>
- <td style="vertical-align: top;"><p>Mag 2 enabled</p>   </td>
- <td style="vertical-align: top;"></td>
- <td style="vertical-align: top;">Enabled (1)</td>
- <td style="vertical-align: top;"></td>
-</tr>
-<tr>
  <td style="vertical-align: top;"><strong id="CAL_MAG2_ID">CAL_MAG2_ID</strong> (INT32)</td>
  <td style="vertical-align: top;"><p>ID of Magnetometer the calibration is for</p>   </td>
  <td style="vertical-align: top;"></td>
  <td style="vertical-align: top;">0</td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="CAL_MAG2_PRIO">CAL_MAG2_PRIO</strong> (INT32)</td>
+ <td style="vertical-align: top;"><p>Mag 2 priority</p> <strong>Values:</strong><ul>
+<li><strong>0:</strong>   Disabled</li> 
+
+<li><strong>1:</strong>   Min</li> 
+
+<li><strong>25:</strong>  Low</li> 
+
+<li><strong>50:</strong>  Medium (Default)</li> 
+
+<li><strong>75:</strong>  High</li> 
+
+<li><strong>100:</strong> Max</li> 
+</ul>
+  </td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">50</td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
@@ -14327,6 +14472,13 @@ for current-based compensation [G/kA]</p>   </td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
+ <td style="vertical-align: top;"><strong id="CAL_MAG2_XODIAG">CAL_MAG2_XODIAG</strong> (FLOAT)</td>
+ <td style="vertical-align: top;"><p>Magnetometer X-axis off diagonal factor</p>   </td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">0.0</td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
  <td style="vertical-align: top;"><strong id="CAL_MAG2_XOFF">CAL_MAG2_XOFF</strong> (FLOAT)</td>
  <td style="vertical-align: top;"><p>Magnetometer X-axis offset</p>   </td>
  <td style="vertical-align: top;"></td>
@@ -14347,6 +14499,13 @@ Y component of magnetometer in body frame axis
 and either current or throttle depending on value of CAL_MAG_COMP_TYP
 Unit for throttle-based compensation is [G] and
 for current-based compensation [G/kA]</p>   </td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">0.0</td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="CAL_MAG2_YODIAG">CAL_MAG2_YODIAG</strong> (FLOAT)</td>
+ <td style="vertical-align: top;"><p>Magnetometer Y-axis off diagonal factor</p>   </td>
  <td style="vertical-align: top;"></td>
  <td style="vertical-align: top;">0.0</td>
  <td style="vertical-align: top;"></td>
@@ -14377,6 +14536,13 @@ for current-based compensation [G/kA]</p>   </td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
+ <td style="vertical-align: top;"><strong id="CAL_MAG2_ZODIAG">CAL_MAG2_ZODIAG</strong> (FLOAT)</td>
+ <td style="vertical-align: top;"><p>Magnetometer Z-axis off diagonal factor</p>   </td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">0.0</td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
  <td style="vertical-align: top;"><strong id="CAL_MAG2_ZOFF">CAL_MAG2_ZOFF</strong> (FLOAT)</td>
  <td style="vertical-align: top;"><p>Magnetometer Z-axis offset</p>   </td>
  <td style="vertical-align: top;"></td>
@@ -14391,13 +14557,6 @@ for current-based compensation [G/kA]</p>   </td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
- <td style="vertical-align: top;"><strong id="CAL_MAG3_EN">CAL_MAG3_EN</strong> (INT32)</td>
- <td style="vertical-align: top;"><p>Mag 3 enabled</p>   </td>
- <td style="vertical-align: top;"></td>
- <td style="vertical-align: top;">Enabled (1)</td>
- <td style="vertical-align: top;"></td>
-</tr>
-<tr>
  <td style="vertical-align: top;"><strong id="CAL_MAG3_ID">CAL_MAG3_ID</strong> (INT32)</td>
  <td style="vertical-align: top;"><p>ID of Magnetometer the calibration is for</p>   </td>
  <td style="vertical-align: top;"></td>
@@ -14405,8 +14564,28 @@ for current-based compensation [G/kA]</p>   </td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
+ <td style="vertical-align: top;"><strong id="CAL_MAG3_PRIO">CAL_MAG3_PRIO</strong> (INT32)</td>
+ <td style="vertical-align: top;"><p>Mag 3 priority</p> <strong>Values:</strong><ul>
+<li><strong>0:</strong>   Disabled</li> 
+
+<li><strong>1:</strong>   Min</li> 
+
+<li><strong>25:</strong>  Low</li> 
+
+<li><strong>50:</strong>  Medium (Default)</li> 
+
+<li><strong>75:</strong>  High</li> 
+
+<li><strong>100:</strong> Max</li> 
+</ul>
+  </td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">50</td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
  <td style="vertical-align: top;"><strong id="CAL_MAG3_ROT">CAL_MAG3_ROT</strong> (INT32)</td>
- <td style="vertical-align: top;"><p>Rotation of magnetometer 2 relative to airframe</p><p><strong>Comment:</strong> An internal magnetometer will force a value of -1, so a GCS should only attempt to configure the rotation if the value is greater than or equal to zero.</p> <strong>Values:</strong><ul>
+ <td style="vertical-align: top;"><p>Rotation of magnetometer 3 relative to airframe</p><p><strong>Comment:</strong> An internal magnetometer will force a value of -1, so a GCS should only attempt to configure the rotation if the value is greater than or equal to zero.</p> <strong>Values:</strong><ul>
 <li><strong>-1:</strong> Internal mag</li> 
 
 <li><strong>0:</strong> No rotation</li> 
@@ -14519,6 +14698,13 @@ for current-based compensation [G/kA]</p>   </td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
+ <td style="vertical-align: top;"><strong id="CAL_MAG3_XODIAG">CAL_MAG3_XODIAG</strong> (FLOAT)</td>
+ <td style="vertical-align: top;"><p>Magnetometer X-axis off diagonal factor</p>   </td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">0.0</td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
  <td style="vertical-align: top;"><strong id="CAL_MAG3_XOFF">CAL_MAG3_XOFF</strong> (FLOAT)</td>
  <td style="vertical-align: top;"><p>Magnetometer X-axis offset</p>   </td>
  <td style="vertical-align: top;"></td>
@@ -14539,6 +14725,13 @@ Y component of magnetometer in body frame axis
 and either current or throttle depending on value of CAL_MAG_COMP_TYP
 Unit for throttle-based compensation is [G] and
 for current-based compensation [G/kA]</p>   </td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">0.0</td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="CAL_MAG3_YODIAG">CAL_MAG3_YODIAG</strong> (FLOAT)</td>
+ <td style="vertical-align: top;"><p>Magnetometer Y-axis off diagonal factor</p>   </td>
  <td style="vertical-align: top;"></td>
  <td style="vertical-align: top;">0.0</td>
  <td style="vertical-align: top;"></td>
@@ -14569,6 +14762,13 @@ for current-based compensation [G/kA]</p>   </td>
  <td style="vertical-align: top;"></td>
 </tr>
 <tr>
+ <td style="vertical-align: top;"><strong id="CAL_MAG3_ZODIAG">CAL_MAG3_ZODIAG</strong> (FLOAT)</td>
+ <td style="vertical-align: top;"><p>Magnetometer Z-axis off diagonal factor</p>   </td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">0.0</td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
  <td style="vertical-align: top;"><strong id="CAL_MAG3_ZOFF">CAL_MAG3_ZOFF</strong> (FLOAT)</td>
  <td style="vertical-align: top;"><p>Magnetometer Z-axis offset</p>   </td>
  <td style="vertical-align: top;"></td>
@@ -14594,13 +14794,6 @@ for current-based compensation [G/kA]</p>   </td>
 <li><strong>3:</strong> Current-based compensation (battery_status instance 1)</li> 
 </ul>
   </td>
- <td style="vertical-align: top;"></td>
- <td style="vertical-align: top;">0</td>
- <td style="vertical-align: top;"></td>
-</tr>
-<tr>
- <td style="vertical-align: top;"><strong id="CAL_MAG_PRIME">CAL_MAG_PRIME</strong> (INT32)</td>
- <td style="vertical-align: top;"><p>Primary mag ID</p>   </td>
  <td style="vertical-align: top;"></td>
  <td style="vertical-align: top;">0</td>
  <td style="vertical-align: top;"></td>
@@ -14704,8 +14897,15 @@ is less than 50% of this value</p>   </td>
  <td style="vertical-align: top;">meter</td>
 </tr>
 <tr>
+ <td style="vertical-align: top;"><strong id="CAL_MAG_ROT_AUTO">CAL_MAG_ROT_AUTO</strong> (INT32)</td>
+ <td style="vertical-align: top;"><p>Automatically set external rotations</p><p><strong>Comment:</strong> During calibration attempt to automatically determine the rotation of external magnetometers.</p>   </td>
+ <td style="vertical-align: top;"></td>
+ <td style="vertical-align: top;">Enabled (1)</td>
+ <td style="vertical-align: top;"></td>
+</tr>
+<tr>
  <td style="vertical-align: top;"><strong id="CAL_MAG_SIDES">CAL_MAG_SIDES</strong> (INT32)</td>
- <td style="vertical-align: top;"><p>Bitfield selecting mag sides for calibration</p><p><strong>Comment:</strong> If set to two side calibration, only the offsets are estimated, the scale calibration is left unchanged. Thus an initial six side calibration is recommended. Bits: DETECT_ORIENTATION_TAIL_DOWN = 1 DETECT_ORIENTATION_NOSE_DOWN = 2 DETECT_ORIENTATION_LEFT = 4 DETECT_ORIENTATION_RIGHT = 8 DETECT_ORIENTATION_UPSIDE_DOWN = 16 DETECT_ORIENTATION_RIGHTSIDE_UP = 32</p> <strong>Values:</strong><ul>
+ <td style="vertical-align: top;"><p>Bitfield selecting mag sides for calibration</p><p><strong>Comment:</strong> If set to two side calibration, only the offsets are estimated, the scale calibration is left unchanged. Thus an initial six side calibration is recommended. Bits: ORIENTATION_TAIL_DOWN = 1 ORIENTATION_NOSE_DOWN = 2 ORIENTATION_LEFT = 4 ORIENTATION_RIGHT = 8 ORIENTATION_UPSIDE_DOWN = 16 ORIENTATION_RIGHTSIDE_UP = 32</p> <strong>Values:</strong><ul>
 <li><strong>34:</strong> Two side calibration</li> 
 
 <li><strong>38:</strong> Three side calibration</li> 
@@ -15254,6 +15454,14 @@ How often the sensor is readout</p>   <p><b>Reboot required:</b> true</p>
  <td style="vertical-align: top;"></td>
  <td style="vertical-align: top;">0</td>
  <td style="vertical-align: top;"></td>
+</tr>
+<tr>
+ <td style="vertical-align: top;"><strong id="SENS_MAG_RATE">SENS_MAG_RATE</strong> (FLOAT)</td>
+ <td style="vertical-align: top;"><p>Magnetometer max rate</p><p><strong>Comment:</strong> Magnetometer data maximum publication rate. This is an upper bound, actual magnetometer data rate is still dependant on the sensor.</p>   <p><b>Reboot required:</b> true</p>
+</td>
+ <td style="vertical-align: top;">1 &gt; 200 </td>
+ <td style="vertical-align: top;">50.0</td>
+ <td style="vertical-align: top;">Hz</td>
 </tr>
 <tr>
  <td style="vertical-align: top;"><strong id="SENS_MB12_0_ROT">SENS_MB12_0_ROT</strong> (INT32)</td>
@@ -18515,7 +18723,7 @@ to fixed wing mode. Zero or negative values will produce an instant throttle ris
 
 
 
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-08-20 15:57:40 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-08-21 14:23:20 </span> </footer>
                                 
                                 </section>
                             
@@ -18558,7 +18766,7 @@ to fixed wing mode. Zero or negative values will produce an instant throttle ris
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Full Parameter Reference","level":"1.9.16","depth":2,"next":{"title":"Peripheral Hardware","level":"1.10","depth":1,"path":"peripherals/README.md","ref":"peripherals/README.md","articles":[{"title":"Serial Port Configuration","level":"1.10.1","depth":2,"path":"peripherals/serial_configuration.md","ref":"peripherals/serial_configuration.md","articles":[]},{"title":"GPS/Compass","level":"1.10.2","depth":2,"path":"gps_compass/README.md","ref":"gps_compass/README.md","articles":[{"title":"RTK GPS","level":"1.10.2.1","depth":3,"path":"gps_compass/rtk_gps.md","ref":"gps_compass/rtk_gps.md","articles":[{"title":"Hex Here+","level":"1.10.2.1.1","depth":4,"path":"gps_compass/rtk_gps_hex_hereplus.md","ref":"gps_compass/rtk_gps_hex_hereplus.md","articles":[]},{"title":"Drotek XL","level":"1.10.2.1.2","depth":4,"path":"gps_compass/rtk_gps_drotek_xl.md","ref":"gps_compass/rtk_gps_drotek_xl.md","articles":[]},{"title":"CUAV C-RTK","level":"1.10.2.1.3","depth":4,"path":"gps_compass/rtk_gps_cuav_c-rtk.md","ref":"gps_compass/rtk_gps_cuav_c-rtk.md","articles":[]},{"title":"Trimble MB-Two","level":"1.10.2.1.4","depth":4,"path":"gps_compass/rtk_gps_trimble_mb_two.md","ref":"gps_compass/rtk_gps_trimble_mb_two.md","articles":[]},{"title":"Hex Here2","level":"1.10.2.1.5","depth":4,"path":"gps_compass/rtk_gps_hex_here2.md","ref":"gps_compass/rtk_gps_hex_here2.md","articles":[]},{"title":"Freefly RTK GPS","level":"1.10.2.1.6","depth":4,"path":"gps_compass/rtk_gps_freefly.md","ref":"gps_compass/rtk_gps_freefly.md","articles":[]},{"title":"Femtones MINI2 Receiver","level":"1.10.2.1.7","depth":4,"path":"gps_compass/rtk_gps_fem_mini2.md","ref":"gps_compass/rtk_gps_fem_mini2.md","articles":[]}]}]},{"title":"Telemetry Radios","level":"1.10.3","depth":2,"path":"telemetry/README.md","ref":"telemetry/README.md","articles":[{"title":"SiK Radio","level":"1.10.3.1","depth":3,"path":"telemetry/sik_radio.md","ref":"telemetry/sik_radio.md","articles":[{"title":"RFD900 (SiK) Telemetry Radio","level":"1.10.3.1.1","depth":4,"path":"telemetry/rfd900_telemetry.md","ref":"telemetry/rfd900_telemetry.md","articles":[]},{"title":"HKPilot (SIK) Telemetry Radio","level":"1.10.3.1.2","depth":4,"path":"telemetry/hkpilot_sik_radio.md","ref":"telemetry/hkpilot_sik_radio.md","articles":[]},{"title":"HolyBro (SIK) Telemetry Radio","level":"1.10.3.1.3","depth":4,"path":"telemetry/holybro_sik_radio.md","ref":"telemetry/holybro_sik_radio.md","articles":[]}]},{"title":"Telemetry Wifi","level":"1.10.3.2","depth":3,"path":"telemetry/telemetry_wifi.md","ref":"telemetry/telemetry_wifi.md","articles":[{"title":"ESP8266 WiFi Module","level":"1.10.3.2.1","depth":4,"path":"telemetry/esp8266_wifi_module.md","ref":"telemetry/esp8266_wifi_module.md","articles":[]},{"title":"3DR Telemetry Wifi (Discontinued)","level":"1.10.3.2.2","depth":4,"path":"telemetry/3dr_telemetry_wifi.md","ref":"telemetry/3dr_telemetry_wifi.md","articles":[]}]}]},{"title":"MAVLink Telemetry (OSD/GCS)","level":"1.10.4","depth":2,"path":"peripherals/mavlink_peripherals.md","ref":"peripherals/mavlink_peripherals.md","articles":[]},{"title":"FrSky Telemetry","level":"1.10.5","depth":2,"path":"peripherals/frsky_telemetry.md","ref":"peripherals/frsky_telemetry.md","articles":[]},{"title":"Power Modules","level":"1.10.6","depth":2,"path":"power_module/README.md","ref":"power_module/README.md","articles":[{"title":"CUAV HV pm","level":"1.10.6.1","depth":3,"path":"power_module/cuav_hv_pm.md","ref":"power_module/cuav_hv_pm.md","articles":[]},{"title":"CUAV CAN PMU","level":"1.10.6.2","depth":3,"path":"power_module/cuav_can_pmu.md","ref":"power_module/cuav_can_pmu.md","articles":[]},{"title":"Holybro PM07 (Pixhawk 4 PM)","level":"1.10.6.3","depth":3,"path":"power_module/holybro_pm07_pixhawk4_power_module.md","ref":"power_module/holybro_pm07_pixhawk4_power_module.md","articles":[]},{"title":"Holybro PM06 (Micro Power Module)","level":"1.10.6.4","depth":3,"path":"power_module/holybro_pm06_pixhawk4mini_power_module.md","ref":"power_module/holybro_pm06_pixhawk4mini_power_module.md","articles":[]},{"title":"Pomegranate Systems Power Module","level":"1.10.6.5","depth":3,"path":"power_module/pomegranate_systems_pm.md","ref":"power_module/pomegranate_systems_pm.md","articles":[]}]},{"title":"Distance Sensors (Rangefinders)","level":"1.10.7","depth":2,"path":"sensor/rangefinders.md","ref":"sensor/rangefinders.md","articles":[{"title":"Lightware SFxx Lidar","level":"1.10.7.1","depth":3,"path":"sensor/sfxx_lidar.md","ref":"sensor/sfxx_lidar.md","articles":[]},{"title":"Ainstein US-D1 Standard Radar Altimeter","level":"1.10.7.2","depth":3,"path":"sensor/ulanding_radar.md","ref":"sensor/ulanding_radar.md","articles":[]},{"title":"LeddarOne Lidar","level":"1.10.7.3","depth":3,"path":"sensor/leddar_one.md","ref":"sensor/leddar_one.md","articles":[]},{"title":"Benewake TFmini Lidar","level":"1.10.7.4","depth":3,"path":"sensor/tfmini.md","ref":"sensor/tfmini.md","articles":[]},{"title":"Lidar-Lite","level":"1.10.7.5","depth":3,"path":"sensor/lidar_lite.md","ref":"sensor/lidar_lite.md","articles":[]},{"title":"TeraRanger","level":"1.10.7.6","depth":3,"path":"sensor/teraranger.md","ref":"sensor/teraranger.md","articles":[]},{"title":"Lanbao PSK-CM8JL65-CC5","level":"1.10.7.7","depth":3,"path":"sensor/cm8jl65_ir_distance_sensor.md","ref":"sensor/cm8jl65_ir_distance_sensor.md","articles":[]}]},{"title":"Tachometers (Revolution Counters)","level":"1.10.8","depth":2,"path":"sensor/tachometers.md","ref":"sensor/tachometers.md","articles":[{"title":"ThunderFly TFRPM01 Tachometer Sensor","level":"1.10.8.1","depth":3,"path":"sensor/thunderfly_tachometer.md","ref":"sensor/thunderfly_tachometer.md","articles":[]}]},{"title":"Airspeed Sensors","level":"1.10.9","depth":2,"path":"sensor/airspeed.md","ref":"sensor/airspeed.md","articles":[]},{"title":"Optical Flow","level":"1.10.10","depth":2,"path":"sensor/optical_flow.md","ref":"sensor/optical_flow.md","articles":[{"title":"PX4FLOW","level":"1.10.10.1","depth":3,"path":"sensor/px4flow.md","ref":"sensor/px4flow.md","articles":[]},{"title":"PMW3901","level":"1.10.10.2","depth":3,"path":"sensor/pmw3901.md","ref":"sensor/pmw3901.md","articles":[]}]},{"title":"ESCs & Motors","level":"1.10.11","depth":2,"path":"peripherals/esc_motors.md","ref":"peripherals/esc_motors.md","articles":[{"title":"PWM ESCs and Servos","level":"1.10.11.1","depth":3,"path":"peripherals/pwm_escs_and_servo.md","ref":"peripherals/pwm_escs_and_servo.md","articles":[]},{"title":"DShot ESCs","level":"1.10.11.2","depth":3,"path":"peripherals/dshot.md","ref":"peripherals/dshot.md","articles":[]},{"title":"UAVCAN ESCs","level":"1.10.11.3","depth":3,"path":"peripherals/uavcan_escs.md","ref":"peripherals/uavcan_escs.md","articles":[]}]},{"title":"Camera","level":"1.10.12","depth":2,"path":"peripherals/camera.md","ref":"peripherals/camera.md","articles":[]},{"title":"Parachute","level":"1.10.13","depth":2,"path":"peripherals/parachute.md","ref":"peripherals/parachute.md","articles":[]},{"title":"Companion Computer Peripherals","level":"1.10.14","depth":2,"path":"peripherals/companion_computer_peripherals.md","ref":"peripherals/companion_computer_peripherals.md","articles":[]},{"title":"ADSB/FLARM (Traffic Avoidance)","level":"1.10.15","depth":2,"path":"peripherals/adsb_flarm.md","ref":"peripherals/adsb_flarm.md","articles":[]}]},"previous":{"title":"Prearm/Arm/Disarm Configuration","level":"1.9.15","depth":2,"path":"advanced_config/prearm_arm_disarm.md","ref":"advanced_config/prearm_arm_disarm.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"advanced_config/parameter_reference.md","mtime":"2020-08-20T15:57:40.079Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-20T15:58:34.647Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Full Parameter Reference","level":"1.9.16","depth":2,"next":{"title":"Peripheral Hardware","level":"1.10","depth":1,"path":"peripherals/README.md","ref":"peripherals/README.md","articles":[{"title":"Serial Port Configuration","level":"1.10.1","depth":2,"path":"peripherals/serial_configuration.md","ref":"peripherals/serial_configuration.md","articles":[]},{"title":"GPS/Compass","level":"1.10.2","depth":2,"path":"gps_compass/README.md","ref":"gps_compass/README.md","articles":[{"title":"RTK GPS","level":"1.10.2.1","depth":3,"path":"gps_compass/rtk_gps.md","ref":"gps_compass/rtk_gps.md","articles":[{"title":"Hex Here+","level":"1.10.2.1.1","depth":4,"path":"gps_compass/rtk_gps_hex_hereplus.md","ref":"gps_compass/rtk_gps_hex_hereplus.md","articles":[]},{"title":"Drotek XL","level":"1.10.2.1.2","depth":4,"path":"gps_compass/rtk_gps_drotek_xl.md","ref":"gps_compass/rtk_gps_drotek_xl.md","articles":[]},{"title":"CUAV C-RTK","level":"1.10.2.1.3","depth":4,"path":"gps_compass/rtk_gps_cuav_c-rtk.md","ref":"gps_compass/rtk_gps_cuav_c-rtk.md","articles":[]},{"title":"Trimble MB-Two","level":"1.10.2.1.4","depth":4,"path":"gps_compass/rtk_gps_trimble_mb_two.md","ref":"gps_compass/rtk_gps_trimble_mb_two.md","articles":[]},{"title":"Hex Here2","level":"1.10.2.1.5","depth":4,"path":"gps_compass/rtk_gps_hex_here2.md","ref":"gps_compass/rtk_gps_hex_here2.md","articles":[]},{"title":"Freefly RTK GPS","level":"1.10.2.1.6","depth":4,"path":"gps_compass/rtk_gps_freefly.md","ref":"gps_compass/rtk_gps_freefly.md","articles":[]},{"title":"Femtones MINI2 Receiver","level":"1.10.2.1.7","depth":4,"path":"gps_compass/rtk_gps_fem_mini2.md","ref":"gps_compass/rtk_gps_fem_mini2.md","articles":[]}]}]},{"title":"Telemetry Radios","level":"1.10.3","depth":2,"path":"telemetry/README.md","ref":"telemetry/README.md","articles":[{"title":"SiK Radio","level":"1.10.3.1","depth":3,"path":"telemetry/sik_radio.md","ref":"telemetry/sik_radio.md","articles":[{"title":"RFD900 (SiK) Telemetry Radio","level":"1.10.3.1.1","depth":4,"path":"telemetry/rfd900_telemetry.md","ref":"telemetry/rfd900_telemetry.md","articles":[]},{"title":"HKPilot (SIK) Telemetry Radio","level":"1.10.3.1.2","depth":4,"path":"telemetry/hkpilot_sik_radio.md","ref":"telemetry/hkpilot_sik_radio.md","articles":[]},{"title":"HolyBro (SIK) Telemetry Radio","level":"1.10.3.1.3","depth":4,"path":"telemetry/holybro_sik_radio.md","ref":"telemetry/holybro_sik_radio.md","articles":[]}]},{"title":"Telemetry Wifi","level":"1.10.3.2","depth":3,"path":"telemetry/telemetry_wifi.md","ref":"telemetry/telemetry_wifi.md","articles":[{"title":"ESP8266 WiFi Module","level":"1.10.3.2.1","depth":4,"path":"telemetry/esp8266_wifi_module.md","ref":"telemetry/esp8266_wifi_module.md","articles":[]},{"title":"3DR Telemetry Wifi (Discontinued)","level":"1.10.3.2.2","depth":4,"path":"telemetry/3dr_telemetry_wifi.md","ref":"telemetry/3dr_telemetry_wifi.md","articles":[]}]}]},{"title":"MAVLink Telemetry (OSD/GCS)","level":"1.10.4","depth":2,"path":"peripherals/mavlink_peripherals.md","ref":"peripherals/mavlink_peripherals.md","articles":[]},{"title":"FrSky Telemetry","level":"1.10.5","depth":2,"path":"peripherals/frsky_telemetry.md","ref":"peripherals/frsky_telemetry.md","articles":[]},{"title":"Power Modules","level":"1.10.6","depth":2,"path":"power_module/README.md","ref":"power_module/README.md","articles":[{"title":"CUAV HV pm","level":"1.10.6.1","depth":3,"path":"power_module/cuav_hv_pm.md","ref":"power_module/cuav_hv_pm.md","articles":[]},{"title":"CUAV CAN PMU","level":"1.10.6.2","depth":3,"path":"power_module/cuav_can_pmu.md","ref":"power_module/cuav_can_pmu.md","articles":[]},{"title":"Holybro PM07 (Pixhawk 4 PM)","level":"1.10.6.3","depth":3,"path":"power_module/holybro_pm07_pixhawk4_power_module.md","ref":"power_module/holybro_pm07_pixhawk4_power_module.md","articles":[]},{"title":"Holybro PM06 (Micro Power Module)","level":"1.10.6.4","depth":3,"path":"power_module/holybro_pm06_pixhawk4mini_power_module.md","ref":"power_module/holybro_pm06_pixhawk4mini_power_module.md","articles":[]},{"title":"Pomegranate Systems Power Module","level":"1.10.6.5","depth":3,"path":"power_module/pomegranate_systems_pm.md","ref":"power_module/pomegranate_systems_pm.md","articles":[]}]},{"title":"Distance Sensors (Rangefinders)","level":"1.10.7","depth":2,"path":"sensor/rangefinders.md","ref":"sensor/rangefinders.md","articles":[{"title":"Lightware SFxx Lidar","level":"1.10.7.1","depth":3,"path":"sensor/sfxx_lidar.md","ref":"sensor/sfxx_lidar.md","articles":[]},{"title":"Ainstein US-D1 Standard Radar Altimeter","level":"1.10.7.2","depth":3,"path":"sensor/ulanding_radar.md","ref":"sensor/ulanding_radar.md","articles":[]},{"title":"LeddarOne Lidar","level":"1.10.7.3","depth":3,"path":"sensor/leddar_one.md","ref":"sensor/leddar_one.md","articles":[]},{"title":"Benewake TFmini Lidar","level":"1.10.7.4","depth":3,"path":"sensor/tfmini.md","ref":"sensor/tfmini.md","articles":[]},{"title":"Lidar-Lite","level":"1.10.7.5","depth":3,"path":"sensor/lidar_lite.md","ref":"sensor/lidar_lite.md","articles":[]},{"title":"TeraRanger","level":"1.10.7.6","depth":3,"path":"sensor/teraranger.md","ref":"sensor/teraranger.md","articles":[]},{"title":"Lanbao PSK-CM8JL65-CC5","level":"1.10.7.7","depth":3,"path":"sensor/cm8jl65_ir_distance_sensor.md","ref":"sensor/cm8jl65_ir_distance_sensor.md","articles":[]}]},{"title":"Tachometers (Revolution Counters)","level":"1.10.8","depth":2,"path":"sensor/tachometers.md","ref":"sensor/tachometers.md","articles":[{"title":"ThunderFly TFRPM01 Tachometer Sensor","level":"1.10.8.1","depth":3,"path":"sensor/thunderfly_tachometer.md","ref":"sensor/thunderfly_tachometer.md","articles":[]}]},{"title":"Airspeed Sensors","level":"1.10.9","depth":2,"path":"sensor/airspeed.md","ref":"sensor/airspeed.md","articles":[]},{"title":"Optical Flow","level":"1.10.10","depth":2,"path":"sensor/optical_flow.md","ref":"sensor/optical_flow.md","articles":[{"title":"PX4FLOW","level":"1.10.10.1","depth":3,"path":"sensor/px4flow.md","ref":"sensor/px4flow.md","articles":[]},{"title":"PMW3901","level":"1.10.10.2","depth":3,"path":"sensor/pmw3901.md","ref":"sensor/pmw3901.md","articles":[]}]},{"title":"ESCs & Motors","level":"1.10.11","depth":2,"path":"peripherals/esc_motors.md","ref":"peripherals/esc_motors.md","articles":[{"title":"PWM ESCs and Servos","level":"1.10.11.1","depth":3,"path":"peripherals/pwm_escs_and_servo.md","ref":"peripherals/pwm_escs_and_servo.md","articles":[]},{"title":"DShot ESCs","level":"1.10.11.2","depth":3,"path":"peripherals/dshot.md","ref":"peripherals/dshot.md","articles":[]},{"title":"UAVCAN ESCs","level":"1.10.11.3","depth":3,"path":"peripherals/uavcan_escs.md","ref":"peripherals/uavcan_escs.md","articles":[]}]},{"title":"Camera","level":"1.10.12","depth":2,"path":"peripherals/camera.md","ref":"peripherals/camera.md","articles":[]},{"title":"Parachute","level":"1.10.13","depth":2,"path":"peripherals/parachute.md","ref":"peripherals/parachute.md","articles":[]},{"title":"Companion Computer Peripherals","level":"1.10.14","depth":2,"path":"peripherals/companion_computer_peripherals.md","ref":"peripherals/companion_computer_peripherals.md","articles":[]},{"title":"ADSB/FLARM (Traffic Avoidance)","level":"1.10.15","depth":2,"path":"peripherals/adsb_flarm.md","ref":"peripherals/adsb_flarm.md","articles":[]}]},"previous":{"title":"Prearm/Arm/Disarm Configuration","level":"1.9.15","depth":2,"path":"advanced_config/prearm_arm_disarm.md","ref":"advanced_config/prearm_arm_disarm.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"advanced_config/parameter_reference.md","mtime":"2020-08-21T14:23:20.562Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-21T14:24:39.335Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
