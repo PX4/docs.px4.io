@@ -3725,10 +3725,10 @@ This process ensures that the RC loss value is below the minimum value output by
 <li>Start <em>QGroundControl</em> and connect the vehicle.</li>
 <li>Select the <strong>Gear</strong> icon (Vehicle Setup) in the top toolbar and then <strong>Radio</strong> in the sidebar.</li>
 <li><p>Press <strong>OK</strong> to start the calibration.</p>
-<p><img src="../../images/qgc/setup/radio_start_setup.jpg" alt="Radio setup - before starting"></p>
+<p><img src="../../assets/qgc/setup/radio/radio_start_setup.jpg" alt="Radio setup - before starting"></p>
 </li>
 <li><p>Set the <a href="../getting_started/rc_transmitter_receiver.html#transmitter_modes">transmitter mode</a> radio button that matches your transmitter (this ensures that <em>QGroundControl</em> displays the correct stick positions for you to follow during calibration).</p>
-<p><img src="../../images/qgc/setup/radio_sticks_throttle.jpg" alt="Radio setup - move sticks"></p>
+<p><img src="../../assets/qgc/setup/radio/radio_sticks_throttle.jpg" alt="Radio setup - move sticks"></p>
 </li>
 <li><p>Move the sticks to the positions indicated in the text (and on the transmitter image). Press <strong>Next</strong> when the sticks are in position. Repeat for all positions.</p>
 </li>
@@ -3740,7 +3740,7 @@ This process ensures that the RC loss value is below the minimum value output by
 <p>Radio calibration is demonstrated in the <a href="https://youtu.be/91VGmdSlbo4?t=4m30s" target="_blank">autopilot setup video here</a> (youtube).</p>
 <h2 id="additional-radio-setup"><a name="additional-radio-setup" class="plugin-anchor" href="#additional-radio-setup"><i class="fa fa-link" aria-hidden="true"></i></a>Additional Radio Setup</h2>
 <p>As well as calibrating your control sticks and other transmitter controls, there are a number of additional radio setup options that you may find useful on this screen.</p>
-<p><img src="../../images/qgc/setup/radio_additional_radio_setup.jpg" title="Radio setup - additional settings" width="300px"> </p>
+<p><img src="../../assets/qgc/setup/radio/radio/radio_additional_radio_setup.jpg" title="Radio setup - additional settings" width="300px"> </p>
 <p><span id="spektrum_bind"></span></p>
 <h3 id="spectrum-bind"><a name="spectrum-bind" class="plugin-anchor" href="#spectrum-bind"><i class="fa fa-link" aria-hidden="true"></i></a>Spectrum Bind</h3>
 <p>Before you can calibrate the radio system the receiver and transmitter must be connected/bound. If you have a <em>Spektrum</em> receiver you can put it in <em>bind mode</em> using <em>QGroundControl</em> as shown below (this can be particularly useful if you don&apos;t have easy physical access to the receiver on your vehicle).</p>
@@ -3749,7 +3749,7 @@ This process ensures that the RC loss value is below the minimum value output by
 <li>Select the <strong>Spektrum Bind</strong> button</li>
 <li>Select the radio button for your receiver</li>
 <li><p>Press <strong>OK</strong></p>
-<p><img src="../../images/qgc/setup/radio_additional_setup_spectrum_bind_select_channels.jpg" alt="Spektrum Bind"></p>
+<p><img src="../../assets/qgc/setup/radio/radio_additional_setup_spectrum_bind_select_channels.jpg" alt="Spektrum Bind"></p>
 </li>
 <li><p>Power on your Spektrum transmitter while holding down the bind button.</p>
 </li>
@@ -3764,7 +3764,7 @@ This process ensures that the RC loss value is below the minimum value output by
 <li>Select <strong>Copy Trims</strong>.</li>
 <li>Center your sticks and move throttle all the way down. </li>
 <li><p>Press <strong>Ok</strong>. </p>
-<p><img src="../../images/qgc/setup/radio_additional_radio_setup_copy_trims.jpg" alt="Copy Trims"></p>
+<p><img src="../../assets/qgc/setup/radio/radio_additional_radio_setup_copy_trims.jpg" alt="Copy Trims"></p>
 </li>
 <li><p>Reset the trims on your transmitter back to zero.</p>
 </li>
@@ -3776,7 +3776,7 @@ This process ensures that the RC loss value is below the minimum value output by
 <li>Map up to 2 transmitter controls to separate channels. </li>
 <li><p>Specify these channels to map to the AUX1 and AUX2 ports respectively, as shown below.
 Values are saved to the vehicle as soon as they are set.</p>
-<p><img src="../../images/qgc/setup/radio_additional_setup_aux_passthrough_channels.jpg" alt="AUX1 and AUX2 RC passthrough channels"></p>
+<p><img src="../../assets/qgc/setup/radio/radio_additional_setup_aux_passthrough_channels.jpg" alt="AUX1 and AUX2 RC passthrough channels"></p>
 </li>
 </ol>
 <p>The flight controller will pass through the unmodified values from the specified channels out of AUX1/AUX2 to the connected servos/relays that drive your hardware.</p>
@@ -3791,7 +3791,7 @@ Values are saved to the vehicle as soon as they are set.</p>
 <li>Map up to 3 transmitter controls (dials or sliders) to separate channels.</li>
 <li><p>Select the mapping of <em>PARAM Tuning Id</em> to radio channels, using the selection lists.
 Values are saved to the vehicle as soon as they are set.</p>
-<p><img src="../../images/qgc/setup/radio_additional_radio_setup_param_tuning.jpg" alt="Map radio channels to tuning channels"></p>
+<p><img src="../../assets/qgc/setup/radio/radio_additional_radio_setup_param_tuning.jpg" alt="Map radio channels to tuning channels"></p>
 </li>
 </ol>
 <p>To map a PARAM tuning channel to a parameter:</p>
@@ -3800,7 +3800,7 @@ Values are saved to the vehicle as soon as they are set.</p>
 <li>Select the parameter to map to your transmitter (this will open the <em>Parameter Editor</em>).</li>
 <li>Check the <strong>Advanced Settings</strong> checkbox.</li>
 <li><p>Click the <strong>Set RC to Param...</strong> button (this will pop-up the foreground dialog displayed below)</p>
-<p><img src="../../images/qgc/setup/parameters_radio_channel_mapping.jpg" alt="Map tuning channels to parameters"></p>
+<p><img src="../../assets/qgc/setup/radio/parameters_radio_channel_mapping.jpg" alt="Map tuning channels to parameters"></p>
 </li>
 <li>Select the tuning channel to map (1, 2 or 3) from the <em>Parameter Tuning ID</em> selection list.</li>
 <li>Press <strong>OK</strong> to close the dialog.</li>
@@ -3815,7 +3815,7 @@ Values are saved to the vehicle as soon as they are set.</p>
 <li><a href="https://youtu.be/91VGmdSlbo4?t=4m30s" target="_blank">PX4 Setup Video - @4m30s</a> (Youtube)</li>
 <li><a href="../getting_started/rc_transmitter_receiver.html">RC System Selection</a> - Choose a compatible RC system.</li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-09-08 00:52:22 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-09-08 04:52:14 </span> </footer>
                                 
                                 </section>
                             
@@ -3858,7 +3858,7 @@ Values are saved to the vehicle as soon as they are set.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Radio Setup","level":"1.4.9","depth":2,"next":{"title":"Joystick Setup","level":"1.4.10","depth":2,"path":"config/joystick.md","ref":"config/joystick.md","articles":[]},"previous":{"title":"Level Horizon Calibration","level":"1.4.8","depth":2,"path":"config/level_horizon_calibration.md","ref":"config/level_horizon_calibration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"config/radio.md","mtime":"2020-09-08T00:52:22.218Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-08T00:53:43.898Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Radio Setup","level":"1.4.9","depth":2,"next":{"title":"Joystick Setup","level":"1.4.10","depth":2,"path":"config/joystick.md","ref":"config/joystick.md","articles":[]},"previous":{"title":"Level Horizon Calibration","level":"1.4.8","depth":2,"path":"config/level_horizon_calibration.md","ref":"config/level_horizon_calibration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"config/radio.md","mtime":"2020-09-08T04:52:14.223Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-08T04:53:03.547Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>

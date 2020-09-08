@@ -3692,112 +3692,76 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="robocat-270"><a name="robocat-270" class="plugin-anchor" href="#robocat-270"><i class="fa fa-link" aria-hidden="true"></i></a>Robocat 270</h1>
-<p>The Robocat 270 is a small quadcopter design, rather meant for cruising
-than for racing, still a perfect trial base for the
-<a href="../flight_controller/pixracer.html">Pixracer</a> autopilot. It is heavier than a
-typical 250 racer, but offers a lot of space for add ons and bigger
-batteries up to 3S/2200mAh. Its an robust small quadcopter for
-beginners, very well visible for older Pros as well. It&apos;s so easy:
+<p>The Robocat 270 is a small quadcopter design, rather meant for cruising than for racing, still a perfect trial base for the <a href="../flight_controller/pixracer.html">Pixracer</a> autopilot.
+It is heavier than a typical 250 racer, but offers a lot of space for add ons and bigger batteries up to 3S/2200mAh.
+Its an robust small quadcopter for beginners, very well visible for older Pros as well.
+It&apos;s so easy: 
 Robocat, Pixracer with PX4 Software and QGroundControl Groundstation:
 Build, calibrate and fly !</p>
 <h2 id="mounting-and-wiring"><a name="mounting-and-wiring" class="plugin-anchor" href="#mounting-and-wiring"><i class="fa fa-link" aria-hidden="true"></i></a>Mounting and Wiring</h2>
-<p><img src="../../images/red_robo_case.jpg" alt="red robo case"></p>
-<p>The Robocat 270 frame kits are available from several sources.Two
-versions: Fiber glass or carbon. The latter is coming with an assortment
-of aluminium stand offs instead of fragile plastic provided with the
-fiber glass version.</p>
-<p><img src="../../images/red_parts_robocat.jpg" alt="red parts robocat"></p>
-<p>The shown kit comes with EMAX MT2204 motors, EMAX 12A ESC, pre-flashed
-with SimonK and 6045 carbon props. This is rather bargain than top
-quality, but pretty decent, considering the price. Experienced pilots,
-not on budget, will rather use e.g. Tiger Motors and faster ESC, even
-CAN versions can be used with the Pixracer / PX4 stack. Those CAN based
-FOC/Vector Control ESCs have the potential for huge gains in efficiency
-and reliability.</p>
-<p><img src="../../images/robocat750_basic_setup_1.jpg" alt="Robocat 750 basic setup"></p>
-<p>The first step should be the attachment of all parts for a test, before
-before mounting them onto the frame. Wiring details are shown @ the
-<a href="../flight_controller/pixracer.html">Pixracer instructions</a> guide.</p>
-<p><img src="../../images/red_robo_esc.jpg" alt="red robo esc"></p>
-<p>After that, one starts to assemble the bottom part, where the 36x36mm
-AUAV ACSP4 Power Module / PDB and the ESC fit very well. If ESC w/o
-heatsink are used, its recommended to install them on top of the arms,
-where airflow is provided.</p>
-<p><img src="../../images/red_robo_bottom.jpg" alt="red robo bottom"></p>
-<p>Its a good idea to install the ACSP4 with the shunt resistor for current
-sensing sunnyside down. Since it might get hot, one has to make sure,
-that no wire is touching it. It is very important to take care that all
-the wire insulation is nowhere damaged, since the conductive carbon
-might lead to shorts. If a 12V source / PDB is not required, a smaller
-(17x17mm) new ACSP5 Power Module, providing I/U sensing and a 5V BEC is
-available as well.</p>
-<p><img src="../../images/red_robo_top_plate.jpg" alt="red robo top plate"></p>
-<p>The Pixracer is soft mounted @ the 1st floor, above the battery
-compartment. This appears like a waste of space, but one needs about
-20mm space for wires clearance,since closely tied wire would badly
-affect vibration damping.</p>
-<p>Excursus: Effective damping is required by all advanced flight stacks
-and pilots using Althold and GPS modes. Although there are still <em>hard
-mounters</em> around, most builds/controllers/flight stacks are affected
-by vibrations, leading to the core issues Aliasing/Clipping.</p>
-<p><img src="../../images/vibration_aliasing.png" alt="vibration_aliasing"></p>
-<p>The PX4 stack is logging those impacts as well, so its easy to analyse
-them. The  example plot shows that the vibration induced dropout peaks
-are going one way instead of rising above and below the sensor values.
-This shifts the center of the signal, wrongly &quot;telling&quot; the flight
-controller rising or falling height. Although newer EKF filter
-algorithms are designed to handle this to a certain amount, its better
-to prevent impacts like this by the shown soft mount.</p>
-<p><img src="../../images/red_robo_damping.jpg" alt="red robo damping"></p>
-<p>This is realized either by 3DR foam pads or HK orange latex. The latter
-is not self-adhesive, but double faced tape such as 3M 5925F does the
-job nicely. If no housing is used for the Pixracer, the pads are
-sticking underneath a 36x36mm fiber or carbon board, squeezing the
-mandatory foam on top of the baro sensor as well. This foam reduces all
-light and most airflow impacts onto the sensor.</p>
-<p><img src="../../images/red_robo_wires.jpg" alt="red robo wires"></p>
-<p>It is recommended to fix the cables underneath the Pixracer to prevent
-damages or relocation during battery placement. Zip ties for the motor
-wires are worth discussing. If one arm breaks, the damage might be even
-bigger. For the required X Quad config, connect the four motors
-according to the layout shown below, so the MAIN1 connector should
-connect to ESC for motor 1, and so
-on.</p>
-<p><img src="../../images/motor_order_quad_x.png" alt="Motor order connection for Quad - X configuration"></p>
-<p>[<img src="../../images/red_robo_naked_side.jpg" alt="red robo naked side"></p>
-<p>The side view shows lots of space for the battery and other addons like an
-FPV Cam/Tx, RC Rx, OSD and 3DR radio (if the ESP 8266 Wifi board,
-provided with the Pixracer is not used.) The Piezo speaker is mounted
-sunnyside down near the front stand off. The safety switch, still
-provided with the Pixracer kit, is not needed at all. The PX4 stack
-doesn&#xB4;t use it.</p>
-<p><img src="../../images/red_fat_robo.jpg" alt="red fat robo"></p>
-<p>The Pixracer with PX4 stack is providing several GPS dependent flight
-modes, such as Auto Missions,Loiter, Position Control and Return to
-Land. If the GPS is not only used for the latter, it is recommended to
-install one of the better GNSS units with concurrent GPS / GLONASS
-ability. Any type with U-BLOX M8N on a 35x35mm board will fit @ 2nd
-floor, acting as a mast replacement. It is better to use a GNSS bord
-with a MAG sensor onboard, since the internal MAG of a flight Controller
-is always prone to EMI impacts and build related offsets. These might
-cause TBE (Toilet bowl) effects, impacting GPS modes. Any good rec. for
-the Pixhawk will work with the Pixracer as well.</p>
-<p><img src="../../images/red_robo_aufgeklappt.jpg" alt="red robo aufgeklappt"></p>
-<p>The foldable upper part of the Robocat frame allows easy access to the
-Pixracer and other external components.The wiring provided with the
-Pixracer kit will be long enough for this application. For others it
-might be required to enlongate them, which is easier than to crimp new
-ones with JST-GH connectors. </p>
+<p><img src="../../assets/airframes/multicopter/robocat_270_pixracer/red_robo_case.jpg" alt="red robo case"></p>
+<p>The Robocat 270 frame kits are available from several sources.
+Two versions: Fiber glass or carbon.
+The latter is coming with an assortment of aluminium stand offs instead of fragile plastic provided with the fiber glass version.</p>
+<p><img src="../../assets/airframes/multicopter/robocat_270_pixracer/red_parts_robocat.jpg" alt="red parts robocat"></p>
+<p>The shown kit comes with EMAX MT2204 motors, EMAX 12A ESC, pre-flashed with SimonK and 6045 carbon props.
+This is rather bargain than top quality, but pretty decent, considering the price.
+Experienced pilots, not on budget, will rather use e.g. Tiger Motors and faster ESC, even CAN versions can be used with the Pixracer / PX4 stack.
+Those CAN based FOC/Vector Control ESCs have the potential for huge gains in efficiency and reliability.</p>
+<p><img src="../../assets/airframes/multicopter/robocat_270_pixracer/robocat750_basic_setup_1.jpg" alt="Robocat 750 basic setup"></p>
+<p>The first step should be the attachment of all parts for a test, before before mounting them onto the frame. Wiring details are shown @ the <a href="../flight_controller/pixracer.html">Pixracer instructions</a> guide.</p>
+<p><img src="../../assets/airframes/multicopter/robocat_270_pixracer/red_robo_esc.jpg" alt="red robo esc"></p>
+<p>After that, one starts to assemble the bottom part, where the 36x36mm AUAV ACSP4 Power Module / PDB and the ESC fit very well.
+If ESC w/o heatsink are used, its recommended to install them on top of the arms, where airflow is provided.</p>
+<p><img src="../../assets/airframes/multicopter/robocat_270_pixracer/red_robo_bottom.jpg" alt="red robo bottom"></p>
+<p>Its a good idea to install the ACSP4 with the shunt resistor for current sensing sunnyside down.
+Since it might get hot, one has to make sure, that no wire is touching it. It is very important to take care that all the wire insulation is nowhere damaged, since the conductive carbon might lead to shorts.
+If a 12V source / PDB is not required, a smaller (17x17mm) new ACSP5 Power Module, providing I/U sensing and a 5V BEC is available as well.</p>
+<p><img src="../../assets/airframes/multicopter/robocat_270_pixracer/red_robo_top_plate.jpg" alt="red robo top plate"></p>
+<p>The Pixracer is soft mounted @ the 1st floor, above the battery compartment.
+This appears like a waste of space, but one needs about 20mm space for wires clearance,since closely tied wire would badly affect vibration damping.</p>
+<p>Excursus: Effective damping is required by all advanced flight stacks and pilots using Althold and GPS modes. Although there are still <em>hard mounters</em> around, most builds/controllers/flight stacks are affected by vibrations, leading to the core issues Aliasing/Clipping.</p>
+<p><img src="../../assets/airframes/multicopter/robocat_270_pixracer/vibration_aliasing.png" alt="vibration_aliasing"></p>
+<p>The PX4 stack is logging those impacts as well, so its easy to analyse them.
+The example plot shows that the vibration induced dropout peaks are going one way instead of rising above and below the sensor values.
+This shifts the center of the signal, wrongly &quot;telling&quot; the flight controller rising or falling height.
+Although newer EKF filter algorithms are designed to handle this to a certain amount, its better to prevent impacts like this by the shown soft mount.</p>
+<p><img src="../../assets/airframes/multicopter/robocat_270_pixracer/red_robo_damping.jpg" alt="red robo damping"></p>
+<p>This is realized either by 3DR foam pads or HK orange latex.
+The latter is not self-adhesive, but double faced tape such as 3M 5925F does the job nicely.
+If no housing is used for the Pixracer, the pads are sticking underneath a 36x36mm fiber or carbon board, squeezing the mandatory foam on top of the baro sensor as well.
+This foam reduces all light and most airflow impacts onto the sensor.</p>
+<p><img src="../../assets/airframes/multicopter/robocat_270_pixracer/red_robo_wires.jpg" alt="red robo wires"></p>
+<p>It is recommended to fix the cables underneath the Pixracer to prevent damages or relocation during battery placement.
+Zip ties for the motor wires are worth discussing.
+If one arm breaks, the damage might be even bigger.
+For the required X Quad config, connect the four motors according to the layout shown below, so the MAIN1 connector should connect to ESC for motor 1, and so on.</p>
+<p><img src="../../assets/airframes/multicopter/motor_order_quad_x.png" alt="Motor order connection for Quad - X configuration"></p>
+<p><img src="../../assets/airframes/multicopter/robocat_270_pixracer/red_robo_naked_side.jpg" alt="red robo naked side"></p>
+<p>The side view shows lots of space for the battery and other addons like an FPV Cam/Tx, RC Rx, OSD and 3DR radio (if the ESP 8266 Wifi board, provided with the Pixracer is not used.
+The Piezo speaker is mounted sunnyside down near the front stand off.
+The safety switch, still provided with the Pixracer kit, is not needed at all.
+The PX4 stack doesn&#xB4;t use it.</p>
+<p><img src="../../assets/airframes/multicopter/robocat_270_pixracer/red_fat_robo.jpg" alt="red fat robo"></p>
+<p>The Pixracer with PX4 stack is providing several GPS dependent flight modes, such as Auto Missions,Loiter, Position Control and Return to Land.
+If the GPS is not only used for the latter, it is recommended to install one of the better GNSS units with concurrent GPS / GLONASS ability.
+Any type with U-BLOX M8N on a 35x35mm board will fit @ 2nd floor, acting as a mast replacement.
+It is better to use a GNSS bord with a MAG sensor onboard, since the internal MAG of a flight Controller is always prone to EMI impacts and build related offsets.
+These might cause TBE (Toilet bowl) effects, impacting GPS modes.
+Any good rec. for the Pixhawk will work with the Pixracer as well.</p>
+<p><img src="../../assets/airframes/multicopter/robocat_270_pixracer/red_robo_aufgeklappt.jpg" alt="red robo aufgeklappt"></p>
+<p>The foldable upper part of the Robocat frame allows easy access to the Pixracer and other external components.
+The wiring provided with the Pixracer kit will be long enough for this application.
+For others it might be required to enlongate them, which is easier than to crimp new ones with JST-GH connectors. </p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> AUAV.CO supplies a large variety of replacements for several applications.</p>
 </blockquote>
-<p>When everything is ready, its time for configuration and calibration
-with QGroundControl.</p>
+<p>When everything is ready, its time for configuration and calibration with QGroundControl.</p>
 <h2 id="airframe-configuration"><a name="airframe-configuration" class="plugin-anchor" href="#airframe-configuration"><i class="fa fa-link" aria-hidden="true"></i></a>Airframe Configuration</h2>
-<p>Select the QAV250 configuration as shown below. This will not only put
-PX4 into quadrotor mode, but also load decent default tuning gains.</p>
-<p><img src="../../images/qav250_qgc_firmware.png" alt="QGC - select QAV240 firmware"></p>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-09-08 00:52:22 </span> </footer>
+<p>Select the QAV250 configuration as shown below.
+This will not only put PX4 into quadrotor mode, but also load decent default tuning gains.</p>
+<p><img src="../../assets/airframes/multicopter/robocat_270_pixracer/qav250_qgc_firmware.png" alt="QGC - select QAV240 firmware"></p>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-09-08 04:52:14 </span> </footer>
                                 
                                 </section>
                             
@@ -3840,7 +3804,7 @@ PX4 into quadrotor mode, but also load decent default tuning gains.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Robocat 270 (Pixracer)","level":"1.5.2.10","depth":3,"next":{"title":"Matrice 100 (Pixhawk 1)","level":"1.5.2.11","depth":3,"path":"frames_multicopter/matrice100.md","ref":"frames_multicopter/matrice100.md","articles":[]},"previous":{"title":"Spedix 250 (Pixracer)","level":"1.5.2.9","depth":3,"path":"frames_multicopter/spedix_s250_pixracer.md","ref":"frames_multicopter/spedix_s250_pixracer.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"frames_multicopter/robocat_270_pixracer.md","mtime":"2020-09-08T00:52:22.222Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-08T00:53:43.898Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Robocat 270 (Pixracer)","level":"1.5.2.10","depth":3,"next":{"title":"Matrice 100 (Pixhawk 1)","level":"1.5.2.11","depth":3,"path":"frames_multicopter/matrice100.md","ref":"frames_multicopter/matrice100.md","articles":[]},"previous":{"title":"Spedix 250 (Pixracer)","level":"1.5.2.9","depth":3,"path":"frames_multicopter/spedix_s250_pixracer.md","ref":"frames_multicopter/spedix_s250_pixracer.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10 - stable"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"frames_multicopter/robocat_270_pixracer.md","mtime":"2020-09-08T04:52:14.227Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-08T04:53:03.547Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
