@@ -3746,6 +3746,15 @@ The approach you use will depend on whether the vehicle&apos;s power module can 
   Other batteries use the <code>BATx_*</code> parameters, where <code>x</code> is the battery number.
   All battery calibration parameters <a href="../advanced_config/parameter_reference.html#battery-calibration">are listed here</a>.</p>
 </blockquote>
+<p><span></span></p>
+<blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
+<p> In addition to PX4 configuration discussed here, you should ensure that the ESC&apos;s low voltage cutoff is either disabled or set below the expected minimum voltage.
+  This ensures that the battery failsafe behaviour is managed by PX4, and that ESCs will not cut out while the battery still has charge (according to the &quot;empty-battery&quot; setting that you have chosen).</p>
+</blockquote>
+<p><span></span></p>
+<blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
+<p> <a href="#battery-type-comparison">Battery-Type Comparison</a> below explains the difference between the main battery types, and how that impacts the battery settings.</p>
+</blockquote>
 <p><span id="basic_settings"></span></p>
 <h2 id="basic-battery-settings-default"><a name="basic-battery-settings-default" class="plugin-anchor" href="#basic-battery-settings-default"><i class="fa fa-link" aria-hidden="true"></i></a>Basic Battery Settings (default)</h2>
 <p>The basic battery settings configure PX4 to use the default method for capacity estimate. 
@@ -3766,30 +3775,70 @@ The sections below explain what values to set for each field.</p>
   For vehicles with multiple batteries you&apos;ll need to directly <a href="../advanced_config/parameters.html">set the parameters</a> for battery 2 (<code>BAT2_*</code>), as described in the following sections.</p>
 </blockquote>
 <h3 id="number-of-cells-in-series"><a name="number-of-cells-in-series" class="plugin-anchor" href="#number-of-cells-in-series"><i class="fa fa-link" aria-hidden="true"></i></a>Number of Cells (in Series)</h3>
-<p>This sets the number of cells connected in series in the battery. Typically this will be written on the battery as a number followed by &quot;S&quot; (e.g &quot;3S&quot;, &quot;5s&quot;).</p>
+<p>This sets the number of cells connected in series in the battery.
+Typically this will be written on the battery as a number followed by &quot;S&quot; (e.g &quot;3S&quot;, &quot;5S&quot;).</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> The voltage across a single galvanic battery cell is dependent on the chemical properties of the battery type.
-  The most common drone battery type (Lithium-Polymer - LiPo) has a nominal cell voltage of 3.7V.
+  Lithium-Polymer (LiPo) batteries and Lithium-Ion batteries both have the same <em>nominal</em> cell voltage of 3.7V.
   In order to achieve higher voltages (which will more efficiently power a vehicle), multiple cells are connected in <em>series</em>.
   The battery voltage at the terminals is then a multiple of the cell voltage.</p>
 </blockquote>
-<p>If the number of cells is not supplied you can calculate it by dividing the battery voltage by the nominal voltage for a single cell. The table below shows the voltage-to-cell relationship for LiPo batteries:</p>
-<ul>
-<li>1S - 3.7V</li>
-<li>2S - 7.4V</li>
-<li>3S - 11.1V</li>
-<li>4S - 14.8V</li>
-<li>5S - 18.5V</li>
-<li>6S - 22.2V</li>
-</ul>
+<p>If the number of cells is not supplied you can calculate it by dividing the battery voltage by the nominal voltage for a single cell.
+The table below shows the voltage-to-cell relationship for these batteries:</p>
+<table>
+<thead>
+<tr>
+<th>Cells</th>
+<th>LiPo (V)</th>
+<th>LiIon (V)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1S</td>
+<td>3.7</td>
+<td>3.7</td>
+</tr>
+<tr>
+<td>2S</td>
+<td>7.4</td>
+<td>7.4</td>
+</tr>
+<tr>
+<td>3S</td>
+<td>11.1</td>
+<td>11.1</td>
+</tr>
+<tr>
+<td>4S</td>
+<td>14.8</td>
+<td>14.8</td>
+</tr>
+<tr>
+<td>5S</td>
+<td>18.5</td>
+<td>18.5</td>
+</tr>
+<tr>
+<td>6S</td>
+<td>22.2</td>
+<td>22.2</td>
+</tr>
+</tbody>
+</table>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> This setting corresponds to <a href="../advanced_config/parameters.html">parameters</a>: <a href="../advanced_config/parameter_reference.html#BAT1_N_CELLS">BAT1_N_CELLS</a> and <a href="../advanced_config/parameter_reference.html#BAT2_N_CELLS">BAT2_N_CELLS</a></p>
 </blockquote>
 <h3 id="full-voltage-per-cell"><a name="full-voltage-per-cell" class="plugin-anchor" href="#full-voltage-per-cell"><i class="fa fa-link" aria-hidden="true"></i></a>Full Voltage (per cell)</h3>
 <p>This sets the <em>nominal</em> maximum voltage of each cell (the lowest voltage at which the cell will be considered &quot;full&quot;).</p>
-<p>The value should be set slightly lower that the nominal maximum cell voltage for the battery (4.2V for LiPo), but not so low that the estimated capacity is still 100% after a few minutes of flight. The default value is usually appropriate for LiPo batteries. </p>
+<p>The value should be set slightly lower that the nominal maximum cell voltage for the battery, but not so low that the estimated capacity is still 100% after a few minutes of flight.</p>
+<p>Appropriate values to use are:</p>
+<ul>
+<li><strong>LiPo:</strong> 4.05V (default in <em>QGroundControl</em>)</li>
+<li><strong>LiIon:</strong> 4.05V</li>
+</ul>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
-<p>  The voltage of a full battery may drop a small amount over time after charging.
+<p> The voltage of a full battery may drop a small amount over time after charging.
   Setting a slightly-lower than maximum value compensates for this drop.</p>
 </blockquote>
 <p><span></span></p>
@@ -3797,18 +3846,39 @@ The sections below explain what values to set for each field.</p>
 <p> This setting corresponds to <a href="../advanced_config/parameters.html">parameters</a>: <a href="../advanced_config/parameter_reference.html#BAT1_V_CHARGED">BAT1_V_CHARGED</a> and <a href="../advanced_config/parameter_reference.html#BAT2_V_CHARGED">BAT2_V_CHARGED</a>. </p>
 </blockquote>
 <h3 id="empty-voltage-per-cell"><a name="empty-voltage-per-cell" class="plugin-anchor" href="#empty-voltage-per-cell"><i class="fa fa-link" aria-hidden="true"></i></a>Empty Voltage (per cell)</h3>
-<p>This sets the nominal minimum safe voltage of each cell (use below this voltage may damage the battery).</p>
+<p>This sets the nominal minimum safe voltage of each cell (using below this voltage may damage the battery).</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> There is no single value at which a battery is said to be empty.
   If you choose a value that is too low the battery may be damaged due to deep discharge (and/or the vehicle may crash).
   If you choose a value that is too high you may unnecessarily curtail your flight.</p>
 </blockquote>
-<p>A rule of thumb for LiPo batteries:</p>
-<ul>
-<li>3.7V without load is a conservative minimum value.</li>
-<li>3.5 V under load (while flying) is closer to the true minimum. At this voltage you should land immediately. </li>
-<li>3.2V under load will cause damage to the battery. </li>
-</ul>
+<p>A rule of thumb for minimum per-cell voltages:</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>LiPo (V)</th>
+<th>LiIon (V)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conservative (voltage under no-load)</td>
+<td>3.7</td>
+<td>3</td>
+</tr>
+<tr>
+<td>&quot;Real&quot; minimum (voltage under load/while flying</td>
+<td>3.5</td>
+<td>2.7</td>
+</tr>
+<tr>
+<td>Damage battery (voltage under load)</td>
+<td>3.0</td>
+<td>2.5</td>
+</tr>
+</tbody>
+</table>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
 <p> Below the conservative range, the sooner you recharge the battery the better - it will last longer and lose capacity slower.</p>
 </blockquote>
@@ -3906,7 +3976,82 @@ Changes to <code>BAT_</code> and <code>BAT1_</code> are currently synchronised:<
 <li>If either the old or new parameters is changed, the value is copied into the other parameter (they are kept in sync in both directions).</li>
 <li>If the old/new parameters are different at boot, then the value of the old <code>BAT_</code> parameter is copied into the new <code>BAT1_</code> parameter.</li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-10-07 05:58:55 </span> </footer>
+<h2 id="battery-type-comparison"><a name="battery-type-comparison" class="plugin-anchor" href="#battery-type-comparison"><i class="fa fa-link" aria-hidden="true"></i></a>Battery-Type Comparison</h2>
+<p>This section provides a comparative overview of several different battery types (in particular LiPo and Li-Ion).</p>
+<h3 id="overview"><a name="overview" class="plugin-anchor" href="#overview"><i class="fa fa-link" aria-hidden="true"></i></a>Overview</h3>
+<ul>
+<li>Li-Ion batteries have a higher energy density than Lipo battery packs but that comes at the expense of lower discharge rates and increased battery cost.</li>
+<li>LiPo batteries are readily available and can withstand higher discharge rates that are common in multi-rotor aircraft.</li>
+<li>The choice needs to be made based on the vehicle and the mission being flown.
+If absolute endurance is the aim then there is more of a benefit to flying to a Li-Ion battery but similarly, more caution needs to be taken.
+As such, the decision should be made based on the factors surrounding the flight.</li>
+</ul>
+<h3 id="advantages"><a name="advantages" class="plugin-anchor" href="#advantages"><i class="fa fa-link" aria-hidden="true"></i></a>Advantages</h3>
+<p>LiPo    </p>
+<ul>
+<li>Very common</li>
+<li>Wide range of sizes, capacities and voltages</li>
+<li>Inexpensive</li>
+<li>High discharge rates relative to capacity (high C ratings)</li>
+<li>Higher charge rates</li>
+</ul>
+<p>Li-Ion</p>
+<ul>
+<li>Much higher energy density (up to 60% higher)</li>
+</ul>
+<h3 id="disadvantages"><a name="disadvantages" class="plugin-anchor" href="#disadvantages"><i class="fa fa-link" aria-hidden="true"></i></a>Disadvantages:</h3>
+<p>LiPo</p>
+<ul>
+<li>Low (relative) energy density </li>
+<li>Quality can vary given abundance of suppliers</li>
+</ul>
+<p>Li-Ion</p>
+<ul>
+<li>Not as common</li>
+<li>Much more expensive</li>
+<li>Not as widely available in large sizes and configurations</li>
+<li>All cells are relatively small so larger packs are made up of many cells tied in series and parallel to create the required voltage and capacity</li>
+<li>Lower discharge rates relative to battery size (C rating)</li>
+<li>More difficult to adapt to vehicles that require high currents</li>
+<li>Lower charging rates (relative to capacity)</li>
+<li>Requires more stringent temperature monitoring during charge and discharge</li>
+<li>Requires settings changes on the ESC to utilize max capacity (&quot;standard&quot; ESC low voltage settings are too high).</li>
+<li>At close-to-empty the voltage of the battery is such that a ~3V difference is possible between a Lipo to Li-ion (while using a 6S battery).
+This could have implications on thrust expectations. </li>
+</ul>
+<h3 id="c-ratings"><a name="c-ratings" class="plugin-anchor" href="#c-ratings"><i class="fa fa-link" aria-hidden="true"></i></a>C Ratings</h3>
+<ul>
+<li>A C rating is simply a multiple of the stated capacity of any battery type.</li>
+<li>A C rating is relevant (and differs) for both charge and discharge rates.<ul>
+<li>For example, a 2000 mAh battery (irrespective of voltage) with a 10C discharge rate can safely and continuously discharge 20 amps of current (2000/1000=2Ah x 10C = 20 amps).</li>
+</ul>
+</li>
+<li>C Ratings are always given by the manufacturer (often on the outside of the battery pack).
+While they can actually be calculated, you need several pieces of information, and to measure the internal resistance of the cells.</li>
+<li>LiPo batteries will always have a higher C rating than a Li-Ion battery.
+This is due to chemistry type but also to the internal resistance per cell (which is due to the chemistry type) leading to higher discharge rates for LiPo batteries.</li>
+<li>Following manufacturer guidelines for both charge and discharge C ratings is very important for the health of your battery and to operate your vehicle safely (i.e. reduce fires, &#x201C;puffing&#x201D; packs and other suboptimal states during charging and discharging).</li>
+</ul>
+<h3 id="energy-density"><a name="energy-density" class="plugin-anchor" href="#energy-density"><i class="fa fa-link" aria-hidden="true"></i></a>Energy Density</h3>
+<ul>
+<li>Energy density is how much energy is able to be stored relative to battery weight.
+It is generally measured and compared in Watt Hour per Kilogram (Wh/Kg).<ul>
+<li>Watt-hours are simply calculated by taking the nominal (i.e. not the fully charged voltage) multiplied by the capacity, e.g. 3.7v X 5 Ah = 18.5Wh.
+If you had a 3 cell battery pack your pack would be 18.5Wh X 3 = 55 Wh of stored energy.</li>
+</ul>
+</li>
+<li>When you take battery weight into account you calculate energy density by taking the watt-hours and dividing them by weight.<ul>
+<li>E.g. 55 Wh divided by (battery weight in grams divided by 1000).
+Assuming this battery weighed 300 grams then 55/(300/1000)=185 Wh/Kg.</li>
+</ul>
+</li>
+<li>This number 185 Wh/Kg would be on the very high-end for a LiPo battery.
+A Li-Ion battery on the other hand can reach 260 Wh/Kg, meaning per kilogram of battery onboard you can carry 75 more watt-hours. <ul>
+<li>If you know how many watts your vehicle takes to fly (which a battery current module can show you), you can equate this increased storage at no additional weight into increased flight time.</li>
+</ul>
+</li>
+</ul>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-10-07 06:50:40 </span> </footer>
                                 
                                 </section>
                             
@@ -3949,7 +4094,7 @@ Changes to <code>BAT_</code> and <code>BAT1_</code> are currently synchronised:<
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Battery","level":"1.4.12","depth":2,"next":{"title":"Safety","level":"1.4.13","depth":2,"path":"config/safety.md","ref":"config/safety.md","articles":[]},"previous":{"title":"Flight Modes","level":"1.4.11","depth":2,"path":"config/flight_mode.md","ref":"config/flight_mode.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.11/en/","text":"v1.11 - stable"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"config/battery.md","mtime":"2020-10-07T05:58:55.240Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-07T06:00:21.704Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Battery","level":"1.4.12","depth":2,"next":{"title":"Safety","level":"1.4.13","depth":2,"path":"config/safety.md","ref":"config/safety.md","articles":[]},"previous":{"title":"Flight Modes","level":"1.4.11","depth":2,"path":"config/flight_mode.md","ref":"config/flight_mode.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.11/en/","text":"v1.11 - stable"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"config/battery.md","mtime":"2020-10-07T06:50:40.254Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-07T06:52:08.612Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
