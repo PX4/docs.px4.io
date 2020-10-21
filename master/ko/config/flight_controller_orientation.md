@@ -14,8 +14,6 @@ For example, the vehicles shown below have rotations around the z-axis (only) co
 
 ![Yaw Rotation](../../assets/qgc/setup/sensor/yaw_rotation.png)
 
-> **Note** For a VTOL Tailsitter airframe set the vehicle orientation according to its multirotor (hovering) configuration. This also applies to all other sensor calibrations.
-
 ## 방향 설정
 
 To set the orientations:
