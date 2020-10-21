@@ -3723,69 +3723,105 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="px4-vision-autonomy-development-kit-early-adopter-edition"><a name="px4-vision-autonomy-development-kit-early-adopter-edition" class="plugin-anchor" href="#px4-vision-autonomy-development-kit-early-adopter-edition"><i class="fa fa-link" aria-hidden="true"></i></a>PX4 Vision Autonomy Development Kit (Early Adopter Edition)</h2>
-<p>The <em>PX4 Vision Autonomy DevKit</em> is a robust and inexpensive kit for enabling computer vision development on autonomous vehicles.</p>
+                                <h1 id="px4-vision-autonomy-development-kit"><a name="px4-vision-autonomy-development-kit" class="plugin-anchor" href="#px4-vision-autonomy-development-kit"><i class="fa fa-link" aria-hidden="true"></i></a>PX4 Vision Autonomy Development Kit</h1>
+<p>The <a href="http://www.holybro.com/product/px4-vision/" target="_blank"><em>PX4 Vision Autonomy Development Kit</em></a> is a robust and inexpensive kit for enabling computer vision development on autonomous vehicles.</p>
 <p><img src="../../assets/hardware/px4_vision_devkit/px4_vision_kit_hero.jpg" alt="Overview"></p>
-<p>The kit contains a near-ready-to-fly carbon-fiber quadcopter equipped with a <em>Pixhawk 4</em> flight controller, <em>UP Core</em> companion computer, and Occipital <em>Structure Core</em> depth camera sensor.
-The vehicle comes with software for PX4 <a href="../computer_vision/obstacle_avoidance.html">Obstacle Avoidance</a> and <a href="../computer_vision/collision_prevention.html">Collision Prevention</a> enabled &#x201C;out of the box&#x201D;.
-Developers can use the kit to try out other features provided by the <a href="https://github.com/PX4/avoidance#obstacle-detection-and-avoidance" target="_blank">PX4 Avoidance</a> project, modify the existing code, or experiment with completely new computer vision-based functionality.</p>
-<p>The guide explains the minimal additional setup required to get the vehicle ready to fly (installing an RC system and battery).
-It also covers the first flight, and how to get started with modifying the computer vision code.</p>
+<p>The kit contains a near-ready-to-fly carbon-fiber quadcopter equipped with a <em>Pixhawk 4</em> flight controller, a <em>UP Core</em> companion computer (4GB memory &amp; 64GB eMMC), and a Occipital <em>Structure Core</em> depth camera sensor.</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> This vehicle comes with no pre-installed software.
+  A pre-imaged USB stick that contains a reference implementation of the <a href="../computer_vision/obstacle_avoidance.html">PX4/Avoidance</a> local planner software is provided by <em>Auterion</em>.
+   This software provides only a very basic example of what you can do with the PX4 Vision Autonomy Kit.
+   Developers can use the kit to try out other features provided by the <a href="https://github.com/PX4/avoidance#obstacle-detection-and-avoidance" target="_blank">PX4 Avoidance</a> project, modify the existing code, or experiment with completely new computer vision-based functionality.</p>
+</blockquote>
+<p>The guide explains the minimal additional setup required to get the vehicle ready to fly (installing an RC system and battery). It also covers the first flight, and how to get started with modifying the computer vision code.</p>
 <h2 id="purchase"><a name="purchase" class="plugin-anchor" href="#purchase"><i class="fa fa-link" aria-hidden="true"></i></a>Purchase</h2>
-<p>Purchase link and more information about this kit <a href="http://www.holybro.com/product/px4-vision/" target="_blank">can be found here</a>.</p>
-<h2 id="warnings--notifications"><a name="warnings--notifications" class="plugin-anchor" href="#warnings--notifications"><i class="fa fa-link" aria-hidden="true"></i></a>Warnings &amp; Notifications</h2>
+<ul>
+<li><a href="https://shop.holybro.com/px4-vision_p1225.html?" target="_blank">Holybro Website</a></li>
+</ul>
+<h2 id="px4-vision-guide-content"><a name="px4-vision-guide-content" class="plugin-anchor" href="#px4-vision-guide-content"><i class="fa fa-link" aria-hidden="true"></i></a>Px4 Vision Guide Content</h2>
+<ul>
+<li><a href="#warnings-and-notifications">Warnings &amp; Notifications</a></li>
+<li><a href="#what-is-inside">What is Inside</a></li>
+<li><a href="#what-else-do-you-need">What Else Do You Need</a></li>
+<li><a href="#first-time-setup">First-time Setup</a></li>
+<li><a href="#fly-the-drone-with-avoidance">Fly the Drone with avoidance</a></li>
+<li><a href="#development-using-the-kit">Development using the Kit</a></li>
+<li><a href="#px4-vision-carrier-board-pinouts">Px4 Vision Carrier Board Pinouts</a></li>
+<li><a href="#other-development-resources">Other Development Resources</a></li>
+<li><a href="#how-to-get-technical-support">How to get Technical Support</a></li>
+</ul>
+<h2 id="warnings-and-notifications"><a name="warnings-and-notifications" class="plugin-anchor" href="#warnings-and-notifications"><i class="fa fa-link" aria-hidden="true"></i></a>Warnings and Notifications</h2>
 <ol>
-<li><p>The kit is intended for computer vision projects that use a forward-facing camera (it does not have downward or rear-facing depth cameras).
-Consequently it can&#x2019;t be used (without modification) for testing <a href="../computer_vision/safe_landing.html">Safe Landing</a>, or other features that require a downward-facing camera.</p>
-</li>
-<li><p>Obstacle avoidance in missions can only be tested when GPS is available (missions use GPS co-ordinates).
-Collision prevention can be tested in position mode provided there is a good position lock from either GPS or optical flow.</p>
-</li>
-<li><p>The port labeled <code>USB1</code> may jam the GPS if used with a <em>USB3</em> peripheral (disable GPS-dependent functionality including missions).
-This is why the boot image is supplied on a <em>USB2.0</em> memory stick.</p>
-</li>
+<li>The kit is intended for computer vision projects that use a forward-facing camera (it does not have downward or rear-facing depth cameras).
+Consequently it can&#x2019;t be used (without modification) for testing <a href="../computer_vision/safe_landing.html">Safe Landing</a>, or other features that require a downward-facing camera.</li>
+<li>Obstacle avoidance in missions can only be tested when GPS is available (missions use GPS co-ordinates).
+Collision prevention can be tested in position mode provided there is a good position lock from either GPS or optical flow.</li>
+<li>The port labeled <code>USB1</code> may jam the GPS if used with a <em>USB3</em> peripheral (disable GPS-dependent functionality including missions).
+This is why the boot image is supplied on a <em>USB2.0</em> memory stick.</li>
 <li><p>The <em>UP Core</em> should only be powered using the battery (do not remove the <em>UP Core</em> power socket safety cover).</p>
 <p><img src="../../assets/hardware/px4_vision_devkit/warning_power_port.png" alt="Warning - do not connect power port"></p>
 </li>
 </ol>
-<h2 id="getting-to-know-your-devkit"><a name="getting-to-know-your-devkit" class="plugin-anchor" href="#getting-to-know-your-devkit"><i class="fa fa-link" aria-hidden="true"></i></a>Getting to Know Your DevKit</h2>
-<p><img src="../../assets/hardware/px4_vision_devkit/px4_vision_schematic_overview.jpg" alt="Schematic Overview"></p>
-<p><img src="../../assets/hardware/px4_vision_devkit/px4_vision_schematic_layered.png" alt="Schematic Layered"></p>
-<p>The DevKit contains following components:</p>
+<h2 id="what-is-inside"><a name="what-is-inside" class="plugin-anchor" href="#what-is-inside"><i class="fa fa-link" aria-hidden="true"></i></a>What is Inside</h2>
+<p><img src="../../assets/hardware/px4_vision_devkit/holybro_px4_vision_whats_inside_top.jpg" alt="Whats inside"></p>
+<p><img src="../../assets/hardware/px4_vision_devkit/holybro_px4_vision_whats_inside.jpg" alt="Whats inside"></p>
+<p><img src="../../assets/hardware/px4_vision_devkit/Explode-view.png" width="500px" title="Pixhawk4 Upright Image"></p>
+<p>The PX4 Vision DevKit contains following components:</p>
 <ul>
-<li>PX4 Vision drone kit with these internal parts:<ul>
+<li>Core Components:<ul>
 <li>1x Pixhawk 4 flight controller (with custom PX4 firmware)</li>
-<li>1x pmw3901 optical flow sensor</li>
-<li>1x distance sensor</li>
-<li>1x Structure Core depth camera</li>
-<li>1x <em>UP Core</em> computer (with Ubuntu and PX4 avoidance)<ul>
-<li>Atom CPU</li>
+<li>1x PMW3901 optical flow sensor</li>
+<li>1x TOF Infrared distance sensor (PSK&#x2010;CM8JL65&#x2010;CC5)</li>
+<li>1x Structure Core depth camera<ul>
+<li>160 deg wide vision camera</li>
+<li>Stereo infrared cameras</li>
+<li>Onboard IMU</li>
+<li>Powerful NU3000 Multi-core depth Processor    </li>
+</ul>
+</li>
+<li>1x <em>UP Core</em> computer (4GB memory &amp; 64GB eMMC with Ubuntu and PX4 avoidance)<ul>
+<li>Intel&#xAE; Atom&#x2122; x5-z8350 (up to 1.92 GHz)</li>
+<li>Compatible OS: Microsoft Windows 10 full version, Linux (ubilinux, Ubuntu, Yocto), Android</li>
 <li>FTDI UART connected to flight controller</li>
 <li><code>USB1</code>: USB3.0 A port used for booting PX4 avoidance environment from a USB2.0 stick (connecting a USB3.0 peripheral may jam GPS).</li>
-<li><code>USB2</code>: USB2.0 port on a JST-GH connector. 
-Can be used for second camera, LTE, etc. (or keyboard/mouse during development).</li>
+<li><code>USB2</code>: USB2.0 port on a JST-GH connector. Can be used for second camera, LTE, etc. (or keyboard/mouse during development).</li>
 <li><code>USB3</code>: USB2.0 JST-GH port connected to depth camera</li>
 <li><code>HDMI</code>: HDMI out</li>
 <li>SD card slot</li>
-<li>WiFi (attached to external antenna #1). 
-Allows computer to access home WiFi network for Internet access/updates.</li>
+<li>WiFi 802.11 b/g/n @ 2.4 GHz (attached to external antenna #1). Allows computer to access home WiFi network for Internet access/updates.</li>
 </ul>
 </li>
-<li>ESP8266 connected to flight controller (attached to external antenna #2).
-Enables wireless connection to the ground station.</li>
 </ul>
 </li>
-<li>A USB2.0 stick with pre-flashed software that bundles:<ul>
+</ul>
+<ul>
+<li>Mechanical Specification:<ul>
+<li>Frame: Full 5mm 3k carbon fiber twill</li>
+<li>Motors: T-MOTOR F60 PRO&#x2162; KV1750</li>
+<li>ESC: BEHEli-S 20A ESC</li>
+<li>Propellers: T6045</li>
+<li>GPS: Pixhawk4 GPS module</li>
+<li>Power module: Holybro PM07</li>
+<li>Wheelbase: 286mm</li>
+<li>Weight: 854 grams without battery or props</li>
+<li>Telemetry: ESP8266 connected to flight controller (attached to external antenna #2). Enables wireless connection to the ground station.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>A USB2.0 stick with pre-flashed software provided by Auterion that bundles:<ul>
 <li>Ubuntu 18.04 LTS</li>
 <li>ROS Melodic</li>
-<li>Occipital Structure Core ROS driver </li>
+<li>Occipital Structure Core ROS driver</li>
 <li>MAVROS</li>
 <li><a href="https://github.com/PX4/avoidance#obstacle-detection-and-avoidance" target="_blank">PX4 Avoidance</a></li>
 </ul>
 </li>
-<li>Assorted cables, propellers, and other accessories (these can be used to attach additional peripherals).</li>
 </ul>
-<h2 id="what-else-do-you-need"><a name="what-else-do-you-need" class="plugin-anchor" href="#what-else-do-you-need"><i class="fa fa-link" aria-hidden="true"></i></a>What Else do you Need?</h2>
+<ul>
+<li>Assorted cables, 8x propellers, 2x battery straps (installed) and other accessories (these can be used to attach additional peripherals).</li>
+</ul>
+<h2 id="what-else-do-you-need"><a name="what-else-do-you-need" class="plugin-anchor" href="#what-else-do-you-need"><i class="fa fa-link" aria-hidden="true"></i></a>What Else Do You Need</h2>
 <p>The kit contains all the essential drone hardware except a battery and a radio control system, which must be purchased separately:</p>
 <ul>
 <li>Battery:<ul>
@@ -3850,6 +3886,8 @@ The binding procedure depends on the specific radio system used (read the receiv
 <li><a href="../config/compass.html">Calibrate the Compass</a></li>
 </ul>
 </li>
+</ol>
+<ol>
 <li><p>(Optional) Configure a <a href="../config/flight_mode.html">Flight Mode selector switch</a> on the remote controller.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> Modes can also be changed using <em>QGroundControl</em></p>
@@ -3861,6 +3899,8 @@ The binding procedure depends on the specific radio system used (read the receiv
 <li><a href="../flight_modes/return.html">Return Mode</a> - return vehicle safely to its launch point and land.</li>
 </ul>
 </li>
+</ol>
+<ol>
 <li><p>Attach the propellers with the rotations as shown:</p>
 <p><img src="../../assets/hardware/px4_vision_devkit/motor_order_diagram.png" alt="Motor Order Diagram"></p>
 <ul>
@@ -3873,8 +3913,7 @@ The binding procedure depends on the specific radio system used (read the receiv
 </ul>
 </li>
 </ol>
-<p><span id="fly_drone"></span></p>
-<h2 id="fly-the-drone-with-avoidance"><a name="fly-the-drone-with-avoidance" class="plugin-anchor" href="#fly-the-drone-with-avoidance"><i class="fa fa-link" aria-hidden="true"></i></a>Fly the Drone (with avoidance)</h2>
+<h2 id="fly-the-drone-with-avoidance"><a name="fly-the-drone-with-avoidance" class="plugin-anchor" href="#fly-the-drone-with-avoidance"><i class="fa fa-link" aria-hidden="true"></i></a>Fly the Drone with Avoidance</h2>
 <p>When the vehicle setup described above is complete:</p>
 <ol>
 <li><p>Connect the battery to power the vehicle.</p>
@@ -3923,7 +3962,7 @@ The project provides a number of different planner implementations (packaged as 
 <p><span id="install_image_mission_computer"></span></p>
 <h3 id="installing-the-image-on-the-companion-computer"><a name="installing-the-image-on-the-companion-computer" class="plugin-anchor" href="#installing-the-image-on-the-companion-computer"><i class="fa fa-link" aria-hidden="true"></i></a>Installing the image on the Companion Computer</h3>
 <p>You can install the image on the <em>UP Core</em> and boot from internal memory (instead of the USB stick).</p>
-<p>This is recommended because booting from internal memory is much faster, frees up a USB port, and may well provide more memory than your USB stick. </p>
+<p>This is recommended because booting from internal memory is much faster, frees up a USB port, and may well provide more memory than your USB stick.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> Booting from internal memory takes around 30 seconds while booting from the supplied USB2 stick boots in about a minute (other cards may take several times longer).</p>
 </blockquote>
@@ -3946,11 +3985,11 @@ sudo ./flash_emmc.sh
 The <em>UP Core</em> computer will now boot from internal memory (eMMC).</li>
 </ol>
 <p><span id="boot_mission_computer"></span></p>
-<h3 id="boot-the-companion-computer"><a name="boot-the-companion-computer" class="plugin-anchor" href="#boot-the-companion-computer"><i class="fa fa-link" aria-hidden="true"></i></a>Boot the Companion Computer</h3>
+<h3 id="boot_mission_computer"><a name="boot_mission_computer" class="plugin-anchor" href="#boot_mission_computer"><i class="fa fa-link" aria-hidden="true"></i></a>Boot the Companion Computer </h3>
 <p>First insert the provided USB2.0 stick into the <em>UP Core</em> port labeled <code>USB1</code>, and then power the vehicle using a 4S battery.
 The avoidance system should start within about 1 minute (though this does depend on the USB stick supplied).</p>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
-<p> <a href="#fly_drone">Fly the Drone (with avoidance)</a> additionally explains how to verify that the avoidance system is active.</p>
+<p> <a href="#Fly-the-Drone-with-Avoidance">Fly the Drone with Avoidance</a> additionally explains how to verify that the avoidance system is active.</p>
 </blockquote>
 <p>If you&apos;ve already <a href="#install_image_mission_computer">installed the image on the companion computer</a> you can just power the vehicle (i.e. no USB stick is needed).
 The avoidance system should be up and running within around 30 seconds.</p>
@@ -3965,12 +4004,12 @@ The avoidance system should be up and running within around 30 seconds.</p>
 <li><p>Use the USB-JST cable from the kit to get a USB A connector</p>
 <p><img src="../../assets/hardware/px4_vision_devkit/usb_jst_cable.jpg" alt="USB to JST cable"></p>
 </li>
-<li>A USB hub can be attached to the cable if the keyboard and mouse have separate connectors. </li>
+<li>A USB hub can be attached to the cable if the keyboard and mouse have separate connectors.</li>
 </ul>
 </li>
 <li><p>Connect a monitor to the <em>UP Core</em> HDMI port.</p>
 <p><img src="../../assets/hardware/px4_vision_devkit/upcore_port_hdmi.png" alt="UP Core: HDMI port"></p>
-<p>The Ubuntu login screen should then appear on the monitor. </p>
+<p>The Ubuntu login screen should then appear on the monitor.</p>
 </li>
 <li>Login to the <em>UP Core</em> using the credentials:<ul>
 <li><strong>Username:</strong> px4vision</li>
@@ -3981,7 +4020,7 @@ The avoidance system should be up and running within around 30 seconds.</p>
 <h3 id="developingextending-px4-avoidance"><a name="developingextending-px4-avoidance" class="plugin-anchor" href="#developingextending-px4-avoidance"><i class="fa fa-link" aria-hidden="true"></i></a>Developing/Extending PX4 Avoidance</h3>
 <p>The PX4 Vision&#x2019;s <em>UP Core</em> computer provides a complete and fully configured environment for extending PX4 Avoidance software (and more generally, for developing new computer vision algorithms using ROS2).
 You should develop and test your software on the vehicle, sync it to your own git repository, and share any fixes and improvements with the wider PX4 community on the github <a href="https://github.com/PX4/avoidance" target="_blank">PX4/Avoidance</a> repo.</p>
-<p>The catkin workspace is at <code>~/catkin_ws</code>, and is preconfigured for running the PX4 avoidance local planner. 
+<p>The catkin workspace is at <code>~/catkin_ws</code>, and is preconfigured for running the PX4 avoidance local planner.
 The launch-from-boot file (<code>avoidance.launch</code>) is in the <code>px4vision_ros</code> package (modify this file to change what planner is launched).</p>
 <p>The avoidance package is started on boot.
 To integrate a different planner, this needs to be disabled.</p>
@@ -4025,22 +4064,26 @@ For reference on developing in ROS and using the catkin workspace, see the <a hr
 <p> Modification of PX4 code is not <em>needed</em> to meet most computer vision use cases.
   To discuss the interfaces or how to integrate other features join the PX4 slack channel: #computer-vision.</p>
 </blockquote>
+<h2 id="px4-vision-carrier-board-pinouts"><a name="px4-vision-carrier-board-pinouts" class="plugin-anchor" href="#px4-vision-carrier-board-pinouts"><i class="fa fa-link" aria-hidden="true"></i></a>Px4 Vision Carrier Board Pinouts</h2>
+<p>The Carrier board pinouts can be download from <a href="http://www.holybro.com/manual/PX4_Vision_carrier_board_pinouts_v1.1.pdf" target="_blank">Holybro&apos;s website</a>.</p>
 <h2 id="other-development-resources"><a name="other-development-resources" class="plugin-anchor" href="#other-development-resources"><i class="fa fa-link" aria-hidden="true"></i></a>Other Development Resources</h2>
 <ul>
-<li><a href="https://wiki.up-community.org/Ubuntu" target="_blank"><em>UP Core</em> Wiki</a> - companion computer technical information</li>
+<li><a href="https://wiki.up-community.org/Ubuntu" target="_blank"><em>UP Core</em> Wiki</a> - <em>Up Core</em> companion computer technical information</li>
 <li><a href="https://structure.io/developers" target="_blank">Occipital Developer Forum</a> - <em>Structure Core</em> camera information</li>
 <li><a href="../flight_controller/pixhawk4.html">Pixhawk 4 Overview</a></li>
 <li><a href="https://github.com/PX4/avoidance" target="_blank">PX4 Avoidance software/documentation</a></li>
 <li><a href="../computer_vision/path_planning_interface.html">Path Planning Interface</a></li>
+<li><a href="http://www.holybro.com/manual/PX4_Vision_carrier_board_pinouts_v1.1.pdf" target="_blank">Px4 Vision Carrier Board Pinouts</a></li>
 </ul>
-<h2 id="how-to-get-technical-support"><a name="how-to-get-technical-support" class="plugin-anchor" href="#how-to-get-technical-support"><i class="fa fa-link" aria-hidden="true"></i></a>How to get Technical Support?</h2>
+<h2 id="how-to-get-technical-support"><a name="how-to-get-technical-support" class="plugin-anchor" href="#how-to-get-technical-support"><i class="fa fa-link" aria-hidden="true"></i></a>How to get Technical Support</h2>
 <p>For hardware issues, please contact Holybro at: <a href="mailto:productservice@holybro.com" target="_blank">productservice@holybro.com</a>.</p>
 <p>For software issues, use the following <a href="./#support">community support channels</a>:</p>
 <ul>
-<li>PX4 discuss: <a href="https://discuss.px4.io/c/Vision-based-navigation-and-obstacle-avoidance" target="_blank">Computer Vision</a> category.</li>
-<li>PX4 slack channel: #avoidance</li>
+<li><a href="https://discuss.px4.io/c/Vision-based-navigation-and-obstacle-avoidance" target="_blank">PX4 discuss: Computer Vision category.</a></li>
+<li><a href="https://slack.px4.io/" target="_blank">PX4 slack</a> channel: #avoidance</li>
+<li><a href="https://wikifactory.com/+holybro/px4-vision" target="_blank">Holybro PX4 Vision Wikifactory</a></li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-10-13 22:54:30 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> &#xA9; PX4 Dev Team. License:   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> Updated:  2020-10-21 03:00:24 </span> </footer>
                                 
                                 </section>
                             
@@ -4083,7 +4126,7 @@ For reference on developing in ROS and using the catkin workspace, see the <a hr
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"PX4 Vision Kit","level":"1.12.1","depth":2,"next":{"title":"MindRacer BNF & RTF","level":"1.12.2","depth":2,"path":"complete_vehicles/mindracer_BNF_RTF.md","ref":"complete_vehicles/mindracer_BNF_RTF.md","articles":[{"title":"MindRacer 210","level":"1.12.2.1","depth":3,"path":"complete_vehicles/mindracer210.md","ref":"complete_vehicles/mindracer210.md","articles":[]},{"title":"NanoMind 110","level":"1.12.2.2","depth":3,"path":"complete_vehicles/nanomind110.md","ref":"complete_vehicles/nanomind110.md","articles":[]}]},"previous":{"title":"Complete Vehicles","level":"1.12","depth":1,"path":"complete_vehicles/README.md","ref":"complete_vehicles/README.md","articles":[{"title":"PX4 Vision Kit","level":"1.12.1","depth":2,"path":"complete_vehicles/px4_vision_kit.md","ref":"complete_vehicles/px4_vision_kit.md","articles":[]},{"title":"MindRacer BNF & RTF","level":"1.12.2","depth":2,"path":"complete_vehicles/mindracer_BNF_RTF.md","ref":"complete_vehicles/mindracer_BNF_RTF.md","articles":[{"title":"MindRacer 210","level":"1.12.2.1","depth":3,"path":"complete_vehicles/mindracer210.md","ref":"complete_vehicles/mindracer210.md","articles":[]},{"title":"NanoMind 110","level":"1.12.2.2","depth":3,"path":"complete_vehicles/nanomind110.md","ref":"complete_vehicles/nanomind110.md","articles":[]}]},{"title":"BetaFPV Beta75X 2S Brushless Whoop","level":"1.12.3","depth":2,"path":"complete_vehicles/betafpv_beta75x.md","ref":"complete_vehicles/betafpv_beta75x.md","articles":[]},{"title":"Holybro Kopis 2","level":"1.12.4","depth":2,"path":"complete_vehicles/holybro_kopis2.md","ref":"complete_vehicles/holybro_kopis2.md","articles":[]},{"title":"Intel® Aero RTF Drone (Discontinued)","level":"1.12.5","depth":2,"path":"complete_vehicles/intel_aero.md","ref":"complete_vehicles/intel_aero.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.11/en/","text":"v1.11 - stable"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"complete_vehicles/px4_vision_kit.md","mtime":"2020-10-13T22:54:30.981Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-21T02:45:37.718Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"PX4 Vision Kit","level":"1.12.1","depth":2,"next":{"title":"MindRacer BNF & RTF","level":"1.12.2","depth":2,"path":"complete_vehicles/mindracer_BNF_RTF.md","ref":"complete_vehicles/mindracer_BNF_RTF.md","articles":[{"title":"MindRacer 210","level":"1.12.2.1","depth":3,"path":"complete_vehicles/mindracer210.md","ref":"complete_vehicles/mindracer210.md","articles":[]},{"title":"NanoMind 110","level":"1.12.2.2","depth":3,"path":"complete_vehicles/nanomind110.md","ref":"complete_vehicles/nanomind110.md","articles":[]}]},"previous":{"title":"Complete Vehicles","level":"1.12","depth":1,"path":"complete_vehicles/README.md","ref":"complete_vehicles/README.md","articles":[{"title":"PX4 Vision Kit","level":"1.12.1","depth":2,"path":"complete_vehicles/px4_vision_kit.md","ref":"complete_vehicles/px4_vision_kit.md","articles":[]},{"title":"MindRacer BNF & RTF","level":"1.12.2","depth":2,"path":"complete_vehicles/mindracer_BNF_RTF.md","ref":"complete_vehicles/mindracer_BNF_RTF.md","articles":[{"title":"MindRacer 210","level":"1.12.2.1","depth":3,"path":"complete_vehicles/mindracer210.md","ref":"complete_vehicles/mindracer210.md","articles":[]},{"title":"NanoMind 110","level":"1.12.2.2","depth":3,"path":"complete_vehicles/nanomind110.md","ref":"complete_vehicles/nanomind110.md","articles":[]}]},{"title":"BetaFPV Beta75X 2S Brushless Whoop","level":"1.12.3","depth":2,"path":"complete_vehicles/betafpv_beta75x.md","ref":"complete_vehicles/betafpv_beta75x.md","articles":[]},{"title":"Holybro Kopis 2","level":"1.12.4","depth":2,"path":"complete_vehicles/holybro_kopis2.md","ref":"complete_vehicles/holybro_kopis2.md","articles":[]},{"title":"Intel® Aero RTF Drone (Discontinued)","level":"1.12.5","depth":2,"path":"complete_vehicles/intel_aero.md","ref":"complete_vehicles/intel_aero.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","language-picker","collapsible-menu","anchors","page-toc-button","ga","page-footer-ex","custom-favicon","bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","mathjax@git+https://github.com/Dronecode/plugin-mathjax.git#update_cdn","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"page-footer-ex":{"copyright":"© PX4 Dev Team. License:   <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"Updated: "},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"},"archived":{"alert":"warning","picto":"fa-archive"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"custom-favicon":{},"mathjax":{"forceSVG":false,"version":"2.7.6"},"ga":{"configuration":"auto","token":"UA-33658859-3"},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/PX4/px4_user_guide/master/book.json","options":[{"value":"https://docs.px4.io/master/en/","text":"master"},{"value":"https://docs.px4.io/v1.11/en/","text":"v1.11 - stable"},{"value":"https://docs.px4.io/v1.10/en/","text":"v1.10"},{"value":"https://docs.px4.io/v1.9.0/en/","text":"v1.9"},{"value":"https://docs.px4.io/v1.8.2/en/","text":"v1.8"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/PX4/px4_user_guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/PX4/px4_user_guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/PX4/px4_user_guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_pro_small.png","px4_version":"master"},"title":"PX4 User Guide","language":"en","gitbook":"*"},"file":{"path":"complete_vehicles/px4_vision_kit.md","mtime":"2020-10-21T03:00:24.550Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-21T03:01:18.068Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
