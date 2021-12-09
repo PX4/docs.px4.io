@@ -1,100 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://docs.px4.io/master/en/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced_features/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/computer_vision/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/getting_started/flight_controller_selection.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced_features/satcom_roadblock.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/sensor/optical_flow.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/companion_computer/video_streaming.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/advanced_features/satcom_roadblock.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/pixracer.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.9.0/en/</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/peripherals/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/peripherals/serial_configuration.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/advanced_features/rtk-gps.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/computer_vision/path_planning_interface.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/companion_computer/video_streaming.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/complete_vehicles/px4_vision_kit.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/sensor/lidar_lite.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/computer_vision/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/simulation/gazebo.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/computer_vision/safe_landing.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/advanced_features/satcom_roadblock.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/getting_started/px4_basic_concepts.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config/</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.9.0/en/config_vtol/vtol_quad_configuration.html</loc>
@@ -113,18 +21,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/getting_started/rc_transmitter_receiver.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_controller/pixracer.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/pixhawk-2.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.9.0/en/complete_vehicles/bebop.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -141,64 +37,8 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/flying/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/airframes/airframe_reference.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced_config/parameter_reference.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.12/ko/</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/computer_vision/visual_inertial_odometry.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced_config/parameters.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/computer_vision/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/peripherals/parachute.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/companion_computer/pixhawk_companion.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/companion_computer/video_streaming.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced_features/rtk-gps.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/advanced_features/traffic_avoidance_utm.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config/airspeed.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/contribute/translation.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/log/flight_log_analysis</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.9.0/en/flight_modes/return.html</loc>
@@ -217,18 +57,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/getting_started/vehicle_status</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/telemetry/esp8266_wifi_module.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/complete_vehicles/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.9.0/en/sensor/lidar_lite.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -245,66 +73,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/contribute/docs.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config/level_horizon_calibration.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/advanced_config/parameter_reference.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/computer_vision/collision_prevention.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/getting_started/frame_selection.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/computer_vision/visual_inertial_odometry</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/sensor/rangefinders</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/log/flight_log_analysis.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/getting_started/rc_transmitter_receiver.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/computer_vision/motion_capture.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/advanced_config/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config/gyroscope.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/development/development.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/releases/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.9.0/en/advanced_config/esc_calibration.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -319,18 +87,6 @@
   <url>
     <loc>https://docs.px4.io/v1.9.0/en/frames_vtol/vtol_tiltrotor_eflite_convergence_pixfalcon.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/raspberry_pi_navio2.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/dev_setup/building_px4.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/getting_started/flight_modes.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.9.0/en/flight_modes/</loc>
@@ -353,62 +109,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/contribute/licenses.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config/airframe.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/config/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/computer_vision/obstacle_avoidance.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/config/battery.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/log/flight_log_analysis.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/peripherals/camera.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/dev_log/ulog_file_format.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/peripherals/esc_motors.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced_features/precland.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/development/development</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config/joystick.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/payloads/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/airframes/airframe_reference.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.9.0/en/assembly/quick_start_pixhawk4_mini.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -423,18 +123,6 @@
   <url>
     <loc>https://docs.px4.io/v1.9.0/en/complete_vehicles/crazyflie2.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/pixhack_v3.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/debug/swd_debug.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/pixhawk3_pro.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.9.0/en/flight_controller/pixhack_v3.html</loc>
@@ -457,62 +145,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/contribute/support.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config/battery.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/assembly/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced_features/traffic_avoidance_utm.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/pixhawk_series.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/log/flight_review.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/peripherals/companion_computer_peripherals.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/development/development.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/config/flight_controller_orientation.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/advanced_features/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/log/flight_log_analysis</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config/flight_controller_orientation.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/development/development</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.9.0/en/getting_started/flight_modes.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -527,18 +159,6 @@
   <url>
     <loc>https://docs.px4.io/v1.9.0/en/assembly/mount_and_orient_controller.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/getting_started/frame_selection.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/pixfalcon.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/autopilot_pixhawk_standard.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.9.0/en/frames_multicopter/lumenier_qav250_pixhawk_mini.html</loc>
@@ -557,66 +177,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/peripherals/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/getting_started/flight_reporting.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/frames_multicopter/holybro_s500_v2_pixhawk4.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/getting_started/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/advanced_features/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/config/safety.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/contribute/docs.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/sensor/px4flow.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/payloads/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/peripherals/dshot.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced_features/traffic_avoidance_adsb.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/contribute/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config_mc/pid_tuning_guide_multicopter_basic.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/releases/1.12.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/robotics/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.9.0/en/flying/</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -631,18 +191,6 @@
   <url>
     <loc>https://docs.px4.io/v1.9.0/en/flying/basic_flying.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/pixhawk_series.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/pixhawk_series</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/pixhawk4.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.9.0/en/sensor/airspeed.html</loc>
@@ -669,56 +217,16 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/config/accelerometer.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/peripherals/serial_configuration.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/flying/terrain_following_holding.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/getting_started/px4_basic_concepts.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/contribute/support.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/peripherals/esc_motors</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/contribute/licenses.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/config/flight_mode.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/flying/missions.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/robotics/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config/motors.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/frames_vtol/</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/contribute/translation.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.9.0/en/peripherals/frsky_telemetry.html</loc>
@@ -737,18 +245,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/autopilot_manufacturer_supported.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/autopilot_pixhawk_standard</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/getting_started/flight_controller_selection.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.9.0/en/getting_started/led_meanings.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -765,64 +261,20 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/contribute/support.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/assembly/vibration_isolation.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flying/missions.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/hardware/drone_parts</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/frames_vtol/vtol_quadplane_fun_cub_vtol_pixhawk.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/assembly/quick_start_pixhawk4.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/getting_started/flight_reporting.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/sensor/optical_flow.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/gps_compass/rtk_gps.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/peripherals/uavcan_escs.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/config/motors.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/releases/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flying/plan_safety_points.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/advanced_config/parameters.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/development/development.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.9.0/en/sensor/optical_flow.html</loc>
@@ -841,18 +293,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/pixhawk4_mini.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/autopilot_discontinued</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/mindracer.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.9.0/en/frames_rover/</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -869,64 +309,20 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/advanced_config/parameter_reference.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flying/geofence.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/airframes/</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/flight_controller/cuav_v5_nano.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/config/joystick.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/gps_compass/u-blox_f9p_heading.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/telemetry/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/config/airspeed.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/pixhawk4_mini.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/complete_vehicles/mindracer210.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/flying/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flying/first_flight_guidelines.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/peripherals/camera.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/getting_started/</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.9.0/en/flight_controller/snapdragon_flight_configuration.html</loc>
@@ -945,18 +341,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/mro_pixhawk.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/debug/system_console.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/pixhawk.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.9.0/en/advanced_features/rtk-gps.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -973,64 +357,20 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/assembly/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/flight_controller/snapdragon_flight_hardware_example_setup.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flying/terrain_following_holding.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/advanced_features/precland.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/telemetry/rfd900_telemetry.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/getting_started/sensor_selection.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/config/airspeed.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/uavcan/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/contribute/notation.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/getting_started/vehicle_status</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/gps_compass/rtk_gps_cuav_c-rtk.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/advanced_features/traffic_avoidance_adsb.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/getting_started/vehicle_status.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/flying/geofence.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/getting_started/px4_basic_concepts.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.9.0/en/flying/terrain_following_holding.html</loc>
@@ -1049,18 +389,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/getting_started/sensor_selection.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/autopilot_manufacturer_supported</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/getting_started/flight_controller_selection.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.9.0/en/config_mc/</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -1077,16 +405,8 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/contribute/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/log/flight_review.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flying/basic_flying</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/sensor/rangefinders.html</loc>
@@ -1095,22 +415,6 @@
   <url>
     <loc>https://docs.px4.io/v1.10/en/assembly/quick_start_pixhawk4.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flying/basic_flying.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/contribute/dev_call.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/sensor/tachometers</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/contribute/translation.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.9.0/en/getting_started/</loc>
@@ -1125,16 +429,8 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/peripherals/adsb_flarm.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/flight_controller/pixhawk4_mini.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/airframes/</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.9.0/en/assembly/quick_start_cuav_v5_plus.html</loc>
@@ -1151,14 +447,6 @@
   <url>
     <loc>https://docs.px4.io/v1.9.0/en/telemetry/hkpilot_sik_radio.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/raspberry_pi_pilotpi.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/autopilot_experimental</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/config/gyroscope.html</loc>
@@ -1181,16 +469,8 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/advanced_config/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/config/safety.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/peripherals/camera.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/flight_controller/snapdragon_flight_dev_environment_installation.html</loc>
@@ -1201,26 +481,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/flight_modes/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/contribute/code</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/sensor/rangefinders.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/getting_started/led_meanings.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/getting_started/rc_transmitter_receiver.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/frames_vtol/vtol_tailsitter_caipiroshka_pixracer.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -1229,16 +489,8 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/uavcan/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/flight_controller/snapdragon_flight_software_installation.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/contribute/licenses.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.9.0/en/log/flight_log_analysis.html</loc>
@@ -1261,10 +513,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/pixhawk_mini.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/advanced_config/land_detector.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -1285,16 +533,8 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/contribute/docs.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/getting_started/vehicle_status.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/peripherals/esc_motors</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/frames_multicopter/qav_r_5_kiss_esc_racer.html</loc>
@@ -1305,26 +545,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/flying/basic_flying.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/getting_started/vehicle_status.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/sensor/pmw3901.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flying/pre_flight_checks.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/assembly/quick_start_pixracer.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/complete_vehicles/betafpv_beta75x.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -1333,16 +553,8 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/gps_compass/gps_hex_here2.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/frames_multicopter/robocat_270_pixracer.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/payloads/</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.9.0/en/sensor/cm8jl65_ir_distance_sensor.html</loc>
@@ -1365,10 +577,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/pixracer.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/frames_multicopter/spedix_s250_pixracer.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -1389,16 +597,8 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/hardware/drone_parts</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/advanced_config/tuning_the_ecl_ekf.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/sensor/rangefinders</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/flight_controller/raspberry_pi_navio2.html</loc>
@@ -1409,36 +609,12 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/assembly/quick_start_pixhawk.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/getting_started/vehicle_status.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/peripherals/frsky_telemetry.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/getting_started/tunes.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/assembly/quick_start_cube.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/flight_modes/position_fw.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/config/airframe.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/sensor/airspeed.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/config/</loc>
@@ -1493,16 +669,8 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/getting_started/flight_reporting.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/frames_multicopter/holybro_qav250_pixhawk4_mini.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/smart_batteries/</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/gps_compass/</loc>
@@ -1513,36 +681,12 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/pixhawk-2.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/frames_multicopter/holybro_x500_pixhawk4.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/power_module/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/frames_sub/bluerov2.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/cubepilot_cube_orange.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/computer_vision/collision_prevention.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/flight_controller/ocpoc_zynq.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/gps_compass/rtk_gps</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/frames_multicopter/dji_f450_cuav_5plus.html</loc>
@@ -1605,10 +749,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/complete_vehicles/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/sensor/ulanding_radar.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -1617,36 +757,12 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/frames_vtol/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/contribute/git_examples.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_modes/position_mc.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/config/level_horizon_calibration.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_autogyro/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/flight_controller/mro_x2.1.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/peripherals/mavlink_peripherals.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/gps_compass/</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/peripherals/frsky_telemetry.html</loc>
@@ -1709,10 +825,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/peripherals/parachute.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/frames_rover/</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -1721,36 +833,12 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/frames_plane/wing_wing_z84.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/config/level_horizon_calibration.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/sensor/optical_flow.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config_mc/mc_jerk_limited_type_trajectory.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/airframes/airframe_reference.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/frames_vtol/vtol_quadplane_falcon_vertigo_hybrid_rtf_dropix.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/getting_started/frame_selection.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/sensor/tachometers</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/flight_modes/land.html</loc>
@@ -1813,10 +901,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/sensor/optical_flow</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/sensor/lidar_lite.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -1825,36 +909,12 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/frames_autogyro/thunderfly_auto_g2.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced_config/advanced_flight_controller_orientation_leveling.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/sensor/optical_flow</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced_config/static_pressure_buildup.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/config_mc/pid_tuning_guide_multicopter_basic.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/advanced_features/satcom_roadblock.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/advanced_features/precland.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/telemetry/</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/flight_controller/mro_pixhawk.html</loc>
@@ -1917,10 +977,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/power_module/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/flight_modes/return.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -1929,36 +985,12 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/frames_sub/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced_config/bootloader_update_from_betaflight.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/uavcan/ark_flow.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config_fw/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_plane/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/telemetry/3dr_telemetry_wifi.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/getting_started/rc_transmitter_receiver.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/peripherals/</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/flight_controller/snapdragon_flight_advanced.html</loc>
@@ -2021,10 +1053,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/peripherals/frsky_telemetry.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/flight_modes/</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -2033,36 +1061,12 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/frames_rover/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced_config/flight_termination.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/gps_compass/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced_config/sensor_thermal_calibration.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/frames_multicopter/spedix_s250_pixracer.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/development/development.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/peripherals/</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/peripherals/companion_computer_peripherals.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/flight_controller/HKPilot32.html</loc>
@@ -2093,10 +1097,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/frames_multicopter/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/telemetry/esp8266_wifi_module.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -2125,10 +1125,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/flight_modes/hold.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/flight_controller/pixhack_v3.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -2137,36 +1133,12 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/frames_multicopter/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config_vtol/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/smart_batteries/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/peripherals/mavlink_peripherals.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/frames_multicopter/holybro_qav250_pixhawk4_mini.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/telemetry/hkpilot_sik_radio.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/flight_controller/kakutef7.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/computer_vision/path_planning_interface.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/advanced_config/prearm_arm_disarm.html</loc>
@@ -2197,10 +1169,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/frames_rover/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/config/flight_mode.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -2229,10 +1197,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/computer_vision/path_planning_interface.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/peripherals/companion_computer_peripherals.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -2241,36 +1205,12 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/peripherals/camera_t265_vio.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced_config/land_detector.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/sensor/airspeed.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced_config/compass_power_compensation.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/ros/external_position_estimation.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/assembly/mount_and_orient_controller.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/config_vtol/vtol_quad_configuration.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/computer_vision/safe_landing.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/config/flight_controller_orientation.html</loc>
@@ -2301,10 +1241,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/frames_autogyro/thunderfly_auto_g2.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/advanced_config/static_pressure_buildup.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -2333,10 +1269,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/flight_modes/land.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/flight_controller/pixhawk-2.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -2345,36 +1277,12 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/computer_vision/visual_inertial_odometry.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/advanced_config/parameters.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/peripherals/adsb_flarm.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/simulation/gazebo.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/log/flight_log_analysis.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/advanced_features/</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/getting_started/flight_controller_selection.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/advanced_config/prearm_arm_disarm.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/assembly/</loc>
@@ -2405,10 +1313,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/frames_autogyro/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/flight_controller/dropix.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -2437,10 +1341,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/getting_started/flight_modes.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/flight_modes/altitude_fw.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -2449,36 +1349,12 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/ros/mavros_installation.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_modes/return.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/gps_compass/rtk_gps</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config/radio.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/peripherals/serial_configuration.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/flight_modes/follow_me.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/frames_vtol/vtol_quadplane_volantex_ranger_ex_pixhawk.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/getting_started/tunes.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/flight_modes/orbit.html</loc>
@@ -2509,10 +1385,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/frames_vtol/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/sensor/cm8jl65_ir_distance_sensor.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -2541,10 +1413,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/advanced_config/esc_calibration.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/flight_modes/acro_mc.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -2553,24 +1421,8 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/advanced_config/prearm_arm_disarm.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/complete_vehicles/holybro_kopis2.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/peripherals/frsky_telemetry.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config/compass.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced_config/tuning_the_ecl_ekf.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/airframes/</loc>
@@ -2579,10 +1431,6 @@
   <url>
     <loc>https://docs.px4.io/v1.10/en/flight_modes/manual_stabilized_mc.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/config/radio.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/flight_controller/silicon_errata.html</loc>
@@ -2613,10 +1461,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/frames_plane/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/telemetry/holybro_sik_radio.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -2645,10 +1489,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/dev_log/logging.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/complete_vehicles/intel_aero.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -2657,24 +1497,8 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/modules/modules_driver.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/complete_vehicles/betafpv_beta75x.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/sensor/ulanding_radar.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/assembly/quick_start_pixhawk4.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced_config/esc_calibration.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/complete_vehicles/bebop.html</loc>
@@ -2683,10 +1507,6 @@
   <url>
     <loc>https://docs.px4.io/v1.10/en/flight_modes/rattitude_mc.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_modes/offboard.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/getting_started/px4_basic_concepts.html</loc>
@@ -2717,10 +1537,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/frames_sub/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/peripherals/serial_configuration.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -2749,10 +1565,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/pixhawk4.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/config_mc/mc_jerk_limited_type_trajectory.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -2761,24 +1573,8 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/config_mc/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/complete_vehicles/px4_vision_kit.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/advanced_config/land_detector.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config/firmware.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced_config/bootloader_update.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/complete_vehicles/</loc>
@@ -2867,10 +1663,6 @@
   <url>
     <loc>https://docs.px4.io/v1.11/en/flying/basic_flying.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/complete_vehicles/px4_vision_kit.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/flight_modes/land.html</loc>
@@ -3181,16 +1973,8 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/log/flight_review.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/flying/first_flight_guidelines.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/dev_log/ulog_file_format.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/flight_controller/autopilot_pixhawk_standard.html</loc>
@@ -3207,10 +1991,6 @@
   <url>
     <loc>https://docs.px4.io/v1.11/en/power_module/holybro_pm06_pixhawk4mini_power_module.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_modes/acro_fw.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/development/development.html</loc>
@@ -3265,10 +2045,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/releases/1.12.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/computer_vision/obstacle_avoidance.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -3277,32 +2053,16 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/contribute/dev_call.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/advanced_features/rtk-gps.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/tutorials/motion-capture-vicon-optitrack.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/config_mc/pid_tuning_guide_multicopter.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/config/gyroscope.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/flight_modes/position_fw.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/concept/flight_modes.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/flight_modes/stabilized_fw.html</loc>
@@ -3311,10 +2071,6 @@
   <url>
     <loc>https://docs.px4.io/v1.11/en/flight_modes/orbit.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/config/airframe.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/advanced_features/</loc>
@@ -3349,10 +2105,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/contribute/code</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/sensor/sfxx_lidar.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -3369,10 +2121,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/dev_log/ulog_file_format.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/airframes/airframe_reference.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -3381,32 +2129,16 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/modules/module_template.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/flight_modes/mission.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/config/gyroscope.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/frames_multicopter/</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/dev_setup/dev_env</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/frames_vtol/vtol_quadplane_falcon_vertigo_hybrid_rtf_dropix.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/contribute/code.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/sensor/optical_flow.html</loc>
@@ -3415,10 +2147,6 @@
   <url>
     <loc>https://docs.px4.io/v1.11/en/advanced_features/precland.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/log/flight_review.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/gps_compass/rtk_gps.html</loc>
@@ -3437,10 +2165,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/contribute/notation.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/flight_modes/altitude_mc.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -3451,10 +2175,6 @@
   <url>
     <loc>https://docs.px4.io/v1.10/en/gps_compass/rtk_gps_hex_here2.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/test_and_ci/test_flights.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/getting_started/tunes.html</loc>
@@ -3473,10 +2193,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/debug/debug_values.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/assembly/quick_start_pixracer.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -3485,32 +2201,16 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/concept/architecture.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/peripherals/companion_computer_peripherals.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/simulation/</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/flight_controller/crazyflie2.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/dev_setup/getting_started</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/config/accelerometer.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/concept/</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/getting_started/sensor_selection.html</loc>
@@ -3519,10 +2219,6 @@
   <url>
     <loc>https://docs.px4.io/v1.11/en/flight_modes/takeoff.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/dev_log/flight_log_analysis.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/flight_controller/raspberry_pi_navio2.html</loc>
@@ -3541,10 +2237,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/assembly/quick_start_cuav_v5_nano.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/computer_vision/path_planning_interface.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -3555,10 +2247,6 @@
   <url>
     <loc>https://docs.px4.io/v1.10/en/config_mc/mc_slew_rate_type_trajectory.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/assembly/quick_start_durandal.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/gps_compass/rtk_gps_cuav_c-rtk.html</loc>
@@ -3577,10 +2265,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/debug/eclipse_jlink.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/config/airframe.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -3589,32 +2273,16 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/tutorials/tutorials</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/flying/fixed_wing_landing.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/dev_setup/building_px4.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/frames_plane/wing_wing_z84.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/middleware/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/flight_controller/dropix.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/hardware/</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/assembly/quick_start_cube.html</loc>
@@ -3623,10 +2291,6 @@
   <url>
     <loc>https://docs.px4.io/v1.11/en/peripherals/esc_motors.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/debug/binary_size_profiling.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/flight_controller/snapdragon_flight_hardware_example_setup.html</loc>
@@ -3645,10 +2309,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/assembly/mount_and_orient_controller.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/gps_compass/rtk_gps_hex_hereplus.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -3659,10 +2319,6 @@
   <url>
     <loc>https://docs.px4.io/v1.10/en/flight_controller/beaglebone_blue.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config_mc/racer_setup.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/flight_modes/acro_fw.html</loc>
@@ -3681,56 +2337,24 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/debug/gdb_debugging.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/flight_controller/kakutef7.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/getting_started/vehicle_status</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/dev_setup/config_initial.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/complete_vehicles/intel_aero.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/debug/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/frames_multicopter/robocat_270_pixracer.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/test_and_ci/</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/flight_modes/manual_stabilized_mc.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/test_and_ci/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/concept/mixing.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/power_module/holybro_pm07_pixhawk4_power_module.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/debug/swd_gdb.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/config_vtol/vtol_quad_configuration.html</loc>
@@ -3749,10 +2373,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/assembly/quick_start_holybro_pix32_v5.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.10/en/flight_controller/snapdragon_flight.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -3763,10 +2383,6 @@
   <url>
     <loc>https://docs.px4.io/v1.12/en/getting_started/frame_selection.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/assembly/quick_start_cuav_v5_plus.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/flight_modes/altitude_fw.html</loc>
@@ -3785,56 +2401,24 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/debug/system_wide_replay.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/advanced_config/prearm_arm_disarm.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/config_mc/pid_tuning_guide_multicopter_basic.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/advanced/</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/advanced_config/sensor_thermal_calibration.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/concept/architecture.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/flight_modes/position_mc.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/dev_airframes/</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/peripherals/serial_configuration.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/raspberry_pi_pilotpi.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/releases/1.12.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/complete_vehicles/</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/debug/failure_injection.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/flight_controller/snapdragon_flight_dev_environment_installation.html</loc>
@@ -3851,10 +2435,6 @@
   <url>
     <loc>https://docs.px4.io/v1.11/en/power_module/cuav_can_pmu.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/concept/mixing.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/en/getting_started/vehicle_status</loc>
@@ -3889,44 +2469,20 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/debug/faq.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/getting_started/flight_reporting.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/silicon_errata.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/complete_vehicles/crazyflie21.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/assembly/mount_and_orient_controller.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/modules/hello_sky.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/flight_modes/manual_stabilized_mc.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/hardware/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/advanced_config/land_detector.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/cuav_x7.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.10/en/getting_started/</loc>
@@ -3935,10 +2491,6 @@
   <url>
     <loc>https://docs.px4.io/v1.11/en/telemetry/esp8266_wifi_module.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/dev_log/logging.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/flight_controller/pixfalcon.html</loc>
@@ -3993,56 +2545,24 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/tutorials/video_streaming_wifi_broadcast.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/advanced_features/</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/config/accelerometer.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/holybro_pix32_v5.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/config/flight_controller_orientation.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/modules/module_template.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/telemetry/hkpilot_sik_radio.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/dev_setup/config_initial.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/frames_multicopter/dji_f450_cuav_5nano.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/mro_x2.1.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/test_and_ci/test_flights.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/advanced_features/satcom_roadblock.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/debug/profiling.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/gps_compass/</loc>
@@ -4097,19 +2617,7 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/debug/consoles</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/flight_modes/manual_fw.html</loc>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/modules/modules_command.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/modalai_fc_v1.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
@@ -4117,36 +2625,16 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/concept/flight_modes.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/config/firmware.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/advanced/</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/flight_controller/pixhack_v3.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/complete_vehicles/intel_aero.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/config/motors.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/assembly/quick_start_cuav_v5_plus.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/debug/mavlink_shell.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/en/concept/</loc>
@@ -4201,56 +2689,24 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/concept/system_startup.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/config_fw/pid_tuning_guide_fixedwing.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_controller/autopilot_manufacturer_supported.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/auav_x2.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/flight_controller/</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/contribute/code.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/advanced_config/bootloader_update.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/tutorials/tutorials</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/assembly/quick_start_cube.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/nxp_rddrone_fmuk66.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flying/fixed_wing_takeoff.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/flight_controller/nxp_rddrone_fmuk66.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/config/joystick.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/en/simulation/</loc>
@@ -4305,56 +2761,24 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/flying/pre_flight_checks.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/computer_vision/path_planning_interface.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/assembly/mount_and_orient_controller.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/cubepilot_cube_yellow.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/frames_multicopter/qav_r_5_kiss_esc_racer.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/concept/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/gps_compass/rtk_gps_trimble_mb_two.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/modules/modules_main</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/config_fw/trimming_guide_fixedwing.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/durandal.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/dev_log/flight_log_analysis.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/frames_multicopter/</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/concept/mixing.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/en/dev_setup/dev_env</loc>
@@ -4409,56 +2833,24 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/spracingh7extreme.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/frames_multicopter/holybro_s500_v2_pixhawk4.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flying/plan_safety_points.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/mro_control_zero_f7.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/config/compass.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/autopilot_experimental.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/frames_multicopter/spedix_s250_pixracer.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/cubepilot_cube_yellow.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/flight_controller/cuav_v5.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/mindracer.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flying/plan_safety_points.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/assembly/quick_start_pixhawk4_mini.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/mro_control_zero_f7.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/en/dev_airframes/</loc>
@@ -4513,56 +2905,24 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/holybro_pix32_v5.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/log/flight_review.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/assembly/quick_start_pixhawk4_mini.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/complete_vehicles/crazyflie2.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/assembly/quick_start_pixhawk.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/beaglebone_blue.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/flight_controller/pixhawk3_pro.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_controller/raspberry_pi_navio2.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/gps_compass/rtk_gps_freefly.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/mindpx.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/complete_vehicles/nanomind110.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/flight_controller/snapdragon_flight_dev_environment_installation.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/durandal.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/en/hardware/</loc>
@@ -4617,55 +2977,23 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/cuav_nora.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/frames_plane/</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_controller/mindracer.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/autopilot_discontinued.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/advanced_config/bootloader_update_from_betaflight.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/raspberry_pi_pilotpi</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/flight_controller/bebop.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/raspberry_pi_pilotpi_rpios.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/config_fw/</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/snapdragon_flight.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flying/geofence.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/peripherals/parachute.html</loc>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/modalai_fc_v1.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
@@ -4713,72 +3041,32 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/computer_vision/visual_inertial_odometry.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.12/en/middleware/</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/modalai_voxl_flight.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/config_mc/mc_jerk_limited_type_trajectory.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/flying/geofence.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/cubepilot_cube_orange.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/computer_vision/collision_prevention.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/raspberry_pi_navio2.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/config_vtol/vtol_weathervane.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/dev_setup/dev_env_linux.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/flight_controller/ocpoc_zynq.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/omnibus_f4_sd.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flying/first_flight_guidelines.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/config_mc/mc_slew_rate_type_trajectory.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/mindpx.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.12/en/advanced/</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/computer_vision/collision_prevention.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/telemetry/telemetry_wifi.html</loc>
@@ -4825,56 +3113,24 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/nxp_rddrone_fmuk66.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/flight_controller/mindpx.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flying/terrain_following_holding.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/spracingh7extreme.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/flight_controller/pixhawk.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/flight_modes/acro_mc.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/flight_modes/takeoff.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/getting_started/flight_modes.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/flight_modes/return.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/beaglebone_blue.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/sensor/tachometers.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/advanced_config/tuning_the_ecl_ekf.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/mro_x2.1.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/en/dev_setup/getting_started</loc>
@@ -4921,52 +3177,20 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/computer_vision/visual_inertial_odometry</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/modules/modules_main.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/omnibus_f4_sd.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/frames_vtol/</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_controller/raspberry_pi_pilotpi.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/modalai_voxl_flight.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/telemetry/rfd900_telemetry.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/flight_modes/orbit.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/flight_controller/pixhawk4.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/flight_modes/offboard.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/frames_vtol/vtol_quadplane_fun_cub_vtol_pixhawk.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/ocpoc_zynq.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/en/framebuild_plane/wing_wing_z84.html</loc>
@@ -4975,14 +3199,6 @@
   <url>
     <loc>https://docs.px4.io/v1.11/en/advanced_features/traffic_avoidance_adsb.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_controller/pixhack_v3.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/advanced_config/</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/flight_controller/snapdragon_flight_advanced.html</loc>
@@ -5021,14 +3237,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/robotics/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/pixhack_v3.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/flight_controller/pixhawk_series.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -5037,32 +3245,16 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/kakutef7.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/peripherals/adsb_flarm.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_modes/altitude_fw.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/flight_controller/mind_series.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/flight_modes/manual_stabilized_mc.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/flying/first_flight_guidelines.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/cuav_nora.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/en/framebuild_multicopter/spedix_s250_pixracer.html</loc>
@@ -5073,16 +3265,8 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/cuav_x7.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.12/zh/getting_started/</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/hardware/drone_parts</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/flight_controller/pixhawk-2.html</loc>
@@ -5121,18 +3305,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/contribute/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/test_cards/mc_01_manual_modes.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/kakutef7.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/sensor/thunderfly_tachometer.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -5141,52 +3313,20 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/dev_log/flight_log_analysis.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/flight_controller/modalai_fc_v1.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_modes/position_fw.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/log/flight_review.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/flight_modes/takeoff.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/sensor/ulanding_radar.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/frames_multicopter/dji_f450_cuav_5nano.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/raspberry_pi_pilotpi_ubuntu_server.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/flight_controller/pixhawk3_pro.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/test_and_ci/maintenance.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/pixhawk3_pro.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/simulation/gazebo_octomap.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/flight_controller/snapdragon_flight.html</loc>
@@ -5225,18 +3365,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/simulation/gazebo</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/test_and_ci/test_flights.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/test_and_ci/continous_integration.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/getting_started/flight_controller_selection.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -5245,64 +3373,20 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/frames_multicopter/robocat_270_pixracer.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/flight_controller/beaglebone_blue.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_modes/stabilized_fw.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/config/radio.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/flying/fixed_wing_landing.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/telemetry/sik_radio.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/frames_multicopter/holybro_s500_v2_pixhawk4.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/frames_vtol/vtol_tiltrotor_eflite_convergence_pixfalcon.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/config/motors.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/test_cards/mc_04_failsafe_testing.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/frames_multicopter/qav_r_5_kiss_esc_racer.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/simulation/ignition_gazebo.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/peripherals/dshot.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/debug/simulation_debugging.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_controller/pixhawk4_mini.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/en/telemetry/</loc>
@@ -5317,552 +3401,76 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/debug/system_console.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/dropix.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/peripherals/uavcan_escs.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/simulation/gazebo_vehicles.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/assembly/vibration_isolation.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/test_cards/mc_02_full_autonomous.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/en/getting_started/rc_transmitter_receiver.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/frames_vtol/tailsitter.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/frames_multicopter/dji_f450_cuav_5plus.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/telemetry/hkpilot_sik_radio.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/flight_modes/follow_me.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/telemetry/esp8266_wifi_module.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_modes/manual_fw.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/peripherals/frsky_telemetry.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/frames_multicopter/dji_flamewheel_450.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/frames_vtol/tiltrotor</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/sensor/tfmini.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/test_and_ci/integration_testing.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/dev_setup/dev_env</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/modules/modules_main</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/config/radio.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/contribute/git_examples.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_controller/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.12/zh/peripherals/</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/concept/flight_modes.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/en/peripherals/parachute.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/dev_setup/building_px4.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/dev_setup/fast-dds-installation.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flying/missions.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/simulation/airsim.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/dev_setup/getting_started</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/test_cards/mc_03_auto_manual_mix.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/sensor/teraranger.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/frames_vtol/standardvtol.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/frames_multicopter/matrice100.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/config_mc/mc_jerk_limited_type_trajectory.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_modes/altitude_mc.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/sensor/rangefinders.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_modes/follow_me.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/frames_rover/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/frames_multicopter/lumenier_qav250_pixhawk_mini.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/frames_vtol/tailsitter</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/uavcan/node_firmware.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/test_cards/mc_05_indoor_flight_manual_modes.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/modules/hello_sky.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/dev_setup/dev_env_mac.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/telemetry/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/modules/module_template.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_controller/autopilot_pixhawk_standard.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/en/peripherals/frsky_telemetry.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/contribute/dev_call.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.12/en/uavcan/</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/peripherals/companion_computer_peripherals.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/modules/hello_sky.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/assembly/quick_start_pixhawk4.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/simulation/jmavsim</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/modules/modules_main</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/test_and_ci/unit_tests.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/debug/sensor_uorb_topic_debugging.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/frames_vtol/vtol_quadplane_falcon_vertigo_hybrid_rtf_dropix.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/frames_multicopter/lumenier_qav250_pixhawk_auav_x2.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/frames_autogyro/thunderfly_auto_g2.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_modes/orbit.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/flight_controller/omnibus_f4_sd.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/flight_modes/position_fw.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/frames_sub/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/contribute/git_examples.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/dev_airframes/adding_a_new_frame.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/sensor/sfxx_lidar.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/test_and_ci/integration_testing_mavsdk.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/middleware/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/debug/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flying/basic_flying.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/test_and_ci/docker.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_controller/autopilot_pixhawk_standard</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.12/en/smart_batteries/</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/concept/architecture.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/en/gps_compass/</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/flight_controller/autopilot_manufacturer_supported</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/dev_setup/vscode.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/advanced_config/prearm_arm_disarm.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/simulation/gazebo_worlds.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/debug/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/test_and_ci/test_flights</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/sensor/leddar_one.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/frames_vtol/tiltrotor.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/contribute/code</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/frames_multicopter/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/ros/mavros_installation.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/config_mc/</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/ros/ros2.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/frames_plane/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/contribute/notation.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/frames_vtol/vtol_tailsitter_caipiroshka_pixracer.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/sensor/cm8jl65_ir_distance_sensor.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/complete_vehicles/mindracer_BNF_RTF</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/simulation/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/simulation/jsbsim.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/peripherals/frsky_telemetry.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/config/battery.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_controller/pixhawk.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/en/sensor/rangefinders</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/contribute/code.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.12/en/sensor/tachometers</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_controller/pixhawk_series</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/uavcan/escs.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/config/flight_mode.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/dev_setup/getting_started</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/dev_airframes/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config/flight_mode.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/sensor/ulanding_radar.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/frames_vtol/standardvtol</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/getting_started/sensor_selection.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_modes/acro_mc.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/modules/modules_system.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/frames_multicopter/matrice100.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/config_vtol/vtol_weathervane.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/config_mc/pid_tuning_guide_multicopter.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flying/pre_flight_checks.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/frames_vtol/vtol_quadplane_volantex_ranger_ex_pixhawk.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/modules/modules_system.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/complete_vehicles/mindracer210.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/concept/architecture</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/tutorials/tutorials</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/advanced_config/esc_calibration.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/peripherals/esc_motors.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_controller/pixhawk3_pro.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.12/en/complete_vehicles/</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/robotics/dronekit.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.12/en/power_module/</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/telemetry/esp8266_wifi_module.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/peripherals/pwm_escs_and_servo.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/getting_started/tunes.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/simulation/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/concept/pwm_limit.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/complete_vehicles/crazyflie21.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/assembly/quick_start_cube.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.11/en/getting_started/</loc>
@@ -5873,24 +3481,8 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/flight_modes/manual_stabilized_mc.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/config_fw/pid_tuning_guide_fixedwing.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/config/safety.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/debug/eclipse_jlink.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/telemetry/sik_radio</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/ko/getting_started/flight_reporting.html</loc>
@@ -5901,72 +3493,12 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/sensor/thunderfly_tachometer.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_modes/mission.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/concept/flight_tasks.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/simulation/multi_vehicle_simulation_gazebo.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/dev_log/logging.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/peripherals/esc_motors.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/advanced_config/parameters.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.12/en/sensor/optical_flow</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/middleware/mavlink.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.12/en/peripherals/esc_motors</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config_mc/pid_tuning_guide_multicopter.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/debug/swd_debug.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_modes/offboard.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/ros/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/concept/px4_systems_architecture.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/getting_started/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/smart_batteries/</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/en/releases/1.12.html</loc>
@@ -5977,24 +3509,8 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/telemetry/microhard_serial.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/debug/failure_injection.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/sensor/optical_flow.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/debug/debug_values.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/telemetry/telemetry_wifi</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/ko/development/development.html</loc>
@@ -6005,72 +3521,12 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/frames_multicopter/holybro_x500_pixhawk4.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/computer_vision/obstacle_avoidance.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/concept/system_startup.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/simulation/multi-vehicle-simulation.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/config_vtol/vtol_quad_configuration.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/autopilot_discontinued</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config_mc/filter_tuning.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.12/en/gps_compass/gps_hex_here2.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/ros/offboard_control.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.12/en/peripherals/companion_computer_peripherals.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/computer_vision/motion_capture.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/autopilot_pixhawk_standard</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/gps_compass/rtk_gps.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/concept/sd_card_layout.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/config/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_multicopter/holybro_x500_pixhawk4.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/en/contribute/code</loc>
@@ -6081,24 +3537,8 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/telemetry/holybro_xbp9x_radio.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/debug/system_wide_replay.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/flight_modes/</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/debug/faq.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/telemetry/rfd900_telemetry.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/ko/getting_started/px4_basic_concepts.html</loc>
@@ -6109,32 +3549,8 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/frames_rover/traxxas_stampede.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.11/zh/</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/concept/events_interface.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/dev_setup/dev_env_linux_ubuntu.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/gps_compass/rtk_gps_fem_mini2.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/autopilot_manufacturer_supported</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/computer_vision/obstacle_avoidance.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/en/modules/module_template.html</loc>
@@ -6149,30 +3565,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/computer_vision/visual_inertial_odometry</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/autopilot_pixhawk_standard.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/gps_compass/rtk_gps_holybro_h-rtk-f9p.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/simulation/flightgear</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/releases/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/frames_sub/bluerov2.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.12/en/getting_started/sensor_selection.html</loc>
     <changefreq>monthly</changefreq>
   </url>
@@ -6181,24 +3573,8 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/telemetry/sik_radio.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/debug/simulation_debugging.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/computer_vision/collision_prevention.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/debug/binary_size_profiling.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/telemetry/telemetry_wifi.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/ko/contribute/translation.html</loc>
@@ -6207,34 +3583,6 @@
   <url>
     <loc>https://docs.px4.io/v1.12/en/getting_started/flight_modes.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_sub/bluerov2.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/advanced_features/traffic_avoidance_adsb.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/tutorials/video_streaming_wifi_broadcast.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/test_and_ci/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/gps_compass/rtk_gps_freefly.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/getting_started/led_meanings.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/computer_vision/collision_prevention.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/en/dev_setup/config_initial.html</loc>
@@ -6249,92 +3597,16 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/companion_computer/pixhawk_companion.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/holybro_pix32.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/gps_compass/rtk_gps_drotek_xl.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config/safety.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/airframes/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_controller/cubepilot_cube_orange.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/assembly/quick_start_holybro_pix32_v5.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.12/ko/contribute/licenses.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/telemetry/holybro_sik_radio.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/debug/consoles</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/flight_modes/manual_fw.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/debug/gdb_debugging.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/power_module/holybro_pm07_pixhawk4_power_module.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.12/ko/peripherals/</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/assembly/quick_start_cuav_v5_nano.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/gps_compass/rtk_gps_trimble_mb_two.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/advanced_features/precland.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/simulation/jmavsim.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/simulation/gazebo.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/gps_compass/rtk_gps_holybro_h-rtk-m8p.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/pixfalcon.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/hardware/serial_port_mapping.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/en/contribute/code.html</loc>
@@ -6345,743 +3617,55 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/advanced_config/static_pressure_buildup.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/hardware/board_support_guide.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/autopilot_manufacturer_supported.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/gps_compass/rtk_gps_hex_hereplus.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/simulation/failsafes.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/dev_setup/dev_env_windows_cygwin.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/advanced_features/traffic_avoidance_utm.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_multicopter/dji_flamewheel_450.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/assembly/quick_start_durandal.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.12/ko/releases/</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/uavcan/pomegranate_systems_pm.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/debug/profiling.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/frames_multicopter/lumenier_qav250_pixhawk_auav_x2.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/debug/swd_gdb.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/power_module/cuav_hv_pm.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.12/ko/robotics/</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/middleware/micrortps.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/gps_compass/rtk_gps_drotek_xl.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/computer_vision/safe_landing.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/dev_setup/vscode.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/simulation/ros_interface.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/gps_compass/rtk_gps_cuav_c-rtk.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/autopilot_experimental.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/sensor_bus/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced/parameters_and_configurations.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/advanced_config/</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/advanced_config/bootloader_update_from_betaflight.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced/gimbal_control.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/mro_pixhawk.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/gps_compass/rtk_gps_trimble_mb_two.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/middleware/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/dev_setup/fast-dds-installation.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/development/development</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/gps_compass/rtk_gps_cuav_c-rtk.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/sensor/px4flow.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.12/ko/flight_controller/</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/uavcan/cuav_can_pmu.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/ros/mavros_offboard.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/flight_modes/position_fw.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/config_mc/pid_tuning_guide_multicopter.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/power_module/holybro_pm06_pixhawk4mini_power_module.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/gps_compass/gps_hex_here2.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/sensor/px4flow.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/gps_compass/rtk_gps_fem_mini2.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flying/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/dev_setup/dev_env.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/concept/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_controller/autopilot_discontinued.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/pixhawk_series</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/hardware/reference_design.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config_fw/trimming_guide_fixedwing.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/flight_modes/mission.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config_fw/pid_tuning_guide_fixedwing.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/data_links/telemetry</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/dropix.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/autopilot_discontinued.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/hardware/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/test_and_ci/docker.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/log/flight_log_analysis</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/gps_compass/rtk_gps_holybro_h-rtk-m8p.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/uavcan/escs.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/peripherals/parachute.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/simulation/gazebo_vehicles.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/assembly/vibration_isolation.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/advanced_config/sensor_thermal_calibration.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/config_mc/filter_tuning.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_rover/traxxas_stampede.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_modes/return.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/peripherals/uavcan_escs.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/gps_compass/rtk_gps_holybro_h-rtk-f9p.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/assembly/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/modules/modules_main.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/dev_setup/dev_env.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/gps_compass/u-blox_f9p_heading.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/pixhawk_mini.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/middleware/drivers.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config_fw/advanced_tuning_guide_fixedwing.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/modules/modules_driver</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/config_fw/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/companion_computer/pixhawk_companion.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/cuav_v5_plus.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/config/firmware.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/simulation/hitl.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/modules/modules_communication.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/computer_vision/motion_capture.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/advanced/rtk_gps.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/peripherals/pwm_escs_and_servo.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_modes/land.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_multicopter/spedix_s250_pixracer.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/frames_multicopter/qav_r_5_kiss_esc_racer.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/flight_controller/pixracer.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/debug/binary_size_profiling.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/frames_multicopter/spedix_s250_pixracer.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_modes/mission.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/middleware/micrortps.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/gps_compass/rtk_gps_hex_hereplus.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/middleware/uorb.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/simulation/simulation-in-hardware.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/sensor/airspeed.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/pixhawk.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced/rtk_gps.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/advanced_config/flight_termination.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/modules/modules_driver_imu.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/advanced_config/sensor_thermal_calibration.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/middleware/uorb.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/autopilot_experimental</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/config/compass.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/advanced_config/parameter_reference.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_stack/controller_diagrams.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/gps_compass/rtk_gps_freefly.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/robotics/dronekit.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/config_vtol/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_modes/hold.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/debug/profiling.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/config_fw/trimming_guide_fixedwing.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/debug/swd_gdb.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_multicopter/dji_f450_cuav_5nano.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/advanced_config/static_pressure_buildup.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/middleware/mavlink.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_multicopter/holybro_qav250_pixhawk4_mini.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/modules/modules_system.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_controller/pixhawk-2.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/debug/system_console.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_controller/pixhawk_series.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/hardware/porting_guide</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config_vtol/vtol_back_transition_tuning.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/complete_vehicles/betafpv_beta75x.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/config_vtol/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/dev_airframes/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/cuav_v5_nano.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/debug/consoles.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_controller/autopilot_discontinued</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/modules/modules_communication.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_vtol/vtol_tiltrotor_eflite_convergence_pixfalcon.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/ros/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/config_mc/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_multicopter/robocat_270_pixracer.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/tutorials/video_streaming_wifi_broadcast.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/advanced_features/rtk-gps.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/debug/consoles</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_multicopter/qav_r_5_kiss_esc_racer.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/advanced_config/advanced_flight_controller_orientation_leveling.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/ros/offboard_control.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/frames_vtol/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/middleware/uorb.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_controller/pixhawk_mini.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/sensor/tachometers.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/silicon_errata.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/telemetry/telemetry_wifi</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config_vtol/vtol_without_airspeed_sensor.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/complete_vehicles/mindracer210.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config_vtol/vtol_weathervane.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/telemetry/esp8266_wifi_module.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_controller/cuav_v5.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_modes/takeoff.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/complete_vehicles/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/simulation/flightgear.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_vtol/standardvtol</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/hardware/drone_parts.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/advanced_config/tuning_the_ecl_ekf.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_multicopter/lumenier_qav250_pixhawk_mini.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/debug/gdb_debugging.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/flight_controller/pixhawk_mini.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/debug/simulation_debugging.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_multicopter/matrice100.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/advanced_config/flight_termination.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/complete_vehicles/mindracer_BNF_RTF</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_vtol/tailsitter</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/simulation/multi_vehicle_flightgear.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_controller/mro_pixhawk.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flying/fixed_wing_landing.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/config/flight_controller_orientation.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/telemetry/sik_radio</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/peripherals/mavlink_peripherals.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/complete_vehicles/crazyflie21.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/advanced_config/land_detector.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/telemetry/holybro_sik_radio.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flying/fixed_wing_takeoff.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_controller/pixhawk4.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/advanced_features/rtk-gps.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_vtol/vtol_quadplane_fun_cub_vtol_pixhawk.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/complete_vehicles/holybro_kopis2.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>http://docs.px4.io/master/en/advanced_config/parameters.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_multicopter/lumenier_qav250_pixhawk_auav_x2.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/debug/debug_values.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -7089,879 +3673,71 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/debug/faq.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_multicopter/dji_f450_cuav_5plus.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/advanced_config/compass_power_compensation.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/hardware/drone_parts.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_vtol/vtol_quadplane_volantex_ranger_ex_pixhawk.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/gps_compass/u-blox_f9p_heading.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_controller/pixfalcon.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/smart_batteries/rotoye_batmon.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/complete_vehicles/intel_aero.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/telemetry/esp32_wifi_module.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/advanced_config/compass_power_compensation.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/complete_vehicles/mindracer_BNF_RTF</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/config_mc/filter_tuning.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/telemetry/holybro_xbp9x_radio.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/cuav_v5.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/peripherals/adsb_flarm.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_controller/autopilot_experimental</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/gps_compass/rtk_gps.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_vtol/vtol_quadplane_falcon_vertigo_hybrid_rtf_dropix.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/complete_vehicles/betafpv_beta75x.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/advanced_config/land_detector.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/frames_multicopter/holybro_qav250_pixhawk4_mini.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/debug/eclipse_jlink.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/flight_modes/acro_mc.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/debug/sensor_uorb_topic_debugging.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/peripherals/camera_t265_vio.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/advanced_config/sensor_thermal_calibration.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/hardware/drone_parts.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_vtol/tailsitter.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/sensor/sfxx_lidar.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/debug/swd_debug.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_controller/autopilot_experimental.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/ocpoc_zynq.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/telemetry/microhard_serial.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/simulation/simulation-in-hardware.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_modes/mission.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/simulation/gazebo_octomap.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/telemetry/3dr_telemetry_wifi.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/auav_x2.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_modes/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/sensor/leddar_one.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_vtol/standardvtol.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_modes/position_mc.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/advanced_config/bootloader_update_from_betaflight.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/ros/ros2</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/debug/system_wide_replay.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/flight_controller/pixhack_v5.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/debug/failure_injection.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/ros/ros1</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/config_fw/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/uavcan/ark_flow.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/sensor/tfmini.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/modules/modules_main.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/complete_vehicles/crazyflie2.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/getting_started/frame_selection.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/simulation/gazebo</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/complete_vehicles/mindracer210.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/simulation/hitl.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/assembly/quick_start_pixracer.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/snapdragon_flight.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/getting_started/led_meanings.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/sensor/ulanding_radar.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_vtol/vtol_tailsitter_caipiroshka_pixracer.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/sensor/pmw3901.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/advanced_config/bootloader_update.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/ros/external_position_estimation.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_modes/acro_fw.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/flight_controller/mro_x2.1.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/robotics/dronekit.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/ros/external_position_estimation.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/peripherals/mavlink_peripherals.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/telemetry/sik_radio.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_vtol/tiltrotor</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/sensor/lidar_lite.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/assembly/quick_start_pixracer.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_modes/altitude_fw.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/assembly/quick_start_pixhawk.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/simulation/flightgear</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_modes/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_modes/manual_fw.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/assembly/quick_start_pixhawk.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/sensor/teraranger.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_vtol/tiltrotor.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/telemetry/telemetry_wifi.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/debug/sensor_uorb_topic_debugging.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/ros/mavros_offboard.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/software_update/stm32_bootloader.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.8.2/en/frames_plane/</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/en/advanced/computer_vision</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced/switching_state_estimators.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/uavcan/node_firmware.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/telemetry/rfd900_telemetry.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/advanced_config/advanced_flight_controller_orientation_leveling.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/uavcan/avanon_laser_interface.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/power_module/pomegranate_systems_pm.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/config/safety.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/simulation/jmavsim.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/simulation/multi-vehicle-simulation.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/cuav_v5_plus.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_modes/hold.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/power_module/cuav_can_pmu.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/sensor/lidar_lite.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/frames_autogyro/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flying/basic_flying</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/sensor/rangefinders.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/ros/ros1_via_ros2.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced/realsense_intel_driver.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.8.2/en/flight_controller/snapdragon_flight_configuration.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced/windows_cygwin_toolchain_setup.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/ros/mavros_custom_messages.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/sensor/rangefinders.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flying/first_flight_guidelines.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/gps_compass/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/sensor/cm8jl65_ir_distance_sensor.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/uavcan/avanon_laser_interface.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flying/missions.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/cuav_v5_nano.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/simulation/ignition_gazebo.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/dev_setup/dev_env</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/debug/mavlink_shell.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/uavcan/developer.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/ko/payloads/</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/zh/frames_plane/wing_wing_z84.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flying/terrain_following_holding.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/config/airframe.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/ros/raspberrypi_installation.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/tutorials/motion-capture-vicon-optitrack.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_modes/land.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_multicopter/holybro_s500_v2_pixhawk4.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/concept/system_startup.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/frames_vtol/vtol_quadplane_fun_cub_vtol_pixhawk.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.12/ko/getting_started/flight_controller_selection.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config_vtol/vtol_quad_configuration.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/modules/modules_driver.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/dev_setup/config_initial.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/simulation/multi_vehicle_simulation_gazebo.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/flight_controller/holybro_pix32.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/dev_airframes/adding_a_new_frame.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/gps_compass/gps_hex_here2.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/frames_plane/wing_wing_z84.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/peripherals/camera_t265_vio.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/config/motors.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/ros/mavros_installation.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced/system_tunes.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_modes/stabilized_fw.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/config/firmware.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/uavcan/pomegranate_systems_pm.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/config_mc/mc_trajectory_tuning</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/ko/assembly/</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/dev_setup/dev_env.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.12/ko/contribute/support.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/config_mc/mc_jerk_limited_type_trajectory.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/uavcan/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/config/accelerometer.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_modes/altitude_mc.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/tutorials/motion-capture-vicon-optitrack.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/flight_modes/acro_fw.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/config/compass.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/uavcan/cuav_can_pmu.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/ko/contribute/</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/simulation/jmavsim</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.12/ko/flying/</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/smart_batteries/rotoye_batmon.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/peripherals/dshot.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced/dev_env_unsupported</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/peripherals/camera.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/uavcan/developer.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/ko/airframes/</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/simulation/jsbsim.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.12/ko/config/</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/sensor/tachometers.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/assembly/quick_start_cube.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/advanced/out_of_tree_modules.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/assembly/quick_start_pixhawk4_mini.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/sensor/thunderfly_tachometer.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/ko/getting_started/</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/simulation/failsafes.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.12/ko/log/flight_log_analysis</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/sensor/pmw3901.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/assembly/quick_start_cuav_v5_plus.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/dev_setup/dev_env_advanced_linux.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/config_mc/racer_setup.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/power_module/cuav_hv_pm.html</loc>
-    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/v1.12/ko/development/development</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://docs.px4.io/master/ko/simulation/ros_interface.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>https://docs.px4.io/v1.12/ko/hardware/drone_parts</loc>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/power_module/holybro_pm07_pixhawk4_power_module.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/assembly/mount_and_orient_controller.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/concept/geometry_files.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/assembly/vibration_isolation.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/power_module/holybro_pm06_pixhawk4mini_power_module.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/simulation/gazebo_worlds.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/power_module/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/dev_setup/dev_env_mac.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_modes/position_mc.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/dev_setup/dev_env_linux_ubuntu.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/gps_compass/rtk_gps</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/ko/simulation/airsim.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/sensor/optical_flow</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/flight_modes/return.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/sensor/tachometers</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/advanced_config/bootloader_update.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/sensor/rangefinders</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/advanced_config/tuning_the_ecl_ekf.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/uavcan/ark_flow.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/config_mc/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/peripherals/esc_motors</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/modules/modules_driver.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/zh/complete_vehicles/holybro_kopis2.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/modules/modules_estimator.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/modules/modules_driver_distance_sensor.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/modules/modules_template.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/modules/modules_driver_magnetometer.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/modules/modules_driver_airspeed_sensor.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/modules/modules_driver_optical_flow.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/modules/modules_controller.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/modules/modules_simulation.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/modules/modules_driver_baro.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://docs.px4.io/master/en/modules/modules_communication.html</loc>
-    <changefreq>daily</changefreq>
   </url>
 </urlset>
