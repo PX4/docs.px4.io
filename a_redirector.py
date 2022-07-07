@@ -16,8 +16,8 @@ dir_name='.'
 
 for subdir, dirs, files in os.walk(dir_name):
     for file in files:
-        originalfile=subdir+'\\'+file
-        targetfile='\\main\\'+originalfile[2:]
+        originalfile=subdir+'/'+file
+        targetfile='\\main\\'+originalfile[9:]
         targetfile=targetfile.replace('\\','/')
 
         if not file.endswith('.html'): #only process html files.
@@ -32,22 +32,22 @@ for subdir, dirs, files in os.walk(dir_name):
            continue
 
         if subdir.startswith('./en'):
-            print("RootFile: %s" % originalfile)
+            #print("RootFile: %s" % originalfile)
             continue
             #Handle a root file.
 
         if subdir == '.':
-            print("RootFile: %s" % originalfile)
+            #print("RootFile: %s" % originalfile)
             continue
             #Handle a root file.
            
-        if subdir.startswith('.\\master'): #ignore versions
+        if subdir.startswith('./master'): #ignore versions
            print("DO: %s" % subdir)
            #continue
         
 
         print("OrigFile: %s" % originalfile)
-        print("TargetFile: %s" % targetfile)
+        print("TargetFile text: %s" % targetfile)
         print("Subdir: %s" % subdir )
         
         redirect_file_text="""<!DOCTYPE HTML>
@@ -64,11 +64,11 @@ for subdir, dirs, files in os.walk(dir_name):
 <script>window.location.href='%s';</script>
 </body></html>
 """ % (targetfile,targetfile,targetfile,targetfile)
-        #print("redirect_file_text: %s" % redirect_file_text)
+        print("redirect_file_text: %s" % redirect_file_text)
         
         #write the file
-        #with open(originalfile, 'w') as content_file:
-        #    content_file.write(redirect_file_text)
+        with open(originalfile, 'w') as content_file:
+            content_file.write(redirect_file_text)
         
         """
            
