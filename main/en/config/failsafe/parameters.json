@@ -869,6 +869,10 @@
         {
           "description": "Gripper",
           "value": 430
+        },
+        {
+          "description": "Landing Gear Wheel",
+          "value": 440
         }
       ]
     },
@@ -1064,6 +1068,10 @@
         {
           "description": "Gripper",
           "value": 430
+        },
+        {
+          "description": "Landing Gear Wheel",
+          "value": 440
         }
       ]
     },
@@ -1259,6 +1267,10 @@
         {
           "description": "Gripper",
           "value": 430
+        },
+        {
+          "description": "Landing Gear Wheel",
+          "value": 440
         }
       ]
     },
@@ -1454,6 +1466,10 @@
         {
           "description": "Gripper",
           "value": 430
+        },
+        {
+          "description": "Landing Gear Wheel",
+          "value": 440
         }
       ]
     },
@@ -1649,6 +1665,10 @@
         {
           "description": "Gripper",
           "value": 430
+        },
+        {
+          "description": "Landing Gear Wheel",
+          "value": 440
         }
       ]
     },
@@ -1844,6 +1864,10 @@
         {
           "description": "Gripper",
           "value": 430
+        },
+        {
+          "description": "Landing Gear Wheel",
+          "value": 440
         }
       ]
     },
@@ -2039,6 +2063,10 @@
         {
           "description": "Gripper",
           "value": 430
+        },
+        {
+          "description": "Landing Gear Wheel",
+          "value": 440
         }
       ]
     },
@@ -2234,6 +2262,10 @@
         {
           "description": "Gripper",
           "value": 430
+        },
+        {
+          "description": "Landing Gear Wheel",
+          "value": 440
         }
       ]
     },
@@ -2429,6 +2461,10 @@
         {
           "description": "Gripper",
           "value": 430
+        },
+        {
+          "description": "Landing Gear Wheel",
+          "value": 440
         }
       ]
     },
@@ -2624,6 +2660,10 @@
         {
           "description": "Gripper",
           "value": 430
+        },
+        {
+          "description": "Landing Gear Wheel",
+          "value": 440
         }
       ]
     },
@@ -2819,6 +2859,10 @@
         {
           "description": "Gripper",
           "value": 430
+        },
+        {
+          "description": "Landing Gear Wheel",
+          "value": 440
         }
       ]
     },
@@ -3014,6 +3058,10 @@
         {
           "description": "Gripper",
           "value": 430
+        },
+        {
+          "description": "Landing Gear Wheel",
+          "value": 440
         }
       ]
     },
@@ -3209,6 +3257,10 @@
         {
           "description": "Gripper",
           "value": 430
+        },
+        {
+          "description": "Landing Gear Wheel",
+          "value": 440
         }
       ]
     },
@@ -3404,6 +3456,10 @@
         {
           "description": "Gripper",
           "value": 430
+        },
+        {
+          "description": "Landing Gear Wheel",
+          "value": 440
         }
       ]
     },
@@ -3599,6 +3655,10 @@
         {
           "description": "Gripper",
           "value": 430
+        },
+        {
+          "description": "Landing Gear Wheel",
+          "value": 440
         }
       ]
     },
@@ -3794,6 +3854,10 @@
         {
           "description": "Gripper",
           "value": 430
+        },
+        {
+          "description": "Landing Gear Wheel",
+          "value": 440
         }
       ]
     },
@@ -5351,6 +5415,25 @@
     },
     {
       "category": "Standard",
+      "default": 1,
+      "group": "Commander",
+      "longDesc": "This check detects if there are hardfault files present on the SD card. If so, and the parameter is enabled, arming is prevented.",
+      "name": "COM_ARM_HFLT_CHK",
+      "shortDesc": "Enable FMU SD card hardfault detection check",
+      "type": "Int32",
+      "values": [
+        {
+          "description": "Disabled",
+          "value": 0
+        },
+        {
+          "description": "Enabled",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "category": "Standard",
       "decimalPlaces": 2,
       "default": 0.7,
       "group": "Commander",
@@ -5505,9 +5588,10 @@
     },
     {
       "category": "Standard",
-      "decimalPlaces": 2,
+      "decimalPlaces": 1,
       "default": 2.0,
       "group": "Commander",
+      "increment": 0.1,
       "longDesc": "A non-zero, positive value specifies the time-out period in seconds after which the vehicle will be automatically disarmed in case a landing situation has been detected during this period. A zero or negative value means that automatic disarming triggered by landing detection is disabled.",
       "name": "COM_DISARM_LAND",
       "shortDesc": "Time-out for auto disarm after landing",
@@ -5516,9 +5600,10 @@
     },
     {
       "category": "Standard",
-      "decimalPlaces": 2,
+      "decimalPlaces": 1,
       "default": 10.0,
       "group": "Commander",
+      "increment": 0.1,
       "longDesc": "A non-zero, positive value specifies the time in seconds, within which the vehicle is expected to take off after arming. In case the vehicle didn't takeoff within the timeout it disarms again. A negative value disables autmoatic disarming triggered by a pre-takeoff timeout.",
       "name": "COM_DISARM_PRFLT",
       "shortDesc": "Time-out for auto disarm if not taking off",
@@ -6094,7 +6179,6 @@
     },
     {
       "category": "Standard",
-      "decimalPlaces": 0,
       "default": 0,
       "group": "Commander",
       "increment": 1,
@@ -6148,10 +6232,8 @@
     },
     {
       "category": "Standard",
-      "decimalPlaces": 0,
       "default": 0,
       "group": "Commander",
-      "increment": 1,
       "longDesc": "Action the system takes at critical battery. See also BAT_CRIT_THR and BAT_EMERGEN_THR for definition of battery states.",
       "name": "COM_LOW_BAT_ACT",
       "shortDesc": "Battery failsafe mode",
@@ -6406,19 +6488,6 @@
       ]
     },
     {
-      "category": "Standard",
-      "decimalPlaces": 3,
-      "default": 15.0,
-      "group": "Commander",
-      "longDesc": "RC signal not updated -> still use data for COM_RC_LOSS_T seconds Consider RC signal lost -> wait COM_RCL_ACT_T seconds in Hold mode to regain signal React with failsafe action NAV_RCL_ACT A zero value disables the delay.",
-      "max": 25.0,
-      "min": 0.0,
-      "name": "COM_RCL_ACT_T",
-      "shortDesc": "Delay between RC loss and configured reaction",
-      "type": "Float",
-      "units": "s"
-    },
-    {
       "bitmask": [
         {
           "description": "Mission",
@@ -6539,8 +6608,10 @@
     },
     {
       "category": "Standard",
+      "decimalPlaces": 1,
       "default": 1.0,
       "group": "Commander",
+      "increment": 0.1,
       "longDesc": "The minimal time from arming the motors until moving the vehicle is possible is COM_SPOOLUP_TIME seconds. Goal: - Motors and propellers spool up to idle speed before getting commanded to spin faster - Timeout for ESCs and smart batteries to successfulyy do failure checks e.g. for stuck rotors before the vehicle is off the ground",
       "max": 30.0,
       "min": 0.0,
@@ -6678,43 +6749,6 @@
     },
     {
       "category": "Standard",
-      "decimalPlaces": 1,
-      "default": 600.0,
-      "group": "Data Link Loss",
-      "increment": 0.5,
-      "longDesc": "Altitude of airfield home waypoint",
-      "min": -50.0,
-      "name": "NAV_AH_ALT",
-      "shortDesc": "Airfield home alt",
-      "type": "Float",
-      "units": "m"
-    },
-    {
-      "category": "Standard",
-      "default": -265847810,
-      "group": "Data Link Loss",
-      "longDesc": "Latitude of airfield home waypoint",
-      "max": 900000000,
-      "min": -900000000,
-      "name": "NAV_AH_LAT",
-      "shortDesc": "Airfield home Lat",
-      "type": "Int32",
-      "units": "deg*1e7"
-    },
-    {
-      "category": "Standard",
-      "default": 1518423250,
-      "group": "Data Link Loss",
-      "longDesc": "Longitude of airfield home waypoint",
-      "max": 1800000000,
-      "min": -1800000000,
-      "name": "NAV_AH_LON",
-      "shortDesc": "Airfield home Lon",
-      "type": "Int32",
-      "units": "deg*1e7"
-    },
-    {
-      "category": "Standard",
       "decimalPlaces": 2,
       "default": 0.2,
       "group": "EKF2",
@@ -6837,14 +6871,14 @@
           "index": 7
         },
         {
-          "description": "vision velocity fusion",
+          "description": "unused",
           "index": 8
         }
       ],
       "category": "Standard",
       "default": 0,
       "group": "EKF2",
-      "longDesc": "Set bits in the following positions to enable: 0 : Deprecated, use EKF2_GPS_CTRL instead 1 : Set to true to use optical flow data if available 2 : Set to true to inhibit IMU delta velocity bias estimation 3 : Set to true to enable vision position fusion 4 : Set to true to enable vision yaw fusion. Cannot be used if bit position 7 is true. 5 : Set to true to enable multi-rotor drag specific force fusion 6 : set to true if the EV observations are in a non NED reference frame and need to be rotated before being used 7 : Deprecated, use EKF2_GPS_CTRL instead 8 : Set to true to enable vision velocity fusion",
+      "longDesc": "Set bits in the following positions to enable: 0 : Deprecated, use EKF2_GPS_CTRL instead 1 : Set to true to use optical flow data if available 2 : Set to true to inhibit IMU delta velocity bias estimation 3 : Set to true to enable vision position fusion 4 : Set to true to enable vision yaw fusion. Cannot be used if bit position 7 is true. 5 : Set to true to enable multi-rotor drag specific force fusion 6 : set to true if the EV observations are in a non NED reference frame and need to be rotated before being used 7 : Deprecated, use EKF2_GPS_CTRL instead 3 : Deprecated, use EKF2_EV_CTRL instead",
       "max": 511,
       "min": 0,
       "name": "EKF2_AID_MASK",
@@ -7130,6 +7164,35 @@
       "units": "m/s"
     },
     {
+      "bitmask": [
+        {
+          "description": "Horizontal position",
+          "index": 0
+        },
+        {
+          "description": "Vertical position",
+          "index": 1
+        },
+        {
+          "description": "3D velocity",
+          "index": 2
+        },
+        {
+          "description": "Yaw",
+          "index": 3
+        }
+      ],
+      "category": "Standard",
+      "default": 15,
+      "group": "EKF2",
+      "longDesc": "Set bits in the following positions to enable: 0 : Horizontal position fusion 1 : Vertical position fusion 2 : 3D velocity fusion 3 : Yaw",
+      "max": 15,
+      "min": 0,
+      "name": "EKF2_EV_CTRL",
+      "shortDesc": "External vision (EV) sensor aiding",
+      "type": "Int32"
+    },
+    {
       "category": "Standard",
       "decimalPlaces": 1,
       "default": 0.0,
@@ -7146,17 +7209,17 @@
       "category": "Standard",
       "default": 0,
       "group": "EKF2",
-      "longDesc": "If set to true the observation noise is set from the parameters directly, if set to false the measurement noise is taken from the vision message and the parameter are used as a lower bound.",
+      "longDesc": "If set to 0 (default) the measurement noise is taken from the vision message and the EV noise parameters are used as a lower bound. If set to 1 the observation noise is set from the parameters directly,",
       "name": "EKF2_EV_NOISE_MD",
-      "shortDesc": "Whether to set the external vision observation noise from the parameter or from vision message",
+      "shortDesc": "External vision (EV) noise mode",
       "type": "Int32",
       "values": [
         {
-          "description": "Disabled",
+          "description": "EV reported variance (parameter lower bound)",
           "value": 0
         },
         {
-          "description": "Enabled",
+          "description": "EV noise parameters",
           "value": 1
         }
       ]
@@ -7190,6 +7253,18 @@
       "shortDesc": "Z position of VI sensor focal point in body frame (down axis with origin relative to vehicle centre of gravity)",
       "type": "Float",
       "units": "m"
+    },
+    {
+      "category": "Standard",
+      "decimalPlaces": 1,
+      "default": 0,
+      "group": "EKF2",
+      "longDesc": "External vision will only be started and fused if the quality metric is above this threshold. The quality metric is a completely optional field provided by some VIO systems.",
+      "max": 100,
+      "min": 0,
+      "name": "EKF2_EV_QMIN",
+      "shortDesc": "External vision (EV) minimum quality (optional)",
+      "type": "Int32"
     },
     {
       "category": "Standard",
@@ -8390,39 +8465,45 @@
     },
     {
       "category": "Standard",
+      "decimalPlaces": 1,
       "default": 90.0,
       "group": "FW Attitude Control",
+      "increment": 5.0,
       "longDesc": "This is the rate the controller is trying to achieve if the user applies full roll stick input in acro mode.",
       "max": 720.0,
       "min": 45.0,
       "name": "FW_ACRO_X_MAX",
       "shortDesc": "Acro body x max rate",
       "type": "Float",
-      "units": "deg"
+      "units": "deg/s"
     },
     {
       "category": "Standard",
+      "decimalPlaces": 1,
       "default": 90.0,
       "group": "FW Attitude Control",
+      "increment": 5.0,
       "longDesc": "This is the body y rate the controller is trying to achieve if the user applies full pitch stick input in acro mode.",
       "max": 720.0,
       "min": 45.0,
       "name": "FW_ACRO_Y_MAX",
       "shortDesc": "Acro body y max rate",
       "type": "Float",
-      "units": "deg"
+      "units": "deg/s"
     },
     {
       "category": "Standard",
+      "decimalPlaces": 1,
       "default": 45.0,
       "group": "FW Attitude Control",
+      "increment": 5.0,
       "longDesc": "This is the body z rate the controller is trying to achieve if the user applies full yaw stick input in acro mode.",
       "max": 180.0,
       "min": 10.0,
       "name": "FW_ACRO_Z_MAX",
       "shortDesc": "Acro body z max rate",
       "type": "Float",
-      "units": "deg"
+      "units": "deg/s"
     },
     {
       "category": "Standard",
@@ -8680,6 +8761,19 @@
       "shortDesc": "Manual roll scale",
       "type": "Float",
       "units": "norm"
+    },
+    {
+      "category": "Standard",
+      "decimalPlaces": 1,
+      "default": 30.0,
+      "group": "FW Attitude Control",
+      "increment": 0.5,
+      "longDesc": "This is the maximally added yaw rate setpoint from the yaw stick in any attitude controlled flight mode. The controller already generates a yaw rate setpoint to coordinate a turn, and this value is added to it. This is an absolute value, which is applied symmetrically to the negative and positive side.",
+      "min": 0.0,
+      "name": "FW_MAN_YR_MAX",
+      "shortDesc": "Maximum manually added yaw rate",
+      "type": "Float",
+      "units": "deg/s"
     },
     {
       "category": "Standard",
@@ -9036,6 +9130,7 @@
       "category": "Standard",
       "default": 0,
       "group": "FW Attitude Control",
+      "longDesc": "Only enabled during automatic runway takeoff and landing. In all manual modes the wheel is directly controlled with yaw stick.",
       "name": "FW_W_EN",
       "shortDesc": "Enable wheel steering controller",
       "type": "Int32",
@@ -9170,17 +9265,16 @@
     },
     {
       "category": "Standard",
-      "decimalPlaces": 2,
-      "default": 1.3,
+      "decimalPlaces": 1,
+      "default": -1.0,
       "group": "FW Auto Landing",
-      "increment": 0.01,
-      "longDesc": "Multiplying this factor with the minimum airspeed of the plane gives the target airspeed the landing approach. FW_AIRSPD_MIN * FW_LND_AIRSPD_SC",
-      "max": 1.5,
-      "min": 1.0,
-      "name": "FW_LND_AIRSPD_SC",
-      "shortDesc": "Min. airspeed scaling factor for landing",
+      "increment": 0.1,
+      "longDesc": "The calibrated airspeed setpoint during landing. If set <= 0.0, landing airspeed = FW_AIRSPD_MIN by default.",
+      "min": -1.0,
+      "name": "FW_LND_AIRSPD",
+      "shortDesc": "Landing airspeed",
       "type": "Float",
-      "units": "norm"
+      "units": "m/s"
     },
     {
       "category": "Standard",
@@ -9278,7 +9372,7 @@
       "increment": 0.1,
       "longDesc": "Multiplied by the descent rate to calculate a dynamic altitude at which to trigger the flare. NOTE: max(FW_LND_FLALT, FW_LND_FL_TIME * descent rate) is taken as the flare altitude",
       "max": 5.0,
-      "min": 0.0,
+      "min": 0.1,
       "name": "FW_LND_FL_TIME",
       "shortDesc": "Landing flare time",
       "type": "Float",
@@ -9321,6 +9415,20 @@
       "shortDesc": "Maximum lateral position offset for the touchdown point",
       "type": "Float",
       "units": "m"
+    },
+    {
+      "category": "Standard",
+      "decimalPlaces": 1,
+      "default": -1.0,
+      "group": "FW Auto Landing",
+      "increment": 0.1,
+      "longDesc": "This is the time after the start of flaring that we expect the vehicle to touch the runway. At this time, a 0.5s clamp down ramp will engage, constraining the pitch setpoint to RWTO_PSP. If enabled, ensure that RWTO_PSP is configured appropriately for full gear contact on ground roll. Set to -1.0 to disable touchdown clamping. E.g. it may not be desirable to clamp on belly landings. The touchdown time will be constrained to be greater than or equal to the flare time (FW_LND_FL_TIME).",
+      "max": 5.0,
+      "min": -1.0,
+      "name": "FW_LND_TD_TIME",
+      "shortDesc": "Landing touchdown time (since flare start)",
+      "type": "Float",
+      "units": "s"
     },
     {
       "category": "Standard",
@@ -9388,20 +9496,6 @@
     },
     {
       "category": "Standard",
-      "decimalPlaces": 1,
-      "default": 10.0,
-      "group": "FW L1 Control",
-      "increment": 0.5,
-      "longDesc": "If the altitude error exceeds this parameter, the system will climb out with maximum throttle and minimum airspeed until it is closer than this distance to the desired altitude. Mostly used for takeoff waypoints / modes. Set to 0 to disable climbout mode (not recommended).",
-      "max": 150.0,
-      "min": 0.0,
-      "name": "FW_CLMBOUT_DIFF",
-      "shortDesc": "Climbout Altitude difference",
-      "type": "Float",
-      "units": "m"
-    },
-    {
-      "category": "Standard",
       "decimalPlaces": 2,
       "default": 0.75,
       "group": "FW L1 Control",
@@ -9429,6 +9523,7 @@
     },
     {
       "category": "Standard",
+      "decimalPlaces": 0,
       "default": 90.0,
       "group": "FW L1 Control",
       "increment": 1.0,
@@ -9759,7 +9854,7 @@
       "default": 20.0,
       "group": "FW TECS",
       "increment": 0.5,
-      "longDesc": "If the CAS (calibrated airspeed) is above this value, the TECS controller will try to decrease airspeed more aggressively.",
+      "longDesc": "The maximal airspeed (calibrated airspeed) the user is able to command. Further, if the airspeed is above this value, the TECS controller will try to decrease airspeed more aggressively.",
       "max": 40.0,
       "min": 0.5,
       "name": "FW_AIRSPD_MAX",
@@ -9773,7 +9868,7 @@
       "default": 10.0,
       "group": "FW TECS",
       "increment": 0.5,
-      "longDesc": "The minimal airspeed (calibrated airspeed) the user is able to command. Further, if the airspeed falls below this value, the TECS controller will try to increase airspeed more aggressively.",
+      "longDesc": "The minimal airspeed (calibrated airspeed) the user is able to command. Further, if the airspeed falls below this value, the TECS controller will try to increase airspeed more aggressively. Has to be set according to the vehicle's stall speed (which should be set in FW_AIRSPD_STALL), with some margin between the stall speed and minimum airspeed. This value corresponds to the desired minimum speed with the default load factor (level flight, default weight), and is automatically adpated to the current load factor (calculated from roll setpoint and WEIGHT_GROSS/WEIGHT_BASE).",
       "max": 40.0,
       "min": 0.5,
       "name": "FW_AIRSPD_MIN",
@@ -9895,8 +9990,10 @@
     },
     {
       "category": "Standard",
+      "decimalPlaces": 2,
       "default": 0.0,
       "group": "FW TECS",
+      "increment": 0.01,
       "longDesc": "Maximum slew rate for the commanded throttle",
       "max": 1.0,
       "min": 0.0,
@@ -9917,6 +10014,19 @@
       "shortDesc": "Trim throttle",
       "type": "Float",
       "units": "norm"
+    },
+    {
+      "category": "Standard",
+      "decimalPlaces": 1,
+      "default": -1.0,
+      "group": "FW TECS",
+      "increment": 0.1,
+      "longDesc": "The calibrated airspeed setpoint TECS will stabilize to during the takeoff climbout. If set <= 0.0, FW_AIRSPD_MIN will be set by default.",
+      "min": -1.0,
+      "name": "FW_TKO_AIRSPD",
+      "shortDesc": "Takeoff Airspeed",
+      "type": "Float",
+      "units": "m/s"
     },
     {
       "category": "Standard",
@@ -14776,10 +14886,11 @@
     },
     {
       "category": "Standard",
-      "decimalPlaces": 1,
+      "decimalPlaces": 2,
       "default": 0.25,
       "group": "Land Detector",
-      "longDesc": "Vertical velocity threshold to detect landing. Should be set lower than the expected minimal speed for landing so MPC_LAND_SPEED for autonomous landing and MPC_LAND_CRWL if distance sensor is present and slowing down close to ground.",
+      "longDesc": "Vertical velocity threshold to detect landing. Has to be set lower than the expected minimal speed for landing, which is either MPC_LAND_SPEED or MPC_LAND_CRWL. This is enforced by an automatic check.",
+      "min": 0.0,
       "name": "LNDMC_Z_VEL_MAX",
       "shortDesc": "Multicopter vertical velocity threshold",
       "type": "Float",
@@ -15075,7 +15186,6 @@
     },
     {
       "category": "Standard",
-      "decimalPlaces": 0,
       "default": 150,
       "group": "Local Position Estimator",
       "max": 255,
@@ -16378,16 +16488,13 @@
     },
     {
       "category": "Standard",
-      "decimalPlaces": 1,
-      "default": -1.0,
+      "default": 30,
       "group": "Mission",
-      "increment": 0.5,
-      "longDesc": "This is the minimum altitude the system will always obey. The intent is to stay out of ground effect. set to -1, if there shouldn't be a minimum loiter altitude",
-      "max": 80.0,
-      "min": -1.0,
-      "name": "MIS_LTRMIN_ALT",
-      "shortDesc": "Minimum Loiter altitude",
-      "type": "Float",
+      "longDesc": "Minimum altitude above landing point that the vehicle will climb to after an aborted landing. Then vehicle will loiter in this altitude until further command is received. Only applies to fixed-wing vehicles.",
+      "min": 0,
+      "name": "MIS_LND_ABRT_ALT",
+      "shortDesc": "Landing abort min altitude",
+      "type": "Int32",
       "units": "m"
     },
     {
@@ -16441,18 +16548,30 @@
       "category": "Standard",
       "default": 0,
       "group": "Mission",
-      "longDesc": "If set, the mission feasibility checker will check for a takeoff waypoint on the mission.",
-      "name": "MIS_TAKEOFF_REQ",
-      "shortDesc": "Take-off waypoint required",
+      "longDesc": "Specifies if a mission has to contain a takeoff and/or mission landing. Validity of configured takeoffs/landings is checked independently of the setting here.",
+      "name": "MIS_TKO_LAND_REQ",
+      "shortDesc": "Mission takeoff/landing required",
       "type": "Int32",
       "values": [
         {
-          "description": "Disabled",
+          "description": "No requirements",
           "value": 0
         },
         {
-          "description": "Enabled",
+          "description": "Require a takeoff",
           "value": 1
+        },
+        {
+          "description": "Require a landing",
+          "value": 2
+        },
+        {
+          "description": "Require a takeoff and a landing",
+          "value": 3
+        },
+        {
+          "description": "Require a takeoff and a landing, or neither of both",
+          "value": 4
         }
       ]
     },
@@ -16600,6 +16719,19 @@
       "min": 0.05,
       "name": "NAV_MC_ALT_RAD",
       "shortDesc": "MC Altitude Acceptance Radius",
+      "type": "Float",
+      "units": "m"
+    },
+    {
+      "category": "Standard",
+      "decimalPlaces": 1,
+      "default": -1.0,
+      "group": "Mission",
+      "increment": 0.5,
+      "longDesc": "This is the minimum altitude above Home the system will always obey in Loiter (Hold) mode if switched into this mode without specifying an altitude (e.g. through Loiter switch on RC). Doesn't affect Loiters that are part of Missions or that are entered through a reposition setpoint (\"Go to\"). Set to a negative value to disable.",
+      "min": -1.0,
+      "name": "NAV_MIN_LTR_ALT",
+      "shortDesc": "Minimum Loiter altitude",
       "type": "Float",
       "units": "m"
     },
@@ -23350,20 +23482,6 @@
     },
     {
       "category": "Standard",
-      "decimalPlaces": 2,
-      "default": 1.3,
-      "group": "Runway Takeoff",
-      "increment": 0.01,
-      "longDesc": "Pitch up will be commanded when the following airspeed is reached: FW_AIRSPD_MIN * RWTO_AIRSPD_SCL",
-      "max": 2.0,
-      "min": 0.0,
-      "name": "RWTO_AIRSPD_SCL",
-      "shortDesc": "Min airspeed scaling factor for takeoff",
-      "type": "Float",
-      "units": "norm"
-    },
-    {
-      "category": "Standard",
       "default": 0,
       "group": "Runway Takeoff",
       "longDesc": "0: airframe heading when takeoff is initiated 1: position control along runway direction (bearing defined from vehicle position on takeoff initiation to MAV_CMD_TAKEOFF position defined by operator)",
@@ -23395,20 +23513,6 @@
       "shortDesc": "L1 period while steering on runway",
       "type": "Float",
       "units": "s"
-    },
-    {
-      "category": "Standard",
-      "decimalPlaces": 1,
-      "default": 20.0,
-      "group": "Runway Takeoff",
-      "increment": 0.5,
-      "longDesc": "Fixed-wing settings are used if set to 0. Note that there is also a minimum pitch of 10 degrees during takeoff, so this must be larger if set.",
-      "max": 60.0,
-      "min": 0.0,
-      "name": "RWTO_MAX_PITCH",
-      "shortDesc": "Max pitch during takeoff",
-      "type": "Float",
-      "units": "deg"
     },
     {
       "category": "Standard",
@@ -23453,7 +23557,7 @@
       "max": 20.0,
       "min": -10.0,
       "name": "RWTO_PSP",
-      "shortDesc": "Pitch setpoint during taxi / before takeoff airspeed is reached",
+      "shortDesc": "Pitch setpoint during taxi / before takeoff rotation airspeed is reached",
       "type": "Float",
       "units": "deg"
     },
@@ -23467,6 +23571,32 @@
       "min": 1.0,
       "name": "RWTO_RAMP_TIME",
       "shortDesc": "Throttle ramp up time for runway takeoff",
+      "type": "Float",
+      "units": "s"
+    },
+    {
+      "category": "Standard",
+      "decimalPlaces": 1,
+      "default": -1.0,
+      "group": "Runway Takeoff",
+      "increment": 0.1,
+      "longDesc": "The calibrated airspeed threshold during the takeoff ground roll when the plane should start rotating (pitching up). Must be less than the takeoff airspeed, will otherwise be capped at the takeoff airpeed (see FW_TKO_AIRSPD). If set <= 0.0, defaults to 0.9 * takeoff airspeed (see FW_TKO_AIRSPD)",
+      "min": -1.0,
+      "name": "RWTO_ROT_AIRSPD",
+      "shortDesc": "Takeoff rotation airspeed",
+      "type": "Float",
+      "units": "m/s"
+    },
+    {
+      "category": "Standard",
+      "decimalPlaces": 1,
+      "default": 1.0,
+      "group": "Runway Takeoff",
+      "increment": 0.1,
+      "longDesc": "This is the time desired to linearly ramp in takeoff pitch constraints during the takeoff rotation",
+      "min": 0.1,
+      "name": "RWTO_ROT_TIME",
+      "shortDesc": "Takeoff rotation time",
       "type": "Float",
       "units": "s"
     },
@@ -23736,6 +23866,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 0,
       "group": "Sensor Calibration",
       "longDesc": "Device ID of the accelerometer this calibration applies to.",
@@ -23745,6 +23876,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": -1,
       "group": "Sensor Calibration",
       "name": "CAL_ACC0_PRIO",
@@ -23964,6 +24096,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 0.0,
       "group": "Sensor Calibration",
       "name": "CAL_ACC0_XOFF",
@@ -23974,6 +24107,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 1.0,
       "group": "Sensor Calibration",
       "max": 3.0,
@@ -23985,6 +24119,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 0.0,
       "group": "Sensor Calibration",
       "name": "CAL_ACC0_YOFF",
@@ -23995,6 +24130,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 1.0,
       "group": "Sensor Calibration",
       "max": 3.0,
@@ -24006,6 +24142,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 0.0,
       "group": "Sensor Calibration",
       "name": "CAL_ACC0_ZOFF",
@@ -24016,6 +24153,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 1.0,
       "group": "Sensor Calibration",
       "max": 3.0,
@@ -24027,6 +24165,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 0,
       "group": "Sensor Calibration",
       "longDesc": "Device ID of the accelerometer this calibration applies to.",
@@ -24036,6 +24175,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": -1,
       "group": "Sensor Calibration",
       "name": "CAL_ACC1_PRIO",
@@ -24255,6 +24395,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 0.0,
       "group": "Sensor Calibration",
       "name": "CAL_ACC1_XOFF",
@@ -24265,6 +24406,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 1.0,
       "group": "Sensor Calibration",
       "max": 3.0,
@@ -24276,6 +24418,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 0.0,
       "group": "Sensor Calibration",
       "name": "CAL_ACC1_YOFF",
@@ -24286,6 +24429,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 1.0,
       "group": "Sensor Calibration",
       "max": 3.0,
@@ -24297,6 +24441,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 0.0,
       "group": "Sensor Calibration",
       "name": "CAL_ACC1_ZOFF",
@@ -24307,6 +24452,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 1.0,
       "group": "Sensor Calibration",
       "max": 3.0,
@@ -24318,6 +24464,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 0,
       "group": "Sensor Calibration",
       "longDesc": "Device ID of the accelerometer this calibration applies to.",
@@ -24327,6 +24474,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": -1,
       "group": "Sensor Calibration",
       "name": "CAL_ACC2_PRIO",
@@ -24546,6 +24694,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 0.0,
       "group": "Sensor Calibration",
       "name": "CAL_ACC2_XOFF",
@@ -24556,6 +24705,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 1.0,
       "group": "Sensor Calibration",
       "max": 3.0,
@@ -24567,6 +24717,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 0.0,
       "group": "Sensor Calibration",
       "name": "CAL_ACC2_YOFF",
@@ -24577,6 +24728,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 1.0,
       "group": "Sensor Calibration",
       "max": 3.0,
@@ -24588,6 +24740,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 0.0,
       "group": "Sensor Calibration",
       "name": "CAL_ACC2_ZOFF",
@@ -24598,6 +24751,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 1.0,
       "group": "Sensor Calibration",
       "max": 3.0,
@@ -24609,6 +24763,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 0,
       "group": "Sensor Calibration",
       "longDesc": "Device ID of the accelerometer this calibration applies to.",
@@ -24618,6 +24773,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": -1,
       "group": "Sensor Calibration",
       "name": "CAL_ACC3_PRIO",
@@ -24837,6 +24993,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 0.0,
       "group": "Sensor Calibration",
       "name": "CAL_ACC3_XOFF",
@@ -24847,6 +25004,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 1.0,
       "group": "Sensor Calibration",
       "max": 3.0,
@@ -24858,6 +25016,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 0.0,
       "group": "Sensor Calibration",
       "name": "CAL_ACC3_YOFF",
@@ -24868,6 +25027,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 1.0,
       "group": "Sensor Calibration",
       "max": 3.0,
@@ -24879,6 +25039,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 0.0,
       "group": "Sensor Calibration",
       "name": "CAL_ACC3_ZOFF",
@@ -24889,6 +25050,7 @@
     },
     {
       "category": "System",
+      "decimalPlaces": 3,
       "default": 1.0,
       "group": "Sensor Calibration",
       "max": 3.0,
@@ -30922,7 +31084,7 @@
     },
     {
       "category": "Standard",
-      "decimalPlaces": 1,
+      "decimalPlaces": 2,
       "default": 0.0,
       "group": "VTOL Attitude Control",
       "increment": 0.01,
@@ -30935,7 +31097,7 @@
     },
     {
       "category": "Standard",
-      "decimalPlaces": 1,
+      "decimalPlaces": 2,
       "default": 0.1,
       "group": "VTOL Attitude Control",
       "increment": 0.05,
@@ -30966,12 +31128,13 @@
       "default": 0.0,
       "group": "VTOL Attitude Control",
       "increment": 1.0,
-      "longDesc": "Set this to a value greater than 0 to give the motor time to spin down. unit s",
+      "longDesc": "Set this to a value greater than 0 to give the motor time to spin down.",
       "max": 10.0,
       "min": 0.0,
       "name": "VT_B_REV_DEL",
       "shortDesc": "Delay in seconds before applying back transition throttle",
-      "type": "Float"
+      "type": "Float",
+      "units": "s"
     },
     {
       "category": "Standard",
@@ -31096,22 +31259,38 @@
     },
     {
       "category": "Standard",
+      "decimalPlaces": 1,
       "default": 0.0,
       "group": "VTOL Attitude Control",
+      "increment": 1.0,
       "longDesc": "Maximum negative altitude error for fixed wing flight. If the altitude drops below this value below the altitude setpoint the vehicle will transition back to MC mode and enter failsafe RTL.",
       "max": 200.0,
       "min": 0.0,
       "name": "VT_FW_ALT_ERR",
       "shortDesc": "Adaptive QuadChute",
-      "type": "Float"
+      "type": "Float",
+      "units": "m"
     },
     {
+      "bitmask": [
+        {
+          "description": "Yaw",
+          "index": 0
+        },
+        {
+          "description": "Roll",
+          "index": 1
+        },
+        {
+          "description": "Pitch",
+          "index": 2
+        }
+      ],
       "category": "Standard",
-      "decimalPlaces": 0,
       "default": 0,
       "group": "VTOL Attitude Control",
-      "longDesc": "Set to 1 to enable differential thrust in fixed-wing flight.",
-      "max": 1,
+      "longDesc": "Enable differential thrust seperately for roll, pitch, yaw in forward (fixed-wing) mode. The effectiveness of differential thrust around the corresponding axis can be tuned by setting VT_FW_DIFTHR_S_R / VT_FW_DIFTHR_S_P / VT_FW_DIFTHR_S_Y.",
+      "max": 7,
       "min": 0,
       "name": "VT_FW_DIFTHR_EN",
       "shortDesc": "Differential thrust in forwards flight",
@@ -31120,26 +31299,55 @@
     {
       "category": "Standard",
       "decimalPlaces": 2,
-      "default": 0.1,
+      "default": 1.0,
       "group": "VTOL Attitude Control",
       "increment": 0.1,
-      "longDesc": "This factor specifies how the yaw input gets mapped to differential thrust in forwards flight.",
-      "max": 1.0,
+      "longDesc": "Maps the pitch control output in forward flight to the actuator differential thrust output. Differential thrust in forward flight is enabled via VT_FW_DIFTHR_EN.",
+      "max": 2.0,
       "min": 0.0,
-      "name": "VT_FW_DIFTHR_SC",
-      "shortDesc": "Differential thrust scaling factor",
+      "name": "VT_FW_DIFTHR_S_P",
+      "shortDesc": "Pitch differential thrust factor in forward flight",
       "type": "Float"
     },
     {
       "category": "Standard",
+      "decimalPlaces": 2,
+      "default": 1.0,
+      "group": "VTOL Attitude Control",
+      "increment": 0.1,
+      "longDesc": "Maps the roll control output in forward flight to the actuator differential thrust output. Differential thrust in forward flight is enabled via VT_FW_DIFTHR_EN.",
+      "max": 2.0,
+      "min": 0.0,
+      "name": "VT_FW_DIFTHR_S_R",
+      "shortDesc": "Roll differential thrust factor in forward flight",
+      "type": "Float"
+    },
+    {
+      "category": "Standard",
+      "decimalPlaces": 2,
+      "default": 0.1,
+      "group": "VTOL Attitude Control",
+      "increment": 0.1,
+      "longDesc": "Maps the yaw control output in forward flight to the actuator differential thrust output. Differential thrust in forward flight is enabled via VT_FW_DIFTHR_EN.",
+      "max": 2.0,
+      "min": 0.0,
+      "name": "VT_FW_DIFTHR_S_Y",
+      "shortDesc": "Yaw differential thrust factor in forward flight",
+      "type": "Float"
+    },
+    {
+      "category": "Standard",
+      "decimalPlaces": 1,
       "default": 0.0,
       "group": "VTOL Attitude Control",
+      "increment": 1.0,
       "longDesc": "Minimum altitude for fixed wing flight, when in fixed wing the altitude drops below this altitude the vehicle will transition back to MC mode and enter failsafe RTL",
       "max": 200.0,
       "min": 0.0,
       "name": "VT_FW_MIN_ALT",
       "shortDesc": "QuadChute Altitude",
-      "type": "Float"
+      "type": "Float",
+      "units": "m"
     },
     {
       "category": "Standard",
@@ -31192,8 +31400,10 @@
     },
     {
       "category": "Standard",
+      "decimalPlaces": 1,
       "default": 6.0,
       "group": "VTOL Attitude Control",
+      "increment": 0.5,
       "longDesc": "The duration of the front transition when there is no airspeed feedback available.",
       "max": 30.0,
       "min": 1.0,
@@ -31204,44 +31414,51 @@
     },
     {
       "category": "Standard",
+      "decimalPlaces": 1,
       "default": -5.0,
       "group": "VTOL Attitude Control",
+      "increment": 0.1,
       "longDesc": "Overrides  VT_PITCH_MIN when the vehicle is in LAND mode (hovering). During landing it can be beneficial to allow lower minimum pitch angles as it can avoid the wings generating too much lift and preventing the vehicle from sinking at the desired rate.",
       "max": 45.0,
       "min": -10.0,
       "name": "VT_LND_PITCH_MIN",
       "shortDesc": "Minimum pitch angle during hover landing",
-      "type": "Float"
+      "type": "Float",
+      "units": "deg"
     },
     {
       "category": "Standard",
+      "decimalPlaces": 1,
       "default": -5.0,
       "group": "VTOL Attitude Control",
+      "increment": 0.1,
       "longDesc": "Minimum pitch angle during hover flight. If the desired pitch angle is is lower than this value then the fixed-wing forward actuation can be used to compensate for the missing thrust in forward direction (see VT_FW_TRHUST_EN)",
       "max": 45.0,
       "min": -10.0,
       "name": "VT_PITCH_MIN",
       "shortDesc": "Minimum pitch angle during hover",
-      "type": "Float"
+      "type": "Float",
+      "units": "deg"
     },
     {
       "category": "Standard",
       "decimalPlaces": 2,
-      "default": 3.0,
+      "default": 0.33,
       "group": "VTOL Attitude Control",
       "increment": 0.01,
-      "longDesc": "Defines the time window during which the pusher throttle will be ramped up linearly to VT_F_TRANS_THR during a transition to fixed wing mode. Zero or negative values will produce an instant throttle rise to VT_F_TRANS_THR.",
-      "max": 20.0,
-      "name": "VT_PSHER_RMP_DT",
-      "shortDesc": "Pusher throttle ramp up window",
-      "type": "Float"
+      "longDesc": "Defines the slew rate of the puller/pusher throttle during transitions. Zero will deactivate the slew rate limiting and thus produce an instant throttle rise to the transition throttle VT_F_TRANS_THR.",
+      "min": 0.0,
+      "name": "VT_PSHER_SLEW",
+      "shortDesc": "Pusher throttle ramp up slew rate",
+      "type": "Float",
+      "units": "1/s"
     },
     {
       "category": "Standard",
       "decimalPlaces": 1,
       "default": 0.0,
       "group": "VTOL Attitude Control",
-      "increment": 0.05,
+      "increment": 0.1,
       "max": 1.0,
       "min": -1.0,
       "name": "VT_SPOILER_MC_LD",
@@ -31300,8 +31517,10 @@
     },
     {
       "category": "Standard",
+      "decimalPlaces": 1,
       "default": 2.0,
       "group": "VTOL Attitude Control",
+      "increment": 0.1,
       "longDesc": "Minimum time in seconds for front transition.",
       "max": 20.0,
       "min": 0.0,
@@ -31340,7 +31559,6 @@
     },
     {
       "category": "Standard",
-      "decimalPlaces": 0,
       "default": 0,
       "group": "VTOL Attitude Control",
       "max": 2,
