@@ -8886,7 +8886,7 @@
     {
       "bitmask": [
         {
-          "description": "Abort if terrain is not found",
+          "description": "Abort if terrain is not found (only applies to mission landings)",
           "index": 0
         },
         {
@@ -28492,6 +28492,69 @@
       "name": "SENS_EN_ARSPDSIM",
       "rebootRequired": true,
       "shortDesc": "Enable simulated airspeed sensor instance",
+      "type": "Int32",
+      "values": [
+        {
+          "description": "Disabled",
+          "value": 0
+        },
+        {
+          "description": "Enabled",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "category": "Standard",
+      "default": 0,
+      "group": "Sensors",
+      "max": 1,
+      "min": 0,
+      "name": "SENS_EN_BAROSIM",
+      "rebootRequired": true,
+      "shortDesc": "Enable simulated barometer sensor instance",
+      "type": "Int32",
+      "values": [
+        {
+          "description": "Disabled",
+          "value": 0
+        },
+        {
+          "description": "Enabled",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "category": "Standard",
+      "default": 0,
+      "group": "Sensors",
+      "max": 1,
+      "min": 0,
+      "name": "SENS_EN_GPSSIM",
+      "rebootRequired": true,
+      "shortDesc": "Enable simulated GPS sinstance",
+      "type": "Int32",
+      "values": [
+        {
+          "description": "Disabled",
+          "value": 0
+        },
+        {
+          "description": "Enabled",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "category": "Standard",
+      "default": 0,
+      "group": "Sensors",
+      "max": 1,
+      "min": 0,
+      "name": "SENS_EN_MAGSIM",
+      "rebootRequired": true,
+      "shortDesc": "Enable simulated magnetometer sensor instance",
       "type": "Int32",
       "values": [
         {
