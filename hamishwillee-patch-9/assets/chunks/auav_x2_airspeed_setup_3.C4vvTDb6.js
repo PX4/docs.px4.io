@@ -1,0 +1,1 @@
+const s="/hamishwillee-patch-9/assets/auavx2_case2.BHVd3u6X.jpg",a="/hamishwillee-patch-9/assets/auav_x2_basic_setup_3.Dn1jg5z4.png",_="/hamishwillee-patch-9/assets/auav_x2_basic_setup_2.BxRe9N-5.jpg",t="/hamishwillee-patch-9/assets/auav_x2_basic_setup_1.CZTRF6EB.png",e="/hamishwillee-patch-9/assets/auav_x2_airspeed_setup_3.BxkW3rNy.png";export{s as _,a,_ as b,t as c,e as d};

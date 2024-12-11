@@ -1,0 +1,1 @@
+const s="/hamishwillee-patch-9/assets/mr-vmu-rt1176_upleft.DFNX6wML.jpg",t="/hamishwillee-patch-9/assets/mr-vmu-rt1176_top.CtucFSs0.jpg",a="/hamishwillee-patch-9/assets/mr-vmu-rt1176_front.CrgPSzz4.jpg",m="/hamishwillee-patch-9/assets/mr-vmu-rt1176_left.BKTTzsgy.jpg",r="/hamishwillee-patch-9/assets/mr-vmu-rt1176_right.xos6DVcB.jpg";export{s as _,t as a,a as b,m as c,r as d};

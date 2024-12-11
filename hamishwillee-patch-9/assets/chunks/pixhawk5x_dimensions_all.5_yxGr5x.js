@@ -1,0 +1,1 @@
+const s="/hamishwillee-patch-9/assets/pixhawk5x_hero_upright.Df9o_G9L.jpg",a="/hamishwillee-patch-9/assets/pixhawk5x_exploded_diagram.BEQS1joJ.jpg",i="/hamishwillee-patch-9/assets/pixhawk5x_dimensions_all.DmC8uLF0.jpg";export{s as _,a,i as b};

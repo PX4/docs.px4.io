@@ -1,0 +1,1 @@
+const s="/hamishwillee-patch-9/assets/hardware-pilotpi4b.o4v4ky5c.png",i="/hamishwillee-patch-9/assets/pilotpi_pwr_wiring.Dm7UrJob.png",p="/hamishwillee-patch-9/assets/pilotpi_sens_wiring.CQDwso65.png";export{s as _,i as a,p as b};

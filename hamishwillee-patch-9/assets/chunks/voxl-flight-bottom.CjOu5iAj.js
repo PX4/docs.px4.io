@@ -1,0 +1,1 @@
+const s="/hamishwillee-patch-9/assets/voxl-flight-dk.DZrAcack.jpg",t="/hamishwillee-patch-9/assets/voxl-flight-dimensions.I9Z_4yKn.jpg",a="/hamishwillee-patch-9/assets/voxl-flight-top.D4cqVfgp.jpg",i="/hamishwillee-patch-9/assets/voxl-flight-bottom.BxlOucXe.jpg";export{s as _,t as a,a as b,i as c};

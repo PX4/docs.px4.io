@@ -1,0 +1,1 @@
+const s="/hamishwillee-patch-9/assets/gazebo_follow.fLfuV3bn.jpg",a="/hamishwillee-patch-9/assets/sitl_video_stream.BV85wnIA.png",e="/hamishwillee-patch-9/assets/qgc_gazebo_video_stream_udp.CqLa7f_-.png",t="/hamishwillee-patch-9/assets/qgc_gazebo_video_stream_typhoon.CQnYpQf-.jpg";export{s as _,a,e as b,t as c};

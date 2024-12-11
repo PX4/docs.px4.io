@@ -1,0 +1,74 @@
+import{_ as s,c as n,a8 as e,o as t}from"./chunks/framework.BDnHobkS.js";const m=JSON.parse('{"title":"모듈 참조: 통신","description":"","frontmatter":{},"headers":[],"relativePath":"ko/modules/modules_communication.md","filePath":"ko/modules/modules_communication.md"}'),l={name:"ko/modules/modules_communication.md"};function p(i,a,o,r,c,d){return t(),n("div",null,a[0]||(a[0]=[e(`<h1 id="모듈-참조-통신" tabindex="-1">모듈 참조: 통신 <a class="header-anchor" href="#모듈-참조-통신" aria-label="Permalink to &quot;모듈 참조: 통신&quot;">​</a></h1><h2 id="frsky-telemetry" tabindex="-1">frsky_telemetry <a class="header-anchor" href="#frsky-telemetry" aria-label="Permalink to &quot;frsky_telemetry&quot;">​</a></h2><p>Source: <a href="https://github.com/PX4/PX4-Autopilot/tree/main/src/drivers/telemetry/frsky_telemetry" target="_blank" rel="noreferrer">drivers/telemetry/frsky_telemetry</a></p><p>FrSky 텔레메트리를 지원합니다. D 또는 S.PORT 프로토콜을 자동으로 감지합니다. <a id="frsky_telemetry_usage"></a></p><h3 id="사용법" tabindex="-1">사용법 <a class="header-anchor" href="#사용법" aria-label="Permalink to &quot;사용법&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>frsky_telemetry &lt;command&gt; [arguments...]</span></span>
+<span class="line"><span> Commands:</span></span>
+<span class="line"><span>   start</span></span>
+<span class="line"><span>     [-d &lt;val&gt;]  Select Serial Device</span></span>
+<span class="line"><span>                 values: &lt;file:dev&gt;, default: /dev/ttyS6</span></span>
+<span class="line"><span>     [-t &lt;val&gt;]  Scanning timeout [s] (default: no timeout)</span></span>
+<span class="line"><span>                 default: 0</span></span>
+<span class="line"><span>     [-m &lt;val&gt;]  Select protocol (default: auto-detect)</span></span>
+<span class="line"><span>                 values: sport|sport_single|sport_single_invert|dtype, default:</span></span>
+<span class="line"><span>                 auto</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   stop</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   status</span></span></code></pre></div><h2 id="mavlink" tabindex="-1">mavlink <a class="header-anchor" href="#mavlink" aria-label="Permalink to &quot;mavlink&quot;">​</a></h2><p>Source: <a href="https://github.com/PX4/PX4-Autopilot/tree/main/src/modules/mavlink" target="_blank" rel="noreferrer">modules/mavlink</a></p><h3 id="설명" tabindex="-1">설명 <a class="header-anchor" href="#설명" aria-label="Permalink to &quot;설명&quot;">​</a></h3><p>이 모듈은 직렬 링크 또는 UDP 네트워크에서 사용할 수 있는 MAVLink 프로토콜을 구현합니다. uORB로 시스템과 통신합니다. 일부 메시지는 모듈에서 직접 처리되고(예: 임무 프로토콜), 다른 메시지는 uORB를 통하여 게시됩니다(예: vehicle_command).</p><p>스트림은 차량 자세와 같은 특정 속도로 주기적 메시지를 전송합니다. mavlink 인스턴스를 시작시에 활성화된 스트림 세트를 속도와 함께 정의하는 모드를 지정할 수 있습니다. For a running instance, streams can be configured via <code>mavlink stream</code> command.</p><p>하나의 직렬 장치 또는 네트워크 포트에 각각 연결된 모듈의 여러 독립 인스턴스가 있을 수 있습니다.</p><h3 id="구현" tabindex="-1">구현 <a class="header-anchor" href="#구현" aria-label="Permalink to &quot;구현&quot;">​</a></h3><p>구현은 송신 및 수신 스레드의 2개 스레드를 사용합니다. The sender runs at a fixed rate and dynamically reduces the rates of the streams if the combined bandwidth is higher than the configured rate (<code>-r</code>) or the physical link becomes saturated. This can be checked with <code>mavlink status</code>, see if <code>rate mult</code> is less than 1.</p><p><strong>Careful</strong>: some of the data is accessed and modified from both threads, so when changing code or extend the functionality, this needs to be take into account, in order to avoid race conditions and corrupt data.</p><h3 id="예" tabindex="-1">예 <a class="header-anchor" href="#예" aria-label="Permalink to &quot;예&quot;">​</a></h3><p>전송 속도가 921600이고, 최대 전송 속도가 80kB/s인 ttyS1 직렬 포트에서 mavlink를 시작합니다.</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>mavlink start -d /dev/ttyS1 -b 921600 -m onboard -r 80000</span></span></code></pre></div><p>UDP 포트 14556에서 mavlink를 시작하고, 50Hz로 HIGHRES_IMU 메시지를 활성화합니다.</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>mavlink start -u 14556 -r 1000000</span></span>
+<span class="line"><span>mavlink stream -u 14556 -s HIGHRES_IMU -r 50</span></span></code></pre></div><p><a id="mavlink_usage"></a></p><h3 id="사용법-1" tabindex="-1">사용법 <a class="header-anchor" href="#사용법-1" aria-label="Permalink to &quot;사용법&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>mavlink &lt;command&gt; [arguments...]</span></span>
+<span class="line"><span> Commands:</span></span>
+<span class="line"><span>   start         Start a new instance</span></span>
+<span class="line"><span>     [-d &lt;val&gt;]  Select Serial Device</span></span>
+<span class="line"><span>                 values: &lt;file:dev&gt;, default: /dev/ttyS1</span></span>
+<span class="line"><span>     [-b &lt;val&gt;]  Baudrate (can also be p:&lt;param_name&gt;)</span></span>
+<span class="line"><span>                 default: 57600</span></span>
+<span class="line"><span>     [-r &lt;val&gt;]  Maximum sending data rate in B/s (if 0, use baudrate / 20)</span></span>
+<span class="line"><span>                 default: 0</span></span>
+<span class="line"><span>     [-p]        Enable Broadcast</span></span>
+<span class="line"><span>     [-u &lt;val&gt;]  Select UDP Network Port (local)</span></span>
+<span class="line"><span>                 default: 14556</span></span>
+<span class="line"><span>     [-o &lt;val&gt;]  Select UDP Network Port (remote)</span></span>
+<span class="line"><span>                 default: 14550</span></span>
+<span class="line"><span>     [-t &lt;val&gt;]  Partner IP (broadcasting can be enabled via -p flag)</span></span>
+<span class="line"><span>                 default: 127.0.0.1</span></span>
+<span class="line"><span>     [-m &lt;val&gt;]  Mode: sets default streams and rates</span></span>
+<span class="line"><span>                 values: custom|camera|onboard|osd|magic|config|iridium|minimal|</span></span>
+<span class="line"><span>                 extvision|extvisionmin|gimbal|uavionix, default: normal</span></span>
+<span class="line"><span>     [-n &lt;val&gt;]  wifi/ethernet interface name</span></span>
+<span class="line"><span>                 values: &lt;interface_name&gt;</span></span>
+<span class="line"><span>     [-c &lt;val&gt;]  Multicast address (multicasting can be enabled via</span></span>
+<span class="line"><span>                 MAV_{i}_BROADCAST param)</span></span>
+<span class="line"><span>                 values: Multicast address in the range</span></span>
+<span class="line"><span>                 [239.0.0.0,239.255.255.255]</span></span>
+<span class="line"><span>     [-F &lt;val&gt;]  Sets the transmission frequency for iridium mode</span></span>
+<span class="line"><span>                 default: 0.0</span></span>
+<span class="line"><span>     [-f]        Enable message forwarding to other Mavlink instances</span></span>
+<span class="line"><span>     [-w]        Wait to send, until first message received</span></span>
+<span class="line"><span>     [-x]        Enable FTP</span></span>
+<span class="line"><span>     [-z]        Force hardware flow control always on</span></span>
+<span class="line"><span>     [-Z]        Force hardware flow control always off</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   stop-all      Stop all instances</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   stop          Stop a running instance</span></span>
+<span class="line"><span>     [-u &lt;val&gt;]  Select Mavlink instance via local Network Port</span></span>
+<span class="line"><span>     [-d &lt;val&gt;]  Select Mavlink instance via Serial Device</span></span>
+<span class="line"><span>                 values: &lt;file:dev&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   status        Print status for all instances</span></span>
+<span class="line"><span>     [streams]   Print all enabled streams</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   stream        Configure the sending rate of a stream for a running instance</span></span>
+<span class="line"><span>     [-u &lt;val&gt;]  Select Mavlink instance via local Network Port</span></span>
+<span class="line"><span>     [-d &lt;val&gt;]  Select Mavlink instance via Serial Device</span></span>
+<span class="line"><span>                 values: &lt;file:dev&gt;</span></span>
+<span class="line"><span>     -s &lt;val&gt;    Mavlink stream to configure</span></span>
+<span class="line"><span>     -r &lt;val&gt;    Rate in Hz (0 = turn off, -1 = set to default)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   boot_complete Enable sending of messages. (Must be) called as last step in</span></span>
+<span class="line"><span>                 startup script.</span></span></code></pre></div><h2 id="uorb" tabindex="-1">uorb <a class="header-anchor" href="#uorb" aria-label="Permalink to &quot;uorb&quot;">​</a></h2><p>Source: <a href="https://github.com/PX4/PX4-Autopilot/tree/main/src/systemcmds/uorb" target="_blank" rel="noreferrer">systemcmds/uorb</a></p><h3 id="설명-1" tabindex="-1">설명 <a class="header-anchor" href="#설명-1" aria-label="Permalink to &quot;설명&quot;">​</a></h3><p>uORB는 모듈 간의 통신에 사용되는 내부 pub-sub 메시징 시스템입니다.</p><h3 id="구현-1" tabindex="-1">구현 <a class="header-anchor" href="#구현-1" aria-label="Permalink to &quot;구현&quot;">​</a></h3><p>구현은 비동기식이며 잠금이 없습니다. 게시자는 구독자를 기다리지 않으며, 그 반대도 마찬가지입니다. 이것은 발행자와 구독자 사이에 별도의 버퍼를 가짐으로써 달성됩니다.</p><p>코드는 메모리 공간과 메시지 교환 대기 시간을 최소화하도록 최적화되었습니다.</p><p>Messages are defined in the <code>/msg</code> directory. 빌드 타임에 C/C++ 코드로 변환됩니다.</p><p>ORB_USE_PUBLISHER_RULES로 컴파일하면, uORB 게시 규칙이 있는 파일을 사용하여, 어떤 모듈이 어떤 주제를 게시할 수 있는 지 설정할 수 있습니다. 이것은 시스템 전체 재생에 사용됩니다.</p><h3 id="예-1" tabindex="-1">예 <a class="header-anchor" href="#예-1" aria-label="Permalink to &quot;예&quot;">​</a></h3><p>주제 게시 비율을 모니터링합니다. Besides <code>top</code>, this is an important command for general system inspection:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>uorb top</span></span></code></pre></div><p><a id="uorb_usage"></a></p><h3 id="사용법-2" tabindex="-1">사용법 <a class="header-anchor" href="#사용법-2" aria-label="Permalink to &quot;사용법&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>uorb &lt;command&gt; [arguments...]</span></span>
+<span class="line"><span> Commands:</span></span>
+<span class="line"><span>   status        Print topic statistics</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   top           Monitor topic publication rates</span></span>
+<span class="line"><span>     [-a]        print all instead of only currently publishing topics with</span></span>
+<span class="line"><span>                 subscribers</span></span>
+<span class="line"><span>     [-1]        run only once, then exit</span></span>
+<span class="line"><span>     [&lt;filter1&gt; [&lt;filter2&gt;]] topic(s) to match (implies -a)</span></span></code></pre></div>`,38)]))}const h=s(l,[["render",p]]);export{m as __pageData,h as default};

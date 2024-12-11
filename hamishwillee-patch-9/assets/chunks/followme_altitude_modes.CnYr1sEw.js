@@ -1,0 +1,1 @@
+const s="/hamishwillee-patch-9/assets/followme_concept.AdaLm2WI.png",e="/hamishwillee-patch-9/assets/followme_angle.B_c8lgTn.png",a="/hamishwillee-patch-9/assets/followme_qgc_example.B0X0bW9K.jpg",l="/hamishwillee-patch-9/assets/followme_altitude_modes.BP_ehMCz.svg";export{s as _,e as a,a as b,l as c};

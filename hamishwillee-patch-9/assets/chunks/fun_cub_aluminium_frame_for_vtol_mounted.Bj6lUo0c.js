@@ -1,0 +1,1 @@
+const s="/hamishwillee-patch-9/assets/fun_cub_vtol_complete.CNrlHtjF.jpg",_="/hamishwillee-patch-9/assets/fun_cub_aluminium_frame_for_vtol.DawmrFYI.jpg",t="/hamishwillee-patch-9/assets/fun_cub_aluminium_frame_for_vtol_mounted.DTXV5Ub0.jpg";export{s as _,_ as a,t as b};

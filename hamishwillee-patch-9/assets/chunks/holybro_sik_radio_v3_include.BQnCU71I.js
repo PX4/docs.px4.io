@@ -1,0 +1,1 @@
+const s="/hamishwillee-patch-9/assets/holybro_sik_radio_v3.CaUC-Eeo.png",a="/hamishwillee-patch-9/assets/holybro_sik_telemetry_label.DHxAty-V.jpg",_="/hamishwillee-patch-9/assets/holybro_sik_radio_v3_include.B8CfuTaT.png";export{s as _,a,_ as b};

@@ -1,0 +1,1 @@
+const s="/hamishwillee-patch-9/assets/rtk_holybro_h-rtk-m8p_all_label.BAjVrApJ.jpg",t="/hamishwillee-patch-9/assets/rtk_holybro_h-rtk-m8p_pinmap.EUfwCXEH.jpg",p="/hamishwillee-patch-9/assets/rtk_holybro_h-rtk-m8p_spec.BJNbn4vd.png";export{s as _,t as a,p as b};
