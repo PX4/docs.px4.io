@@ -1,0 +1,1 @@
+const s="/main/assets/r1_assembly.CJ2E2Aii.png",a="/main/assets/wiring_r1.DHBzX1vJ.jpg",t="/main/assets/r1_airframe.C-m6VE9p.png",_="/main/assets/roboclaw_actuator_config_qgc.COldGNSB.png";export{s as _,a,t as b,_ as c};

@@ -1,0 +1,1 @@
+const s="/v1.15/assets/frame.B4dqpIE-.jpg",t="/v1.15/assets/parts_list.d5154xPY.jpg",o="/v1.15/assets/frame_only.DI7PzEha.jpg",a="/v1.15/assets/fc_closeup.CbwXNw4Z.jpg",_="/v1.15/assets/esc_settings.B0HGvfWd.png",p="/v1.15/assets/motors_configuration.BNKG3L4b.png",e="/v1.15/assets/gazebo.9Dy38dhU.png";export{s as _,t as a,o as b,a as c,_ as d,p as e,e as f};

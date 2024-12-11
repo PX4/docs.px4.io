@@ -1,0 +1,74 @@
+import{_ as a,c as s,o as n,ab as e}from"./chunks/framework.CUflZczI.js";const g=JSON.parse('{"title":"模块参考：通信（Communication）","description":"","frontmatter":{},"headers":[],"relativePath":"zh/modules/modules_communication.md","filePath":"zh/modules/modules_communication.md"}'),t={name:"zh/modules/modules_communication.md"},l=e(`<h1 id="模块参考-通信-communication" tabindex="-1">模块参考：通信（Communication） <a class="header-anchor" href="#模块参考-通信-communication" aria-label="Permalink to &quot;模块参考：通信（Communication）&quot;">​</a></h1><h2 id="frsky-telemetry" tabindex="-1">frsky_telemetry <a class="header-anchor" href="#frsky-telemetry" aria-label="Permalink to &quot;frsky_telemetry&quot;">​</a></h2><p>Source: <a href="https://github.com/PX4/PX4-Autopilot/tree/release/1.15/src/drivers/telemetry/frsky_telemetry" target="_blank" rel="noreferrer">drivers/telemetry/frsky_telemetry</a></p><p>FrSky 数传支持， FrSky Telemetry support. Auto-detects D or S.PORT protocol. <a id="frsky_telemetry_usage"></a></p><h3 id="用法" tabindex="-1">用法 <a class="header-anchor" href="#用法" aria-label="Permalink to &quot;用法&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>frsky_telemetry &lt;command&gt; [arguments...]</span></span>
+<span class="line"><span> frsky_telemetry &lt;command&gt; [arguments...]</span></span>
+<span class="line"><span> Commands:</span></span>
+<span class="line"><span>   start</span></span>
+<span class="line"><span>     [-d &lt;val&gt;]  Select Serial Device</span></span>
+<span class="line"><span>                 values: &lt;file:dev&gt;, default: /dev/ttyS6</span></span>
+<span class="line"><span>     [-t &lt;val&gt;]  Scanning timeout [s] (default: no timeout)</span></span>
+<span class="line"><span>                 default: 0</span></span>
+<span class="line"><span>     [-m &lt;val&gt;]  Select protocol (default: auto-detect)</span></span>
+<span class="line"><span>                 values: sport|sport_single|dtype, default: auto</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   stop</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   status</span></span></code></pre></div><h2 id="mavlink" tabindex="-1">mavlink <a class="header-anchor" href="#mavlink" aria-label="Permalink to &quot;mavlink&quot;">​</a></h2><p>Source: <a href="https://github.com/PX4/PX4-Autopilot/tree/release/1.15/src/modules/mavlink" target="_blank" rel="noreferrer">modules/mavlink</a></p><h3 id="描述" tabindex="-1">描述 <a class="header-anchor" href="#描述" aria-label="Permalink to &quot;描述&quot;">​</a></h3><p>此模块实现了 MAVLink 协议，该协议可在串口或 UDP 网络上使用。 This module implements the MAVLink protocol, which can be used on a Serial link or UDP network connection. It communicates with the system via uORB: some messages are directly handled in the module (eg. mission protocol), others are published via uORB (eg. vehicle_command).</p><p>流（Stream）被用来以特定速率发送周期性的消息，例如飞机姿态信息。 Streams are used to send periodic messages with a specific rate, such as the vehicle attitude. When starting the mavlink instance, a mode can be specified, which defines the set of enabled streams with their rates. For a running instance, streams can be configured via <code>mavlink stream</code> command. 对于一个正在运行的实例而言，可以使用 <code>mavlink stream</code> 命令来配置流。</p><p>可以存在多个该模块的实例，每个实例连接到一个串口设备或者网络端口。</p><h3 id="实现" tabindex="-1">实现 <a class="header-anchor" href="#实现" aria-label="Permalink to &quot;实现&quot;">​</a></h3><p>命令的具体实现使用了两个线程，分别为数据发送线程和接收线程。 发送线程以一个固定的速率运行，并会在组合带宽（combined bandwidth）高于设定速率(<code>-r</code>)，或者物理链路出现饱和的情况下动态降低信息流的发送速率。 可使用 <code>mavlink status</code> 命令检查是否发生降速，如果 <code>rate mult</code> 小于 1 则发生了降速。</p><p><strong>Careful</strong>: some of the data is accessed and modified from both threads, so when changing code or extend the functionality, this needs to be take into account, in order to avoid race conditions and corrupt data.</p><h3 id="示例" tabindex="-1">示例 <a class="header-anchor" href="#示例" aria-label="Permalink to &quot;示例&quot;">​</a></h3><p>在 ttyS1 串口启动 mavlink ，并设定波特率为 921600、最大发送速率为 80kB/s：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>mavlink start -d /dev/ttyS1 -b 921600 -m onboard -r 80000</span></span></code></pre></div><p>在 UDP 端口 14556 启动 mavlink 并启用 50Hz 的 HIGHRES_IMU 消息：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>mavlink start -u 14556 -r 1000000</span></span>
+<span class="line"><span>mavlink stream -u 14556 -s HIGHRES_IMU -r 50</span></span></code></pre></div><p><a id="mavlink_usage"></a></p><h3 id="用法-1" tabindex="-1">用法 <a class="header-anchor" href="#用法-1" aria-label="Permalink to &quot;用法&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>mavlink &lt;command&gt; [arguments...]</span></span>
+<span class="line"><span> Commands:</span></span>
+<span class="line"><span>   start         Start a new instance</span></span>
+<span class="line"><span>     [-d &lt;val&gt;]  Select Serial Device</span></span>
+<span class="line"><span>                 values: &lt;file:dev&gt;, default: /dev/ttyS1</span></span>
+<span class="line"><span>     [-b &lt;val&gt;]  Baudrate (can also be p:&lt;param_name&gt;)</span></span>
+<span class="line"><span>                 default: 57600</span></span>
+<span class="line"><span>     [-r &lt;val&gt;]  Maximum sending data rate in B/s (if 0, use baudrate / 20)</span></span>
+<span class="line"><span>                 default: 0</span></span>
+<span class="line"><span>     [-p]        Enable Broadcast</span></span>
+<span class="line"><span>     [-u &lt;val&gt;]  Select UDP Network Port (local)</span></span>
+<span class="line"><span>                 default: 14556</span></span>
+<span class="line"><span>     [-o &lt;val&gt;]  Select UDP Network Port (remote)</span></span>
+<span class="line"><span>                 default: 14550</span></span>
+<span class="line"><span>     [-t &lt;val&gt;]  Partner IP (broadcasting can be enabled via -p flag)</span></span>
+<span class="line"><span>                 default: 127.0.0.1</span></span>
+<span class="line"><span>     [-m &lt;val&gt;]  Mode: sets default streams and rates</span></span>
+<span class="line"><span>                 values: custom|camera|onboard|osd|magic|config|iridium|minimal|</span></span>
+<span class="line"><span>                 extvision|extvisionmin|gimbal|uavionix, default: normal</span></span>
+<span class="line"><span>     [-n &lt;val&gt;]  wifi/ethernet interface name</span></span>
+<span class="line"><span>                 values: &lt;interface_name&gt;</span></span>
+<span class="line"><span>     [-c &lt;val&gt;]  Multicast address (multicasting can be enabled via</span></span>
+<span class="line"><span>                 MAV_{i}_BROADCAST param)</span></span>
+<span class="line"><span>                 values: Multicast address in the range</span></span>
+<span class="line"><span>                 [239.0.0.0,239.255.255.255]</span></span>
+<span class="line"><span>     [-F &lt;val&gt;]  Sets the transmission frequency for iridium mode</span></span>
+<span class="line"><span>                 default: 0.0</span></span>
+<span class="line"><span>     [-f]        Enable message forwarding to other Mavlink instances</span></span>
+<span class="line"><span>     [-w]        Wait to send, until first message received</span></span>
+<span class="line"><span>     [-x]        Enable FTP</span></span>
+<span class="line"><span>     [-z]        Force hardware flow control always on</span></span>
+<span class="line"><span>     [-Z]        Force hardware flow control always off</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   stop-all      Stop all instances</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   stop          Stop a running instance</span></span>
+<span class="line"><span>     [-u &lt;val&gt;]  Select Mavlink instance via local Network Port</span></span>
+<span class="line"><span>     [-d &lt;val&gt;]  Select Mavlink instance via Serial Device</span></span>
+<span class="line"><span>                 values: &lt;file:dev&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   status        Print status for all instances</span></span>
+<span class="line"><span>     [streams]   Print all enabled streams</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   stream        Configure the sending rate of a stream for a running instance</span></span>
+<span class="line"><span>     [-u &lt;val&gt;]  Select Mavlink instance via local Network Port</span></span>
+<span class="line"><span>     [-d &lt;val&gt;]  Select Mavlink instance via Serial Device</span></span>
+<span class="line"><span>                 values: &lt;file:dev&gt;</span></span>
+<span class="line"><span>     -s &lt;val&gt;    Mavlink stream to configure</span></span>
+<span class="line"><span>     -r &lt;val&gt;    Rate in Hz (0 = turn off, -1 = set to default)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   boot_complete Enable sending of messages. (必须) 作为启动脚本的最后一步被调用。</span></span></code></pre></div><h2 id="uorb" tabindex="-1">uorb <a class="header-anchor" href="#uorb" aria-label="Permalink to &quot;uorb&quot;">​</a></h2><p>Source: <a href="https://github.com/PX4/PX4-Autopilot/tree/release/1.15/src/systemcmds/uorb" target="_blank" rel="noreferrer">systemcmds/uorb</a></p><h3 id="描述-1" tabindex="-1">描述 <a class="header-anchor" href="#描述-1" aria-label="Permalink to &quot;描述&quot;">​</a></h3><p>uORB 是各模块之间进行通讯的基于 发布-订阅 机制的内部消息传递系统。</p><h3 id="用法-2" tabindex="-1">用法 <a class="header-anchor" href="#用法-2" aria-label="Permalink to &quot;用法&quot;">​</a></h3><p>The implementation is asynchronous and lock-free, ie. a publisher does not wait for a subscriber and vice versa. This is achieved by having a separate buffer between a publisher and a subscriber.</p><p>The code is optimized to minimize the memory footprint and the latency to exchange messages.</p><p>Messages are defined in the <code>/msg</code> directory. They are converted into C/C++ code at build-time.</p><p>该接口基于文件描述符（file descriptor）实现：它在内部使用 <code>read</code>、<code>write</code> 和 <code>ioctl</code>。 The interface is based on file descriptors: internally it uses <code>read</code>, <code>write</code> and <code>ioctl</code>. Except for the publications, which use <code>orb_advert_t</code> handles, so that they can be used from interrupts as well (on NuttX).</p><h3 id="示例-1" tabindex="-1">示例 <a class="header-anchor" href="#示例-1" aria-label="Permalink to &quot;示例&quot;">​</a></h3><p>Messages are defined in the <code>/msg</code> directory. They are converted into C/C++ code at build-time. 在构建时它们会被转化为 C/C++ 代码。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>uorb top</span></span></code></pre></div><p><a id="uorb_usage"></a></p><h3 id="用法-3" tabindex="-1">用法 <a class="header-anchor" href="#用法-3" aria-label="Permalink to &quot;用法&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>uorb &lt;command&gt; [arguments...]</span></span>
+<span class="line"><span> uorb &lt;command&gt; [arguments...]</span></span>
+<span class="line"><span> Commands:</span></span>
+<span class="line"><span>   start</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   status        Print topic statistics</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   top           Monitor topic publication rates</span></span>
+<span class="line"><span>     [-a]        print all instead of only currently publishing topics</span></span>
+<span class="line"><span>     [&lt;filter1&gt; [&lt;filter2&gt;]] topic(s) to match (implies -a)</span></span></code></pre></div>`,38),p=[l];function i(o,c,r,d,u,m){return n(),s("div",null,p)}const v=a(t,[["render",i]]);export{g as __pageData,v as default};

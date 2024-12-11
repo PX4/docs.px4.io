@@ -1,0 +1,1 @@
+const s="/v1.15/assets/pixhawk4_wiring_overview.DjeFOWJT.png",_="/v1.15/assets/pixhawk4_mounting_and_foam.BBA4otIT.png",a="/v1.15/assets/pixhawk4_receiver_sbus.CdszLLCL.png",t="/v1.15/assets/pixhawk_4_receiver_ppm.BFF736kT.png",p="/v1.15/assets/pixhawk4_telemetry_radio.Dy2kLi3y.jpg",e="/v1.15/assets/pixhawk4_sd_card.CPAxcl9m.png";export{s as _,_ as a,a as b,t as c,p as d,e};

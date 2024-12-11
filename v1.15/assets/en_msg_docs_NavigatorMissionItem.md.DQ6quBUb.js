@@ -1,0 +1,25 @@
+import{_ as s,c as i,o as a,ab as n}from"./chunks/framework.CUflZczI.js";const g=JSON.parse('{"title":"NavigatorMissionItem (UORB message)","description":"","frontmatter":{},"headers":[],"relativePath":"en/msg_docs/NavigatorMissionItem.md","filePath":"en/msg_docs/NavigatorMissionItem.md"}'),e={name:"en/msg_docs/NavigatorMissionItem.md"},t=n(`<h1 id="navigatormissionitem-uorb-message" tabindex="-1">NavigatorMissionItem (UORB message) <a class="header-anchor" href="#navigatormissionitem-uorb-message" aria-label="Permalink to &quot;NavigatorMissionItem (UORB message)&quot;">​</a></h1><p><a href="https://github.com/PX4/PX4-Autopilot/blob/release/1.15/msg/NavigatorMissionItem.msg" target="_blank" rel="noreferrer">source file</a></p><div class="language-c vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">c</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint64 timestamp                 # time since system </span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">start</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (microseconds)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint32 instance_count            # Instance count of this mission. Increments monotonically whenever the mission is modified</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint16 sequence_current          # Sequence of the current mission item</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint16 nav_cmd</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">float32 latitude</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">float32 longitude</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">float32 time_inside              # time that the MAV should stay inside the radius before advancing in seconds</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">float32 acceptance_radius        # default radius in which the mission is accepted as reached in meters</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">float32 loiter_radius            # loiter radius in meters, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">0</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> for</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> a VTOL to hover, negative </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">for</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> counter</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">clockwise</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">float32 yaw                      # in radians NED </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">PI..</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">+</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">PI, NAN means don</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&#39;t change yaw</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">float32 altitude                 # altitude in meters (AMSL)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">uint8 frame                      # mission frame</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">uint8 origin                     # mission item origin (onboard or mavlink)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">bool loiter_exit_xtrack          # exit xtrack location: 0 for center of loiter wp, 1 for exit location</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">bool force_heading               # heading needs to be reached</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">bool altitude_is_relative        # true if altitude is relative from start point</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">bool autocontinue                # true if next waypoint should follow after this one</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">bool vtol_back_transition        # part of the vtol back transition sequence</span></span></code></pre></div>`,3),l=[t];function p(o,h,r,k,c,d){return a(),i("div",null,l)}const m=s(e,[["render",p]]);export{g as __pageData,m as default};
