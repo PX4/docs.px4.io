@@ -33,4 +33,4 @@ import{_ as i,c as a,a8 as n,o as l}from"./chunks/framework.BDnHobkS.js";const _
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">float32 yaw_min # [rad]</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">float32 yaw_max # [rad]</span></span>
 <span class="line"></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint8 gimbal_device_compid</span></span></code></pre></div>`,3)]))}const c=i(t,[["render",p]]);export{_ as __pageData,c as default};
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint8 gimbal_device_id</span></span></code></pre></div>`,3)]))}const g=i(t,[["render",p]]);export{_ as __pageData,g as default};

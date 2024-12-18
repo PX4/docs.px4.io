@@ -16,5 +16,8 @@ import{_ as i,c as a,a8 as t,o as n}from"./chunks/framework.BDnHobkS.js";const c
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">float32 angular_velocity_z</span></span>
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint32 failure_flags</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">float32 delta_yaw</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">float32 delta_yaw_velocity</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint8 gimbal_device_id</span></span>
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">bool</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> received_from_mavlink</span></span></code></pre></div>`,3)]))}const g=i(e,[["render",l]]);export{c as __pageData,g as default};
