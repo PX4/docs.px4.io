@@ -3041,6 +3041,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/ko/sensor/sf45_rotating_lidar.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/ko/sensor/teraranger.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -6514,6 +6518,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/zh/gps_compass/rtk_gps_trimble_mb_two.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/zh/sensor/sf45_rotating_lidar.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -10017,6 +10025,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/en/sensor/sf45_rotating_lidar.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/en/sensor/teraranger.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -13482,6 +13494,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/uk/gps_compass/rtk_gps_trimble_mb_two.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/uk/sensor/sf45_rotating_lidar.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
