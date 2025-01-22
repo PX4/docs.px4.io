@@ -989,6 +989,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/zh/robotics/mavsdk.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/zh/robotics/dronekit.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -2245,6 +2249,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/zh/msg_docs/OpenDroneIdSelfId.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/zh/msg_docs/IridiumsbdStatus.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -2298,6 +2306,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/zh/msg_docs/VehicleAcceleration.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/zh/msg_docs/OpenDroneIdSystem.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -2433,6 +2445,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/zh/msg_docs/DistanceSensorModeChangeRequest.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/zh/msg_docs/TuneControl.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -2493,11 +2509,19 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/zh/msg_docs/NavigatorStatus.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/zh/msg_docs/ManualControlSwitches.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/main/zh/msg_docs/CameraCapture.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/zh/msg_docs/OpenDroneIdArmStatus.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -2853,6 +2877,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/zh/msg_docs/OpenDroneIdOperatorId.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/zh/msg_docs/ModeCompleted.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -3086,6 +3114,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/zh/msg_docs/SensorsStatus.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/zh/msg_docs/RoverMecanumGuidanceStatus.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -4469,6 +4501,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/uk/robotics/mavsdk.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/uk/robotics/dronekit.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -5717,6 +5753,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/uk/msg_docs/OpenDroneIdSelfId.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/uk/msg_docs/IridiumsbdStatus.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -5770,6 +5810,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/uk/msg_docs/VehicleAcceleration.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/uk/msg_docs/OpenDroneIdSystem.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -5905,6 +5949,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/uk/msg_docs/DistanceSensorModeChangeRequest.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/uk/msg_docs/TuneControl.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -5965,11 +6013,19 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/uk/msg_docs/NavigatorStatus.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/uk/msg_docs/ManualControlSwitches.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/main/uk/msg_docs/CameraCapture.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/uk/msg_docs/OpenDroneIdArmStatus.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -6325,6 +6381,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/uk/msg_docs/OpenDroneIdOperatorId.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/uk/msg_docs/ModeCompleted.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -6558,6 +6618,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/uk/msg_docs/SensorsStatus.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/uk/msg_docs/RoverMecanumGuidanceStatus.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -7941,6 +8005,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/ko/robotics/mavsdk.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/ko/robotics/dronekit.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -9197,6 +9265,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/ko/msg_docs/OpenDroneIdSelfId.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/ko/msg_docs/IridiumsbdStatus.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -9250,6 +9322,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/ko/msg_docs/VehicleAcceleration.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/ko/msg_docs/OpenDroneIdSystem.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -9385,6 +9461,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/ko/msg_docs/DistanceSensorModeChangeRequest.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/ko/msg_docs/TuneControl.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -9445,11 +9525,19 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/ko/msg_docs/NavigatorStatus.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/ko/msg_docs/ManualControlSwitches.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://docs.px4.io/main/ko/msg_docs/CameraCapture.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/ko/msg_docs/OpenDroneIdArmStatus.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -9805,6 +9893,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/ko/msg_docs/OpenDroneIdOperatorId.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/ko/msg_docs/ModeCompleted.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -10038,6 +10130,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/ko/msg_docs/SensorsStatus.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/ko/msg_docs/RoverMecanumGuidanceStatus.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
