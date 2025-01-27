@@ -14,6 +14,7 @@ import{_ as i,c as a,a8 as e,o as t}from"./chunks/framework.BDnHobkS.js";const d
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"># difference of </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">+-</span><span style="--shiki-light:#B31D28;--shiki-light-font-style:italic;--shiki-dark:#FDAEB7;--shiki-dark-font-style:italic;">3.2s</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> to the sensor_combined topic.</span></span>
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">int16 airspeed_timestamp_rel</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">int16 airspeed_validated_timestamp_rel</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">int16 distance_sensor_timestamp_rel</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">int16 optical_flow_timestamp_rel</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">int16 vehicle_air_data_timestamp_rel</span></span>
