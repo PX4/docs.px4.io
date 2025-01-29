@@ -5653,6 +5653,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/zh/dev_log/flight_log_analysis_statistical.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/zh/dev_log/log_encryption.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -9165,6 +9169,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/ko/dev_log/flight_log_analysis_statistical.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/ko/dev_log/log_encryption.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -12666,6 +12674,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/uk/getting_started/flight_reporting.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/uk/dev_log/flight_log_analysis_statistical.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
