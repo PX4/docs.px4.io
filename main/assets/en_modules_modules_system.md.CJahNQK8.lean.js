@@ -29,7 +29,7 @@ import{_ as s,c as e,a8 as n,o as t}from"./chunks/framework.BDnHobkS.js";const u
 <span class="line"><span></span></span>
 <span class="line"><span>   calibrate     Run sensor calibration</span></span>
 <span class="line"><span>     mag|baro|accel|gyro|level|esc|airspeed Calibration type</span></span>
-<span class="line"><span>     quick       Quick calibration (accel only, not recommended)</span></span>
+<span class="line"><span>     quick       Quick calibration [mag, accel (not recommended)]</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>   check         Run preflight checks</span></span>
 <span class="line"><span></span></span>
