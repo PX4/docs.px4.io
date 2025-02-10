@@ -4301,6 +4301,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/zh/msg_docs/RoverThrottleSetpoint.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/zh/msg_docs/RegisterExtComponentReply.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -4326,6 +4330,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/zh/msg_docs/VehicleTrajectoryBezier.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/zh/msg_docs/RoverRateStatus.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -4397,6 +4405,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/zh/msg_docs/RoverRateSetpoint.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/zh/msg_docs/OpenDroneIdOperatorId.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -4458,6 +4470,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/zh/msg_docs/VehicleStatus.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/zh/msg_docs/RoverAttitudeStatus.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -4665,6 +4681,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/zh/msg_docs/RoverAttitudeSetpoint.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/zh/msg_docs/EstimatorAidSource1d.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -4729,6 +4749,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/zh/msg_docs/RoverVelocityStatus.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/zh/msg_docs/InputRc.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -4786,6 +4810,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/zh/msg_docs/CameraTrigger.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/zh/msg_docs/RoverSteeringSetpoint.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -7817,6 +7845,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/ko/msg_docs/RoverThrottleSetpoint.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/ko/msg_docs/RegisterExtComponentReply.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -7842,6 +7874,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/ko/msg_docs/VehicleTrajectoryBezier.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/ko/msg_docs/RoverRateStatus.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -7913,6 +7949,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/ko/msg_docs/RoverRateSetpoint.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/ko/msg_docs/OpenDroneIdOperatorId.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -7974,6 +8014,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/ko/msg_docs/VehicleStatus.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/ko/msg_docs/RoverAttitudeStatus.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -8181,6 +8225,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/ko/msg_docs/RoverAttitudeSetpoint.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/ko/msg_docs/EstimatorAidSource1d.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -8245,6 +8293,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/ko/msg_docs/RoverVelocityStatus.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/ko/msg_docs/InputRc.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -8302,6 +8354,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/ko/msg_docs/CameraTrigger.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/ko/msg_docs/RoverSteeringSetpoint.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -11333,6 +11389,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/uk/msg_docs/RoverThrottleSetpoint.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/uk/msg_docs/RegisterExtComponentReply.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -11358,6 +11418,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/uk/msg_docs/VehicleTrajectoryBezier.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/uk/msg_docs/RoverRateStatus.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -11429,6 +11493,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/uk/msg_docs/RoverRateSetpoint.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/uk/msg_docs/OpenDroneIdOperatorId.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -11490,6 +11558,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/uk/msg_docs/VehicleStatus.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/uk/msg_docs/RoverAttitudeStatus.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -11697,6 +11769,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/uk/msg_docs/RoverAttitudeSetpoint.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/uk/msg_docs/EstimatorAidSource1d.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -11761,6 +11837,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/uk/msg_docs/RoverVelocityStatus.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/uk/msg_docs/InputRc.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -11818,6 +11898,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/uk/msg_docs/CameraTrigger.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/uk/msg_docs/RoverSteeringSetpoint.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
