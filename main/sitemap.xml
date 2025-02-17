@@ -6053,6 +6053,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/ko/ros2/px4_ros2_msg_translation_node.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/ko/advanced_features/traffic_avoidance_utm.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -9586,6 +9590,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/uk/ros2/px4_ros2_interface_lib.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/uk/ros2/px4_ros2_msg_translation_node.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -13130,6 +13138,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/zh/ros2/px4_ros2_interface_lib.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/zh/ros2/px4_ros2_msg_translation_node.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
