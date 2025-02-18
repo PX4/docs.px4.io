@@ -6,7 +6,6 @@ import{_ as i,c as a,a8 as n,o as e}from"./chunks/framework.BDnHobkS.js";const d
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint8 registration_id</span></span>
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint8 HEALTH_COMPONENT_INDEX_NONE </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> 0</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint8 HEALTH_COMPONENT_INDEX_AVOIDANCE </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> 19</span></span>
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint8 health_component_index      # HEALTH_COMPONENT_INDEX_</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">*</span></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">bool</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> health_component_is_present</span></span>

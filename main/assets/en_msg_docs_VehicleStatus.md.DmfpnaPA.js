@@ -1,6 +1,6 @@
 import{_ as i,c as a,a8 as n,o as l}from"./chunks/framework.BDnHobkS.js";const F=JSON.parse('{"title":"VehicleStatus (UORB message)","description":"","frontmatter":{},"headers":[],"relativePath":"en/msg_docs/VehicleStatus.md","filePath":"en/msg_docs/VehicleStatus.md"}'),t={name:"en/msg_docs/VehicleStatus.md"};function h(k,s,p,e,E,r){return l(),a("div",null,s[0]||(s[0]=[n(`<h1 id="vehiclestatus-uorb-message" tabindex="-1">VehicleStatus (UORB message) <a class="header-anchor" href="#vehiclestatus-uorb-message" aria-label="Permalink to &quot;VehicleStatus (UORB message)&quot;">​</a></h1><p>Encodes the system state of the vehicle published by commander</p><p><a href="https://github.com/PX4/PX4-Autopilot/blob/main/msg/versioned/VehicleStatus.msg" target="_blank" rel="noreferrer">source file</a></p><div class="language-c vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">c</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"># Encodes the system state of the vehicle published by commander</span></span>
 <span class="line"></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint32 MESSAGE_VERSION </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> 0</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint32 MESSAGE_VERSION </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> 1</span></span>
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint64 timestamp # time since system </span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">start</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (microseconds)</span></span>
 <span class="line"></span>
@@ -130,9 +130,6 @@ import{_ as i,c as a,a8 as n,o as l}from"./chunks/framework.BDnHobkS.js";const F
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">bool parachute_system_present</span></span>
 <span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">bool parachute_system_healthy</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">bool avoidance_system_required                    # Set to true if avoidance system is enabled via COM_OBS_AVOID parameter</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">bool avoidance_system_valid                       # Status of the obstacle avoidance system</span></span>
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">bool rc_calibration_in_progress</span></span>
 <span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">bool calibration_enabled</span></span>
