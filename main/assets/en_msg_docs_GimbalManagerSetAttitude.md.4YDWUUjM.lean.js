@@ -19,4 +19,6 @@ import{_ as a,c as i,a8 as n,o as t}from"./chunks/framework.BDnHobkS.js";const g
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">float32 angular_velocity_x</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">float32 angular_velocity_y</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">float32 angular_velocity_z</span></span></code></pre></div>`,3)]))}const c=a(e,[["render",l]]);export{g as __pageData,c as default};
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">float32 angular_velocity_z</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint8 ORB_QUEUE_LENGTH </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> 2</span></span></code></pre></div>`,3)]))}const c=a(e,[["render",l]]);export{g as __pageData,c as default};
