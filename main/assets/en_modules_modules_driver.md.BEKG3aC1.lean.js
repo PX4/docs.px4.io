@@ -678,13 +678,7 @@ import{_ as s,c as n,a8 as e,o as p}from"./chunks/framework.BDnHobkS.js";const h
 <span class="line"><span></span></span>
 <span class="line"><span>   calibrate_escs Calibrate ESCs min/max range</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>   calibrate_escs Calibrate ESCs min/max range</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>   pwm           Open-Loop PWM test control request</span></span>
-<span class="line"><span>     -c &lt;val&gt;    PWM OUTPUT Channel, 0-3</span></span>
-<span class="line"><span>     -r &lt;val&gt;    Duty Cycle value, 0 to 800</span></span>
-<span class="line"><span>     -n &lt;val&gt;    Command repeat count, 0 to INT_MAX</span></span>
-<span class="line"><span>     -t &lt;val&gt;    Delay between repeated commands (microseconds), 0 to INT_MAX</span></span>
+<span class="line"><span>   enable_debug  Enables driver debugging</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>   stop</span></span>
 <span class="line"><span></span></span>
