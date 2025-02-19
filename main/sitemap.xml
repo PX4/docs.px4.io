@@ -2593,6 +2593,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/en/dronecan/ark_flow_mr.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/en/dronecan/development.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -4969,6 +4973,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/ko/msg_docs/versioned_messages.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/ko/msg_docs/EstimatorStates.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -4982,6 +4990,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/ko/msg_docs/VehicleOpticalFlowVel.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/ko/msg_docs/InternalCombustionEngineControl.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -5022,6 +5034,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/ko/msg_docs/FollowTarget.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/ko/msg_docs/VehicleStatusV0.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -5554,6 +5570,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/ko/msg_docs/HeaterStatus.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/ko/msg_docs/unversioned_messages.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -8509,6 +8529,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/uk/msg_docs/versioned_messages.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/uk/msg_docs/EstimatorStates.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -8522,6 +8546,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/uk/msg_docs/VehicleOpticalFlowVel.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/uk/msg_docs/InternalCombustionEngineControl.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -8562,6 +8590,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/uk/msg_docs/FollowTarget.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/uk/msg_docs/VehicleStatusV0.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -9094,6 +9126,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/uk/msg_docs/HeaterStatus.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/uk/msg_docs/unversioned_messages.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -12057,6 +12093,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/zh/msg_docs/versioned_messages.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/zh/msg_docs/EstimatorStates.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -12070,6 +12110,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/zh/msg_docs/VehicleOpticalFlowVel.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/zh/msg_docs/InternalCombustionEngineControl.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -12110,6 +12154,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/zh/msg_docs/FollowTarget.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/zh/msg_docs/VehicleStatusV0.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -12642,6 +12690,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/zh/msg_docs/HeaterStatus.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/zh/msg_docs/unversioned_messages.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
