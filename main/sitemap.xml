@@ -6161,6 +6161,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/ko/dronecan/ark_flow_mr.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/ko/dronecan/development.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -9714,6 +9718,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/uk/modules/modules_controller.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/uk/dronecan/ark_flow_mr.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -13278,6 +13286,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/zh/modules/modules_controller.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/zh/dronecan/ark_flow_mr.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
