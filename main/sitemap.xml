@@ -2133,6 +2133,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/ko/mavlink/standard_modes.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/ko/ros/mavros_offboard_cpp.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -5698,6 +5702,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/uk/development/development.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/uk/mavlink/standard_modes.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -12774,6 +12782,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/zh/development/development.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/zh/mavlink/standard_modes.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
