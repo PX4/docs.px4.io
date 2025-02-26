@@ -3261,6 +3261,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/en/mavlink/standard_modes.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/en/development/development.html</loc>
     <changefreq>daily</changefreq>
   </url>
