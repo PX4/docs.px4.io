@@ -257,11 +257,8 @@ import{_ as s,c as n,a8 as e,o as p}from"./chunks/framework.BDnHobkS.js";const u
 <span class="line"><span>     cold|warm|hot Specify reset type</span></span></code></pre></div><h2 id="gz-bridge" tabindex="-1">gz_bridge <a class="header-anchor" href="#gz-bridge" aria-label="Permalink to &quot;gz_bridge&quot;">​</a></h2><p>Source: <a href="https://github.com/PX4/PX4-Autopilot/tree/main/src/modules/simulation/gz_bridge" target="_blank" rel="noreferrer">modules/simulation/gz_bridge</a></p><h3 id="描述-15" tabindex="-1">描述 <a class="header-anchor" href="#描述-15" aria-label="Permalink to &quot;描述&quot;">​</a></h3><p><a id="gz_bridge_usage"></a></p><h3 id="用法-17" tabindex="-1">用法 <a class="header-anchor" href="#用法-17" aria-label="Permalink to &quot;用法&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>gz_bridge &lt;command&gt; [arguments...]</span></span>
 <span class="line"><span> Commands:</span></span>
 <span class="line"><span>   start</span></span>
-<span class="line"><span>     -m &lt;val&gt;    Fuel model name</span></span>
-<span class="line"><span>     -p &lt;val&gt;    Model Pose</span></span>
-<span class="line"><span>     -n &lt;val&gt;    Model name</span></span>
-<span class="line"><span>     -i &lt;val&gt;    PX4 instance</span></span>
 <span class="line"><span>     [-w &lt;val&gt;]  World name</span></span>
+<span class="line"><span>     -n &lt;val&gt;    Model name</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>   stop</span></span>
 <span class="line"><span></span></span>
