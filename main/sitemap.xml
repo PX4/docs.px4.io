@@ -3029,6 +3029,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/ko/power_systems/battery_chemistry.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/ko/flight_stack/controller_diagrams.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -6598,6 +6602,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/uk/power_systems/</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/uk/power_systems/battery_chemistry.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -13682,6 +13690,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/zh/power_systems/</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/zh/power_systems/battery_chemistry.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
