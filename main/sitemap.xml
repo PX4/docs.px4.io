@@ -10117,6 +10117,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/en/power_systems/battery_chemistry.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/en/flight_stack/controller_diagrams.html</loc>
     <changefreq>daily</changefreq>
   </url>
