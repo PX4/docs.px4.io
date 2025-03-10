@@ -8401,6 +8401,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/en/msg_docs/PurePursuitStatus.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/en/msg_docs/ParameterUpdate.html</loc>
     <changefreq>daily</changefreq>
   </url>
