@@ -1265,6 +1265,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/ko/msg_docs/PurePursuitStatus.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/ko/msg_docs/ParameterUpdate.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -4838,6 +4842,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/uk/msg_docs/ArmingCheckReply.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/uk/msg_docs/PurePursuitStatus.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -11930,6 +11938,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/zh/msg_docs/ArmingCheckReply.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/zh/msg_docs/PurePursuitStatus.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
