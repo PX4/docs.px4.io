@@ -2761,6 +2761,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/ko/gps_compass/ark_sam_gps.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/ko/gps_compass/septentrio.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -6341,6 +6345,10 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://docs.px4.io/main/uk/gps_compass/ark_sam_gps.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://docs.px4.io/main/uk/gps_compass/septentrio.html</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -9862,6 +9870,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/en/gps_compass/rtk_gps_locosys_r1.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/en/gps_compass/ark_sam_gps.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -13434,6 +13446,10 @@
   </url>
   <url>
     <loc>https://docs.px4.io/main/zh/gps_compass/rtk_gps_locosys_r1.html</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://docs.px4.io/main/zh/gps_compass/ark_sam_gps.html</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
