@@ -1,0 +1,1 @@
+const s="/v1.16.0-beta1/assets/rtk_holybro_h-rtk-m8p_all_label.BAjVrApJ.jpg",t="/v1.16.0-beta1/assets/rtk_holybro_h-rtk-m8p_pinmap.EUfwCXEH.jpg",_="/v1.16.0-beta1/assets/rtk_holybro_h-rtk-m8p_spec.BJNbn4vd.png";export{s as _,t as a,_ as b};

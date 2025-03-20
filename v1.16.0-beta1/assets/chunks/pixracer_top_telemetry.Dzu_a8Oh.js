@@ -1,0 +1,1 @@
+const s="/v1.16.0-beta1/assets/grau_pixracer_double.BR72RC-m.jpg",t="/v1.16.0-beta1/assets/grau_setup_pixracer_radio.D7ELSkHM.jpg",a="/v1.16.0-beta1/assets/pixracer_top_telemetry.C19Q5ezR.jpg";export{s as _,t as a,a as b};

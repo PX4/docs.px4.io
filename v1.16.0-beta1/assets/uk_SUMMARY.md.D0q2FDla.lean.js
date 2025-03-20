@@ -1,0 +1,1 @@
+import{_ as i,c as a,al as e,o as t}from"./chunks/framework.CbalHM_x.js";const c=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"uk/SUMMARY.md","filePath":"uk/SUMMARY.md"}'),r={name:"uk/SUMMARY.md"};function o(h,l,s,m,n,_){return t(),a("div",null,l[0]||(l[0]=[e("",1)]))}const u=i(r,[["render",o]]);export{c as __pageData,u as default};

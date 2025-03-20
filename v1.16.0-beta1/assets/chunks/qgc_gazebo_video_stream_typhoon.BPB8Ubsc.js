@@ -1,0 +1,1 @@
+const s="/v1.16.0-beta1/assets/gazebo_follow.fLfuV3bn.jpg",t="/v1.16.0-beta1/assets/sitl_video_stream.BV85wnIA.png",_="/v1.16.0-beta1/assets/qgc_gazebo_video_stream_udp.CqLa7f_-.png",a="/v1.16.0-beta1/assets/qgc_gazebo_video_stream_typhoon.CQnYpQf-.jpg";export{s as _,t as a,_ as b,a as c};

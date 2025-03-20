@@ -1,0 +1,1 @@
+const s="/v1.16.0-beta1/assets/console_gazebo.1HYlL2vW.png",a="/v1.16.0-beta1/assets/gazebo_takeoff.CxeFn6fJ.png",t="/v1.16.0-beta1/assets/gazebo_classic_takeoff.CKZK6GEd.png",e="/v1.16.0-beta1/assets/qgc_setup_summary_airframe_firmware.CcZm2RSp.jpg";export{s as _,a,t as b,e as c};

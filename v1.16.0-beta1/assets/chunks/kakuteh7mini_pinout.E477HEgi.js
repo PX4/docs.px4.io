@@ -1,0 +1,1 @@
+const t="/v1.16.0-beta1/assets/kakuteh7mini_top.DK4pclMU.jpg",s="/v1.16.0-beta1/assets/kakuteh7mini_bottom.CGI-6FWb.jpg",a="/v1.16.0-beta1/assets/kakuteh7mini_pinout.DC9xC0fN.jpg";export{t as _,s as a,a as b};

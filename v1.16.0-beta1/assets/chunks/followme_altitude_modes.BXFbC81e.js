@@ -1,0 +1,1 @@
+const s="/v1.16.0-beta1/assets/followme_concept.AdaLm2WI.png",e="/v1.16.0-beta1/assets/followme_angle.B_c8lgTn.png",t="/v1.16.0-beta1/assets/followme_qgc_example.B0X0bW9K.jpg",o="/v1.16.0-beta1/assets/followme_altitude_modes.BP_ehMCz.svg";export{s as _,e as a,t as b,o as c};

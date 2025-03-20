@@ -1,0 +1,1 @@
+const s="/v1.16.0-beta1/assets/pix32_v5_family.BaR45grx.jpg",_="/v1.16.0-beta1/assets/pix32_v5_base_boards_layout.DGWAnNMz.jpg",t="/v1.16.0-beta1/assets/Dimensions_no_border.C_oWoQe0.jpg",a="/v1.16.0-beta1/assets/FMU_Debug_Port_Horizontal.BnUSS6s7.jpg";export{s as _,_ as a,t as b,a as c};

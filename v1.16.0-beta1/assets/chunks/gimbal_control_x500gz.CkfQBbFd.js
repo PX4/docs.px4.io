@@ -1,0 +1,1 @@
+const s="/v1.16.0-beta1/assets/qgc_actuators_gimbal.DJSzZ1mT.png",t="/v1.16.0-beta1/assets/gimbal-simulation.B3bqDKzm.png",a="/v1.16.0-beta1/assets/gimbal_control_x500gz.Dq_BNUS2.png";export{s as _,t as a,a as b};

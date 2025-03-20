@@ -1,0 +1,1 @@
+const s="/v1.16.0-beta1/assets/lidar_lite2_standard_wiring_spec.CFIx8be9.jpg",t="/v1.16.0-beta1/assets/lidar_lite_2_interface_wiring.C8OQf9vH.jpg",i="/v1.16.0-beta1/assets/lidarlite_wiring_scheme_pixhawk.BAt2qt7k.jpg",_="/v1.16.0-beta1/assets/lidarlite_wiring_pins_cables.DczcW3Q9.jpg";export{s as _,t as a,i as b,_ as c};
