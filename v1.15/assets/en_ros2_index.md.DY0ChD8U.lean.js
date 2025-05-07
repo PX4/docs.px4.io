@@ -1,0 +1,1 @@
+import{_ as e,c as t,o,ab as a}from"./chunks/framework.CUflZczI.js";const f=JSON.parse('{"title":"ROS 2","description":"","frontmatter":{},"headers":[],"relativePath":"en/ros2/index.md","filePath":"en/ros2/index.md"}'),r={name:"en/ros2/index.md"},i=a("",11),s=[i];function n(l,d,c,h,m,u){return o(),t("div",null,s)}const g=e(r,[["render",n]]);export{f as __pageData,g as default};
