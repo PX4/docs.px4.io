@@ -1,0 +1,1 @@
+const s="/release/1.16/assets/serial_port_connector.p1rCm-IZ.jpg",e="/release/1.16/assets/can_connector.B3P8-FwL.png",o="/release/1.16/assets/holybro_remote_id_pinout.DhM-4ADB.jpg";export{s as _,e as a,o as b};
