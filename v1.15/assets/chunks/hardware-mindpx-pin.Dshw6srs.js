@@ -1,0 +1,1 @@
+const s="/v1.15/assets/hardware-mindpx.w51va1_C.png",a="/v1.15/assets/hardware-mindpx-specs.DnHQLRTp.png",n="/v1.15/assets/hardware-mindpx-mounting.DCI0wldH.png",p="/v1.15/assets/hardware-mindpx-wiring1.ljcoe9W4.png",r="/v1.15/assets/hardware-mindpx-wiring2.C0pFiIUg.png",t="/v1.15/assets/hardware-mindpx-pin.2EZ8BF0u.png";export{s as _,a,n as b,p as c,r as d,t as e};
