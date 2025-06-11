@@ -1,0 +1,1 @@
+const s="/main/assets/mr-vmu-rt1176_upleft.DFNX6wML.jpg",t="/main/assets/mr-vmu-rt1176_top.CtucFSs0.jpg",m="/main/assets/mr-vmu-rt1176_front.CrgPSzz4.jpg",r="/main/assets/mr-vmu-rt1176_left.BKTTzsgy.jpg",a="/main/assets/mr-vmu-rt1176_right.xos6DVcB.jpg";export{s as _,t as a,m as b,r as c,a as d};
