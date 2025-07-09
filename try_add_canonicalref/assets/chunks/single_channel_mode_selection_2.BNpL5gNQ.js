@@ -1,0 +1,1 @@
+const s="/try_add_canonicalref/assets/flight_modes_single_channel.DARORqXY.jpg",_="/try_add_canonicalref/assets/single_channel_mode_selection_1.BcyCQbRi.png",n="/try_add_canonicalref/assets/single_channel_mode_selection_2.Ds60r7B7.png";export{s as _,_ as a,n as b};

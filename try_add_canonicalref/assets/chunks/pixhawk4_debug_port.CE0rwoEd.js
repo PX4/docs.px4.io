@@ -1,0 +1,1 @@
+const s="/try_add_canonicalref/assets/pixhawk4_hero_upright.C4WdBgfd.jpg",a="/try_add_canonicalref/assets/pixhawk4-connectors.rvsIx8JU.jpg",_="/try_add_canonicalref/assets/pixhawk4_dimensions.DNEJRZr1.jpg",t="/try_add_canonicalref/assets/pixhawk4_debug_port.C7UCJWM4.jpg";export{s as _,a,_ as b,t as c};

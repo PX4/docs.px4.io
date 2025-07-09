@@ -1,0 +1,1 @@
+const s="/try_add_canonicalref/assets/mosaic-go.BgJNfzfK.png",a="/try_add_canonicalref/assets/mosaic-go_wiring.CR5OcWso.png",o="/try_add_canonicalref/assets/jst_cable.BTO4R9GG.png";export{s as _,a,o as b};

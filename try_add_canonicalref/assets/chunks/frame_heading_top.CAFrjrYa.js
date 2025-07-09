@@ -1,0 +1,1 @@
+const a="/try_add_canonicalref/assets/qgc_fly_view.DvvT5dH2.png",s="/try_add_canonicalref/assets/pixhawk4_main_aux_ports.D87kZmDB.jpg",_="/try_add_canonicalref/assets/pixhawk4mini_pwm.D2GEQ3GW.png",t="/try_add_canonicalref/assets/frame_heading_top.DG5GXphP.png";export{a as _,s as a,_ as b,t as c};

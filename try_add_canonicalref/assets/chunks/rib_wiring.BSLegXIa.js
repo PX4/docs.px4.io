@@ -1,0 +1,1 @@
+const a="/try_add_canonicalref/assets/asterx_m3_and_rib_board.QaUU4i6Q.png",s="/try_add_canonicalref/assets/rib.Ah10a8eY.png",_="/try_add_canonicalref/assets/rib_wiring.BKumvC3S.png";export{a as _,s as a,_ as b};

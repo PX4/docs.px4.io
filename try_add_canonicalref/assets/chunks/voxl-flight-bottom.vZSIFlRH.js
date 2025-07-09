@@ -1,0 +1,1 @@
+const s="/try_add_canonicalref/assets/voxl-flight-dk.DZrAcack.jpg",t="/try_add_canonicalref/assets/voxl-flight-dimensions.I9Z_4yKn.jpg",a="/try_add_canonicalref/assets/voxl-flight-top.D4cqVfgp.jpg",o="/try_add_canonicalref/assets/voxl-flight-bottom.BxlOucXe.jpg";export{s as _,t as a,a as b,o as c};

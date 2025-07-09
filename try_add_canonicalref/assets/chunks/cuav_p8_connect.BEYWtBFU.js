@@ -1,0 +1,1 @@
+const a="/try_add_canonicalref/assets/cuav_p8_hero.m-DVABYY.png",s="/try_add_canonicalref/assets/cuav_p8_pinouts.BJ5kOUXY.png",_="/try_add_canonicalref/assets/cuav_p8_connect.DrPqRmj-.png";export{a as _,s as a,_ as b};
