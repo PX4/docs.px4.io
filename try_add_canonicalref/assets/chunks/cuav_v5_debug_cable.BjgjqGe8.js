@@ -1,0 +1,1 @@
+const s="/try_add_canonicalref/assets/cable_6pin_jst_sh.JEMPZVJ5.jpg",a="/try_add_canonicalref/assets/cable_10pin_jst_sh.CX1Y-21C.jpg",_="/try_add_canonicalref/assets/holybro_pixhawk_debug_adapter.DS3seIYf.png",t="/try_add_canonicalref/assets/hero.C7YVWOqj.jpg",c="/try_add_canonicalref/assets/cuav_v5_debug_cable.BCWBSrTR.jpg";export{s as _,a,_ as b,t as c,c as d};

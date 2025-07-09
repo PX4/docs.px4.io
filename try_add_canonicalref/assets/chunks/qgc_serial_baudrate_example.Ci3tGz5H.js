@@ -1,0 +1,1 @@
+const a="/try_add_canonicalref/assets/gps_compass.BI6h3xgV.jpg",s="/try_add_canonicalref/assets/qgc_serial_config_example.D7Aa3Fve.png",_="/try_add_canonicalref/assets/qgc_serial_baudrate_example.CrE__WZP.png";export{a as _,s as a,_ as b};

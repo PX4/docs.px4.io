@@ -1,0 +1,1 @@
+const a="/try_add_canonicalref/assets/firmware_disconnected.CJWD7ZG9.png",s="/try_add_canonicalref/assets/firmware_connected_default_px4.DnMTNECe.png",_="/try_add_canonicalref/assets/firmware_upgrade_complete.DMEyPOR-.png",e="/try_add_canonicalref/assets/qgc_choose_firmware.t3yhPVFd.png";export{a as _,s as a,_ as b,e as c};

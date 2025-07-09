@@ -1,0 +1,1 @@
+const s="/try_add_canonicalref/assets/main.DZKGlDI4.jpg",a="/try_add_canonicalref/assets/dimensions.CpLSaRfS.png",t="/try_add_canonicalref/assets/orientation.CmCz8vc_.png",n="/try_add_canonicalref/assets/top.Dct1EWdw.png",o="/try_add_canonicalref/assets/bottom.rBdPJnzd.png";export{s as _,a,t as b,n as c,o as d};

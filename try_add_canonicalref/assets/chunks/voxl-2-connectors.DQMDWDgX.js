@@ -1,0 +1,1 @@
+const s="/try_add_canonicalref/assets/voxl-2-hero.B8rllQDX.jpg",o="/try_add_canonicalref/assets/voxl-2-dimensions.C8QTSnhP.jpg",a="/try_add_canonicalref/assets/voxl-2-connectors.C61811ZG.jpg";export{s as _,o as a,a as b};

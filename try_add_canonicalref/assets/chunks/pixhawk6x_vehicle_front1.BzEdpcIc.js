@@ -1,0 +1,1 @@
+const a="/try_add_canonicalref/assets/pixhawk6x_standard_set.BgazLlC8.jpg",s="/try_add_canonicalref/assets/pixhawk6x_mini_set.B5V_3yMo.jpg",_="/try_add_canonicalref/assets/pixhawk6x_vehicle_front1.DYfARAhI.jpg";export{a as _,s as a,_ as b};

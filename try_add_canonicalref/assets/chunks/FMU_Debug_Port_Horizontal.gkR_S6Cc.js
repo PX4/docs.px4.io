@@ -1,0 +1,1 @@
+const s="/try_add_canonicalref/assets/pix32_v5_family.BaR45grx.jpg",_="/try_add_canonicalref/assets/pix32_v5_base_boards_layout.DGWAnNMz.jpg",a="/try_add_canonicalref/assets/Dimensions_no_border.C_oWoQe0.jpg",o="/try_add_canonicalref/assets/FMU_Debug_Port_Horizontal.BnUSS6s7.jpg";export{s as _,_ as a,a as b,o as c};

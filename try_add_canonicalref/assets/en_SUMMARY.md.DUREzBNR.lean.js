@@ -1,0 +1,1 @@
+import{_ as i,c as e,al as a,o as t}from"./chunks/framework.ByhWQ_D0.js";const c=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"en/SUMMARY.md","filePath":"en/SUMMARY.md"}'),r={name:"en/SUMMARY.md"};function o(s,l,h,m,n,_){return t(),e("div",null,l[0]||(l[0]=[a("",1)]))}const u=i(r,[["render",o]]);export{c as __pageData,u as default};

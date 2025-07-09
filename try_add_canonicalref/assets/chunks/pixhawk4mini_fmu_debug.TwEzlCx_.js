@@ -1,0 +1,1 @@
+const a="/try_add_canonicalref/assets/pixhawk4mini_interfaces.CcaOO8PU.png",s="/try_add_canonicalref/assets/pixhawk4mini_dimensions.D4fp_9Yf.png",_="/try_add_canonicalref/assets/pixhawk4mini_fmu_debug.C5_Bjabv.png";export{a as _,s as a,_ as b};
