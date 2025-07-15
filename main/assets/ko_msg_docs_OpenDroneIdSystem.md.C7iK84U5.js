@@ -1,0 +1,13 @@
+import{_ as a,c as i,o as n,al as e}from"./chunks/framework.CT7RwC5a.js";const k=JSON.parse('{"title":"OpenDroneIdSystem (UORB message)","description":"","frontmatter":{},"headers":[],"relativePath":"ko/msg_docs/OpenDroneIdSystem.md","filePath":"ko/msg_docs/OpenDroneIdSystem.md"}'),t={name:"ko/msg_docs/OpenDroneIdSystem.md"};function p(l,s,r,o,h,d){return n(),i("div",null,s[0]||(s[0]=[e(`<h1 id="opendroneidsystem-uorb-message" tabindex="-1">OpenDroneIdSystem (UORB message) <a class="header-anchor" href="#opendroneidsystem-uorb-message" aria-label="Permalink to &quot;OpenDroneIdSystem (UORB message)&quot;">​</a></h1><p><a href="https://github.com/PX4/PX4-Autopilot/blob/main/msg/OpenDroneIdSystem.msg" target="_blank" rel="noreferrer">source file</a></p><div class="language-c vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">c</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint64 timestamp</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">uint8</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">[</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">20</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">] id_or_mac</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint8 operator_location_type</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint8 classification_type</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">int32 operator_latitude</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">int32 operator_longitude</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint16 area_count</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint16 area_radius</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">float32 area_ceiling</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">float32 area_floor</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint8 category_eu</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint8 class_eu</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">float32 operator_altitude_geo</span></span></code></pre></div>`,3)]))}const c=a(t,[["render",p]]);export{k as __pageData,c as default};
