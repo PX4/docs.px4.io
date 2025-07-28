@@ -1,0 +1,74 @@
+import{_ as a,c as s,o as n,ab as e}from"./chunks/framework.CUflZczI.js";const v=JSON.parse('{"title":"Modules Reference: Communication","description":"","frontmatter":{},"headers":[],"relativePath":"uk/modules/modules_communication.md","filePath":"uk/modules/modules_communication.md"}'),l={name:"uk/modules/modules_communication.md"},p=e(`<h1 id="modules-reference-communication" tabindex="-1">Modules Reference: Communication <a class="header-anchor" href="#modules-reference-communication" aria-label="Permalink to &quot;Modules Reference: Communication&quot;">​</a></h1><h2 id="frsky-telemetry" tabindex="-1">frsky_telemetry <a class="header-anchor" href="#frsky-telemetry" aria-label="Permalink to &quot;frsky_telemetry&quot;">​</a></h2><p>Джерело: <a href="https://github.com/PX4/PX4-Autopilot/tree/release/1.15/src/drivers/telemetry/frsky_telemetry" target="_blank" rel="noreferrer">drivers/telemetry/frsky_telemetry</a></p><p>Підтримка FrSky Telemetry. Автоматичне визначення протоколу D або S.PORT. <a id="frsky_telemetry_usage"></a></p><h3 id="використання" tabindex="-1">Використання <a class="header-anchor" href="#використання" aria-label="Permalink to &quot;Використання&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>frsky_telemetry &lt;command&gt; [arguments...]</span></span>
+<span class="line"><span> Commands:</span></span>
+<span class="line"><span>   start</span></span>
+<span class="line"><span>     [-d &lt;val&gt;]  Select Serial Device</span></span>
+<span class="line"><span>                 values: &lt;file:dev&gt;, default: /dev/ttyS6</span></span>
+<span class="line"><span>     [-t &lt;val&gt;]  Scanning timeout [s] (default: no timeout)</span></span>
+<span class="line"><span>                 default: 0</span></span>
+<span class="line"><span>     [-m &lt;val&gt;]  Select protocol (default: auto-detect)</span></span>
+<span class="line"><span>                 values: sport|sport_single|sport_single_invert|dtype, default:</span></span>
+<span class="line"><span>                 auto</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   stop</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   status</span></span></code></pre></div><h2 id="mavlink" tabindex="-1">mavlink <a class="header-anchor" href="#mavlink" aria-label="Permalink to &quot;mavlink&quot;">​</a></h2><p>Source: <a href="https://github.com/PX4/PX4-Autopilot/tree/release/1.15/src/modules/mavlink" target="_blank" rel="noreferrer">modules/mavlink</a></p><h3 id="опис" tabindex="-1">Опис <a class="header-anchor" href="#опис" aria-label="Permalink to &quot;Опис&quot;">​</a></h3><p>Цей модуль реалізує протокол MAVLink, який можна використовувати на послідовному каналі або мережевому з&#39;єднанні UDP. Він взаємодіє з системою через uORB: деякі повідомлення обробляються безпосередньо в модулі (наприклад, протокол місії), інші публікуються через uORB (наприклад, vehicle_command).</p><p>Потоки використовуються для надсилання періодичних повідомлень з певною частотою, наприклад, про положення транспортного засобу. При запуску екземпляра mavlink можна вказати режим, який визначає набір увімкнених потоків з їхніми швидкостями. Для запущеного екземпляра потоки можна налаштувати за допомогою команди <code>mavlink stream</code>.</p><p>Може бути декілька незалежних екземплярів модуля, кожен з яких підключений до одного послідовного пристрою або мережевого порту.</p><h3 id="реалізація" tabindex="-1">Реалізація <a class="header-anchor" href="#реалізація" aria-label="Permalink to &quot;Реалізація&quot;">​</a></h3><p>Реалізація використовує 2 потоки, потік відправлення та потік отримання. Відправник працює на фіксованій швидкості і динамічно зменшує швидкість потоків, якщо сумарна пропускна здатність перевищує задану (<code>-r</code>) або якщо фізичний канал перевантажений. Це можна перевірити за допомогою <code>mavlink status</code>, подивіться, чи <code>rate mult</code> менше 1.</p><p><strong>Обережно</strong>: доступ до деяких даних здійснюється з обох потоків, тому при зміні коду або розширенні функціональності, це потрібно враховувати, щоб уникнути стану перевантаження та пошкодження даних.</p><h3 id="приклади" tabindex="-1">Приклади <a class="header-anchor" href="#приклади" aria-label="Permalink to &quot;Приклади&quot;">​</a></h3><p>Запустіть mavlink на послідовному каналі ttyS1 з швидкістю передачі даних 921600 і максимальною швидкістю надсилання 80 кБ/с:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>mavlink start -d /dev/ttyS1 -b 921600 -m onboard -r 80000</span></span></code></pre></div><p>Запустіть mavlink на UDP-порт 14556 і увімкніть повідомлення HIGHRES_IMU з частотою 50 Гц:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>mavlink start -u 14556 -r 1000000</span></span>
+<span class="line"><span>mavlink stream -u 14556 -s HIGHRES_IMU -r 50</span></span></code></pre></div><p><a id="mavlink_usage"></a></p><h3 id="використання-1" tabindex="-1">Використання <a class="header-anchor" href="#використання-1" aria-label="Permalink to &quot;Використання&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>mavlink &lt;command&gt; [arguments...]</span></span>
+<span class="line"><span> Commands:</span></span>
+<span class="line"><span>   start         Start a new instance</span></span>
+<span class="line"><span>     [-d &lt;val&gt;]  Select Serial Device</span></span>
+<span class="line"><span>                 values: &lt;file:dev&gt;, default: /dev/ttyS1</span></span>
+<span class="line"><span>     [-b &lt;val&gt;]  Baudrate (can also be p:&lt;param_name&gt;)</span></span>
+<span class="line"><span>                 default: 57600</span></span>
+<span class="line"><span>     [-r &lt;val&gt;]  Maximum sending data rate in B/s (if 0, use baudrate / 20)</span></span>
+<span class="line"><span>                 default: 0</span></span>
+<span class="line"><span>     [-p]        Enable Broadcast</span></span>
+<span class="line"><span>     [-u &lt;val&gt;]  Select UDP Network Port (local)</span></span>
+<span class="line"><span>                 default: 14556</span></span>
+<span class="line"><span>     [-o &lt;val&gt;]  Select UDP Network Port (remote)</span></span>
+<span class="line"><span>                 default: 14550</span></span>
+<span class="line"><span>     [-t &lt;val&gt;]  Partner IP (broadcasting can be enabled via -p flag)</span></span>
+<span class="line"><span>                 default: 127.0.0.1</span></span>
+<span class="line"><span>     [-m &lt;val&gt;]  Mode: sets default streams and rates</span></span>
+<span class="line"><span>                 values: custom|camera|onboard|osd|magic|config|iridium|minimal|</span></span>
+<span class="line"><span>                 extvision|extvisionmin|gimbal|uavionix, default: normal</span></span>
+<span class="line"><span>     [-n &lt;val&gt;]  wifi/ethernet interface name</span></span>
+<span class="line"><span>                 values: &lt;interface_name&gt;</span></span>
+<span class="line"><span>     [-c &lt;val&gt;]  Multicast address (multicasting can be enabled via</span></span>
+<span class="line"><span>                 MAV_{i}_BROADCAST param)</span></span>
+<span class="line"><span>                 values: Multicast address in the range</span></span>
+<span class="line"><span>                 [239.0.0.0,239.255.255.255]</span></span>
+<span class="line"><span>     [-F &lt;val&gt;]  Sets the transmission frequency for iridium mode</span></span>
+<span class="line"><span>                 default: 0.0</span></span>
+<span class="line"><span>     [-f]        Enable message forwarding to other Mavlink instances</span></span>
+<span class="line"><span>     [-w]        Wait to send, until first message received</span></span>
+<span class="line"><span>     [-x]        Enable FTP</span></span>
+<span class="line"><span>     [-z]        Force hardware flow control always on</span></span>
+<span class="line"><span>     [-Z]        Force hardware flow control always off</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   stop-all      Stop all instances</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   stop          Stop a running instance</span></span>
+<span class="line"><span>     [-u &lt;val&gt;]  Select Mavlink instance via local Network Port</span></span>
+<span class="line"><span>     [-d &lt;val&gt;]  Select Mavlink instance via Serial Device</span></span>
+<span class="line"><span>                 values: &lt;file:dev&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   status        Print status for all instances</span></span>
+<span class="line"><span>     [streams]   Print all enabled streams</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   stream        Configure the sending rate of a stream for a running instance</span></span>
+<span class="line"><span>     [-u &lt;val&gt;]  Select Mavlink instance via local Network Port</span></span>
+<span class="line"><span>     [-d &lt;val&gt;]  Select Mavlink instance via Serial Device</span></span>
+<span class="line"><span>                 values: &lt;file:dev&gt;</span></span>
+<span class="line"><span>     -s &lt;val&gt;    Mavlink stream to configure</span></span>
+<span class="line"><span>     -r &lt;val&gt;    Rate in Hz (0 = turn off, -1 = set to default)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   boot_complete Enable sending of messages. (Must be) called as last step in</span></span>
+<span class="line"><span>                 startup script.</span></span></code></pre></div><h2 id="uorb" tabindex="-1">uorb <a class="header-anchor" href="#uorb" aria-label="Permalink to &quot;uorb&quot;">​</a></h2><p>Source: <a href="https://github.com/PX4/PX4-Autopilot/tree/release/1.15/src/systemcmds/uorb" target="_blank" rel="noreferrer">systemcmds/uorb</a></p><h3 id="опис-1" tabindex="-1">Опис <a class="header-anchor" href="#опис-1" aria-label="Permalink to &quot;Опис&quot;">​</a></h3><p>uORB - це внутрішня система обміну повідомленнями pub-sub, яка використовується для комунікації між модулями.</p><h3 id="реалізація-1" tabindex="-1">Реалізація <a class="header-anchor" href="#реалізація-1" aria-label="Permalink to &quot;Реалізація&quot;">​</a></h3><p>Реалізація є асинхронною та безблоковою, тобто видавець не чекає на підписника і навпаки. Це досягається завдяки наявності окремого буфера між публікатором і підписником.</p><p>Код оптимізовано для мінімізації використання пам&#39;яті та затримок при обміні повідомленнями.</p><p>Повідомлення визначені в каталозі <code>/msg</code>. Вони перетворюються в код C/C++ під час збірки.</p><p>Якщо ви компілюєте з ORB_USE_PUBLISHER_RULES, файл з правилами публікації uORB можна використовувати для налаштування того, яким модулям дозволено публікувати які теми. Це використовується для загальносистемного відтворення.</p><h3 id="приклади-1" tabindex="-1">Приклади <a class="header-anchor" href="#приклади-1" aria-label="Permalink to &quot;Приклади&quot;">​</a></h3><p>Відстежуйте показники публікацій тем. До того ж <code>top</code> є важливою командою для загальної перевірки системи:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>uorb top</span></span></code></pre></div><p><a id="uorb_usage"></a></p><h3 id="використання-2" tabindex="-1">Використання <a class="header-anchor" href="#використання-2" aria-label="Permalink to &quot;Використання&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>uorb &lt;command&gt; [arguments...]</span></span>
+<span class="line"><span> Commands:</span></span>
+<span class="line"><span>   status        Print topic statistics</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   top           Monitor topic publication rates</span></span>
+<span class="line"><span>     [-a]        print all instead of only currently publishing topics with</span></span>
+<span class="line"><span>                 subscribers</span></span>
+<span class="line"><span>     [-1]        run only once, then exit</span></span>
+<span class="line"><span>     [&lt;filter1&gt; [&lt;filter2&gt;]] topic(s) to match (implies -a)</span></span></code></pre></div>`,38),t=[p];function i(o,c,r,d,u,m){return n(),s("div",null,t)}const g=a(l,[["render",i]]);export{v as __pageData,g as default};
