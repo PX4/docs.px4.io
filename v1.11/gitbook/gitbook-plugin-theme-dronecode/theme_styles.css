@@ -1,0 +1,40 @@
+/* Menu bar at top of page.*/
+#common_dronecode_menu{position: absolute; z-index:1; top: 0px; height:22px; padding:1px; width:100%; background-color:black; margin: 0 auto; font-size:14px;}
+
+.common_menu_logo{float:left; padding-left:5px;}
+.common_menu_logo img {max-height:18px;} /*Would like to control max height, but seems to be controlled by javascript */
+
+.common_menu_options{float:right; padding-top:2px;}
+.common_dronecode_menu_item{float:left; padding-right:20px;}
+body .common_menu_options a{color:WhiteSmoke;}
+
+
+/* Unfix header (makes this theme work with theme-api) */
+.book-header {
+    position: unset;
+}
+
+/* Push existing docs down to menu height */
+.book-summary, .book-body {
+    top: 22px;
+}
+
+
+/* Make text small as screen compresses */
+@media only screen and (min-width:800px){
+    .common_dronecode_menu_item.large_version {display:inline;} 
+    .common_dronecode_menu_item.small_version {display:none;}
+    .common_menu_logo.large_version {display:inline;}
+    .common_menu_logo.small_version {display:none;}
+}
+
+@media only screen and (max-width:800px){
+    .common_dronecode_menu_item.large_version {display:none;}
+    .common_dronecode_menu_item.small-text {display:inline;}
+    .common_menu_logo.large_version {display:none;}
+    .common_menu_logo.small_version {display:inline;}
+}
+
+@media only screen and (max-width:600px){
+    .common_dronecode_menu_item{padding-right:6px;} /* Shrink menu padding */
+}
