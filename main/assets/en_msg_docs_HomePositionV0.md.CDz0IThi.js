@@ -1,0 +1,23 @@
+import{_ as i,c as a,o as n,al as t}from"./chunks/framework.CT7RwC5a.js";const d=JSON.parse('{"title":"HomePositionV0 (UORB message)","description":"","frontmatter":{},"headers":[],"relativePath":"en/msg_docs/HomePositionV0.md","filePath":"en/msg_docs/HomePositionV0.md"}'),e={name:"en/msg_docs/HomePositionV0.md"};function l(p,s,h,o,k,E){return n(),a("div",null,s[0]||(s[0]=[t(`<h1 id="homepositionv0-uorb-message" tabindex="-1">HomePositionV0 (UORB message) <a class="header-anchor" href="#homepositionv0-uorb-message" aria-label="Permalink to &quot;HomePositionV0 (UORB message)&quot;">​</a></h1><p>GPS home position in WGS84 coordinates.</p><p><a href="https://github.com/PX4/PX4-Autopilot/blob/main/msg/px4_msgs_old/msg/HomePositionV0.msg" target="_blank" rel="noreferrer">source file</a></p><div class="language-c vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">c</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"># GPS home position in WGS84 coordinates.</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint32 MESSAGE_VERSION </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> 0</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint64 timestamp			# time since system </span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">start</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (microseconds)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">float64 lat				# Latitude in degrees</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">float64 lon				# Longitude in degrees</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">float32 alt				# Altitude in </span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">meters</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (AMSL)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">float32 x				# X coordinate in meters</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">float32 y				# Y coordinate in meters</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">float32 z				# Z coordinate in meters</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">float32 yaw				# Yaw angle in radians</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">bool</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> valid_alt		# </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">true</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> when the altitude has been set</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">bool</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> valid_hpos		# </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">true</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> when the latitude and longitude have been set</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">bool</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> valid_lpos		# </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">true</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> when the local </span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">position</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (xyz) has been set</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">bool</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> manual_home	# </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">true</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> when home position was set manually</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint32 update_count 	# update counter of the home position</span></span></code></pre></div>`,4)]))}const c=i(e,[["render",l]]);export{d as __pageData,c as default};
