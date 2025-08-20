@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as r,ab as o}from"./chunks/framework.CUflZczI.js";const f=JSON.parse('{"title":"PX4 User Guide","description":"","frontmatter":{},"headers":[],"relativePath":"README.md","filePath":"README.md"}'),a={name:"README.md"},s=o("",4),n=[s];function i(l,d,c,p,_,h){return r(),t("div",null,n)}const m=e(a,[["render",i]]);export{f as __pageData,m as default};
