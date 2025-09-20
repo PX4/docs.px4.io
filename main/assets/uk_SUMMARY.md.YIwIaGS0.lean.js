@@ -1,0 +1,1 @@
+import{_ as i,c as a,o as e,al as t}from"./chunks/framework.CT7RwC5a.js";const c=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"uk/SUMMARY.md","filePath":"uk/SUMMARY.md"}'),r={name:"uk/SUMMARY.md"};function o(h,l,s,m,n,_){return e(),a("div",null,l[0]||(l[0]=[t("",1)]))}const u=i(r,[["render",o]]);export{c as __pageData,u as default};
