@@ -1,0 +1,1 @@
+const s="/main/assets/default.CofdjGCY.png",a="/main/assets/aruco.GHgrqgx5.png",n="/main/assets/baylands.GPW1sNW-.png",t="/main/assets/lawn.nZVBrIqG.png",o="/main/assets/rover.LtYFMAEP.png",m="/main/assets/walls.BDYlNKO2.png",p="/main/assets/moving_platform.BdjYySYq.png";export{s as _,a,n as b,t as c,o as d,m as e,p as f};
