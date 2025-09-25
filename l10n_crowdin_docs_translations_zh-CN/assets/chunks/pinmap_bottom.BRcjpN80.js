@@ -1,0 +1,1 @@
+const s="/l10n_crowdin_docs_translations_zh-CN/assets/main.BbaFe0x7.png",n="/l10n_crowdin_docs_translations_zh-CN/assets/pinmap_top.vr1v4EbC.png",_="/l10n_crowdin_docs_translations_zh-CN/assets/pinmap_bottom.C5NUXe3v.png";export{s as _,n as a,_ as b};

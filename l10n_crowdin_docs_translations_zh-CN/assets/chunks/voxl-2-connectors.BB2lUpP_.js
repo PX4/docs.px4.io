@@ -1,0 +1,1 @@
+const s="/l10n_crowdin_docs_translations_zh-CN/assets/voxl-2-hero.B8rllQDX.jpg",o="/l10n_crowdin_docs_translations_zh-CN/assets/voxl-2-dimensions.C8QTSnhP.jpg",n="/l10n_crowdin_docs_translations_zh-CN/assets/voxl-2-connectors.C61811ZG.jpg";export{s as _,o as a,n as b};

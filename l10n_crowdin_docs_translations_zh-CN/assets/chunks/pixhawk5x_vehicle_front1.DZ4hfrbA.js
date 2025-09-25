@@ -1,0 +1,1 @@
+const s="/l10n_crowdin_docs_translations_zh-CN/assets/pixhawk5x_standard_set.Dd25_lo3.jpg",_="/l10n_crowdin_docs_translations_zh-CN/assets/pixhawk5x_vehicle_front1.gmCxPma0.jpg";export{s as _,_ as a};
