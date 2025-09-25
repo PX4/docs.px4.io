@@ -1,0 +1,1 @@
+const s="/l10n_crowdin_docs_translations_zh-CN/assets/frsky_telemetry_overview.BykAKBsb.jpg",_="/l10n_crowdin_docs_translations_zh-CN/assets/taranis_telemetry.DvXFD2wv.jpg",t="/l10n_crowdin_docs_translations_zh-CN/assets/craft_and_theory_frsky_telemetry_cables.DteJ4FqH.jpg";export{s as _,_ as a,t as b};
