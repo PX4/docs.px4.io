@@ -1,0 +1,1 @@
+const _="/l10n_crowdin_docs_translations_zh-CN/assets/fun_cub_vtol_complete.CNrlHtjF.jpg",s="/l10n_crowdin_docs_translations_zh-CN/assets/fun_cub_aluminium_frame_for_vtol.DawmrFYI.jpg",o="/l10n_crowdin_docs_translations_zh-CN/assets/fun_cub_aluminium_frame_for_vtol_mounted.DTXV5Ub0.jpg";export{_,s as a,o as b};
