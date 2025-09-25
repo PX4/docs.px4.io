@@ -1,0 +1,1 @@
+const s="/l10n_crowdin_docs_translations_zh-CN/assets/qgc_actuators_gimbal.DJSzZ1mT.png",_="/l10n_crowdin_docs_translations_zh-CN/assets/gimbal-simulation.B3bqDKzm.png",n="/l10n_crowdin_docs_translations_zh-CN/assets/gimbal_control_x500gz.Dq_BNUS2.png";export{s as _,_ as a,n as b};

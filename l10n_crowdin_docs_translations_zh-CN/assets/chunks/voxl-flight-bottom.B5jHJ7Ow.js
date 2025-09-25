@@ -1,0 +1,1 @@
+const s="/l10n_crowdin_docs_translations_zh-CN/assets/voxl-flight-dk.DZrAcack.jpg",o="/l10n_crowdin_docs_translations_zh-CN/assets/voxl-flight-dimensions.I9Z_4yKn.jpg",t="/l10n_crowdin_docs_translations_zh-CN/assets/voxl-flight-top.D4cqVfgp.jpg",_="/l10n_crowdin_docs_translations_zh-CN/assets/voxl-flight-bottom.BxlOucXe.jpg";export{s as _,o as a,t as b,_ as c};
