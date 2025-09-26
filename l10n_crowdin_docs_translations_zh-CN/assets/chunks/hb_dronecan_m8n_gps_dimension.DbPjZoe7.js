@@ -1,0 +1,1 @@
+const s="/l10n_crowdin_docs_translations_zh-CN/assets/hb_dronecan_m8n_gps.D9UYszx-.jpg",_="/l10n_crowdin_docs_translations_zh-CN/assets/hb_dronecan_m8n_gps_pinout.ByUZT2wU.jpg",n="/l10n_crowdin_docs_translations_zh-CN/assets/hb_dronecan_m8n_gps_dimension.BAbIZG6S.jpg";export{s as _,_ as a,n as b};

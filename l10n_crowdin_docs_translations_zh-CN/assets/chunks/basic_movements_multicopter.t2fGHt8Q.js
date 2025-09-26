@@ -1,0 +1,1 @@
+const s="/l10n_crowdin_docs_translations_zh-CN/assets/rc_mode2_mc_position_mode.CW3DhRBH.png",_="/l10n_crowdin_docs_translations_zh-CN/assets/basic_movements_multicopter.BZ3nY0tN.png";export{s as _,_ as a};

@@ -1,0 +1,1 @@
+const s="/l10n_crowdin_docs_translations_zh-CN/assets/airframe_generic_rover_ackermann.Bxl1Cjn5.png",_="/l10n_crowdin_docs_translations_zh-CN/assets/geometric_parameters.B49ees_v.png";export{s as _,_ as a};

@@ -1,0 +1,1 @@
+const s="/l10n_crowdin_docs_translations_zh-CN/assets/hardware-pilotpi4b.o4v4ky5c.png",_="/l10n_crowdin_docs_translations_zh-CN/assets/pilotpi_pwr_wiring.Dm7UrJob.png",o="/l10n_crowdin_docs_translations_zh-CN/assets/pilotpi_sens_wiring.CQDwso65.png";export{s as _,_ as a,o as b};
