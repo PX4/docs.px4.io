@@ -1,0 +1,1 @@
+const _="/l10n_crowdin_docs_translations_zh-CN/assets/rtk_holybro_h-rtk-m8p_all_label.BAjVrApJ.jpg",s="/l10n_crowdin_docs_translations_zh-CN/assets/rtk_holybro_h-rtk-m8p_pinmap.EUfwCXEH.jpg",o="/l10n_crowdin_docs_translations_zh-CN/assets/rtk_holybro_h-rtk-m8p_spec.BJNbn4vd.png";export{_,s as a,o as b};
