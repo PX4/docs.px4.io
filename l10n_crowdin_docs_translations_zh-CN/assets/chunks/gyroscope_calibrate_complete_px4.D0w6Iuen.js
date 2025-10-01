@@ -1,0 +1,1 @@
+const s="/l10n_crowdin_docs_translations_zh-CN/assets/gyroscope_calibrate_px4.DKelBWsj.png",_="/l10n_crowdin_docs_translations_zh-CN/assets/gyroscope_calibrate_progress_px4.D3ThecqI.png",o="/l10n_crowdin_docs_translations_zh-CN/assets/gyroscope_calibrate_complete_px4.DkPo4K4u.png";export{s as _,_ as a,o as b};
