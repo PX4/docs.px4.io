@@ -1,0 +1,1 @@
+const s="/l10n_crowdin_docs_translations_zh-CN/assets/sensor_compass_select_px4.CAhTe1dR.png",_="/l10n_crowdin_docs_translations_zh-CN/assets/sensor_compass_calibrate_px4.BwHx3PSo.png";export{s as _,_ as a};

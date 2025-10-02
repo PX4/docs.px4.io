@@ -1,0 +1,1 @@
+const s="/main/assets/solo.DkwpWYpu.png",a="/main/assets/plane.CtAj_kU3.png",t="/main/assets/standard_vtol.TSGe4XMB.png",n="/main/assets/tailsitter.CPsaWHnZ.png",p="/main/assets/hippocampus.B7mKfUoz.png",o="/main/assets/boat.Bcagx8-C.png",i="/main/assets/airship.B8uLZZqz.png";export{s as _,a,t as b,n as c,p as d,o as e,i as f};

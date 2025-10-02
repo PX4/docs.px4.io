@@ -1,0 +1,1 @@
+const s="/l10n_crowdin_docs_translations_zh-CN/assets/smart-battery-rotoye.DD5xfYsq.jpg",t="/l10n_crowdin_docs_translations_zh-CN/assets/smart-battery-rotoye-pack.X7wEd66B.jpg",o="/l10n_crowdin_docs_translations_zh-CN/assets/smart-battery-rotoye-connection.Do9_wjER.png";export{s as _,t as a,o as b};
