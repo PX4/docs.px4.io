@@ -1,0 +1,10 @@
+import{_ as a,c as e,o as n,al as i}from"./chunks/framework.D8UyiDWg.js";const k=JSON.parse('{"title":"载具磁力计器 (UORB 消息)","description":"","frontmatter":{},"headers":[],"relativePath":"zh/msg_docs/VehicleMagnetometer.md","filePath":"zh/msg_docs/VehicleMagnetometer.md"}'),t={name:"zh/msg_docs/VehicleMagnetometer.md"};function l(p,s,r,h,o,c){return n(),e("div",null,s[0]||(s[0]=[i(`<h1 id="载具磁力计器-uorb-消息" tabindex="-1">载具磁力计器 (UORB 消息) <a class="header-anchor" href="#载具磁力计器-uorb-消息" aria-label="Permalink to &quot;载具磁力计器 (UORB 消息)&quot;">​</a></h1><p><a href="https://github.com/PX4/PX4-Autopilot/blob/main/msg/VehicleMagnetometer.msg" target="_blank" rel="noreferrer">源文件</a></p><div class="language-c vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">c</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint64 timestamp            # 原始数据的时间戳（微秒）</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint64 timestamp_sample     # 所选磁力计的唯一设备 ID</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint32 device_id            # 所选磁力计的唯一设备 ID</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">float32</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">[</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">3</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">] magnetometer_ga  # 机体框架 FRD 下，XYZ 轴方向的磁场强度（单位：高斯）</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">uint8 calibration_count     # 校准变化计数器。每当校准发生变化时，该计数器单调递增。</span></span></code></pre></div>`,3)]))}const m=a(t,[["render",l]]);export{k as __pageData,m as default};
