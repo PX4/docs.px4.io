@@ -1,0 +1,1 @@
+const s="/l10n_crowdin_docs_translations_zh-CN/assets/hardware-mindracer.DBAWsmB_.png",n="/l10n_crowdin_docs_translations_zh-CN/assets/hardware-mindracer-pinout.GSNM2kPq.png",a="/l10n_crowdin_docs_translations_zh-CN/assets/hardware-mindracer-conn.DWbiFkE1.png";export{s as _,n as a,a as b};
