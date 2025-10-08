@@ -1,0 +1,1 @@
+const s="/l10n_crowdin_docs_translations_zh-CN/assets/qgc_gripper_actuator_output_small.CYebJZbW.png",_="/l10n_crowdin_docs_translations_zh-CN/assets/qgc_gripper_actions_joystick.fcZmuDe7.png";export{s as _,_ as a};

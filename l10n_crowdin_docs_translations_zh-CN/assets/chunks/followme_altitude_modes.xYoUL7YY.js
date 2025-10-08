@@ -1,0 +1,1 @@
+const s="/l10n_crowdin_docs_translations_zh-CN/assets/followme_concept.AdaLm2WI.png",_="/l10n_crowdin_docs_translations_zh-CN/assets/followme_angle.B_c8lgTn.png",o="/l10n_crowdin_docs_translations_zh-CN/assets/followme_qgc_example.B0X0bW9K.jpg",n="/l10n_crowdin_docs_translations_zh-CN/assets/followme_altitude_modes.BP_ehMCz.svg";export{s as _,_ as a,o as b,n as c};
