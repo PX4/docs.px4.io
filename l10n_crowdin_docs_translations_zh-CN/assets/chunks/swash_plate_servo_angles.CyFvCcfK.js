@@ -1,0 +1,1 @@
+const s="/l10n_crowdin_docs_translations_zh-CN/assets/airframe_heli_generic.gOp6kJq0.png",_="/l10n_crowdin_docs_translations_zh-CN/assets/qgc_geometry_helicopter.YZAXQGcO.png",n="/l10n_crowdin_docs_translations_zh-CN/assets/swash_plate_servo_angles.CUZ1mlfP.png";export{s as _,_ as a,n as b};

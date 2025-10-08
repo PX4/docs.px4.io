@@ -1,0 +1,1 @@
+const s="/l10n_crowdin_docs_translations_zh-CN/assets/r1_assembly.CJ2E2Aii.png",_="/l10n_crowdin_docs_translations_zh-CN/assets/wiring_r1.DHBzX1vJ.jpg",n="/l10n_crowdin_docs_translations_zh-CN/assets/r1_airframe.C-m6VE9p.png",o="/l10n_crowdin_docs_translations_zh-CN/assets/roboclaw_actuator_config_qgc.COldGNSB.png";export{s as _,_ as a,n as b,o as c};

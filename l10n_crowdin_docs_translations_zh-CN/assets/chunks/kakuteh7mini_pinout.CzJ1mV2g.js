@@ -1,0 +1,1 @@
+const s="/l10n_crowdin_docs_translations_zh-CN/assets/kakuteh7mini_top.DK4pclMU.jpg",t="/l10n_crowdin_docs_translations_zh-CN/assets/kakuteh7mini_bottom.CGI-6FWb.jpg",_="/l10n_crowdin_docs_translations_zh-CN/assets/kakuteh7mini_pinout.DC9xC0fN.jpg";export{s as _,t as a,_ as b};
